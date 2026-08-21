@@ -8,9 +8,10 @@ B.Tech student in Artificial Intelligence & Machine Learning at Symbiosis Instit
 
 | Project | What it is | Stack |
 |---|---|---|
-| [VaultMind](https://github.com/Anhad23mahajan/Java-Project) | Self-hosted document Q&A using a local LLM, with AES-256-GCM encryption at rest | Java, Spring Boot, PostgreSQL, Ollama |
-
-More projects are being cleaned up and added here soon.
+| [Kalaza Care](https://github.com/Anhad23mahajan/kalaza-care) | Patient-management Android app for an elder-care NGO — role-based medication tracking, QR-scan administration, real-time escalation alerts | Kotlin, Jetpack Compose, Supabase, Firebase |
+| [Hospital Readmission Predictor](https://github.com/Anhad23mahajan/hospital-readmission-predictor) | Full-stack ML web app predicting 30-day hospital readmission risk, with AI-generated clinical summaries | Python, Flask, scikit-learn, XGBoost, Docker |
+| [Student Performance Prediction](https://github.com/Anhad23mahajan/student-performance-prediction) | Comparative study of 11 ML models — Random Forest hits F1=0.975, AUC=0.995 | Python, scikit-learn, XGBoost, Pandas |
+| [VaultMind](https://github.com/Anhad23mahajan/vaultmind) | Self-hosted document Q&A using a local LLM, with AES-256-GCM encryption at rest | Java, Spring Boot, PostgreSQL, Ollama |
 
 ### Tech I work with
 
