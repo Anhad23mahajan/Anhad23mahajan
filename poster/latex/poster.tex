@@ -67,7 +67,7 @@
 % V1 Investment return   (x=0.7, y=10.5, w=8.35, h=8.2)
 \pbox{0.7}{10.5}{8.35}{8.2}{ublue}{%
  \hd{ublue}{1. Investment Return}
- The gain on an investment, as a \% of the money invested.
+ The gain (income + price rise) on an investment, as a \% of the money invested.
  \fmt{Return $=\dfrac{\text{Gain}}{\text{Invested}}\times 100$}
  \eg{Eg: Invest Rs 10,000, get back Rs 11,000.\\ Return $=1{,}000\div10{,}000=10\%$}}
 \begin{scope}[shift={(0.7,10.5)},line width=3.5pt]
@@ -84,8 +84,8 @@
 % V2 Compounding frequency   (x=9.35)
 \pbox{9.35}{10.5}{8.35}{8.2}{ublue}{%
  \hd{ublue}{2. Compounding Frequency}
- The more often interest is added in a year, the more money you get.
- \fmt{$A=P\left(1+\dfrac{r}{m}\right)^{mt}$}
+ At the same yearly rate, adding interest more often gives a little more money.
+ \fmt{$A=P\left(1+\dfrac{r}{m}\right)^{mt}$\\[2pt] {\fontsize{29}{34}\selectfont Continuous: $A=Pe^{rt}$}}
  \eg{Eg: Rs 10,000 at 12\% for 1 year}}
 \begin{scope}[shift={(9.35,10.5)},line width=3.5pt]
   \draw (0.6,1.2) -- (7.8,1.2);
@@ -104,15 +104,15 @@
 % V3 Uneven cash flows   (x=0.7, y=2.0)
 \pbox{0.7}{2.0}{8.35}{8.2}{ublue}{%
  \hd{ublue}{3. Uneven Cash Flows}
- Money received is different every year. Bring each amount back to today.
- \fmt{$PV=\dfrac{CF_1}{(1+i)}+\dfrac{CF_2}{(1+i)^2}$}
+ Money received differs each year. Discount each to today and add.
+ \fmt{$PV=\Sigma\,\dfrac{CF_t}{(1+i)^t}$}
  \eg{Eg: Rs 1,000 (year 1) and Rs 2,000 (year 2), $i=10\%$\\ $PV=909+1{,}653=\text{Rs }2{,}562$}}
 \begin{scope}[shift={(0.7,2.0)},line width=3.5pt]
   \draw (0.8,1.2) -- (7.8,1.2);
-  \draw[->,ugreen,line width=5pt] (2.5,1.2) -- (2.5,1.9);
-  \draw[->,ugreen,line width=5pt] (5.0,1.2) -- (5.0,2.7);
-  \node[font=\lblsize,ugreen] at (2.5,2.3) {1,000};
-  \node[font=\lblsize,ugreen] at (5.0,3.1) {2,000};
+  \draw[->,ugreen,line width=5pt] (2.5,1.2) -- (2.5,1.8);
+  \draw[->,ugreen,line width=5pt] (5.0,1.2) -- (5.0,2.4);
+  \node[font=\lblsize,ugreen] at (2.5,2.15) {1,000};
+  \node[font=\lblsize,ugreen] at (5.0,2.75) {2,000};
   \node[font=\lblsize] at (0.9,0.8) {0};
   \node[font=\lblsize] at (2.5,0.8) {1};
   \node[font=\lblsize] at (5.0,0.8) {2};
@@ -122,8 +122,8 @@
 % V4 Economic equivalence   (x=9.35, y=2.0)
 \pbox{9.35}{2.0}{8.35}{8.2}{ublue}{%
  \hd{ublue}{4. Economic Equivalence}
- Different amounts at different times can have the same value.
- \fm{$F=P(1+i)^n$}
+ At a given interest rate, different sums at different times can have the same value.
+ \fmt{$F=P(1+i)^n$ \quad $P=\dfrac{F}{(1+i)^n}$}
  \eg{Eg: at 10\%, Rs 100 today $=$ Rs 110 after 1 year}}
 \begin{scope}[shift={(9.35,2.0)},line width=3.5pt]
   \draw (0.8,1.2) -- (7.8,1.2);
@@ -156,21 +156,21 @@
 \pbox{26.95}{13.33}{8.35}{5.37}{ured}{%
  \hd{ured}{2. Decision under Uncertainty}
  Chances are unknown. Use a rule:\\
- $\bullet$ \textbf{Maximax}: best of the best\\
- $\bullet$ \textbf{Maximin}: best of the worst\\[4pt]
+ $\bullet$ \textbf{Maximax}: best of the best \eg{$\to$ Stock}\\
+ $\bullet$ \textbf{Maximin}: best of the worst \eg{$\to$ Bond}\\
+ $\bullet$ \textbf{Min-max regret}: least regret \eg{$\to$ Bond}\\[6pt]
  \renewcommand{\arraystretch}{1.1}%
  \hspace{0.3in}\begin{tabular}{|l|c|c|}\hline
  Payoff & Boom & Slump\\\hline
  Stock & 80 & $-20$\\\hline
- Bond & 40 & 20\\\hline
- \end{tabular}\\[4pt]
- \eg{Maximax $\to$ Stock \quad Maximin $\to$ Bond}}
+ Bond & 40 & 25\\\hline
+ \end{tabular}}
 
 % VI3 Risk premium   (x=18.3, y=7.66)
 \pbox{18.3}{7.66}{8.35}{5.37}{ured}{%
  \hd{ured}{3. Risk Premium}
- The extra return you ask for when taking risk.
- \fm{Premium $=$ Expected -- Safe rate}
+ The extra return a risky asset must offer over a risk-free one.
+ \fm{Premium $=$ Expected -- Risk-free rate}
  \eg{Eg: 12\% -- 6\% $=$ 6\%}}
 \begin{scope}[shift={(18.3,7.66)},line width=3.5pt]
   \draw[->] (0.8,0.45) -- (0.8,2.2);
@@ -180,7 +180,7 @@
   \draw[<->,thin] (4.0,1.0) -- (4.0,1.8);
   \fill[ugreen] (0.8,1.0) circle (5pt);
   \fill[ured] (4.0,1.8) circle (5pt);
-  \node[font=\lblsize,anchor=west] at (1.0,0.72) {Safe 6\%};
+  \node[font=\lblsize,anchor=west] at (1.0,0.72) {Risk-free 6\%};
   \node[font=\lblsize,anchor=west] at (4.2,2.05) {Stock 12\%};
   \node[font=\lblsize,anchor=west] at (4.2,1.4) {premium 6\%};
   \node[font=\lblsize,anchor=west] at (5.3,0.45) {Risk};
@@ -190,11 +190,13 @@
 % VI4 Diversification   (x=26.95, y=7.66)
 \pbox{26.95}{7.66}{8.35}{5.37}{ured}{%
  \hd{ured}{4. Portfolio Diversification}
- Don't put all eggs in one basket: more different assets means less risk.}
+ Spread money over assets that do not move together to lower risk. Market risk cannot be removed.}
 \begin{scope}[shift={(26.95,7.66)},line width=3.5pt]
   \draw[->] (0.8,0.65) -- (0.8,2.9);
   \draw[->] (0.8,0.65) -- (7.4,0.65);
-  \draw[ured,line width=5pt] (0.95,2.6) .. controls (1.5,1.2) and (3.0,1.0) .. (7.0,0.95);
+  \draw[ured,line width=5pt] (0.95,2.6) .. controls (1.5,1.4) and (3.0,1.15) .. (7.0,1.1);
+  \draw[dashed,thin] (0.8,0.95) -- (7.4,0.95);
+  \node[font=\lblsize,anchor=east] at (7.4,1.45) {Market risk stays};
   \node[font=\lblsize,anchor=west] at (3.3,2.0) {Risk falls};
   \node[font=\lblsize] at (4.2,0.28) {Number of assets $\to$};
 \end{scope}
@@ -202,9 +204,9 @@
 % VI5 Life insurance   (x=18.3, y=1.99)
 \pbox{18.3}{1.99}{8.35}{5.37}{ured}{%
  \hd{ured}{5. Life Insurance}
- You pay a premium. The insurer pays the sum assured if you die.
+ You pay a premium. The insurer pays the sum assured if you die within the term.
  \fm{Premium $\approx$ Sum assured $\times$ P(death)}
- \eg{Eg: Rs 1,00,000 $\times$ 0.01 = Rs 1,000}}
+ \eg{Eg (1 yr): Rs 1,00,000 $\times$ 0.01 = Rs 1,000}}
 \begin{scope}[shift={(18.3,1.99)},line width=3.5pt]
   \draw[rounded corners=6pt] (0.5,0.3) rectangle (1.9,1.0);
   \draw[rounded corners=6pt] (3.4,0.3) rectangle (5.1,1.0);
@@ -221,8 +223,9 @@
 % VI6 Endowment   (x=26.95, y=1.99)
 \pbox{26.95}{1.99}{8.35}{5.37}{ured}{%
  \hd{ured}{6. Endowment}
- Pays if you \textbf{die in the term} OR \textbf{survive to the end}.
- \fm{Endowment $=$ Insurance $+$ Savings}}
+ Pays the sum assured if you \textbf{die in the term} OR \textbf{survive to the end}.
+ \fm{Endowment $=$ Term $+$ Pure endowment}
+Pure endowment = paid only if you survive.}
 \begin{scope}[shift={(26.95,1.99)},line width=3.5pt]
   \draw[->] (0.6,0.7) -- (7.8,0.7);
   \draw (0.9,0.55) -- (0.9,0.85);
@@ -235,7 +238,7 @@
 
 % ---------- footer ----------
 \draw[line width=3.5pt,rounded corners=10pt] (0.7,0.55) rectangle (35.3,1.55);
-\node[font=\fontsize{44}{50}\selectfont\bfseries] at (18,1.05) {Higher risk $\Rightarrow$ higher expected return};
+\node[font=\fontsize{44}{50}\selectfont\bfseries] at (18,1.05) {Investors demand a higher expected return for taking higher risk};
 
 % optional 3-inch copy grid
 \ifdefined\showgrid
