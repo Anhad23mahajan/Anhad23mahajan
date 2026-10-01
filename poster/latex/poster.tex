@@ -68,10 +68,9 @@
 % V1 Investment return   (x=0.7, y=10.5, w=8.35, h=8.2)
 \pbox{0.7}{10.5}{8.35}{8.2}{ublue}{%
  \hd{ublue}{1. Investment Return}
- The gain (income + price rise) on an investment, as a \% of the money invested.
+ Gain as a \% of the money invested.
  \fmt{Return $=\dfrac{\text{Gain}}{\text{Invested}}\times 100$}
- \eg{Eg: Invest Rs 10,000, get back Rs 11,000.\\ Return $=1{,}000\div10{,}000=10\%$}
- \rl{returns on shares and mutual funds.}}
+ \eg{Eg: shares Rs 10,000 $\to$ Rs 11,000\\ Return $=1{,}000\div10{,}000=10\%$}}
 \begin{scope}[shift={(0.7,10.5)},line width=3.5pt]
   \draw (1,1.2) -- (7.3,1.2);
   \draw[ublue] (1.8,1.2) rectangle (3.2,2.3);
@@ -81,15 +80,15 @@
   \node[font=\lblsize] at (2.5,0.8) {Invest};
   \node[font=\lblsize] at (5.3,0.8) {Get back};
   \node[font=\lblsize,ured] at (4.0,2.1) {$+10\%$};
+  \node[font=\fontsize{20}{24}\selectfont] at (4.2,0.3) {(heights not to scale)};
 \end{scope}
 
 % V2 Compounding frequency   (x=9.35)
 \pbox{9.35}{10.5}{8.35}{8.2}{ublue}{%
  \hd{ublue}{2. Compounding Frequency}
- At the same yearly rate, adding interest more often gives a little more money.
+ More frequent interest = a little more money.
  \fmt{$A=P\left(1+\dfrac{r}{m}\right)^{mt}$\\[2pt] {\fontsize{29}{34}\selectfont Continuous: $A=Pe^{rt}$}}
- \eg{Eg: Rs 10,000 at 12\% for 1 year}
- \rl{bank FDs add interest quarterly.}}
+ \eg{Eg: bank FD, Rs 10,000 at 12\% for 1 year}}
 \begin{scope}[shift={(9.35,10.5)},line width=3.5pt]
   \draw (0.6,1.2) -- (7.8,1.2);
   \draw[ublue] (1.0,1.2) rectangle (2.3,2.2);
@@ -107,10 +106,9 @@
 % V3 Uneven cash flows   (x=0.7, y=2.0)
 \pbox{0.7}{2.0}{8.35}{8.2}{ublue}{%
  \hd{ublue}{3. Uneven Cash Flows}
- Money received differs each year. Discount each to today and add.
+ Unequal receipts: discount each to today.
  \fmt{$PV=\Sigma\,\dfrac{CF_t}{(1+i)^t}$}
- \eg{Eg: Rs 1,000 (year 1) and Rs 2,000 (year 2), $i=10\%$\\ $PV=909+1{,}653=\text{Rs }2{,}562$}
- \rl{rent, dividends or project profits.}}
+ \eg{Eg: rent Rs 1,000 then Rs 2,000, $i=10\%$\\ $PV=909+1{,}653=\text{Rs }2{,}562$}}
 \begin{scope}[shift={(0.7,2.0)},line width=3.5pt]
   \draw (0.8,1.2) -- (7.8,1.2);
   \draw[->,ugreen,line width=5pt] (2.5,1.2) -- (2.5,1.7);
@@ -126,10 +124,9 @@
 % V4 Economic equivalence   (x=9.35, y=2.0)
 \pbox{9.35}{2.0}{8.35}{8.2}{ublue}{%
  \hd{ublue}{4. Economic Equivalence}
- At a given interest rate, different sums at different times can have the same value.
+ Equal value at a given interest rate.
  \fmt{$F=P(1+i)^n$ \quad $P=\dfrac{F}{(1+i)^n}$}
- \eg{Eg: at 10\%, Rs 100 now $=$ Rs 110 in 1 yr}
- \rl{lump sum today vs instalments.}}
+ \eg{Eg: at 10\%, Rs 100 now $=$ Rs 110 in 1 yr}}
 \begin{scope}[shift={(9.35,2.0)},line width=3.5pt]
   \draw (0.8,1.2) -- (7.8,1.2);
   \draw[->,ugreen,line width=5pt] (1.8,1.2) -- (1.8,2.6);
@@ -140,16 +137,16 @@
   \node[font=\lblsize] at (6.4,0.8) {After 1 year};
   \draw[->,ublue] (2.5,2.0) -- (5.7,2.0);
   \node[font=\lblsize,ublue] at (4.1,2.4) {$\times\,1.10$};
+  \node[font=\fontsize{20}{24}\selectfont] at (4.3,0.3) {(heights not to scale)};
 \end{scope}
 
 % ================= UNIT VI (2 x 3) =================
 % VI1 Decision under risk   (x=18.3, y=13.33, w=8.35, h=5.37)
 \pbox{18.3}{13.33}{8.35}{5.37}{ured}{%
  \hd{ured}{1. Decision under Risk}
- Chances are known. Choose the best average (EMV).
+ Chances known: pick best average (EMV).
  \fm{EMV $=\Sigma$ (chance $\times$ payoff)}
- \eg{Eg: $0.5\times100+0.5\times40=$ Rs 70}
- \rl{choosing which project to fund.}}
+ \eg{Eg: $0.5\times100+0.5\times40=$ Rs 70}}
 \begin{scope}[shift={(18.3,13.33)},line width=3.5pt]
   \draw (0.8,0.5) rectangle ++(0.4,0.4);
   \draw (1.2,0.7) -- (3.0,1.15);
@@ -161,7 +158,7 @@
 % VI2 Decision under uncertainty   (x=26.95)
 \pbox{26.95}{13.33}{8.35}{5.37}{ured}{%
  \hd{ured}{2. Decision under Uncertainty}
- Chances are unknown. Use a rule:\\
+ Chances unknown. Use a rule:\\
  $\bullet$ \textbf{Maximax}: best of the best \eg{$\to$ Stock}\\
  $\bullet$ \textbf{Maximin}: best of the worst \eg{$\to$ Bond}\\
  $\bullet$ \textbf{Min-max regret}: least regret \eg{$\to$ Bond}\\[6pt]
@@ -170,16 +167,14 @@
  Payoff & Boom & Slump\\\hline
  Stock & 80 & $-20$\\\hline
  Bond & 40 & 25\\\hline
- \end{tabular}
- \rl{launching a product in a new market.}}
+ \end{tabular}}
 
 % VI3 Risk premium   (x=18.3, y=7.66)
 \pbox{18.3}{7.66}{8.35}{5.37}{ured}{%
  \hd{ured}{3. Risk Premium}
  Extra return for taking risk.
  \fm{Premium $=$ Expected -- Risk-free rate}
- \eg{Eg: 12\% -- 6\% $=$ 6\%}
- \rl{shares must beat the FD rate.}}
+ \eg{Eg: share 12\% -- FD 6\% $=$ 6\%}}
 \begin{scope}[shift={(18.3,7.66)},line width=3.5pt]
   \draw[->] (0.8,0.45) -- (0.8,1.95);
   \draw[->] (0.8,0.45) -- (5.2,0.45);
@@ -198,8 +193,7 @@
 % VI4 Diversification   (x=26.95, y=7.66)
 \pbox{26.95}{7.66}{8.35}{5.37}{ured}{%
  \hd{ured}{4. Portfolio Diversification}
- Spread money over assets that do not move together. Market risk stays.
- \rl{mutual funds hold many shares.}}
+ Spread assets: lower risk, not market risk.}
 \begin{scope}[shift={(26.95,7.66)},line width=3.5pt]
   \draw[->] (0.8,0.65) -- (0.8,2.6);
   \draw[->] (0.8,0.65) -- (7.4,0.65);
@@ -213,10 +207,9 @@
 % VI5 Life insurance   (x=18.3, y=1.99)
 \pbox{18.3}{1.99}{8.35}{5.37}{ured}{%
  \hd{ured}{5. Life Insurance}
- You pay a premium. The insurer pays the sum assured if you die within the term.
+ Insurer pays if you die within the term.
  \fm{Premium $\approx$ Sum assured $\times$ P(death)}
- \eg{Eg (1 yr): Rs 1,00,000 $\times$ 0.01 = Rs 1,000}
- \rl{term life plans.}}
+ \eg{Eg (1 yr): Rs 1,00,000 $\times$ 0.01 = Rs 1,000}}
 \begin{scope}[shift={(18.3,1.99)},line width=3.5pt]
   \draw[rounded corners=6pt] (0.5,0.3) rectangle (1.9,1.0);
   \draw[rounded corners=6pt] (3.4,0.3) rectangle (5.1,1.0);
@@ -233,10 +226,9 @@
 % VI6 Endowment   (x=26.95, y=1.99)
 \pbox{26.95}{1.99}{8.35}{5.37}{ured}{%
  \hd{ured}{6. Endowment}
- Pays the sum assured if you \textbf{die in the term} OR \textbf{survive to the end}.
+ Pays on death in term OR survival to end.
  \fm{Endowment $=$ Term $+$ Pure endowment}
-Pure endowment = paid only if you survive.
- \rl{endowment plans (cover + savings).}}
+Pure endowment = paid on survival.}
 \begin{scope}[shift={(26.95,1.99)},line width=3.5pt]
   \draw[->] (0.6,0.7) -- (7.8,0.7);
   \draw (0.9,0.55) -- (0.9,0.85);
