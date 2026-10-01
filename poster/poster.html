@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CA-III Poster - Financial Mathematics (Unit V and VI)</title>
+<style>
+  /* 36in x 24in landscape (3 ft x 2 ft chart paper) at 96 px/in */
+  @page { size: 36in 24in; margin: 0; }
+  :root { --ink:#111; --blue:#1f4fd8; --red:#c4161c; --green:#0d7a3a; --amber:#b86e00; --paper:#fffef6; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:#fff; }
+  body { width:3456px; height:2304px; font-family:"Comic Neue","Segoe UI",Arial,sans-serif; color:var(--ink); position:relative; overflow:hidden; }
+  .poster { position:absolute; inset:0; background:var(--paper); padding:40px 48px 170px; display:flex; flex-direction:column; gap:24px; border:10px double var(--ink); }
+
+  header { text-align:center; border-bottom:6px solid var(--ink); padding-bottom:14px; }
+  header h1 { margin:0; font-size:84px; letter-spacing:2px; line-height:1.05; }
+  header .sub { font-size:34px; margin-top:6px; }
+  header .sub b { color:var(--red); }
+  .meta { display:flex; justify-content:space-between; font-size:28px; margin-top:8px; }
+
+  .body { flex:1; display:grid; grid-template-columns: 1fr 1fr; grid-template-rows:minmax(0,1fr); gap:36px; min-height:0; }
+  .unit { display:flex; flex-direction:column; gap:18px; min-height:0; }
+  .banner { font-size:46px; font-weight:800; text-align:center; color:#fff; padding:6px 0; border-radius:14px; }
+  .u5 .banner { background:var(--blue); }
+  .u6 .banner { background:var(--red); }
+  .grid { flex:none; height:1773px; display:grid; gap:18px; min-height:0; }
+  .u5 .grid { grid-template-columns:1fr 1fr; grid-template-rows:877px 878px; }
+  .u6 .grid { grid-template-columns:1fr 1fr; grid-template-rows:530px 604px 603px; }
+  .span2 { grid-column: 1 / span 2; }
+
+  .box { border:5px solid var(--ink); border-radius:16px; padding:12px 20px; font-size:30px; line-height:1.27; background:#fff; min-height:0; overflow:hidden; }
+  .u5 .box { border-color:var(--blue); }
+  .u6 .box { border-color:var(--red); }
+  .box h2 { margin:0 0 6px; font-size:40px; line-height:1.1; text-decoration:underline; text-decoration-thickness:4px; text-underline-offset:6px; }
+  .u5 h2 { color:var(--blue); } .u6 h2 { color:var(--red); }
+  .f { display:block; font-family:"Cambria Math","Times New Roman",serif; font-weight:700; font-size:32px; background:#fff3b8; border:3px solid var(--ink); border-radius:8px; padding:3px 10px; margin:6px 0; text-align:center; }
+  .def { margin:2px 0; }
+  .eg { color:var(--green); font-weight:700; }
+  .hl { color:var(--red); font-weight:800; }
+  ul { margin:4px 0; padding-left:34px; } li { margin:2px 0; }
+  table { border-collapse:collapse; margin:6px auto; font-size:27px; }
+  td, th { border:3px solid var(--ink); padding:2px 10px; text-align:center; }
+  th { background:#e6ecff; }
+  .u6 th { background:#ffe3e3; }
+  .win { background:#d9f7d9; font-weight:800; }
+  svg { display:block; margin:2px auto 0; max-width:100%; height:auto; }
+  svg text { font-family:inherit; }
+
+  footer { position:absolute; left:58px; right:58px; bottom:46px; height:96px; border:5px solid var(--ink); border-radius:16px; background:#e9f7e9; padding:8px 24px; display:flex; gap:30px; align-items:center; font-size:29px; }
+  footer .link { flex:1; text-align:center; font-weight:800; }
+  footer .refs { font-size:23px; flex:1.1; line-height:1.25; }
+
+  /* optional measurement grid for the copy guide (add ?grid to URL via body.grid) */
+  body.grid::after { content:""; position:absolute; inset:0; pointer-events:none;
+    background-image: linear-gradient(to right, rgba(0,0,0,.45) 3px, transparent 3px), linear-gradient(to bottom, rgba(0,0,0,.45) 3px, transparent 3px);
+    background-size: 288px 288px; }
+  .ruler { display:none; position:absolute; z-index:5; font-size:30px; font-weight:800; color:#000; background:rgba(255,255,0,.85); padding:0 8px; }
+  body.grid .ruler { display:block; }
+</style>
+</head>
+<body>
+<div class="poster">
+
+<header>
+  <h1>RISK &amp; RETURN: THE MATHEMATICS OF INVESTING</h1>
+  <div class="sub">Financial Mathematics (TE7677) &middot; CA-III Poster &middot; <b>Unit V: Basics of Investment</b> &amp; <b>Unit VI: Risk and Uncertainty</b></div>
+  <div class="meta"><span>Name: ______________________</span><span>PRN / Roll No: ______________</span><span>Division: ________</span><span>Faculty: Dr. Adigoppula Raju</span></div>
+</header>
+
+<div class="body">
+
+<!-- ===================== UNIT V ===================== -->
+<section class="unit u5">
+  <div class="banner">UNIT V: BASICS OF INVESTMENT</div>
+  <div class="grid">
+
+    <!-- V1 : Investment return -->
+    <div class="box">
+      <h2>1. Investment Return</h2>
+      <div class="def">Return = the gain (or loss) on an investment as a % of the money put in.</div>
+      <span class="f">R = (V<sub>1</sub> &minus; V<sub>0</sub> + Income) / V<sub>0</sub> &times; 100</span>
+      <div class="def">For many years use the <b>CAGR</b> (average yearly growth):</div>
+      <span class="f">CAGR = (V<sub>n</sub> / V<sub>0</sub>)<sup>1/n</sup> &minus; 1</span>
+      <div class="eg">Eg: &#8377;10,000 grows to &#8377;14,641 in 4 yrs<br>CAGR = (1.4641)<sup>1/4</sup> &minus; 1 = 1.10 &minus; 1 = <span class="hl">10% p.a.</span></div>
+      <svg width="480" height="138" viewBox="0 0 520 150">
+        <line x1="20" y1="130" x2="500" y2="130" stroke="#111" stroke-width="3"/>
+        <rect x="70" y="80" width="90" height="50" fill="#9db8ff" stroke="#111" stroke-width="3"/>
+        <rect x="340" y="30" width="90" height="100" fill="#7be08f" stroke="#111" stroke-width="3"/>
+        <text x="115" y="72" font-size="26" text-anchor="middle">10,000</text>
+        <text x="385" y="22" font-size="26" text-anchor="middle">14,641</text>
+        <text x="115" y="148" font-size="24" text-anchor="middle">Year 0</text>
+        <text x="385" y="148" font-size="24" text-anchor="middle">Year 4</text>
+        <path d="M175 75 C 250 50, 290 40, 330 38" fill="none" stroke="#c4161c" stroke-width="4"/>
+        <polygon points="330,38 312,28 314,48" fill="#c4161c"/>
+        <text x="252" y="30" font-size="26" fill="#c4161c" text-anchor="middle">+10% p.a.</text>
+      </svg>
+    </div>
+
+    <!-- V2 : Compounding frequency -->
+    <div class="box">
+      <h2>2. Compounding Frequency of Interest</h2>
+      <div class="def">More frequent compounding &rArr; more interest. Nominal rate r, m periods/yr, t years:</div>
+      <span class="f">A = P (1 + r/m)<sup>mt</sup> &nbsp;&nbsp; | &nbsp;&nbsp; Continuous: A = P e<sup>rt</sup></span>
+      <span class="f">Effective rate: i<sub>eff</sub> = (1 + r/m)<sup>m</sup> &minus; 1 &nbsp;&nbsp; (cont.: e<sup>r</sup> &minus; 1)</span>
+      <div class="eg">Eg: P = &#8377;10,000, r = 12% p.a., t = 1 yr</div>
+      <table>
+        <tr><th>Compounding</th><th>m</th><th>Amount A (&#8377;)</th><th>Eff. rate</th></tr>
+        <tr><td>Annual</td><td>1</td><td>11,200.00</td><td>12.00%</td></tr>
+        <tr><td>Half-yearly</td><td>2</td><td>11,236.00</td><td>12.36%</td></tr>
+        <tr><td>Quarterly</td><td>4</td><td>11,255.09</td><td>12.55%</td></tr>
+        <tr><td>Monthly</td><td>12</td><td>11,268.25</td><td>12.68%</td></tr>
+        <tr class="win"><td>Continuous</td><td>&infin;</td><td>11,274.97</td><td>12.75%</td></tr>
+      </table>
+      <svg width="560" height="170" viewBox="0 0 560 170">
+        <line x1="60" y1="140" x2="540" y2="140" stroke="#111" stroke-width="3"/>
+        <line x1="60" y1="140" x2="60" y2="12" stroke="#111" stroke-width="3"/>
+        <text x="300" y="168" font-size="23" text-anchor="middle">Compounding frequency &rarr;</text>
+        <text x="8" y="80" font-size="22" transform="rotate(-90 20 80)" text-anchor="middle">Amount &rarr;</text>
+        <line x1="60" y1="28" x2="540" y2="28" stroke="#c4161c" stroke-width="3" stroke-dasharray="10 7"/>
+        <text x="540" y="20" font-size="22" fill="#c4161c" text-anchor="end">limit: continuous</text>
+        <path d="M100 118 C 160 70, 230 45, 540 31" fill="none" stroke="#1f4fd8" stroke-width="5"/>
+        <g font-size="22" text-anchor="middle"><text x="100" y="138" dy="0"></text></g>
+        <circle cx="100" cy="118" r="6" fill="#111"/><circle cx="165" cy="75" r="6" fill="#111"/><circle cx="260" cy="50" r="6" fill="#111"/><circle cx="380" cy="38" r="6" fill="#111"/>
+        <g font-size="21" text-anchor="middle"><text x="100" y="134">Yr</text><text x="165" y="134">Half</text><text x="260" y="134">Qtr</text><text x="380" y="134">Mth</text></g>
+      </svg>
+    </div>
+
+    <!-- V3 : Uneven cash flows -->
+    <div class="box">
+      <h2>3. Uneven Cash Flows</h2>
+      <div class="def">Cash flows that are <b>not equal</b> every period. Discount each one separately:</div>
+      <span class="f">PV = &Sigma; CF<sub>t</sub> / (1 + i)<sup>t</sup> &nbsp;&nbsp; NPV = PV &minus; Initial cost</span>
+      <div class="eg">Eg: invest &#8377;4,500 now. Receive &#8377;1,000, &#8377;2,000, &#8377;3,000 at end of yrs 1, 2, 3. i = 10%.</div>
+      <svg width="580" height="200" viewBox="0 -14 640 224">
+        <line x1="30" y1="105" x2="615" y2="105" stroke="#111" stroke-width="3"/>
+        <g stroke="#111" stroke-width="3"><line x1="80" y1="98" x2="80" y2="112"/><line x1="240" y1="98" x2="240" y2="112"/><line x1="400" y1="98" x2="400" y2="112"/><line x1="560" y1="98" x2="560" y2="112"/></g>
+        <g font-size="25" text-anchor="middle"><text x="58" y="135">0</text><text x="240" y="135">1</text><text x="400" y="135">2</text><text x="560" y="135">3</text><text x="320" y="165" font-size="22">time (years)</text></g>
+        <!-- outflow down -->
+        <line x1="80" y1="105" x2="80" y2="190" stroke="#c4161c" stroke-width="5"/><polygon points="80,200 68,180 92,180" fill="#c4161c"/>
+        <text x="115" y="188" font-size="25" fill="#c4161c">4,500</text>
+        <!-- inflows up -->
+        <line x1="240" y1="105" x2="240" y2="70" stroke="#0d7a3a" stroke-width="5"/><polygon points="240,58 228,78 252,78" fill="#0d7a3a"/><text x="240" y="48" font-size="25" fill="#0d7a3a" text-anchor="middle">1,000</text>
+        <line x1="400" y1="105" x2="400" y2="50" stroke="#0d7a3a" stroke-width="5"/><polygon points="400,38 388,58 412,58" fill="#0d7a3a"/><text x="400" y="28" font-size="25" fill="#0d7a3a" text-anchor="middle">2,000</text>
+        <line x1="560" y1="105" x2="560" y2="30" stroke="#0d7a3a" stroke-width="5"/><polygon points="560,18 548,38 572,38" fill="#0d7a3a"/><text x="560" y="12" font-size="25" fill="#0d7a3a" text-anchor="middle">3,000</text>
+      </svg>
+      <table>
+        <tr><th>Yr</th><th>CF</th><th>Divide by</th><th>PV</th></tr>
+        <tr><td>1</td><td>1,000</td><td>1.10</td><td>909.09</td></tr>
+        <tr><td>2</td><td>2,000</td><td>1.21</td><td>1,652.89</td></tr>
+        <tr><td>3</td><td>3,000</td><td>1.331</td><td>2,253.94</td></tr>
+        <tr class="win"><td colspan="3">Total PV (&asymp;)</td><td>&#8377;4,816</td></tr>
+      </table>
+      <div class="eg">NPV &asymp; 4,816 &minus; 4,500 = <span class="hl">+&#8377;316 &gt; 0 &rArr; ACCEPT</span></div>
+    </div>
+
+    <!-- V4 : Economic equivalence -->
+    <div class="box">
+      <h2>4. Economic Equivalence</h2>
+      <div class="def">Different amounts at different times are <b>equivalent</b> if they have the <b>same value</b> at one common date, at the given interest rate. (&#8377;1 today &ne; &#8377;1 tomorrow.)</div>
+      <span class="f">F = P (1 + i)<sup>n</sup> &nbsp;&nbsp; &hArr; &nbsp;&nbsp; P = F / (1 + i)<sup>n</sup></span>
+      <div class="eg">Eg: at i = 10% p.a., all three below are equivalent:</div>
+      <svg width="600" height="178" viewBox="0 0 640 190">
+        <line x1="20" y1="120" x2="625" y2="120" stroke="#111" stroke-width="3"/>
+        <g stroke="#111" stroke-width="3"><line x1="110" y1="112" x2="110" y2="128"/><line x1="300" y1="112" x2="300" y2="128"/><line x1="490" y1="112" x2="490" y2="128"/></g>
+        <g font-size="24" text-anchor="middle"><text x="110" y="152">1 yr ago</text><text x="300" y="152">Today</text><text x="490" y="152">2 yrs later</text></g>
+        <line x1="110" y1="120" x2="110" y2="62" stroke="#0d7a3a" stroke-width="5"/><polygon points="110,50 98,70 122,70" fill="#0d7a3a"/><text x="110" y="38" font-size="26" fill="#0d7a3a" text-anchor="middle">&#8377;9,091</text>
+        <line x1="300" y1="120" x2="300" y2="62" stroke="#0d7a3a" stroke-width="5"/><polygon points="300,50 288,70 312,70" fill="#0d7a3a"/><text x="300" y="38" font-size="26" fill="#0d7a3a" text-anchor="middle">&#8377;10,000</text>
+        <line x1="490" y1="120" x2="490" y2="62" stroke="#0d7a3a" stroke-width="5"/><polygon points="490,50 478,70 502,70" fill="#0d7a3a"/><text x="490" y="38" font-size="26" fill="#0d7a3a" text-anchor="middle">&#8377;12,100</text>
+        <path d="M118 170 Q 205 188 292 170" fill="none" stroke="#1f4fd8" stroke-width="3"/><text x="205" y="184" font-size="21" fill="#1f4fd8" text-anchor="middle" dy="4">&times;1.10</text>
+        <path d="M308 170 Q 400 188 482 170" fill="none" stroke="#1f4fd8" stroke-width="3"/><text x="395" y="184" font-size="21" fill="#1f4fd8" text-anchor="middle" dy="4">&times;1.10</text>
+      </svg>
+      <div class="eg">10,000 &times; (1.10)<sup>2</sup> = 12,100 &nbsp; | &nbsp; 10,000 / 1.10 = 9,090.91</div>
+      <div><b>Use:</b> compare loans, pick between &#8377;10,000 today vs &#8377;12,500 in 2 yrs (12,100 &lt; 12,500, so wait!).</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== UNIT VI ===================== -->
+<section class="unit u6">
+  <div class="banner">UNIT VI: RISK AND UNCERTAINTY</div>
+  <div class="grid">
+
+    <!-- VI1 : Decision under risk and uncertainty -->
+    <div class="box span2">
+      <h2>1. Decision under Risk and Uncertainty</h2>
+      <div style="display:flex; gap:26px;">
+        <div style="flex:1.05">
+          <div class="def"><b>Risk:</b> outcomes AND their probabilities are known &rarr; use <b>EMV</b> = &Sigma; p &times; payoff.<br><b>Uncertainty:</b> probabilities unknown &rarr; use decision rules.</div>
+          <div class="eg">Eg: Profit (&#8377; thousand) of 3 investments. P(Boom, Normal, Recession) = 0.3, 0.5, 0.2</div>
+          <table>
+            <tr><th>Option</th><th>Boom<br>0.3</th><th>Normal<br>0.5</th><th>Recession<br>0.2</th><th>EMV</th></tr>
+            <tr class="win"><td>A: Stocks</td><td>80</td><td>40</td><td>&minus;20</td><td>40.0</td></tr>
+            <tr><td>B: Bonds</td><td>40</td><td>30</td><td>20</td><td>31.0</td></tr>
+            <tr><td>C: Real estate</td><td>50</td><td>35</td><td>0</td><td>32.5</td></tr>
+          </table>
+          <div class="eg">EMV(A) = 0.3(80) + 0.5(40) + 0.2(&minus;20) = 24 + 20 &minus; 4 = 40</div>
+        </div>
+        <div style="flex:1">
+          <div class="def"><b>Rules when probabilities are unknown</b> (same table):</div>
+          <table>
+            <tr><th>Rule</th><th>Idea</th><th>Pick</th></tr>
+            <tr><td>Maximax</td><td>optimist: best of best (80, 40, 50)</td><td class="win">A</td></tr>
+            <tr><td>Maximin</td><td>pessimist: best of worst (&minus;20, 20, 0)</td><td class="win">B</td></tr>
+            <tr><td>Min-max regret</td><td>least max regret (40, 40, 30)</td><td class="win">C</td></tr>
+            <tr><td>Laplace</td><td>equal chances: avg (33.3, 30, 28.3)</td><td class="win">A</td></tr>
+          </table>
+          <div class="def"><span class="hl">Regret</span> = best payoff in that state &minus; your payoff. Different rules &rArr; different answers, so the investor's attitude to risk matters.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI2 : Risk premium -->
+    <div class="box">
+      <h2>2. Risk Premium</h2>
+      <div class="def">Extra return demanded for taking risk instead of a safe asset.</div>
+      <span class="f">Risk premium = E(R) &minus; R<sub>f</sub></span>
+      <div class="eg">Eg: Stock E(R) = 12%, T-bill R<sub>f</sub> = 6% &rArr; premium = <span class="hl">6%</span></div>
+      <svg width="480" height="230" viewBox="0 0 520 250">
+        <line x1="60" y1="220" x2="500" y2="220" stroke="#111" stroke-width="3"/>
+        <line x1="60" y1="220" x2="60" y2="14" stroke="#111" stroke-width="3"/>
+        <text x="280" y="248" font-size="24" text-anchor="middle">Risk (std. deviation &sigma;) &rarr;</text>
+        <text x="16" y="120" font-size="24" transform="rotate(-90 16 120)" text-anchor="middle">Expected return &rarr;</text>
+        <line x1="60" y1="150" x2="440" y2="40" stroke="#1f4fd8" stroke-width="4"/>
+        <circle cx="60" cy="150" r="9" fill="#0d7a3a"/><text x="80" y="176" font-size="24" fill="#0d7a3a">T-bill (R<tspan baseline-shift="sub" font-size="17">f</tspan>) = 6%</text>
+        <circle cx="330" cy="72" r="9" fill="#c4161c"/><text x="190" y="62" font-size="24" fill="#c4161c">Stock 12%</text>
+        <line x1="330" y1="150" x2="330" y2="84" stroke="#c4161c" stroke-width="3" stroke-dasharray="7 5"/>
+        <line x1="60" y1="150" x2="330" y2="150" stroke="#111" stroke-width="2" stroke-dasharray="7 5"/>
+        <path d="M345 82 L345 148" stroke="#111" stroke-width="3"/><polygon points="345,82 339,96 351,96" fill="#111"/><polygon points="345,148 339,134 351,134" fill="#111"/>
+        <text x="360" y="120" font-size="24">premium</text><text x="360" y="146" font-size="24">= 6%</text>
+      </svg>
+      <div class="def">Required return = Risk-free rate + Risk premium</div>
+    </div>
+
+    <!-- VI3 : Portfolio diversification -->
+    <div class="box">
+      <h2>3. Portfolio Diversification</h2>
+      <div class="def">"Don't put all eggs in one basket": spreading money cuts risk without cutting average return.</div>
+      <span class="f">E(R<sub>p</sub>) = w E(R<sub>1</sub>) + (1&minus;w) E(R<sub>2</sub>)</span>
+      <span class="f">&sigma;<sub>p</sub><sup>2</sup> = w<sup>2</sup>&sigma;<sub>1</sub><sup>2</sup> + (1&minus;w)<sup>2</sup>&sigma;<sub>2</sub><sup>2</sup> + 2w(1&minus;w)&rho;&sigma;<sub>1</sub>&sigma;<sub>2</sub></span>
+      <div class="eg">Eg: two stocks, &sigma; = 20% each, w = 50%:</div>
+      <table>
+        <tr><th>Correlation &rho;</th><th>+1</th><th>+0.5</th><th>0</th><th>&minus;1</th></tr>
+        <tr><td>Portfolio &sigma;</td><td>20%</td><td>17.3%</td><td>14.1%</td><td>0%</td></tr>
+      </table>
+      <svg width="470" height="166" viewBox="0 0 540 190">
+        <line x1="60" y1="165" x2="520" y2="165" stroke="#111" stroke-width="3"/>
+        <line x1="60" y1="165" x2="60" y2="8" stroke="#111" stroke-width="3"/>
+        <text x="290" y="188" font-size="22" text-anchor="middle">Number of securities &rarr;</text>
+        <text x="14" y="90" font-size="22" transform="rotate(-90 14 90)" text-anchor="middle">Risk &rarr;</text>
+        <path d="M60 30 C 110 95, 170 118, 510 124" fill="none" stroke="#c4161c" stroke-width="5"/>
+        <line x1="60" y1="132" x2="510" y2="132" stroke="#111" stroke-width="2" stroke-dasharray="8 6"/>
+        <text x="515" y="154" font-size="21" text-anchor="end">Systematic (market) risk: cannot be removed</text>
+        <text x="250" y="52" font-size="21" fill="#c4161c">Unsystematic risk</text><text x="250" y="76" font-size="21" fill="#c4161c">(removed by diversifying)</text>
+      </svg>
+    </div>
+
+    <!-- VI4 : Life insurance -->
+    <div class="box">
+      <h2>4. Life Insurance</h2>
+      <div class="def">A contract: you pay a <b>premium</b>, the insurer pays the <b>sum assured</b> if the insured dies (term plan). Many people pool their risk: the loss of the few is paid by the premiums of the many (law of large numbers).</div>
+      <span class="f">Net single premium (1-yr term) = S &times; q / (1 + i)</span>
+      <div class="eg">Eg: S = &#8377;1,00,000, q = P(death in the year) = 0.01, i = 5%<br>NSP = 1,00,000 &times; 0.01 / 1.05 = <span class="hl">&#8377;952.38</span></div>
+      <div class="def">Types: <b>Term</b> (death only), <b>Whole life</b> (death, any time), <b>Endowment</b> (death or survival). Actual premium = NSP + expenses + profit.</div>
+    </div>
+
+    <!-- VI5 : Endowment -->
+    <div class="box">
+      <h2>5. Endowment Assurance</h2>
+      <div class="def">Pays the sum assured <b>if you die within the term OR survive to the end</b>: it is insurance + saving.</div>
+      <span class="f">Endowment = Term insurance + Pure endowment (survival benefit)</span>
+      <div class="eg">Eg: 2-yr plan, S = &#8377;1,00,000, q = 0.01 each yr, i = 5%</div>
+      <svg width="560" height="102" viewBox="0 0 600 110">
+        <line x1="30" y1="55" x2="580" y2="55" stroke="#111" stroke-width="3"/>
+        <g stroke="#111" stroke-width="3"><line x1="80" y1="47" x2="80" y2="63"/><line x1="300" y1="47" x2="300" y2="63"/><line x1="520" y1="47" x2="520" y2="63"/></g>
+        <g font-size="23" text-anchor="middle"><text x="80" y="82">0</text><text x="300" y="82">1</text><text x="520" y="82">2</text></g>
+        <g font-size="21" text-anchor="middle" fill="#c4161c"><text x="190" y="28">die in yr 1: 0.01</text><text x="410" y="28">die in yr 2: 0.0099</text></g>
+        <text x="520" y="106" font-size="21" fill="#0d7a3a" text-anchor="middle">survive: 0.9801</text>
+      </svg>
+      <div class="eg">NSP = 1,00,000 [ 0.01/1.05 + 0.0099/1.05<sup>2</sup> + 0.9801/1.05<sup>2</sup> ]<br>= 1,850 + 88,898 = <span class="hl">&#8377;90,748</span> (mostly the savings part)</div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="link">LINK: Higher risk &rArr; higher required return (Unit V gives the return, Unit VI prices the risk). Good investing = best return for the risk you can bear.</div>
+  <div class="refs"><b>Reference:</b> Campolieti &amp; Makarov, <i>Financial Mathematics: A Comprehensive Treatment</i>; Capinski &amp; Zastawniak, <i>Mathematics for Finance</i>; Hull &amp; Basu, <i>Options, Futures &amp; Other Derivatives</i> (Pearson).</div>
+</footer>
+
+</div>
+
+<script>
+  if (location.search.includes('grid')) document.body.classList.add('grid');
+</script>
+</body>
+</html>
