@@ -41,6 +41,7 @@
 \newcommand{\hd}[2]{{\hdsize\color{#1}#2}\par\vspace{4pt}}
 \newcommand{\fmt}[1]{\par\vspace{6pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering\rule[-28pt]{0pt}{82pt}\bfseries #1}}\par\vspace{6pt}}
 \newcommand{\fm}[1]{\par\vspace{6pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering\rule[-10pt]{0pt}{38pt}\bfseries #1}}\par\vspace{6pt}}
+\newcommand{\rl}[1]{\par\vspace{8pt}{\fontsize{25}{30}\selectfont\itshape\color{black!80}\textbf{Real life:} #1}}
 \newcommand{\eg}[1]{{\color{ugreen}\bfseries #1}}
 
 \begin{document}
@@ -69,16 +70,17 @@
  \hd{ublue}{1. Investment Return}
  The gain (income + price rise) on an investment, as a \% of the money invested.
  \fmt{Return $=\dfrac{\text{Gain}}{\text{Invested}}\times 100$}
- \eg{Eg: Invest Rs 10,000, get back Rs 11,000.\\ Return $=1{,}000\div10{,}000=10\%$}}
+ \eg{Eg: Invest Rs 10,000, get back Rs 11,000.\\ Return $=1{,}000\div10{,}000=10\%$}
+ \rl{returns on shares and mutual funds.}}
 \begin{scope}[shift={(0.7,10.5)},line width=3.5pt]
   \draw (1,1.2) -- (7.3,1.2);
-  \draw[ublue] (1.8,1.2) rectangle (3.2,2.5);
-  \draw[ugreen] (4.6,1.2) rectangle (6.0,2.9);
-  \node[font=\lblsize] at (2.5,2.85) {10,000};
-  \node[font=\lblsize] at (5.3,3.25) {11,000};
+  \draw[ublue] (1.8,1.2) rectangle (3.2,2.3);
+  \draw[ugreen] (4.6,1.2) rectangle (6.0,2.7);
+  \node[font=\lblsize] at (2.5,2.65) {10,000};
+  \node[font=\lblsize] at (5.3,3.05) {11,000};
   \node[font=\lblsize] at (2.5,0.8) {Invest};
   \node[font=\lblsize] at (5.3,0.8) {Get back};
-  \node[font=\lblsize,ured] at (4.0,2.3) {$+10\%$};
+  \node[font=\lblsize,ured] at (4.0,2.1) {$+10\%$};
 \end{scope}
 
 % V2 Compounding frequency   (x=9.35)
@@ -86,7 +88,8 @@
  \hd{ublue}{2. Compounding Frequency}
  At the same yearly rate, adding interest more often gives a little more money.
  \fmt{$A=P\left(1+\dfrac{r}{m}\right)^{mt}$\\[2pt] {\fontsize{29}{34}\selectfont Continuous: $A=Pe^{rt}$}}
- \eg{Eg: Rs 10,000 at 12\% for 1 year}}
+ \eg{Eg: Rs 10,000 at 12\% for 1 year}
+ \rl{bank FDs add interest quarterly.}}
 \begin{scope}[shift={(9.35,10.5)},line width=3.5pt]
   \draw (0.6,1.2) -- (7.8,1.2);
   \draw[ublue] (1.0,1.2) rectangle (2.3,2.2);
@@ -106,13 +109,14 @@
  \hd{ublue}{3. Uneven Cash Flows}
  Money received differs each year. Discount each to today and add.
  \fmt{$PV=\Sigma\,\dfrac{CF_t}{(1+i)^t}$}
- \eg{Eg: Rs 1,000 (year 1) and Rs 2,000 (year 2), $i=10\%$\\ $PV=909+1{,}653=\text{Rs }2{,}562$}}
+ \eg{Eg: Rs 1,000 (year 1) and Rs 2,000 (year 2), $i=10\%$\\ $PV=909+1{,}653=\text{Rs }2{,}562$}
+ \rl{rent, dividends or project profits.}}
 \begin{scope}[shift={(0.7,2.0)},line width=3.5pt]
   \draw (0.8,1.2) -- (7.8,1.2);
-  \draw[->,ugreen,line width=5pt] (2.5,1.2) -- (2.5,1.8);
-  \draw[->,ugreen,line width=5pt] (5.0,1.2) -- (5.0,2.4);
-  \node[font=\lblsize,ugreen] at (2.5,2.15) {1,000};
-  \node[font=\lblsize,ugreen] at (5.0,2.75) {2,000};
+  \draw[->,ugreen,line width=5pt] (2.5,1.2) -- (2.5,1.7);
+  \draw[->,ugreen,line width=5pt] (5.0,1.2) -- (5.0,2.2);
+  \node[font=\lblsize,ugreen] at (2.5,1.95) {1,000};
+  \node[font=\lblsize,ugreen] at (5.0,2.55) {2,000};
   \node[font=\lblsize] at (0.9,0.8) {0};
   \node[font=\lblsize] at (2.5,0.8) {1};
   \node[font=\lblsize] at (5.0,0.8) {2};
@@ -124,17 +128,18 @@
  \hd{ublue}{4. Economic Equivalence}
  At a given interest rate, different sums at different times can have the same value.
  \fmt{$F=P(1+i)^n$ \quad $P=\dfrac{F}{(1+i)^n}$}
- \eg{Eg: at 10\%, Rs 100 today $=$ Rs 110 after 1 year}}
+ \eg{Eg: at 10\%, Rs 100 now $=$ Rs 110 in 1 yr}
+ \rl{lump sum today vs instalments.}}
 \begin{scope}[shift={(9.35,2.0)},line width=3.5pt]
   \draw (0.8,1.2) -- (7.8,1.2);
-  \draw[->,ugreen,line width=5pt] (1.8,1.2) -- (1.8,3.0);
-  \draw[->,ugreen,line width=5pt] (6.4,1.2) -- (6.4,3.3);
-  \node[font=\lblsize,ugreen] at (1.8,3.4) {Rs 100};
-  \node[font=\lblsize,ugreen] at (6.4,3.7) {Rs 110};
+  \draw[->,ugreen,line width=5pt] (1.8,1.2) -- (1.8,2.6);
+  \draw[->,ugreen,line width=5pt] (6.4,1.2) -- (6.4,2.9);
+  \node[font=\lblsize,ugreen] at (1.8,3.0) {Rs 100};
+  \node[font=\lblsize,ugreen] at (6.4,3.3) {Rs 110};
   \node[font=\lblsize] at (1.8,0.8) {Today};
   \node[font=\lblsize] at (6.4,0.8) {After 1 year};
-  \draw[->,ublue] (2.5,2.3) -- (5.7,2.3);
-  \node[font=\lblsize,ublue] at (4.1,2.7) {$\times\,1.10$};
+  \draw[->,ublue] (2.5,2.0) -- (5.7,2.0);
+  \node[font=\lblsize,ublue] at (4.1,2.4) {$\times\,1.10$};
 \end{scope}
 
 % ================= UNIT VI (2 x 3) =================
@@ -143,7 +148,8 @@
  \hd{ured}{1. Decision under Risk}
  Chances are known. Choose the best average (EMV).
  \fm{EMV $=\Sigma$ (chance $\times$ payoff)}
- \eg{Eg: 50\%: Rs 100, 50\%: Rs 40 $\Rightarrow$ EMV = Rs 70}}
+ \eg{Eg: $0.5\times100+0.5\times40=$ Rs 70}
+ \rl{choosing which project to fund.}}
 \begin{scope}[shift={(18.3,13.33)},line width=3.5pt]
   \draw (0.8,0.5) rectangle ++(0.4,0.4);
   \draw (1.2,0.7) -- (3.0,1.15);
@@ -164,40 +170,43 @@
  Payoff & Boom & Slump\\\hline
  Stock & 80 & $-20$\\\hline
  Bond & 40 & 25\\\hline
- \end{tabular}}
+ \end{tabular}
+ \rl{launching a product in a new market.}}
 
 % VI3 Risk premium   (x=18.3, y=7.66)
 \pbox{18.3}{7.66}{8.35}{5.37}{ured}{%
  \hd{ured}{3. Risk Premium}
- The extra return a risky asset must offer over a risk-free one.
+ Extra return for taking risk.
  \fm{Premium $=$ Expected -- Risk-free rate}
- \eg{Eg: 12\% -- 6\% $=$ 6\%}}
+ \eg{Eg: 12\% -- 6\% $=$ 6\%}
+ \rl{shares must beat the FD rate.}}
 \begin{scope}[shift={(18.3,7.66)},line width=3.5pt]
-  \draw[->] (0.8,0.45) -- (0.8,2.2);
+  \draw[->] (0.8,0.45) -- (0.8,1.95);
   \draw[->] (0.8,0.45) -- (5.2,0.45);
-  \draw[ublue] (0.8,1.0) -- (4.0,1.8);
-  \draw[dashed,thin] (0.8,1.0) -- (4.0,1.0);
-  \draw[<->,thin] (4.0,1.0) -- (4.0,1.8);
-  \fill[ugreen] (0.8,1.0) circle (5pt);
-  \fill[ured] (4.0,1.8) circle (5pt);
-  \node[font=\lblsize,anchor=west] at (1.0,0.72) {Risk-free 6\%};
-  \node[font=\lblsize,anchor=west] at (4.2,2.05) {Stock 12\%};
-  \node[font=\lblsize,anchor=west] at (4.2,1.4) {premium 6\%};
+  \draw[ublue] (0.8,0.95) -- (4.0,1.5);
+  \draw[dashed,thin] (0.8,0.95) -- (4.0,0.95);
+  \draw[<->,thin] (4.0,0.95) -- (4.0,1.5);
+  \fill[ugreen] (0.8,0.95) circle (5pt);
+  \fill[ured] (4.0,1.5) circle (5pt);
+  \node[font=\lblsize,anchor=west] at (1.0,0.7) {Risk-free 6\%};
+  \node[font=\lblsize,anchor=west] at (4.2,1.75) {Stock 12\%};
+  \node[font=\lblsize,anchor=west] at (4.2,1.2) {premium 6\%};
   \node[font=\lblsize,anchor=west] at (5.3,0.45) {Risk};
-  \node[font=\lblsize,rotate=90] at (0.45,1.3) {Return};
+  \node[font=\lblsize,rotate=90] at (0.45,1.2) {Return};
 \end{scope}
 
 % VI4 Diversification   (x=26.95, y=7.66)
 \pbox{26.95}{7.66}{8.35}{5.37}{ured}{%
  \hd{ured}{4. Portfolio Diversification}
- Spread money over assets that do not move together to lower risk. Market risk cannot be removed.}
+ Spread money over assets that do not move together. Market risk stays.
+ \rl{mutual funds hold many shares.}}
 \begin{scope}[shift={(26.95,7.66)},line width=3.5pt]
-  \draw[->] (0.8,0.65) -- (0.8,2.9);
+  \draw[->] (0.8,0.65) -- (0.8,2.6);
   \draw[->] (0.8,0.65) -- (7.4,0.65);
-  \draw[ured,line width=5pt] (0.95,2.6) .. controls (1.5,1.4) and (3.0,1.15) .. (7.0,1.1);
+  \draw[ured,line width=5pt] (0.95,2.35) .. controls (1.5,1.4) and (3.0,1.15) .. (7.0,1.1);
   \draw[dashed,thin] (0.8,0.95) -- (7.4,0.95);
   \node[font=\lblsize,anchor=east] at (7.4,1.45) {Market risk stays};
-  \node[font=\lblsize,anchor=west] at (3.3,2.0) {Risk falls};
+  \node[font=\lblsize,anchor=west] at (3.3,1.9) {Risk falls};
   \node[font=\lblsize] at (4.2,0.28) {Number of assets $\to$};
 \end{scope}
 
@@ -206,7 +215,8 @@
  \hd{ured}{5. Life Insurance}
  You pay a premium. The insurer pays the sum assured if you die within the term.
  \fm{Premium $\approx$ Sum assured $\times$ P(death)}
- \eg{Eg (1 yr): Rs 1,00,000 $\times$ 0.01 = Rs 1,000}}
+ \eg{Eg (1 yr): Rs 1,00,000 $\times$ 0.01 = Rs 1,000}
+ \rl{term life plans.}}
 \begin{scope}[shift={(18.3,1.99)},line width=3.5pt]
   \draw[rounded corners=6pt] (0.5,0.3) rectangle (1.9,1.0);
   \draw[rounded corners=6pt] (3.4,0.3) rectangle (5.1,1.0);
@@ -225,7 +235,8 @@
  \hd{ured}{6. Endowment}
  Pays the sum assured if you \textbf{die in the term} OR \textbf{survive to the end}.
  \fm{Endowment $=$ Term $+$ Pure endowment}
-Pure endowment = paid only if you survive.}
+Pure endowment = paid only if you survive.
+ \rl{endowment plans (cover + savings).}}
 \begin{scope}[shift={(26.95,1.99)},line width=3.5pt]
   \draw[->] (0.6,0.7) -- (7.8,0.7);
   \draw (0.9,0.55) -- (0.9,0.85);
