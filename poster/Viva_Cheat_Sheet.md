@@ -1,24 +1,20 @@
-# Viva cheat-sheet (CA-III Financial Mathematics, Units V and VI)
-
-Marks: Concept Clarity 1.5, Depth 1.5, Logical Organization 1, Neatness 6 (poster). Be ready to explain every box in 1 to 2 sentences and redo one example on the board.
+# Viva cheat-sheet (say each in one or two sentences)
 
 ## Unit V
-- **Investment return:** gain as a % of money invested, (V1 - V0 + income)/V0. CAGR = (Vn/V0)^(1/n) - 1 is the steady yearly growth. Check: 10,000 to 14,641 in 4 yrs is 10% p.a.
-- **Compounding frequency:** more compounding periods means more interest, but it has a ceiling, which is continuous compounding A = Pe^(rt). Effective rate = (1 + r/m)^m - 1. At 12% nominal: annual 12%, monthly 12.68%, continuous 12.75%.
-- **Uneven cash flows:** cash flows differ each period, so discount each one separately and add. NPV = PV of inflows - cost; accept if NPV > 0. Here NPV is about +316.
-- **Economic equivalence:** amounts at different dates are equivalent if they are worth the same at one common date at rate i. At 10%: 9,091 (1 yr ago) = 10,000 (today) = 12,100 (2 yrs later).
+1. **Investment return:** gain as a % of money invested. Rs 10,000 becomes Rs 11,000, so the return is 10%.
+2. **Compounding frequency:** interest added more often means more money. Yearly 11,200, monthly 11,268, continuous 11,275 (on Rs 10,000 at 12%).
+3. **Uneven cash flows:** the amounts differ each year, so bring each one back to today and add them. 909 + 1,653 = 2,562.
+4. **Economic equivalence:** Rs 100 today is worth the same as Rs 110 after 1 year at 10%.
 
 ## Unit VI
-- **Risk vs uncertainty:** risk means probabilities are known (use EMV); uncertainty means they are unknown (use maximax, maximin, minimax regret, Laplace). Regret = best payoff in that state - your payoff.
-- **Risk premium:** E(R) - Rf, the extra return for taking risk (12% - 6% = 6%).
-- **Diversification:** portfolio return is the weighted average, but portfolio risk is lower when correlation rho < 1. Unsystematic risk is removed by diversifying; systematic (market) risk is not. For two stocks with sigma = 20% and w = 50%, portfolio sigma is 20% at rho = 1, 14.1% at rho = 0, and 0% at rho = -1.
-- **Life insurance:** pooling risk, with premium based on mortality q and interest i. 1-yr term NSP = S*q/(1+i) = 952.38. Real premium = NSP + expenses + profit.
-- **Endowment:** pays on death within the term or on survival to maturity, so it is Term + Pure endowment. 2-yr NSP is about 90,748, mostly the savings part.
+1. **Decision under risk:** chances are known, so pick the best average (EMV). 0.5 x 100 + 0.5 x 40 = 70.
+2. **Decision under uncertainty:** chances unknown. Maximax is the optimist's pick and maximin is the pessimist's.
+3. **Risk premium:** extra return for taking risk. 12% - 6% = 6%.
+4. **Diversification:** spreading money over many assets lowers risk. It cannot remove market-wide risk.
+5. **Life insurance:** you pay a premium and the company pays if you die. Fair premium is about sum assured x chance of death.
+6. **Endowment:** pays if you die in the term or survive to the end. It is insurance plus savings.
 
 ## Likely questions
-1. Why is Rs 100 today worth more than Rs 100 next year? (It can earn interest.)
-2. Which is better: 12% compounded monthly or 12.5% yearly? (Monthly effective is 12.68%, so monthly wins.)
-3. What does NPV > 0 mean? (Returns beat the required rate, so accept.)
-4. Why can diversification not remove all risk? (Systematic/market risk is common to all assets.)
-5. Difference between maximin and minimax regret? (Pessimism about payoffs vs minimising regret.)
-6. Difference between term and endowment? (Endowment also pays on survival.)
+- Why is Rs 100 today worth more than Rs 100 later? It can earn interest.
+- Why can diversification not remove all risk? Market-wide risk affects every asset.
+- How is endowment different from term insurance? Endowment also pays on survival.
