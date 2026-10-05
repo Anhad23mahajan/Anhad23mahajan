@@ -147,15 +147,16 @@
 
 % ---------- VI1 Risk: SD and CV (x=18.3, y=12.3, h=6.4) ----------
 \pbox{18.3}{12.4}{8.35}{6.8}{ured}{%
- \hd{ured}{1. Risk: $\sigma$ and CV}
+ \hd{ured}{1. Risk \& Uncertainty}
+ Risk = chance of a loss.
  \frm{$\sigma=\sqrt{\Sigma d^2\div n}$\\ CV $=\sigma\div$ mean $\times100$}
  \eg{12, 18, 20, 15, 25 (\%)\\ $\sigma=4.43\%$, CV $=24.6\%$}}
 \begin{scope}[shift={(18.3,12.4)},line width=4pt]
   \draw (0.3,0.5) -- (6.2,0.5);
-  \draw[ugreen,line width=5pt,smooth] plot[domain=-1.6:1.6,samples=70] ({3.2+\x},{0.5+1.8*exp(-(\x*\x)/0.5)});
-  \draw[ured,line width=5pt,smooth] plot[domain=-3.0:3.0,samples=80] ({3.2+\x},{0.5+0.818*exp(-(\x*\x)/2.42)});
-  \node[font=\lblsize,ugreen,anchor=west] at (4.2,2.0) {low $\sigma$};
-  \node[font=\lblsize,ured,anchor=west] at (4.7,1.25) {high $\sigma$};
+  \draw[ugreen,line width=5pt,smooth] plot[domain=-1.6:1.6,samples=70] ({3.2+\x},{0.5+1.35*exp(-(\x*\x)/0.5)});
+  \draw[ured,line width=5pt,smooth] plot[domain=-3.0:3.0,samples=80] ({3.2+\x},{0.5+0.614*exp(-(\x*\x)/2.42)});
+  \node[font=\lblsize,ugreen,anchor=west] at (4.2,1.6) {low $\sigma$};
+  \node[font=\lblsize,ured,anchor=west] at (4.7,1.05) {high $\sigma$};
 \end{scope}
 
 % ---------- VI2 Risk premium (x=26.95, y=12.3, h=6.4) ----------
