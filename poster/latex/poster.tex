@@ -70,7 +70,7 @@
 \pbox{0.7}{10.05}{8.35}{9.15}{ublue}{%
  \hd{ublue}{1. Investment Return}
  \frm{HPR $=$ (Income $+\,V_f-V_i$)\\ $\div\,V_i\times100$}
- \eg{Buy 150, sell 180,\\ dividend 10:\\ HPR $=40\div150=26.67\%$}}
+ \eg{Buy Rs 150, sell Rs 180,\\ dividend Rs 10:\\ HPR $=40\div150=26.67\%$}}
 \begin{scope}[shift={(0.7,10.05)},line width=4pt]
   \draw (0.6,0.9) -- (7.7,0.9);
   \draw[ublue] (1.2,0.9) rectangle (3.2,3.15);
@@ -87,7 +87,7 @@
 \pbox{9.35}{10.05}{8.35}{9.15}{ublue}{%
  \hd{ublue}{2. Uneven Cash Flows}
  \frm{NPV $=\Sigma\,C/(1+k)^t-I$}
- \eg{$I=$ 1,00,000, $k=10\%$}}
+ \eg{$I=$ Rs 1,00,000, $k=10\%$\\ (PVIF to 3 decimals)}}
 \begin{scope}[shift={(9.35,10.05)},line width=4pt]
   \draw (0.6,3.4) -- (7.9,3.4);
   \draw[->,ured,line width=6pt] (1.4,3.4) -- (1.4,1.4);            % 1,00,000 -> 2.0in (1in = Rs 50,000)
@@ -98,7 +98,7 @@
   \node[font=\lblsize,ugreen] at (3.0,5.0) {55,000};
   \node[font=\lblsize,ugreen] at (4.6,5.5) {80,000};
   \node[font=\lblsize,ugreen] at (6.2,4.2) {15,000};
-  \node[font=\lblsize] at (0.85,3.0) {0};
+  \node[font=\lblsize] at (1.0,3.0) {0};
   \node[font=\lblsize] at (3.0,3.0) {1};
   \node[font=\lblsize] at (4.6,3.0) {2};
   \node[font=\lblsize] at (6.2,3.0) {3};
@@ -111,7 +111,7 @@
  \hd{ublue}{3. Compound Frequency}
  \frm{$A=P\,(1+r/n)^{nt}$}
  Continuous: $A=P\,e^{rt}$\\[2pt]
- \eg{Rs 5,00,000 at 8\%, 1 year}}
+ \eg{Rs 5,00,000 at 8\%, 1 year\\ (to nearest Rs)}}
 \begin{scope}[shift={(0.7,0.6)},line width=4pt]
   \node[anchor=south west,font=\lblsize] at (0.55,0.4) {%
    \renewcommand{\arraystretch}{1.45}%
@@ -162,7 +162,7 @@
 \pbox{26.95}{12.4}{8.35}{6.8}{ured}{%
  \hd{ured}{2. Risk Premium}
  \frm{Premium $=E(R)-R_f$\\ Sharpe $=(R_p-R_f)\div\sigma_p$}
- \eg{12\% $-$ 4\% $=$ 8\%\\ Sharpe $=8\div10=0.8$}}
+ \eg{12\% $-$ 4\% $=$ 8\%\\ Sharpe $=8\div10=0.8$ ($\sigma=10\%$)}}
 \begin{scope}[shift={(26.95,12.4)},line width=4pt]
   \draw[->] (1.3,0.4) -- (1.3,2.95);
   \draw[->] (1.3,0.4) -- (6.6,0.4);
@@ -171,17 +171,18 @@
   \draw[dashed,thin] (1.3,1.12) -- (3.1,1.12);
   \fill[ugreen] (1.3,1.12) circle (7pt);
   \fill[ured] (3.1,2.56) circle (7pt);
-  \node[font=\lblsize,anchor=west] at (3.3,0.8) {$R_f$ 4\%};
+  \node[font=\lblsize,anchor=west] at (1.45,0.72) {$R_f$ 4\%};
   \node[font=\lblsize,anchor=west] at (3.35,2.75) {Stock 12\%};
   \node[font=\lblsize,anchor=west] at (3.35,1.85) {premium 8\%};
   \node[font=\lblsize,anchor=west] at (6.8,0.45) {Risk};
+  \node[font=\lblsize,rotate=90] at (0.7,1.7) {Return};
 \end{scope}
 
 % ---------- VI3 Diversification (x=18.3, y=5.8, h=6.2) ----------
 \pbox{18.3}{5.9}{8.35}{6.1}{ured}{%
  \hd{ured}{3. Diversification}
  \frm{$\sigma_p^2=w_1^2\sigma_1^2+w_2^2\sigma_2^2$\\ $+\,2\,w_1w_2\,\sigma_1\sigma_2\,\rho$}
- \eg{$\sigma=10\%,15\%$, $\rho=0.25$}}
+ \eg{$w=0.5,0.5$; $\sigma=10\%,15\%$\\ $\rho=0.25$: $\sigma_p^2=0.01$}}
 \begin{scope}[shift={(18.3,5.9)},line width=4pt]
   \draw (0.5,0.9) -- (7.9,0.9);
   \draw[ublue] (1.0,0.9) rectangle (2.6,1.7);       % 10% -> 0.8in (0.08in per %)
@@ -199,18 +200,18 @@
 \pbox{26.95}{5.9}{8.35}{6.1}{ured}{%
  \hd{ured}{4. Life Insurance}
  \frm{APV $=S\,\Sigma\,v^k\,P(T=k)$}
- \eg{$S=$ 2,00,000, $i=5\%$, 3 yrs\\ APV $=$ Rs 1,370.48}}
+ \eg{3-yr term, $S=$ 2,00,000, $i=5\%$\\ {\fontsize{36}{42}\selectfont $P(T{=}1,2,3)\!=\!0.003,\,0.0025,\,0.002$}\\ APV $=$ Rs 1,370.48}}
 \begin{scope}[shift={(26.95,5.9)},line width=4pt]
-  \draw[rounded corners=8pt] (0.2,0.6) rectangle (1.9,1.6);
-  \draw[rounded corners=8pt] (2.95,0.6) rectangle (5.0,1.6);
-  \draw[rounded corners=8pt] (5.75,0.6) rectangle (8.15,1.6);
-  \node[font=\lblsize] at (1.05,1.1) {You};
-  \node[font=\lblsize] at (3.975,1.1) {Insurer};
-  \node[font=\fontsize{34}{40}\selectfont] at (6.95,1.1) {Nominee};
-  \draw[->] (1.9,1.1) -- (2.95,1.1);
-  \draw[->] (5.0,1.1) -- (5.75,1.1);
-  \node[font=\lblsize] at (2.3,2.0) {premium};
-  \node[font=\lblsize] at (5.9,2.0) {$S$ on death};
+  \draw[rounded corners=8pt] (0.2,0.2) rectangle (1.9,1.0);
+  \draw[rounded corners=8pt] (2.95,0.2) rectangle (5.0,1.0);
+  \draw[rounded corners=8pt] (5.75,0.2) rectangle (8.15,1.0);
+  \node[font=\lblsize] at (1.05,0.6) {You};
+  \node[font=\lblsize] at (3.975,0.6) {Insurer};
+  \node[font=\fontsize{34}{40}\selectfont] at (6.95,0.6) {Nominee};
+  \draw[->] (1.9,0.6) -- (2.95,0.6);
+  \draw[->] (5.0,0.6) -- (5.75,0.6);
+  \node[font=\lblsize] at (2.3,1.35) {premium};
+  \node[font=\lblsize] at (5.5,1.35) {$S$ on death};
 \end{scope}
 
 % ---------- VI5 Endowment (x=18.3, y=0.6, h=4.9) ----------
@@ -220,17 +221,17 @@
 \begin{scope}[shift={(18.3,0.7)},line width=4pt]
   \draw[rounded corners=8pt] (0.2,0.8) rectangle (2.3,2.0);
   \node[font=\fontsize{34}{38}\selectfont,align=center] at (1.25,1.4) {Policy\\[-4pt]starts};
-  \draw[->,ured,line width=5pt] (2.2,1.6) -- (3.1,2.1);
-  \draw[->,ugreen,line width=5pt] (2.2,1.2) -- (3.1,0.7);
-  \draw[ured,rounded corners=8pt] (3.2,1.7) rectangle (8.1,2.55);
-  \draw[ugreen,rounded corners=8pt] (3.2,0.3) rectangle (8.1,1.15);
-  \node[font=\fontsize{36}{42}\selectfont,ured] at (5.65,2.12) {dies: nominee gets $S$};
-  \node[font=\fontsize{36}{42}\selectfont,ugreen] at (5.65,0.72) {survives: you get $S$};
+  \draw[->,ured,line width=5pt] (2.3,1.6) -- (3.1,2.0);
+  \draw[->,ugreen,line width=5pt] (2.3,1.2) -- (3.1,0.85);
+  \draw[ured,rounded corners=8pt] (3.2,1.65) rectangle (8.1,2.85);
+  \draw[ugreen,rounded corners=8pt] (3.2,0.2) rectangle (8.1,1.4);
+  \node[font=\fontsize{36}{42}\selectfont,ured,align=center] at (5.65,2.25) {dies in the term:\\[-3pt]nominee gets $S$};
+  \node[font=\fontsize{36}{42}\selectfont,ugreen,align=center] at (5.65,0.8) {survives to maturity:\\[-3pt]you get $S$};
 \end{scope}
 
 % ---------- VI6 key idea (x=26.95, y=0.6, h=4.9) ----------
 \draw[line width=4pt,rounded corners=14pt,ured] (26.95,0.7) rectangle ++(8.35,4.8);
-\node[font=\fontsize{52}{62}\selectfont\bfseries,align=center,ured] at (31.125,3.1) {Higher risk\\[2pt] $\Rightarrow$ higher\\[2pt] expected return};
+\node[font=\fontsize{48}{58}\selectfont\bfseries,align=center,ured] at (31.125,3.1) {Higher risk should\\[2pt] earn a higher\\[2pt] expected return};
 
 % optional 3-inch copy grid
 \ifdefined\showgrid
