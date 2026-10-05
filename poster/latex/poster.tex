@@ -74,7 +74,7 @@
  \frm{\smallsize
   Absolute return $=(V_f-V_i)/V_i\times100$\\[3pt]
   HPR $=[\text{Income}+(V_f-V_i)]/V_i\times100$\\[3pt]
-  CAGR $=(V_f/V_i)^{1/n}-1$}{30pt}
+  CAGR $=(V_f/V_i)^{1/n}-1$ \ ($\times100$ for \%)}{30pt}
  \eg{Eg: Rs 150 $\to$ Rs 180, dividend Rs 10\\ HPR $=(10+30)\div150=26.67\%$}}
 \begin{scope}[shift={(0.7,10.45)},line width=3.5pt]
   \draw (1.0,0.9) -- (7.4,0.9);
@@ -93,20 +93,22 @@
  \hd{ublue}{2. Uneven Cash Flows}
  Unequal cash flows: discount each to today.
  \frm{NPV $=\Sigma\,\dfrac{C_t}{(1+k)^t}-I$}{50pt}
+ {\smallsize $C_t$ = cash flow, $k$ = discount rate, $I$ = investment}\\[2pt]
  NPV $>0$: accept; NPV $<0$: reject.\\
- IRR = rate at which NPV $=0$.\\[2pt]
- \eg{Eg: $I=$ Rs 1,00,000, $k=10\%$\\ NPV $\approx$ Rs 27,340 $>0$, so accept}}
-\begin{scope}[shift={(9.35,10.45)},line width=3.5pt]
+ IRR = rate where NPV $=0$; accept if IRR $>k$.\\[2pt]
+ \eg{Eg: $I=$ Rs 1,00,000, $k=10\%$\\ NPV $\approx$ Rs 27,340 $>0$, so accept}\\
+ {\smallsize (PVIF 0.909, 0.826, 0.751)}}
+\begin{scope}[shift={(9.35,9.45)},line width=3.5pt]
   \draw (0.8,2.1) -- (7.9,2.1);
   \draw[->,ured,line width=5pt] (1.4,2.1) -- (1.4,1.1);
   \draw[->,ugreen,line width=5pt] (3.0,2.1) -- (3.0,2.65);
   \draw[->,ugreen,line width=5pt] (4.6,2.1) -- (4.6,2.9);
   \draw[->,ugreen,line width=5pt] (6.2,2.1) -- (6.2,2.25);
-  \node[font=\lblsize,ured] at (1.4,0.75) {1,00,000};
+  \node[font=\lblsize,ured,anchor=west] at (1.65,1.3) {1,00,000};
   \node[font=\lblsize,ugreen] at (3.0,3.0) {55,000};
   \node[font=\lblsize,ugreen] at (4.6,3.25) {80,000};
   \node[font=\lblsize,ugreen] at (6.2,2.6) {15,000};
-  \node[font=\lblsize] at (0.95,1.75) {0};
+  \node[font=\lblsize] at (1.85,1.75) {0};
   \node[font=\lblsize] at (3.0,1.75) {1};
   \node[font=\lblsize] at (4.6,1.75) {2};
   \node[font=\lblsize] at (6.2,1.75) {3};
@@ -178,7 +180,7 @@
   SD $\sigma=\sqrt{\sigma^2}$, \ $d=X_i-\bar{X}$\\[2pt]
   CV $=\dfrac{\sigma}{\bar{X}}\times100$}{40pt}
  \eg{Eg: returns 12, 18, 20, 15, 25 (\%)\\ mean 18\%, $\sigma=4.43\%$, CV $=24.6\%$}\\[2pt]
- {\smallsize Higher $\sigma$ or CV = riskier.}}
+ {\smallsize Higher $\sigma$ or CV = riskier. ($\sigma$ uses $\div n$)}}
 
 % VI2 Risk premium   (x=18.3, y=7.6, w=8.35, h=5.4)
 \pbox{18.3}{7.6}{8.35}{5.4}{ured}{%
@@ -189,18 +191,18 @@
   Sharpe ratio $=\dfrac{R_p-R_f}{\sigma_p}$}{40pt}
  \eg{Eg: $E(R)=12\%$, $R_f=4\%$, $\sigma=10\%$\\ Premium $=8\%$, Sharpe $=0.8$}}
 \begin{scope}[shift={(18.3,7.6)},line width=3.5pt]
-  \draw[->] (0.9,0.3) -- (0.9,1.35);
-  \draw[->] (0.9,0.3) -- (5.6,0.3);
-  \draw[ublue] (0.9,0.65) -- (4.0,1.2);
-  \fill[ugreen] (0.9,0.65) circle (5pt);
-  \fill[ured] (4.0,1.2) circle (5pt);
-  \draw[dashed,thin] (0.9,0.65) -- (4.0,0.65);
-  \draw[<->,thin] (4.0,0.65) -- (4.0,1.2);
-  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (1.0,1.12) {$R_f$ 4\%};
-  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (4.2,1.3) {Stock 12\%};
-  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (4.2,0.92) {premium 8\%};
-  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (5.75,0.3) {Risk};
-  \node[font=\fontsize{22}{26}\selectfont,rotate=90] at (0.55,0.85) {Return};
+  \draw[->] (0.9,0.25) -- (0.9,1.6);
+  \draw[->] (0.9,0.25) -- (5.6,0.25);
+  \draw[ublue] (0.9,0.61) -- (4.0,1.33);
+  \fill[ugreen] (0.9,0.61) circle (5pt);
+  \fill[ured] (4.0,1.33) circle (5pt);
+  \draw[dashed,thin] (0.9,0.61) -- (4.0,0.61);
+  \draw[<->,thin] (4.0,0.61) -- (4.0,1.33);
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (1.05,1.1) {$R_f$ 4\%};
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (4.2,1.4) {Stock 12\%};
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (4.2,0.95) {premium 8\%};
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (5.75,0.25) {Risk};
+  \node[font=\fontsize{22}{26}\selectfont,rotate=90] at (0.55,0.95) {Return};
 \end{scope}
 
 % VI3 Portfolio diversification   (x=26.95)
@@ -227,7 +229,7 @@
 \pbox{18.3}{1.85}{8.35}{5.45}{ured}{%
  \hd{ured}{4. Life Insurance}
  You pay a premium. The insurer pays the sum assured $S$ if you die within the term.
- \frm{\smallsize APV $=S\,\Sigma\,v^k\,P(T=k)$, \ $v=\dfrac{1}{1+i}$}{44pt}
+ \frm{\smallsize APV $=S\,\Sigma_{k=1}^{n}\,v^k\,P(T=k)$, \ $v=\dfrac{1}{1+i}$}{44pt}
  \eg{Eg: 3-yr term, $S=$ Rs 2,00,000, $i=5\%$\\ $P(T=1,2,3)=0.003,\,0.0025,\,0.002$\\ APV $=$ Rs 1,370.48}}
 \begin{scope}[shift={(18.3,1.85)},line width=3.5pt]
   \draw[rounded corners=6pt] (0.5,0.15) rectangle (1.9,0.75);
@@ -246,7 +248,7 @@
 \pbox{26.95}{1.85}{8.35}{5.45}{ured}{%
  \hd{ured}{5. Endowment}
  Pays the sum assured $S$ if you die in the term OR survive to maturity (protection + savings).
- \frm{\smallsize APV $=S\left[\Sigma\,v^k\,P(T=k)+v^n\,{}_nP_x\right]$}{44pt}
+ \frm{\smallsize APV $=S\left[\Sigma_{k=1}^{n}\,v^k\,P(T=k)+v^n\,{}_nP_x\right]$}{44pt}
  \eg{Eg: 20-yr plan, $S=$ Rs 1,00,000:\\ Rs 1,00,000 paid on death or on survival}\\[2pt]
  {\smallsize ${}_nP_x$ = chance of surviving $n$ years}}
 \begin{scope}[shift={(26.95,1.85)},line width=3.5pt]

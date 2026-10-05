@@ -62,7 +62,18 @@ Say each point in one or two sentences, then show the worked example from the po
 - Endowment vs term insurance? Endowment also pays on survival (savings), so it costs more.
 - Why is the real premium higher than the APV? Expenses, risk margin and profit loading.
 
+## Viva traps to rehearse
+- HPR is for the whole holding period (not annualised); CAGR is the yearly rate.
+- The SD on the poster divides by n (population SD). Dividing by n-1 would give 4.95% and CV 27.5% for the SBIN data.
+- Sharpe ratio uses total risk (sigma), not beta.
+- A diversification benefit needs correlation below +1. The example portfolio sigma of 10% is below the weighted average of 12.5%.
+- APV is the net single premium (one-time, no expenses). It is not an annual premium and not the gross premium. Death is assumed paid at the end of the year of death.
+- The poster's NPV Rs 27,340 uses PVIF rounded to 3 places (0.909, 0.826, 0.751). Exact discounting gives Rs 27,385; both mean accept.
+
 ## Warning: errors in the teacher's slides (so you are not surprised)
 - Unit VI, 10-year endowment, S = 1,00,000, q = 0.005, i = 5%: the slide answers Rs 36,456.90, but the slide's own formula gives about Rs 62,172.65 (death part about 3,782.74 + survival part about 58,389.91). The poster does not use that example. If asked, say the formula is right and show the calculation.
 - Unit V, CAGR of 50,000 -> 85,000 in 5 years: the slide says 11.22%, but (1.7)^(1/5) - 1 = 11.20%.
 - Unit VI, slide 16 (stock costing Rs 120): the slide gives SD 5.9079; recomputing gives about 5.9073. This is just rounding.
+- Unit V, problem Q.3 on absolute return (Rs 2,00,000 fund): the slide answers 50%, but that includes the Rs 20,000 dividends, so it is really HPR. Absolute return by the slide's own formula (Vf = 2,80,000) is 40%.
+- Unit V, CAGR Q.4 (+12%, -8%, +20%, +5%, -3%): the slide says 4.71%; recomputing gives 4.72% (final amount Rs 1,25,935).
+- Unit VI, slide 13 writes d = (xi - x-bar) squared; d is just the deviation and Sum d^2 is the sum of squared deviations (the poster uses this form). Slide 40 writes "w1, w1"; it should be w1, w2.
