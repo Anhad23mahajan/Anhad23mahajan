@@ -70,6 +70,13 @@ Say each point in one or two sentences, then show the worked example from the po
 - APV is the net single premium (one-time, no expenses). It is not an annual premium and not the gross premium. Death is assumed paid at the end of the year of death.
 - The poster's NPV Rs 27,340 uses PVIF rounded to 3 places (0.909, 0.826, 0.751). Exact discounting gives Rs 27,385; both mean accept.
 
+- Risk vs uncertainty: risk = outcomes with known (measurable) probabilities; uncertainty = probabilities unknown. The slides define risk and measure it with SD and CV.
+- The Risk Premium graph: the line from Rf through the stock has slope = Sharpe ratio = 8/10 = 0.8 (rule of thumb on the slides: above 1 good, above 2 very good, below 1 poor).
+- Diversification: the portfolio sigma (10%) is below the weighted average of the two sigmas (12.5%) because rho = 0.25 < 1. The three scatter sketches on the poster show rho = +1, 0, -1; the example uses rho = 0.25.
+- In the life-insurance diagram each green arrow is S = Rs 2,00,000 paid if death occurs that year. The PV figures are expected PVs (S x v^k x P), not the PV of Rs 2,00,000 itself.
+- The EAR graph on the poster starts its y-axis at 8.0% (zoomed), so the 0.33 point gap looks large; the line is dashed because the x-axis is categories, not a continuous scale.
+- For continuous compounding the EAR is e^r - 1 = 8.3287%; daily compounding (8.3278%) is almost the same.
+
 ## Warning: errors in the teacher's slides (so you are not surprised)
 - Unit VI, 10-year endowment, S = 1,00,000, q = 0.005, i = 5%: the slide answers Rs 36,456.90, but the slide's own formula gives about Rs 62,172.65 (death part about 3,782.74 + survival part about 58,389.91). The poster does not use that example. If asked, say the formula is right and show the calculation.
 - Unit V, CAGR of 50,000 -> 85,000 in 5 years: the slide says 11.22%, but (1.7)^(1/5) - 1 = 11.20%.

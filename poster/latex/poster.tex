@@ -89,7 +89,7 @@
   \draw[<->,thin] (5.45,3.35) -- (5.45,3.86);
   \node[font=\lblsize] at (1.7,3.7) {150};
   \node[font=\lblsize] at (4.5,4.45) {180 + 10 dividend};
-  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (5.55,3.55) {gain 30};
+  \node[font=\fontsize{21}{25}\selectfont,align=center] at (6.1,3.62) {capital\\[-2pt]gain 30};
   \node[font=\lblsize] at (1.7,0.45) {Buy};
   \node[font=\lblsize] at (4.5,0.45) {Sell};
 \end{scope}
@@ -118,7 +118,8 @@
     \node[font=\fontsize{21}{25}\selectfont,ugreen] at (\x,1.75) {PV \pv};}
   \node[font=\lblsize] at (6.05,2.15) {yrs};
   \node[font=\fontsize{20}{24}\selectfont,anchor=west] at (2.9,1.2) {(PVIF 0.909, 0.826, 0.751)};
-  \node[font=\smallsize,anchor=west] at (0.4,0.45) {NPV $=127{,}340-100{,}000=$ \textbf{Rs 27,340}};
+  \node[font=\smallsize,anchor=west] at (0.4,0.45) {NPV = 1,27,340 $-$ 1,00,000 = \textbf{Rs 27,340}};
+  \node[font=\lblsize] at (0.6,2.15) {0};
 \end{scope}
 
 % ---------- V3 Compounding frequency (x=0.7, y=1.9) ----------
@@ -133,17 +134,17 @@
   \draw[->] (0.9,1.05) -- (6.7,1.05);
   \node[font=\fontsize{21}{25}\selectfont,anchor=east] at (0.8,1.05) {8.0};
   \node[font=\fontsize{21}{25}\selectfont,anchor=east] at (0.8,3.75) {8.3};
-  \node[font=\fontsize{21}{25}\selectfont,anchor=south west] at (0.15,4.55) {EAR \%};
-  \foreach \x/\e/\nm/\am/\lab/\dx/\dy in {1.55/1.05/Yearly/5\cm 40\cm 000/8.00/0.55/0.25,
-                                  2.7/3.21/Quarterly/5\cm 41\cm 216/8.24/0/0.4,
-                                  3.85/3.75/Monthly/5\cm 41\cm 500/8.30/0/0.4,
-                                  5.0/4.02/Daily/5\cm 41\cm 639/8.33/0/0.4,
-                                  6.15/4.02/Continuous/5\cm 41\cm 644/8.33/0/0.4}{
+  \node[font=\fontsize{21}{25}\selectfont,anchor=south west] at (0.15,4.55) {EAR \% (zoomed axis from 8.0)};
+  \foreach \x/\e/\nm/\am/\lab/\dx/\dy in {1.4/1.05/Yearly/5\cm 40\cm 000/8.00/0.55/0.25,
+                                  2.55/3.21/Quarterly/5\cm 41\cm 216/8.24/0/0.4,
+                                  3.7/3.75/Monthly/5\cm 41\cm 500/8.30/0/0.4,
+                                  4.85/4.02/Daily/5\cm 41\cm 639/8.33/0/0.4,
+                                  6.0/4.02/Continuous/5\cm 41\cm 644/8.33/0/0.4}{
     \fill[ublue] (\x,\e) circle (6pt);
     \node[font=\fontsize{22}{26}\selectfont,ugreen] at (\x+\dx,\e+\dy) {\lab};
     \node[font=\fontsize{20}{24}\selectfont] at (\x,0.75) {\nm};
     \node[font=\fontsize{19}{23}\selectfont] at (\x,0.4) {\am};}
-  \draw[ublue,line width=4pt] (1.55,1.05) -- (2.7,3.21) -- (3.85,3.75) -- (5.0,4.02) -- (6.15,4.02);
+  \draw[ublue,line width=2.5pt,dashed] (1.4,1.05) -- (2.55,3.21) -- (3.7,3.75) -- (4.85,4.02) -- (6.0,4.02);
   \node[font=\fontsize{19}{23}\selectfont,anchor=east] at (0.8,0.4) {Rs};
 \end{scope}
 
@@ -236,7 +237,7 @@
 % ---------- VI4 Portfolio diversification (x=15.3, y=1.9) ----------
 \pbox{15.3}{1.9}{6.47}{8.25}{ured}{%
  \hd{ured}{4. Portfolio Diversification}
- Assets with $\rho<1$ reduce risk.
+ With $\rho<1$: $\sigma_p<$ weighted average.
  \frm{\fontsize{23}{28}\selectfont $\sigma_p^2=w_1^2\sigma_1^2+w_2^2\sigma_2^2$\\[3pt]
   $+\,2\,w_1w_2\,\sigma_1\sigma_2\,\rho_{12}$}{22pt}
  \eg{Eg: $w=0.5,0.5$; $\rho=0.25$\\ $\sigma=10\%,15\%$: $\sigma_p=10\%$}}
@@ -251,9 +252,11 @@
   \draw[ublue] (0.9,0.55) rectangle (1.9,1.35);
   \draw[ublue] (2.7,0.55) rectangle (3.7,1.75);
   \draw[ugreen] (4.5,0.55) rectangle (5.5,1.35);
-  \node[font=\lblsize] at (1.4,1.65) {10\%};
-  \node[font=\lblsize] at (3.2,2.05) {15\%};
-  \node[font=\lblsize] at (5.0,1.65) {10\%};
+  \node[font=\lblsize] at (1.4,0.95) {10\%};
+  \node[font=\lblsize] at (3.2,1.15) {15\%};
+  \node[font=\lblsize] at (5.0,0.95) {10\%};
+  \draw[dashed,thin,ured] (0.5,1.55) -- (6.0,1.55);
+  \node[font=\fontsize{20}{24}\selectfont,ured,anchor=south east] at (6.1,1.55) {avg 12.5\%};
   \node[font=\fontsize{21}{25}\selectfont] at (1.4,0.27) {X};
   \node[font=\fontsize{21}{25}\selectfont] at (3.2,0.27) {Y};
   \node[font=\fontsize{21}{25}\selectfont] at (5.0,0.27) {Portfolio};
@@ -274,6 +277,8 @@
     \node[font=\fontsize{21}{25}\selectfont,ugreen] at (\x,3.75) {$P=\p$};
     \node[font=\fontsize{21}{25}\selectfont] at (\x,2.1) {yr \yr};
     \node[font=\fontsize{21}{25}\selectfont,ugreen] at (\x,1.7) {PV \pv};}
+  \node[font=\fontsize{20}{24}\selectfont,anchor=west] at (2.5,1.3) {(expected PV $=S\,v^k\,P$)};
+  \node[font=\fontsize{20}{24}\selectfont] at (3.7,4.15) {each arrow = $S=$ Rs 2,00,000 if death};
   \node[font=\fontsize{22}{26}\selectfont] at (3.2,0.6) {APV $=571.43+453.51+345.54=$ \textbf{Rs 1,370.48}};
 \end{scope}
 
