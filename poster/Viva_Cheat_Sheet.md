@@ -1,3 +1,10 @@
+# NOTE: the poster is deliberately simple so it is easy to copy by hand.
+# The poster has 5 topics in Unit VI (Risk and CV, Risk Premium, Diversification, Life Insurance, Endowment)
+# plus a closing 'Higher risk => higher expected return' box. Everything below is for your viva (speak it, do not draw it).
+# Extra points to SAY that are NOT on the poster: CAGR = (Vf/Vi)^(1/n) - 1; IRR = rate where NPV = 0 (accept if IRR > k);
+# effective annual rate = (1 + r/n)^n - 1; risk types (strategic, compliance, operational, financial); expected return = sum X P(X);
+# variance = sum d^2 / n; NPV uses 3-decimal discount factors (0.909, 0.826, 0.751), exact NPV is 27,385.
+
 # Viva cheat-sheet (based on your teachers' Unit V and Unit VI slides)
 
 Say each point in one or two sentences, then show the worked example from the poster.
