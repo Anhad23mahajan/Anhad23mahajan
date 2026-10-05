@@ -1,0 +1,252 @@
+\documentclass{article}
+\usepackage[paperwidth=36in,paperheight=24in,margin=0in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{sfmath}
+\DeclareMathSizes{29}{29}{20}{14}
+\DeclareMathSizes{25}{25}{18}{13}
+\DeclareMathSizes{40}{40}{28}{20}
+\DeclareMathSizes{22}{22}{16}{12}
+\DeclareMathSizes{20}{20}{14}{10}
+\DeclareMathSizes{34}{34}{24}{17}
+\DeclareMathSizes{30}{30}{21}{15}
+\DeclareMathSizes{44}{44}{31}{22}
+\DeclareMathSizes{80}{80}{56}{40}
+\hyphenpenalty=10000\exhyphenpenalty=10000\tolerance=2000\emergencystretch=1in
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\definecolor{ublue}{RGB}{31,79,216}
+\definecolor{ured}{RGB}{196,22,28}
+\definecolor{ugreen}{RGB}{13,122,58}
+
+% text sizes (poster scale)
+\newcommand{\bodysize}{\fontsize{29}{38}\selectfont}
+\newcommand{\hdsize}{\fontsize{40}{46}\selectfont\bfseries}
+\newcommand{\lblsize}{\fontsize{25}{30}\selectfont}
+
+% one box: x, y (bottom-left), width, height, colour, content
+\newcommand{\pbox}[6]{%
+  \draw[line width=3.5pt,rounded corners=12pt,#5] (#1,#2) rectangle ++(#3,#4);
+  \pgfmathsetmacro{\ty}{#2+#4-0.2}%
+  \pgfmathsetmacro{\tx}{#1+0.3}%
+  \node[anchor=north west,inner sep=0pt,text width=\dimexpr#3in-0.6in\relax,align=left] at (\tx,\ty) {\bodysize #6};%
+}
+\newcommand{\hd}[2]{{\hdsize\color{#1}#2}\par\vspace{4pt}}
+\newcommand{\fmt}[1]{\par\vspace{6pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering\rule[-28pt]{0pt}{82pt}\bfseries #1}}\par\vspace{6pt}}
+\newcommand{\fm}[1]{\par\vspace{6pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering\rule[-10pt]{0pt}{38pt}\bfseries #1}}\par\vspace{6pt}}
+\newcommand{\rl}[1]{\par\vspace{8pt}{\fontsize{25}{30}\selectfont\itshape\color{black!80}\textbf{Real life:} #1}}
+\newcommand{\eg}[1]{{\color{ugreen}\bfseries #1}}
+
+\begin{document}
+\noindent
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)},x=1in,y=1in,
+  >={Stealth[length=20pt,width=16pt]},every node/.style={font=\bodysize}]
+
+% ---------- outer border and header ----------
+\draw[line width=7pt] (0.3,0.3) rectangle (35.7,23.7);
+\node[font=\fontsize{80}{90}\selectfont\bfseries] at (18,22.6) {RISK \& RETURN IN INVESTING};
+\node[font=\fontsize{34}{40}\selectfont] at (18,21.5) {Financial Mathematics \quad\textbullet\quad CA-III \quad\textbullet\quad Unit V and Unit VI};
+\node[font=\fontsize{30}{36}\selectfont,anchor=west] at (0.8,20.8) {Name: \underline{\hspace{4in}}};
+\node[font=\fontsize{30}{36}\selectfont] at (18,20.8) {PRN / Roll No: \underline{\hspace{2.6in}}};
+\node[font=\fontsize{30}{36}\selectfont,anchor=east] at (35.2,20.8) {Division: \underline{\hspace{1.4in}}};
+\draw[line width=4pt] (0.8,20.3) -- (35.2,20.3);
+
+% ---------- unit banners ----------
+\fill[ublue,rounded corners=10pt] (0.7,19.0) rectangle (17.7,20.0);
+\node[white,font=\fontsize{44}{50}\selectfont\bfseries] at (9.2,19.5) {UNIT V: BASICS OF INVESTMENT};
+\fill[ured,rounded corners=10pt] (18.3,19.0) rectangle (35.3,20.0);
+\node[white,font=\fontsize{44}{50}\selectfont\bfseries] at (26.8,19.5) {UNIT VI: RISK AND UNCERTAINTY};
+
+% ================= UNIT V (2 x 2) =================
+% V1 Investment return   (x=0.7, y=10.5, w=8.35, h=8.2)
+\pbox{0.7}{10.5}{8.35}{8.2}{ublue}{%
+ \hd{ublue}{1. Investment Return}
+ Gain as a \% of the money invested.
+ \fmt{Return $=\dfrac{\text{Gain}}{\text{Invested}}\times 100$}
+ \eg{Eg: shares Rs 10,000 $\to$ Rs 11,000\\ Return $=1{,}000\div10{,}000=10\%$}}
+\begin{scope}[shift={(0.7,10.5)},line width=3.5pt]
+  \draw (1,1.2) -- (7.3,1.2);
+  \draw[ublue] (1.8,1.2) rectangle (3.2,2.3);
+  \draw[ugreen] (4.6,1.2) rectangle (6.0,2.7);
+  \node[font=\lblsize] at (2.5,2.65) {10,000};
+  \node[font=\lblsize] at (5.3,3.05) {11,000};
+  \node[font=\lblsize] at (2.5,0.8) {Invest};
+  \node[font=\lblsize] at (5.3,0.8) {Get back};
+  \node[font=\lblsize,ured] at (4.0,2.1) {$+10\%$};
+  \node[font=\fontsize{20}{24}\selectfont] at (4.2,0.3) {(heights not to scale)};
+\end{scope}
+
+% V2 Compounding frequency   (x=9.35)
+\pbox{9.35}{10.5}{8.35}{8.2}{ublue}{%
+ \hd{ublue}{2. Compounding Frequency}
+ More frequent interest = a little more money.
+ \fmt{$A=P\left(1+\dfrac{r}{m}\right)^{mt}$\\[2pt] {\fontsize{29}{34}\selectfont Continuous: $A=Pe^{rt}$}}
+ \eg{Eg: bank FD, Rs 10,000 at 12\% for 1 year}}
+\begin{scope}[shift={(9.35,10.5)},line width=3.5pt]
+  \draw (0.6,1.2) -- (7.8,1.2);
+  \draw[ublue] (1.0,1.2) rectangle (2.3,2.2);
+  \draw[ublue] (3.5,1.2) rectangle (4.8,2.6);
+  \draw[ublue] (6.0,1.2) rectangle (7.3,3.0);
+  \node[font=\lblsize] at (1.65,2.5) {11,200};
+  \node[font=\lblsize] at (4.15,2.9) {11,268};
+  \node[font=\lblsize] at (6.65,3.3) {11,275};
+  \node[font=\lblsize] at (1.65,0.8) {Yearly};
+  \node[font=\lblsize] at (4.15,0.8) {Monthly};
+  \node[font=\lblsize] at (6.65,0.8) {Continuous};
+  \node[font=\fontsize{20}{24}\selectfont] at (4.2,0.3) {(heights not to scale)};
+\end{scope}
+
+% V3 Uneven cash flows   (x=0.7, y=2.0)
+\pbox{0.7}{2.0}{8.35}{8.2}{ublue}{%
+ \hd{ublue}{3. Uneven Cash Flows}
+ Unequal receipts: discount each to today.
+ \fmt{$PV=\Sigma\,\dfrac{CF_t}{(1+i)^t}$}
+ \eg{Eg: rent Rs 1,000 then Rs 2,000, $i=10\%$\\ $PV=909+1{,}653=\text{Rs }2{,}562$}}
+\begin{scope}[shift={(0.7,2.0)},line width=3.5pt]
+  \draw (0.8,1.2) -- (7.8,1.2);
+  \draw[->,ugreen,line width=5pt] (2.5,1.2) -- (2.5,1.7);
+  \draw[->,ugreen,line width=5pt] (5.0,1.2) -- (5.0,2.2);
+  \node[font=\lblsize,ugreen] at (2.5,1.95) {1,000};
+  \node[font=\lblsize,ugreen] at (5.0,2.55) {2,000};
+  \node[font=\lblsize] at (0.9,0.8) {0};
+  \node[font=\lblsize] at (2.5,0.8) {1};
+  \node[font=\lblsize] at (5.0,0.8) {2};
+  \node[font=\lblsize] at (7.1,0.8) {years};
+\end{scope}
+
+% V4 Economic equivalence   (x=9.35, y=2.0)
+\pbox{9.35}{2.0}{8.35}{8.2}{ublue}{%
+ \hd{ublue}{4. Economic Equivalence}
+ Equal value at a given interest rate.
+ \fmt{$F=P(1+i)^n$ \quad $P=\dfrac{F}{(1+i)^n}$}
+ \eg{Eg: at 10\%, Rs 100 now $=$ Rs 110 in 1 yr}}
+\begin{scope}[shift={(9.35,2.0)},line width=3.5pt]
+  \draw (0.8,1.2) -- (7.8,1.2);
+  \draw[->,ugreen,line width=5pt] (1.8,1.2) -- (1.8,2.6);
+  \draw[->,ugreen,line width=5pt] (6.4,1.2) -- (6.4,2.9);
+  \node[font=\lblsize,ugreen] at (1.8,3.0) {Rs 100};
+  \node[font=\lblsize,ugreen] at (6.4,3.3) {Rs 110};
+  \node[font=\lblsize] at (1.8,0.8) {Today};
+  \node[font=\lblsize] at (6.4,0.8) {After 1 year};
+  \draw[->,ublue] (2.5,2.0) -- (5.7,2.0);
+  \node[font=\lblsize,ublue] at (4.1,2.4) {$\times\,1.10$};
+  \node[font=\fontsize{20}{24}\selectfont] at (4.3,0.3) {(heights not to scale)};
+\end{scope}
+
+% ================= UNIT VI (2 x 3) =================
+% VI1 Decision under risk   (x=18.3, y=13.33, w=8.35, h=5.37)
+\pbox{18.3}{13.33}{8.35}{5.37}{ured}{%
+ \hd{ured}{1. Decision under Risk}
+ Chances known: pick best average (EMV).
+ \fm{EMV $=\Sigma$ (chance $\times$ payoff)}
+ \eg{Eg: $0.5\times100+0.5\times40=$ Rs 70}}
+\begin{scope}[shift={(18.3,13.33)},line width=3.5pt]
+  \draw (0.8,0.5) rectangle ++(0.4,0.4);
+  \draw (1.2,0.7) -- (3.0,1.15);
+  \draw (1.2,0.7) -- (3.0,0.25);
+  \node[font=\lblsize,anchor=west] at (3.1,1.15) {0.5 $\to$ Rs 100};
+  \node[font=\lblsize,anchor=west] at (3.1,0.25) {0.5 $\to$ Rs 40};
+\end{scope}
+
+% VI2 Decision under uncertainty   (x=26.95)
+\pbox{26.95}{13.33}{8.35}{5.37}{ured}{%
+ \hd{ured}{2. Decision under Uncertainty}
+ Chances unknown. Use a rule:\\
+ $\bullet$ \textbf{Maximax}: best of the best \eg{$\to$ Stock}\\
+ $\bullet$ \textbf{Maximin}: best of the worst \eg{$\to$ Bond}\\
+ $\bullet$ \textbf{Min-max regret}: least regret \eg{$\to$ Bond}\\[6pt]
+ \renewcommand{\arraystretch}{1.1}%
+ \hspace{0.3in}\begin{tabular}{|l|c|c|}\hline
+ Payoff & Boom & Slump\\\hline
+ Stock & 80 & $-20$\\\hline
+ Bond & 40 & 25\\\hline
+ \end{tabular}}
+
+% VI3 Risk premium   (x=18.3, y=7.66)
+\pbox{18.3}{7.66}{8.35}{5.37}{ured}{%
+ \hd{ured}{3. Risk Premium}
+ Extra return for taking risk.
+ \fm{Premium $=$ Expected -- Risk-free rate}
+ \eg{Eg: share 12\% -- FD 6\% $=$ 6\%}}
+\begin{scope}[shift={(18.3,7.66)},line width=3.5pt]
+  \draw[->] (0.8,0.45) -- (0.8,1.95);
+  \draw[->] (0.8,0.45) -- (5.2,0.45);
+  \draw[ublue] (0.8,0.95) -- (4.0,1.5);
+  \draw[dashed,thin] (0.8,0.95) -- (4.0,0.95);
+  \draw[<->,thin] (4.0,0.95) -- (4.0,1.5);
+  \fill[ugreen] (0.8,0.95) circle (5pt);
+  \fill[ured] (4.0,1.5) circle (5pt);
+  \node[font=\lblsize,anchor=west] at (1.0,0.7) {Risk-free 6\%};
+  \node[font=\lblsize,anchor=west] at (4.2,1.75) {Stock 12\%};
+  \node[font=\lblsize,anchor=west] at (4.2,1.2) {premium 6\%};
+  \node[font=\lblsize,anchor=west] at (5.3,0.45) {Risk};
+  \node[font=\lblsize,rotate=90] at (0.45,1.2) {Return};
+\end{scope}
+
+% VI4 Diversification   (x=26.95, y=7.66)
+\pbox{26.95}{7.66}{8.35}{5.37}{ured}{%
+ \hd{ured}{4. Portfolio Diversification}
+ Spread assets: lower risk, not market risk.}
+\begin{scope}[shift={(26.95,7.66)},line width=3.5pt]
+  \draw[->] (0.8,0.65) -- (0.8,2.6);
+  \draw[->] (0.8,0.65) -- (7.4,0.65);
+  \draw[ured,line width=5pt] (0.95,2.35) .. controls (1.5,1.4) and (3.0,1.15) .. (7.0,1.1);
+  \draw[dashed,thin] (0.8,0.95) -- (7.4,0.95);
+  \node[font=\lblsize,anchor=east] at (7.4,1.45) {Market risk stays};
+  \node[font=\lblsize,anchor=west] at (3.3,1.9) {Risk falls};
+  \node[font=\lblsize] at (4.2,0.28) {Number of assets $\to$};
+\end{scope}
+
+% VI5 Life insurance   (x=18.3, y=1.99)
+\pbox{18.3}{1.99}{8.35}{5.37}{ured}{%
+ \hd{ured}{5. Life Insurance}
+ Insurer pays if you die within the term.
+ \fm{Premium $\approx$ Sum assured $\times$ P(death)}
+ \eg{Eg (1 yr): Rs 1,00,000 $\times$ 0.01 = Rs 1,000}}
+\begin{scope}[shift={(18.3,1.99)},line width=3.5pt]
+  \draw[rounded corners=6pt] (0.5,0.3) rectangle (1.9,1.0);
+  \draw[rounded corners=6pt] (3.4,0.3) rectangle (5.1,1.0);
+  \draw[rounded corners=6pt] (6.4,0.3) rectangle (7.9,1.0);
+  \node[font=\lblsize] at (1.2,0.65) {You};
+  \node[font=\lblsize] at (4.25,0.65) {Insurer};
+  \node[font=\lblsize] at (7.15,0.65) {Family};
+  \draw[->] (1.9,0.65) -- (3.4,0.65);
+  \draw[->] (5.1,0.65) -- (6.4,0.65);
+  \node[font=\fontsize{22}{26}\selectfont] at (2.65,1.3) {premium};
+  \node[font=\fontsize{22}{26}\selectfont] at (5.75,1.3) {claim};
+\end{scope}
+
+% VI6 Endowment   (x=26.95, y=1.99)
+\pbox{26.95}{1.99}{8.35}{5.37}{ured}{%
+ \hd{ured}{6. Endowment}
+ Pays on death in term OR survival to end.
+ \fm{Endowment $=$ Term $+$ Pure endowment}
+Pure endowment = paid on survival.}
+\begin{scope}[shift={(26.95,1.99)},line width=3.5pt]
+  \draw[->] (0.6,0.7) -- (7.8,0.7);
+  \draw (0.9,0.55) -- (0.9,0.85);
+  \draw (7.2,0.55) -- (7.2,0.85);
+  \node[font=\lblsize] at (0.9,0.3) {Start};
+  \node[font=\lblsize] at (7.2,0.3) {Maturity};
+  \node[font=\lblsize,ured] at (3.1,1.15) {dies: pays};
+  \node[font=\lblsize,ugreen] at (6.5,1.15) {alive: pays};
+\end{scope}
+
+% ---------- footer ----------
+\draw[line width=3.5pt,rounded corners=10pt] (0.7,0.55) rectangle (35.3,1.55);
+\node[font=\fontsize{44}{50}\selectfont\bfseries] at (18,1.05) {Investors demand a higher expected return for taking higher risk};
+
+% optional 3-inch copy grid
+\ifdefined\showgrid
+  \draw[black!45,line width=2pt] (0,0) grid[step=3] (36,24);
+\fi
+
+\end{tikzpicture}
+\end{document}

@@ -5,12 +5,14 @@
 \usepackage[scaled]{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath}
+\usepackage{sfmath}
 \usepackage{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc}
-\usepackage{sfmath}
-\DeclareMathSizes{29}{29}{20}{14}
+\DeclareMathSizes{28}{28}{20}{14}
 \DeclareMathSizes{25}{25}{18}{13}
+\DeclareMathSizes{24}{24}{17}{12}
+\DeclareMathSizes{23}{23}{16}{12}
 \DeclareMathSizes{40}{40}{28}{20}
 \DeclareMathSizes{22}{22}{16}{12}
 \DeclareMathSizes{20}{20}{14}{10}
@@ -26,22 +28,22 @@
 \definecolor{ured}{RGB}{196,22,28}
 \definecolor{ugreen}{RGB}{13,122,58}
 
-% text sizes (poster scale)
-\newcommand{\bodysize}{\fontsize{29}{38}\selectfont}
+\newcommand{\bodysize}{\fontsize{28}{36}\selectfont}
 \newcommand{\hdsize}{\fontsize{40}{46}\selectfont\bfseries}
 \newcommand{\lblsize}{\fontsize{25}{30}\selectfont}
+\newcommand{\smallsize}{\fontsize{24}{29}\selectfont}
 
-% one box: x, y (bottom-left), width, height, colour, content
+% box: x, y (bottom-left), width, height, colour, content
 \newcommand{\pbox}[6]{%
   \draw[line width=3.5pt,rounded corners=12pt,#5] (#1,#2) rectangle ++(#3,#4);
   \pgfmathsetmacro{\ty}{#2+#4-0.2}%
   \pgfmathsetmacro{\tx}{#1+0.3}%
   \node[anchor=north west,inner sep=0pt,text width=\dimexpr#3in-0.6in\relax,align=left] at (\tx,\ty) {\bodysize #6};%
 }
+% free text node: x, y (top-left), width, content
+\newcommand{\tn}[4]{\node[anchor=north west,inner sep=0pt,text width=#3in,align=left] at (#1,#2) {\bodysize #4};}
 \newcommand{\hd}[2]{{\hdsize\color{#1}#2}\par\vspace{4pt}}
-\newcommand{\fmt}[1]{\par\vspace{6pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering\rule[-28pt]{0pt}{82pt}\bfseries #1}}\par\vspace{6pt}}
-\newcommand{\fm}[1]{\par\vspace{6pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering\rule[-10pt]{0pt}{38pt}\bfseries #1}}\par\vspace{6pt}}
-\newcommand{\rl}[1]{\par\vspace{8pt}{\fontsize{25}{30}\selectfont\itshape\color{black!80}\textbf{Real life:} #1}}
+\newcommand{\frm}[2]{\par\vspace{6pt}{\setlength{\fboxsep}{10pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering#1\rule[-8pt]{0pt}{#2}}}}\par\vspace{6pt}}
 \newcommand{\eg}[1]{{\color{ugreen}\bfseries #1}}
 
 \begin{document}
@@ -65,183 +67,201 @@
 \node[white,font=\fontsize{44}{50}\selectfont\bfseries] at (26.8,19.5) {UNIT VI: RISK AND UNCERTAINTY};
 
 % ================= UNIT V (2 x 2) =================
-% V1 Investment return   (x=0.7, y=10.5, w=8.35, h=8.2)
-\pbox{0.7}{10.5}{8.35}{8.2}{ublue}{%
+% V1 Investment return   (x=0.7, y=10.45, w=8.35, h=8.25)
+\pbox{0.7}{10.45}{8.35}{8.25}{ublue}{%
  \hd{ublue}{1. Investment Return}
- Gain as a \% of the money invested.
- \fmt{Return $=\dfrac{\text{Gain}}{\text{Invested}}\times 100$}
- \eg{Eg: shares Rs 10,000 $\to$ Rs 11,000\\ Return $=1{,}000\div10{,}000=10\%$}}
-\begin{scope}[shift={(0.7,10.5)},line width=3.5pt]
-  \draw (1,1.2) -- (7.3,1.2);
-  \draw[ublue] (1.8,1.2) rectangle (3.2,2.3);
-  \draw[ugreen] (4.6,1.2) rectangle (6.0,2.7);
-  \node[font=\lblsize] at (2.5,2.65) {10,000};
-  \node[font=\lblsize] at (5.3,3.05) {11,000};
-  \node[font=\lblsize] at (2.5,0.8) {Invest};
-  \node[font=\lblsize] at (5.3,0.8) {Get back};
-  \node[font=\lblsize,ured] at (4.0,2.1) {$+10\%$};
-  \node[font=\fontsize{20}{24}\selectfont] at (4.2,0.3) {(heights not to scale)};
+ Gain or loss as a \% of the money invested.
+ \frm{\smallsize
+  Absolute return $=(V_f-V_i)/V_i\times100$\\[3pt]
+  HPR $=[\text{Income}+(V_f-V_i)]/V_i\times100$\\[3pt]
+  CAGR $=(V_f/V_i)^{1/n}-1$}{30pt}
+ \eg{Eg: Rs 150 $\to$ Rs 180, dividend Rs 10\\ HPR $=(10+30)\div150=26.67\%$}}
+\begin{scope}[shift={(0.7,10.45)},line width=3.5pt]
+  \draw (1.0,0.9) -- (7.4,0.9);
+  \draw[ublue] (1.8,0.9) rectangle (3.3,2.4);
+  \draw[ugreen] (4.5,0.9) rectangle (6.0,2.7);
+  \draw[ured,dashed] (4.5,2.7) rectangle (6.0,2.8);
+  \node[font=\lblsize] at (2.55,2.7) {150};
+  \node[font=\lblsize] at (5.25,3.15) {180};
+  \node[font=\lblsize,ured,anchor=west] at (6.1,2.75) {+10};
+  \node[font=\lblsize] at (2.55,0.5) {Buy};
+  \node[font=\lblsize] at (5.25,0.5) {Sell};
 \end{scope}
 
-% V2 Compounding frequency   (x=9.35)
-\pbox{9.35}{10.5}{8.35}{8.2}{ublue}{%
- \hd{ublue}{2. Compounding Frequency}
+% V2 Uneven cash flows   (x=9.35)
+\pbox{9.35}{10.45}{8.35}{8.25}{ublue}{%
+ \hd{ublue}{2. Uneven Cash Flows}
+ Unequal cash flows: discount each to today.
+ \frm{NPV $=\Sigma\,\dfrac{C_t}{(1+k)^t}-I$}{50pt}
+ NPV $>0$: accept; NPV $<0$: reject.\\
+ IRR = rate at which NPV $=0$.\\[2pt]
+ \eg{Eg: $I=$ Rs 1,00,000, $k=10\%$\\ NPV $\approx$ Rs 27,340 $>0$, so accept}}
+\begin{scope}[shift={(9.35,10.45)},line width=3.5pt]
+  \draw (0.8,2.1) -- (7.9,2.1);
+  \draw[->,ured,line width=5pt] (1.4,2.1) -- (1.4,1.1);
+  \draw[->,ugreen,line width=5pt] (3.0,2.1) -- (3.0,2.65);
+  \draw[->,ugreen,line width=5pt] (4.6,2.1) -- (4.6,2.9);
+  \draw[->,ugreen,line width=5pt] (6.2,2.1) -- (6.2,2.25);
+  \node[font=\lblsize,ured] at (1.4,0.75) {1,00,000};
+  \node[font=\lblsize,ugreen] at (3.0,3.0) {55,000};
+  \node[font=\lblsize,ugreen] at (4.6,3.25) {80,000};
+  \node[font=\lblsize,ugreen] at (6.2,2.6) {15,000};
+  \node[font=\lblsize] at (0.95,1.75) {0};
+  \node[font=\lblsize] at (3.0,1.75) {1};
+  \node[font=\lblsize] at (4.6,1.75) {2};
+  \node[font=\lblsize] at (6.2,1.75) {3};
+  \node[font=\lblsize] at (7.4,1.75) {years};
+\end{scope}
+
+% V3 Compounding frequency   (x=0.7, y=1.9)
+\pbox{0.7}{1.9}{8.35}{8.25}{ublue}{%
+ \hd{ublue}{3. Compounding Frequency}
  More frequent interest = a little more money.
- \fmt{$A=P\left(1+\dfrac{r}{m}\right)^{mt}$\\[2pt] {\fontsize{29}{34}\selectfont Continuous: $A=Pe^{rt}$}}
- \eg{Eg: bank FD, Rs 10,000 at 12\% for 1 year}}
-\begin{scope}[shift={(9.35,10.5)},line width=3.5pt]
-  \draw (0.6,1.2) -- (7.8,1.2);
-  \draw[ublue] (1.0,1.2) rectangle (2.3,2.2);
-  \draw[ublue] (3.5,1.2) rectangle (4.8,2.6);
-  \draw[ublue] (6.0,1.2) rectangle (7.3,3.0);
-  \node[font=\lblsize] at (1.65,2.5) {11,200};
-  \node[font=\lblsize] at (4.15,2.9) {11,268};
-  \node[font=\lblsize] at (6.65,3.3) {11,275};
-  \node[font=\lblsize] at (1.65,0.8) {Yearly};
-  \node[font=\lblsize] at (4.15,0.8) {Monthly};
-  \node[font=\lblsize] at (6.65,0.8) {Continuous};
-  \node[font=\fontsize{20}{24}\selectfont] at (4.2,0.3) {(heights not to scale)};
+ \frm{\smallsize
+  $A=P\left(1+\dfrac{r}{n}\right)^{nt}$ \qquad Continuous: $A=Pe^{rt}$\\[8pt]
+  Effective annual rate $=\left(1+\dfrac{r}{n}\right)^{n}-1$}{30pt}
+ \eg{Eg: Rs 5,00,000 at 8\% for 1 year}}
+\begin{scope}[shift={(0.7,1.9)},line width=3.5pt]
+  \node[anchor=south west,font=\lblsize] at (0.45,0.35) {%
+   \renewcommand{\arraystretch}{1.3}%
+   \begin{tabular}{|l|r|r|}\hline
+   Compounding & Amount (Rs) & EAR\\\hline
+   Yearly & 5,40,000 & 8.00\%\\\hline
+   Quarterly & 5,41,216 & 8.24\%\\\hline
+   Monthly & 5,41,500 & 8.30\%\\\hline
+   Daily & 5,41,639 & 8.33\%\\\hline
+   Continuous & 5,41,644 & 8.33\%\\\hline
+   \end{tabular}};
 \end{scope}
 
-% V3 Uneven cash flows   (x=0.7, y=2.0)
-\pbox{0.7}{2.0}{8.35}{8.2}{ublue}{%
- \hd{ublue}{3. Uneven Cash Flows}
- Unequal receipts: discount each to today.
- \fmt{$PV=\Sigma\,\dfrac{CF_t}{(1+i)^t}$}
- \eg{Eg: rent Rs 1,000 then Rs 2,000, $i=10\%$\\ $PV=909+1{,}653=\text{Rs }2{,}562$}}
-\begin{scope}[shift={(0.7,2.0)},line width=3.5pt]
-  \draw (0.8,1.2) -- (7.8,1.2);
-  \draw[->,ugreen,line width=5pt] (2.5,1.2) -- (2.5,1.7);
-  \draw[->,ugreen,line width=5pt] (5.0,1.2) -- (5.0,2.2);
-  \node[font=\lblsize,ugreen] at (2.5,1.95) {1,000};
-  \node[font=\lblsize,ugreen] at (5.0,2.55) {2,000};
-  \node[font=\lblsize] at (0.9,0.8) {0};
-  \node[font=\lblsize] at (2.5,0.8) {1};
-  \node[font=\lblsize] at (5.0,0.8) {2};
-  \node[font=\lblsize] at (7.1,0.8) {years};
-\end{scope}
-
-% V4 Economic equivalence   (x=9.35, y=2.0)
-\pbox{9.35}{2.0}{8.35}{8.2}{ublue}{%
+% V4 Economic equivalence   (x=9.35, y=1.9)
+\pbox{9.35}{1.9}{8.35}{8.25}{ublue}{%
  \hd{ublue}{4. Economic Equivalence}
- Equal value at a given interest rate.
- \fmt{$F=P(1+i)^n$ \quad $P=\dfrac{F}{(1+i)^n}$}
- \eg{Eg: at 10\%, Rs 100 now $=$ Rs 110 in 1 yr}}
-\begin{scope}[shift={(9.35,2.0)},line width=3.5pt]
-  \draw (0.8,1.2) -- (7.8,1.2);
-  \draw[->,ugreen,line width=5pt] (1.8,1.2) -- (1.8,2.6);
-  \draw[->,ugreen,line width=5pt] (6.4,1.2) -- (6.4,2.9);
-  \node[font=\lblsize,ugreen] at (1.8,3.0) {Rs 100};
-  \node[font=\lblsize,ugreen] at (6.4,3.3) {Rs 110};
-  \node[font=\lblsize] at (1.8,0.8) {Today};
-  \node[font=\lblsize] at (6.4,0.8) {After 1 year};
-  \draw[->,ublue] (2.5,2.0) -- (5.7,2.0);
-  \node[font=\lblsize,ublue] at (4.1,2.4) {$\times\,1.10$};
-  \node[font=\fontsize{20}{24}\selectfont] at (4.3,0.3) {(heights not to scale)};
+ Same value at a common point in time.
+ \frm{\smallsize
+  $FV=PV(1+i)^n$\\[8pt]
+  $PV=\dfrac{FV}{(1+i)^n}$}{40pt}
+ \eg{Eg: at 10\%, Rs 1,000 today $\equiv$ Rs 1,331 after 3 years}\\[3pt]
+ {\smallsize Use: compare loans, lease vs purchase.}}
+\begin{scope}[shift={(9.35,1.9)},line width=3.5pt]
+  \draw (0.8,1.7) -- (7.9,1.7);
+  \draw[->,ugreen,line width=5pt] (1.5,1.7) -- (1.5,2.7);
+  \draw[->,ugreen,line width=5pt] (6.2,1.7) -- (6.2,3.03);
+  \node[font=\lblsize,ugreen] at (1.5,3.1) {Rs 1,000};
+  \node[font=\lblsize,ugreen] at (6.2,3.45) {Rs 1,331};
+  \node[font=\lblsize] at (1.5,1.35) {0};
+  \node[font=\lblsize] at (3.07,1.35) {1};
+  \node[font=\lblsize] at (4.63,1.35) {2};
+  \node[font=\lblsize] at (6.2,1.35) {3};
+  \node[font=\lblsize] at (7.4,1.35) {years};
+  \foreach \a/\b in {1.7/2.9,3.25/4.45,4.8/6.0}{\draw[->,ublue] (\a,0.85) -- (\b,0.85);}
+  \node[font=\lblsize,ublue] at (2.3,0.5) {$\times1.1$};
+  \node[font=\lblsize,ublue] at (3.85,0.5) {$\times1.1$};
+  \node[font=\lblsize,ublue] at (5.4,0.5) {$\times1.1$};
 \end{scope}
 
-% ================= UNIT VI (2 x 3) =================
-% VI1 Decision under risk   (x=18.3, y=13.33, w=8.35, h=5.37)
-\pbox{18.3}{13.33}{8.35}{5.37}{ured}{%
- \hd{ured}{1. Decision under Risk}
- Chances known: pick best average (EMV).
- \fm{EMV $=\Sigma$ (chance $\times$ payoff)}
- \eg{Eg: $0.5\times100+0.5\times40=$ Rs 70}}
-\begin{scope}[shift={(18.3,13.33)},line width=3.5pt]
-  \draw (0.8,0.5) rectangle ++(0.4,0.4);
-  \draw (1.2,0.7) -- (3.0,1.15);
-  \draw (1.2,0.7) -- (3.0,0.25);
-  \node[font=\lblsize,anchor=west] at (3.1,1.15) {0.5 $\to$ Rs 100};
-  \node[font=\lblsize,anchor=west] at (3.1,0.25) {0.5 $\to$ Rs 40};
+% ================= UNIT VI =================
+% VI1 wide box: risk and uncertainty   (x=18.3, y=13.3, w=17.0, h=5.4)
+\draw[line width=3.5pt,rounded corners=12pt,ured] (18.3,13.3) rectangle ++(17.0,5.4);
+\tn{18.6}{18.5}{16.4}{\hd{ured}{1. Decision under Risk and Uncertainty}}
+\tn{18.6}{17.75}{7.9}{Risk = chance of an undesirable event that causes a financial loss.\\
+  Risk management = identify, assess and control risk.}
+\node[anchor=north west,font=\smallsize] at (18.6,15.6) {Types of risk:};
+\foreach \x/\y/\t in {18.6/14.3/Strategic,22.5/14.3/Compliance,18.6/13.5/Operational,22.5/13.5/Financial}{
+  \draw[line width=3pt,rounded corners=6pt] (\x,\y) rectangle ++(3.6,0.7);
+  \node[font=\smallsize] at (\x+1.8,\y+0.35) {\t};}
+\draw[line width=3pt,dashed] (26.75,13.55) -- (26.75,17.9);
+\tn{27.0}{17.75}{8.0}{%
+ \frm{\smallsize
+  Expected return $\bar{X}=\Sigma\,X_i\,P(X_i)$\\[2pt]
+  Variance $\sigma^2=\Sigma d^2/n$ \ (or $\Sigma d^2P$)\\[2pt]
+  SD $\sigma=\sqrt{\sigma^2}$, \ $d=X_i-\bar{X}$\\[2pt]
+  CV $=\dfrac{\sigma}{\bar{X}}\times100$}{40pt}
+ \eg{Eg: returns 12, 18, 20, 15, 25 (\%)\\ mean 18\%, $\sigma=4.43\%$, CV $=24.6\%$}\\[2pt]
+ {\smallsize Higher $\sigma$ or CV = riskier.}}
+
+% VI2 Risk premium   (x=18.3, y=7.6, w=8.35, h=5.4)
+\pbox{18.3}{7.6}{8.35}{5.4}{ured}{%
+ \hd{ured}{2. Risk Premium}
+ Extra return for taking risk (vs risk-free).
+ \frm{\smallsize
+  Risk premium $=E(R)-R_f$\\[8pt]
+  Sharpe ratio $=\dfrac{R_p-R_f}{\sigma_p}$}{40pt}
+ \eg{Eg: $E(R)=12\%$, $R_f=4\%$, $\sigma=10\%$\\ Premium $=8\%$, Sharpe $=0.8$}}
+\begin{scope}[shift={(18.3,7.6)},line width=3.5pt]
+  \draw[->] (0.9,0.3) -- (0.9,1.35);
+  \draw[->] (0.9,0.3) -- (5.6,0.3);
+  \draw[ublue] (0.9,0.65) -- (4.0,1.2);
+  \fill[ugreen] (0.9,0.65) circle (5pt);
+  \fill[ured] (4.0,1.2) circle (5pt);
+  \draw[dashed,thin] (0.9,0.65) -- (4.0,0.65);
+  \draw[<->,thin] (4.0,0.65) -- (4.0,1.2);
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (1.0,1.12) {$R_f$ 4\%};
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (4.2,1.3) {Stock 12\%};
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (4.2,0.92) {premium 8\%};
+  \node[font=\fontsize{22}{26}\selectfont,anchor=west] at (5.75,0.3) {Risk};
+  \node[font=\fontsize{22}{26}\selectfont,rotate=90] at (0.55,0.85) {Return};
 \end{scope}
 
-% VI2 Decision under uncertainty   (x=26.95)
-\pbox{26.95}{13.33}{8.35}{5.37}{ured}{%
- \hd{ured}{2. Decision under Uncertainty}
- Chances unknown. Use a rule:\\
- $\bullet$ \textbf{Maximax}: best of the best \eg{$\to$ Stock}\\
- $\bullet$ \textbf{Maximin}: best of the worst \eg{$\to$ Bond}\\
- $\bullet$ \textbf{Min-max regret}: least regret \eg{$\to$ Bond}\\[6pt]
- \renewcommand{\arraystretch}{1.1}%
- \hspace{0.3in}\begin{tabular}{|l|c|c|}\hline
- Payoff & Boom & Slump\\\hline
- Stock & 80 & $-20$\\\hline
- Bond & 40 & 25\\\hline
- \end{tabular}}
-
-% VI3 Risk premium   (x=18.3, y=7.66)
-\pbox{18.3}{7.66}{8.35}{5.37}{ured}{%
- \hd{ured}{3. Risk Premium}
- Extra return for taking risk.
- \fm{Premium $=$ Expected -- Risk-free rate}
- \eg{Eg: share 12\% -- FD 6\% $=$ 6\%}}
-\begin{scope}[shift={(18.3,7.66)},line width=3.5pt]
-  \draw[->] (0.8,0.45) -- (0.8,1.95);
-  \draw[->] (0.8,0.45) -- (5.2,0.45);
-  \draw[ublue] (0.8,0.95) -- (4.0,1.5);
-  \draw[dashed,thin] (0.8,0.95) -- (4.0,0.95);
-  \draw[<->,thin] (4.0,0.95) -- (4.0,1.5);
-  \fill[ugreen] (0.8,0.95) circle (5pt);
-  \fill[ured] (4.0,1.5) circle (5pt);
-  \node[font=\lblsize,anchor=west] at (1.0,0.7) {Risk-free 6\%};
-  \node[font=\lblsize,anchor=west] at (4.2,1.75) {Stock 12\%};
-  \node[font=\lblsize,anchor=west] at (4.2,1.2) {premium 6\%};
-  \node[font=\lblsize,anchor=west] at (5.3,0.45) {Risk};
-  \node[font=\lblsize,rotate=90] at (0.45,1.2) {Return};
+% VI3 Portfolio diversification   (x=26.95)
+\pbox{26.95}{7.6}{8.35}{5.4}{ured}{%
+ \hd{ured}{3. Portfolio Diversification}
+ Spread over assets with $\rho<1$ to lower risk.
+ \frm{\fontsize{23}{28}\selectfont
+  $\sigma_p^2=w_1^2\sigma_1^2+w_2^2\sigma_2^2+2w_1w_2\sigma_1\sigma_2\rho_{12}$}{22pt}
+ \eg{Eg: $w=0.5,0.5$; $\sigma=10\%,15\%$; $\rho=0.25$\\ $\sigma_p^2=0.01$, so $\sigma_p=10\%$}}
+\begin{scope}[shift={(26.95,7.6)},line width=3.5pt]
+  \draw (0.8,0.65) -- (7.4,0.65);
+  \draw[ublue] (1.3,0.65) rectangle (2.5,1.38);
+  \draw[ublue] (3.4,0.65) rectangle (4.6,1.75);
+  \draw[ugreen] (5.5,0.65) rectangle (6.7,1.38);
+  \node[font=\lblsize] at (1.9,1.65) {10\%};
+  \node[font=\lblsize] at (4.0,2.02) {15\%};
+  \node[font=\lblsize] at (6.1,1.65) {10\%};
+  \node[font=\lblsize] at (1.9,0.3) {X};
+  \node[font=\lblsize] at (4.0,0.3) {Y};
+  \node[font=\lblsize] at (6.1,0.3) {Portfolio};
 \end{scope}
 
-% VI4 Diversification   (x=26.95, y=7.66)
-\pbox{26.95}{7.66}{8.35}{5.37}{ured}{%
- \hd{ured}{4. Portfolio Diversification}
- Spread assets: lower risk, not market risk.}
-\begin{scope}[shift={(26.95,7.66)},line width=3.5pt]
-  \draw[->] (0.8,0.65) -- (0.8,2.6);
-  \draw[->] (0.8,0.65) -- (7.4,0.65);
-  \draw[ured,line width=5pt] (0.95,2.35) .. controls (1.5,1.4) and (3.0,1.15) .. (7.0,1.1);
-  \draw[dashed,thin] (0.8,0.95) -- (7.4,0.95);
-  \node[font=\lblsize,anchor=east] at (7.4,1.45) {Market risk stays};
-  \node[font=\lblsize,anchor=west] at (3.3,1.9) {Risk falls};
-  \node[font=\lblsize] at (4.2,0.28) {Number of assets $\to$};
+% VI4 Life insurance   (x=18.3, y=1.85, h=5.45)
+\pbox{18.3}{1.85}{8.35}{5.45}{ured}{%
+ \hd{ured}{4. Life Insurance}
+ You pay a premium. The insurer pays the sum assured $S$ if you die within the term.
+ \frm{\smallsize APV $=S\,\Sigma\,v^k\,P(T=k)$, \ $v=\dfrac{1}{1+i}$}{44pt}
+ \eg{Eg: 3-yr term, $S=$ Rs 2,00,000, $i=5\%$\\ $P(T=1,2,3)=0.003,\,0.0025,\,0.002$\\ APV $=$ Rs 1,370.48}}
+\begin{scope}[shift={(18.3,1.85)},line width=3.5pt]
+  \draw[rounded corners=6pt] (0.5,0.15) rectangle (1.9,0.75);
+  \draw[rounded corners=6pt] (3.3,0.15) rectangle (5.0,0.75);
+  \draw[rounded corners=6pt] (6.4,0.15) rectangle (8.0,0.75);
+  \node[font=\lblsize] at (1.2,0.45) {You};
+  \node[font=\lblsize] at (4.15,0.45) {Insurer};
+  \node[font=\lblsize] at (7.2,0.45) {Nominee};
+  \draw[->] (1.9,0.45) -- (3.3,0.45);
+  \draw[->] (5.0,0.45) -- (6.4,0.45);
+  \node[font=\fontsize{22}{26}\selectfont] at (2.6,0.93) {premium};
+  \node[font=\fontsize{22}{26}\selectfont] at (5.7,0.93) {claim};
 \end{scope}
 
-% VI5 Life insurance   (x=18.3, y=1.99)
-\pbox{18.3}{1.99}{8.35}{5.37}{ured}{%
- \hd{ured}{5. Life Insurance}
- Insurer pays if you die within the term.
- \fm{Premium $\approx$ Sum assured $\times$ P(death)}
- \eg{Eg (1 yr): Rs 1,00,000 $\times$ 0.01 = Rs 1,000}}
-\begin{scope}[shift={(18.3,1.99)},line width=3.5pt]
-  \draw[rounded corners=6pt] (0.5,0.3) rectangle (1.9,1.0);
-  \draw[rounded corners=6pt] (3.4,0.3) rectangle (5.1,1.0);
-  \draw[rounded corners=6pt] (6.4,0.3) rectangle (7.9,1.0);
-  \node[font=\lblsize] at (1.2,0.65) {You};
-  \node[font=\lblsize] at (4.25,0.65) {Insurer};
-  \node[font=\lblsize] at (7.15,0.65) {Family};
-  \draw[->] (1.9,0.65) -- (3.4,0.65);
-  \draw[->] (5.1,0.65) -- (6.4,0.65);
-  \node[font=\fontsize{22}{26}\selectfont] at (2.65,1.3) {premium};
-  \node[font=\fontsize{22}{26}\selectfont] at (5.75,1.3) {claim};
-\end{scope}
-
-% VI6 Endowment   (x=26.95, y=1.99)
-\pbox{26.95}{1.99}{8.35}{5.37}{ured}{%
- \hd{ured}{6. Endowment}
- Pays on death in term OR survival to end.
- \fm{Endowment $=$ Term $+$ Pure endowment}
-Pure endowment = paid on survival.}
-\begin{scope}[shift={(26.95,1.99)},line width=3.5pt]
-  \draw[->] (0.6,0.7) -- (7.8,0.7);
-  \draw (0.9,0.55) -- (0.9,0.85);
-  \draw (7.2,0.55) -- (7.2,0.85);
-  \node[font=\lblsize] at (0.9,0.3) {Start};
-  \node[font=\lblsize] at (7.2,0.3) {Maturity};
-  \node[font=\lblsize,ured] at (3.1,1.15) {dies: pays};
-  \node[font=\lblsize,ugreen] at (6.5,1.15) {alive: pays};
+% VI5 Endowment   (x=26.95)
+\pbox{26.95}{1.85}{8.35}{5.45}{ured}{%
+ \hd{ured}{5. Endowment}
+ Pays the sum assured $S$ if you die in the term OR survive to maturity (protection + savings).
+ \frm{\smallsize APV $=S\left[\Sigma\,v^k\,P(T=k)+v^n\,{}_nP_x\right]$}{44pt}
+ \eg{Eg: 20-yr plan, $S=$ Rs 1,00,000:\\ Rs 1,00,000 paid on death or on survival}\\[2pt]
+ {\smallsize ${}_nP_x$ = chance of surviving $n$ years}}
+\begin{scope}[shift={(26.95,1.85)},line width=3.5pt]
+  \draw[->] (0.6,0.55) -- (7.9,0.55);
+  \draw (0.9,0.4) -- (0.9,0.7);
+  \draw (7.2,0.4) -- (7.2,0.7);
+  \node[font=\lblsize] at (0.9,0.2) {Start};
+  \node[font=\lblsize] at (7.2,0.2) {Maturity};
+  \node[font=\fontsize{22}{26}\selectfont,ured] at (3.2,0.92) {dies: pays $S$};
+  \node[font=\fontsize{22}{26}\selectfont,ugreen] at (6.3,0.92) {alive: pays $S$};
 \end{scope}
 
 % ---------- footer ----------
-\draw[line width=3.5pt,rounded corners=10pt] (0.7,0.55) rectangle (35.3,1.55);
-\node[font=\fontsize{44}{50}\selectfont\bfseries] at (18,1.05) {Investors demand a higher expected return for taking higher risk};
+\draw[line width=3.5pt,rounded corners=10pt] (0.7,0.5) rectangle (35.3,1.45);
+\node[font=\fontsize{44}{50}\selectfont\bfseries] at (18,0.975) {Investors demand a higher expected return for taking higher risk};
 
 % optional 3-inch copy grid
 \ifdefined\showgrid
