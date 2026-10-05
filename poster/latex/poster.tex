@@ -78,7 +78,7 @@
   \draw[ured,dashed] (4.6,3.6) rectangle (6.6,3.75);
   \node[font=\lblsize] at (2.2,2.1) {150};
   \node[font=\lblsize] at (5.6,2.3) {180};
-  \node[font=\lblsize,ured,anchor=west] at (6.75,3.7) {+10};
+  \node[font=\lblsize,ured,anchor=west] at (6.75,3.7) {+10 div};
   \node[font=\lblsize] at (2.2,0.5) {Buy};
   \node[font=\lblsize] at (5.6,0.5) {Sell};
 \end{scope}
@@ -98,7 +98,7 @@
   \node[font=\lblsize,ugreen] at (3.0,5.0) {55,000};
   \node[font=\lblsize,ugreen] at (4.6,5.5) {80,000};
   \node[font=\lblsize,ugreen] at (6.2,4.2) {15,000};
-  \node[font=\lblsize] at (1.0,3.0) {0};
+  \node[font=\lblsize] at (1.4,3.8) {0};
   \node[font=\lblsize] at (3.0,3.0) {1};
   \node[font=\lblsize] at (4.6,3.0) {2};
   \node[font=\lblsize] at (6.2,3.0) {3};
@@ -155,7 +155,7 @@
   \draw[ugreen,line width=5pt,smooth] plot[domain=-1.6:1.6,samples=70] ({3.2+\x},{0.5+1.8*exp(-(\x*\x)/0.5)});
   \draw[ured,line width=5pt,smooth] plot[domain=-3.0:3.0,samples=80] ({3.2+\x},{0.5+0.818*exp(-(\x*\x)/2.42)});
   \node[font=\lblsize,ugreen,anchor=west] at (4.2,2.0) {low $\sigma$};
-  \node[font=\lblsize,ured,anchor=west] at (4.7,1.0) {high $\sigma$};
+  \node[font=\lblsize,ured,anchor=west] at (4.7,1.25) {high $\sigma$};
 \end{scope}
 
 % ---------- VI2 Risk premium (x=26.95, y=12.3, h=6.4) ----------
