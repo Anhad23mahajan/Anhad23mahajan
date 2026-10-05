@@ -46,7 +46,7 @@ Say each point in one or two sentences, then show the worked example from the po
 **4. Life insurance** = a contract. The policyholder pays premiums and the insurer pays the sum assured (death benefit) to the nominee on the insured's death. It transfers the risk of premature death.
 - Types: term (death within the term only, cheapest, no maturity benefit), whole life (death whenever it occurs), endowment, money-back, ULIP, annuity.
 - APV (actuarial present value) = S Sum v^k P(T = k), with v = 1/(1 + i). The APV is the net single premium.
-- Eg: 3-year term, S = 2,00,000, i = 5%, P(T = 1, 2, 3) = 0.003, 0.0025, 0.002. APV = 2,00,000 (0.0028571 + 0.0022676 + 0.0017230) = Rs 1,370.48.
+- Eg: 3-year term, S = 2,00,000, i = 5%, P(T = 1, 2, 3) = 0.003, 0.0025, 0.002. Per year: 2,00,000 x v x 0.003 = 571.43; x v^2 x 0.0025 = 453.51; x v^3 x 0.002 = 345.54. APV = 571.43 + 453.51 + 345.54 = Rs 1,370.48. (The slide prints 0.0017230 for v^3 x 0.002; the correct value is 0.0017277. The final answer 1,370.48 is right.)
 - The real (gross) premium is higher because insurers add expenses, risk margin, profit and sometimes tax.
 
 **5. Endowment** = pays the sum assured if the insured dies within the term OR survives to maturity. It combines protection and savings, and the premium is higher than for term insurance.
