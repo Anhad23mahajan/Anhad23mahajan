@@ -51,6 +51,7 @@ CFG = dict(
     max_folds=5,            # rolling origins used for model choice and interval calibration
     min_train=6,            # smallest training window allowed in a fold
     min_seasonal_folds=3,   # seasonal-ETS candidates need at least this many folds with >= 2 full cycles
+    max_ets_season=24,      # no seasonal smoothing for longer cycles (52-week ETS is slow and over-parameterised)
     winsorize=True,         # clip extreme one-off spikes before FITTING (never before scoring)
     winsor_k=4.0,           # robust-sigma multiple
     max_fit_points=400,     # only the most recent points are used for fitting
@@ -355,7 +356,7 @@ def _plan(n, H, m, cfg):
         og2 = origins(m + 3)
         if len(og2) >= 2:
             og, tier = og2, 2
-        if _HAVE_SM:
+        if _HAVE_SM and m <= cfg["max_ets_season"]:
             og3 = origins(2 * m)
             if len(og3) >= cfg["min_seasonal_folds"]:
                 og, tier = og3, 3
@@ -578,7 +579,7 @@ def _compare(base, best, seasonal_ok=None):
 
     i_n, i_s = imp(base.get("naive")), imp(base.get("snaive"))
     extra = dict(vs_naive_pct=None if i_n is None else round(i_n, 1), vs_seasonal_naive_pct=None if i_s is None else round(i_s, 1))
-    if best == "naive" or (i_n is not None and i_n < 5):
+    if best == "naive" or i_n is None or i_n < 5:
         txt = "no better than naive - treat with caution"
         if i_s is not None and i_s >= 5:
             txt += f" (it does beat seasonal-naive by {i_s:.0f}%)"

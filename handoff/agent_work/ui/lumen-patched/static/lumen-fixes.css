@@ -88,3 +88,7 @@ header :focus-visible { outline-color: #E8A33D; }
    (Fixed properly in JS with mode:'lines'; this is the CSS-only cosmetic fallback.) */
 #fchart .scatterlayer .trace:nth-child(2) .points { display: none; }
 #fchart .legend .traces:nth-child(2) .legendpoints path.scatterpts { display: none; }
+
+/* [L14] Programmatic focus targets (tabindex="-1" headings, e.g. the summary heading focused after the dashboard renders for
+   keyboard / screen-reader users) must not draw a focus ring: they are not interactive controls. */
+[tabindex="-1"]:focus, [tabindex="-1"]:focus-visible { outline: none; }

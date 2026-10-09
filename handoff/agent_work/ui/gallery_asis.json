@@ -92,22 +92,22 @@
   {
    "file": "06c-answered-question-line.png",
    "px": "1804x1422",
-   "KB": 173,
-   "stddev": 19.6,
+   "KB": 170,
+   "stddev": 19.4,
    "ok": true
   },
   {
    "file": "06d-answered-question-pie.png",
    "px": "1804x1422",
-   "KB": 158,
+   "KB": 154,
    "stddev": 37.3,
    "ok": true
   },
   {
    "file": "06e-answered-question-table-open.png",
    "px": "1804x1704",
-   "KB": 231,
-   "stddev": 17.5,
+   "KB": 227,
+   "stddev": 17.3,
    "ok": true
   },
   {

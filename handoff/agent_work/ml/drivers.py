@@ -311,7 +311,7 @@ def _detect_anomalies(df, date_col, metric_col, dims, agg, freq, alpha, min_rel,
         dd = pd.DataFrame({"_k": key, "_v": d["_v"]})
         for c in dimlist:
             seg = _seg_series(df, c).loc[d.index]
-            piv = dd.assign(_s=seg.values).groupby(["_k", "_s"])["_v"].sum().unstack(fill_value=0.0).reindex(s.index, fill_value=0.0)
+            piv = dd.assign(_s=seg.values).groupby(["_k", "_s"])["_v"].sum().unstack().reindex(s.index).fillna(0.0)
             base = _share_baseline(piv)
             dev = piv - sc["expected"][:, None] * base.to_numpy()
             sig = {k: (1.4826 * float(np.median(np.abs(dev[k] - np.median(dev[k]))))) for k in piv.columns}

@@ -2,7 +2,7 @@
  "accents_nfc.csv": {
   "file": "accents_nfc.csv",
   "size": 6336,
-  "upload_secs": 0.04,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 3970,
   "summary": {
@@ -157,7 +157,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.98,
+  "fc_secs": 0.32,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -195,6 +195,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, montant_ttc is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88
@@ -203,7 +204,7 @@
  "accents_nfd.csv": {
   "file": "accents_nfd.csv",
   "size": 6338,
-  "upload_secs": 0.04,
+  "upload_secs": 0.12,
   "status": 200,
   "body_bytes": 3972,
   "summary": {
@@ -358,7 +359,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.09,
+  "fc_secs": 0.14,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -396,6 +397,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, montant_ttc is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88
@@ -404,7 +406,7 @@
  "ambig_dmy_halfyear.csv": {
   "file": "ambig_dmy_halfyear.csv",
   "size": 2726,
-  "upload_secs": 0.04,
+  "upload_secs": 0.05,
   "status": 200,
   "body_bytes": 2360,
   "summary": {
@@ -521,7 +523,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.02,
+  "fc_secs": 0.06,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -559,6 +561,7 @@
     1849.64
    ],
    "note": "Over the next 6 months, sales is expected to be about 152% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": false,
    "neg_forecast": true,
    "hist_min": 763
@@ -684,7 +687,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.11,
+  "fc_secs": 0.19,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -722,6 +725,7 @@
     248.78
    ],
    "note": "Over the next 6 months, sales is expected to be about 0% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 124
@@ -730,7 +734,7 @@
  "bom_utf8.csv": {
   "file": "bom_utf8.csv",
   "size": 5970,
-  "upload_secs": 0.04,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 3744,
   "summary": {
@@ -885,7 +889,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.05,
+  "fc_secs": 0.14,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -923,6 +927,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88
@@ -931,7 +936,7 @@
  "clean.xlsx": {
   "file": "clean.xlsx",
   "size": 6432,
-  "upload_secs": 0.23,
+  "upload_secs": 0.19,
   "status": 200,
   "body_bytes": 3042,
   "summary": {
@@ -1118,6 +1123,7 @@
     8020.74
    ],
    "note": "Over the next 6 months, revenue is expected to be about 8% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 2713
@@ -1126,7 +1132,7 @@
  "corr_order.csv": {
   "file": "corr_order.csv",
   "size": 27181,
-  "upload_secs": 0.03,
+  "upload_secs": 0.02,
   "status": 200,
   "body_bytes": 4483,
   "summary": {
@@ -1259,7 +1265,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.19,
+  "fc_secs": 0.28,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -1297,6 +1303,7 @@
     3459.82
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 2998.84
@@ -1516,7 +1523,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.09,
+  "fc_secs": 0.39,
   "fc_status": 200,
   "fc": {
    "freq": "W",
@@ -1554,6 +1561,7 @@
     9631.9
    ],
    "note": "Over the next 6 weeks, sales is expected to be about 18% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 3007.0
@@ -1562,7 +1570,7 @@
  "donations.csv": {
   "file": "donations.csv",
   "size": 138927,
-  "upload_secs": 0.16,
+  "upload_secs": 0.25,
   "status": 200,
   "body_bytes": 5010,
   "summary": {
@@ -1753,7 +1761,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.1,
+  "fc_secs": 0.51,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -1791,6 +1799,7 @@
     15201.05
    ],
    "note": "Over the next 6 months, amount is expected to be about 2% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 4417.56
@@ -1799,7 +1808,7 @@
  "edge_all_zero.csv": {
   "file": "edge_all_zero.csv",
   "size": 1572,
-  "upload_secs": 0.02,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 1793,
   "summary": {
@@ -1901,7 +1910,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.03,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -1939,6 +1948,7 @@
     0.0
    ],
    "note": "Over the next 6 months, amount is expected to be about 0% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 0
@@ -1947,7 +1957,7 @@
  "edge_binary_garbage.csv": {
   "file": "edge_binary_garbage.csv",
   "size": 5000,
-  "upload_secs": 0.0,
+  "upload_secs": 0.01,
   "status": 400,
   "body_bytes": 128,
   "detail": "Could not parse CSV file: new-line character seen in unquoted field - do you need to open the file with newline=''?"
@@ -1955,7 +1965,7 @@
  "edge_constant.csv": {
   "file": "edge_constant.csv",
   "size": 1572,
-  "upload_secs": 0.02,
+  "upload_secs": 0.06,
   "status": 200,
   "body_bytes": 1900,
   "summary": {
@@ -2064,7 +2074,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.06,
+  "fc_secs": 0.27,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -2102,6 +2112,7 @@
     64.11
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 45
@@ -2110,7 +2121,7 @@
  "edge_date_no_metric.csv": {
   "file": "edge_date_no_metric.csv",
   "size": 1817,
-  "upload_secs": 0.02,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 1687,
   "summary": {
@@ -2190,7 +2201,7 @@
  "edge_datelike_text.csv": {
   "file": "edge_datelike_text.csv",
   "size": 1102,
-  "upload_secs": 0.03,
+  "upload_secs": 0.07,
   "status": 200,
   "body_bytes": 2112,
   "summary": {
@@ -2284,14 +2295,14 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.0,
+  "fc_secs": 0.01,
   "fc_status": 400,
   "fc_detail": "Need at least 8 time periods (days, weeks or months) to forecast."
  },
  "edge_dup_cols.csv": {
   "file": "edge_dup_cols.csv",
   "size": 660,
-  "upload_secs": 0.03,
+  "upload_secs": 0.06,
   "status": 400,
   "body_bytes": 80,
   "detail": "Could not process file: 'DataFrame' object has no attribute 'dtype'"
@@ -2307,7 +2318,7 @@
  "edge_gappy_unsorted.csv": {
   "file": "edge_gappy_unsorted.csv",
   "size": 192,
-  "upload_secs": 0.02,
+  "upload_secs": 0.04,
   "status": 200,
   "body_bytes": 2207,
   "summary": {
@@ -2424,7 +2435,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.14,
+  "fc_secs": 0.27,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -2462,6 +2473,7 @@
     1577.43
    ],
    "note": "Over the next 6 months, amount is expected to be about 6% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 0
@@ -2486,7 +2498,7 @@
  "edge_huge_values.csv": {
   "file": "edge_huge_values.csv",
   "size": 532,
-  "upload_secs": 0.04,
+  "upload_secs": 0.05,
   "status": 200,
   "body_bytes": 4290,
   "summary": {
@@ -2615,15 +2627,54 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.04,
+  "fc_secs": 0.03,
   "fc_status": 200,
-  "fc_json_error": "TypeError(\"'<=' not supported between instances of 'float' and 'NoneType'\")",
-  "fc_head": "{\"freq\":\"MS\",\"history\":{\"x\":[\"2024-01-01\",\"2024-02-01\",\"2024-03-01\",\"2024-04-01\",\"2024-05-01\",\"2024-06-01\",\"2024-07-01\",\"2024-08-01\",\"2024-09-01\",\"2024-10-01\",\"2024-11-01\"],\"y\":[1e+300,39.0,1e+300,45."
+  "fc": {
+   "freq": "MS",
+   "hist_n": 11,
+   "hist_last": [
+    "2024-11-01",
+    66.0
+   ],
+   "fc_x": [
+    "2024-12-01",
+    "2025-05-01"
+   ],
+   "fc_y": [
+    4.627478586361869e+299,
+    4.574293132267874e+299,
+    4.521639532714819e+299,
+    4.469512469157295e+299,
+    4.417906676235345e+299,
+    4.366816941242615e+299
+   ],
+   "lo": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "hi": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "note": "Over the next 6 months, amount is expected to be about 35% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": true,
+   "interval_ok": false,
+   "neg_forecast": false,
+   "hist_min": 39.0
+  }
  },
  "edge_inf_values.csv": {
   "file": "edge_inf_values.csv",
   "size": 425,
-  "upload_secs": 0.03,
+  "upload_secs": 0.04,
   "status": 200,
   "body_bytes": 3065,
   "summary": {
@@ -2761,10 +2812,49 @@
    ]
   ],
   "bad_preview_cells": 0,
-  "fc_secs": 0.05,
+  "fc_secs": 0.09,
   "fc_status": 200,
-  "fc_json_error": "TypeError(\"'<=' not supported between instances of 'NoneType' and 'NoneType'\")",
-  "fc_head": "{\"freq\":\"D\",\"history\":{\"x\":[\"2025-01-01\",\"2025-01-02\",\"2025-01-03\",\"2025-01-04\",\"2025-01-05\",\"2025-01-06\",\"2025-01-07\",\"2025-01-08\",\"2025-01-09\",\"2025-01-10\",\"2025-01-11\",\"2025-01-12\",\"2025-01-13\",\"20"
+  "fc": {
+   "freq": "D",
+   "hist_n": 28,
+   "hist_last": [
+    "2025-01-28",
+    270.0
+   ],
+   "fc_x": [
+    "2025-01-29",
+    "2025-02-03"
+   ],
+   "fc_y": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "lo": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "hi": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "note": "Over the next 6 days, amount is expected to be about 100% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": true,
+   "interval_ok": false,
+   "neg_forecast": false,
+   "hist_min": 0.0
+  }
  },
  "edge_negative_metric.csv": {
   "file": "edge_negative_metric.csv",
@@ -2886,7 +2976,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.1,
+  "fc_secs": 0.32,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -2924,6 +3014,7 @@
     188.7
    ],
    "note": "Over the next 6 months, profit is expected to be about 7% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": true,
    "hist_min": -3212
@@ -2932,7 +3023,7 @@
  "edge_newlines_only.csv": {
   "file": "edge_newlines_only.csv",
   "size": 3,
-  "upload_secs": 0.0,
+  "upload_secs": 0.01,
   "status": 400,
   "body_bytes": 34,
   "detail": "The file has no rows."
@@ -2940,7 +3031,7 @@
  "edge_no_date.csv": {
   "file": "edge_no_date.csv",
   "size": 595,
-  "upload_secs": 0.01,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 1390,
   "summary": {
@@ -3024,7 +3115,7 @@
  "edge_no_numeric.csv": {
   "file": "edge_no_numeric.csv",
   "size": 1545,
-  "upload_secs": 0.02,
+  "upload_secs": 0.06,
   "status": 200,
   "body_bytes": 1960,
   "summary": {
@@ -3102,7 +3193,7 @@
  "edge_ragged.csv": {
   "file": "edge_ragged.csv",
   "size": 114,
-  "upload_secs": 0.02,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 2484,
   "summary": {
@@ -3259,14 +3350,14 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.0,
+  "fc_secs": 0.01,
   "fc_status": 400,
   "fc_detail": "Need at least 8 time periods (days, weeks or months) to forecast."
  },
  "edge_reserved_cols.csv": {
   "file": "edge_reserved_cols.csv",
   "size": 3379,
-  "upload_secs": 0.03,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 3780,
   "summary": {
@@ -3476,7 +3567,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.05,
+  "fc_secs": 0.21,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -3514,6 +3605,7 @@
     70.76
    ],
    "note": "Over the next 6 months, set is expected to be about 1% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 39
@@ -3522,7 +3614,7 @@
  "edge_seq_id.csv": {
   "file": "edge_seq_id.csv",
   "size": 589,
-  "upload_secs": 0.01,
+  "upload_secs": 0.02,
   "status": 200,
   "body_bytes": 1073,
   "summary": {
@@ -3600,7 +3692,7 @@
  "edge_single_col.csv": {
   "file": "edge_single_col.csv",
   "size": 154,
-  "upload_secs": 0.01,
+  "upload_secs": 0.02,
   "status": 200,
   "body_bytes": 880,
   "summary": {
@@ -3669,7 +3761,7 @@
  "edge_single_col_text.csv": {
   "file": "edge_single_col_text.csv",
   "size": 21,
-  "upload_secs": 0.01,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 698,
   "summary": {
@@ -3733,7 +3825,7 @@
  "edge_single_row.csv": {
   "file": "edge_single_row.csv",
   "size": 41,
-  "upload_secs": 0.02,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 1081,
   "summary": {
@@ -3810,14 +3902,14 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.0,
+  "fc_secs": 0.01,
   "fc_status": 400,
   "fc_detail": "Need at least 8 time periods (days, weeks or months) to forecast."
  },
  "edge_trailing_blank.csv": {
   "file": "edge_trailing_blank.csv",
   "size": 2704,
-  "upload_secs": 0.05,
+  "upload_secs": 0.07,
   "status": 200,
   "body_bytes": 4150,
   "summary": {
@@ -4000,7 +4092,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.02,
+  "fc_secs": 0.12,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -4038,6 +4130,7 @@
     9772.43
    ],
    "note": "Over the next 6 months, sales is expected to be about 4% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 4070.0
@@ -4046,7 +4139,7 @@
  "edge_two_rows.csv": {
   "file": "edge_two_rows.csv",
   "size": 62,
-  "upload_secs": 0.04,
+  "upload_secs": 0.06,
   "status": 200,
   "body_bytes": 2172,
   "summary": {
@@ -4188,7 +4281,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.5,
+  "fc_secs": 1.54,
   "fc_status": 200,
   "fc": {
    "freq": "D",
@@ -4226,6 +4319,7 @@
     912.64
    ],
    "note": "Over the next 6 days, amount is expected to be about 138% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": false,
    "neg_forecast": true,
    "hist_min": 0
@@ -4234,7 +4328,7 @@
  "edge_wide_300.csv": {
   "file": "edge_wide_300.csv",
   "size": 97295,
-  "upload_secs": 0.53,
+  "upload_secs": 0.6,
   "status": 200,
   "body_bytes": 81308,
   "summary": {
@@ -6743,7 +6837,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.2,
+  "fc_secs": 0.41,
   "fc_status": 200,
   "fc": {
    "freq": "W",
@@ -6781,6 +6875,7 @@
     4767.81
    ],
    "note": "Over the next 6 weeks, metric_0 is expected to be about 17% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 2091
@@ -6789,7 +6884,7 @@
  "edge_year_only.csv": {
   "file": "edge_year_only.csv",
   "size": 228,
-  "upload_secs": 0.06,
+  "upload_secs": 0.11,
   "status": 200,
   "body_bytes": 3222,
   "summary": {
@@ -6899,7 +6994,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.36,
+  "fc_secs": 1.58,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -6937,6 +7032,7 @@
     190.96
    ],
    "note": "Over the next 6 months, amount is expected to be about 0% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": false,
    "neg_forecast": true,
    "hist_min": 0
@@ -6945,7 +7041,7 @@
  "ends_dec30.csv": {
   "file": "ends_dec30.csv",
   "size": 7238,
-  "upload_secs": 0.02,
+  "upload_secs": 0.1,
   "status": 200,
   "body_bytes": 2155,
   "summary": {
@@ -7054,7 +7150,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.24,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -7092,6 +7188,7 @@
     17605.54
    ],
    "note": "Over the next 6 months, revenue is expected to be about 0% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 13905.0
@@ -7100,7 +7197,7 @@
  "epoch_seconds.csv": {
   "file": "epoch_seconds.csv",
   "size": 4537,
-  "upload_secs": 0.02,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 2805,
   "summary": {
@@ -7217,7 +7314,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.02,
+  "fc_secs": 0.21,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -7255,6 +7352,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88
@@ -7263,7 +7361,7 @@
  "european.csv": {
   "file": "european.csv",
   "size": 6542,
-  "upload_secs": 0.05,
+  "upload_secs": 0.19,
   "status": 200,
   "body_bytes": 3883,
   "summary": {
@@ -7418,7 +7516,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.1,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -7456,6 +7554,7 @@
     255194.83
    ],
    "note": "Over the next 6 months, betrag is expected to be about 20% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 43.01
@@ -7619,7 +7718,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.09,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -7657,6 +7756,7 @@
     9914564.41
    ],
    "note": "Over the next 6 months, betrag is expected to be about 6% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 2640277
@@ -7665,7 +7765,7 @@
  "excel_serial.csv": {
   "file": "excel_serial.csv",
   "size": 3332,
-  "upload_secs": 0.01,
+  "upload_secs": 0.02,
   "status": 200,
   "body_bytes": 2705,
   "summary": {
@@ -7782,7 +7882,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.18,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -7820,6 +7920,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88
@@ -7828,7 +7929,7 @@
  "expenses_currency.csv": {
   "file": "expenses_currency.csv",
   "size": 14156,
-  "upload_secs": 0.04,
+  "upload_secs": 0.18,
   "status": 200,
   "body_bytes": 3671,
   "summary": {
@@ -8008,7 +8109,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.12,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -8046,6 +8147,7 @@
     59762.58
    ],
    "note": "Over the next 6 months, amount is expected to be about 6% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 23614.71
@@ -8209,7 +8311,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.13,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -8247,6 +8349,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, \u0930_\u0936 is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88
@@ -8255,7 +8358,7 @@
  "ids_only_numeric.csv": {
   "file": "ids_only_numeric.csv",
   "size": 9887,
-  "upload_secs": 0.02,
+  "upload_secs": 0.04,
   "status": 200,
   "body_bytes": 2435,
   "summary": {
@@ -8371,7 +8474,7 @@
  "ids_plus_amount.csv": {
   "file": "ids_plus_amount.csv",
   "size": 8741,
-  "upload_secs": 0.02,
+  "upload_secs": 0.06,
   "status": 200,
   "body_bytes": 2734,
   "summary": {
@@ -8496,7 +8599,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.13,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -8534,6 +8637,7 @@
     25871.94
    ],
    "note": "Over the next 6 months, amount is expected to be about 7% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 15726
@@ -8542,7 +8646,7 @@
  "inr_lakh.csv": {
   "file": "inr_lakh.csv",
   "size": 5969,
-  "upload_secs": 0.02,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 2826,
   "summary": {
@@ -8659,7 +8763,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.02,
+  "fc_secs": 0.1,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -8697,6 +8801,7 @@
     9911642.63
    ],
    "note": "Over the next 6 months, revenue is expected to be about 6% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 2640276
@@ -8705,7 +8810,7 @@
  "inventory.csv": {
   "file": "inventory.csv",
   "size": 3411,
-  "upload_secs": 0.02,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 2422,
   "summary": {
@@ -8828,7 +8933,7 @@
  "latin1.csv": {
   "file": "latin1.csv",
   "size": 5726,
-  "upload_secs": 0.02,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 3744,
   "summary": {
@@ -8983,7 +9088,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.12,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -9021,6 +9126,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88
@@ -9037,7 +9143,7 @@
  "merged_header.xlsx": {
   "file": "merged_header.xlsx",
   "size": 5106,
-  "upload_secs": 0.03,
+  "upload_secs": 0.1,
   "status": 200,
   "body_bytes": 1647,
   "summary": {
@@ -9151,7 +9257,7 @@
  "metric_names.csv": {
   "file": "metric_names.csv",
   "size": 5350,
-  "upload_secs": 0.02,
+  "upload_secs": 0.1,
   "status": 200,
   "body_bytes": 3203,
   "summary": {
@@ -9308,7 +9414,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.17,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -9346,6 +9452,7 @@
     175.31
    ],
    "note": "Over the next 6 months, corporate_sales is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 136.8
@@ -9354,7 +9461,7 @@
  "monthly_names.csv": {
   "file": "monthly_names.csv",
   "size": 172,
-  "upload_secs": 0.01,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 1443,
   "summary": {
@@ -9454,7 +9561,7 @@
  "multi_sheet_cover_first.xlsx": {
   "file": "multi_sheet_cover_first.xlsx",
   "size": 9245,
-  "upload_secs": 0.01,
+  "upload_secs": 0.04,
   "status": 200,
   "body_bytes": 707,
   "summary": {
@@ -9510,7 +9617,7 @@
  "multi_sheet_data_first.xlsx": {
   "file": "multi_sheet_data_first.xlsx",
   "size": 8749,
-  "upload_secs": 0.02,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 2140,
   "summary": {
@@ -9619,7 +9726,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.37,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -9657,6 +9764,7 @@
     8300.43
    ],
    "note": "Over the next 6 months, sales is expected to be about 3% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 3519
@@ -9665,7 +9773,7 @@
  "offset_table.xlsx": {
   "file": "offset_table.xlsx",
   "size": 5603,
-  "upload_secs": 0.03,
+  "upload_secs": 0.12,
   "status": 200,
   "body_bytes": 2997,
   "summary": {
@@ -9823,14 +9931,14 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.0,
+  "fc_secs": 0.01,
   "fc_status": 400,
   "fc_detail": "Need at least 8 time periods (days, weeks or months) to forecast."
  },
  "pct_bool_thousands.csv": {
   "file": "pct_bool_thousands.csv",
   "size": 5149,
-  "upload_secs": 0.04,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 3960,
   "summary": {
@@ -10016,7 +10124,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.05,
+  "fc_secs": 0.21,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -10054,6 +10162,7 @@
     534336.09
    ],
    "note": "Over the next 6 months, revenue is expected to be about 6% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 52018
@@ -10062,7 +10171,7 @@
  "starts_mid_month.csv": {
   "file": "starts_mid_month.csv",
   "size": 6286,
-  "upload_secs": 0.02,
+  "upload_secs": 0.09,
   "status": 200,
   "body_bytes": 3171,
   "summary": {
@@ -10191,7 +10300,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.11,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -10229,6 +10338,7 @@
     29749.69
    ],
    "note": "Over the next 6 months, revenue is expected to be about 6% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 1987.0
@@ -10237,7 +10347,7 @@
  "thousands_text.csv": {
   "file": "thousands_text.csv",
   "size": 5031,
-  "upload_secs": 0.02,
+  "upload_secs": 0.1,
   "status": 200,
   "body_bytes": 2767,
   "summary": {
@@ -10354,7 +10464,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.02,
+  "fc_secs": 0.19,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -10392,6 +10502,7 @@
     10049301.85
    ],
    "note": "Over the next 6 months, revenue is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 2902386
@@ -10400,7 +10511,7 @@
  "title_rows_total.xlsx": {
   "file": "title_rows_total.xlsx",
   "size": 6527,
-  "upload_secs": 0.04,
+  "upload_secs": 0.13,
   "status": 200,
   "body_bytes": 4239,
   "summary": {
@@ -10589,7 +10700,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.1,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -10627,6 +10738,7 @@
     28257.01
    ],
    "note": "Over the next 6 months, unnamed_2 is expected to be about 8% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 11052.0
@@ -10635,7 +10747,7 @@
  "total_row_literal.xlsx": {
   "file": "total_row_literal.xlsx",
   "size": 6424,
-  "upload_secs": 0.03,
+  "upload_secs": 0.11,
   "status": 200,
   "body_bytes": 3459,
   "summary": {
@@ -10817,7 +10929,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.12,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -10855,6 +10967,7 @@
     28257.01
    ],
    "note": "Over the next 6 months, amount is expected to be about 8% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 11052
@@ -10863,7 +10976,7 @@
  "tz_mixed_offsets.csv": {
   "file": "tz_mixed_offsets.csv",
   "size": 7898,
-  "upload_secs": 0.01,
+  "upload_secs": 0.06,
   "status": 400,
   "body_bytes": 87,
   "detail": "Could not process file: Can only use .dt accessor with datetimelike values"
@@ -10871,7 +10984,7 @@
  "tz_utc.csv": {
   "file": "tz_utc.csv",
   "size": 8138,
-  "upload_secs": 0.02,
+  "upload_secs": 0.06,
   "status": 200,
   "body_bytes": 2940,
   "summary": {
@@ -10988,7 +11101,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.12,
   "fc_status": 200,
   "fc": {
    "freq": "W",
@@ -11026,6 +11139,7 @@
     135629.94
    ],
    "note": "Over the next 6 weeks, amount is expected to be about 7% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 25963.34
@@ -11034,7 +11148,7 @@
  "us_mdy_halfyear.csv": {
   "file": "us_mdy_halfyear.csv",
   "size": 2726,
-  "upload_secs": 0.02,
+  "upload_secs": 0.08,
   "status": 200,
   "body_bytes": 3010,
   "summary": {
@@ -11157,7 +11271,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.02,
+  "fc_secs": 0.45,
   "fc_status": 200,
   "fc": {
    "freq": "W",
@@ -11195,6 +11309,7 @@
     1107.34
    ],
    "note": "Over the next 6 weeks, sales is expected to be about 56% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 173
@@ -11203,7 +11318,7 @@
  "utf16_tab.txt.csv": {
   "file": "utf16_tab.txt.csv",
   "size": 11454,
-  "upload_secs": 0.01,
+  "upload_secs": 0.0,
   "status": 400,
   "body_bytes": 48,
   "detail": "The file contains only empty cells."
@@ -11211,7 +11326,7 @@
  "weekday_names.csv": {
   "file": "weekday_names.csv",
   "size": 354,
-  "upload_secs": 0.01,
+  "upload_secs": 0.03,
   "status": 200,
   "body_bytes": 1492,
   "summary": {
@@ -11311,7 +11426,7 @@
  "xlsx_named_csv.csv": {
   "file": "xlsx_named_csv.csv",
   "size": 6432,
-  "upload_secs": 0.02,
+  "upload_secs": 0.09,
   "status": 200,
   "body_bytes": 3042,
   "summary": {
@@ -11460,7 +11575,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.02,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -11498,6 +11613,7 @@
     8020.74
    ],
    "note": "Over the next 6 months, revenue is expected to be about 8% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 2713
@@ -11506,7 +11622,7 @@
  "year_month_ints.csv": {
   "file": "year_month_ints.csv",
   "size": 3672,
-  "upload_secs": 0.02,
+  "upload_secs": 0.04,
   "status": 200,
   "body_bytes": 3287,
   "summary": {
@@ -11664,7 +11780,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.04,
+  "fc_secs": 0.09,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -11702,6 +11818,7 @@
     0.0
    ],
    "note": "Over the next 6 months, month is expected to be about 0% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 0
@@ -11710,7 +11827,7 @@
  "yyyymmdd_int.csv": {
   "file": "yyyymmdd_int.csv",
   "size": 4052,
-  "upload_secs": 0.02,
+  "upload_secs": 0.04,
   "status": 200,
   "body_bytes": 2750,
   "summary": {
@@ -11827,7 +11944,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.01,
+  "fc_secs": 0.17,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -11865,6 +11982,7 @@
     100488.36
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 29023.88

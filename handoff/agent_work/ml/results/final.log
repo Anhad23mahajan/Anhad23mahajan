@@ -1,0 +1,38 @@
+series: 366 ({'synthetic': 360, 'demo': 6}), freq mix {'MS': 150, 'D': 111, 'W': 105}, n median 47, min 14, max 120
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/statespace/mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/statespace/mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/statespace/mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/statespace/mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/statespace/mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/statespace/mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/exponential_smoothing/ets.py:1027: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+  [H=6] 40/366 series, 118s
+  [H=6] 80/366 series, 167s
+  [H=6] 120/366 series, 236s
+  [H=6] 160/366 series, 308s
+  [H=6] 200/366 series, 360s

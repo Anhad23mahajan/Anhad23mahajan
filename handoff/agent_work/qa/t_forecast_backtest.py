@@ -23,7 +23,7 @@ def backtest(kind, n_hist, rng):
     for _ in range(N):
         idx, y = make_monthly(kind, n_hist + H, rng)
         # build raw event rows so period_series() resamples back to exactly these monthly sums (one row per month, mid-month)
-        df = pd.DataFrame({"date": idx[:n_hist] + pd.Timedelta(days=14), "amount": y[:n_hist]})
+        df = pd.DataFrame({"date": idx[:n_hist] + pd.Timedelta(days=int(os.environ.get("DAY", "14"))), "amount": y[:n_hist]})
         # make sure the last month isn't dropped as 'partial': add a month-end row of 0 value
         df = pd.concat([df, pd.DataFrame({"date": [idx[n_hist - 1] + pd.offsets.MonthEnd(0) + pd.Timedelta(days=1) - pd.Timedelta(seconds=1)], "amount": [0.0]})], ignore_index=True)
         try: f = A.forecast(df, "date", "amount", H)

@@ -118,7 +118,8 @@ AMBIGUOUS_DAYFIRST = True    # 03/04/2025 with nothing to disambiguate: day-firs
 
 def _to_dt(x, dayfirst=False):
     try: out = pd.to_datetime(x, format="mixed", errors="coerce", dayfirst=dayfirst)
-    except ValueError:        # mixed UTC offsets (DST!): convert to UTC then drop the zone
+    except ValueError: out = None                         # pandas 3 raises on mixed UTC offsets (DST!)
+    if out is None or out.dtype == object:                # pandas 2.2 returns an object column instead; both: convert to UTC, drop the zone
         out = pd.to_datetime(x, format="mixed", errors="coerce", dayfirst=dayfirst, utc=True).dt.tz_localize(None)
     good = lambda o: (o.notna() & (o.dt.year > 1800)).mean()
     if good(out) < 0.5:                   # month-year labels like Jan-25 come back as year 0001 from format="mixed"

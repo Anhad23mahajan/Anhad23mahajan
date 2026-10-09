@@ -67,8 +67,9 @@ for f in sorted(DATA.iterdir()):
             if fr.status_code == 200:
                 f_, h = fd["forecast"], fd["history"]
                 rec["fc"] = {"freq": fd["freq"], "hist_n": len(h["x"]), "hist_last": [h["x"][-1], h["y"][-1]], "fc_x": f_["x"][:1] + f_["x"][-1:], "fc_y": f_["y"], "lo": f_["lower"], "hi": f_["upper"], "note": fd["note"],
-                             "interval_ok": all(l <= y <= u for l, y, u in zip(f_["lower"], f_["y"], f_["upper"])),
-                             "neg_forecast": any(y < 0 for y in f_["y"]), "hist_min": min(h["y"])}
+                             "has_null": any(v is None for v in f_["y"] + f_["lower"] + f_["upper"]),
+                             "interval_ok": all(l is not None and y is not None and u is not None and l <= y <= u for l, y, u in zip(f_["lower"], f_["y"], f_["upper"])),
+                             "neg_forecast": any(y is not None and y < 0 for y in f_["y"]), "hist_min": min(v for v in h["y"] if v is not None)}
             else: rec["fc_detail"] = fd.get("detail")
         except Exception as e:
             rec["fc_json_error"] = repr(e)[:200]; rec["fc_head"] = fr.text[:200]

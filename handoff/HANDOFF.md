@@ -114,3 +114,9 @@ cd lumen && /home/user/work/venv/bin/python -m pytest -q
 # run app:  /home/user/work/venv/bin/uvicorn app.main:app --port 8011
 ```
 Eshaan's clone (read-only reference) may need re-cloning: `GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/Eshaan1e24/lumen /home/user/eshaan1e24/lumen`. Re-check `git ls-remote` that main is still 66c6405 (if it moved, merge his changes first).
+
+## 10. Update (after the usage limit hit)
+The QA, ML and UI agents were terminated by the session rate limit before sending final reports. Their partial outputs were saved
+(handoff/agent_work/{qa,ml,ui}); newer UI files (extra screenshots incl. sample-dataset picker, trust panel, report/PDF export, verify jsons, lumen-patched,
+snippets) were added in a second save. Treat all of it as UNREVIEWED candidate work: read the scripts, re-run them, and verify numbers before using anything.
+The security and both research agents DID finish; their conclusions are in section 4. `qa/patched/qa_fixes.patch` is an unreviewed candidate patch set.

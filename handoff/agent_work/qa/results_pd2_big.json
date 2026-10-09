@@ -2,7 +2,7 @@
  "big_100k.xlsx": {
   "file": "big_100k.xlsx",
   "size": 2761788,
-  "upload_secs": 8.68,
+  "upload_secs": 10.73,
   "status": 200,
   "body_bytes": 4345,
   "summary": {
@@ -187,7 +187,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.17,
+  "fc_secs": 0.12,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -225,6 +225,7 @@
     268669.73
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 199873.15
@@ -233,7 +234,7 @@
  "big_200k.csv": {
   "file": "big_200k.csv",
   "size": 7405771,
-  "upload_secs": 6.33,
+  "upload_secs": 7.8,
   "status": 200,
   "body_bytes": 3844,
   "summary": {
@@ -410,7 +411,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.18,
+  "fc_secs": 0.28,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -448,6 +449,7 @@
     528413.84
    ],
    "note": "Over the next 6 months, amount is expected to be about 0% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 416396.92
@@ -456,7 +458,7 @@
  "big_250k_truncation.csv": {
   "file": "big_250k_truncation.csv",
   "size": 9257696,
-  "upload_secs": 8.88,
+  "upload_secs": 8.94,
   "status": 200,
   "body_bytes": 4497,
   "summary": {
@@ -647,7 +649,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.13,
+  "fc_secs": 0.25,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -685,6 +687,7 @@
     652344.47
    ],
    "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 523417.61
@@ -693,7 +696,7 @@
  "big_over_25mb.csv": {
   "file": "big_over_25mb.csv",
   "size": 26214401,
-  "upload_secs": 0.15,
+  "upload_secs": 0.14,
   "status": 413,
   "body_bytes": 39,
   "detail": "File is larger than 25 MB."
@@ -701,7 +704,7 @@
  "big_under_25mb_wide.csv": {
   "file": "big_under_25mb_wide.csv",
   "size": 26214400,
-  "upload_secs": 8.62,
+  "upload_secs": 8.92,
   "status": 200,
   "body_bytes": 7045,
   "summary": {
@@ -886,7 +889,7 @@
   },
   "bad_text": [],
   "bad_preview_cells": 0,
-  "fc_secs": 0.14,
+  "fc_secs": 0.1,
   "fc_status": 200,
   "fc": {
    "freq": "MS",
@@ -924,6 +927,7 @@
     470986.0
    ],
    "note": "Over the next 6 months, amount is expected to be about 0% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "has_null": false,
    "interval_ok": true,
    "neg_forecast": false,
    "hist_min": 379550.59

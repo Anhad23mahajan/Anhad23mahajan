@@ -1,0 +1,148 @@
+{
+ "04.chips": [
+  "Shop sales9,046 orders, 2 years",
+  "Donations2,742 gifts, 3 years",
+  "Inventory1,896 shipments"
+ ],
+ "04.results": {
+  "donations": {
+   "meta": "2,742 rows, 7 columns. Main measure: amount_usd.",
+   "kpis": [
+    "Rows analysed | 2,742",
+    "Total amount_usd | 143k"
+   ],
+   "first_insight": "Unusual month: 01 Dec 2024"
+  },
+  "inventory": {
+   "meta": "1,896 rows, 8 columns. Main measure: cost.",
+   "kpis": [
+    "Rows analysed | 1,896",
+    "Total cost | 1.2M"
+   ],
+   "first_insight": "Pantry drives 42% of cost"
+  },
+  "shop": {
+   "meta": "9,046 rows, 6 columns. Main measure: amount.",
+   "kpis": [
+    "Rows analysed | 9,046",
+    "Total amount | 8.3M"
+   ],
+   "first_insight": "amount is up 43% over the period"
+  }
+ },
+ "04.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "05.receipt": "0 third-party requests made by this page\nAI is off: nothing leaves this server\nOpen source (MIT): read exactly what runs",
+ "05.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "05.hscroll_390": 0,
+ "06.stage_states_at_1.5s": [
+  "done",
+  "done",
+  "done",
+  "on"
+ ],
+ "06.stage_visible": true,
+ "06.reveal_class": true,
+ "06.kpi_animation": "lumen-rise",
+ "06.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "06.reduced_motion_kpi_animation": "none",
+ "07.buttons_visible_on_hero": false,
+ "07.buttons_visible_on_dashboard": [
+  true,
+  true
+ ],
+ "07.clipboard_markdown": "# Lumen report: October 9, 2026\n_2,742 rows, 7 columns. Main measure: amount_usd._\n\n## What matters most\namount_usd was 33,598 that month, far from the typical 3,270. amount_usd was 7,970 that month, far from the typical 3,270.\n\n## Key numbers\n- Rows analysed: **2,742**\n- Total amount_usd: **143k**\n- Latest full month: **2.9k** -28% vs previous month\n- Best month: **34k** Dec 2024\n\n## Findings\n- **Unusual month: 01 Dec 2024**: amount_usd was 33,598 that month, far from the typical 3,270.\n- **Unusual month: 01 Dec 2023**: amount_usd was 7,970 that month, far from the typical 3,270.\n- **amount_usd is up 135% over the period**: The average monthly amount_usd in the most recent 11 months is 135% higher than in the first 11.\n- **Annual Appeal drives 44% of amount_usd**: Across campaign, a single value (Annual Appeal) accounts for 44% of total amount_usd. You depend heavily on it.\n- **Online d",
+ "07.copy_button_label": "Copied",
+ "07.print_images_created": 4,
+ "07.pdf_pages": 2,
+ "07.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "08.state": {
+  "tabs": [
+   [
+    "tab",
+    "false",
+    -1
+   ],
+   [
+    "tab",
+    "true",
+    0
+   ]
+  ],
+  "tablist": true,
+  "panel": "tabpanel",
+  "ans_live": "polite",
+  "charts": [
+   [
+    "img",
+    "amount by month. 24 points from 360k to 622k, peak 622k, low"
+   ],
+   [
+    "img",
+    "amount by product. Top: Hoodie (6.2M); 5 categories."
+   ],
+   [
+    "img",
+    "amount by region. Top: Campus (2.9M); 4 categories."
+   ],
+   [
+    "img",
+    "Forecast of amount: Over the next 6 months, amount is expect"
+   ]
+  ],
+  "focus": "H3:What matters most"
+ },
+ "08.arrow_left": [
+  "true",
+  "tab-raw"
+ ],
+ "08.forecast_requests_from_3_enters (was 3)": 1,
+ "09.qerr": "Questions are off in this copy of Lumen because no Gemini API key is configured. Charts, findings, data preview and forecast all work. Set GEMINI_API_KEY and restart to ask in plain English.",
+ "09.section_class": "ask-off",
+ "0809.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "all.1440.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "all.1440.hscroll": 0,
+ "all.390.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "all.390.hscroll": 0
+}

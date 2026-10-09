@@ -247,9 +247,10 @@
  "ask_dblclick_mouse_requests": 1,
  "ask_stale_answer_overwrites_newer": {
   "question_box": "B-fast",
-  "answer_shown": "ANSWER FOR A-slow",
+  "answer_shown": "ANSWER FOR B-fast",
   "requests": [
-   "A-slow"
+   "A-slow",
+   "B-fast"
   ]
  },
  "ask_answer_from_previous_dataset_after_switch": {
@@ -277,7 +278,7 @@
    "cycle": 1,
    "resize_listeners": 4,
    "plots_in_dom": 4,
-   "heap_mb": 5.99
+   "heap_mb": 6.02
   },
   {
    "cycle": 2,
@@ -289,7 +290,7 @@
    "cycle": 3,
    "resize_listeners": 4,
    "plots_in_dom": 4,
-   "heap_mb": 6.78
+   "heap_mb": 6.79
   },
   {
    "cycle": 4,
@@ -301,7 +302,7 @@
    "cycle": 5,
    "resize_listeners": 4,
    "plots_in_dom": 4,
-   "heap_mb": 7.0
+   "heap_mb": 6.99
   },
   {
    "cycle": 6,
@@ -313,19 +314,19 @@
    "cycle": 7,
    "resize_listeners": 4,
    "plots_in_dom": 4,
-   "heap_mb": 7.05
+   "heap_mb": 7.07
   },
   {
    "cycle": 8,
    "resize_listeners": 4,
    "plots_in_dom": 4,
-   "heap_mb": 7.09
+   "heap_mb": 7.11
   },
   {
    "cycle": "after 5 asks",
    "resize_listeners": 9,
    "plots_in_dom": 5,
-   "heap_mb": 7.5
+   "heap_mb": 7.51
   }
  ],
  "leak_global_drop_listeners": {
@@ -603,7 +604,7 @@
   "Event",
   "6.68",
   "No",
-  ""
+  "Thank-you sent"
  ],
  "preview_raw_first_row": [
   "2023-01-01",
@@ -612,7 +613,7 @@
   "Event",
   "6.68",
   "No",
-  ""
+  "Thank-you sent"
  ],
  "preview_dtype_labels_shown_to_users": [
   "text",

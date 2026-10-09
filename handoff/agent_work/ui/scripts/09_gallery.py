@@ -36,7 +36,9 @@ def setup(page):
         page.route(re.compile(r'^http://localhost:\d+/$'), lambda route: (lambda r: route.fulfill(response=r, body=r.text().replace('</body>', parts + '</body>')))(route.fetch()))
         page.route(re.compile(r'/assets/samples/'), lambda route: route.continue_())
 
-def S(page, name, **kw): return shot(page, f'{SUB}/{name}', **kw)
+def S(page, name, **kw):
+    page.evaluate("document.activeElement && document.activeElement.blur && document.activeElement.blur()"); page.mouse.move(2, 2); page.wait_for_timeout(120)
+    return shot(page, f'{SUB}/{name}', **kw)
 
 def pad_clip(page, sel, pad=14):
     page.locator(sel).first.scroll_into_view_if_needed(); page.wait_for_timeout(150)

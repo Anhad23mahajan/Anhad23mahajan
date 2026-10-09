@@ -86,7 +86,7 @@
   {
    "file": "06-answered-question-bar-with-sql.png",
    "px": "1804x1970",
-   "KB": 188,
+   "KB": 189,
    "stddev": 32.6,
    "ok": true
   },
@@ -100,36 +100,36 @@
   {
    "file": "06c-answered-question-line.png",
    "px": "1804x1422",
-   "KB": 177,
-   "stddev": 19.8,
+   "KB": 173,
+   "stddev": 19.5,
    "ok": true
   },
   {
    "file": "06d-answered-question-pie.png",
    "px": "1804x1422",
-   "KB": 162,
-   "stddev": 38.0,
+   "KB": 157,
+   "stddev": 37.2,
    "ok": true
   },
   {
    "file": "06e-answered-question-table-open.png",
    "px": "1804x1704",
-   "KB": 225,
-   "stddev": 18.7,
+   "KB": 224,
+   "stddev": 17.2,
    "ok": true
   },
   {
    "file": "07-donations-dashboard-top-fold-1440x960.png",
    "px": "2880x1920",
-   "KB": 404,
-   "stddev": 60.7,
+   "KB": 403,
+   "stddev": 61.0,
    "ok": true
   },
   {
    "file": "07b-donations-insights-panel.png",
    "px": "712x2260",
    "KB": 237,
-   "stddev": 60.6,
+   "stddev": 61.3,
    "ok": true
   },
   {
@@ -142,7 +142,7 @@
   {
    "file": "08-data-preview-raw-vs-cleaned.png",
    "px": "1804x2600",
-   "KB": 339,
+   "KB": 340,
    "stddev": 16.9,
    "ok": true
   },
@@ -156,15 +156,15 @@
   {
    "file": "09b-mobile-dashboard-top-fold-390x844.png",
    "px": "780x1688",
-   "KB": 198,
-   "stddev": 83.0,
+   "KB": 192,
+   "stddev": 79.3,
    "ok": true
   },
   {
    "file": "09c-mobile-dashboard-full.png",
-   "px": "780x8254",
-   "KB": 641,
-   "stddev": 48.8,
+   "px": "780x8156",
+   "KB": 631,
+   "stddev": 46.0,
    "ok": true
   }
  ]

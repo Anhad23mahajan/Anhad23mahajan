@@ -1,6 +1,5 @@
-diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics.py lumen/app/analytics.py
---- /home/user/Anhad23mahajan/lumen/app/analytics.py	2026-10-09 15:40:58.000000000 +0000
-+++ lumen/app/analytics.py	2026-10-09 17:52:20.733682467 +0000
+--- a/app/analytics.py
++++ b/app/analytics.py
 @@ -1,11 +1,16 @@
  """Profiling, starter charts, statistical insights and forecasting. No LLM needed here."""
 -import io, re, warnings, datetime
@@ -87,7 +86,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
      lines = [ln for ln in text.splitlines() if ln.strip()][:20]
      if not lines: raise ValueError("The file has no rows.")
  
-@@ -70,6 +110,41 @@
+@@ -70,6 +110,42 @@
      return df
  
  
@@ -99,7 +98,8 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
 +
 +def _to_dt(x, dayfirst=False):
 +    try: out = pd.to_datetime(x, format="mixed", errors="coerce", dayfirst=dayfirst)
-+    except ValueError:        # mixed UTC offsets (DST!): convert to UTC then drop the zone
++    except ValueError: out = None                         # pandas 3 raises on mixed UTC offsets (DST!)
++    if out is None or out.dtype == object:                # pandas 2.2 returns an object column instead; both: convert to UTC, drop the zone
 +        out = pd.to_datetime(x, format="mixed", errors="coerce", dayfirst=dayfirst, utc=True).dt.tz_localize(None)
 +    good = lambda o: (o.notna() & (o.dt.year > 1800)).mean()
 +    if good(out) < 0.5:                   # month-year labels like Jan-25 come back as year 0001 from format="mixed"
@@ -129,7 +129,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
  def try_parse_dates(series: pd.Series, col_name: str) -> pd.Series | None:
      if pd.api.types.is_datetime64_any_dtype(series):
          if hasattr(series.dt, "tz") and series.dt.tz is not None:
-@@ -140,9 +215,12 @@
+@@ -140,9 +216,12 @@
          col_suggests_date = bool(re.search(r"(^|_)(date|dt|time|timestamp|day|month|created_at|updated_at|order_date|trans_date|invoice_date|period)(_|$)", col_name, re.I))
  
          if has_separators or col_suggests_date:
@@ -143,7 +143,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
                  if parsed.dropna().shape[0] / len(non_null) > 0.75:
                      years = parsed.dropna().dt.year
                      if (years >= 1800).all() and (years <= 2200).all():
-@@ -161,21 +239,29 @@
+@@ -161,21 +240,29 @@
      if non_null.str.match(r"^0\d{2,}").any(): return None
      if set(non_null.str.lower().unique()).issubset({"true", "false", "yes", "no", "t", "f", "y", "n"}): return None
  
@@ -185,7 +185,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
          parsed = pd.to_numeric(full_cleaned, errors="coerce")
          parsed[series.isna()] = np.nan
          return parsed
-@@ -196,19 +282,25 @@
+@@ -196,19 +283,25 @@
  def preprocess_df(df: pd.DataFrame) -> pd.DataFrame:
      """Apply all preprocessing: clean column names, parse types, handle missing values."""
      if df.empty: raise ValueError("The file has no rows.")
@@ -220,7 +220,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
      df.columns = clean_cols
  
      # Drop artificial index columns exported from dataframes
-@@ -239,7 +331,9 @@
+@@ -239,7 +332,9 @@
              df[c] = bool_series
              continue
  
@@ -231,7 +231,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
  
  
  def load_df(raw: bytes, filename: str) -> pd.DataFrame:
-@@ -298,11 +392,12 @@
+@@ -298,11 +393,12 @@
          cols.append(info)
  
      dates = [c["name"] for c in cols if c["kind"] == "date"]
@@ -246,7 +246,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
  
      def date_rank(col_name):
          score = 0
-@@ -329,31 +424,36 @@
+@@ -329,31 +425,36 @@
      tot = val_series.sum() if agg_for(m) == "sum" else val_series.mean()
      out.append({"label": f"{'Total' if agg_for(m) == 'sum' else 'Average'} {m}", "value": float(tot), "kind": "num"})
      if d:
@@ -290,7 +290,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
      return s, freq
  
  
-@@ -363,7 +463,7 @@
+@@ -363,7 +464,7 @@
      if d:
          s, freq = period_series(df, d, m)
          if len(s) > 1:
@@ -299,7 +299,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
              out.append({"title": f"{m} by {label}", "type": "line", "freq": freq,
                          "x": [t.strftime("%Y-%m-%d") for t in s.index], "y": s.round(2).tolist()})
      for c in p["cat_cols"][:2]:
-@@ -382,41 +482,50 @@
+@@ -382,41 +483,50 @@
      return q or ["Give me a summary of this data"]
  
  
@@ -359,7 +359,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
                  f.append({"kind": "driver", "severity": "info", "title": f"{top} drives {share*100:.0f}% of {m}",
                            "detail": f"Across {c}, a single value ({top}) accounts for {share*100:.0f}% of total {m}. You depend heavily on it.",
                            "action": f"Protect what makes {top} work, and test whether other {c} values can grow."})
-@@ -424,21 +533,22 @@
+@@ -424,21 +534,22 @@
      best = None
      for o in others:
          r = df[m].corr(df[o])
@@ -386,7 +386,7 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
      seasonal = "add" if len(s) >= 2 * m else None
      try:
          fit = ExponentialSmoothing(s, trend="add", damped_trend=True, seasonal=seasonal, seasonal_periods=m if seasonal else None).fit()
-@@ -446,17 +556,22 @@
+@@ -446,17 +557,22 @@
          fit = ExponentialSmoothing(s, trend="add").fit()
      fc = fit.forecast(periods)
      sd = float(np.std(fit.resid)) if len(fit.resid) else 0.0
@@ -414,10 +414,8 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/analytics
  
  
  def demo_df(seed=7):
-Only in /home/user/Anhad23mahajan/lumen/app: limits.py
-diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/main.py lumen/app/main.py
---- /home/user/Anhad23mahajan/lumen/app/main.py	2026-10-09 15:40:58.000000000 +0000
-+++ lumen/app/main.py	2026-10-09 17:52:20.745629801 +0000
+--- a/app/main.py
++++ b/app/main.py
 @@ -1,4 +1,5 @@
  import uuid, pathlib, logging, re
 +from starlette.concurrency import run_in_threadpool
@@ -460,9 +458,8 @@ diff -u -r '--exclude=__pycache__' /home/user/Anhad23mahajan/lumen/app/main.py l
      except ValueError as e: raise HTTPException(400, str(e))
      except Exception as e:
          logging.exception("Forecast failed")
-Only in /home/user/Anhad23mahajan/lumen/app: sqlguard.py
---- /home/user/Anhad23mahajan/lumen/static/index.html	2026-10-09 15:40:58.000000000 +0000
-+++ lumen/static/index.html	2026-10-09 17:52:20.753687893 +0000
+--- a/static/index.html
++++ b/static/index.html
 @@ -615,7 +615,7 @@
        autosize: true, margin: { l: 56, r: 16, t: 8, b: 36 }, font: { family: 'Figtree', color: C.ink, size: 12 }, paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
        xaxis: { gridcolor: 'rgba(0,0,0,0)', linecolor: C.rule, automargin: true, ...(o.xaxis || {}) }, yaxis: { gridcolor: C.rule, zeroline: false, tickformat: '~s', automargin: true, ...(o.yaxis || {}) }, hoverlabel: { font: { family: 'Figtree' } }, ...o.rest
@@ -491,8 +488,8 @@ Only in /home/user/Anhad23mahajan/lumen/app: sqlguard.py
        }))
      }
  
---- /home/user/Anhad23mahajan/lumen/requirements.txt	2026-10-09 15:40:58.000000000 +0000
-+++ lumen/requirements.txt	2026-10-09 17:52:20.753889221 +0000
+--- a/requirements.txt
++++ b/requirements.txt
 @@ -6,6 +6,7 @@
  duckdb>=1.1
  statsmodels>=0.14

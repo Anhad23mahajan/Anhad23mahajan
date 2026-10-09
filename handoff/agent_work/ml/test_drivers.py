@@ -200,7 +200,8 @@ def test_planted_price_rise_is_attributed_to_price_not_volume():
 
 def test_new_product_launch_is_reported_as_new_with_exact_value():
     df = make_sales(6, days=150, noise=0.01, new_product=("2024-03-01", "Poster", 40.0, 150.0))
-    b = D.variance_bridge(df, "order_date", "amount", ["product"], ("2024-02-01", "2024-02-29"), ("2024-03-01", "2024-03-31"), mode="explicit", force=True)
+    b = D.variance_bridge(df, "order_date", "amount", ["product"], ("2024-02-01", "2024-02-29"), ("2024-03-01", "2024-03-31"), mode="explicit",
+                          qty_col="quantity", price_col="unit_price", force=True)
     prod = b["evidence"]["by_dimension"]["product"]["contributions"]
     new = [x for x in prod if x["segment"] == "Poster"][0]
     ref = df[(df["product"] == "Poster") & (df.order_date >= "2024-03-01") & (df.order_date <= "2024-03-31")].amount.sum()
@@ -213,7 +214,7 @@ def test_new_product_launch_is_reported_as_new_with_exact_value():
 def test_bridge_stays_quiet_when_nothing_changed_and_speaks_when_it_did():
     quiet = make_sales(7, days=400, noise=0.03)
     assert D.variance_bridge(quiet, "order_date", "amount", ["product", "region"]) is None
-    changed = make_sales(7, days=400, noise=0.03, scale_all=None, price_change=("2024-11-01", "Hoodie", 0.6))
+    changed = make_sales(7, days=400, noise=0.03, scale_all=None, price_change=("2025-01-01", "Hoodie", 0.6))
     b = D.variance_bridge(changed, "order_date", "amount", ["product", "region"], qty_col="quantity", price_col="unit_price")
     assert b is not None and b["severity"] == "warn" and b["evidence"]["best_dimension"] == "product"
     assert b["evidence"]["by_dimension"]["product"]["contributions"][0]["segment"] == "Hoodie"

@@ -1,0 +1,69 @@
+accents_nfc.csv                    200   0.05s metric=montant_ttc date=date_de_création
+accents_nfd.csv                    200   0.06s metric=montant_ttc date=date_de_création
+ambig_dmy_halfyear.csv             200   0.05s metric=sales date=date
+ambig_dmy_small.csv                200   0.08s metric=sales date=date
+bom_utf8.csv                       200   0.10s metric=amount date=date
+clean.xlsx                         200   0.08s metric=revenue date=order_date
+corr_order.csv                     200   0.03s metric=amount date=date
+cp1252_euro.csv                    200   0.09s metric=amount date=date
+csv_named_xlsx.xlsx                200   0.17s metric=amount date=date
+daily_70d_midweek.csv              200   0.02s metric=sales date=date
+donations.csv                      200   0.19s metric=amount date=date
+edge_all_zero.csv                  200   0.05s metric=amount date=date
+edge_binary_garbage.csv            400   0.00s DETAIL=This doesn't look like a CSV or Excel file.
+edge_constant.csv                  200   0.04s metric=amount date=date
+edge_date_no_metric.csv            200   0.06s metric=None date=date
+edge_datelike_text.csv             200   0.08s metric=amount date=None
+edge_dup_cols.csv                  200   0.08s metric=amount date=date
+edge_empty.csv                     400   0.01s DETAIL=The file has no rows.
+edge_gappy_unsorted.csv            200   0.02s metric=amount date=date
+edge_header_only.csv               400   0.00s DETAIL=The file has no rows.
+edge_html_page.csv                 400   0.00s DETAIL=The file has no rows.
+edge_huge_values.csv               200   0.03s metric=amount date=date
+edge_inf_values.csv                200   0.07s metric=amount date=date
+edge_negative_metric.csv           200   0.06s metric=profit date=date
+edge_newlines_only.csv             400   0.00s DETAIL=The file has no rows.
+edge_no_date.csv                   200   0.04s metric=qty date=None
+edge_no_numeric.csv                200   0.05s metric=None date=None
+edge_ragged.csv                    200   0.03s metric=amount date=date
+edge_reserved_cols.csv             200   0.09s metric=set date=date
+edge_seq_id.csv                    200   0.02s metric=amount date=None
+edge_single_col.csv                200   0.01s metric=amount date=None
+edge_single_col_text.csv           200   0.01s metric=None date=None
+edge_single_row.csv                200   0.02s metric=amount date=date
+edge_trailing_blank.csv            200   0.04s metric=sales date=date
+edge_two_rows.csv                  200   0.03s metric=amount date=date
+edge_wide_300.csv                  200   0.55s metric=metric_0 date=date
+edge_year_only.csv                 200   0.02s metric=amount date=year
+ends_dec30.csv                     200   0.06s metric=revenue date=date
+epoch_seconds.csv                  200   0.05s metric=amount date=timestamp
+european.csv                       200   0.10s metric=betrag date=datum
+european_nothousands.csv           200   0.11s metric=betrag date=datum
+excel_serial.csv                   200   0.04s metric=amount date=date
+expenses_currency.csv              200   0.15s metric=amount date=date
+hindi_headers.csv                  200   0.03s metric=राशि date=तारीख
+ids_only_numeric.csv               200   0.04s metric=None date=None
+ids_plus_amount.csv                200   0.02s metric=amount date=order_date
+inr_lakh.csv                       200   0.08s metric=revenue date=date
+inventory.csv                      200   0.06s metric=qty date=None
+latin1.csv                         200   0.08s metric=amount date=date
+legacy.xls                         400   0.00s DETAIL=Could not read Excel file: Missing optional dependency 'xlrd'. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install xlrd.
+merged_header.xlsx                 200   0.04s metric=jan date=None
+metric_names.csv                   200   0.08s metric=corporate_sales date=date
+monthly_names.csv                  200   0.03s metric=revenue date=None
+multi_sheet_cover_first.xlsx       200   0.07s metric=sales date=date
+multi_sheet_data_first.xlsx        200   0.04s metric=sales date=date
+offset_table.xlsx                  200   0.09s metric=sales date=date
+pct_bool_thousands.csv             200   0.13s metric=revenue date=date
+starts_mid_month.csv               200   0.04s metric=revenue date=date
+thousands_text.csv                 200   0.11s metric=revenue date=date
+title_rows_total.xlsx              200   0.11s metric=amount date=date
+total_row_literal.xlsx             200   0.11s metric=amount date=date
+tz_mixed_offsets.csv               200   0.08s metric=amount date=created_at
+tz_utc.csv                         200   0.05s metric=amount date=created_at
+us_mdy_halfyear.csv                200   0.07s metric=sales date=date
+utf16_tab.txt.csv                  200   0.09s metric=amount date=date
+weekday_names.csv                  200   0.05s metric=sales date=None
+xlsx_named_csv.csv                 200   0.08s metric=revenue date=order_date
+year_month_ints.csv                200   0.10s metric=visitors date=year
+yyyymmdd_int.csv                   200   0.02s metric=amount date=date

@@ -1,7 +1,7 @@
 // Drives the real static/index.html in jsdom against a live server. Plotly is stubbed (records calls).
 // usage: node fe_harness.js BASE_URL
 const { JSDOM } = require('jsdom'); const fs = require('fs'); const path = require('path');
-const BASE = process.argv[2]; const HTML = fs.readFileSync('/home/user/Anhad23mahajan/lumen/static/index.html', 'utf8');
+const BASE = process.argv[2]; const HTML = fs.readFileSync(process.env.HTML || '/home/user/Anhad23mahajan/lumen/static/index.html', 'utf8');
 const DATA = '/home/user/work/qa/fixtures/data/';
 async function upload(name, buf) { const fd = new FormData(); fd.append('file', new Blob([buf ?? fs.readFileSync(DATA + name)]), name); const r = await fetch(BASE + '/api/upload', { method: 'POST', body: fd }); return { status: r.status, body: await r.json() }; }
 function makeWindow() {

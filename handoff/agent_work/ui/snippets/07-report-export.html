@@ -55,7 +55,7 @@
     for (const g of document.querySelectorAll('.js-plotly-plot')) {
       if (!g.offsetParent || g.id === 'rc') continue;
       try { const wide = g.id === 'fchart' || g.closest('.wide') || g.classList.contains('wide');
-        const url = await Plotly.toImage(g, { format: 'png', width: 720, height: wide ? 230 : 190, scale: 2 });
+        const url = await Plotly.toImage(g, { format: 'png', width: 720, height: g.id === 'fchart' ? 190 : wide ? 170 : 140, scale: 2 });
         const im = new Image(); im.className = 'print-chart'; im.src = url; im.alt = g.getAttribute('aria-label') || 'Chart'; g.before(im) } catch (e) { }
     }
   };

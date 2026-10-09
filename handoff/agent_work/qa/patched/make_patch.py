@@ -99,7 +99,8 @@ AMBIGUOUS_DAYFIRST = True    # 03/04/2025 with nothing to disambiguate: day-firs
 
 def _to_dt(x, dayfirst=False):
     try: out = pd.to_datetime(x, format="mixed", errors="coerce", dayfirst=dayfirst)
-    except ValueError:        # mixed UTC offsets (DST!): convert to UTC then drop the zone
+    except ValueError: out = None                         # pandas 3 raises on mixed UTC offsets (DST!)
+    if out is None or out.dtype == object:                # pandas 2.2 returns an object column instead; both: convert to UTC, drop the zone
         out = pd.to_datetime(x, format="mixed", errors="coerce", dayfirst=dayfirst, utc=True).dt.tz_localize(None)
     good = lambda o: (o.notna() & (o.dt.year > 1800)).mean()
     if good(out) < 0.5:                   # month-year labels like Jan-25 come back as year 0001 from format="mixed"
@@ -344,5 +345,8 @@ sub(H, "$('#fgo').disabled = !p.date_cols.length; $('#ferr').textContent = p.dat
 sub(H, "if (p.date_cols.length) runForecast()", "if (p.date_cols.length && p.metric_cols.length) runForecast()")
 # requirements
 sub("requirements.txt", "openpyxl\n", "openpyxl\nxlrd>=2.0.1\n")
-subprocess.run("cd /home/user/work/qa/patched && diff -u -r --exclude=__pycache__ /home/user/Anhad23mahajan/lumen/app lumen/app > qa_fixes.patch; diff -u /home/user/Anhad23mahajan/lumen/static/index.html lumen/static/index.html >> qa_fixes.patch; diff -u /home/user/Anhad23mahajan/lumen/requirements.txt lumen/requirements.txt >> qa_fixes.patch; wc -l qa_fixes.patch", shell=True)
+out = []
+for rel in ("app/analytics.py", "app/main.py", "static/index.html", "requirements.txt"):
+    r = subprocess.run(["diff", "-u", "--label", "a/" + rel, "--label", "b/" + rel, str(SRC / rel), str(DST / rel)], capture_output=True, text=True); out.append(r.stdout)
+pathlib.Path("/home/user/work/qa/patched/qa_fixes.patch").write_text("".join(out)); print("patch lines:", sum(x.count("\n") for x in out))
 print("patched tree written to", DST)
