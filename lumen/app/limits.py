@@ -24,8 +24,9 @@ class UploadTooLarge(ValueError): pass
 class UploadRejected(ValueError): pass
 
 
-async def read_capped(file, limit: int = MAX_UPLOAD_BYTES, chunk: int = 1 << 20) -> bytes:
+async def read_capped(file, limit: int | None = None, chunk: int = 1 << 20) -> bytes:
     """Read an UploadFile but stop as soon as it exceeds `limit` (the old code buffered the whole body first)."""
+    limit = MAX_UPLOAD_BYTES if limit is None else limit
     buf, size = bytearray(), 0
     while True:
         part = await file.read(chunk)

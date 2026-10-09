@@ -1,0 +1,162 @@
+"""llm.py against a scripted fake Gemini: fail-over, error handling, and the answer checks. No network, no key."""
+import json
+import pandas as pd
+import pytest
+from google.genai import errors
+from app import llm, analytics as A
+
+DF = pd.DataFrame({"product": ["Hoodie", "Mug", "Mug", "Tote"], "amount": [900.0, 300.0, 300.0, 250.0],
+                   "order_date": pd.to_datetime(["2025-01-02", "2025-01-03", "2025-02-03", "2025-02-04"])})
+
+
+class Resp:
+    def __init__(self, text): self.text = text
+
+
+class FakeModels:
+    def __init__(self, script): self.script, self.calls = list(script), []
+    def generate_content(self, model, contents, config):
+        self.calls.append((model, config)); item = self.script.pop(0)
+        if isinstance(item, Exception): raise item
+        return Resp(item)
+
+
+class FakeClient:
+    def __init__(self, script): self.models = FakeModels(script)
+
+
+def api_err(code, status, msg="x"):
+    cls = errors.ServerError if code >= 500 else errors.ClientError
+    return cls(code, {"error": {"code": code, "message": msg, "status": status}})
+
+
+def plan(sql, check="", ctype="table", x="", y=""):
+    return json.dumps({"sql": sql, "check_sql": check, "chart_type": ctype, "chart_x": x, "chart_y": y})
+
+
+def expl(text, caveats=""): return json.dumps({"answer": text, "caveats": caveats})
+
+
+@pytest.fixture(autouse=True)
+def fresh(monkeypatch):
+    monkeypatch.setattr(llm, "_cool", {}); monkeypatch.setattr(llm, "_NARR_CACHE", {}); monkeypatch.delenv("GEMINI_MODEL", raising=False)
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
+    yield
+    llm._client = None
+
+
+def use(script): llm._client = FakeClient(script); return llm._client
+
+
+SQL = "select product, sum(amount) as total from data group by product order by total desc"
+CHECK = "select distinct product, sum(amount) over (partition by product) as total from data order by total desc"
+
+
+def test_happy_path_all_checks_pass():
+    use([plan(SQL, CHECK, "bar", "product", "total"), expl("Mug brings in 600 and Hoodie 900; Hoodie is first.")])
+    r = llm.answer(DF, "Which product brings in the most revenue?")
+    assert r["status"] == "checked" and r["verified"] and r["columns"] == ["product", "total"]
+    assert r["rows"][0] == ["Hoodie", 900.0] and r["chart"]["type"] == "bar"
+    assert [c["ok"] for c in r["checks"]] == [True, True, True, True]
+
+
+def test_disagreeing_second_query_is_flagged():
+    wrong = "select product, sum(amount) + 1 as total from data group by product"
+    use([plan(SQL, wrong), expl("Hoodie leads with 900.")])
+    r = llm.answer(DF, "q")
+    assert r["status"] == "disagree" and not r["verified"]
+    assert any(c["id"] == "second_query" and c["ok"] is False for c in r["checks"])
+
+
+def test_made_up_number_replaced_by_plain_summary():
+    use([plan(SQL, CHECK), expl("Hoodie sold 12,345 units, up 80%.")])
+    r = llm.answer(DF, "q")
+    assert "12,345" not in r["answer"] and "Hoodie" in r["answer"]
+    assert any(c["id"] == "numbers" and c["ok"] is False for c in r["checks"]) and r["status"] != "checked"
+
+
+def test_derived_numbers_are_allowed():
+    use([plan(SQL, CHECK), expl("Hoodie (900) is 150% of Mug (600), and the total is 1,750.")])   # 900/600 -> 150%, sum -> 1750
+    assert llm.answer(DF, "q")["status"] == "checked"
+
+
+def test_quota_fails_over_to_next_model_then_succeeds():
+    c = use([api_err(429, "RESOURCE_EXHAUSTED"), plan(SQL, CHECK), expl("Hoodie leads with 900.")])
+    r = llm.answer(DF, "q")
+    assert r["status"] == "checked"
+    assert c.models.calls[0][0] != c.models.calls[1][0]                      # second call used a different model
+
+
+def test_retired_model_404_skipped_and_cooled_down():
+    c = use([api_err(404, "NOT_FOUND", "models/x is not found for project 123404"), plan(SQL, CHECK), expl("Hoodie 900.")])
+    llm.answer(DF, "q")
+    assert llm.model_order()[0] in llm._cool
+
+
+def test_blocked_empty_response_tries_next_model():
+    use([None, plan(SQL, CHECK), expl("Hoodie 900.")])                       # .text None = blocked
+    assert llm.answer(DF, "q")["status"] == "checked"
+
+
+def test_bad_json_retries_in_plain_mode():
+    c = use(["{not json", plan(SQL, CHECK), expl("Hoodie 900.")])
+    assert llm.answer(DF, "q")["status"] == "checked"
+    assert c.models.calls[0][1].response_json_schema is not None and c.models.calls[1][1].response_json_schema is None
+
+
+def test_schema_rejected_400_retries_without_schema():
+    c = use([api_err(400, "INVALID_ARGUMENT", "response_json_schema unsupported"), plan(SQL, CHECK), expl("Hoodie 900.")])
+    assert llm.answer(DF, "q")["status"] == "checked"
+
+
+def test_bad_key_is_reported_not_retried():
+    c = use([api_err(400, "INVALID_ARGUMENT", "API key not valid. Please pass a valid API key.")])
+    with pytest.raises(llm.AIUnavailable) as e: llm.answer(DF, "q")
+    assert e.value.kind == "key" and len(c.models.calls) == 1
+
+
+def test_server_overload_everywhere_is_busy():
+    use([api_err(503, "UNAVAILABLE")] * 20)
+    with pytest.raises(llm.AIUnavailable) as e: llm.answer(DF, "q")
+    assert e.value.kind == "busy"
+
+
+def test_hostile_sql_from_model_is_refused_after_one_repair():
+    bad = "select * from read_csv('/etc/passwd')"
+    use([plan(bad), plan(bad)])
+    with pytest.raises(ValueError, match="couldn't answer that safely"): llm.answer(DF, "q")
+
+
+def test_repair_loop_recovers():
+    use([plan("select nope from data"), plan(SQL, CHECK), expl("Hoodie 900.")])
+    assert llm.answer(DF, "q")["rows"][0][0] == "Hoodie"
+
+
+def test_no_key_means_off():
+    with pytest.raises(llm.AIUnavailable) as e: llm.answer(DF, "q", ai=False)
+    assert e.value.kind == "off"
+
+
+def test_numbers_helpers():
+    ok = llm.allowed_numbers("how many in 2025?", ["name", "amt"], [["a", 1234.56], ["b", 100.0]])
+    assert llm.ungrounded("b is 100, which is 7.5% of the total", ok) == []                 # derivable: 100 / (1234.56 + 100)
+    assert llm.ungrounded("b is 100 and revenue grew 42%", ok) != []                         # 42 is not in or derivable from the result
+    assert llm.ungrounded("a is 1,234.6, b is 100, in 2025", ok) == []
+    assert llm.ungrounded("revenue was $1.2K", llm.allowed_numbers("", ["x"], [[1234.0]])) == []   # 1.2K ~ 1234 at displayed precision
+    assert llm.ungrounded("revenue was $1.3K", llm.allowed_numbers("", ["x"], [[1234.0]])) != []
+
+
+def test_narrate_uses_ai_when_grounded_else_template():
+    facts = [{"title": "amount is up 43%", "detail": "Up 43% over the period.", "action": "Repeat what worked."}]
+    use([json.dumps({"summary": "Sales are up 43%. Keep going.", "recommendations": ["Repeat what worked.", "Watch stock."]})])
+    assert llm.narrate(facts, {})["source"] == "ai"
+    llm._NARR_CACHE.clear()
+    use([json.dumps({"summary": "Sales are up 99%.", "recommendations": ["x"]})])           # 99 is not in the findings
+    r = llm.narrate(facts, {}); assert r["source"] == "template" and "43%" in r["summary"]
+    use([api_err(429, "RESOURCE_EXHAUSTED")] * 10); llm._NARR_CACHE.clear()
+    assert llm.narrate(facts, {})["source"] == "template"
+
+
+def test_stored_answer_runs_live_sql():
+    r = llm.stored_answer(DF, {"sql": SQL, "chart": {"type": "bar", "x": "product", "y": "total"}})
+    assert r["mode"] == "demo" and r["rows"][0] == ["Hoodie", 900.0] and not r["verified"]
