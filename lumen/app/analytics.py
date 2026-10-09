@@ -1,6 +1,7 @@
 """Profiling, starter charts, statistical insights and forecasting. No LLM needed here."""
 import io, re, warnings, datetime, unicodedata
 import numpy as np, pandas as pd
+from . import drivers as D
 
 METRIC_HINT = re.compile(r"amount|sales|revenue|total|donat|expens|cost|profit|qty|quantity|units|price|balance|spend|value|volume|score|rate", re.I)
 STRONG_HINT = re.compile(r"amount|revenue|sales|total|donat|expens|cost|profit|spend|volume", re.I)
@@ -504,6 +505,15 @@ def insights(df, p):
     if d:
         s, freq = period_series(df, d, m)
         n = len(s); unit = UNIT[freq]
+        if agg_for(m) == "sum" and p["cat_cols"]:       # what changed between the last two equal windows, and which segment drove it
+            try: chg = D.bridge(df, d, m, p["cat_cols"][:3], freq, s, D.find_quantity_column(df, m, p["metric_cols"]))
+            except Exception: chg = None
+            if chg:
+                chg["severity"] = "good" if (chg["evidence"]["change"] > 0) != bool(COST_HINT.search(m)) else "warn"
+                f.append(chg)
+        try: daily = D.daily_anomalies(df, d, m, p["cat_cols"][:3], mean_metric=agg_for(m) == "mean")
+        except Exception: daily = []
+        f += daily
         if n >= 6:
             k = max(2, n // 3); first, last = s.iloc[:k].mean(), s.iloc[-k:].mean()
             if first:
@@ -515,7 +525,7 @@ def insights(df, p):
                               "detail": f"The average {ADJ[unit]} {m} in the most recent {k} {unit}s is {abs(ch):.0f}% {'higher' if up else 'lower'} than in the first {k}.",
                               "action": "Find out what changed and repeat it." if good else f"Look at which {(p['cat_cols'] or ['product'])[0]} or period {'rose' if up else 'dropped'} and act on it first."})
             med = s.median(); mad = (s - med).abs().median()
-            if mad > 0:
+            if mad > 0 and not daily:                 # the daily check above is finer; only fall back to period-level when it found nothing
                 z = 0.6745 * (s - med) / mad
                 for t, v in z[abs(z) > 3.5].abs().sort_values(ascending=False).head(2).index.to_series().items():
                     val = s[v]
@@ -540,39 +550,23 @@ def insights(df, p):
                   "detail": f"{m} and {best[0]} are strongly {'positively' if best[1] > 0 else 'negatively'} related (correlation {best[1]:.2f}). This shows they move together, not that one causes the other.",
                   "action": f"Track {best[0]} alongside {m} and test changing it."})
     order = {"warn": 0, "good": 1, "info": 2}
-    return sorted(f, key=lambda x: (x["kind"] == "quality", order[x["severity"]]))[:8]   # data-quality notes never crowd out findings
+    return sorted(f, key=lambda x: (x["kind"] == "quality", order[x["severity"]], x["kind"] != "change"))[:8]   # data-quality notes never crowd out findings
 
 
 def forecast(df, date, value, periods=6):
+    """Backtest-selected forecast (see app/forecasting.py). Raises ValueError with a plain-English reason when it cannot forecast."""
     if date not in df or value not in df: raise ValueError("Unknown column.")
-    from statsmodels.tsa.holtwinters import ExponentialSmoothing
+    if not pd.api.types.is_datetime64_any_dtype(df[date]): raise ValueError(f"'{date}' is not a date column.")
+    if not pd.api.types.is_numeric_dtype(df[value]) or pd.api.types.is_bool_dtype(df[value]): raise ValueError(f"'{value}' is not a numeric column.")
+    from .forecasting import forecast_series
     s, freq = period_series(df, date, value)
     observed = int((df[[date, value]].dropna().set_index(date)[value].resample(freq).count() > 0).sum())
     if len(s) < 8 or observed < 8: raise ValueError("Need at least 8 time periods with data (days, weeks or months) to forecast.")
-    m = {"MS": 12, "W": 52, "D": 7, "YS": 1}[freq]
-    seasonal = "add" if len(s) >= 2 * m else None
-    try:
-        fit = ExponentialSmoothing(s, trend="add", damped_trend=True, seasonal=seasonal, seasonal_periods=m if seasonal else None).fit()
-    except Exception:
-        fit = ExponentialSmoothing(s, trend="add").fit()
-    fc = fit.forecast(periods)
-    sd = float(np.std(fit.resid)) if len(fit.resid) else 0.0
-    try: k_par = int(len(fit.params_formatted))
-    except Exception: k_par = 3
-    sd *= np.sqrt(len(s) / max(len(s) - k_par, 3))          # in-sample residuals understate out-of-sample error when many parameters are fitted
-    h = np.sqrt(np.arange(1, periods + 1))
-    lo, hi = fc.values - 1.96 * sd * h, fc.values + 1.96 * sd * h
-    if s.min() >= 0:
-        fc = fc.clip(lower=0); lo = np.maximum(lo, 0); hi = np.maximum(hi, fc.values)
-    kw = min(periods, len(s))                                 # compare like with like
-    prev = s.iloc[-kw:].sum() if agg_for(value) == "sum" else s.iloc[-kw:].mean()
-    nxt = fc.iloc[:kw].sum() if agg_for(value) == "sum" else fc.iloc[:kw].mean()
-    ch = (nxt - prev) / abs(prev) * 100 if prev else 0
-    unit = UNIT[freq] + "s"
-    fmt = lambda idx: [t.strftime("%Y-%m-%d") for t in idx]
-    return {"freq": freq, "history": {"x": fmt(s.index), "y": s.round(2).tolist()},
-            "forecast": {"x": fmt(fc.index), "y": fc.round(2).tolist(), "lower": np.round(lo, 2).tolist(), "upper": np.round(hi, 2).tolist()},
-            "note": f"Over the next {kw} {unit if kw != 1 else unit[:-1]}, {value} is expected to be about {abs(ch):.0f}% {'higher' if ch >= 0 else 'lower'} than the last {kw}. The shaded band is a 95% range; forecasts are estimates, not promises."}
+    mean_metric = agg_for(value) == "mean"
+    r = forecast_series(s, horizon=periods, freq=freq, agg="mean" if mean_metric else "sum")
+    if r.get("status") == "refused": raise ValueError(r.get("reason") or "This series cannot be forecast.")
+    if mean_metric and r.get("note"): r["note"] = r["note"].replace("the total is expected", "the average is expected")
+    return r
 
 
 def demo_df(seed=7):
