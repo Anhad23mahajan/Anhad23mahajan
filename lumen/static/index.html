@@ -615,7 +615,7 @@
       autosize: true, margin: { l: 56, r: 16, t: 8, b: 36 }, font: { family: 'Figtree', color: C.ink, size: 12 }, paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
       xaxis: { gridcolor: 'rgba(0,0,0,0)', linecolor: C.rule, automargin: true, ...(o.xaxis || {}) }, yaxis: { gridcolor: C.rule, zeroline: false, tickformat: '~s', automargin: true, ...(o.yaxis || {}) }, hoverlabel: { font: { family: 'Figtree' } }, ...o.rest
     });
-    async function api(p, o) { const r = await fetch(p, o); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.detail || 'Something went wrong. Try again.'); return j }
+    async function api(p, o) { const r = await fetch(p, o); const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(typeof j.detail === 'string' ? j.detail : 'That request was not valid. Try again.'); return j }
     const busy = (el, on) => el.classList.toggle('busy', on);
 
     async function load(p) {
@@ -657,7 +657,8 @@
       $('#charts').innerHTML = '';
       $('#fv').innerHTML = p.metric_cols.map(c => `<option ${c === p.metric ? 'selected' : ''}>${esc(c)}</option>`).join('');
       $('#fd').innerHTML = p.date_cols.map(c => `<option ${c === p.date ? 'selected' : ''}>${esc(c)}</option>`).join('');
-      $('#fgo').disabled = !p.date_cols.length; $('#ferr').textContent = p.date_cols.length ? '' : 'Forecasting needs a date column, and none was found.';
+      $('#fgo').disabled = !(p.date_cols.length && p.metric_cols.length); $('#ferr').textContent = !p.date_cols.length ? 'Forecasting needs a date column, and none was found.' : (!p.metric_cols.length ? 'Forecasting needs a numeric column, and none was found.' : '');
+      try { Plotly.purge('fchart') } catch (e) { } $('#fnote').textContent = '';
       
       const renderTable = (pv) => {
         if(!pv) return '';
@@ -687,7 +688,7 @@
           const el = document.createElement('div'); el.className = 'chart' + (c.type === 'line' ? ' wide' : ''); $('#charts').appendChild(el); c.type === 'line' ? lineChart(el, c) : barH(el, c.x, c.y);
           const t = document.createElement('p'); t.className = 'note'; t.style.margin = '0 0 -6px'; t.textContent = c.title; el.before(t); if (c.type === 'line') t.style.gridColumn = '1/-1'
         });
-        if (p.date_cols.length) runForecast()
+        if (p.date_cols.length && p.metric_cols.length) runForecast()
       }))
     }
 

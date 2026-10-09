@@ -1,4 +1,5 @@
 import uuid, pathlib, logging, re
+from starlette.concurrency import run_in_threadpool
 from dotenv import load_dotenv
 load_dotenv()  # reads GEMINI_API_KEY from .env
 from fastapi import FastAPI, UploadFile, File, HTTPException
@@ -13,7 +14,7 @@ MAX_BYTES = 25 * 1024 * 1024
 
 
 def start_session(df, raw_preview=None):
-    if len(SESSIONS) > 50: SESSIONS.pop(next(iter(SESSIONS)))
+    if len(SESSIONS) > 50: SESSIONS.pop(next(iter(SESSIONS)))   # (see limits.py SessionStore for LRU+TTL)
     sid = uuid.uuid4().hex; SESSIONS[sid] = df
     p = A.profile(df); facts = A.insights(df, p)
     meta = {"rows": p["rows"], "metric": p["metric"], "date_column": p["date"], "columns": [c["name"] for c in p["columns"]]}
@@ -34,10 +35,14 @@ def health(): return {"ok": True, "ai": llm.available()}
 
 @app.post("/api/upload")
 async def upload(file: UploadFile = File(...)):
-    raw = await file.read()
+    raw = await file.read(MAX_BYTES + 1)                      # never buffer more than the limit
     if len(raw) > MAX_BYTES: raise HTTPException(413, "File is larger than 25 MB.")
+    return await run_in_threadpool(_process_upload, raw, file.filename or "")   # CPU-bound pandas work must not block the event loop
+
+
+def _process_upload(raw, filename):
     try:
-        raw_df = A.read_raw_df(raw, file.filename or "")
+        raw_df = A.read_raw_df(raw, filename)
         raw_preview = A.df_to_preview(raw_df)
         processed_df = A.preprocess_df(raw_df)
         return start_session(processed_df, raw_preview)
@@ -82,7 +87,8 @@ class Fc(BaseModel):
 
 @app.post("/api/forecast")
 def fc(body: Fc):
-    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+    df = get_df(body.session_id)                              # 404 must not be rewrapped as a 400
+    try: return A.clean(A.forecast(df, body.date_col, body.value_col, max(1, min(body.periods, 24))))
     except ValueError as e: raise HTTPException(400, str(e))
     except Exception as e:
         logging.exception("Forecast failed")
