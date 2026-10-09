@@ -526,6 +526,7 @@
     }
   </style>
   <link rel="stylesheet" href="/assets/lumen-fixes.css">
+  <link rel="stylesheet" href="/assets/lumen-extra.css">
 </head>
 
 <body>
@@ -539,25 +540,32 @@
   </header>
   <main>
     <div id="hero">
-      <div>
+      <div class="hero-copy">
         <h1>Your data already knows what to do next.</h1>
         <p>Drop in a sales, donations or expenses file. Lumen finds the trends and odd spots, answers your questions in
           plain English, and suggests next steps. Free and open source.</p>
       </div>
-      <div id="drop">
-        <h2>Add your spreadsheet</h2>
-        <p>CSV or Excel, up to 25 MB. Your file stays in memory and is never saved.</p>
-        <div class="row"><button class="btn" id="pick">Choose a file</button><button class="btn ghost" id="demo">Try
-            sample shop data</button></div>
-        <input type="file" id="file" accept=".csv,.xlsx,.xls" hidden>
+      <div class="hero-actions">
+        <div id="drop">
+          <h2>Add your spreadsheet</h2>
+          <p>CSV or Excel, up to 25 MB. Your file is held in memory, not stored by Lumen.</p>
+          <div class="row"><button class="btn" id="pick">Choose a file</button></div>
+          <input type="file" id="file" accept=".csv,.xlsx,.xls" hidden>
+        </div>
+        <div id="samples" class="samples" aria-labelledby="samples-h">
+          <h2 id="samples-h">Or start with a sample</h2>
+          <div class="sample-grid" id="sample-grid"><p class="note">Loading samples…</p></div>
+        </div>
         <div class="err" id="uerr" role="alert"></div>
       </div>
+      <section id="trust" aria-labelledby="trust-h"></section>
     </div>
     <div id="app">
       <aside>
         <div class="summary">
           <h3 id="sumh" tabindex="-1">What matters most</h3>
           <p id="sum"></p>
+          <p class="srcnote" id="sumsrc"></p>
         </div>
         <h3>Findings</h3>
         <div id="ins"></div>
@@ -565,17 +573,23 @@
         <ol class="recs" id="recs"></ol>
         <h3>Your data</h3>
         <p class="note" id="meta"></p>
+        <button class="btn ghost" id="print-btn" type="button">Print or save a one-page report</button>
       </aside>
       <div>
+        <div id="notices"></div>
         <div class="kpis" id="kpis"></div>
         <section>
           <h2>Ask a question</h2>
           <p class="sub">Type it the way you would ask a colleague.</p>
           <div class="askbar"><input id="q" placeholder="e.g. Which product sold the most last quarter?"
               aria-label="Question" maxlength="500" autocomplete="off"><button class="btn" id="go">Ask</button></div>
-          <div class="chips" id="chips"></div>
+          <p class="note" id="qmode"></p>
+          <div class="chips-wrap" id="chips-wrap"><p class="chips-h" id="chips-h">Suggested questions</p>
+            <div class="chips" id="chips" role="group" aria-labelledby="chips-h"></div></div>
           <div class="err" id="qerr" role="alert"></div>
+          <div class="calm" id="qinfo" role="status"></div>
           <div class="answer" id="ans" aria-live="polite"></div>
+          <details class="trust-compact" id="trust-compact"><summary>How answers are checked</summary><div id="trust-compact-body"></div></details>
         </section>
         <section>
           <h2>At a glance</h2>
@@ -594,15 +608,17 @@
         </section>
         <section>
           <h2>Forecast</h2>
-          <p class="sub" id="fsub">Where this measure is heading, with the range it will probably stay inside.</p>
+          <p class="sub" id="fsub">Where this measure is heading, with the ranges it will likely stay inside.</p>
           <div class="fcbar"><label>Predict <select id="fv"></select></label><label>over time in <select
                 id="fd"></select></label>
             <label>for the next <input id="fp" type="number" min="1" max="24" value="6" style="width:64px">
               periods</label><button class="btn" id="fgo">Update forecast</button>
           </div>
-          <div class="err" id="ferr" role="alert"></div>
+          <div class="calm" id="ferr" role="status"></div>
+          <ul class="fc-legend" id="fleg" hidden></ul>
           <div id="fchart" class="chart" style="height:340px"></div>
           <p class="note" id="fnote"></p>
+          <div class="fc-acc" id="facc" hidden></div>
         </section>
       </div>
     </div>
@@ -806,6 +822,7 @@
     }
     $('#fgo').onclick = runForecast;
   </script>
+  <script src="/assets/lumen-app.js"></script>
 </body>
 
 </html>
