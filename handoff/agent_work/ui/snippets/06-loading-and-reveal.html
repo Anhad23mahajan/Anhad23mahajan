@@ -1,0 +1,36 @@
+<!-- 06-loading-and-reveal.html : (a) staged "what Lumen is doing" status inside the drop zone while the file uploads,
+     (b) a short staggered reveal when the dashboard appears (the 'wow' moment in a 3-minute video).
+     Effort S, risk low.  INSTALL: paste before </body>.  Depends on #drop, #uerr, #app.  prefers-reduced-motion: no animation.
+     The staged text is cosmetic timing (the server does one round trip) - the steps named are the real server steps. -->
+<style>
+  #stage { display: none; margin: 14px auto 0; max-width: 340px; text-align: left; font-size: 14px; color: var(--muted, #586674); list-style: none; padding: 0 }
+  #stage li { padding: 3px 0 3px 24px; position: relative; opacity: .45; transition: opacity .2s }
+  #stage li::before { content: ''; position: absolute; left: 4px; top: 10px; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--teal-l, #9CC7C4) }
+  #stage li.on { opacity: 1; color: var(--ink, #14202B) }
+  #stage li.on::before { background: var(--teal, #0E6B6B); border-color: var(--teal, #0E6B6B) }
+  #stage li.done { opacity: 1 } #stage li.done::before { background: var(--green, #2E7D4F); border-color: var(--green, #2E7D4F) }
+  #drop.busy #stage { display: block }
+  @keyframes lumen-rise { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
+  #app.reveal .kpis, #app.reveal aside > *, #app.reveal > div > section { animation: lumen-rise .45s cubic-bezier(.2, .7, .2, 1) both }
+  #app.reveal aside > :nth-child(2) { animation-delay: .05s } #app.reveal aside > :nth-child(3) { animation-delay: .1s } #app.reveal aside > :nth-child(n+4) { animation-delay: .15s }
+  #app.reveal .kpis { animation-delay: .08s } #app.reveal > div > section:nth-of-type(1) { animation-delay: .16s } #app.reveal > div > section:nth-of-type(2) { animation-delay: .24s }
+  #app.reveal > div > section:nth-of-type(3) { animation-delay: .32s } #app.reveal > div > section:nth-of-type(4) { animation-delay: .4s }
+  @media (prefers-reduced-motion: reduce) { #app.reveal * { animation: none !important } #stage li { transition: none } }
+</style>
+<script>
+(function () {
+  const drop = document.querySelector('#drop'), app = document.querySelector('#app'); if (!drop || !app || document.getElementById('stage')) return;
+  const ul = document.createElement('ul'); ul.id = 'stage'; ul.setAttribute('aria-hidden', 'true');
+  ['Reading your file', 'Cleaning and typing columns', 'Profiling and finding patterns', 'Drawing charts'].forEach(s => ul.insertAdjacentHTML('beforeend', '<li>' + s + '</li>'));
+  document.querySelector('#uerr').after(ul);
+  let timer = null;
+  const stop = () => { clearInterval(timer); timer = null; ul.querySelectorAll('li').forEach(l => l.className = '') };
+  new MutationObserver(() => {
+    if (drop.classList.contains('busy') && !timer) {
+      const li = [...ul.children]; let i = 0; li.forEach(l => l.className = ''); li[0].className = 'on';
+      timer = setInterval(() => { if (i < li.length - 1) { li[i].className = 'done'; li[++i].className = 'on' } }, 650);
+    } else if (!drop.classList.contains('busy') && timer) stop();
+  }).observe(drop, { attributes: true, attributeFilter: ['class'] });
+  new MutationObserver(() => { if (getComputedStyle(app).display !== 'none') { app.classList.remove('reveal'); void app.offsetWidth; app.classList.add('reveal') } }).observe(app, { attributes: true, attributeFilter: ['style'] });
+})();
+</script>

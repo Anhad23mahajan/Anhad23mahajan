@@ -1,0 +1,31 @@
+pandas 3.0.6 numpy 2.5.3
+
+====================================================================================================
+A) best-correlation selection: 'abs(best[1])' is always truthy so the LAST column with |r|>0.5 wins, not the strongest
+====================================================================================================
+corr(amount, strong_driver) = 0.98 ; corr(amount, weak_driver) = 0.63
+Lumen says: ['amount moves with weak_driver | amount and weak_driver are strongly positively related (correlation 0.63). This shows they']
+
+====================================================================================================
+B) 'driver' insight: fixed 35% threshold flags pure noise with 3 categories; and shares can exceed 100% with negative values
+====================================================================================================
+uniform random categories: ['A drives 38% of amount'] | true shares: {'A': 0.375, 'B': 0.312, 'C': 0.313}
+with a refunds category: [('Gala drives 1023% of amount', 'Across fund, a single value (Gala) accounts for 1023% of total amount.')]
+
+====================================================================================================
+C) direction is judged 'good' for any increase, even for cost metrics ('Find out what changed and repeat it.')
+====================================================================================================
+[('good', 'expenses is up 37% over the period', 'Find out what changed and repeat it.')]
+
+====================================================================================================
+D) wording and number formatting
+====================================================================================================
+2-row file: ['The average dayly amount in the most recent 9 days is 25% lower than in the first 9.']
+rate ~0.05 with a spike to 0.5: ['conversion_rate was 0 that month, far from the typical 0.'] | KPI values: [0.057, 0.0498]
+
+====================================================================================================
+E) data-quality warnings crowd out the real findings / dominate the 'What matters most' summary
+====================================================================================================
+insights returned (cap 8): ['opt_field_0 is 72.3% empty', 'opt_field_1 is 69.7% empty', 'opt_field_2 is 66.0% empty', 'opt_field_3 is 68.7% empty', 'opt_field_4 is 70.3% empty', 'opt_field_5 is 71.0% empty', 'opt_field_6 is 69.3% empty', 'opt_field_7 is 74.7% empty']
+narrative summary: Over a fifth of rows have no value for opt_field_0, so anything based on it may be misleading. Over a fifth of rows have no value for opt_field_1, so anything b
+-> the real finding ('amount is up ..%') is cut off: True

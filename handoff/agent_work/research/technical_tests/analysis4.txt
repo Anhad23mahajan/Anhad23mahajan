@@ -1,0 +1,12 @@
+L                                                               8     12     24     36     48    ALL
+m                                                                                                   
+Policy C: HW if n>=24 else snaive/naive                     1.540  1.064  0.893  0.782  0.732  1.003
+Policy A: HW if n>=24 else Theta+sNaive                     1.633  0.984  0.893  0.782  0.732  1.005
+Policy B: HW if n>=24 else Comb3                            1.562  1.073  0.893  0.782  0.732  1.009
+Policy D: Comb(HW,Theta,sNaive) if n>=24 else Theta+sNaive  1.633  0.984  0.911  0.800  0.755  1.017
+Comb3(ETS,Theta,sNaive)                                     1.562  1.073  1.081  0.821  0.759  1.059
+FastComb(Theta,sNaive)                                      1.633  0.984  1.012  0.876  0.821  1.065
+FastComb3(HW,Theta,sNaive)                                  1.819  1.264  0.911  0.800  0.755  1.111
+snaive                                                      1.540  1.064  1.100  1.097  1.048  1.170
+app_HW                                                      2.252  2.011  0.893  0.782  0.732  1.339
+naive                                                       1.540  1.493  1.889  1.862  1.969  1.749

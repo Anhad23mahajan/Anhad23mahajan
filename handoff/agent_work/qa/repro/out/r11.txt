@@ -1,0 +1,28 @@
+pandas 3.0.6 numpy 2.5.3
+best month: Dec 2025 | true: Dec 2025
+corr(amount, quantity) = 0.44  corr(amount, unit_price) = 0.83
+ok  rows                               lumen=9,046.000 truth=9,046.000
+ok  total amount                       lumen=8,297,580.000 truth=8,297,580.000
+ok  latest full month (Dec 2025)       lumen=622,160.000 truth=622,160.000
+ok  delta vs Nov (%)                   lumen=16.259 truth=16.259
+ok  best month value                   lumen=622,160.000 truth=622,160.000
+ok  trend % (first8 vs last8)          lumen=43.000 truth=43.000
+ok  Hoodie share %                     lumen=75.000 truth=75.000
+ok  corr(amount, unit_price)           lumen=0.830 truth=0.830
+ok  chart points = 24 months           lumen=24.000 truth=24.000
+ok  chart sum == total                 lumen=8,297,580.000 truth=8,297,580.000
+
+====================================================================================================
+The demo's docstring promises 'one spike' (2025-03-14, 5x orders). Does any insight surface it?
+====================================================================================================
+daily orders on spike day: 115 vs median 12 | max other day: 35
+insight titles: ['amount is up 43% over the period', 'Hoodie drives 75% of amount', 'amount moves with unit_price']
+mentions March 14 / any anomaly: False
+March 2025 monthly total 530510 vs Feb 462610 Apr 386380 (spike is diluted in a monthly bucket)
+
+====================================================================================================
+Forecast on demo (24 months => exactly 2 seasonal cycles, 18 fitted params)
+====================================================================================================
+forecast: [610353, 576057, 591521, 475119, 409749, 335199]
+band    : [(543824, 676881), (481971, 670143), (476290, 706753), (342061, 608177), (260986, 558512), (172237, 498160)]
+Over the next 6 months, amount is expected to be about 26% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.

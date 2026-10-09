@@ -1,0 +1,44 @@
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+pandas 3.0.6 numpy 2.5.3
+
+====================================================================================================
+A) non-negative history (6 months of sales ending low) -> negative forecast, 'lower' clipped ABOVE the forecast line
+====================================================================================================
+history tail: [1500, 1250, 1000, 750]
+forecast y    : [501.25, 253.74, 7.48, -237.56, -481.37, -723.97]
+forecast lower: [500.27, 252.36, 5.78, 0.0, 0.0, 0.0]
+forecast upper: [502.23, 255.13, 9.17, -235.6, -479.18, -721.57]
+any forecast < 0: True | lower > y at some point: True
+note: Over the next 6 months, sales is expected to be about 108% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.
+
+====================================================================================================
+B) comparison window mismatch: 10 months of history, periods=24 -> 'last 24' is only 10 months
+====================================================================================================
+history points: 9 | forecast points: 24 | flat 1000/month history, forecast ~ 1000.0
+note: Over the next 24 months, amount is expected to be about 167% higher than the last 24. The shaded band is a 95% range; forecasts are estimates, not promises.  <- true growth is ~0%
+
+====================================================================================================
+C) 2 data rows 28 days apart: zero-filled to 29 daily points, then forecast 'works'
+====================================================================================================
+history non-zero points: 2 of 29
+forecast y: [-97.9, -77.36, -52.95, -48.24, -38.09, -30.11]
+note: Over the next 6 days, amount is expected to be about 138% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.
+
+====================================================================================================
+D) inf / 1e300 in data: forecast arrays contain nulls (NaN) and warnings; HTTP 200
+====================================================================================================
+edge_inf_values.csv forecast y: [None, None, None] lower: [None, None]
+edge_huge_values.csv forecast y: [4.627478586361869e+299, 4.574293132267874e+299, 4.521639532714819e+299] lower: [0.0, 0.0]
+
+====================================================================================================
+E) interval calibration on the demo: re-forecast the last 6 months of the demo data from the first 18
+====================================================================================================
+demo has 24 monthly points; holding out last 6 and fitting on 18
+truth   : [192630, 286090, 290930, 452820, 535150, 622160]
+forecast: [146777.0, 87354.0, 39816.0, 1786.0, -28638.0, -52978.0]
+lower   : [34851.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+upper   : [258702.0, 245641.0, 233677.0, 225637.0, 221635.0, 221183.0]
+truth inside band: [np.True_, np.False_, np.False_, np.False_, np.False_, np.False_]

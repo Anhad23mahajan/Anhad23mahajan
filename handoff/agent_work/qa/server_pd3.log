@@ -1,0 +1,1171 @@
+INFO:     Started server process [1878]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18711 (Press CTRL+C to quit)
+INFO:     127.0.0.1:33622 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Upload processing failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 42, in upload
+    processed_df = A.preprocess_df(raw_df)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 229, in preprocess_df
+    date_series = try_parse_dates(df[c], c)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 121, in try_parse_dates
+    if pd.api.types.is_string_dtype(series) or pd.api.types.is_object_dtype(series) or isinstance(series.dtype, pd.CategoricalDtype):
+                                                                                                  ^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6194, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'dtype'. Did you mean: 'dtypes'?
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:85: RuntimeWarning: overflow encountered in matmul
+  return err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/scipy/optimize/_numdiff.py:710: RuntimeWarning: invalid value encountered in subtract
+  df = [f_eval - f0 for f_eval in f_evals]
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/pandas/core/nanops.py:1028: RuntimeWarning: overflow encountered in square
+  sqr = _ensure_numeric((avg - values) ** 2)
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/Anhad23mahajan/lumen/app/analytics.py:68: ParserWarning: Length of header or names does not match length of data. This leads to a loss of data with index_col=False.
+  try: df = pd.read_csv(io.StringIO(text), sep=None, engine="python", index_col=False)
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Upload processing failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 42, in upload
+    processed_df = A.preprocess_df(raw_df)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 229, in preprocess_df
+    date_series = try_parse_dates(df[c], c)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 121, in try_parse_dates
+    if pd.api.types.is_string_dtype(series) or pd.api.types.is_object_dtype(series) or isinstance(series.dtype, pd.CategoricalDtype):
+                                                                                                  ^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6194, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'dtype'. Did you mean: 'dtypes'?
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:85: RuntimeWarning: overflow encountered in matmul
+  return err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/scipy/optimize/_numdiff.py:710: RuntimeWarning: invalid value encountered in subtract
+  df = [f_eval - f0 for f_eval in f_evals]
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/pandas/core/nanops.py:1028: RuntimeWarning: overflow encountered in square
+  sqr = _ensure_numeric((avg - values) ** 2)
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/Anhad23mahajan/lumen/app/analytics.py:68: ParserWarning: Length of header or names does not match length of data. This leads to a loss of data with index_col=False.
+  try: df = pd.read_csv(io.StringIO(text), sep=None, engine="python", index_col=False)
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43122 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/upload HTTP/1.1" 413 Content Too Large
+INFO:     127.0.0.1:56254 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60458 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60462 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52812 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52814 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52820 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52830 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52840 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                                   ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 27, in get_df
+    if sid not in SESSIONS: raise HTTPException(404, "Session expired. Upload your file again.")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 404: Session expired. Upload your file again.
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                        ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 439, in forecast
+    s, freq = period_series(df, date, value)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 348, in period_series
+    span = (d[date].max() - d[date].min()).days
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6194, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'Series' object has no attribute 'days'
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                        ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 439, in forecast
+    s, freq = period_series(df, date, value)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 348, in period_series
+    span = (d[date].max() - d[date].min()).days
+            ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                        ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 439, in forecast
+    s, freq = period_series(df, date, value)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 348, in period_series
+    span = (d[date].max() - d[date].min()).days
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6194, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'Series' object has no attribute 'days'
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/forecast HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/ask HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58252 - "POST /api/ask HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:58252 - "POST /api/ask HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:58252 - "POST /api/ask HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/ask HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58252 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58252 - "OPTIONS / HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58252 - "HEAD /api/health HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58252 - "OPTIONS /api/upload HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58252 - "GET /api/upload HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58252 - "GET /api/demo HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58252 - "DELETE /api/upload HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:58252 - "GET /nonexistent HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58252 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "GET /assets/ HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58252 - "GET /assets HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58252 - "GET /assets/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "HEAD /assets/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58256 - "GET /assets/../app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58260 - "GET /assets/../app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58268 - "GET /assets/../app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58272 - "GET /assets/../app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58280 - "GET /assets/..%5Capp%5Cmain.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58290 - "GET /assets/....//app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58292 - "GET /assets//etc/passwd HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58298 - "GET /assets//etc/passwd HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58304 - "GET /assets/../../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58312 - "GET /assets/../../../etc/passwd HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58324 - "GET /assets/..%3B/app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58336 - "GET /assets/index.html%00.png HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/user/work/venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/user/work/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/routing.py", line 460, in handle
+    await self.app(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/staticfiles.py", line 98, in __call__
+    response = await self.get_response(path, scope)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/staticfiles.py", line 117, in get_response
+    full_path, stat_result = await anyio.to_thread.run_sync(self.lookup_path, path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/user/work/venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/staticfiles.py", line 158, in lookup_path
+    full_path = os.path.realpath(joined_path)
+  File "<frozen posixpath>", line 451, in realpath
+ValueError: lstat: embedded null character in path
+INFO:     127.0.0.1:58344 - "GET /assets/../app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58354 - "GET /assets/%252e%252e/app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58370 - "GET /../app/main.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58384 - "GET /assets/%5C..%5Capp%5Cmain.py HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:46836 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46850 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46858 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46870 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46874 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46888 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46896 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46908 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46912 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46916 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46928 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46930 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46944 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46948 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46958 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46960 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46968 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46980 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46994 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47000 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47014 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47016 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47022 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47036 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47050 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47066 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47076 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47088 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47100 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47112 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47120 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47132 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47136 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47138 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47154 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47168 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47172 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47180 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47186 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47196 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47200 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47206 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47210 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48626 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48642 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48648 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48664 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48674 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48686 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48702 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48714 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48728 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48740 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48748 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48756 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48766 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48770 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48774 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48776 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48784 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48798 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48802 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48810 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48824 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48838 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48846 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48854 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48866 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48878 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48890 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48894 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48910 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48914 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48928 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48936 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48948 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48950 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48962 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48976 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48988 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49002 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49018 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49026 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49034 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60152 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60160 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60174 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60182 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60194 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60206 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60218 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60234 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60242 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60248 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60260 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60270 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60276 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60284 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60292 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60308 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60310 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60322 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60336 - "POST /api/upload HTTP/1.1" 200 OK
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                                   ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 27, in get_df
+    if sid not in SESSIONS: raise HTTPException(404, "Session expired. Upload your file again.")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 404: Session expired. Upload your file again.
+INFO:     127.0.0.1:60342 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                                   ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 27, in get_df
+    if sid not in SESSIONS: raise HTTPException(404, "Session expired. Upload your file again.")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 404: Session expired. Upload your file again.
+INFO:     127.0.0.1:60352 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60364 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60366 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60374 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60378 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60392 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60400 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60406 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60420 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60428 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60432 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60448 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60460 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60464 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42592 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42608 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42620 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42634 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42642 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42652 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42662 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42664 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42674 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42690 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42706 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42722 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42724 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42728 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42734 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42744 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42754 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42764 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42770 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42776 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42790 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42796 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42806 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42816 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42828 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42830 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42840 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38782 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38784 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38788 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38796 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38806 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38816 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38824 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38832 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38834 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38838 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38854 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38856 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38864 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38874 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38890 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38904 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38906 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38914 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38928 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38936 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38950 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38956 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38960 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38966 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38970 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38982 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38990 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38998 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39010 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39024 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39034 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39048 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39056 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39060 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39062 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39076 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39090 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39094 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39110 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39126 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39134 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39142 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39144 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39156 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39158 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39164 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39178 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36772 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36786 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36802 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36810 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36814 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36830 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36844 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36856 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36872 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36876 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36884 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36892 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36908 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36910 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36920 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36932 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36948 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36964 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36974 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36980 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36988 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36994 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37006 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37014 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37016 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37024 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37026 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37042 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37048 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37050 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37058 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37064 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37080 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37096 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37102 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37114 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37116 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37122 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37126 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37140 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37142 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37152 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37158 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37166 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37170 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37180 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37182 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37190 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37202 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37212 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37220 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37232 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37242 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37246 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37256 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37262 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37266 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37268 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37278 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37290 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37304 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37310 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37318 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37322 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37326 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37330 - "POST /api/upload HTTP/1.1" 200 OK
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                                   ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 27, in get_df
+    if sid not in SESSIONS: raise HTTPException(404, "Session expired. Upload your file again.")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 404: Session expired. Upload your file again.
+INFO:     127.0.0.1:37340 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:37350 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37344 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37362 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37376 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37384 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37386 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37390 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37398 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37414 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37422 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40270 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40272 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58638 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38548 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38568 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38556 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38554 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38572 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/demo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Upload processing failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 42, in upload
+    processed_df = A.preprocess_df(raw_df)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 229, in preprocess_df
+    date_series = try_parse_dates(df[c], c)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 121, in try_parse_dates
+    if pd.api.types.is_string_dtype(series) or pd.api.types.is_object_dtype(series) or isinstance(series.dtype, pd.CategoricalDtype):
+                                                                                                  ^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6194, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'dtype'. Did you mean: 'dtypes'?
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:85: RuntimeWarning: overflow encountered in matmul
+  return err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/scipy/optimize/_numdiff.py:710: RuntimeWarning: invalid value encountered in subtract
+  df = [f_eval - f0 for f_eval in f_evals]
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/pandas/core/nanops.py:1028: RuntimeWarning: overflow encountered in square
+  sqr = _ensure_numeric((avg - values) ** 2)
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/Anhad23mahajan/lumen/app/analytics.py:68: ParserWarning: Length of header or names does not match length of data. This leads to a loss of data with index_col=False.
+  try: df = pd.read_csv(io.StringIO(text), sep=None, engine="python", index_col=False)
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48548 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60860 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Upload processing failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 42, in upload
+    processed_df = A.preprocess_df(raw_df)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 229, in preprocess_df
+    date_series = try_parse_dates(df[c], c)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 121, in try_parse_dates
+    if pd.api.types.is_string_dtype(series) or pd.api.types.is_object_dtype(series) or isinstance(series.dtype, pd.CategoricalDtype):
+                                                                                                  ^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/pandas/core/generic.py", line 6194, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'dtype'. Did you mean: 'dtypes'?
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:85: RuntimeWarning: overflow encountered in matmul
+  return err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/scipy/optimize/_numdiff.py:710: RuntimeWarning: invalid value encountered in subtract
+  df = [f_eval - f0 for f_eval in f_evals]
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv/lib/python3.13/site-packages/pandas/core/nanops.py:1028: RuntimeWarning: overflow encountered in square
+  sqr = _ensure_numeric((avg - values) ** 2)
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:49: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/Anhad23mahajan/lumen/app/analytics.py:68: ParserWarning: Length of header or names does not match length of data. This leads to a loss of data with index_col=False.
+  try: df = pd.read_csv(io.StringIO(text), sep=None, engine="python", index_col=False)
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38628 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38628 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38628 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36092 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53698 - "POST /api/upload HTTP/1.1" 413 Content Too Large
+INFO:     127.0.0.1:52604 - "POST /api/demo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52616 - "GET /api/health HTTP/1.1" 200 OK
+ERROR:root:Forecast failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 85, in fc
+    try: return A.clean(A.forecast(get_df(body.session_id), body.date_col, body.value_col, max(1, min(body.periods, 24))))
+                                   ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 27, in get_df
+    if sid not in SESSIONS: raise HTTPException(404, "Session expired. Upload your file again.")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+fastapi.exceptions.HTTPException: 404: Session expired. Upload your file again.
+INFO:     127.0.0.1:47522 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:47522 - "POST /api/ask HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47522 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:47522 - "HEAD /api/health HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:47524 - "GET /assets/index.html%00.png HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/user/work/venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/user/work/venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/routing.py", line 460, in handle
+    await self.app(scope, receive, send)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/staticfiles.py", line 98, in __call__
+    response = await self.get_response(path, scope)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/staticfiles.py", line 117, in get_response
+    full_path, stat_result = await anyio.to_thread.run_sync(self.lookup_path, path)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/anyio/to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/user/work/venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/user/work/venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+  File "/home/user/work/venv/lib/python3.13/site-packages/starlette/staticfiles.py", line 158, in lookup_path
+    full_path = os.path.realpath(joined_path)
+  File "<frozen posixpath>", line 451, in realpath
+ValueError: lstat: embedded null character in path
+INFO:     127.0.0.1:47522 - "POST /api/forecast HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:47522 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47522 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47522 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:47522 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:47522 - "POST /api/demo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47522 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46192 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58524 - "POST /api/demo HTTP/1.1" 200 OK

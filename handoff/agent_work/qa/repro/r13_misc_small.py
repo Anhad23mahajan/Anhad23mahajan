@@ -1,0 +1,30 @@
+"""BUG-43..48  misc small things (all verified by running).
+run: /home/user/work/venv/bin/python -I r13_misc_small.py"""
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _common import *
+hdr("A) duplicate header names")
+for hdr_line in ["Amount,Amount", "Total,Total,Total", "a,a,a_1", "amount,amount,Amount ,AMOUNT!"]:
+    try: df = csv_df(hdr_line + "\n" + "\n".join(",".join(str(i * (j + 1)) for j in range(hdr_line.count(",") + 1)) for i in range(1, 9)) + "\n"); print(f"   {hdr_line!r:34s} -> OK columns={list(df.columns)}")
+    except Exception as e: print(f"   {hdr_line!r:34s} -> {type(e).__name__}: {e}")
+hdr("B) unquoted reserved words in generated SQL (schema_text does not tell the LLM to quote identifiers)")
+df = load("edge_reserved_cols.csv"); print(llm.schema_text(df).splitlines()[1:5])
+for sql in ["SELECT group, sum(order) FROM data GROUP BY group", 'SELECT "group", sum("order") FROM data GROUP BY "group"', "SELECT date FROM data LIMIT 1"]:
+    try: llm.run_sql(df, sql); print("   OK  ", sql)
+    except Exception as e: print("   FAIL", sql, "->", str(e).splitlines()[0][:90])
+hdr("C) small files: every text column becomes a 'category' (<=30 uniques) even if it is an identifier")
+df = csv_df("name,amount\n" + "\n".join(f"person_{i},{i*10}" for i in range(25)) + "\n"); p, ins, ch = analyse(df)
+print("   kinds:", {c['name']: c['kind'] for c in p['columns']}, "| cat_cols:", p['cat_cols'], "| charts:", [(c['title'], len(c['x'])) for c in ch], "(8 of 25 unique people shown as 'top 8')")
+hdr("D) week labels are week-ENDING Sundays; month insight text prints a day ('01 Dec 2023')")
+p, ins, ch = analyse(load("daily_70d_midweek.csv")); print("   best week note:", [k.get('note') for k in p['kpis'] if k['label'].startswith('Best')], "(true best week = Mon 5 May - Sun 11 May)")
+p, ins, ch = analyse(load("donations.csv")); print("   monthly anomaly title:", [i['title'] for i in ins if i['kind'] == 'anomaly'])
+hdr("E) only top-8 categories are drawn; 12 month names -> 4 months missing from the bar chart")
+p, ins, ch = analyse(load("monthly_names.csv")); bar = [c for c in ch if c['type'] == 'bar'][0]; print("   ", bar['title'], "bars:", bar['x'], "(missing:", sorted(set(load('monthly_names.csv').month) - set(bar['x'])), "); sorted by value, not calendar order")
+hdr("F) boolean-like text columns lose their labels: Yes/No -> True/False in charts")
+p, ins, ch = analyse(load("pct_bool_thousands.csv")); print("   ", [(c['title'], c['x']) for c in ch if c['type'] == 'bar'])
+hdr("G) whitespace-only rows survive dropna (cleaned before the blank-row check) -> 'Rows analysed' off by one")
+raw = A.read_raw_df((DATA / "edge_trailing_blank.csv").read_bytes(), "x.csv"); df = A.preprocess_df(raw); print("   real data rows: 120 | raw rows read:", len(raw), "| rows after preprocess:", len(df), "| last row all-empty:", bool(df.iloc[-1].isna().all()))
+hdr("H) 'outliers' is computed per numeric column but never shown")
+print("   profile has outliers:", any('outliers' in c for c in A.profile(load('donations.csv'))['columns']), "| referenced in static/index.html:", 'outlier' in open('/home/user/Anhad23mahajan/lumen/static/index.html').read().lower())
+hdr("I) the all-missing-after-cleaning column (e.g. a column of 'N/A'): pandas 2.2.3 makes it float64 (numeric) so it can be picked as THE metric; pandas 3 keeps it text")
+df = A.preprocess_df(pd.DataFrame({"date": pd.date_range("2024-01-01", periods=40).astype(str), "notes": ["N/A"] * 40, "region": ["a", "b"] * 20})); p = A.profile(df)
+print("   pandas", pd.__version__, "-> kinds:", {c['name']: c['kind'] for c in p['columns']}, "| metric:", p['metric'], "| metric_cols:", p['metric_cols'])

@@ -1,0 +1,451 @@
+Order Date,Product ,Qty,Total ($),Channel,Paid?
+Jan 02 2025,Hoodie,8.0,$350.46,Pop-up,yes
+Jan 02 2025,Tote bag,9.0,$110.45,Online,yes
+2025-01-02,Notebook,2.0,$12.18,Online,no
+2025-01-02,Mug,1.0,$8.78,Pop-up,yes
+2025-01-02,Sticker pack,2.0,$5.79,Online,yes
+Jan 05 2025,Hoodie,,$444.34,Campus,yes
+Jan 05 2025,Tote bag,10.0,$119.85,Campus,yes
+01/05/2025,Notebook,3.0,$18.30,Campus,yes
+2025-01-05,  Mug ,10.0,$89.69,Online,no
+Jan 05 2025,Sticker pack,10.0,$29.98,Online,no
+2025-01-08,  Hoodie ,6.0,$264.11,Online,yes
+2025-01-08,Tote bag,4.0,$46.94,Campus,no
+2025-01-08,Notebook,9.0,$54.29,Pop-up,yes
+2025-01-08,  Mug ,3.0,$27.02,Campus,no
+Jan 08 2025,Sticker pack,4.0,$12.23,Campus,yes
+01/11/2025,Hoodie,11.0,$484.12,Online,yes
+01/11/2025,Tote bag,3.0,$36.41,Campus,no
+01/11/2025,Notebook,7.0,$42.71,Online,yes
+01/11/2025,Mug,4.0,$36.97,Online,yes
+2025-01-11,Sticker pack,8.0,$23.99,Pop-up,yes
+01/14/2025,Hoodie,3.0,$135.65,Online,yes
+2025-01-14,Tote bag,5.0,$61.07,Online,yes
+Jan 14 2025,Notebook,7.0,$42.81,Campus,yes
+01/14/2025,Mug,8.0,$70.36,Online,yes
+01/14/2025,Sticker pack,8.0,$24.29,Online,yes
+01/17/2025,Hoodie,6.0,$269.96,Online,yes
+01/17/2025,Tote bag,7.0,$83.13,Online,no
+Jan 17 2025,Notebook,11.0,$65.73,Campus,yes
+2025-01-17,Mug,8.0,$71.31,Online,yes
+Jan 17 2025,Sticker pack,5.0,$15.05,Pop-up,yes
+01/20/2025,Hoodie,7.0,$318.02,Online,yes
+01/20/2025,  Tote bag ,6.0,$72.50,Online,yes
+2025-01-20,Notebook,9.0,$53.34,Campus,yes
+Jan 20 2025,Mug,1.0,$9.01,Pop-up,no
+01/20/2025,Sticker pack,1.0,$3.11,Pop-up,yes
+01/23/2025,Hoodie,8.0,$357.79,Pop-up,yes
+2025-01-23,  Tote bag ,7.0,$84.73,Online,no
+Jan 23 2025,Notebook,6.0,$36.52,Pop-up,yes
+2025-01-23,Mug,6.0,$54.53,Online,yes
+Jan 23 2025,Sticker pack,3.0,$9.02,Online,yes
+2025-01-26,Hoodie,9.0,$411.43,Pop-up,yes
+01/26/2025,Tote bag,5.0,$60.01,Online,no
+2025-01-26,Notebook,1.0,$5.87,Online,yes
+01/26/2025,Mug,10.0,$86.73,Campus,no
+Jan 26 2025,Sticker pack,7.0,$20.67,Campus,yes
+2025-01-29,  Hoodie ,6.0,$267.95,Campus,yes
+01/29/2025,Tote bag,7.0,$85.05,Campus,yes
+01/29/2025,Notebook,7.0,$42.10,Pop-up,no
+01/29/2025,Mug,7.0,$65.46,Campus,yes
+01/29/2025,Sticker pack,7.0,$21.38,Pop-up,yes
+02/01/2025,Hoodie,9.0,$401.86,Pop-up,yes
+02/01/2025,Tote bag,11.0,N/A,Campus,yes
+02/01/2025,Notebook,4.0,$23.75,Campus,yes
+02/01/2025,Mug,10.0,$90.72,Campus,yes
+02/01/2025,Sticker pack,5.0,$15.14,Pop-up,yes
+2025-02-04,Hoodie,6.0,$265.29,Pop-up,yes
+02/04/2025,Tote bag,3.0,$35.99,Pop-up,yes
+02/04/2025,Notebook,9.0,$55.57,Pop-up,yes
+02/04/2025,Mug,7.0,$63.00,Campus,yes
+02/04/2025,Sticker pack,2.0,$6.08,Pop-up,yes
+Feb 07 2025,Hoodie,6.0,$279.56,Pop-up,yes
+02/07/2025,Tote bag,10.0,$120.80,Pop-up,yes
+02/07/2025,Notebook,2.0,$11.79,Pop-up,yes
+02/07/2025,Mug,9.0,$85.49,Campus,yes
+02/07/2025,Sticker pack,9.0,$26.90,Pop-up,no
+Feb 10 2025,Hoodie,6.0,$270.51,Campus,no
+02/10/2025,Tote bag,6.0,$73.52,Online,yes
+Feb 10 2025,Notebook,4.0,$23.82,Online,yes
+2025-02-10,  Mug ,3.0,$26.85,Online,yes
+Feb 10 2025,Sticker pack,1.0,$3.08,Pop-up,yes
+2025-02-13,Hoodie,10.0,$438.37,Campus,yes
+Feb 13 2025,Tote bag,1.0,$12.02,Campus,no
+Feb 13 2025,Notebook,8.0,$47.67,Campus,yes
+02/13/2025,Mug,10.0,$90.51,Campus,no
+2025-02-13,Sticker pack,9.0,$27.72,Campus,yes
+02/16/2025,Hoodie,8.0,$359.61,Campus,yes
+2025-02-16,Tote bag,2.0,$24.55,Online,yes
+02/16/2025,Notebook,4.0,$24.57,Pop-up,yes
+Feb 16 2025,Mug,11.0,$102.43,Online,no
+2025-02-16,Sticker pack,7.0,$20.85,Pop-up,yes
+02/19/2025,Hoodie,1.0,$44.85,Online,yes
+02/19/2025,  Tote bag ,11.0,$135.33,Online,yes
+2025-02-19,Notebook,9.0,$51.45,Pop-up,yes
+02/19/2025,Mug,6.0,N/A,Pop-up,yes
+02/19/2025,Sticker pack,5.0,$14.71,Campus,yes
+02/22/2025,  Hoodie ,11.0,$486.05,Pop-up,yes
+2025-02-22,Tote bag,1.0,$11.86,Campus,yes
+Feb 22 2025,  Notebook ,1.0,$5.87,Online,no
+2025-02-22,Mug,8.0,$71.08,Online,yes
+Feb 22 2025,Sticker pack,1.0,$2.99,Online,yes
+2025-02-25,Hoodie,3.0,$131.90,Pop-up,no
+02/25/2025,Tote bag,3.0,$35.54,Online,yes
+02/25/2025,Notebook,11.0,$62.55,Campus,yes
+02/25/2025,Mug,4.0,$36.75,Online,yes
+02/25/2025,Sticker pack,9.0,$27.29,Campus,yes
+Feb 28 2025,Hoodie,6.0,$269.60,Pop-up,yes
+02/28/2025,Tote bag,1.0,$11.99,Online,yes
+02/28/2025,Notebook,3.0,$17.52,Pop-up,yes
+02/28/2025,Mug,4.0,$36.48,Campus,yes
+2025-02-28,Sticker pack,10.0,$30.79,Online,yes
+2025-03-03,  Hoodie ,10.0,$446.58,Pop-up,yes
+2025-03-03,Tote bag,6.0,$70.20,Online,yes
+03/03/2025,Notebook,9.0,$53.26,Pop-up,no
+03/03/2025,Mug,3.0,$26.79,Online,no
+03/03/2025,Sticker pack,1.0,$3.02,Pop-up,no
+Mar 06 2025,Hoodie,2.0,$88.81,Pop-up,yes
+03/06/2025,Tote bag,8.0,$95.92,Online,yes
+2025-03-06,Notebook,6.0,$36.24,Campus,yes
+03/06/2025,Mug,8.0,$72.32,Pop-up,yes
+Mar 06 2025,Sticker pack,11.0,$33.58,Online,yes
+03/09/2025,Hoodie,1.0,$45.24,Pop-up,no
+2025-03-09,Tote bag,1.0,$11.91,Online,yes
+Mar 09 2025,Notebook,1.0,$5.96,Online,yes
+Mar 09 2025,Mug,3.0,$27.39,Campus,yes
+03/09/2025,Sticker pack,7.0,$20.57,Online,yes
+03/12/2025,Hoodie,4.0,N/A,Online,yes
+Mar 12 2025,Tote bag,4.0,$46.96,Campus,yes
+03/12/2025,Notebook,1.0,$5.81,Online,yes
+2025-03-12,  Mug ,2.0,$18.19,Online,yes
+Mar 12 2025,Sticker pack,3.0,$9.13,Online,yes
+2025-03-15,Hoodie,1.0,$44.58,Campus,yes
+Mar 15 2025,Tote bag,5.0,$61.73,Online,yes
+Mar 15 2025,Notebook,2.0,$12.17,Campus,yes
+Mar 15 2025,  Mug ,3.0,$26.80,Online,yes
+Mar 15 2025,Sticker pack,4.0,$12.31,Campus,yes
+2025-03-18,Hoodie,3.0,$131.80,Online,yes
+03/18/2025,Tote bag,10.0,$120.73,Online,yes
+03/18/2025,Notebook,3.0,$18.29,Online,yes
+2025-03-18,Mug,6.0,$54.24,Online,no
+Mar 18 2025,Sticker pack,6.0,$18.47,Online,no
+03/21/2025,Hoodie,10.0,N/A,Online,no
+2025-03-21,Tote bag,5.0,$58.73,Campus,yes
+2025-03-21,Notebook,5.0,$29.71,Online,no
+2025-03-21,Mug,6.0,$55.96,Online,yes
+Mar 21 2025,Sticker pack,10.0,$29.75,Online,yes
+2025-03-24,Hoodie,1.0,$45.08,Online,yes
+Mar 24 2025,  Tote bag ,7.0,$84.87,Campus,yes
+03/24/2025,Notebook,3.0,$17.68,Online,yes
+Mar 24 2025,Mug,3.0,$27.34,Online,yes
+03/24/2025,Sticker pack,9.0,$26.51,Pop-up,yes
+2025-03-27,Hoodie,3.0,$136.22,Pop-up,no
+Mar 27 2025,Tote bag,2.0,$24.22,Pop-up,no
+03/27/2025,Notebook,1.0,$5.81,Online,no
+03/27/2025,Mug,3.0,$28.09,Pop-up,no
+2025-03-27,Sticker pack,8.0,$24.36,Pop-up,yes
+Mar 30 2025,Hoodie,4.0,$176.77,Online,no
+2025-03-30,  Tote bag ,9.0,$108.15,Online,yes
+2025-03-30,Notebook,7.0,$42.22,Online,yes
+2025-03-30,Mug,8.0,$71.64,Online,no
+03/30/2025,Sticker pack,5.0,$15.45,Online,yes
+04/02/2025,Hoodie,5.0,$233.90,Online,yes
+Apr 02 2025,Tote bag,4.0,$47.24,Online,yes
+2025-04-02,Notebook,4.0,$24.12,Online,no
+Apr 02 2025,  Mug ,8.0,N/A,Online,yes
+Apr 02 2025,  Sticker pack ,8.0,$24.65,Online,no
+2025-04-05,Hoodie,6.0,$263.70,Online,yes
+2025-04-05,Tote bag,9.0,$108.04,Pop-up,yes
+Apr 05 2025,Notebook,9.0,$54.79,Pop-up,yes
+04/05/2025,Mug,11.0,$95.58,Campus,yes
+Apr 05 2025,Sticker pack,8.0,$24.79,Pop-up,yes
+04/08/2025,  Hoodie ,9.0,$414.91,Online,no
+Apr 08 2025,Tote bag,11.0,$132.77,Campus,yes
+2025-04-08,Notebook,11.0,$65.52,Online,yes
+2025-04-08,Mug,10.0,$88.49,Campus,no
+2025-04-08,Sticker pack,11.0,$33.03,Online,yes
+04/11/2025,  Hoodie ,1.0,$44.93,Pop-up,yes
+04/11/2025,Tote bag,11.0,$132.33,Online,yes
+Apr 11 2025,Notebook,2.0,$12.06,Online,yes
+04/11/2025,Mug,7.0,$63.76,Online,yes
+2025-04-11,  Sticker pack ,7.0,$21.19,Campus,no
+2025-04-14,Hoodie,9.0,$411.41,Pop-up,yes
+04/14/2025,Tote bag,3.0,$36.65,Campus,yes
+2025-04-14,  Notebook ,4.0,$24.37,Pop-up,no
+04/14/2025,Mug,1.0,$9.21,Campus,yes
+04/14/2025,  Sticker pack ,2.0,$6.02,Online,yes
+04/17/2025,Hoodie,2.0,$87.97,Pop-up,yes
+Apr 17 2025,Tote bag,7.0,$85.47,Online,yes
+04/17/2025,Notebook,11.0,$67.09,Campus,yes
+Apr 17 2025,Mug,9.0,$82.93,Pop-up,yes
+04/17/2025,  Sticker pack ,10.0,$28.70,Campus,no
+2025-04-20,Hoodie,4.0,$180.35,Campus,yes
+Apr 20 2025,Tote bag,4.0,$48.94,Campus,yes
+Apr 20 2025,Notebook,11.0,$67.02,Online,yes
+Apr 20 2025,  Mug ,10.0,$88.71,Pop-up,no
+04/20/2025,Sticker pack,5.0,$14.79,Pop-up,yes
+2025-04-23,Hoodie,3.0,$135.30,Online,no
+2025-04-23,Tote bag,2.0,$24.32,Campus,no
+2025-04-23,Notebook,4.0,$24.32,Online,yes
+2025-04-23,Mug,3.0,$26.40,Online,yes
+04/23/2025,Sticker pack,4.0,$12.13,Online,no
+2025-04-26,Hoodie,5.0,$229.15,Online,yes
+2025-04-26,Tote bag,1.0,$12.41,Online,no
+04/26/2025,Notebook,3.0,$17.26,Online,yes
+2025-04-26,  Mug ,2.0,$17.97,Campus,yes
+04/26/2025,Sticker pack,7.0,$20.96,Online,yes
+2025-04-29,Hoodie,9.0,$410.16,Pop-up,yes
+04/29/2025,Tote bag,11.0,$135.14,Pop-up,yes
+2025-04-29,Notebook,6.0,$35.73,Campus,no
+Apr 29 2025,  Mug ,8.0,$72.45,Online,no
+Apr 29 2025,Sticker pack,7.0,$20.15,Campus,yes
+05/02/2025,Hoodie,3.0,$136.81,Online,yes
+May 02 2025,  Tote bag ,7.0,N/A,Campus,yes
+May 02 2025,Notebook,2.0,$12.30,Campus,yes
+05/02/2025,Mug,4.0,$36.37,Pop-up,yes
+05/02/2025,  Sticker pack ,11.0,$32.09,Online,no
+May 05 2025,Hoodie,6.0,$270.89,Online,yes
+May 05 2025,Tote bag,9.0,$106.86,Online,no
+May 05 2025,Notebook,8.0,$48.13,Online,no
+05/05/2025,Mug,1.0,$9.05,Online,yes
+05/05/2025,Sticker pack,1.0,$2.94,Online,yes
+2025-05-08,Hoodie,6.0,$274.79,Campus,yes
+05/08/2025,Tote bag,9.0,N/A,Campus,yes
+05/08/2025,Notebook,11.0,$64.59,Campus,yes
+2025-05-08,Mug,1.0,$9.04,Online,no
+2025-05-08,  Sticker pack ,2.0,$5.96,Campus,yes
+05/11/2025,  Hoodie ,1.0,$44.70,Online,yes
+05/11/2025,Tote bag,4.0,$48.62,Pop-up,yes
+May 11 2025,Notebook,9.0,$54.63,Online,yes
+May 11 2025,Mug,9.0,$81.27,Campus,yes
+05/11/2025,Sticker pack,4.0,$12.22,Campus,yes
+May 14 2025,Hoodie,2.0,$90.50,Online,yes
+05/14/2025,Tote bag,3.0,$36.05,Online,yes
+May 14 2025,Notebook,4.0,$24.09,Campus,yes
+2025-05-14,Mug,8.0,$71.83,Pop-up,no
+2025-05-14,Sticker pack,9.0,$25.52,Pop-up,yes
+May 17 2025,Hoodie,1.0,$44.55,Pop-up,yes
+2025-05-17,Tote bag,6.0,$72.25,Online,yes
+2025-05-17,Notebook,9.0,$53.59,Online,yes
+2025-05-17,Mug,10.0,$87.22,Pop-up,yes
+05/17/2025,Sticker pack,6.0,$18.25,Online,no
+May 20 2025,Hoodie,4.0,N/A,Online,no
+05/20/2025,Tote bag,1.0,$12.06,Campus,yes
+05/20/2025,Notebook,5.0,$31.84,Online,no
+May 20 2025,Mug,3.0,$27.57,Campus,yes
+05/20/2025,  Sticker pack ,1.0,$3.05,Campus,no
+05/23/2025,  Hoodie ,7.0,$317.40,Online,yes
+2025-05-23,Tote bag,2.0,$23.90,Pop-up,yes
+05/23/2025,Notebook,7.0,$42.79,Campus,yes
+May 23 2025,Mug,4.0,$35.56,Online,no
+05/23/2025,  Sticker pack ,3.0,$9.17,Online,no
+May 26 2025,  Hoodie ,4.0,$180.04,Online,yes
+May 26 2025,Tote bag,1.0,$12.08,Online,yes
+2025-05-26,Notebook,8.0,$46.45,Online,yes
+2025-05-26,Mug,8.0,$70.13,Online,yes
+May 26 2025,Sticker pack,1.0,$3.03,Campus,yes
+May 29 2025,Hoodie,6.0,$272.09,Pop-up,yes
+05/29/2025,Tote bag,10.0,$121.47,Campus,no
+05/29/2025,Notebook,5.0,$29.81,Campus,yes
+May 29 2025,Mug,3.0,$26.39,Pop-up,no
+05/29/2025,Sticker pack,11.0,$33.27,Pop-up,no
+Jun 01 2025,Hoodie,8.0,$353.21,Online,yes
+06/01/2025,Tote bag,6.0,$72.87,Pop-up,no
+2025-06-01,Notebook,9.0,N/A,Campus,yes
+06/01/2025,Mug,2.0,$17.86,Online,yes
+2025-06-01,Sticker pack,6.0,$17.86,Online,yes
+Jun 04 2025,Hoodie,7.0,$307.76,Pop-up,no
+06/04/2025,Tote bag,9.0,$110.34,Online,yes
+Jun 04 2025,Notebook,11.0,$66.31,Online,no
+06/04/2025,Mug,6.0,$52.27,Online,yes
+Jun 04 2025,Sticker pack,2.0,$5.95,Campus,yes
+2025-06-07,Hoodie,11.0,$496.27,Pop-up,yes
+Jun 07 2025,Tote bag,3.0,$37.16,Pop-up,yes
+Jun 07 2025,Notebook,11.0,$67.37,Online,yes
+06/07/2025,Mug,3.0,$27.45,Online,no
+06/07/2025,Sticker pack,9.0,$25.94,Pop-up,yes
+Jun 10 2025,Hoodie,4.0,$174.83,Campus,yes
+06/10/2025,Tote bag,10.0,$121.64,Online,yes
+2025-06-10,  Notebook ,4.0,$24.64,Pop-up,yes
+06/10/2025,Mug,1.0,$8.89,Online,yes
+Jun 10 2025,Sticker pack,1.0,$3.08,Campus,yes
+2025-06-13,Hoodie,8.0,$361.89,Online,yes
+06/13/2025,  Tote bag ,6.0,$73.79,Campus,yes
+Jun 13 2025,Notebook,1.0,$6.11,Online,yes
+2025-06-13,  Mug ,2.0,$17.87,Pop-up,yes
+06/13/2025,Sticker pack,4.0,$12.21,Online,yes
+06/16/2025,  Hoodie ,5.0,$229.31,Campus,no
+Jun 16 2025,Tote bag,1.0,$12.31,Pop-up,yes
+06/16/2025,Notebook,4.0,$24.10,Online,yes
+2025-06-16,Mug,11.0,$99.83,Online,no
+06/16/2025,Sticker pack,1.0,$3.06,Pop-up,yes
+Jun 19 2025,Hoodie,6.0,$266.44,Online,no
+2025-06-19,Tote bag,10.0,$122.56,Online,no
+2025-06-19,Notebook,9.0,$54.77,Online,yes
+06/19/2025,Mug,8.0,$72.24,Campus,yes
+06/19/2025,Sticker pack,10.0,N/A,Campus,yes
+06/22/2025,Hoodie,1.0,$44.74,Pop-up,yes
+Jun 22 2025,Tote bag,2.0,$24.08,Pop-up,no
+06/22/2025,Notebook,1.0,$5.93,Online,no
+2025-06-22,Mug,2.0,$18.21,Pop-up,no
+06/22/2025,Sticker pack,4.0,$12.15,Campus,yes
+Jun 25 2025,Hoodie,4.0,$179.46,Online,yes
+Jun 25 2025,Tote bag,10.0,$116.39,Online,yes
+06/25/2025,Notebook,11.0,$65.93,Campus,yes
+06/25/2025,Mug,3.0,$27.16,Campus,yes
+Jun 25 2025,Sticker pack,10.0,$30.42,Online,no
+Jun 28 2025,Hoodie,8.0,$367.64,Online,yes
+2025-06-28,Tote bag,2.0,$24.04,Campus,no
+2025-06-28,Notebook,3.0,$18.09,Online,yes
+2025-06-28,Mug,7.0,$62.79,Pop-up,yes
+Jun 28 2025,Sticker pack,9.0,$27.12,Online,yes
+2025-07-01,Hoodie,6.0,$268.65,Online,yes
+2025-07-01,Tote bag,10.0,$122.08,Online,no
+2025-07-01,  Notebook ,10.0,$61.80,Pop-up,yes
+2025-07-01,  Mug ,2.0,$17.31,Online,yes
+2025-07-01,Sticker pack,2.0,$5.79,Online,yes
+07/04/2025,  Hoodie ,1.0,$45.39,Online,yes
+Jul 04 2025,Tote bag,11.0,$128.50,Pop-up,no
+Jul 04 2025,  Notebook ,5.0,$30.65,Online,yes
+07/04/2025,Mug,1.0,$9.43,Pop-up,yes
+07/04/2025,Sticker pack,1.0,$3.00,Pop-up,yes
+2025-07-07,Hoodie,1.0,$44.26,Online,yes
+Jul 07 2025,Tote bag,1.0,$11.78,Campus,yes
+07/07/2025,Notebook,8.0,$47.80,Campus,yes
+07/07/2025,Mug,10.0,$88.64,Online,yes
+07/07/2025,Sticker pack,11.0,$33.00,Online,yes
+2025-07-10,Hoodie,2.0,$90.68,Online,yes
+2025-07-10,Tote bag,3.0,$36.09,Online,no
+07/10/2025,Notebook,11.0,$63.52,Online,no
+07/10/2025,Mug,7.0,$62.06,Online,yes
+07/10/2025,Sticker pack,2.0,$6.00,Campus,yes
+2025-07-13,Hoodie,7.0,$309.22,Online,yes
+07/13/2025,Tote bag,3.0,$36.67,Campus,yes
+2025-07-13,  Notebook ,1.0,$6.14,Campus,yes
+2025-07-13,Mug,1.0,$9.14,Online,yes
+Jul 13 2025,Sticker pack,8.0,$23.94,Online,yes
+Jul 16 2025,Hoodie,9.0,$403.08,Online,yes
+2025-07-16,Tote bag,10.0,$120.34,Campus,yes
+2025-07-16,Notebook,9.0,$54.92,Online,yes
+07/16/2025,Mug,1.0,$9.16,Online,yes
+2025-07-16,Sticker pack,2.0,N/A,Campus,yes
+Jul 19 2025,  Hoodie ,9.0,N/A,Online,yes
+2025-07-19,Tote bag,6.0,N/A,Online,yes
+Jul 19 2025,Notebook,7.0,$43.57,Online,yes
+07/19/2025,Mug,7.0,$61.32,Online,no
+07/19/2025,  Sticker pack ,2.0,$6.05,Campus,yes
+2025-07-22,Hoodie,3.0,$134.06,Online,yes
+07/22/2025,Tote bag,3.0,$36.99,Campus,yes
+07/22/2025,Notebook,9.0,N/A,Campus,yes
+2025-07-22,Mug,5.0,$44.80,Online,yes
+07/22/2025,Sticker pack,10.0,$29.42,Online,yes
+2025-07-25,Hoodie,1.0,$46.70,Online,yes
+2025-07-25,Tote bag,5.0,$60.53,Online,yes
+07/25/2025,  Notebook ,7.0,N/A,Campus,no
+Jul 25 2025,Mug,3.0,$27.15,Online,yes
+07/25/2025,Sticker pack,4.0,$12.35,Online,no
+07/28/2025,Hoodie,11.0,$479.59,Campus,yes
+07/28/2025,Tote bag,1.0,$11.32,Online,yes
+2025-07-28,Notebook,9.0,$55.04,Online,yes
+07/28/2025,Mug,5.0,$44.83,Campus,yes
+07/28/2025,Sticker pack,7.0,$20.80,Campus,no
+07/31/2025,Hoodie,8.0,$369.61,Online,yes
+2025-07-31,Tote bag,7.0,$85.79,Online,yes
+07/31/2025,Notebook,9.0,$54.37,Pop-up,yes
+07/31/2025,Mug,2.0,$17.50,Online,no
+Jul 31 2025,Sticker pack,1.0,$2.96,Campus,yes
+2025-08-03,Hoodie,9.0,$409.38,Online,yes
+2025-08-03,Tote bag,6.0,$73.32,Campus,yes
+Aug 03 2025,  Notebook ,8.0,$47.09,Online,yes
+2025-08-03,Mug,11.0,$98.45,Campus,yes
+2025-08-03,Sticker pack,5.0,$14.94,Campus,yes
+2025-08-06,  Hoodie ,10.0,$450.04,Campus,yes
+Aug 06 2025,Tote bag,5.0,$60.21,Online,yes
+2025-08-06,Notebook,1.0,$5.90,Pop-up,yes
+08/06/2025,  Mug ,5.0,$45.86,Online,yes
+08/06/2025,Sticker pack,10.0,$29.94,Pop-up,yes
+08/09/2025,Hoodie,6.0,$273.24,Pop-up,no
+Aug 09 2025,Tote bag,7.0,$82.53,Online,yes
+2025-08-09,Notebook,10.0,$60.81,Campus,yes
+2025-08-09,  Mug ,2.0,$18.22,Pop-up,yes
+08/09/2025,Sticker pack,5.0,$15.03,Campus,yes
+08/12/2025,Hoodie,6.0,$271.11,Online,yes
+2025-08-12,Tote bag,11.0,$127.70,Campus,yes
+2025-08-12,Notebook,5.0,$30.60,Online,yes
+2025-08-12,Mug,9.0,$78.78,Pop-up,no
+08/12/2025,  Sticker pack ,7.0,$20.44,Pop-up,yes
+08/15/2025,Hoodie,4.0,$184.47,Online,no
+Aug 15 2025,Tote bag,8.0,$95.07,Online,yes
+08/15/2025,Notebook,6.0,$37.25,Online,yes
+08/15/2025,Mug,3.0,$27.59,Campus,no
+Aug 15 2025,Sticker pack,1.0,$2.96,Pop-up,yes
+2025-08-18,Hoodie,4.0,$185.01,Campus,yes
+Aug 18 2025,Tote bag,9.0,$108.37,Pop-up,yes
+2025-08-18,Notebook,9.0,$53.11,Online,yes
+Aug 18 2025,Mug,8.0,$73.28,Online,yes
+2025-08-18,Sticker pack,10.0,$30.11,Online,yes
+08/21/2025,Hoodie,2.0,$91.23,Online,no
+Aug 21 2025,Tote bag,5.0,$59.41,Online,yes
+Aug 21 2025,Notebook,9.0,$53.89,Online,yes
+2025-08-21,Mug,1.0,$8.95,Online,yes
+Aug 21 2025,Sticker pack,6.0,$18.01,Online,yes
+2025-08-24,  Hoodie ,2.0,$89.90,Online,yes
+08/24/2025,Tote bag,11.0,$132.53,Online,yes
+08/24/2025,Notebook,8.0,$48.09,Online,yes
+Aug 24 2025,Mug,6.0,$54.43,Online,yes
+08/24/2025,Sticker pack,10.0,$30.10,Campus,no
+08/27/2025,Hoodie,8.0,$362.45,Pop-up,no
+08/27/2025,Tote bag,4.0,$46.20,Online,no
+08/27/2025,Notebook,11.0,$67.79,Online,yes
+08/27/2025,  Mug ,4.0,$36.05,Online,no
+2025-08-27,Sticker pack,3.0,$8.66,Campus,yes
+2025-08-30,Hoodie,10.0,$443.41,Online,yes
+2025-08-30,Tote bag,6.0,$71.26,Campus,yes
+08/30/2025,Notebook,6.0,$36.16,Online,no
+Aug 30 2025,Mug,5.0,$44.24,Campus,no
+08/30/2025,Sticker pack,6.0,$18.10,Pop-up,yes
+09/02/2025,  Hoodie ,8.0,$356.36,Online,no
+09/02/2025,Tote bag,6.0,$73.61,Online,yes
+Sep 02 2025,Notebook,6.0,$36.07,Pop-up,yes
+Sep 02 2025,Mug,6.0,$53.59,Online,yes
+Sep 02 2025,Sticker pack,11.0,$32.76,Online,yes
+2025-09-05,Hoodie,1.0,$44.98,Online,yes
+Sep 05 2025,Tote bag,11.0,$135.01,Campus,yes
+Sep 05 2025,Notebook,6.0,$35.55,Online,no
+Sep 05 2025,Mug,11.0,$102.08,Pop-up,yes
+2025-09-05,Sticker pack,3.0,$9.07,Online,yes
+2025-09-08,Hoodie,6.0,$270.78,Pop-up,yes
+09/08/2025,Tote bag,9.0,$108.65,Pop-up,yes
+09/08/2025,Notebook,2.0,$12.01,Online,yes
+09/08/2025,Mug,4.0,$35.72,Online,no
+2025-09-08,Sticker pack,3.0,$9.29,Online,yes
+2025-09-11,Hoodie,9.0,$397.28,Online,yes
+2025-09-11,Tote bag,4.0,$48.39,Campus,yes
+2025-09-11,  Notebook ,3.0,$18.21,Pop-up,yes
+Sep 11 2025,Mug,1.0,$9.10,Pop-up,yes
+2025-09-11,Sticker pack,9.0,$27.77,Online,yes
+2025-09-14,Hoodie,4.0,$172.09,Campus,no
+2025-09-14,Tote bag,1.0,$11.61,Online,yes
+Sep 14 2025,Notebook,9.0,$55.97,Online,yes
+2025-09-14,Mug,6.0,$54.53,Pop-up,yes
+Sep 14 2025,Sticker pack,11.0,$32.85,Online,yes
+2025-09-17,  Hoodie ,11.0,$503.83,Campus,no
+09/17/2025,Tote bag,3.0,$35.64,Campus,no
+09/17/2025,Notebook,11.0,$67.53,Online,no
+09/17/2025,  Mug ,9.0,$83.34,Online,yes
+09/17/2025,Sticker pack,10.0,$30.45,Online,yes
+09/20/2025,Hoodie,4.0,$179.19,Campus,yes
+09/20/2025,Tote bag,6.0,$68.84,Online,yes
+Sep 20 2025,Notebook,9.0,N/A,Online,no
+Sep 20 2025,Mug,1.0,$9.38,Campus,yes
+Sep 20 2025,Sticker pack,10.0,$29.34,Online,yes
+2025-09-23,Hoodie,11.0,$505.55,Campus,no
+2025-09-23,  Tote bag ,1.0,$12.02,Online,yes
+09/23/2025,Notebook,5.0,$29.94,Online,no
+Sep 23 2025,Mug,11.0,$101.03,Online,yes
+09/23/2025,Sticker pack,7.0,$21.60,Pop-up,yes
+Sep 26 2025,Hoodie,2.0,$91.77,Online,yes
+2025-09-26,Tote bag,10.0,$124.41,Online,yes
+Sep 26 2025,Notebook,4.0,$23.33,Online,yes
+Sep 26 2025,Mug,2.0,$17.78,Pop-up,yes
+2025-09-26,Sticker pack,10.0,$29.26,Pop-up,no

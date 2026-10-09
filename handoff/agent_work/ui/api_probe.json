@@ -1,0 +1,1406 @@
+{
+ "demo": {
+  "status": 200,
+  "ms": 206,
+  "bytes": 5179,
+  "metric": "amount",
+  "date": "order_date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 9046,
+    "kind": "int"
+   },
+   {
+    "label": "Total amount",
+    "value": 8297580.0,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full month",
+    "value": 622160.0,
+    "kind": "num",
+    "delta": 16.258992805755394,
+    "vs": "vs previous month"
+   },
+   {
+    "label": "Best month",
+    "value": 622160.0,
+    "kind": "num",
+    "note": "Dec 2025"
+   }
+  ],
+  "insights": [
+   "amount is up 43% over the period",
+   "Hoodie drives 75% of amount",
+   "amount moves with unit_price"
+  ],
+  "charts": [
+   [
+    "line",
+    "amount by month",
+    24
+   ],
+   [
+    "bar",
+    "amount by product",
+    5
+   ],
+   [
+    "bar",
+    "amount by region",
+    4
+   ]
+  ],
+  "suggested": [
+   "Which product brings in the most amount?",
+   "How did amount change month over month?",
+   "Which product is growing fastest?"
+  ],
+  "ai": 0,
+  "summary": "The average monthly amount in the most recent 8 months is 43% higher than in the first 8. Across product, a single value (Hoodie) accounts for 75% of total amount. You depend heavily on it.",
+  "recs": [
+   "Find out what changed and repeat it.",
+   "Protect what makes Hoodie work, and test whether other product values can grow.",
+   "Track unit_price alongside amount and test changing it."
+  ],
+  "metric_cols": [
+   "quantity",
+   "unit_price",
+   "amount"
+  ],
+  "date_cols": [
+   "order_date"
+  ]
+ },
+ "bad_file.csv": {
+  "status": 200,
+  "ms": 24,
+  "bytes": 7869,
+  "rows": 40,
+  "metric": null,
+  "date": null,
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 40,
+    "kind": "int"
+   }
+  ],
+  "metric_cols": [],
+  "date_cols": [],
+  "cat_cols": [],
+  "insights": [
+   "unnamed_0 is 50.0% empty"
+  ],
+  "charts": [],
+  "suggested": [
+   "Give me a summary of this data"
+  ],
+  "raw_first": [
+   [
+    "\u000b\f",
+    null
+   ],
+   [
+    "\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\u007f\u0080\u0081\u0082\u0083\u0084\u0085\u0086\u0087\u0088\u0089\u008a\u008b\u008c\u008d\u008e\u008f\u0090\u0091\u0092\u0093\u0094\u0095\u0096\u0097\u0098\u0099\u009a\u009b\u009c\u009d\u009e\u009f\u00a0\u00a1\u00a2\u00a3\u00a4\u00a5\u00a6\u00a7\u00a8\u00a9\u00aa\u00ab\u00ac\u00ad\u00ae\u00af\u00b0\u00b1\u00b2\u00b3\u00b4\u00b5\u00b6\u00b7\u00b8\u00b9\u00ba\u00bb\u00bc\u00bd\u00be\u00bf\u00c0\u00c1\u00c2\u00c3\u00c4\u00c5\u00c6\u00c7\u00c8\u00c9\u00ca\u00cb\u00cc\u00cd\u00ce\u00cf\u00d0\u00d1\u00d2\u00d3\u00d4\u00d5\u00d6\u00d7\u00d8\u00d9\u00da\u00db\u00dc\u00dd\u00de\u00df\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u00e6\u00e7\u00e8\u00e9\u00ea\u00eb\u00ec\u00ed\u00ee\u00ef\u00f0\u00f1\u00f2\u00f3\u00f4\u00f5\u00f6\u00f7\u00f8\u00f9\u00fa\u00fb\u00fc\u00fd\u00fe\u00ff",
+    null
+   ],
+   [
+    "\u000b\f",
+    null
+   ]
+  ],
+  "clean_first": [
+   [
+    null
+   ],
+   [
+    "\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\u007f\u0080\u0081\u0082\u0083\u0084\u0085\u0086\u0087\u0088\u0089\u008a\u008b\u008c\u008d\u008e\u008f\u0090\u0091\u0092\u0093\u0094\u0095\u0096\u0097\u0098\u0099\u009a\u009b\u009c\u009d\u009e\u009f\u00a0\u00a1\u00a2\u00a3\u00a4\u00a5\u00a6\u00a7\u00a8\u00a9\u00aa\u00ab\u00ac\u00ad\u00ae\u00af\u00b0\u00b1\u00b2\u00b3\u00b4\u00b5\u00b6\u00b7\u00b8\u00b9\u00ba\u00bb\u00bc\u00bd\u00be\u00bf\u00c0\u00c1\u00c2\u00c3\u00c4\u00c5\u00c6\u00c7\u00c8\u00c9\u00ca\u00cb\u00cc\u00cd\u00ce\u00cf\u00d0\u00d1\u00d2\u00d3\u00d4\u00d5\u00d6\u00d7\u00d8\u00d9\u00da\u00db\u00dc\u00dd\u00de\u00df\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u00e6\u00e7\u00e8\u00e9\u00ea\u00eb\u00ec\u00ed\u00ee\u00ef\u00f0\u00f1\u00f2\u00f3\u00f4\u00f5\u00f6\u00f7\u00f8\u00f9\u00fa\u00fb\u00fc\u00fd\u00fe\u00ff"
+   ],
+   [
+    null
+   ]
+  ],
+  "raw_cols": [
+   "Unnamed: 0",
+   "Unnamed: 1"
+  ],
+  "clean_cols": [
+   "unnamed_0"
+  ],
+  "dtypes": [
+   "str"
+  ],
+  "summary": "Over a fifth of rows have no value for unnamed_0, so anything based on it may be misleading.",
+  "recs": [
+   "Fill in or remove the missing unnamed_0 values before relying on results that use it."
+  ]
+ },
+ "dates_no_metric.csv": {
+  "status": 200,
+  "ms": 16,
+  "bytes": 1488,
+  "rows": 40,
+  "metric": null,
+  "date": "order_date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 40,
+    "kind": "int"
+   }
+  ],
+  "metric_cols": [],
+  "date_cols": [
+   "order_date"
+  ],
+  "cat_cols": [
+   "region"
+  ],
+  "insights": [],
+  "charts": [],
+  "suggested": [
+   "Give me a summary of this data"
+  ],
+  "raw_first": [
+   [
+    "2024-01-01",
+    "S"
+   ],
+   [
+    "2024-01-02",
+    "E"
+   ],
+   [
+    "2024-01-03",
+    "N"
+   ]
+  ],
+  "clean_first": [
+   [
+    "2024-01-01T00:00:00",
+    "S"
+   ],
+   [
+    "2024-01-02T00:00:00",
+    "E"
+   ],
+   [
+    "2024-01-03T00:00:00",
+    "N"
+   ]
+  ],
+  "raw_cols": [
+   "order_date",
+   "region"
+  ],
+  "clean_cols": [
+   "order_date",
+   "region"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str"
+  ],
+  "summary": "No strong patterns found yet.",
+  "recs": []
+ },
+ "donations.csv": {
+  "status": 200,
+  "ms": 90,
+  "bytes": 7085,
+  "rows": 2742,
+  "metric": "amount_usd",
+  "date": "date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 2742,
+    "kind": "int"
+   },
+   {
+    "label": "Total amount_usd",
+    "value": 143386.33,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full month",
+    "value": 2895.83,
+    "kind": "num",
+    "delta": -27.88262307493077,
+    "vs": "vs previous month"
+   },
+   {
+    "label": "Best month",
+    "value": 33598.42,
+    "kind": "num",
+    "note": "Dec 2024"
+   }
+  ],
+  "metric_cols": [
+   "amount_usd"
+  ],
+  "date_cols": [
+   "date"
+  ],
+  "cat_cols": [
+   "campaign",
+   "channel",
+   "recurring"
+  ],
+  "insights": [
+   "notes is 72.4% empty",
+   "Unusual month: 01 Dec 2024",
+   "Unusual month: 01 Dec 2023",
+   "amount_usd is up 135% over the period",
+   "Annual Appeal drives 44% of amount_usd",
+   "Online drives 41% of amount_usd"
+  ],
+  "charts": [
+   [
+    "line",
+    "amount_usd by month",
+    33
+   ],
+   [
+    "bar",
+    "amount_usd by campaign",
+    6
+   ],
+   [
+    "bar",
+    "amount_usd by channel",
+    5
+   ]
+  ],
+  "suggested": [
+   "Which campaign brings in the most amount_usd?",
+   "How did amount_usd change month over month?",
+   "Which campaign is growing fastest?"
+  ],
+  "raw_first": [
+   [
+    "2023-01-01",
+    "Chloe Smith",
+    "Annual Appeal",
+    "Event",
+    6.68,
+    "No",
+    null
+   ],
+   [
+    "2023-01-01",
+    "Ethan Patel",
+    "Annual Appeal",
+    "Mail",
+    70.96,
+    "No",
+    null
+   ],
+   [
+    "2023-01-02",
+    "Maya Garcia",
+    "Annual Appeal",
+    "Online",
+    22.97,
+    "No",
+    null
+   ]
+  ],
+  "clean_first": [
+   [
+    "2023-01-01T00:00:00",
+    "Chloe Smith",
+    "Annual Appeal",
+    "Event",
+    6.68,
+    0,
+    null
+   ],
+   [
+    "2023-01-01T00:00:00",
+    "Ethan Patel",
+    "Annual Appeal",
+    "Mail",
+    70.96,
+    0,
+    null
+   ],
+   [
+    "2023-01-02T00:00:00",
+    "Maya Garcia",
+    "Annual Appeal",
+    "Online",
+    22.97,
+    0,
+    null
+   ]
+  ],
+  "raw_cols": [
+   "Date",
+   "Donor Name",
+   "Campaign",
+   "Channel",
+   "Amount (USD)",
+   "Recurring",
+   "Notes"
+  ],
+  "clean_cols": [
+   "date",
+   "donor_name",
+   "campaign",
+   "channel",
+   "amount_usd",
+   "recurring",
+   "notes"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str",
+   "str",
+   "str",
+   "float64",
+   "boolean",
+   "str"
+  ],
+  "summary": "Over a fifth of rows have no value for notes, so anything based on it may be misleading. amount_usd was 33,598 that month, far from the typical 3,270.",
+  "recs": [
+   "Fill in or remove the missing notes values before relying on results that use it.",
+   "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+   "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+   "Find out what changed and repeat it."
+  ]
+ },
+ "empty.csv": {
+  "status": 400,
+  "ms": 2,
+  "bytes": 34,
+  "detail": "The file has no rows."
+ },
+ "header_only.csv": {
+  "status": 400,
+  "ms": 3,
+  "bytes": 34,
+  "detail": "The file has no rows."
+ },
+ "injection.csv": {
+  "status": 200,
+  "ms": 18,
+  "bytes": 4164,
+  "rows": 120,
+  "metric": "amount",
+  "date": "order_date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 120,
+    "kind": "int"
+   },
+   {
+    "label": "Total amount",
+    "value": 53314.0,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full week",
+    "value": 688.0,
+    "kind": "num",
+    "delta": -71.05595288178375,
+    "vs": "vs previous week"
+   },
+   {
+    "label": "Best week",
+    "value": 4294.0,
+    "kind": "num",
+    "note": "04 Feb 2024"
+   }
+  ],
+  "metric_cols": [
+   "amount"
+  ],
+  "date_cols": [
+   "order_date"
+  ],
+  "cat_cols": [
+   "category"
+  ],
+  "insights": [
+   "amount is down 13% over the period"
+  ],
+  "charts": [
+   [
+    "line",
+    "amount by week",
+    18
+   ],
+   [
+    "bar",
+    "amount by category",
+    4
+   ]
+  ],
+  "suggested": [
+   "Which category brings in the most amount?",
+   "How did amount change month over month?",
+   "Which category is growing fastest?"
+  ],
+  "raw_first": [
+   [
+    "2024-01-01",
+    "</script><script>window.__xss=2</script>",
+    64
+   ],
+   [
+    "2024-01-02",
+    "O'Brien \" & <b>Sons</b>",
+    554
+   ],
+   [
+    "2024-01-03",
+    "<a href=\"javascript:window.__xss=3\">link</a>",
+    31
+   ]
+  ],
+  "clean_first": [
+   [
+    "2024-01-01T00:00:00",
+    "</script><script>window.__xss=2</script>",
+    64
+   ],
+   [
+    "2024-01-02T00:00:00",
+    "O'Brien \" & <b>Sons</b>",
+    554
+   ],
+   [
+    "2024-01-03T00:00:00",
+    "<a href=\"javascript:window.__xss=3\">link</a>",
+    31
+   ]
+  ],
+  "raw_cols": [
+   "order_date",
+   "category",
+   "amount"
+  ],
+  "clean_cols": [
+   "order_date",
+   "category",
+   "amount"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str",
+   "int64"
+  ],
+  "summary": "The average weekly amount in the most recent 6 weeks is 13% lower than in the first 6.",
+  "recs": [
+   "Look at which category or period dropped and act on it first."
+  ]
+ },
+ "many_categories.csv": {
+  "status": 200,
+  "ms": 19,
+  "bytes": 3200,
+  "rows": 300,
+  "metric": "amount",
+  "date": "order_date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 300,
+    "kind": "int"
+   },
+   {
+    "label": "Total amount",
+    "value": 136732.0,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full month",
+    "value": 12265.0,
+    "kind": "num",
+    "delta": -17.91044776119403,
+    "vs": "vs previous month"
+   },
+   {
+    "label": "Best month",
+    "value": 17779.0,
+    "kind": "num",
+    "note": "Jan 2024"
+   }
+  ],
+  "metric_cols": [
+   "amount"
+  ],
+  "date_cols": [
+   "order_date"
+  ],
+  "cat_cols": [
+   "category"
+  ],
+  "insights": [
+   "amount is down 7% over the period"
+  ],
+  "charts": [
+   [
+    "line",
+    "amount by month",
+    9
+   ],
+   [
+    "bar",
+    "amount by category",
+    8
+   ]
+  ],
+  "suggested": [
+   "Which category brings in the most amount?",
+   "How did amount change month over month?",
+   "Which category is growing fastest?"
+  ],
+  "raw_first": [
+   [
+    "2024-01-01",
+    "Category 03",
+    377
+   ],
+   [
+    "2024-01-02",
+    "Category 22",
+    560
+   ],
+   [
+    "2024-01-03",
+    "Category 27",
+    767
+   ]
+  ],
+  "clean_first": [
+   [
+    "2024-01-01T00:00:00",
+    "Category 03",
+    377
+   ],
+   [
+    "2024-01-02T00:00:00",
+    "Category 22",
+    560
+   ],
+   [
+    "2024-01-03T00:00:00",
+    "Category 27",
+    767
+   ]
+  ],
+  "raw_cols": [
+   "order_date",
+   "category",
+   "amount"
+  ],
+  "clean_cols": [
+   "order_date",
+   "category",
+   "amount"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str",
+   "int64"
+  ],
+  "summary": "The average monthly amount in the most recent 3 months is 7% lower than in the first 3.",
+  "recs": [
+   "Look at which category or period dropped and act on it first."
+  ]
+ },
+ "messy_european.csv": {
+  "status": 200,
+  "ms": 35,
+  "bytes": 4734,
+  "rows": 685,
+  "metric": "menge",
+  "date": "datum",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 685,
+    "kind": "int"
+   },
+   {
+    "label": "Total menge",
+    "value": 49790.0,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full month",
+    "value": 1775.0,
+    "kind": "num",
+    "delta": 4.289071680376028,
+    "vs": "vs previous month"
+   },
+   {
+    "label": "Best month",
+    "value": 5557.0,
+    "kind": "num",
+    "note": "Aug 2025"
+   }
+  ],
+  "metric_cols": [
+   "menge"
+  ],
+  "date_cols": [
+   "datum"
+  ],
+  "cat_cols": [
+   "produkt",
+   "filiale"
+  ],
+  "insights": [
+   "menge is down 49% over the period",
+   "Unusual month: 01 Oct 2025",
+   "Unusual month: 01 Nov 2025"
+  ],
+  "charts": [
+   [
+    "line",
+    "menge by month",
+    11
+   ],
+   [
+    "bar",
+    "menge by produkt",
+    5
+   ],
+   [
+    "bar",
+    "menge by filiale",
+    2
+   ]
+  ],
+  "suggested": [
+   "Which produkt brings in the most menge?",
+   "How did menge change month over month?",
+   "Which produkt is growing fastest?"
+  ],
+  "raw_first": [
+   [
+    "01.01.2025",
+    "K\u00e4se",
+    "M\u00fcnchen",
+    35.0,
+    "311,50 \u0080"
+   ],
+   [
+    "01.01.2025",
+    "Br\u00f6tchen",
+    "M\u00fcnchen",
+    33.0,
+    "21,45 \u0080"
+   ],
+   [
+    "01.01.2025",
+    "M\u00fcsli",
+    "Z\u00fcrich",
+    94.0,
+    "394,80 \u0080"
+   ]
+  ],
+  "clean_first": [
+   [
+    "2025-01-01T00:00:00",
+    "K\u00e4se",
+    "M\u00fcnchen",
+    35.0,
+    "311,50 \u0080"
+   ],
+   [
+    "2025-01-01T00:00:00",
+    "Br\u00f6tchen",
+    "M\u00fcnchen",
+    33.0,
+    "21,45 \u0080"
+   ],
+   [
+    "2025-01-01T00:00:00",
+    "M\u00fcsli",
+    "Z\u00fcrich",
+    94.0,
+    "394,80 \u0080"
+   ]
+  ],
+  "raw_cols": [
+   "Datum",
+   "Produkt",
+   "Filiale",
+   "Menge",
+   "Umsatz (\u0080)"
+  ],
+  "clean_cols": [
+   "datum",
+   "produkt",
+   "filiale",
+   "menge",
+   "umsatz"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str",
+   "str",
+   "float64",
+   "str"
+  ],
+  "summary": "The average monthly menge in the most recent 3 months is 49% lower than in the first 3. menge was 1,702 that month, far from the typical 4,894.",
+  "recs": [
+   "Look at which produkt or period dropped and act on it first.",
+   "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+   "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake."
+  ]
+ },
+ "negatives_long_labels.csv": {
+  "status": 200,
+  "ms": 35,
+  "bytes": 6082,
+  "rows": 1320,
+  "metric": "net_amount",
+  "date": "transaction_date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 1320,
+    "kind": "int"
+   },
+   {
+    "label": "Total net_amount",
+    "value": 345749.20999999996,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full month",
+    "value": 26721.16,
+    "kind": "num",
+    "delta": 13.12832818661299,
+    "vs": "vs previous month"
+   },
+   {
+    "label": "Best month",
+    "value": 39312.12,
+    "kind": "num",
+    "note": "Jul 2024"
+   }
+  ],
+  "metric_cols": [
+   "net_amount"
+  ],
+  "date_cols": [
+   "transaction_date"
+  ],
+  "cat_cols": [
+   "program"
+  ],
+  "insights": [
+   "net_amount is up 11% over the period"
+  ],
+  "charts": [
+   [
+    "line",
+    "net_amount by month",
+    17
+   ],
+   [
+    "bar",
+    "net_amount by program",
+    8
+   ]
+  ],
+  "suggested": [
+   "Which program brings in the most net_amount?",
+   "How did net_amount change month over month?",
+   "Which program is growing fastest?"
+  ],
+  "raw_first": [
+   [
+    "2024-01-01",
+    "Operations / Housing programme and community partnerships fund",
+    316.79,
+    "FY2024-25"
+   ],
+   [
+    "2024-01-01",
+    "Operations / Food security programme and community partnerships fund",
+    -2267.91,
+    "FY2024-25"
+   ],
+   [
+    "2024-01-01",
+    "Operations / Youth education programme and community partnerships fund",
+    565.0,
+    "FY2024-25"
+   ]
+  ],
+  "clean_first": [
+   [
+    "2024-01-01T00:00:00",
+    "Operations / Housing programme and community partnerships fund",
+    316.79,
+    "FY2024-25"
+   ],
+   [
+    "2024-01-01T00:00:00",
+    "Operations / Food security programme and community partnerships fund",
+    -2267.91,
+    "FY2024-25"
+   ],
+   [
+    "2024-01-01T00:00:00",
+    "Operations / Youth education programme and community partnerships fund",
+    565.0,
+    "FY2024-25"
+   ]
+  ],
+  "raw_cols": [
+   "transaction_date",
+   "program",
+   "net_amount",
+   "fiscal_year"
+  ],
+  "clean_cols": [
+   "transaction_date",
+   "program",
+   "net_amount",
+   "fiscal_year"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str",
+   "float64",
+   "str"
+  ],
+  "summary": "The average monthly net_amount in the most recent 5 months is 11% higher than in the first 5.",
+  "recs": [
+   "Find out what changed and repeat it."
+  ]
+ },
+ "no_dates.csv": {
+  "status": 200,
+  "ms": 10,
+  "bytes": 1423,
+  "rows": 200,
+  "metric": "amount",
+  "date": null,
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 200,
+    "kind": "int"
+   },
+   {
+    "label": "Total amount",
+    "value": 51172.0,
+    "kind": "num"
+   }
+  ],
+  "metric_cols": [
+   "amount",
+   "rating"
+  ],
+  "date_cols": [],
+  "cat_cols": [
+   "region"
+  ],
+  "insights": [],
+  "charts": [
+   [
+    "bar",
+    "amount by region",
+    4
+   ]
+  ],
+  "suggested": [
+   "Which region brings in the most amount?"
+  ],
+  "raw_first": [
+   [
+    "E",
+    246,
+    1
+   ],
+   [
+    "E",
+    114,
+    3
+   ],
+   [
+    "W",
+    457,
+    4
+   ]
+  ],
+  "clean_first": [
+   [
+    "E",
+    246,
+    1
+   ],
+   [
+    "E",
+    114,
+    3
+   ],
+   [
+    "W",
+    457,
+    4
+   ]
+  ],
+  "raw_cols": [
+   "region",
+   "amount",
+   "rating"
+  ],
+  "clean_cols": [
+   "region",
+   "amount",
+   "rating"
+  ],
+  "dtypes": [
+   "str",
+   "int64",
+   "int64"
+  ],
+  "summary": "No strong patterns found yet.",
+  "recs": []
+ },
+ "no_insights.csv": {
+  "status": 200,
+  "ms": 11,
+  "bytes": 1452,
+  "rows": 40,
+  "metric": null,
+  "date": null,
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 40,
+    "kind": "int"
+   }
+  ],
+  "metric_cols": [],
+  "date_cols": [],
+  "cat_cols": [
+   "colour"
+  ],
+  "insights": [],
+  "charts": [],
+  "suggested": [
+   "Give me a summary of this data"
+  ],
+  "raw_first": [
+   [
+    1,
+    "item 0",
+    "blue"
+   ],
+   [
+    2,
+    "item 1",
+    "blue"
+   ],
+   [
+    3,
+    "item 2",
+    "blue"
+   ]
+  ],
+  "clean_first": [
+   [
+    1,
+    "item 0",
+    "blue"
+   ],
+   [
+    2,
+    "item 1",
+    "blue"
+   ],
+   [
+    3,
+    "item 2",
+    "blue"
+   ]
+  ],
+  "raw_cols": [
+   "id",
+   "name",
+   "colour"
+  ],
+  "clean_cols": [
+   "id",
+   "name",
+   "colour"
+  ],
+  "dtypes": [
+   "int64",
+   "str",
+   "str"
+  ],
+  "summary": "No strong patterns found yet.",
+  "recs": []
+ },
+ "not_data.txt": {
+  "status": 400,
+  "ms": 3,
+  "bytes": 34,
+  "detail": "The file has no rows."
+ },
+ "short_history.csv": {
+  "status": 200,
+  "ms": 15,
+  "bytes": 2793,
+  "rows": 20,
+  "metric": "amount",
+  "date": "order_date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 20,
+    "kind": "int"
+   },
+   {
+    "label": "Total amount",
+    "value": 1013.0,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full day",
+    "value": 89.0,
+    "kind": "num",
+    "delta": 50.847457627118644,
+    "vs": "vs previous day"
+   },
+   {
+    "label": "Best day",
+    "value": 95.0,
+    "kind": "num",
+    "note": "12 Jan 2025"
+   }
+  ],
+  "metric_cols": [
+   "amount"
+  ],
+  "date_cols": [
+   "order_date"
+  ],
+  "cat_cols": [
+   "region"
+  ],
+  "insights": [
+   "amount is up 19% over the period"
+  ],
+  "charts": [
+   [
+    "line",
+    "amount by day",
+    20
+   ],
+   [
+    "bar",
+    "amount by region",
+    2
+   ]
+  ],
+  "suggested": [
+   "Which region brings in the most amount?",
+   "How did amount change month over month?",
+   "Which region is growing fastest?"
+  ],
+  "raw_first": [
+   [
+    "2025-01-01",
+    "N",
+    43
+   ],
+   [
+    "2025-01-02",
+    "S",
+    42
+   ],
+   [
+    "2025-01-03",
+    "N",
+    60
+   ]
+  ],
+  "clean_first": [
+   [
+    "2025-01-01T00:00:00",
+    "N",
+    43
+   ],
+   [
+    "2025-01-02T00:00:00",
+    "S",
+    42
+   ],
+   [
+    "2025-01-03T00:00:00",
+    "N",
+    60
+   ]
+  ],
+  "raw_cols": [
+   "order_date",
+   "region",
+   "amount"
+  ],
+  "clean_cols": [
+   "order_date",
+   "region",
+   "amount"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str",
+   "int64"
+  ],
+  "summary": "The average dayly amount in the most recent 6 days is 19% higher than in the first 6.",
+  "recs": [
+   "Find out what changed and repeat it."
+  ]
+ },
+ "small_rates.csv": {
+  "status": 200,
+  "ms": 25,
+  "bytes": 3233,
+  "rows": 400,
+  "metric": "conversion_rate",
+  "date": "order_date",
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 400,
+    "kind": "int"
+   },
+   {
+    "label": "Average conversion_rate",
+    "value": 0.05361324999999999,
+    "kind": "num"
+   },
+   {
+    "label": "Latest full month",
+    "value": 0.0492741935483871,
+    "kind": "num",
+    "delta": -8.042863162964291,
+    "vs": "vs previous month"
+   },
+   {
+    "label": "Best month",
+    "value": 0.06319677419354838,
+    "kind": "num",
+    "note": "Mar 2024"
+   }
+  ],
+  "metric_cols": [
+   "conversion_rate"
+  ],
+  "date_cols": [
+   "order_date"
+  ],
+  "cat_cols": [
+   "channel"
+  ],
+  "insights": [
+   "Unusual month: 01 Jan 2024"
+  ],
+  "charts": [
+   [
+    "line",
+    "conversion_rate by month",
+    13
+   ],
+   [
+    "bar",
+    "conversion_rate by channel",
+    4
+   ]
+  ],
+  "suggested": [
+   "Which channel brings in the most conversion_rate?",
+   "How did conversion_rate change month over month?",
+   "Which channel is growing fastest?"
+  ],
+  "raw_first": [
+   [
+    "2024-01-01",
+    "Referral",
+    0.0497
+   ],
+   [
+    "2024-01-02",
+    "Social",
+    0.0231
+   ],
+   [
+    "2024-01-03",
+    "Social",
+    0.0117
+   ]
+  ],
+  "clean_first": [
+   [
+    "2024-01-01T00:00:00",
+    "Referral",
+    0.0497
+   ],
+   [
+    "2024-01-02T00:00:00",
+    "Social",
+    0.0231
+   ],
+   [
+    "2024-01-03T00:00:00",
+    "Social",
+    0.0117
+   ]
+  ],
+  "raw_cols": [
+   "order_date",
+   "channel",
+   "conversion_rate"
+  ],
+  "clean_cols": [
+   "order_date",
+   "channel",
+   "conversion_rate"
+  ],
+  "dtypes": [
+   "datetime64[us]",
+   "str",
+   "float64"
+  ],
+  "summary": "conversion_rate was 0 that month, far from the typical 0.",
+  "recs": [
+   "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake."
+  ]
+ },
+ "text_only.csv": {
+  "status": 200,
+  "ms": 12,
+  "bytes": 1169,
+  "rows": 30,
+  "metric": null,
+  "date": null,
+  "kpis": [
+   {
+    "label": "Rows analysed",
+    "value": 30,
+    "kind": "int"
+   }
+  ],
+  "metric_cols": [],
+  "date_cols": [],
+  "cat_cols": [
+   "note"
+  ],
+  "insights": [],
+  "charts": [],
+  "suggested": [
+   "Give me a summary of this data"
+  ],
+  "raw_first": [
+   [
+    "row 0",
+    "x"
+   ],
+   [
+    "row 1",
+    "x"
+   ],
+   [
+    "row 2",
+    "x"
+   ]
+  ],
+  "clean_first": [
+   [
+    "row 0",
+    "x"
+   ],
+   [
+    "row 1",
+    "x"
+   ],
+   [
+    "row 2",
+    "x"
+   ]
+  ],
+  "raw_cols": [
+   "note",
+   "comment"
+  ],
+  "clean_cols": [
+   "note",
+   "comment"
+  ],
+  "dtypes": [
+   "str",
+   "str"
+  ],
+  "summary": "No strong patterns found yet.",
+  "recs": []
+ },
+ "ask_no_key": {
+  "status": 503,
+  "body": {
+   "detail": "Plain-English questions need a Gemini API key (set GEMINI_API_KEY)."
+  }
+ },
+ "ask_expired": {
+  "status": 404,
+  "body": {
+   "detail": "Session expired. Upload your file again."
+  }
+ },
+ "forecast_expired": {
+  "status": 400,
+  "body": {
+   "detail": "Could not generate forecast: 404: Session expired. Upload your file again."
+  }
+ },
+ "forecast_float_periods": {
+  "status": 422,
+  "body": {
+   "detail": [
+    {
+     "type": "int_from_float",
+     "loc": [
+      "body",
+      "periods"
+     ],
+     "msg": "Input should be a valid integer, got a number with a fractional part",
+     "input": 2.5
+    }
+   ]
+  }
+ },
+ "forecast_zero_periods": {
+  "status": 200,
+  "note": "Over the next 1 months, amount is expected to be about 2% lower than the last 1. The shaded band is a 95% range; forecasts are estimates, not promises."
+ },
+ "forecast_100_periods": {
+  "status": 200,
+  "note": "Over the next 24 months, amount is expected to be about 36% higher than the last 24. The shaded band is a 95% range; forecasts are estimates, not promises."
+ },
+ "favicon": 404,
+ "assets_index": 200,
+ "index_headers": {
+  "date": "Fri, 09 Oct 2026 17:08:41 GMT",
+  "server": "uvicorn",
+  "content-type": "text/html; charset=utf-8",
+  "accept-ranges": "bytes",
+  "content-length": "25167",
+  "last-modified": "Fri, 09 Oct 2026 15:40:58 GMT",
+  "etag": "\"5d5d2e8c54afbf62adbf36742dad8c9c\""
+ }
+}

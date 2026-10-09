@@ -1,0 +1,29 @@
+pandas 3.0.6 numpy 2.5.3
+
+====================================================================================================
+A) Hindi / NFD-accent headers: re.sub(r'\W+','_') treats combining marks (matras, U+0301) as non-word and replaces them
+====================================================================================================
+hindi_headers.csv    raw=['तारीख', 'राशि', 'शहर'] -> ['त_र_ख', 'र_श', 'शहर']
+accents_nfd.csv      raw=['Date de création', 'Montant TTC (€)', 'Prénom'] -> ['date_de_cre_ation', 'montant_ttc', 'pre_nom']
+accents_nfc.csv      raw=['Date de création', 'Montant TTC (€)', 'Prénom'] -> ['date_de_création', 'montant_ttc', 'prénom']
+
+====================================================================================================
+B) cp1252 file (Excel on Windows 'CSV (Comma delimited)') with a euro sign: decoded as latin-1 so EUR becomes control char U+0080
+====================================================================================================
+bytes: b'Date,Caf\xe9,Amount\n2024-01-01,No\xebl,"\x806,287.82"\n2024-01-04,No\xebl'
+amount dtype: str sample: '\x806,287.82' -> column left as text, metric = None
+
+====================================================================================================
+C) UTF-16 tab-separated 'Unicode Text' export from Excel
+====================================================================================================
+REJECTED: ValueError The file contains only empty cells.
+
+====================================================================================================
+D) duplicate header names that collide after cleaning: 'amount,amount,Amount ,AMOUNT!'
+====================================================================================================
+CRASH: AttributeError 'DataFrame' object has no attribute 'dtype'
+
+====================================================================================================
+E) mixed UTC offsets inside one column (DST change, e.g. -0500 then -0400) rejects the whole file
+====================================================================================================
+REJECTED: ValueError Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIndex to convert to a common timezone.

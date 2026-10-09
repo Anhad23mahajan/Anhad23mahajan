@@ -1,0 +1,20 @@
+pandas 3.0.6 numpy 2.5.3
+column named set                 'SELECT sum("set") FROM data'                                      BLOCKED: The query uses an operation that isn't allowed.
+column named load                'SELECT sum("load") FROM data'                                     BLOCKED: The query uses an operation that isn't allowed.
+column named update              'SELECT "update" FROM data'                                        BLOCKED: The query uses an operation that isn't allowed.
+column named export              'SELECT "export" FROM data'                                        BLOCKED: The query uses an operation that isn't allowed.
+column named call                'SELECT "call" FROM data'                                          BLOCKED: The query uses an operation that isn't allowed.
+literal 'Set up'                 "SELECT * FROM data WHERE campaign = 'Set up'"                     BLOCKED: The query uses an operation that isn't allowed.
+literal containing ;             "SELECT * FROM data WHERE donor LIKE '%;%'"                        BLOCKED: Only one query is allowed.
+literal containing --            "SELECT 'a--b' AS s"                                               allowed BUT SQL IS REWRITTEN to "SELECT 'a"
+literal 'Import duty'            "SELECT * FROM data WHERE campaign = 'Import duty'"                BLOCKED: The query uses an operation that isn't allowed.
+column named order (quoted)      'SELECT sum("order") FROM data'                                    allowed
+window fn / QUALIFY-free CTE     'WITH t AS (SELECT campaign, sum(amount) a FROM data GROUP BY 1'   allowed
+
+====================================================================================================
+ask() error classification: regex on the exception text
+====================================================================================================
+   "500 INTERNAL. {'error': {'code': 500, 'message': 'An internal error has occurred"   -> first matching rule: API_KEY|API key|401|403|PERMISSION_DENIED|UNAUTHENTICATED
+   '504 DEADLINE_EXCEEDED. Request took 40.31 s'                                        -> first matching rule: none (generic 502)
+   'Model returned invalid JSON near position 4031'                                     -> first matching rule: API_KEY|API key|401|403|PERMISSION_DENIED|UNAUTHENTICATED
+   -> any text that merely contains the digits 401/403/429/503/404 is reported to the user as 'API key rejected' / 'quota used up' / 'busy' / 'model not found'

@@ -1,0 +1,629 @@
+{
+ "fmt_table": [
+  [
+   0,
+   "0"
+  ],
+  [
+   0.05,
+   "0.1"
+  ],
+  [
+   0.0536,
+   "0.1"
+  ],
+  [
+   0.5,
+   "0.5"
+  ],
+  [
+   1,
+   "1"
+  ],
+  [
+   12.345,
+   "12.3"
+  ],
+  [
+   999.96,
+   "1000.0"
+  ],
+  [
+   1000,
+   "1.0k"
+  ],
+  [
+   1234,
+   "1.2k"
+  ],
+  [
+   9999.5,
+   "10.0k"
+  ],
+  [
+   10000,
+   "10k"
+  ],
+  [
+   10500,
+   "11k"
+  ],
+  [
+   -10500,
+   "-10k"
+  ],
+  [
+   12500,
+   "13k"
+  ],
+  [
+   -12500,
+   "-12k"
+  ],
+  [
+   99999,
+   "100k"
+  ],
+  [
+   999999,
+   "1000k"
+  ],
+  [
+   1000000,
+   "1.0M"
+  ],
+  [
+   1500000,
+   "1.5M"
+  ],
+  [
+   9960000,
+   "10.0M"
+  ],
+  [
+   10000000,
+   "10M"
+  ],
+  [
+   2548000000,
+   "2548M"
+  ],
+  [
+   1000000000000.0,
+   "1000000M"
+  ],
+  [
+   -0.5,
+   "-0.5"
+  ],
+  [
+   -0.4,
+   "-0.4"
+  ],
+  [
+   -999.96,
+   "-1000.0"
+  ],
+  [
+   4802950,
+   "4.8M"
+  ],
+  [
+   9046,
+   "9.0k"
+  ],
+  [
+   "NaN",
+   "–"
+  ],
+  [
+   null,
+   "–"
+  ],
+  [
+   "12",
+   "THROWS n.toFixed is not a function"
+  ],
+  [
+   "abc",
+   "–"
+  ],
+  [
+   true,
+   "THROWS n.toFixed is not a function"
+  ]
+ ],
+ "kpi_delta_zero_negative": [
+  "-0",
+  "0",
+  "0"
+ ],
+ "esc_table": [
+  [
+   "<",
+   "&lt;"
+  ],
+  [
+   ">",
+   "&gt;"
+  ],
+  [
+   "&",
+   "&amp;"
+  ],
+  [
+   "\"",
+   "&quot;"
+  ],
+  [
+   "'",
+   "'"
+  ],
+  [
+   "`",
+   "`"
+  ],
+  [
+   "null",
+   ""
+  ],
+  [
+   "undefined",
+   ""
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "a&amp;b",
+   "a&amp;amp;b"
+  ]
+ ],
+ "date_regex": [
+  [
+   "2024-01-01T00:00:00",
+   true
+  ],
+  [
+   "2024-01-01",
+   true
+  ],
+  [
+   "2024-25",
+   true
+  ],
+  [
+   "2023-24 season",
+   true
+  ],
+  [
+   "2024-Q1",
+   false
+  ],
+  [
+   "Jan 2024",
+   false
+  ],
+  [
+   "01/02/2024",
+   false
+  ],
+  [
+   "2024",
+   false
+  ],
+  [
+   "1234-56-AB",
+   true
+  ],
+  [
+   "2024-W05",
+   false
+  ],
+  [
+   "12-2024",
+   false
+  ]
+ ],
+ "template_interpolations_without_esc": [
+  "${c === p.date ? 'selected' : ''}",
+  "${c === p.metric ? 'selected' : ''}",
+  "${i.severity}",
+  "${k.kind === 'int' ? k.value.toLocaleString() : fmt(k.value)}",
+  "${p.columns.length}",
+  "${p.metric || 'none found'}",
+  "${p.rows.toLocaleString()}",
+  "${pv.rows.length}",
+  "${pv.total_rows.toLocaleString()}",
+  "${r.verified ? 'Answer checked against the data' : 'Please double-check this one'}",
+  "${r.verified ? 'ok' : 'chk'}"
+ ],
+ "template_interpolation_count": {
+  "total": 29,
+  "without_esc": 11
+ },
+ "forecast_float_periods": {
+  "http": 422,
+  "ui_error_text": "[object Object]",
+  "server_detail_type": "list"
+ },
+ "ask_dblclick_mouse_requests": 1,
+ "ask_stale_answer_overwrites_newer": {
+  "question_box": "B-fast",
+  "answer_shown": "ANSWER FOR A-slow",
+  "requests": [
+   "A-slow",
+   "B-fast"
+  ]
+ },
+ "ask_answer_from_previous_dataset_after_switch": {
+  "ans_before_arrival": "",
+  "ans_after_arrival": "Answer checked against the data\n\nANSWER FOR DEMO-Q\n\n6.2M\n801k\n764k\n425k\n113k\nSticker pack\nNotebook\nTote bag\nMug\nHoodie\nHow this was worked o",
+  "dashboard_meta": "2,742 rows, 7 columns. Main measure: amount_usd.",
+  "q_input_persisted": "DEMO-Q"
+ },
+ "upload_race_first_slow_second_fast": {
+  "shown_after_1s (second file)": "200 rows, 3 columns. Main measure: amount.",
+  "shown_after_4.5s (final)": "2,742 rows, 7 columns. Main measure: amount_usd.",
+  "second_file_was_last_chosen": "no_dates.csv"
+ },
+ "busy_drop_zone_accepts_keyboard_and_programmatic_input": {
+  "pointer_events_during_busy": "none via .busy; keyboard Enter/Space and input.change are unaffected"
+ },
+ "leak_resize_listeners_and_heap_per_upload": [
+  {
+   "cycle": 0,
+   "resize_listeners": 0,
+   "plots_in_dom": 0,
+   "heap_mb": 2.3
+  },
+  {
+   "cycle": 1,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 6.22
+  },
+  {
+   "cycle": 2,
+   "resize_listeners": 7,
+   "plots_in_dom": 4,
+   "heap_mb": 6.87
+  },
+  {
+   "cycle": 3,
+   "resize_listeners": 10,
+   "plots_in_dom": 4,
+   "heap_mb": 7.34
+  },
+  {
+   "cycle": 4,
+   "resize_listeners": 13,
+   "plots_in_dom": 4,
+   "heap_mb": 7.64
+  },
+  {
+   "cycle": 5,
+   "resize_listeners": 16,
+   "plots_in_dom": 4,
+   "heap_mb": 8.01
+  },
+  {
+   "cycle": 6,
+   "resize_listeners": 19,
+   "plots_in_dom": 4,
+   "heap_mb": 8.29
+  },
+  {
+   "cycle": 7,
+   "resize_listeners": 22,
+   "plots_in_dom": 4,
+   "heap_mb": 8.56
+  },
+  {
+   "cycle": 8,
+   "resize_listeners": 25,
+   "plots_in_dom": 4,
+   "heap_mb": 8.85
+  },
+  {
+   "cycle": "after 5 asks",
+   "resize_listeners": 30,
+   "plots_in_dom": 5,
+   "heap_mb": 9.24
+  }
+ ],
+ "leak_global_drop_listeners": {
+  "window+document listeners for dragover/drop": "none registered outside #drop (see below)"
+ },
+ "document_listener_types": [],
+ "window_listener_types": [
+  "__playwright_global_listeners_check__",
+  "auxclick",
+  "click",
+  "contextmenu",
+  "dblclick",
+  "mousedown",
+  "mousemove",
+  "mouseup",
+  "pointerdown",
+  "pointerup",
+  "resize",
+  "touchcancel",
+  "touchend",
+  "touchstart"
+ ],
+ "resize_plot_width_vs_container": [
+  {
+   "viewport": 1440,
+   "plots": [
+    [
+     832,
+     832
+    ],
+    [
+     403,
+     832
+    ],
+    [
+     403,
+     832
+    ],
+    [
+     832,
+     878
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 1100,
+   "plots": [
+    [
+     652,
+     652
+    ],
+    [
+     313,
+     652
+    ],
+    [
+     313,
+     652
+    ],
+    [
+     652,
+     698
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 820,
+   "plots": [
+    [
+     718,
+     718
+    ],
+    [
+     718,
+     718
+    ],
+    [
+     718,
+     718
+    ],
+    [
+     718,
+     764
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 600,
+   "plots": [
+    [
+     602,
+     602
+    ],
+    [
+     602,
+     602
+    ],
+    [
+     602,
+     602
+    ],
+    [
+     602,
+     648
+    ]
+   ],
+   "page_hscroll_px": 76
+  },
+  {
+   "viewport": 390,
+   "plots": [
+    [
+     602,
+     602
+    ],
+    [
+     602,
+     602
+    ],
+    [
+     602,
+     602
+    ],
+    [
+     602,
+     648
+    ]
+   ],
+   "page_hscroll_px": 286
+  },
+  {
+   "viewport": 1440,
+   "plots": [
+    [
+     832,
+     832
+    ],
+    [
+     403,
+     832
+    ],
+    [
+     403,
+     832
+    ],
+    [
+     832,
+     878
+    ]
+   ],
+   "page_hscroll_px": 0
+  }
+ ],
+ "again_button_not_reachable_when_scrolled": {
+  "scrollY": 2019,
+  "button_bottom_in_viewport_px": -1964,
+  "header_position": "static"
+ },
+ "again_then_reload_dashboard_state_reset": {
+  "q_value": "leftover question",
+  "ans_html": "",
+  "tab_state": "Cleaned Output"
+ },
+ "xss_injection_csv": {
+  "window.__xss": null,
+  "dialogs": [],
+  "pageerrors": [],
+  "td_title_attrs_intact": [
+   "</script><script>window.__xss=2</script>",
+   "<a href=\"javascript:window.__xss=3\">link</a>",
+   "<img src=x onerror=\"window.__xss=1\">"
+  ],
+  "injected_img_or_script_elements_in_page": 0,
+  "plotly_labels_innerHTML": [
+   "0",
+   "1k",
+   "2k",
+   "3k",
+   "4k",
+   "<a style=\"cursor:pointer\">link</a>",
+   "&lt;img src=x onerror=\"window.__xss=1\"&gt;",
+   "&lt;/script&gt;&lt;script&gt;window.__xss=2&lt;/script&gt;",
+   "O'Brien \" &amp; <tspan style=\"font-weight:bold\">Sons</tspan>"
+  ],
+  "plotly_rendered_links_in_chart": 1,
+  "insight_titles": [
+   "amount is down 6% over the period"
+  ]
+ },
+ "xss_ask_mock": {
+  "window.__xss": null,
+  "dialogs": [],
+  "answer_dom_has_script_or_img": 0,
+  "answer_text": "x <script>window.__xss=2</script> \"y\" 'z' & <b>bold</b>"
+ },
+ "small_rates_kpis": [
+  "Rows analysed | 400",
+  "Average conversion_rate | 0.1",
+  "Latest full month | 0.0 | -7% vs previous month",
+  "Best month | 0.1 | Apr 2024"
+ ],
+ "small_rates_summary": "No strong patterns found yet.",
+ "small_rates_hover_text_line": [
+  "Jun 2024: 0"
+ ],
+ "small_rates_bar_labels": [
+  "0.1",
+  "0.1",
+  "0.1",
+  "0.1"
+ ],
+ "starter_negatives_long_labels_1440": [
+  {
+   "w": 832,
+   "plot_w": 737,
+   "left_margin": 56,
+   "ranges": [
+    NaN,
+    NaN
+   ],
+   "data_min": 0
+  },
+  {
+   "w": 403,
+   "plot_w": 64,
+   "left_margin": 312,
+   "ranges": [
+    0,
+    42947
+   ],
+   "data_min": 29102.62
+  }
+ ],
+ "starter_negatives_long_labels_390": [
+  {
+   "w": 602,
+   "plot_w": 530,
+   "left_margin": 56,
+   "ranges": [
+    NaN,
+    NaN
+   ],
+   "data_min": 0
+  },
+  {
+   "w": 602,
+   "plot_w": 154,
+   "left_margin": 418,
+   "ranges": [
+    0,
+    42947
+   ],
+   "data_min": 29102.62
+  }
+ ],
+ "ask_table_rows_rendered_for_80_row_result": {
+  "tr_count_incl_header": 51,
+  "note_about_truncation_in_dom": false
+ },
+ "ask_input_has_maxlength": -1,
+ "big_text_overflow": {
+  "scrollW": 832,
+  "clientW": 832,
+  "overflowing": false
+ },
+ "preview_cleaned_first_row": [
+  "2023-01-01T00:00:00",
+  "Chloe Smith",
+  "Annual Appeal",
+  "Event",
+  "6.68",
+  "0",
+  ""
+ ],
+ "preview_raw_first_row": [
+  "2023-01-01",
+  "Chloe Smith",
+  "Annual Appeal",
+  "Event",
+  "6.68",
+  "No",
+  ""
+ ],
+ "preview_dtype_labels_shown_to_users": [
+  "str",
+  "str",
+  "str",
+  "str",
+  "float64",
+  "str",
+  "str"
+ ]
+}

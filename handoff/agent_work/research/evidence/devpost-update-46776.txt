@@ -1,0 +1,36 @@
+ Back to all updates
+ 6 days ago
+ForgeHacks is LIVE: track prompts and your participant packet
+Hello builders,
+ForgeHacks 2026 is LIVE. The build window is open until Saturday, October 10 at 12:00 PM ET.
+ 🧠 Choose your track 
+ForgeHacks has six tracks:
+🏥 AI + Healthcare
+📚 AI + Education
+🌎 AI + Climate
+💼 AI + Business
+🤖 AI + Cybersecurity
+🎨 AI + Creativity
+Your track must be selected when you submit your project and cannot be changed afterward.
+YOUR PARTICIPANT PACKET
+https://drive.google.com/file/d/10DcagvYeoBv7NEyu33H_6ciDRE5UMOsW/view?usp=sharing
+Everything you need is in it: the six track prompts, your sponsor credits and how to redeem them, the schedule, the rules, how to get mentor help, and the submission checklist.
+WHAT TO DO NOW
+1. Open the packet and read the six track prompts. Pick one track and build around its prompt.
+2. Join the Discord: https://discord.gg/s5U4xUWXc
+Announcements, team finding, mentor help and the workshop schedule all live there.
+3. Form your team. You can build solo or with up to 4 people, and every member must be registered on Devpost.
+4. Redeem the sponsor credits you plan to use. Every participant gets up to $785 in credits. The codes and steps are in the packet.
+5. Start building. Your project has to be built during the event. Existing libraries, frameworks and boilerplate are fine.
+KEY DATES (all times ET)
+Workshops: October 4 to 9. The schedule is pinned in Discord and every session is recorded.
+Submissions lock: Saturday, October 10 at 12:00 PM ET. Submit at https://forgehacks-2026.devpost.com/
+Judging and public voting: October 10 to 11
+Winners announced: Monday, October 12 at 3:00 PM ET
+NEED HELP?
+Open a ticket in #mentor-help on Discord any time before submissions lock, and a mentor will pick it up. For anything else, email [email protected].
+One correction: the Featherless AI credit is $25 in request credits, not unlimited access as we announced earlier. The setup steps are in the packet.
+Good luck. Go build something.
+Sushanth and Ishaan
+ForgeHacks
+Questions?

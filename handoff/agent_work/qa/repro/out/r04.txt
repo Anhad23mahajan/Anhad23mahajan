@@ -1,0 +1,57 @@
+pandas 3.0.6 numpy 2.5.3
+
+====================================================================================================
+title_rows_total.xlsx  ->  header is on row 4 ('Date','Donor','Amount','Campaign'); data rows 5.. ; last row is TOTAL
+====================================================================================================
+columns: ['sunrise_ngo_donations_report_2024', 'unnamed_1', 'unnamed_2', 'unnamed_3']
+rows: 63 | metric: unnamed_2 | date: sunrise_ngo_donations_report_2024
+KPIs: [('Rows analysed', 63), ('Total unnamed_2', 196030.0), ('Latest full month', 14063.0), ('Best month', 19632.0)]
+first row: [NaT, nan, np.float64(nan), nan]
+last row: [NaT, nan, np.float64(nan), nan]
+
+====================================================================================================
+offset_table.xlsx  ->  table starts at C4; header 'date','region','sales'
+====================================================================================================
+columns: ['unnamed_2', 'unnamed_3', 'unnamed_4']
+rows: 41 | metric: unnamed_4 | date: unnamed_2
+KPIs: [('Rows analysed', 41), ('Total unnamed_4', 2009.0), ('Latest full month', 363.0), ('Best month', 368.0)]
+first row: [NaT, 'region', np.float64(nan)]
+last row: [Timestamp('2024-07-14 00:00:00'), 'N', np.float64(52.0)]
+
+====================================================================================================
+total_row_literal.xlsx  ->  has a literal TOTAL row at the bottom (sum = 196,030); true total of data rows = 196,030
+====================================================================================================
+columns: ['date', 'donor', 'amount', 'campaign']
+rows: 61 | metric: amount | date: date
+KPIs: [('Rows analysed', 61), ('Total amount', 392060.0), ('Latest full month', 14063.0), ('Best month', 19632.0)]
+first row: [Timestamp('2024-01-01 00:00:00'), 'D29', np.int64(1535), 'Appeal']
+last row: [NaT, nan, np.int64(196030), nan]
+
+====================================================================================================
+multi_sheet_data_first.xlsx  ->  sheets '2024' and '2025' each have 120 rows; true total = 114,695
+====================================================================================================
+columns: ['date', 'sales']
+rows: 120 | metric: sales | date: date
+KPIs: [('Rows analysed', 120), ('Total sales', 56445.0), ('Latest full month', 4519.0), ('Best month', 6151.0)]
+first row: [Timestamp('2024-01-01 00:00:00'), np.int64(360)]
+last row: [Timestamp('2024-12-23 00:00:00'), np.int64(101)]
+
+====================================================================================================
+multi_sheet_cover_first.xlsx  ->  sheet 1 is a cover note; the data is on sheets 2024/2025
+====================================================================================================
+columns: ['summary']
+rows: 1 | metric: None | date: None
+KPIs: [('Rows analysed', 1)]
+first row: ['See the 2024 and 2025 tabs']
+last row: ['See the 2024 and 2025 tabs']
+
+====================================================================================================
+merged_header.xlsx  ->  two-row header, Q1 spans B:D
+====================================================================================================
+columns: ['product', 'q1', 'unnamed_2', 'unnamed_3', 'q2', 'unnamed_5', 'unnamed_6']
+rows: 5 | metric: None | date: None
+KPIs: [('Rows analysed', 5)]
+first row: [nan, 'Jan', 'Feb', 'Mar', 'Apr']
+last row: ['Notebook', 30, 71, 76, 61]
+
+sheets in file: ['2024', '2025'] -> Lumen reads only sheet_name=0 (pd.read_excel default) and never tells the user

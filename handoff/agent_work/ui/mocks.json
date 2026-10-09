@@ -1,0 +1,1004 @@
+{
+ "number": {
+  "sql": "SELECT SUM(amount) AS total_sales FROM data WHERE order_date >= '2025-01-01' AND order_date < '2026-01-01'",
+  "chart": {
+   "type": "number",
+   "x": "total_sales",
+   "y": "total_sales"
+  },
+  "columns": [
+   "total_sales"
+  ],
+  "rows": [
+   [
+    4802950.0
+   ]
+  ],
+  "verified": true,
+  "answer": "Total sales in 2025 were 4,802,950.",
+  "caveats": ""
+ },
+ "number-text": {
+  "sql": "SELECT product, SUM(amount) AS total_sales FROM data GROUP BY product ORDER BY total_sales DESC LIMIT 1",
+  "chart": {
+   "type": "number",
+   "x": "product",
+   "y": "total_sales"
+  },
+  "columns": [
+   "product",
+   "total_sales"
+  ],
+  "rows": [
+   [
+    "Hoodie",
+    6195600.0
+   ]
+  ],
+  "verified": true,
+  "answer": "Hoodie is the best seller, with total sales of 6,195,600 (about 75% of everything sold).",
+  "caveats": ""
+ },
+ "number-null": {
+  "sql": "SELECT SUM(amount) AS total_sales FROM data WHERE region = 'Mars'",
+  "chart": {
+   "type": "number",
+   "x": "total_sales",
+   "y": "total_sales"
+  },
+  "columns": [
+   "total_sales"
+  ],
+  "rows": [
+   [
+    null
+   ]
+  ],
+  "verified": true,
+  "answer": "There are no sales recorded for the Mars region.",
+  "caveats": ""
+ },
+ "bar": {
+  "sql": "SELECT product, SUM(amount) AS total_sales FROM data GROUP BY product ORDER BY total_sales DESC",
+  "chart": {
+   "type": "bar",
+   "x": "product",
+   "y": "total_sales"
+  },
+  "columns": [
+   "product",
+   "total_sales"
+  ],
+  "rows": [
+   [
+    "Hoodie",
+    6195600.0
+   ],
+   [
+    "Mug",
+    800700.0
+   ],
+   [
+    "Tote bag",
+    763500.0
+   ],
+   [
+    "Notebook",
+    424800.0
+   ],
+   [
+    "Sticker pack",
+    112980.0
+   ]
+  ],
+  "verified": true,
+  "answer": "Hoodie leads with 6,195,600 in sales, far ahead of Mug (800,700) and Tote bag (763,500). Sticker pack is the smallest at 112,980.",
+  "caveats": ""
+ },
+ "line": {
+  "sql": "SELECT date_trunc('month', order_date) AS month, SUM(amount) AS total_sales FROM data GROUP BY 1 ORDER BY 1",
+  "chart": {
+   "type": "line",
+   "x": "month",
+   "y": "total_sales"
+  },
+  "columns": [
+   "month",
+   "total_sales"
+  ],
+  "rows": [
+   [
+    "2024-01-01T00:00:00",
+    360390.0
+   ],
+   [
+    "2024-02-01T00:00:00",
+    336140.0
+   ],
+   [
+    "2024-03-01T00:00:00",
+    323830.0
+   ],
+   [
+    "2024-04-01T00:00:00",
+    258500.0
+   ],
+   [
+    "2024-05-01T00:00:00",
+    232830.0
+   ],
+   [
+    "2024-06-01T00:00:00",
+    190590.0
+   ],
+   [
+    "2024-07-01T00:00:00",
+    168940.0
+   ],
+   [
+    "2024-08-01T00:00:00",
+    166260.0
+   ],
+   [
+    "2024-09-01T00:00:00",
+    247240.0
+   ],
+   [
+    "2024-10-01T00:00:00",
+    303280.0
+   ],
+   [
+    "2024-11-01T00:00:00",
+    407480.0
+   ],
+   [
+    "2024-12-01T00:00:00",
+    499150.0
+   ],
+   [
+    "2025-01-01T00:00:00",
+    516300.0
+   ],
+   [
+    "2025-02-01T00:00:00",
+    462610.0
+   ],
+   [
+    "2025-03-01T00:00:00",
+    530510.0
+   ],
+   [
+    "2025-04-01T00:00:00",
+    386380.0
+   ],
+   [
+    "2025-05-01T00:00:00",
+    311960.0
+   ],
+   [
+    "2025-06-01T00:00:00",
+    215410.0
+   ],
+   [
+    "2025-07-01T00:00:00",
+    192630.0
+   ],
+   [
+    "2025-08-01T00:00:00",
+    286090.0
+   ],
+   [
+    "2025-09-01T00:00:00",
+    290930.0
+   ],
+   [
+    "2025-10-01T00:00:00",
+    452820.0
+   ],
+   [
+    "2025-11-01T00:00:00",
+    535150.0
+   ],
+   [
+    "2025-12-01T00:00:00",
+    622160.0
+   ]
+  ],
+  "verified": true,
+  "answer": "Monthly sales were lowest in August 2024 (166,260) and reached their highest point in December 2025 (622,160). Winters are consistently stronger than summers.",
+  "caveats": ""
+ },
+ "pie": {
+  "sql": "SELECT region, SUM(amount) AS total_sales FROM data GROUP BY region ORDER BY total_sales DESC",
+  "chart": {
+   "type": "pie",
+   "x": "region",
+   "y": "total_sales"
+  },
+  "columns": [
+   "region",
+   "total_sales"
+  ],
+  "rows": [
+   [
+    "Campus",
+    2867900.0
+   ],
+   [
+    "Online",
+    2535100.0
+   ],
+   [
+    "North",
+    1656220.0
+   ],
+   [
+    "South",
+    1238360.0
+   ]
+  ],
+  "verified": true,
+  "answer": "Campus is the largest region at 2,867,900, followed by Online (2,535,100). North (1,656,220) and South (1,238,360) together make up about a third of sales.",
+  "caveats": ""
+ },
+ "table": {
+  "sql": "SELECT order_date, product, region, quantity, unit_price, amount FROM data ORDER BY amount DESC, order_date LIMIT 10",
+  "chart": {
+   "type": "table"
+  },
+  "columns": [
+   "order_date",
+   "product",
+   "region",
+   "quantity",
+   "unit_price",
+   "amount"
+  ],
+  "rows": [
+   [
+    "2024-01-03T00:00:00",
+    "Hoodie",
+    "North",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-03T00:00:00",
+    "Hoodie",
+    "South",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-03T00:00:00",
+    "Hoodie",
+    "Online",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-04T00:00:00",
+    "Hoodie",
+    "Campus",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-05T00:00:00",
+    "Hoodie",
+    "Campus",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-06T00:00:00",
+    "Hoodie",
+    "South",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-06T00:00:00",
+    "Hoodie",
+    "Online",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-06T00:00:00",
+    "Hoodie",
+    "Campus",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-07T00:00:00",
+    "Hoodie",
+    "South",
+    3,
+    900,
+    2700
+   ],
+   [
+    "2024-01-07T00:00:00",
+    "Hoodie",
+    "North",
+    3,
+    900,
+    2700
+   ]
+  ],
+  "verified": true,
+  "answer": "These are the 10 largest single orders. Every one of them is a Hoodie order of 3 units at 900 each, worth 2,700.",
+  "caveats": ""
+ },
+ "unverified": {
+  "sql": "SELECT region, AVG(amount) AS avg_order FROM data GROUP BY region ORDER BY avg_order DESC",
+  "chart": {
+   "type": "bar",
+   "x": "region",
+   "y": "avg_order"
+  },
+  "columns": [
+   "region",
+   "avg_order"
+  ],
+  "rows": [
+   [
+    "Campus",
+    932.95380611581
+   ],
+   [
+    "South",
+    929.6996996996997
+   ],
+   [
+    "North",
+    914.533406957482
+   ],
+   [
+    "Online",
+    896.1117002474373
+   ]
+  ],
+  "verified": false,
+  "answer": "Campus has the highest average order line value (about 933), with South close behind (about 930).",
+  "caveats": "The question did not say whether to average per order line or per day. This answer averages per order line."
+ },
+ "unverified-number": {
+  "sql": "SELECT COUNT(*) AS n FROM data",
+  "chart": {
+   "type": "number",
+   "x": "n",
+   "y": "n"
+  },
+  "columns": [
+   "n"
+  ],
+  "rows": [
+   [
+    9046
+   ]
+  ],
+  "verified": false,
+  "answer": "There are 9,046 rows, but that may not be the number of customers you meant.",
+  "caveats": "Rows are order lines, not unique customers."
+ },
+ "longtext": {
+  "sql": "SELECT region, product, date_trunc('month', order_date) AS month, SUM(amount) AS total_sales_across_the_whole_period_for_this_region_and_product_combination, COUNT(*) AS number_of_order_lines_in_the_month, AVG(amount) AS average_order_line_value FROM data WHERE order_date >= '2024-01-01' GROUP BY 1, 2, 3 ORDER BY total_sales_across_the_whole_period_for_this_region_and_product_combination DESC LIMIT 12",
+  "chart": {
+   "type": "table"
+  },
+  "columns": [
+   "region",
+   "product",
+   "month",
+   "total_sales_across_the_whole_period_for_this_region_and_product_combination",
+   "number_of_order_lines_in_the_month",
+   "average_order_line_value"
+  ],
+  "rows": [
+   [
+    "Campus",
+    "Hoodie",
+    "2025-11-01T00:00:00",
+    155700.0,
+    83,
+    1875.9036144578313
+   ],
+   [
+    "Online",
+    "Hoodie",
+    "2025-12-01T00:00:00",
+    142200.0,
+    82,
+    1734.1463414634147
+   ],
+   [
+    "Campus",
+    "Hoodie",
+    "2025-12-01T00:00:00",
+    141300.0,
+    78,
+    1811.5384615384614
+   ],
+   [
+    "Campus",
+    "Hoodie",
+    "2025-02-01T00:00:00",
+    136800.0,
+    77,
+    1776.6233766233765
+   ],
+   [
+    "Campus",
+    "Hoodie",
+    "2025-03-01T00:00:00",
+    134100.0,
+    73,
+    1836.986301369863
+   ],
+   [
+    "Online",
+    "Hoodie",
+    "2025-01-01T00:00:00",
+    132300.0,
+    79,
+    1674.6835443037974
+   ],
+   [
+    "Campus",
+    "Hoodie",
+    "2025-01-01T00:00:00",
+    131400.0,
+    69,
+    1904.3478260869565
+   ],
+   [
+    "Campus",
+    "Hoodie",
+    "2024-12-01T00:00:00",
+    127800.0,
+    68,
+    1879.4117647058824
+   ],
+   [
+    "Online",
+    "Hoodie",
+    "2024-12-01T00:00:00",
+    125100.0,
+    70,
+    1787.142857142857
+   ],
+   [
+    "Online",
+    "Hoodie",
+    "2025-03-01T00:00:00",
+    124200.0,
+    65,
+    1910.7692307692307
+   ],
+   [
+    "Campus",
+    "Hoodie",
+    "2025-10-01T00:00:00",
+    120600.0,
+    67,
+    1800.0
+   ],
+   [
+    "Campus",
+    "Hoodie",
+    "2024-11-01T00:00:00",
+    108000.0,
+    63,
+    1714.2857142857142
+   ]
+  ],
+  "verified": true,
+  "answer": "Across the whole of 2024 and 2025, sales were dominated by a single product (Hoodie), which accounted for roughly three quarters of revenue, while the remaining four products shared the rest. Within regions, Campus and Online led, with North and South noticeably behind. Seasonality is strong: December is the best month on average (about 560,000) and July the weakest (about 181,000). The single biggest day was 14 March 2025, with 115 order lines worth 105,030 against a typical day of about 20.",
+  "caveats": "Months with fewer than five orders were included. The 14 March 2025 spike is treated as a real event, not a data-entry mistake. Months with fewer than five orders were included. The 14 March 2025 spike is treated as a real event, not a data-entry mistake. Months with fewer than five orders were included. The 14 March 2025 spike is treated as a real event, not a data-entry mistake. "
+ },
+ "long-unbroken-single": {
+  "sql": "SELECT donor FROM data LIMIT 1",
+  "chart": {
+   "type": "number",
+   "x": "donor",
+   "y": "donor"
+  },
+  "columns": [
+   "donor"
+  ],
+  "rows": [
+   [
+    "Brightfield-Foundation-for-Community-Education-and-Healthcare-Partnerships"
+   ]
+  ],
+  "verified": true,
+  "answer": "The largest donor was the Brightfield Foundation for Community Education and Healthcare Partnerships.",
+  "caveats": ""
+ },
+ "empty-rows-bar": {
+  "sql": "SELECT 1 WHERE false",
+  "chart": {
+   "type": "bar",
+   "x": "a",
+   "y": "b"
+  },
+  "columns": [
+   "a",
+   "b"
+  ],
+  "rows": [],
+  "verified": true,
+  "answer": "Nothing matched.",
+  "caveats": ""
+ },
+ "null-in-bar": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "bar",
+   "x": "region",
+   "y": "total"
+  },
+  "columns": [
+   "region",
+   "total"
+  ],
+  "rows": [
+   [
+    "North",
+    1700000
+   ],
+   [
+    null,
+    900000
+   ],
+   [
+    "South",
+    null
+   ],
+   [
+    "Online",
+    2500000
+   ]
+  ],
+  "verified": true,
+  "answer": "Two regions have gaps.",
+  "caveats": ""
+ },
+ "negatives-bar": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "bar",
+   "x": "program",
+   "y": "net"
+  },
+  "columns": [
+   "program",
+   "net"
+  ],
+  "rows": [
+   [
+    "Housing",
+    -12500
+   ],
+   [
+    "Food",
+    -8200
+   ],
+   [
+    "Youth",
+    -3100
+   ],
+   [
+    "Legal",
+    -400
+   ]
+  ],
+  "verified": true,
+  "answer": "Every programme ran at a loss; Housing the most (-12,500).",
+  "caveats": ""
+ },
+ "mixed-negatives-bar": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "bar",
+   "x": "program",
+   "y": "net"
+  },
+  "columns": [
+   "program",
+   "net"
+  ],
+  "rows": [
+   [
+    "Housing",
+    8400
+   ],
+   [
+    "Food",
+    -8200
+   ],
+   [
+    "Youth",
+    3100
+   ],
+   [
+    "Legal",
+    -400
+   ]
+  ],
+  "verified": true,
+  "answer": "Housing is the biggest surplus; Food the biggest deficit.",
+  "caveats": ""
+ },
+ "long-labels-bar": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "bar",
+   "x": "program",
+   "y": "total"
+  },
+  "columns": [
+   "program",
+   "total"
+  ],
+  "rows": [
+   [
+    "Operations / Housing programme and community partnerships fund",
+    52000
+   ],
+   [
+    "Operations / Food security programme and community partnerships fund",
+    41000
+   ],
+   [
+    "Operations / Youth education programme and community partnerships fund",
+    33000
+   ],
+   [
+    "Operations / Elder care programme and community partnerships fund",
+    21000
+   ],
+   [
+    "Operations / Legal aid programme and community partnerships fund",
+    9000
+   ]
+  ],
+  "verified": true,
+  "answer": "Housing is the biggest programme.",
+  "caveats": ""
+ },
+ "pie-many": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "pie",
+   "x": "category",
+   "y": "total"
+  },
+  "columns": [
+   "category",
+   "total"
+  ],
+  "rows": [
+   [
+    "Category 00",
+    900
+   ],
+   [
+    "Category 01",
+    875
+   ],
+   [
+    "Category 02",
+    850
+   ],
+   [
+    "Category 03",
+    825
+   ],
+   [
+    "Category 04",
+    800
+   ],
+   [
+    "Category 05",
+    775
+   ],
+   [
+    "Category 06",
+    750
+   ],
+   [
+    "Category 07",
+    725
+   ],
+   [
+    "Category 08",
+    700
+   ],
+   [
+    "Category 09",
+    675
+   ],
+   [
+    "Category 10",
+    650
+   ],
+   [
+    "Category 11",
+    625
+   ],
+   [
+    "Category 12",
+    600
+   ],
+   [
+    "Category 13",
+    575
+   ],
+   [
+    "Category 14",
+    550
+   ],
+   [
+    "Category 15",
+    525
+   ],
+   [
+    "Category 16",
+    500
+   ],
+   [
+    "Category 17",
+    475
+   ],
+   [
+    "Category 18",
+    450
+   ],
+   [
+    "Category 19",
+    425
+   ],
+   [
+    "Category 20",
+    400
+   ],
+   [
+    "Category 21",
+    375
+   ],
+   [
+    "Category 22",
+    350
+   ],
+   [
+    "Category 23",
+    325
+   ],
+   [
+    "Category 24",
+    300
+   ],
+   [
+    "Category 25",
+    275
+   ],
+   [
+    "Category 26",
+    250
+   ],
+   [
+    "Category 27",
+    225
+   ]
+  ],
+  "verified": true,
+  "answer": "Sales are spread across 28 categories.",
+  "caveats": ""
+ },
+ "pie-negative": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "pie",
+   "x": "k",
+   "y": "v"
+  },
+  "columns": [
+   "k",
+   "v"
+  ],
+  "rows": [
+   [
+    "A",
+    50
+   ],
+   [
+    "B",
+    -20
+   ],
+   [
+    "C",
+    30
+   ]
+  ],
+  "verified": true,
+  "answer": "B is negative.",
+  "caveats": ""
+ },
+ "fiscal-years": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "bar",
+   "x": "fy",
+   "y": "total"
+  },
+  "columns": [
+   "fy",
+   "total"
+  ],
+  "rows": [
+   [
+    "2023-24",
+    210000
+   ],
+   [
+    "2024-25",
+    340000
+   ],
+   [
+    "2025-26",
+    280000
+   ]
+  ],
+  "verified": true,
+  "answer": "FY2024-25 was the best year.",
+  "caveats": ""
+ },
+ "date-single": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "number",
+   "x": "month",
+   "y": "total"
+  },
+  "columns": [
+   "month",
+   "total"
+  ],
+  "rows": [
+   [
+    "2025-12-01T00:00:00",
+    622160
+   ]
+  ],
+  "verified": true,
+  "answer": "December 2025 was the best month, with sales of 622,160.",
+  "caveats": ""
+ },
+ "number-huge": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "number",
+   "x": "n",
+   "y": "n"
+  },
+  "columns": [
+   "n"
+  ],
+  "rows": [
+   [
+    2548000000
+   ]
+  ],
+  "verified": true,
+  "answer": "Total is 2.548 billion.",
+  "caveats": ""
+ },
+ "number-negative": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "number",
+   "x": "n",
+   "y": "n"
+  },
+  "columns": [
+   "n"
+  ],
+  "rows": [
+   [
+    -45210.5
+   ]
+  ],
+  "verified": true,
+  "answer": "Net change is -45,210.5.",
+  "caveats": ""
+ },
+ "number-small": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "number",
+   "x": "n",
+   "y": "n"
+  },
+  "columns": [
+   "n"
+  ],
+  "rows": [
+   [
+    0.0536
+   ]
+  ],
+  "verified": true,
+  "answer": "The average conversion rate is 5.36%.",
+  "caveats": ""
+ },
+ "bar-decimals": {
+  "sql": "SELECT ...",
+  "chart": {
+   "type": "bar",
+   "x": "channel",
+   "y": "rate"
+  },
+  "columns": [
+   "channel",
+   "rate"
+  ],
+  "rows": [
+   [
+    "Email",
+    0.0612
+   ],
+   [
+    "Search",
+    0.0547
+   ],
+   [
+    "Social",
+    0.0431
+   ],
+   [
+    "Referral",
+    0.0398
+   ]
+  ],
+  "verified": true,
+  "answer": "Email converts best at 6.1%.",
+  "caveats": ""
+ },
+ "html-in-text": {
+  "sql": "SELECT '<img src=x onerror=window.__xss=1>' AS a",
+  "chart": {
+   "type": "bar",
+   "x": "a",
+   "y": "b"
+  },
+  "columns": [
+   "a",
+   "b"
+  ],
+  "rows": [
+   [
+    "<img src=x onerror=window.__xss=1>",
+    5
+   ],
+   [
+    "O'Brien \"quoted\" <b>bold</b> & co",
+    3
+   ]
+  ],
+  "verified": true,
+  "answer": "x <script>window.__xss=2</script> \"y\" 'z' & <b>bold</b>",
+  "caveats": "<i>italic</i>"
+ }
+}

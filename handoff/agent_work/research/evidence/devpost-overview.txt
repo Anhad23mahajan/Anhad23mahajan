@@ -1,0 +1,287 @@
+ Participants (3132)
+ Resources
+ Rules
+ Project gallery
+ Updates
+ Discussions
+ ForgeHacks Online 2026
+ A student hackathon focused on Forging AI solutions that solves real-world challenges.
+ Join hackathon
+ Who can participate
+ Above legal age of majority in country of residence
+ Students only
+ Companies/professional organizations excluded from participation
+ All countries/territories, excluding
+ standard exceptions 
+ View full rules
+ October 10 at 12:00pm EDT to deadline
+ View schedule
+ Deadline: Oct 10, 2026 @ 12:00pm EDT
+ Apple
+ Google
+ Outlook
+ Online
+ Public
+ $1,382,700 in cash
+ 3132
+ participants
+ ForgeHacks
+ Beginner Friendly
+ Lifehacks
+ Machine Learning/AI
+ Visit our website: https://www.forgehacks.dev/
+Join the discord: https://discord.gg/HmS3CHYAv6
+Follow our instagram: https://www.instagram.com/forge.hacks
+About the challenge
+ForgeHacks is a student-focused online hackathon dedicated to AI for Real World Problems. We challenge you to forge practical, impactful AI solutions that address genuine challenges people and communities face today, whether in healthcare, education, or everyday life.
+This is about building something that could realistically be used, tested, or extended beyond the hackathon. You will work across six specialized tracks (), each with a focused problem space. Track prompts will be released closer to the event so everyone starts on equal footing.
+Tracks:
+- AI + Healthcare
+- AI + Education
+- AI + Climate
+- AI + Business
+- AI + Cybersecurity
+- AI + Creativity
+Find the released prompts at https://forgehacks.dev
+What makes ForgeHacks special
+Pure focus on real-world applicability of AI
+Student-led organizing team
+Emphasis on learning, mentorship, and building something that lasts
+Participation Perks - We've partnered with multiple organizations to provide participants with tools, credits, APIs, and other resources during the hackathon build session!
+Redeem them in our Discord
+Get started
+Register on Devpost
+Join the ForgeHacks Discord:
+Form a team of 1–4 students (solo is welcome). Find team members on the Discord
+Watch for track prompts and kickoff announcements
+Whether this is your first hackathon or your tenth, come forge something real.
+ Requirements
+ What to Build
+Build a working AI-powered project that addresses a real-world problem within one of the six official tracks. Your solution should demonstrate clear use of AI/ML (models, APIs, agents, computer vision, NLP, recommendation systems, etc.) and show how it could create tangible value for users or communities.
+What to Submit
+Project title and short description (clear problem + solution)
+Track selection (Mention one of the six official tracks)
+Public demo video (2–4 minutes max) that shows:
+The problem you are solving
+How the project works
+Posted online like on Youtube
+GitHub repository with source code and a clear README
+Written project description covering:
+Problem statement and target users
+Technical approach and technical components used
+How the solution creates real-world impact
+Screenshots, architecture diagram, or deployment link for testing
+Incomplete submissions (missing video or code) will not be eligible for judging.
+ Hackathon Sponsors
+ Prizes
+ $1,382,700+ in prizes
+ + other prizes
+ 1st Place
+ $7,295 in cash
+ 1 winner
+ $100 Cash
+$300 Featherless Credits
+$2,000 Momen Credits
+$1,000 Adaption Credits
+$60 ProjectAAL Credits (3,000 AI credits)
+$50 AoPS gift card
+5 Saily 3GB eSIM plans ($8.99 each, 5x = $45)
+2-year CodeCrafters VIP membership for each team member ($720 each, 4x = $2,880)
+1-year DevSwarm Pro for each team member ($96 each, 4x = $384)
+CleanShot X license for each team member ($29 each, 4x = $116)
+6 months of the Agentboxd Team plan for the winning team ($360 value)
+1 month of Fulminare Maximus ($48 value)
+⚠️ Total value includes non-cash items. Cash portion is $100. The remainder consists of sponsor-provided credits, memberships, licenses, and gift cards.
+ 2nd Place
+ $2,090 in cash
+ 1 winner
+ $50 cash
+$25 AoPS gift card
+$30 ProjectAAL Credits (1,500 AI credits)
+5 Saily 3GB eSIM plans ($8.99 each, 5x = $45)
+1-year CodeCrafters VIP membership for each team member ($360 each, 4x = $1,440)
+1-year DevSwarm Pro for each team member ($96 each, 4x = $384)
+CleanShot X license for each team member ($29 each, 4x = $116)
+⚠️ Total value includes non-cash items. Cash portion is $50.
+ 3rd Place
+ $1,330 in cash
+ 1 winner
+ $25 cash
+$25 AoPS gift card
+$15 ProjectAAL Credits (750 AI credits)
+5 Saily 3GB eSIM plans ($8.99 each, 5x = $45)
+6-month CodeCrafters VIP membership for each team member ($180 each, 4x = $720)
+1-year DevSwarm Pro for each team member ($96 each, 4x = $384)
+CleanShot X license for each team member ($29 each, 4x = $116)
+⚠️ Total value includes non-cash items. Cash portion is $25.
+ All Participants 
+ $785 in cash
+ 1,709 winners
+ $500 in Adaption platform credits
+$100 in Momen credits
+1 month of n8n Cloud Pro ($65)
+$40 in Kariaa credits
+$27.50 in YouCam API credits by Perfect Corp, valid for 1 year
+$25 in Featherless AI request credits for 40,000+ open-source AI models, including MiniMax M2.5, Kimi K3, GLM 5.2, Llama, and Qwen. No model size limit, with context up to 256K.
+30 days of the Agentboxd Builder plan ($15)
+1 month of DevSwarm Pro ($8)
+$5 in ProjectAAL credits (250 AI credits)
+1 month of Fulminare Lumen ($8)
+Total: $785.50 per participant
+Credits are distributed at the start of the hackathon so you can build with them during the event.
+Certificate of participation for every team that submits.
+⚠️ Perks are subject to availability and are available while supplies last. Some codes are limited and first come, first served: n8n (first 300 redemptions), Agentboxd (first 1500), YouCam API (first 1,000) and Kariaa (first 1,000).
+⚠️ THIS IS NOT A CASH PRIZE. This consists of sponsor-provided product credits and non-cash benefits and cannot be exchanged for cash.
+ All Teams
+ $299 in cash
+ 100 winners
+ $299 in Tin Computer credits per team. One month of the Growth plan ($299 value), distributed after the event.
+⚠️ THIS IS NOT A CASH PRIZE.
+ AI + Healthcare Track Prize
+ $10 in cash
+ 1 winner
+ $10 ProjectAAL Credits (500 AI credits)
+Certificate for AI + Healthcare track
+Recognition on ForgeHacks website and socials
+Awarded to the highest-scoring project in this track. Projects that place in the top three overall aren't eligible, so the prize goes to the next-highest project in the track.
+Details to be announced
+⚠️ THIS IS NOT A CASH PRIZE.
+ AI + Education Track Prize
+ $10 in cash
+ 1 winner
+ $10 ProjectAAL Credits (500 AI credits)
+Certificate for AI + Education track
+Recognition on ForgeHacks website and socials
+Awarded to the highest-scoring project in this track. Projects that place in the top three overall aren't eligible, so the prize goes to the next-highest project in the track.
+Details to be announced
+⚠️ THIS IS NOT A CASH PRIZE.
+ AI + Climate Track Prize
+ $10 in cash
+ 1 winner
+ $10 ProjectAAL Credits (500 AI credits)
+Certificate for AI + Climate track
+Recognition on ForgeHacks website and socials
+Awarded to the highest-scoring project in this track. Projects that place in the top three overall aren't eligible, so the prize goes to the next-highest project in the track.
+Details to be announced
+⚠️ THIS IS NOT A CASH PRIZE.
+ AI + Business Track Prize
+ $10 in cash
+ 1 winner
+ $10 ProjectAAL Credits (500 AI credits)
+Certificate for AI + Business track
+Recognition on ForgeHacks website and socials
+Awarded to the highest-scoring project in this track. Projects that place in the top three overall aren't eligible, so the prize goes to the next-highest project in the track.
+Details to be announced
+⚠️ THIS IS NOT A CASH PRIZE.
+ AI + Cybersecurity Track Prize
+ $470 in cash
+ 1 winner
+ $100 cash
+6 months of the Agentboxd Team plan for the winning team ($360 value)
+$10 ProjectAAL Credits (500 AI credits)
+Certificate for the AI + Cybersecurity track
+Recognition on the ForgeHacks website and socials
+Awarded to the highest-scoring project in the AI + Cybersecurity track. Projects that place in the top three overall aren't eligible, so the prize goes to the next-highest project in the track. Agentboxd gives AI agents real email inboxes and checks every incoming email for prompt injection and phishing. The Team plan code is sent to the winners after judging.
+⚠️ Total value includes non-cash items. Cash portion is $100.
+ AI + Creativity Track Prize
+ $10 in cash
+ 1 winner
+ $10 ProjectAAL Credits (500 AI credits)
+Certificate for AI + Creativity track
+Recognition on ForgeHacks website and socials
+Awarded to the highest-scoring project in this track. Projects that place in the top three overall aren't eligible, so the prize goes to the next-highest project in the track.
+Details to be announced
+⚠️ THIS IS NOT A CASH PRIZE.
+ Audience Favorite
+ 1 winner
+ Certificate for Audience Favorite
+Recognition on ForgeHacks website and socials
+Decided by public vote on Devpost, October 10–11.
+ Devpost Achievements
+ Submitting to this hackathon could earn you:
+ Judges
+ Aditya Shrivastava
+ Software Engineer - Barclays
+ Sashank Agarwal
+ Senior Cloud Software and Infrastructure Engineer - NVIDIA
+ Prakshal Doshi
+ Site Reliability Engineer - Apple
+ Esha Tariq
+ AI Researcher & Software Engineer - MIT Critical Data / The Islamia University of Bahawalpur
+ Saylee Mhatre
+ Director of Engineering - Electronic Arts Inc.
+ Sharath Chandra Kampili
+ Staff Enterprise Architect - Cockroach Labs
+ Dwijen Kirtania
+ Senior Staff Software Engineer / AI Architect - Intuit Inc
+ RatnaKumar Bonagiri
+ Staff Engineer - Macy's
+ Tamim Sangrar
+ Senior Product Manager - AI Identity Governance - Microsoft
+ Aishwarya Kannoth Putlumbath
+ Business Analyst - AMD
+ Aditi Patodiya
+ Senior Software Engineer - Amazon
+ Oleksandr Tkachenko
+ Senior Software Engineer - Playtech
+ Pratik Ghawate
+ Senior Analytics Engineer
+ Aman Goyal
+ AI Agent / AI Product Manager - TMobile
+ Abdulrasaq (Dulra) Amolegbe
+ CoFounder/CEO - AgentStatus
+ Ivan Tesolkin
+ Independent Business Consultant - Tesolkin Consulting
+ Diksha Thakur
+ Software Engineer - Reddit
+ Xihao Cao
+ Senior Data Scientist - Walmart Global Tech
+ Satya Veerendra Vegulla
+ Senior Engineering Manager - Enact Systems
+ Ravi Shanker Thadishetti
+ Senior Software Engineer - PayPal
+ Lucas Marinus
+ Commercial Lead - Parahelp
+ Dhruv Sekhawat
+ Arun Taneja
+ Principal Software Engineer - Oracle
+ Sachin Gurjar (Mentor)
+ AI Researcher - Apexlayer Technologies
+ Anudeep Bonagiri (Mentor)
+ CEO & Co-founder - Cruze Maps
+ Sai Prasad Saladi (Mentor)
+ Senior Software Engineer / Technology Leader - U.S. Bank
+ Swapneswar Sundar Ray (Mentor)
+ Assistant Vice President | Principal Machine Learning Engineer - U.S. Bank
+ Nilesh Dhage (Mentor)
+ Director Product Management - Financial Services
+ Ujwal Vanjare (Mentor)
+ Software Engineer - BNSF Railway
+ Saiprasad Charudatta Shrikhande (Mentor)
+ Senior Manager - Cognizant Technology Solutions
+ Pragati Ingole (Mentor)
+ Data Analyst - Options For Learning
+ Dhiraj Ramnani (Mentor)
+ Staff Software Engineer - Meta
+ Tanya Kapoor (Mentor)
+ Business Analyst - Sheladia Associates, Inc. 
+ Shivakrishna Vangala (Mentor)
+ Principal Architect - T-Mobile
+ Zeeshan Ali (Mentor)
+ KMP Developer & AI Engineer - Freelancer
+ Ganesh Harke (Mentor)
+ Vice President, Technology - Citi
+ Karthik Uppala (Mentor)
+ Founder - ProjectAAL
+ Judging Criteria
+ Real-World Impact & Relevance
+ How clearly the project addresses a genuine problem. Potential for actual use or meaningful benefit to users/communities. Must answer the prompt accordingly.
+ Technical Implementation & AI Use
+ Quality of the AI/ML components, technical depth, correctness, and thoughtful integration of AI (not just a wrapper).
+ Innovation & Creativity
+ Originality of the idea or approach. Fresh combinations of technology or novel application to the problem space.
+ Execution & Completeness
+ Working demo, polish, usability, and how much was actually shipped during the hackathon.
+ Presentation & Communication
+ Clarity of the video, README, and written description. Ability to explain the problem, solution, and impact simply.
+ Questions?

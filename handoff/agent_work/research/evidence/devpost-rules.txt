@@ -1,0 +1,47 @@
+ These rules govern participation in ForgeHacks. By registering, submitting a project, or otherwise participating, you agree to these rules and our Code of Conduct.
+Dates
+Hackathon begins: October 3, 12:00 PM EDT
+Submission deadline: October 10, 12:00 PM EDT
+Judging period: October 10–11
+Winners announced: October 12, 3:00 PM EDT
+Elegibility
+Open to current students (high school, undergraduate, graduate) worldwide, except for the standard exceptions for global eligibility.
+Teams of 1–4 participants.
+Participants must be at least 13 years old (or the legal age of consent in their jurisdiction).
+Participants under 18 must have a parent or legal guardian's permission to register and participate. Organizers may request confirmation of this consent at any time.
+Organizers, judges, and mentors (and their immediate family members) are not eligible to submit a project or win a prize.
+Project and Submission Requirements
+You may use open-source libraries, public datasets, and pre-trained models.
+You may not submit projects that violate laws, promote harm, or infringe intellectual property.
+All team members must be listed on the Devpost submission.
+Code must be publicly viewable (or privately shared with organizers if required for judging).
+AI coding tools (e.g. Copilot, ChatGPT, Claude, etc.) may be used to help build your project. This is separate from your project's own use of AI/ML, which is scored under Technical Implementation below.
+Projects must be substantially created during the hackathon period. Pre-existing projects are not eligible unless clearly stated what was added during the event.
+One submission per team. If a team submits multiple projects, organizers will judge only the most recently submitted one.
+Ownership & Use of Submissions
+Teams retain full ownership and intellectual property rights to their own projects.
+By submitting, you grant organizers and sponsors a non-exclusive, royalty-free license to display, reference, and promote your submission (e.g. project name, description, screenshots, video) in connection with the hackathon (for example on our website, social media, or in a post-event recap.)
+Prizes
+Prize money amounts are posted at the bottom of the 'Overview' page!
+Judging Criteria and Winner Selection
+Criterion
+What Judges Look For
+Real-World Impact & Relevance
+How clearly the project addresses a genuine problem. Potential for actual use or meaningful benefit to users/communities. Must answer the prompt accordingly.
+Technical Implementation & AI Use
+Quality of the AI/ML components, technical depth, correctness, and thoughtful integration of AI (not just a wrapper).
+Innovation & Creativity
+Originality of the idea or approach. Fresh combinations of technology or novel application to the problem space.
+Execution & Completeness
+Working demo, polish, usability, and how much was actually shipped during the hackathon.
+Presentation & Communication
+Clarity of the video, README, and written description. Ability to explain the problem, solution, and impact simply.
+A panel of mentors and industry/academic judges will score submissions. Ties will be broken by the judging panel. Organizers reserve the right to disqualify any submission that violates the rules or Code of Conduct. Judging decisions are final.
+Liability
+Participation in ForgeHacks is voluntary. To the fullest extent permitted by law, organizers, sponsors, mentors, and judges are not liable for any loss, damage, injury, or technical issue (including internet outages, platform downtime, or data loss) arising from participation in this event. Participate at your own risk.
+Code of Conduct
+ForgeHacks follows a strict zero-tolerance policy for harassment, discrimination, or toxic behavior. All participants must treat others with respect. Violations may result in removal from the event and Discord.
+This is an online-only event. All collaboration, mentorship, and submission happens virtually.
+Changes to These Rules
+Organizers may update these rules if necessary, particularly to correct errors or clarify existing terms. Material changes will be communicated via Devpost updates and/or Discord announcement. We will avoid changes that unfairly disadvantage participants who have already started work.
+Nothing in these rules constitutes legal advice. If you have questions about how these rules apply to your project, post in the Discussions tab so all participants benefit from the same answer.

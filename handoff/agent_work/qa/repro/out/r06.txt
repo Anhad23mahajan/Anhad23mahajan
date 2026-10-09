@@ -1,0 +1,58 @@
+pandas 3.0.6 numpy 2.5.3
+
+====================================================================================================
+A) which column does Lumen call 'the metric'? (truth in brackets)
+====================================================================================================
+inventory.csv            metric=unit_cost       date=None     metric_cols=['qty', 'reorder_level', 'unit_cost'] KPIs=[('Total unit_cost', 3024.8)]
+                         truth: qty (or qty*unit_cost); summing unit_cost is meaningless
+ids_only_numeric.csv     metric=invoice_number  date=None     metric_cols=['invoice_number', 'pincode', 'mobile'] KPIs=[('Total invoice_number', 30194550.0)]
+                         truth: none (invoice_number/pincode/mobile are identifiers)
+ids_plus_amount.csv      metric=amount          date=order_date metric_cols=['invoice_number', 'pincode', 'amount'] KPIs=[('Total amount', 174426.0), ('Latest full month', 18569.0)]
+                         truth: amount; but invoice_number & pincode are offered in the forecast dropdown
+year_month_ints.csv      metric=month           date=year     metric_cols=['month', 'visitors', 'is_member'] KPIs=[('Total month', 1560.0), ('Best month', 390.0)]
+                         truth: visitors (year/month are calendar parts)
+edge_reserved_cols.csv   metric=set             date=date     metric_cols=['set', 'load', 'order', 'export', 'call'] KPIs=[('Total set', 567.0), ('Latest full month', 48.0)]
+                         truth: ambiguous
+edge_year_only.csv       metric=amount          date=year     metric_cols=['amount'] KPIs=[('Total amount', 7605.0), ('Best month', 1157.0)]
+                         truth: amount, by YEAR (8 yearly points)
+
+====================================================================================================
+B) sum-vs-mean heuristic agg_for(): regex 'age|rate|temp' matches INSIDE words
+====================================================================================================
+   wages                  -> mean
+   page_views             -> mean
+   package_count          -> mean
+   usage_kwh              -> mean
+   message_count          -> mean
+   storage_cost           -> mean
+   damage_cost            -> mean
+   mileage                -> mean
+   corporate_sales        -> mean
+   generated_revenue      -> mean
+   separate_fees          -> mean
+   temporary_staff_cost   -> mean
+   attempts               -> mean
+   stage_total            -> mean
+   coverage_amount        -> mean
+   image_count            -> mean
+   average_sales          -> mean
+   unit_price             -> mean
+   conversion_rate        -> mean
+   age                    -> mean
+   balance                -> sum
+   score                  -> mean
+
+metric_names.csv (date, wages, corporate_sales, page_views): KPI label = Average corporate_sales <- should be 'Total corporate_sales'
+
+====================================================================================================
+C) yearly table (year, amount x3 rows/year, 2019-2026): Lumen buckets it MONTHLY -> 84 points, 8 non-zero
+====================================================================================================
+chart: amount by month points: 84 non-zero: 7 | KPI: [('Best month', 'Jan 2019')] | insight: ['amount is down 36% over the period']
+
+====================================================================================================
+D) 'Mon-YY' / 'Month YYYY' labels are not recognised as dates (very common in small-business sheets)
+====================================================================================================
+   Jan-25         -> kind=category
+   Jan 2025       -> kind=date
+   January 2025   -> kind=date
+   2025-01        -> kind=date

@@ -1,0 +1,6 @@
+scenario        A current  B ETS analytic  C inflated sd   (95% nominal, n_hist=24, 40 series)
+stationary          85.4%           68.8%          97.5%
+trend               86.7%           67.9%          97.9%
+random_walk         62.1%           60.8%          87.9%
+seasonal            85.8%           62.5%          97.5%
+seasonal_mult       79.2%           56.2%          97.1%

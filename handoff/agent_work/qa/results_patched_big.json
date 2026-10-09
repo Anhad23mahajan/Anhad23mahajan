@@ -1,0 +1,938 @@
+{
+ "big_100k.xlsx": {
+  "file": "big_100k.xlsx",
+  "size": 2761788,
+  "upload_secs": 6.85,
+  "status": 200,
+  "body_bytes": 4350,
+  "summary": {
+   "rows": 100000,
+   "metric": "amount",
+   "date": "date",
+   "date_cols": [
+    "date"
+   ],
+   "metric_cols": [
+    "amount"
+   ],
+   "cat_cols": [
+    "campaign",
+    "channel"
+   ],
+   "kinds": {
+    "date": "date",
+    "donor": "text",
+    "amount": "numeric",
+    "campaign": "category",
+    "channel": "category"
+   },
+   "ncols": 5,
+   "missing": {},
+   "id_like": [],
+   "kpis": [
+    {
+     "label": "Rows analysed",
+     "value": 100000,
+     "kind": "int"
+    },
+    {
+     "label": "Total amount",
+     "value": 5472453.9,
+     "kind": "num"
+    },
+    {
+     "label": "Latest full month",
+     "value": 227698.38,
+     "kind": "num",
+     "delta": 0.36236050601502534,
+     "vs": "vs previous month"
+    },
+    {
+     "label": "Best month",
+     "value": 239654.35,
+     "kind": "num",
+     "note": "May 2024"
+    }
+   ],
+   "insights": [
+    [
+     "warn",
+     "Unusual month: 01 Feb 2023",
+     "amount was 199,873 that month, far from the typical 228,501."
+    ]
+   ],
+   "narrative": {
+    "summary": "amount was 199,873 that month, far from the typical 228,501.",
+    "recommendations": [
+     "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake."
+    ]
+   },
+   "charts": [
+    {
+     "title": "amount by month",
+     "type": "line",
+     "freq": "MS",
+     "n": 24,
+     "x0": [
+      "2023-01-01",
+      "2023-02-01"
+     ],
+     "xN": [
+      "2024-12-01"
+     ],
+     "y0": [
+      221821.02,
+      199873.15
+     ],
+     "yN": [
+      226876.27,
+      227698.38
+     ]
+    },
+    {
+     "title": "amount by campaign",
+     "type": "bar",
+     "freq": null,
+     "n": 4,
+     "x0": [
+      "A",
+      "C"
+     ],
+     "xN": [
+      "B"
+     ],
+     "y0": [
+      1377436.01,
+      1372888.78
+     ],
+     "yN": [
+      1371233.97,
+      1350895.14
+     ]
+    },
+    {
+     "title": "amount by channel",
+     "type": "bar",
+     "freq": null,
+     "n": 3,
+     "x0": [
+      "Cheque",
+      "Cash"
+     ],
+     "xN": [
+      "Online"
+     ],
+     "y0": [
+      1845478.04,
+      1820364.39
+     ],
+     "yN": [
+      1820364.39,
+      1806611.47
+     ]
+    }
+   ],
+   "questions": [
+    "Which campaign brings in the most amount?",
+    "How did amount change month over month?",
+    "Which campaign is growing fastest?"
+   ],
+   "raw_cols": [
+    "date",
+    "donor",
+    "amount",
+    "campaign",
+    "channel"
+   ],
+   "raw_rows": [
+    [
+     "2023-01-01T00:00:00",
+     "Donor 28400",
+     95.22,
+     "D",
+     "Cheque"
+    ],
+    [
+     "2023-01-01T00:00:00",
+     "Donor 31459",
+     73.18,
+     "D",
+     "Cash"
+    ]
+   ],
+   "raw_total_rows": 100000,
+   "proc_dtypes": {
+    "date": "datetime64[us]",
+    "donor": "str",
+    "amount": "float64",
+    "campaign": "str",
+    "channel": "str"
+   },
+   "proc_rows": [
+    [
+     "2023-01-01T00:00:00",
+     "Donor 28400",
+     95.22,
+     "D",
+     "Cheque"
+    ],
+    [
+     "2023-01-01T00:00:00",
+     "Donor 31459",
+     73.18,
+     "D",
+     "Cash"
+    ]
+   ]
+  },
+  "bad_text": [],
+  "bad_preview_cells": 0,
+  "fc_secs": 0.14,
+  "fc_status": 200,
+  "fc": {
+   "freq": "MS",
+   "hist_n": 24,
+   "hist_last": [
+    "2024-12-01",
+    227698.38
+   ],
+   "fc_x": [
+    "2025-01-01",
+    "2025-06-01"
+   ],
+   "fc_y": [
+    233113.96,
+    219408.71,
+    232592.67,
+    224098.99,
+    238471.43,
+    228021.73
+   ],
+   "lo": [
+    208295.04,
+    184309.45,
+    189605.03,
+    174461.14,
+    182974.63,
+    167228.03
+   ],
+   "hi": [
+    257932.89,
+    254507.97,
+    275580.31,
+    273736.84,
+    293968.24,
+    288815.43
+   ],
+   "note": "Over the next 6 months, amount is expected to be about 0% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "interval_ok": true,
+   "neg_forecast": false,
+   "hist_min": 199873.15
+  }
+ },
+ "big_200k.csv": {
+  "file": "big_200k.csv",
+  "size": 7405771,
+  "upload_secs": 2.95,
+  "status": 200,
+  "body_bytes": 3855,
+  "summary": {
+   "rows": 200000,
+   "metric": "amount",
+   "date": "date",
+   "date_cols": [
+    "date"
+   ],
+   "metric_cols": [
+    "amount"
+   ],
+   "cat_cols": [
+    "campaign",
+    "channel"
+   ],
+   "kinds": {
+    "date": "date",
+    "donor": "text",
+    "amount": "numeric",
+    "campaign": "category",
+    "channel": "category"
+   },
+   "ncols": 5,
+   "missing": {},
+   "id_like": [],
+   "kpis": [
+    {
+     "label": "Rows analysed",
+     "value": 200000,
+     "kind": "int"
+    },
+    {
+     "label": "Total amount",
+     "value": 10959674.37,
+     "kind": "num"
+    },
+    {
+     "label": "Latest full month",
+     "value": 453004.57,
+     "kind": "num",
+     "delta": -0.11826055037634332,
+     "vs": "vs previous month"
+    },
+    {
+     "label": "Best month",
+     "value": 474163.7,
+     "kind": "num",
+     "note": "May 2024"
+    }
+   ],
+   "insights": [],
+   "narrative": {
+    "summary": "No strong patterns found yet.",
+    "recommendations": []
+   },
+   "charts": [
+    {
+     "title": "amount by month",
+     "type": "line",
+     "freq": "MS",
+     "n": 24,
+     "x0": [
+      "2023-01-01",
+      "2023-02-01"
+     ],
+     "xN": [
+      "2024-12-01"
+     ],
+     "y0": [
+      473108.04,
+      416396.92
+     ],
+     "yN": [
+      453540.93,
+      453004.57
+     ]
+    },
+    {
+     "title": "amount by campaign",
+     "type": "bar",
+     "freq": null,
+     "n": 4,
+     "x0": [
+      "C",
+      "B"
+     ],
+     "xN": [
+      "D"
+     ],
+     "y0": [
+      2762752.43,
+      2747203.92
+     ],
+     "yN": [
+      2740157.4,
+      2709560.62
+     ]
+    },
+    {
+     "title": "amount by channel",
+     "type": "bar",
+     "freq": null,
+     "n": 3,
+     "x0": [
+      "Cheque",
+      "Online"
+     ],
+     "xN": [
+      "Cash"
+     ],
+     "y0": [
+      3687662.95,
+      3643280.47
+     ],
+     "yN": [
+      3643280.47,
+      3628730.95
+     ]
+    }
+   ],
+   "questions": [
+    "Which campaign brings in the most amount?",
+    "How did amount change month over month?",
+    "Which campaign is growing fastest?"
+   ],
+   "raw_cols": [
+    "date",
+    "donor",
+    "amount",
+    "campaign",
+    "channel"
+   ],
+   "raw_rows": [
+    [
+     "2023-01-01",
+     "Donor 44527",
+     495.18,
+     "D",
+     "Cheque"
+    ],
+    [
+     "2023-01-01",
+     "Donor 22997",
+     53.29,
+     "C",
+     "Cheque"
+    ]
+   ],
+   "raw_total_rows": 200000,
+   "proc_dtypes": {
+    "date": "datetime64[us]",
+    "donor": "str",
+    "amount": "float64",
+    "campaign": "str",
+    "channel": "str"
+   },
+   "proc_rows": [
+    [
+     "2023-01-01T00:00:00",
+     "Donor 44527",
+     495.18,
+     "D",
+     "Cheque"
+    ],
+    [
+     "2023-01-01T00:00:00",
+     "Donor 22997",
+     53.29,
+     "C",
+     "Cheque"
+    ]
+   ]
+  },
+  "bad_text": [],
+  "bad_preview_cells": 0,
+  "fc_secs": 0.09,
+  "fc_status": 200,
+  "fc": {
+   "freq": "MS",
+   "hist_n": 24,
+   "hist_last": [
+    "2024-12-01",
+    453004.57
+   ],
+   "fc_x": [
+    "2025-01-01",
+    "2025-06-01"
+   ],
+   "fc_y": [
+    475730.32,
+    438539.5,
+    476029.3,
+    441690.74,
+    476172.17,
+    461476.9
+   ],
+   "lo": [
+    450197.7,
+    402430.93,
+    431805.51,
+    390625.51,
+    419079.5,
+    398935.02
+   ],
+   "hi": [
+    501262.94,
+    474648.08,
+    520253.09,
+    492755.98,
+    533264.83,
+    524018.79
+   ],
+   "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "interval_ok": true,
+   "neg_forecast": false,
+   "hist_min": 416396.92
+  }
+ },
+ "big_250k_truncation.csv": {
+  "file": "big_250k_truncation.csv",
+  "size": 9257696,
+  "upload_secs": 3.1,
+  "status": 200,
+  "body_bytes": 4766,
+  "summary": {
+   "rows": 200000,
+   "metric": "amount",
+   "date": "date",
+   "date_cols": [
+    "date"
+   ],
+   "metric_cols": [
+    "amount"
+   ],
+   "cat_cols": [
+    "campaign",
+    "channel"
+   ],
+   "kinds": {
+    "date": "date",
+    "donor": "text",
+    "amount": "numeric",
+    "campaign": "category",
+    "channel": "category"
+   },
+   "ncols": 5,
+   "missing": {},
+   "id_like": [],
+   "kpis": [
+    {
+     "label": "Rows analysed",
+     "value": 200000,
+     "kind": "int"
+    },
+    {
+     "label": "Total amount",
+     "value": 10936172.0,
+     "kind": "num"
+    },
+    {
+     "label": "Latest full month",
+     "value": 583934.31,
+     "kind": "num",
+     "delta": 2.058080656696004,
+     "vs": "vs previous month"
+    },
+    {
+     "label": "Best month",
+     "value": 593844.91,
+     "kind": "num",
+     "note": "Jan 2023"
+    }
+   ],
+   "insights": [
+    [
+     "warn",
+     "Unusual month: 01 Feb 2023",
+     "amount was 523,418 that month, far from the typical 572,980."
+    ],
+    [
+     "warn",
+     "Unusual month: 01 Feb 2024",
+     "amount was 535,143 that month, far from the typical 572,980."
+    ],
+    [
+     "warn",
+     "Only the first 200,000 of 250,000 rows were analysed",
+     "Totals and trends exclude the remaining rows."
+    ]
+   ],
+   "narrative": {
+    "summary": "amount was 523,418 that month, far from the typical 572,980. amount was 535,143 that month, far from the typical 572,980.",
+    "recommendations": [
+     "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+     "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+     "Split the file by year or filter it, then upload again."
+    ]
+   },
+   "charts": [
+    {
+     "title": "amount by month",
+     "type": "line",
+     "freq": "MS",
+     "n": 19,
+     "x0": [
+      "2023-01-01",
+      "2023-02-01"
+     ],
+     "xN": [
+      "2024-07-01"
+     ],
+     "y0": [
+      593844.91,
+      523417.61
+     ],
+     "yN": [
+      572158.82,
+      583934.31
+     ]
+    },
+    {
+     "title": "amount by campaign",
+     "type": "bar",
+     "freq": null,
+     "n": 4,
+     "x0": [
+      "A",
+      "D"
+     ],
+     "xN": [
+      "C"
+     ],
+     "y0": [
+      2755164.64,
+      2732619.92
+     ],
+     "yN": [
+      2725948.98,
+      2722438.46
+     ]
+    },
+    {
+     "title": "amount by channel",
+     "type": "bar",
+     "freq": null,
+     "n": 3,
+     "x0": [
+      "Cash",
+      "Online"
+     ],
+     "xN": [
+      "Cheque"
+     ],
+     "y0": [
+      3684121.91,
+      3627384.39
+     ],
+     "yN": [
+      3627384.39,
+      3624665.7
+     ]
+    }
+   ],
+   "questions": [
+    "Which campaign brings in the most amount?",
+    "How did amount change month over month?",
+    "Which campaign is growing fastest?"
+   ],
+   "raw_cols": [
+    "date",
+    "donor",
+    "amount",
+    "campaign",
+    "channel"
+   ],
+   "raw_rows": [
+    [
+     "2023-01-01",
+     "Donor 18098",
+     5.4,
+     "A",
+     "Cash"
+    ],
+    [
+     "2023-01-01",
+     "Donor 39416",
+     67.91,
+     "A",
+     "Online"
+    ]
+   ],
+   "raw_total_rows": 250000,
+   "proc_dtypes": {
+    "date": "datetime64[us]",
+    "donor": "str",
+    "amount": "float64",
+    "campaign": "str",
+    "channel": "str"
+   },
+   "proc_rows": [
+    [
+     "2023-01-01T00:00:00",
+     "Donor 18098",
+     5.4,
+     "A",
+     "Cash"
+    ],
+    [
+     "2023-01-01T00:00:00",
+     "Donor 39416",
+     67.91,
+     "A",
+     "Online"
+    ]
+   ]
+  },
+  "bad_text": [],
+  "bad_preview_cells": 0,
+  "fc_secs": 0.33,
+  "fc_status": 200,
+  "fc": {
+   "freq": "MS",
+   "hist_n": 19,
+   "hist_last": [
+    "2024-07-01",
+    583934.31
+   ],
+   "fc_x": [
+    "2024-08-01",
+    "2025-01-01"
+   ],
+   "fc_y": [
+    569815.25,
+    569826.61,
+    569835.71,
+    569842.98,
+    569848.8,
+    569853.45
+   ],
+   "lo": [
+    530582.95,
+    514343.76,
+    501883.36,
+    491378.37,
+    482122.7,
+    473754.33
+   ],
+   "hi": [
+    609047.55,
+    625309.47,
+    637788.05,
+    648307.58,
+    657574.89,
+    665952.58
+   ],
+   "note": "Over the next 6 months, amount is expected to be about 1% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "interval_ok": true,
+   "neg_forecast": false,
+   "hist_min": 523417.61
+  }
+ },
+ "big_over_25mb.csv": {
+  "file": "big_over_25mb.csv",
+  "size": 26214401,
+  "upload_secs": 0.26,
+  "status": 413,
+  "body_bytes": 39,
+  "detail": "File is larger than 25 MB."
+ },
+ "big_under_25mb_wide.csv": {
+  "file": "big_under_25mb_wide.csv",
+  "size": 26214400,
+  "upload_secs": 3.61,
+  "status": 200,
+  "body_bytes": 7057,
+  "summary": {
+   "rows": 180789,
+   "metric": "amount",
+   "date": "date",
+   "date_cols": [
+    "date"
+   ],
+   "metric_cols": [
+    "amount"
+   ],
+   "cat_cols": [
+    "campaign",
+    "channel",
+    "note"
+   ],
+   "kinds": {
+    "date": "date",
+    "donor": "text",
+    "amount": "numeric",
+    "campaign": "category",
+    "channel": "category",
+    "note": "category"
+   },
+   "ncols": 6,
+   "missing": {},
+   "id_like": [],
+   "kpis": [
+    {
+     "label": "Rows analysed",
+     "value": 180789,
+     "kind": "int"
+    },
+    {
+     "label": "Total amount",
+     "value": 9850230.200000001,
+     "kind": "num"
+    },
+    {
+     "label": "Latest full month",
+     "value": 397734.08,
+     "kind": "num",
+     "delta": -3.0839754982584555,
+     "vs": "vs previous month"
+    },
+    {
+     "label": "Best month",
+     "value": 426634.18,
+     "kind": "num",
+     "note": "Mar 2024"
+    }
+   ],
+   "insights": [],
+   "narrative": {
+    "summary": "No strong patterns found yet.",
+    "recommendations": []
+   },
+   "charts": [
+    {
+     "title": "amount by month",
+     "type": "line",
+     "freq": "MS",
+     "n": 24,
+     "x0": [
+      "2023-01-01",
+      "2023-02-01"
+     ],
+     "xN": [
+      "2024-12-01"
+     ],
+     "y0": [
+      425052.59,
+      379550.59
+     ],
+     "yN": [
+      410390.42,
+      397734.08
+     ]
+    },
+    {
+     "title": "amount by campaign",
+     "type": "bar",
+     "freq": null,
+     "n": 4,
+     "x0": [
+      "C",
+      "B"
+     ],
+     "xN": [
+      "D"
+     ],
+     "y0": [
+      2472211.72,
+      2466315.89
+     ],
+     "yN": [
+      2464136.63,
+      2447565.96
+     ]
+    },
+    {
+     "title": "amount by channel",
+     "type": "bar",
+     "freq": null,
+     "n": 3,
+     "x0": [
+      "Cash",
+      "Cheque"
+     ],
+     "xN": [
+      "Online"
+     ],
+     "y0": [
+      3328733.42,
+      3278234.87
+     ],
+     "yN": [
+      3278234.87,
+      3243261.91
+     ]
+    }
+   ],
+   "questions": [
+    "Which campaign brings in the most amount?",
+    "How did amount change month over month?",
+    "Which campaign is growing fastest?"
+   ],
+   "raw_cols": [
+    "date",
+    "donor",
+    "amount",
+    "campaign",
+    "channel",
+    "note"
+   ],
+   "raw_rows": [
+    [
+     "2023-01-01",
+     "Donor 8007",
+     32.81,
+     "A",
+     "Online",
+     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ],
+    [
+     "2023-01-01",
+     "Donor 850",
+     6.48,
+     "A",
+     "Cash",
+     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ]
+   ],
+   "raw_total_rows": 180789,
+   "proc_dtypes": {
+    "date": "datetime64[us]",
+    "donor": "str",
+    "amount": "float64",
+    "campaign": "str",
+    "channel": "str",
+    "note": "str"
+   },
+   "proc_rows": [
+    [
+     "2023-01-01T00:00:00",
+     "Donor 8007",
+     32.81,
+     "A",
+     "Online",
+     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ],
+    [
+     "2023-01-01T00:00:00",
+     "Donor 850",
+     6.48,
+     "A",
+     "Cash",
+     "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ]
+   ]
+  },
+  "bad_text": [],
+  "bad_preview_cells": 0,
+  "fc_secs": 0.08,
+  "fc_status": 200,
+  "fc": {
+   "freq": "MS",
+   "hist_n": 24,
+   "hist_last": [
+    "2024-12-01",
+    397734.08
+   ],
+   "fc_x": [
+    "2025-01-01",
+    "2025-06-01"
+   ],
+   "fc_y": [
+    427701.99,
+    400104.15,
+    426881.79,
+    399574.0,
+    411465.39,
+    383676.15
+   ],
+   "lo": [
+    390823.57,
+    347950.19,
+    363006.5,
+    325817.16,
+    329002.73,
+    293342.84
+   ],
+   "hi": [
+    464580.41,
+    452258.11,
+    490757.09,
+    473330.84,
+    493928.04,
+    474009.46
+   ],
+   "note": "Over the next 6 months, amount is expected to be about 1% lower than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+   "interval_ok": true,
+   "neg_forecast": false,
+   "hist_min": 379550.59
+  }
+ }
+}

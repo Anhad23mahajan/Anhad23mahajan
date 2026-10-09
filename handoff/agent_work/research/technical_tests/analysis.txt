@@ -1,0 +1,130 @@
+windows: 690
+
+=== Mean MASE (lower better) by group ===
+g                        aus_retail  classic  synthetic
+method                                                 
+naive                         1.808    1.923      1.299
+snaive                        1.190    1.145      1.092
+app_HW                        1.409    1.145      1.162
+Theta                         1.235    1.382      1.128
+ETS(AICc)                     1.166    1.357      1.044
+STL+ETS(AICc)                 1.174    1.085      1.077
+Comb(ETS,Theta)               1.161    1.313      1.053
+Comb(STL+ETS,Theta)           1.124    1.162      1.022
+Comb(ETS,Theta,sNaive)        1.060    1.148      0.972
+Comb(ETS,STL+ETS,Theta)       1.105    1.164      1.003
+
+=== Median MASE by group ===
+g                        aus_retail  classic  synthetic
+method                                                 
+naive                         1.195    1.614      1.138
+snaive                        0.928    0.955      0.968
+app_HW                        0.867    0.929      0.904
+Theta                         0.951    1.180      0.975
+ETS(AICc)                     0.827    1.030      0.927
+STL+ETS(AICc)                 0.926    0.915      0.916
+Comb(ETS,Theta)               0.863    1.143      0.871
+Comb(STL+ETS,Theta)           0.852    0.999      0.840
+Comb(ETS,Theta,sNaive)        0.773    0.986      0.874
+Comb(ETS,STL+ETS,Theta)       0.827    0.963      0.845
+
+=== Relative MAE vs seasonal-naive (geo-mean ratio; <1 = better than snaive) ===
+                         aus_retail  classic  synthetic    ALL
+naive                         1.354    1.734      1.116  1.360
+snaive                        1.000    1.000      1.000  1.000
+app_HW                        1.017    0.916      0.986  0.999
+Theta                         1.047    1.188      1.004  1.058
+ETS(AICc)                     0.944    1.116      0.955  0.966
+STL+ETS(AICc)                 1.002    0.952      0.978  0.992
+Comb(ETS,Theta)               0.969    1.113      0.963  0.986
+Comb(STL+ETS,Theta)           0.961    0.995      0.930  0.961
+Comb(ETS,Theta,sNaive)        0.881    1.000      0.903  0.899
+Comb(ETS,STL+ETS,Theta)       0.927    0.979      0.919  0.933
+
+=== Relative MAE vs NAIVE ===
+                         aus_retail  classic  synthetic    ALL
+naive                         1.000    1.000      1.000  1.000
+snaive                        0.738    0.577      0.896  0.735
+app_HW                        0.751    0.528      0.884  0.735
+Theta                         0.773    0.685      0.900  0.778
+ETS(AICc)                     0.697    0.643      0.856  0.711
+STL+ETS(AICc)                 0.740    0.549      0.877  0.730
+Comb(ETS,Theta)               0.715    0.642      0.864  0.725
+Comb(STL+ETS,Theta)           0.710    0.574      0.833  0.707
+Comb(ETS,Theta,sNaive)        0.650    0.577      0.810  0.661
+Comb(ETS,STL+ETS,Theta)       0.685    0.564      0.824  0.686
+
+=== Mean MASE by history length L (all groups) ===
+L                           8      12     24     36     48
+method                                                    
+naive                    1.540  1.493  1.889  1.862  1.969
+snaive                   1.540  1.064  1.100  1.097  1.048
+app_HW                   2.252  2.011  0.893  0.782  0.732
+Theta                    1.813  1.461  1.214  0.899  0.807
+ETS(AICc)                1.499  1.332  1.498  0.815  0.736
+STL+ETS(AICc)            1.484  1.292  1.023  0.995  0.941
+Comb(ETS,Theta)          1.619  1.369  1.278  0.829  0.737
+Comb(STL+ETS,Theta)      1.583  1.344  1.004  0.851  0.784
+Comb(ETS,Theta,sNaive)   1.562  1.073  1.081  0.821  0.759
+Comb(ETS,STL+ETS,Theta)  1.542  1.330  1.077  0.803  0.736
+
+=== Relative MAE vs naive by L (all groups) ===
+                            8      12     24     36     48
+naive                    1.000  1.000  1.000  1.000  1.000
+snaive                   1.000  0.714  0.726  0.644  0.644
+app_HW                   1.443  1.213  0.544  0.469  0.470
+Theta                    1.253  1.059  0.788  0.531  0.514
+ETS(AICc)                1.016  0.935  0.890  0.478  0.452
+STL+ETS(AICc)            0.972  0.895  0.676  0.589  0.594
+Comb(ETS,Theta)          1.104  0.982  0.817  0.489  0.464
+Comb(STL+ETS,Theta)      1.084  0.957  0.661  0.513  0.498
+Comb(ETS,Theta,sNaive)   1.046  0.771  0.690  0.486  0.468
+Comb(ETS,STL+ETS,Theta)  1.051  0.944  0.695  0.476  0.463
+
+=== Win-rate vs app_HW (share of windows where method MAE < app_HW MAE) ===
+{'naive': 0.375, 'snaive': 0.477, 'Theta': 0.51, 'ETS(AICc)': 0.549, 'STL+ETS(AICc)': 0.49, 'Comb(ETS,Theta)': 0.555, 'Comb(STL+ETS,Theta)': 0.554, 'Comb(ETS,Theta,sNaive)': 0.58, 'Comb(ETS,STL+ETS,Theta)': 0.562}
+
+=== 95% PI empirical coverage (nominal 0.95) & mean width/|actual| ===
+g              aus_retail  classic  synthetic
+method                                       
+ETS(AICc)           0.827    0.819      0.920
+STL+ETS(AICc)       0.596    0.596      0.707
+Theta               0.945    0.931      0.962
+app_HW              0.788    0.820      0.915
+L                 8      12     24     36     48
+method                                          
+ETS(AICc)      0.856  0.869  0.837  0.806  0.826
+STL+ETS(AICc)  0.830  0.858  0.095  0.572  0.679
+Theta          0.857  0.945  0.971  0.977  0.979
+app_HW         0.767  0.852  0.697  0.844  0.887
+width/|actual| (median):
+g              aus_retail  classic  synthetic
+method                                       
+ETS(AICc)           0.271    0.329      0.823
+STL+ETS(AICc)       0.191    0.132      0.582
+Theta               0.704    0.704      1.498
+app_HW              0.266    0.214      1.016
+
+=== failures ===
+method
+Comb(ETS,STL+ETS,Theta)    0
+Comb(ETS,Theta)            0
+Comb(ETS,Theta,sNaive)     0
+Comb(STL+ETS,Theta)        0
+ETS(AICc)                  0
+STL+ETS(AICc)              0
+Theta                      0
+app_HW                     0
+naive                      0
+snaive                     0
+Name: fail, dtype: int64
+
+=== runtime seconds per forecast (median / p90), shared contended sandbox, OMP_NUM_THREADS=1 ===
+                50%   90%   max
+method                         
+ETS(AICc)      0.99  2.43  5.60
+STL+ETS(AICc)  0.05  0.09  0.30
+Theta          0.05  0.10  0.41
+app_HW         0.06  0.16  0.43
+naive          0.00  0.00  0.01
+snaive         0.00  0.00  0.01

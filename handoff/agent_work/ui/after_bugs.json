@@ -1,0 +1,626 @@
+{
+ "fmt_table": [
+  [
+   0,
+   "0"
+  ],
+  [
+   0.05,
+   "0.05"
+  ],
+  [
+   0.0536,
+   "0.0536"
+  ],
+  [
+   0.5,
+   "0.5"
+  ],
+  [
+   1,
+   "1"
+  ],
+  [
+   12.345,
+   "12.3"
+  ],
+  [
+   999.96,
+   "1.0k"
+  ],
+  [
+   1000,
+   "1.0k"
+  ],
+  [
+   1234,
+   "1.2k"
+  ],
+  [
+   9999.5,
+   "10k"
+  ],
+  [
+   10000,
+   "10k"
+  ],
+  [
+   10500,
+   "11k"
+  ],
+  [
+   -10500,
+   "-11k"
+  ],
+  [
+   12500,
+   "13k"
+  ],
+  [
+   -12500,
+   "-13k"
+  ],
+  [
+   99999,
+   "100k"
+  ],
+  [
+   999999,
+   "1.0M"
+  ],
+  [
+   1000000,
+   "1.0M"
+  ],
+  [
+   1500000,
+   "1.5M"
+  ],
+  [
+   9960000,
+   "10.0M"
+  ],
+  [
+   10000000,
+   "10M"
+  ],
+  [
+   2548000000,
+   "2.5B"
+  ],
+  [
+   1000000000000.0,
+   "1000B"
+  ],
+  [
+   -0.5,
+   "-0.5"
+  ],
+  [
+   -0.4,
+   "-0.4"
+  ],
+  [
+   -999.96,
+   "-1.0k"
+  ],
+  [
+   4802950,
+   "4.8M"
+  ],
+  [
+   9046,
+   "9.0k"
+  ],
+  [
+   "NaN",
+   "–"
+  ],
+  [
+   null,
+   "–"
+  ],
+  [
+   "12",
+   "12"
+  ],
+  [
+   "abc",
+   "–"
+  ],
+  [
+   true,
+   "1"
+  ]
+ ],
+ "kpi_delta_zero_negative": [
+  "-0",
+  "0",
+  "0"
+ ],
+ "esc_table": [
+  [
+   "<",
+   "&lt;"
+  ],
+  [
+   ">",
+   "&gt;"
+  ],
+  [
+   "&",
+   "&amp;"
+  ],
+  [
+   "\"",
+   "&quot;"
+  ],
+  [
+   "'",
+   "&#39;"
+  ],
+  [
+   "`",
+   "`"
+  ],
+  [
+   "null",
+   ""
+  ],
+  [
+   "undefined",
+   ""
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "a&amp;b",
+   "a&amp;amp;b"
+  ]
+ ],
+ "date_regex": [
+  [
+   "2024-01-01T00:00:00",
+   true
+  ],
+  [
+   "2024-01-01",
+   true
+  ],
+  [
+   "2024-25",
+   true
+  ],
+  [
+   "2023-24 season",
+   true
+  ],
+  [
+   "2024-Q1",
+   false
+  ],
+  [
+   "Jan 2024",
+   false
+  ],
+  [
+   "01/02/2024",
+   false
+  ],
+  [
+   "2024",
+   false
+  ],
+  [
+   "1234-56-AB",
+   true
+  ],
+  [
+   "2024-W05",
+   false
+  ],
+  [
+   "12-2024",
+   false
+  ]
+ ],
+ "template_interpolations_without_esc": [
+  "${c === p.date ? 'selected' : ''}",
+  "${c === p.metric ? 'selected' : ''}",
+  "${i.severity}",
+  "${k.kind === 'int' ? k.value.toLocaleString() : fmt(k.value)}",
+  "${p.columns.length}",
+  "${p.metric || 'none found'}",
+  "${p.rows.toLocaleString()}",
+  "${pv.rows.length}",
+  "${pv.total_rows.toLocaleString()}",
+  "${r.verified ? 'Answer checked against the data' : 'Please double-check this one'}",
+  "${r.verified ? 'ok' : 'chk'}"
+ ],
+ "template_interpolation_count": {
+  "total": 29,
+  "without_esc": 11
+ },
+ "forecast_invalid.TEST_ERROR": "Traceback (most recent call last):\n  File \"/home/user/work/ui/scripts/04_bugs.py\", line 20, in guarded\n    try: fn()\n         ~~^^\n  File \"/home/user/work/ui/scripts/04_bugs.py\", line 55, in t_forecast_invalid\n    rec('forecast_float_periods', {'http': r.value.status, 'ui_error_text': p.inner_text('#ferr'), 'server_detail_type': type(r.value.json()['detail']).__name__})\n                                                                                                                              ~~~~~~~~~~~~~~^^^^^^^^^^\nKeyError: 'detail'\n",
+ "ask_dblclick_mouse_requests": 1,
+ "ask_stale_answer_overwrites_newer": {
+  "question_box": "B-fast",
+  "answer_shown": "ANSWER FOR A-slow",
+  "requests": [
+   "A-slow"
+  ]
+ },
+ "ask_answer_from_previous_dataset_after_switch": {
+  "ans_before_arrival": "",
+  "ans_after_arrival": "",
+  "dashboard_meta": "2,742 rows, 7 columns. Main measure: amount_usd.",
+  "q_input_persisted": ""
+ },
+ "upload_race_first_slow_second_fast": {
+  "shown_after_1s (second file)": "200 rows, 3 columns. Main measure: amount.",
+  "shown_after_4.5s (final)": "200 rows, 3 columns. Main measure: amount.",
+  "second_file_was_last_chosen": "no_dates.csv"
+ },
+ "busy_drop_zone_accepts_keyboard_and_programmatic_input": {
+  "pointer_events_during_busy": "none via .busy; keyboard Enter/Space and input.change are unaffected"
+ },
+ "leak_resize_listeners_and_heap_per_upload": [
+  {
+   "cycle": 0,
+   "resize_listeners": 0,
+   "plots_in_dom": 0,
+   "heap_mb": 2.3
+  },
+  {
+   "cycle": 1,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 5.99
+  },
+  {
+   "cycle": 2,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 6.6
+  },
+  {
+   "cycle": 3,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 6.78
+  },
+  {
+   "cycle": 4,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 6.85
+  },
+  {
+   "cycle": 5,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 7.0
+  },
+  {
+   "cycle": 6,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 7.01
+  },
+  {
+   "cycle": 7,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 7.05
+  },
+  {
+   "cycle": 8,
+   "resize_listeners": 4,
+   "plots_in_dom": 4,
+   "heap_mb": 7.09
+  },
+  {
+   "cycle": "after 5 asks",
+   "resize_listeners": 9,
+   "plots_in_dom": 5,
+   "heap_mb": 7.5
+  }
+ ],
+ "leak_global_drop_listeners": {
+  "window+document listeners for dragover/drop": "none registered outside #drop (see below)"
+ },
+ "document_listener_types": [],
+ "window_listener_types": [
+  "__playwright_global_listeners_check__",
+  "auxclick",
+  "click",
+  "contextmenu",
+  "dblclick",
+  "dragover",
+  "drop",
+  "mousedown",
+  "mousemove",
+  "mouseup",
+  "pointerdown",
+  "pointerup",
+  "resize",
+  "touchcancel",
+  "touchend",
+  "touchstart"
+ ],
+ "resize_plot_width_vs_container": [
+  {
+   "viewport": 1440,
+   "plots": [
+    [
+     832,
+     832
+    ],
+    [
+     403,
+     403
+    ],
+    [
+     403,
+     403
+    ],
+    [
+     832,
+     878
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 1100,
+   "plots": [
+    [
+     652,
+     652
+    ],
+    [
+     313,
+     313
+    ],
+    [
+     313,
+     313
+    ],
+    [
+     652,
+     698
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 820,
+   "plots": [
+    [
+     718,
+     718
+    ],
+    [
+     718,
+     718
+    ],
+    [
+     718,
+     718
+    ],
+    [
+     718,
+     764
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 600,
+   "plots": [
+    [
+     498,
+     498
+    ],
+    [
+     498,
+     498
+    ],
+    [
+     498,
+     498
+    ],
+    [
+     498,
+     544
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 390,
+   "plots": [
+    [
+     312,
+     312
+    ],
+    [
+     312,
+     312
+    ],
+    [
+     312,
+     312
+    ],
+    [
+     312,
+     358
+    ]
+   ],
+   "page_hscroll_px": 0
+  },
+  {
+   "viewport": 1440,
+   "plots": [
+    [
+     832,
+     832
+    ],
+    [
+     403,
+     403
+    ],
+    [
+     403,
+     403
+    ],
+    [
+     832,
+     878
+    ]
+   ],
+   "page_hscroll_px": 0
+  }
+ ],
+ "again_button_not_reachable_when_scrolled": {
+  "scrollY": 1755,
+  "button_bottom_in_viewport_px": 55,
+  "header_position": "sticky"
+ },
+ "again_then_reload_dashboard_state_reset": {
+  "q_value": "",
+  "ans_html": "",
+  "tab_state": "Cleaned Output"
+ },
+ "xss_injection_csv": {
+  "window.__xss": null,
+  "dialogs": [],
+  "pageerrors": [],
+  "td_title_attrs_intact": [
+   "</script><script>window.__xss=2</script>",
+   "<a href=\"javascript:window.__xss=3\">link</a>",
+   "<img src=x onerror=\"window.__xss=1\">"
+  ],
+  "injected_img_or_script_elements_in_page": 0,
+  "plotly_labels_innerHTML": [
+   "0",
+   "1k",
+   "2k",
+   "3k",
+   "4k",
+   "O'Brien \" &amp; <tspan style=\"font-weight:bold\">So…</tspan>",
+   "&lt;/script&gt;&lt;script&gt;…",
+   "&lt;img src=x onerro…",
+   "&lt;a href=\"javascri…"
+  ],
+  "plotly_rendered_links_in_chart": 0,
+  "insight_titles": [
+   "amount is down 6% over the period"
+  ]
+ },
+ "xss_ask_mock": {
+  "window.__xss": null,
+  "dialogs": [],
+  "answer_dom_has_script_or_img": 0,
+  "answer_text": "x <script>window.__xss=2</script> \"y\" 'z' & <b>bold</b>"
+ },
+ "small_rates_kpis": [
+  "Rows analysed | 400",
+  "Average conversion_rate | 0.0537",
+  "Latest full month | 0.0499 | -7% vs previous month",
+  "Best month | 0.0606 | Apr 2024"
+ ],
+ "small_rates_summary": "No strong patterns found yet.",
+ "small_rates_hover_text_line": [
+  "Jun 2024: 0.05"
+ ],
+ "small_rates_bar_labels": [
+  "0.06",
+  "0.05",
+  "0.05",
+  "0.05"
+ ],
+ "starter_negatives_long_labels_1440": [
+  {
+   "w": 832,
+   "plot_w": 737,
+   "left_margin": 56,
+   "ranges": [
+    NaN,
+    NaN
+   ],
+   "data_min": 0
+  },
+  {
+   "w": 403,
+   "plot_w": 258,
+   "left_margin": 115,
+   "ranges": [
+    0,
+    42947
+   ],
+   "data_min": 29102.62
+  }
+ ],
+ "starter_negatives_long_labels_390": [
+  {
+   "w": 312,
+   "plot_w": 240,
+   "left_margin": 56,
+   "ranges": [
+    NaN,
+    NaN
+   ],
+   "data_min": 0
+  },
+  {
+   "w": 312,
+   "plot_w": 167,
+   "left_margin": 115,
+   "ranges": [
+    0,
+    42947
+   ],
+   "data_min": 29102.62
+  }
+ ],
+ "ask_table_rows_rendered_for_80_row_result": {
+  "tr_count_incl_header": 51,
+  "note_about_truncation_in_dom": true
+ },
+ "ask_input_has_maxlength": 500,
+ "big_text_overflow": {
+  "scrollW": 832,
+  "clientW": 832,
+  "overflowing": false
+ },
+ "preview_cleaned_first_row": [
+  "2023-01-01",
+  "Chloe Smith",
+  "Annual Appeal",
+  "Event",
+  "6.68",
+  "No",
+  ""
+ ],
+ "preview_raw_first_row": [
+  "2023-01-01",
+  "Chloe Smith",
+  "Annual Appeal",
+  "Event",
+  "6.68",
+  "No",
+  ""
+ ],
+ "preview_dtype_labels_shown_to_users": [
+  "text",
+  "text",
+  "text",
+  "text",
+  "number",
+  "text",
+  "text"
+ ]
+}

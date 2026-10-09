@@ -1,0 +1,18 @@
+{
+ "plotly_loaded": "object",
+ "plots_drawn": 5,
+ "fonts": [
+  "Figtree",
+  "Bricolage Grotesque"
+ ],
+ "csp_violations": [],
+ "third_party_requests_attempted": [],
+ "log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "answer_chart_drawn": true
+}

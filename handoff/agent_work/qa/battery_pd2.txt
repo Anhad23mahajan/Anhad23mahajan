@@ -1,0 +1,69 @@
+accents_nfc.csv                    200   0.04s metric=montant_ttc date=date_de_création
+accents_nfd.csv                    200   0.04s metric=montant_ttc date=date_de_cre_ation
+ambig_dmy_halfyear.csv             200   0.04s metric=sales date=date
+ambig_dmy_small.csv                200   0.03s metric=sales date=date
+bom_utf8.csv                       200   0.04s metric=amount date=date
+clean.xlsx                         200   0.23s metric=revenue date=order_date
+corr_order.csv                     200   0.03s metric=amount date=date
+cp1252_euro.csv                    200   0.04s metric=None date=date
+csv_named_xlsx.xlsx                400   0.00s DETAIL=Could not read Excel file: Excel file format cannot be determined, you must specify an engine manually.
+daily_70d_midweek.csv              200   0.03s metric=sales date=date
+donations.csv                      200   0.16s metric=amount date=date
+edge_all_zero.csv                  200   0.02s metric=amount date=date
+edge_binary_garbage.csv            400   0.00s DETAIL=Could not parse CSV file: new-line character seen in unquoted field - do you need to open the file with newline=''?
+edge_constant.csv                  200   0.02s metric=amount date=date
+edge_date_no_metric.csv            200   0.02s metric=None date=date
+edge_datelike_text.csv             200   0.03s metric=amount date=version
+edge_dup_cols.csv                  400   0.03s DETAIL=Could not process file: 'DataFrame' object has no attribute 'dtype'
+edge_empty.csv                     400   0.00s DETAIL=The file has no rows.
+edge_gappy_unsorted.csv            200   0.02s metric=amount date=date
+edge_header_only.csv               400   0.00s DETAIL=The file has no rows.
+edge_html_page.csv                 400   0.01s DETAIL=The file has no rows.
+edge_huge_values.csv               200   0.04s metric=amount date=date
+edge_inf_values.csv                200   0.03s metric=amount date=date
+edge_negative_metric.csv           200   0.02s metric=profit date=date
+edge_newlines_only.csv             400   0.00s DETAIL=The file has no rows.
+edge_no_date.csv                   200   0.01s metric=qty date=None
+edge_no_numeric.csv                200   0.02s metric=None date=None
+edge_ragged.csv                    200   0.02s metric=amount date=date
+edge_reserved_cols.csv             200   0.03s metric=set date=date
+edge_seq_id.csv                    200   0.01s metric=amount date=None
+edge_single_col.csv                200   0.01s metric=amount date=None
+edge_single_col_text.csv           200   0.01s metric=None date=None
+edge_single_row.csv                200   0.02s metric=amount date=date
+edge_trailing_blank.csv            200   0.05s metric=sales date=date
+edge_two_rows.csv                  200   0.04s metric=amount date=date
+edge_wide_300.csv                  200   0.53s metric=metric_0 date=date
+edge_year_only.csv                 200   0.06s metric=amount date=year
+ends_dec30.csv                     200   0.02s metric=revenue date=date
+epoch_seconds.csv                  200   0.02s metric=amount date=timestamp
+european.csv                       200   0.05s metric=betrag date=datum
+european_nothousands.csv           200   0.03s metric=betrag date=datum
+excel_serial.csv                   200   0.01s metric=amount date=date
+expenses_currency.csv              200   0.04s metric=amount date=date
+hindi_headers.csv                  200   0.02s metric=र_श date=त_र_ख
+ids_only_numeric.csv               200   0.02s metric=invoice_number date=None
+ids_plus_amount.csv                200   0.02s metric=amount date=order_date
+inr_lakh.csv                       200   0.02s metric=revenue date=date
+inventory.csv                      200   0.02s metric=unit_cost date=None
+latin1.csv                         200   0.02s metric=amount date=date
+legacy.xls                         400   0.00s DETAIL=Could not read Excel file: Missing optional dependency 'xlrd'. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install xlrd.
+merged_header.xlsx                 200   0.03s metric=None date=None
+metric_names.csv                   200   0.02s metric=corporate_sales date=date
+monthly_names.csv                  200   0.01s metric=revenue date=None
+multi_sheet_cover_first.xlsx       200   0.01s metric=None date=None
+multi_sheet_data_first.xlsx        200   0.02s metric=sales date=date
+offset_table.xlsx                  200   0.03s metric=unnamed_4 date=unnamed_2
+pct_bool_thousands.csv             200   0.04s metric=revenue date=date
+starts_mid_month.csv               200   0.02s metric=revenue date=date
+thousands_text.csv                 200   0.02s metric=revenue date=date
+title_rows_total.xlsx              200   0.04s metric=unnamed_2 date=sunrise_ngo_donations_report_2024
+total_row_literal.xlsx             200   0.03s metric=amount date=date
+tz_mixed_offsets.csv               400   0.01s DETAIL=Could not process file: Can only use .dt accessor with datetimelike values
+tz_utc.csv                         200   0.02s metric=amount date=created_at
+us_mdy_halfyear.csv                200   0.02s metric=sales date=date
+utf16_tab.txt.csv                  400   0.01s DETAIL=The file contains only empty cells.
+weekday_names.csv                  200   0.01s metric=sales date=None
+xlsx_named_csv.csv                 200   0.02s metric=revenue date=order_date
+year_month_ints.csv                200   0.02s metric=month date=year
+yyyymmdd_int.csv                   200   0.02s metric=amount date=date

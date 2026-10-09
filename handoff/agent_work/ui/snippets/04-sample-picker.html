@@ -1,0 +1,38 @@
+<!-- 04-sample-picker.html : "Or start from a sample" (Shop / Donations / Inventory).   Effort S, risk low.
+     INSTALL: copy snippets/samples/*.csv to static/samples/, then paste this whole block just before </body> in static/index.html.
+     No backend change: it fetches the CSV, wraps it in a File and feeds the EXISTING <input id="file"> (so the normal upload path,
+     busy state and errors are reused).  Depends only on DOM ids #drop, #file, #demo.  Verified: scripts/08_verify_extras.py -->
+<style>
+  .samples { margin-top: 18px; text-align: center }
+  .samples small { display: block; color: var(--muted, #586674); font-size: 13px; margin-bottom: 8px }
+  /* NOTE: deliberately NOT class="chip": index.html's render() does document.querySelectorAll('.chip').forEach(b => b.onclick = ask...)
+     and would overwrite these handlers (found while testing). */
+  .samples .sample-chip { margin: 3px; background: var(--mist, #E3EEED); border: 1px solid #6FA3A0; border-radius: 99px; padding: 6px 14px; font-size: 14px; cursor: pointer; color: var(--teal-d, #083F40) }
+  .samples .sample-chip:hover { background: #D3E6E4 }
+  .samples .sample-chip span { color: var(--muted, #586674); font-size: 12px; margin-left: 6px }
+</style>
+<script>
+(function () {
+  const row = document.querySelector('#drop .row'), input = document.querySelector('#file'); if (!row || !input || document.getElementById('samples')) return;
+  const SAMPLES = [
+    { id: 'shop', label: 'Shop sales', note: '9,046 orders, 2 years' },
+    { id: 'donations', label: 'Donations', note: '2,742 gifts, 3 years', url: '/assets/samples/donations.csv' },
+    { id: 'inventory', label: 'Inventory', note: '1,896 shipments', url: '/assets/samples/inventory.csv' }
+  ];
+  const box = document.createElement('div'); box.className = 'samples'; box.id = 'samples';
+  box.innerHTML = '<small>No file handy? Start from a sample dataset</small>';
+  SAMPLES.forEach(s => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'sample-chip'; b.dataset.sample = s.id;
+    b.innerHTML = s.label + '<span>' + s.note + '</span>';
+    b.onclick = async () => {
+      if (!s.url) return document.querySelector('#demo').click();            // shop data = the existing /api/demo path
+      try {
+        const blob = await (await fetch(s.url)).blob(); const dt = new DataTransfer(); dt.items.add(new File([blob], s.id + '.csv', { type: 'text/csv' }));
+        input.files = dt.files; input.dispatchEvent(new Event('change', { bubbles: true }));
+      } catch (e) { document.querySelector('#uerr').textContent = 'Could not load the sample file.' }
+    };
+    box.appendChild(b);
+  });
+  row.after(box);
+})();
+</script>

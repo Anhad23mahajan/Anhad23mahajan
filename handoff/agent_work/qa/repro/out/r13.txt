@@ -1,0 +1,53 @@
+pandas 3.0.6 numpy 2.5.3
+
+====================================================================================================
+A) duplicate header names
+====================================================================================================
+   'Amount,Amount'                    -> OK columns=['amount', 'amount_1']
+   'Total,Total,Total'                -> OK columns=['total', 'total_1', 'total_2']
+   'a,a,a_1'                          -> OK columns=['a', 'a_1', 'a_1_1']
+   'amount,amount,Amount ,AMOUNT!'    -> AttributeError: 'DataFrame' object has no attribute 'dtype'
+
+====================================================================================================
+B) unquoted reserved words in generated SQL (schema_text does not tell the LLM to quote identifiers)
+====================================================================================================
+["- date (datetime64[us]) e.g. ['2024-01-01', '2024-01-04', '2024-01-07']", "- set (int64) e.g. ['7', '4', '6']", "- load (int64) e.g. ['85', '21', '46']", "- order (int64) e.g. ['1', '3', '4']"]
+   FAIL SELECT group, sum(order) FROM data GROUP BY group -> Parser Error: syntax error at or near ","
+   OK   SELECT "group", sum("order") FROM data GROUP BY "group"
+   OK   SELECT date FROM data LIMIT 1
+
+====================================================================================================
+C) small files: every text column becomes a 'category' (<=30 uniques) even if it is an identifier
+====================================================================================================
+   kinds: {'name': 'category', 'amount': 'numeric'} | cat_cols: ['name'] | charts: [('amount by name', 8)] (8 of 25 unique people shown as 'top 8')
+
+====================================================================================================
+D) week labels are week-ENDING Sundays; month insight text prints a day ('01 Dec 2023')
+====================================================================================================
+   best week note: ['11 May 2025'] (true best week = Mon 5 May - Sun 11 May)
+   monthly anomaly title: ['Unusual month: 01 Dec 2023']
+
+====================================================================================================
+E) only top-8 categories are drawn; 12 month names -> 4 months missing from the bar chart
+====================================================================================================
+    revenue by month bars: ['December', 'November', 'October', 'August', 'September', 'July', 'May', 'June'] (missing: ['April', 'February', 'January', 'March'] ); sorted by value, not calendar order
+
+====================================================================================================
+F) boolean-like text columns lose their labels: Yes/No -> True/False in charts
+====================================================================================================
+    [('revenue by repeat_customer', ['False', 'True']), ('revenue by paid', ['False', 'True'])]
+
+====================================================================================================
+G) whitespace-only rows survive dropna (cleaned before the blank-row check) -> 'Rows analysed' off by one
+====================================================================================================
+   real data rows: 120 | raw rows read: 123 | rows after preprocess: 121 | last row all-empty: True
+
+====================================================================================================
+H) 'outliers' is computed per numeric column but never shown
+====================================================================================================
+   profile has outliers: True | referenced in static/index.html: False
+
+====================================================================================================
+I) the all-missing-after-cleaning column (e.g. a column of 'N/A'): pandas 2.2.3 makes it float64 (numeric) so it can be picked as THE metric; pandas 3 keeps it text
+====================================================================================================
+   pandas 3.0.6 -> kinds: {'date': 'date', 'notes': 'category', 'region': 'category'} | metric: None | metric_cols: []

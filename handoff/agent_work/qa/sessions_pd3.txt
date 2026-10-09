@@ -1,0 +1,8 @@
+RSS at start MB: 392
+first session alive: 200
+first session evicted after 51 additional uploads (i.e. 52 total sessions created)
+sessions still alive among those created: 51 of 52
+ACTIVE user's session evicted although in continuous use; after 51 other uploads (status 400)
+10 parallel donations.csv uploads: wall 1.96 statuses [200] distinct sids 10 latencies [0.79, 0.91, 1.02, 1.15, 1.28, 1.39, 1.53, 1.68, 1.8, 1.96]
+RSS after 3 x 200k-row sessions: +7 MB  (~2 MB per session); total 379 MB
+5 parallel 200k uploads: wall 37.0 latencies [7.0, 14.59, 29.69, 29.7, 36.99] RSS 431

@@ -1,0 +1,1129 @@
+{
+ "overflow_sweep": {
+  "320": {
+   "as_is": {
+    "scrollWidth": 676,
+    "overflow_px": 356,
+    "culprits": [
+     {
+      "el": "button#again.btn",
+      "right": 330,
+      "width": 87
+     },
+     {
+      "el": "aside",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div",
+      "right": 676,
+      "width": 648
+     }
+    ]
+   },
+   "with_fix": {
+    "scrollWidth": 653,
+    "overflow_px": 333,
+    "culprits": [
+     {
+      "el": "button#again.btn",
+      "right": 330,
+      "width": 87
+     }
+    ]
+   }
+  },
+  "360": {
+   "as_is": {
+    "scrollWidth": 676,
+    "overflow_px": 316,
+    "culprits": [
+     {
+      "el": "aside",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div#kpis.kpis",
+      "right": 676,
+      "width": 648
+     }
+    ]
+   },
+   "with_fix": {
+    "scrollWidth": 653,
+    "overflow_px": 293,
+    "culprits": []
+   }
+  },
+  "390": {
+   "as_is": {
+    "scrollWidth": 676,
+    "overflow_px": 286,
+    "culprits": [
+     {
+      "el": "aside",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div#kpis.kpis",
+      "right": 676,
+      "width": 648
+     }
+    ]
+   },
+   "with_fix": {
+    "scrollWidth": 653,
+    "overflow_px": 263,
+    "culprits": []
+   }
+  },
+  "414": {
+   "as_is": {
+    "scrollWidth": 676,
+    "overflow_px": 262,
+    "culprits": [
+     {
+      "el": "aside",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div#kpis.kpis",
+      "right": 676,
+      "width": 648
+     }
+    ]
+   },
+   "with_fix": {
+    "scrollWidth": 653,
+    "overflow_px": 239,
+    "culprits": []
+   }
+  },
+  "480": {
+   "as_is": {
+    "scrollWidth": 676,
+    "overflow_px": 196,
+    "culprits": [
+     {
+      "el": "aside",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div#kpis.kpis",
+      "right": 676,
+      "width": 648
+     }
+    ]
+   },
+   "with_fix": {
+    "scrollWidth": 653,
+    "overflow_px": 173,
+    "culprits": []
+   }
+  },
+  "600": {
+   "as_is": {
+    "scrollWidth": 676,
+    "overflow_px": 76,
+    "culprits": [
+     {
+      "el": "aside",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div#kpis.kpis",
+      "right": 676,
+      "width": 648
+     }
+    ]
+   },
+   "with_fix": {
+    "scrollWidth": 653,
+    "overflow_px": 53,
+    "culprits": []
+   }
+  },
+  "640": {
+   "as_is": {
+    "scrollWidth": 676,
+    "overflow_px": 36,
+    "culprits": [
+     {
+      "el": "aside",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div",
+      "right": 676,
+      "width": 648
+     },
+     {
+      "el": "div#kpis.kpis",
+      "right": 676,
+      "width": 648
+     }
+    ]
+   },
+   "with_fix": {
+    "scrollWidth": 653,
+    "overflow_px": 13,
+    "culprits": []
+   }
+  },
+  "700": {
+   "as_is": {
+    "scrollWidth": 700,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 700,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  },
+  "768": {
+   "as_is": {
+    "scrollWidth": 768,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 768,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  },
+  "820": {
+   "as_is": {
+    "scrollWidth": 820,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 820,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  },
+  "960": {
+   "as_is": {
+    "scrollWidth": 960,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 960,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  },
+  "1024": {
+   "as_is": {
+    "scrollWidth": 1024,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 1024,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  },
+  "1280": {
+   "as_is": {
+    "scrollWidth": 1280,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 1280,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  },
+  "1440": {
+   "as_is": {
+    "scrollWidth": 1440,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 1440,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  },
+  "1920": {
+   "as_is": {
+    "scrollWidth": 1920,
+    "overflow_px": 0,
+    "culprits": []
+   },
+   "with_fix": {
+    "scrollWidth": 1920,
+    "overflow_px": 0,
+    "culprits": []
+   }
+  }
+ },
+ "overlaps_and_header": {
+  "1440": [],
+  "1440_header": {
+   "header_h": 69,
+   "btn": [
+    145,
+    41
+   ],
+   "tagline": [
+    283,
+    22
+   ]
+  },
+  "820": [],
+  "820_header": {
+   "header_h": 69,
+   "btn": [
+    145,
+    41
+   ],
+   "tagline": [
+    283,
+    22
+   ]
+  },
+  "390": [],
+  "390_header": {
+   "header_h": 118,
+   "btn": [
+    87,
+    90
+   ],
+   "tagline": [
+    113,
+    87
+   ]
+  }
+ },
+ "contrast_text_fails": [],
+ "contrast_text_lowest_passing": [
+  {
+   "sel": "#q::placeholder",
+   "text": "e.g. Which product sold the mo",
+   "fg": "#757575",
+   "bg": "#ffffff",
+   "ratio": 4.61,
+   "size": 16,
+   "need": 4.5,
+   "count": 1,
+   "pass": true
+  },
+  {
+   "sel": "em.up",
+   "text": "+16%",
+   "fg": "#2e7d4f",
+   "bg": "#ffffff",
+   "ratio": 5.05,
+   "size": 13,
+   "bold": false,
+   "need": 4.5,
+   "count": 1,
+   "pass": true
+  },
+  {
+   "sel": "span.badge",
+   "text": "Please double-check this one",
+   "fg": "#8a5a00",
+   "bg": "#fbefd3",
+   "ratio": 5.19,
+   "size": 13,
+   "bold": false,
+   "need": 4.5,
+   "count": 1,
+   "pass": true
+  },
+  {
+   "sel": "p.",
+   "text": "Drop in a sales, donations or expenses f",
+   "fg": "#586674",
+   "bg": "#eef2f3",
+   "ratio": 5.22,
+   "size": 18,
+   "bold": false,
+   "need": 4.5,
+   "count": 1,
+   "pass": true
+  },
+  {
+   "sel": "p.",
+   "text": "The average monthly amount in the most r",
+   "fg": "#586674",
+   "bg": "#eef2f3",
+   "ratio": 5.22,
+   "size": 14,
+   "bold": false,
+   "need": 4.5,
+   "count": 3,
+   "pass": true
+  },
+  {
+   "sel": "p#meta.note",
+   "text": "9,046 rows, 6 columns. Main measure: amo",
+   "fg": "#586674",
+   "bg": "#eef2f3",
+   "ratio": 5.22,
+   "size": 14,
+   "bold": false,
+   "need": 4.5,
+   "count": 1,
+   "pass": true
+  },
+  {
+   "sel": "pre.",
+   "text": "SELECT region, AVG(amount) AS avg_order ",
+   "fg": "#586674",
+   "bg": "#eef2f3",
+   "ratio": 5.22,
+   "size": 13,
+   "bold": false,
+   "need": 4.5,
+   "count": 1,
+   "pass": true
+  },
+  {
+   "sel": "small.",
+   "text": "datetime64[us]",
+   "fg": "#586674",
+   "bg": "#f9fafb",
+   "ratio": 5.63,
+   "size": 10.8333,
+   "bold": false,
+   "need": 4.5,
+   "count": 6,
+   "pass": true
+  }
+ ],
+ "contrast_nontext": [
+  {
+   "control": "Ask text input border",
+   "border": "#d6dde1",
+   "against": "#ffffff",
+   "ratio": 1.37,
+   "need": 3,
+   "pass": false
+  },
+  {
+   "control": "Forecast periods input border",
+   "border": "#d6dde1",
+   "against": "#ffffff",
+   "ratio": 1.37,
+   "need": 3,
+   "pass": false
+  },
+  {
+   "control": "Forecast select border",
+   "border": "#d6dde1",
+   "against": "#ffffff",
+   "ratio": 1.37,
+   "need": 3,
+   "pass": false
+  },
+  {
+   "control": "Inactive preview tab border",
+   "border": "#d6dde1",
+   "against": "#ffffff",
+   "ratio": 1.37,
+   "need": 3,
+   "pass": false
+  },
+  {
+   "control": "Suggestion chip fill (no border)",
+   "border": "#e3eeed",
+   "against": "#ffffff",
+   "ratio": 1.19,
+   "need": 3,
+   "pass": false
+  },
+  {
+   "control": "Focus ring (amber #C77F00) on white",
+   "border": "#c77f00",
+   "against": "#ffffff",
+   "ratio": 3.25,
+   "need": 3,
+   "pass": true
+  },
+  {
+   "control": "Focus ring (amber) on page background #EEF2F3",
+   "border": "#c77f00",
+   "against": "#eef2f3",
+   "ratio": 2.88,
+   "need": 3,
+   "pass": false
+  }
+ ],
+ "contrast_all_rows_count": 44,
+ "contrast_hover_fgo": [
+  "rgb(255, 255, 255)",
+  "rgb(8, 63, 64)"
+ ],
+ "disabled_forecast_btn_style": {
+  "disabled": true,
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgb(14, 107, 107)",
+  "opacity": "1",
+  "cursor": "pointer"
+ },
+ "keyboard.hero_tab_stops": [
+  {
+   "el": "button#pick.btn",
+   "text": "Choose a file",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(255, 255, 255)",
+   "visible_in_viewport": true,
+   "y": 413,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#demo.btn.ghost",
+   "text": "Try sample shop data",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(14, 107, 107)",
+   "visible_in_viewport": true,
+   "y": 413,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  null,
+  {
+   "el": "button#pick.btn",
+   "text": "Choose a file",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(255, 255, 255)",
+   "visible_in_viewport": true,
+   "y": 413,
+   "matches_focus_visible": true,
+   "tabindex": null
+  }
+ ],
+ "keyboard.enter_on_demo_button": {
+  "focused": {
+   "el": "button#demo.btn.ghost",
+   "text": "Try sample shop data",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(14, 107, 107)",
+   "visible_in_viewport": true,
+   "y": 413,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  "dashboard_shown": "grid",
+  "focus_after": null
+ },
+ "keyboard.focus_after_render_is_body": true,
+ "keyboard.dashboard_tab_stops": [
+  {
+   "el": "input#q",
+   "text": "Question",
+   "outline": "none 0px rgb(0, 0, 0)",
+   "outlineOffset": "2px",
+   "shadow": "rgb(227, 238, 237) 0px 0px 0px 3px",
+   "border": "rgb(14, 107, 107)",
+   "visible_in_viewport": true,
+   "y": 312,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#go.btn",
+   "text": "Ask",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(255, 255, 255)",
+   "visible_in_viewport": true,
+   "y": 312,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button.chip",
+   "text": "Which product brings in the mo",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(8, 63, 64)",
+   "visible_in_viewport": true,
+   "y": 375,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button.chip",
+   "text": "How did amount change month ov",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(8, 63, 64)",
+   "visible_in_viewport": true,
+   "y": 375,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button.chip",
+   "text": "Which product is growing faste",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(8, 63, 64)",
+   "visible_in_viewport": true,
+   "y": 417,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#tab-raw.tab",
+   "text": "Raw Input",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 1700,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#tab-processed.tab.active",
+   "text": "Cleaned Output",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(14, 107, 107)",
+   "visible_in_viewport": true,
+   "y": 1700,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "div#preview-box.preview-table",
+   "text": "order_date\ndatetime64[us]\tprod",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 1748,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "select#fv",
+   "text": "quantity\nunit_price\namount",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 2320,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "select#fd",
+   "text": "order_date",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 2320,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "input#fp",
+   "text": "6",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 2319,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#fgo.btn",
+   "text": "Update forecast",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(255, 255, 255)",
+   "visible_in_viewport": true,
+   "y": 2316,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#again.btn",
+   "text": "Use another file",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(78, 140, 139)",
+   "visible_in_viewport": true,
+   "y": 14,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "input#q",
+   "text": "Question",
+   "outline": "none 0px rgb(0, 0, 0)",
+   "outlineOffset": "2px",
+   "shadow": "rgb(227, 238, 237) 0px 0px 0px 3px",
+   "border": "rgb(14, 107, 107)",
+   "visible_in_viewport": true,
+   "y": 312,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#go.btn",
+   "text": "Ask",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(255, 255, 255)",
+   "visible_in_viewport": true,
+   "y": 312,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button.chip",
+   "text": "Which product brings in the mo",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(8, 63, 64)",
+   "visible_in_viewport": true,
+   "y": 375,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button.chip",
+   "text": "How did amount change month ov",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(8, 63, 64)",
+   "visible_in_viewport": true,
+   "y": 375,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button.chip",
+   "text": "Which product is growing faste",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(8, 63, 64)",
+   "visible_in_viewport": true,
+   "y": 417,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#tab-raw.tab",
+   "text": "Raw Input",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 1700,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#tab-processed.tab.active",
+   "text": "Cleaned Output",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(14, 107, 107)",
+   "visible_in_viewport": true,
+   "y": 1700,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "div#preview-box.preview-table",
+   "text": "order_date\ndatetime64[us]\tprod",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 1748,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "select#fv",
+   "text": "quantity\nunit_price\namount",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 2320,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "select#fd",
+   "text": "order_date",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 2320,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "input#fp",
+   "text": "6",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(214, 221, 225)",
+   "visible_in_viewport": true,
+   "y": 2319,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#fgo.btn",
+   "text": "Update forecast",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(255, 255, 255)",
+   "visible_in_viewport": true,
+   "y": 2316,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#again.btn",
+   "text": "Use another file",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(78, 140, 139)",
+   "visible_in_viewport": true,
+   "y": 14,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "input#q",
+   "text": "Question",
+   "outline": "none 0px rgb(0, 0, 0)",
+   "outlineOffset": "2px",
+   "shadow": "rgb(227, 238, 237) 0px 0px 0px 3px",
+   "border": "rgb(14, 107, 107)",
+   "visible_in_viewport": true,
+   "y": 312,
+   "matches_focus_visible": true,
+   "tabindex": null
+  },
+  {
+   "el": "button#go.btn",
+   "text": "Ask",
+   "outline": "solid 3px rgb(199, 127, 0)",
+   "outlineOffset": "2px",
+   "shadow": "",
+   "border": "rgb(255, 255, 255)",
+   "visible_in_viewport": true,
+   "y": 312,
+   "matches_focus_visible": true,
+   "tabindex": null
+  }
+ ],
+ "keyboard.chip_enter": {
+  "q": "Which product brings in the most amount?",
+  "qerr": "Plain-English questions need a Gemini API key (set GEMINI_API_KEY)."
+ },
+ "keyboard.triple_enter_ask_requests": 3,
+ "semantics.dashboard": {
+  "lang": "en",
+  "title": "Lumen: your data, explained",
+  "h1": 1,
+  "h1_visible": 0,
+  "headings": [
+   "H3:What matters most",
+   "H3:Findings",
+   "H3:What to do next",
+   "H3:Your data",
+   "H2:Ask a question",
+   "H2:At a glance",
+   "H2:Data Preview",
+   "H2:Forecast"
+  ],
+  "landmarks": [
+   "header",
+   "main",
+   "div[role=alert]",
+   "aside",
+   "section",
+   "div[role=alert]",
+   "section",
+   "section",
+   "section",
+   "div[role=alert]"
+  ],
+  "tabs": [
+   {
+    "text": "Raw Input",
+    "role": null,
+    "selected": null,
+    "pressed": null,
+    "cls": "tab"
+   },
+   {
+    "text": "Cleaned Output",
+    "role": null,
+    "selected": null,
+    "pressed": null,
+    "cls": "tab active"
+   }
+  ],
+  "tablist": false,
+  "charts": [
+   {
+    "id": "rc",
+    "role": null,
+    "label": null,
+    "labelledby": null
+   },
+   {
+    "id": "chart",
+    "role": null,
+    "label": null,
+    "labelledby": null
+   },
+   {
+    "id": "chart",
+    "role": null,
+    "label": null,
+    "labelledby": null
+   },
+   {
+    "id": "chart",
+    "role": null,
+    "label": null,
+    "labelledby": null
+   },
+   {
+    "id": "fchart",
+    "role": null,
+    "label": null,
+    "labelledby": null
+   }
+  ],
+  "live_regions": [
+   "uerr",
+   "qerr",
+   "ferr"
+  ],
+  "ans_is_live": false,
+  "ans_role": null,
+  "aria_busy_used": 0,
+  "busy_css": "opacity: 0.55; pointer-events: none;",
+  "imgs_without_alt": 0,
+  "svg_icons_hidden": [
+   "true"
+  ],
+  "inputs": [
+   {
+    "id": "file",
+    "label": null,
+    "aria": null
+   },
+   {
+    "id": "q",
+    "label": null,
+    "aria": "Question"
+   },
+   {
+    "id": "fv",
+    "label": "Predict \nquantity\nunit_price\na",
+    "aria": null
+   },
+   {
+    "id": "fd",
+    "label": "over time in \norder_date",
+    "aria": null
+   },
+   {
+    "id": "fp",
+    "label": "for the next  periods",
+    "aria": null
+   }
+  ],
+  "preview_th_scope": false,
+  "table_caption": false,
+  "meta_description": false,
+  "favicon_link": false,
+  "noscript": false,
+  "color_scheme_meta": false,
+  "skip_link": false,
+  "viewport": "width=device-width, initial-scale=1",
+  "aside_scrollable_without_tabindex": false
+ },
+ "aria_snapshot": "- banner:\n  - text: Lumen Upload a spreadsheet. Know what to do next.\n  - button \"Use another file\"\n- main:\n  - complementary:\n    - heading \"What matters most\" [level=3]\n    - paragraph: The average monthly amount in the most recent 8 months is 43% higher than in the first 8. Across product, a single value (Hoodie) accounts for 75% of total amount. You depend heavily on it.\n    - heading \"Findings\" [level=3]\n    - text: amount is up 43% over the period\n    - paragraph: The average monthly amount in the most recent 8 months is 43% higher than in the first 8.\n    - text: Hoodie drives 75% of amount\n    - paragraph: Across product, a single value (Hoodie) accounts for 75% of total amount. You depend heavily on it.\n    - text: amount moves with unit_price\n    - paragraph: amount and unit_price are strongly positively related (correlation 0.83). This shows they move together, not that one causes the other.\n    - heading \"What to do next\" [level=3]\n    - list:\n      - listitem: Find out what changed and repeat it.\n      - listitem: Protect what makes Hoodie work, and test whether other product values can grow.\n      - listitem: Track unit_price alongside amount and test changing it.\n    - heading \"Your data\" [level=3]\n    - paragraph: \"9,046 rows, 6 columns. Main measure: amount.\"\n  - text: Rows analysed\n  - strong: 9,046\n  - emphasis\n  - text: Total amount\n  - strong: 8.3M\n  - emphasis\n  - text: Latest full month\n  - strong: 622k\n  - emphasis: +16% vs previous month\n  - text: Best month\n  - strong: 622k\n  - emphasis: Dec 2025\n  - heading \"Ask a question\" [level=2]\n  - paragraph: Type it the way you would ask a colleague.\n  - textbox \"Question\":\n    - /placeholder: e.g. Which product sold the most last quarter?\n    - text: bar\n  - button \"Ask\"\n  - button \"Which product brings in the most amount?\"\n  - button \"How did amount change month over month?\"\n  - button \"Which product is growing fastest?\"\n  - alert\n  - text: Answer checked against the data\n  - paragraph: Hoodie leads with 6,195,600 in sales, far ahead of Mug (800,700) and Tote bag (763,500). Sticker pack is the smallest at 112,980.\n  - img: 6.2M 801k 764k 425k 113k Sticker pack Notebook Tote bag Mug Hoodie\n  - img\n  - img\n  - group: How this was worked out\n  - heading \"At a glance\" [level=2]\n  - paragraph: Charts picked automatically from your columns.\n  - paragraph: amount by month\n  - img: Peak 622k Jan 2024 Apr 2024 Jul 2024 Oct 2024 Jan 2025 Apr 2025 Jul 2025 Oct 2025 Jan 2026 0 100k 200k 300k 400k 500k 600k\n  - img\n  - img\n  - paragraph: amount by product\n  - img: 6.2M 801k 764k 425k 113k Sticker pack Notebook Tote bag Mug Hoodie\n  - img\n  - img\n  - paragraph: amount by region\n  - img: 2.9M 2.5M 1.7M 1.2M South North Online Campus\n  - img\n  - img\n  - heading \"Data Preview\" [level=2]\n  - paragraph: View your data before and after automatic cleaning.\n  - button \"Raw Input\"\n  - button \"Cleaned Output\"\n  - table:\n    - rowgroup:\n      - row \"order_date datetime64[us] product str region str quantity int64 unit_price int64 amount int64\":\n        - columnheader \"order_date datetime64[us]\"\n        - columnheader \"product str\"\n        - columnheader \"region str\"\n        - columnheader \"quantity int64\"\n        - columnheader \"unit_price int64\"\n        - columnheader \"amount int64\"\n    - rowgroup:\n      - row \"2024-01-01T00:00:00 Hoodie North 1 900 900\":\n        - cell \"2024-01-01T00:00:00\"\n        - cell \"Hoodie\"\n        - cell \"North\"\n        - cell \"1\"\n        - cell \"900\"\n        - cell ",
+ "busy_vs_keyboard.forecast_requests_from_3_key_presses": 3,
+ "perf": {
+  "navigation_ms (all third-party served locally by the harness, so CDN latency NOT included)": {
+   "dcl": 188,
+   "load": 244,
+   "fcp": 220,
+   "lcp": 220,
+   "html_transfer": 25167,
+   "html_decoded": 25167
+  },
+  "click_demo_to_dashboard_s": 1.16,
+  "fetches[name,ms,bytes]": [
+   [
+    "/api/demo",
+    392,
+    5179
+   ],
+   [
+    "/api/forecast",
+    418,
+    981
+   ]
+  ],
+  "dom": {
+   "nodes": 847,
+   "plots": 4,
+   "heap_mb": 10,
+   "long": [
+    [
+     781,
+     153
+    ]
+   ]
+  },
+  "third_party_origins_contacted": [
+   "https://cdn.plot.ly",
+   "https://fonts.googleapis.com",
+   "https://fonts.gstatic.com"
+  ],
+  "plotly_basic_2.35.2_bytes_raw": 1071091,
+  "plotly_gzip9_bytes": 354279,
+  "fonts_woff2_bytes_vendored_latin_subset": 97044,
+  "index_html_bytes": 25167,
+  "index_html_gzip_bytes": 7919,
+  "est_download_1.6Mbps_slow4g_s_for_plotly_gz": 1.8,
+  "est_download_10Mbps_s_for_plotly_gz": 0.28
+ },
+ "render_blocking": [
+  {
+   "tag": "LINK",
+   "src": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap",
+   "async": null,
+   "defer": null
+  },
+  {
+   "tag": "SCRIPT",
+   "src": "https://cdn.plot.ly/plotly-basic-2.35.2.min.js",
+   "async": false,
+   "defer": false
+  }
+ ],
+ "server_headers": {
+  "headers": {
+   "date": "Fri, 09 Oct 2026 17:27:03 GMT",
+   "server": "uvicorn",
+   "content-type": "text/html; charset=utf-8",
+   "accept-ranges": "bytes",
+   "content-length": "25167",
+   "last-modified": "Fri, 09 Oct 2026 15:40:58 GMT",
+   "etag": "\"5d5d2e8c54afbf62adbf36742dad8c9c\"",
+   "connection": "close"
+  },
+  "gzip_middleware_active": false,
+  "csp": false,
+  "cache-control": null,
+  "etag": "\"5d5d2e8c54afbf62adbf36742dad8c9c\""
+ },
+ "reduced_motion": {
+  "reduce": {
+   "animationName": "none",
+   "matchMedia": true
+  },
+  "normal_animationName": "s",
+  "other_transitions": "only .btn background .15s, #drop background .15s (both harmless)"
+ },
+ "print.demo": {
+  "pdf_pages_A4": 4,
+  "aside_clipped_in_print": false,
+  "has_print_css": false
+ },
+ "print.donations": {
+  "pdf_pages_A4": 4,
+  "aside_clipped_in_print": true,
+  "has_print_css": false
+ }
+}

@@ -1,0 +1,115 @@
+pandas 3.0.6
+
+=== schema_text under this pandas
+Table `data` with columns:
+- date (datetime64[us]) e.g. ['2024-01-07', '2024-01-14', '2024-01-21']
+- revenue (int64) e.g. ['13143', '43429', '18688']
+- conversion_pct (float64) e.g. ['8.8', '8.6', '6.0']
+- repeat_customer (boolean) e.g. ['False', 'True']
+- paid (bool) e.g. ['False', 'True']
+
+=== answer() post-processing with real DuckDB over the processed frames
+[donations.csv] "SELECT date_trunc('month', date) AS month, sum(amount) AS total FROM data GROUP BY 1 ORDER"
+     -> 200 {"sql": "SELECT date_trunc('month', date) AS month, sum(amount) AS total FROM data GROUP BY 1 ORDER BY 1 LIMIT 3", "chart": {"type": "line", "x": "month", "y": "total"}, "columns": ["month", "total"], "rows": [["2023-01-01T00:00:00", 7816.2800000000025], ["202
+[donations.csv] 'SELECT campaign, sum(amount) AS total FROM data GROUP BY 1 ORDER BY 2 DESC'
+     -> 200 {"sql": "SELECT campaign, sum(amount) AS total FROM data GROUP BY 1 ORDER BY 2 DESC", "chart": {"type": "bar", "x": "campaign", "y": "total"}, "columns": ["campaign", "total"], "rows": [["Annual Appeal", 70895.21], ["Monthly", 50227.53000000003], ["Giving Tues
+[pct_bool_thousands.csv] 'SELECT paid, repeat_customer, count(*) AS n FROM data GROUP BY 1,2 ORDER BY 1,2'
+     -> 200 {"sql": "SELECT paid, repeat_customer, count(*) AS n FROM data GROUP BY 1,2 ORDER BY 1,2", "chart": {"type": "table"}, "columns": ["paid", "repeat_customer", "n"], "rows": [[0, 0, 44], [0, 1, 44], [1, 0, 35], [1, 1, 27]], "verified": 1, "answer": "ok", "caveat
+[donations.csv] 'SELECT max(date) - min(date) AS span FROM data'
+     -> 200 {"sql": "SELECT max(date) - min(date) AS span FROM data", "chart": {"type": "table"}, "columns": ["span"], "rows": [[62985600.0]], "verified": 1, "answer": "ok", "caveats": ""}
+[donations.csv] 'SELECT CAST(sum(amount) AS DECIMAL(18,2)) AS t FROM data'
+     -> 200 {"sql": "SELECT CAST(sum(amount) AS DECIMAL(18,2)) AS t FROM data", "chart": {"type": "table"}, "columns": ["t"], "rows": [[177265.17]], "verified": 1, "answer": "ok", "caveats": ""}
+     [run_sql raised] BinderException Binder Error: column "amount" must appear in the GROUP BY clause or must be part of an aggregate function. Either add it to the GROUP BY lis
+[donations.csv] 'SELECT amount / 0 AS inf_val, NULL AS n, sum(amount) FILTER (WHERE amount < 0) AS empty_su'
+     -> 400 {"detail": "Couldn't answer that question safely: 'sql'"}
+[donations.csv] 'SELECT count(*) AS n FROM data'
+     -> 200 {"sql": "SELECT count(*) AS n FROM data", "chart": {"type": "number", "x": "n", "y": "n"}, "columns": ["n"], "rows": [[3000]], "verified": 1, "answer": "ok", "caveats": ""}
+[donations.csv] 'SELECT list(DISTINCT channel) AS chans FROM data'
+     -> 200 {"sql": "SELECT list(DISTINCT channel) AS chans FROM data", "chart": {"type": "table"}, "columns": ["chans"], "rows": [[["Online", "Bank transfer", "Cheque", "Cash"]]], "verified": 1, "answer": "ok", "caveats": ""}
+[donations.csv] "SELECT {'a': 1} AS s"
+     -> 200 {"sql": "SELECT {'a': 1} AS s", "chart": {"type": "table"}, "columns": ["s"], "rows": [[{"a": 1}]], "verified": 1, "answer": "ok", "caveats": ""}
+[donations.csv] 'SELECT CAST(date AS DATE) AS d FROM data LIMIT 2'
+     -> 200 {"sql": "SELECT CAST(date AS DATE) AS d FROM data LIMIT 2", "chart": {"type": "table"}, "columns": ["d"], "rows": [["2023-01-01T00:00:00"], ["2023-01-01T00:00:00"]], "verified": 1, "answer": "ok", "caveats": ""}
+[donations.csv] "SELECT strftime(date, '%Y-%m') AS ym, sum(amount) FROM data GROUP BY 1 ORDER BY 1 LIMIT 2"
+     -> 200 {"sql": "SELECT strftime(date, '%Y-%m') AS ym, sum(amount) FROM data GROUP BY 1 ORDER BY 1 LIMIT 2", "chart": {"type": "table"}, "columns": ["ym", "sum(amount)"], "rows": [["2023-01", 7816.2800000000025], ["2023-02", 4417.559999999997]], "verified": 1, "answer
+     [run_sql raised] ParserException Parser Error: unterminated quoted string at or near "'a) LIMIT 1000"  LINE 1: SELECT * FROM (SELECT 'a) LIMIT 1000                          
+[donations.csv] "SELECT 'a--b' AS s FROM data LIMIT 1"
+     -> 400 {"detail": "Couldn't answer that question safely: 'sql'"}
+     [run_sql raised] ValueError Only one query is allowed.
+[donations.csv] "SELECT * FROM data WHERE donor LIKE '%;%' LIMIT 1"
+     -> 400 {"detail": "Couldn't answer that question safely: 'sql'"}
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+[donations.csv] "SELECT * FROM data WHERE campaign = 'Set up' LIMIT 1"
+     -> 400 {"detail": "Couldn't answer that question safely: 'sql'"}
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+[edge_reserved_cols.csv] 'SELECT "group", sum("set") AS s FROM data GROUP BY 1'
+     -> 400 {"detail": "Couldn't answer that question safely: 'sql'"}
+[edge_reserved_cols.csv] 'SELECT "group", sum("order") AS s FROM data GROUP BY 1'
+     -> 200 {"sql": "SELECT \"group\", sum(\"order\") AS s FROM data GROUP BY 1", "chart": {"type": "table"}, "columns": ["group", "s"], "rows": [["b", 72.0], ["c", 111.0], ["a", 126.0]], "verified": 1, "answer": "ok", "caveats": ""}
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+[edge_reserved_cols.csv] 'SELECT "update", count(*) FROM data GROUP BY 1'
+     -> 400 {"detail": "Couldn't answer that question safely: 'sql'"}
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+[edge_reserved_cols.csv] 'SELECT sum("load"), sum("export"), sum("call") FROM data'
+     -> 400 {"detail": "Couldn't answer that question safely: 'sql'"}
+[hindi_headers.csv] 'SELECT "शहर", sum("र_श") AS total FROM data GROUP BY 1'
+     -> 200 {"sql": "SELECT \"\u0936\u0939\u0930\", sum(\"\u0930_\u0936\") AS total FROM data GROUP BY 1", "chart": {"type": "table"}, "columns": ["\u0936\u0939\u0930", "total"], "rows": [["\u092a\u0941\u0923\u0947", 371955.9399999999], ["\u0926\u093f\u0932\u094d\u0932\u0
+
+=== sandbox / guard probes (run_sql directly)
+     [run_sql raised] CatalogException Catalog Error: Table with name /etc/hostname does not exist! Did you mean "sqlite_schema"?  LINE 1: SELECT * FROM (SELECT * FROM '/etc/hostn
+    0.0s "SELECT * FROM '/etc/hostname'"                                             CatalogException: Catalog Error: Table with name /etc/hostname does not exist!
+Did you mean "sqlite_schema"?
+
+LINE 1: SELECT * F
+     [run_sql raised] CatalogException Catalog Error: Table with name /etc/passwd does not exist! Did you mean "pg_class"?  LINE 1: SELECT * FROM (SELECT * FROM "/etc/passwd") LIM
+    0.0s 'SELECT * FROM "/etc/passwd"'                                               CatalogException: Catalog Error: Table with name /etc/passwd does not exist!
+Did you mean "pg_class"?
+
+LINE 1: SELECT * FROM (SE
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+    0.0s "SELECT * FROM read_text('/etc/passwd')"                                    ValueError: The query uses an operation that isn't allowed.
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+    0.0s "SELECT * FROM glob('/*')"                                                  ValueError: The query uses an operation that isn't allowed.
+    0.0s "SELECT current_setting('enable_external_access')"                          OK rows=1 cols=["current_setting('enable_external_access')"]
+    0.0s 'SELECT * FROM pragma_database_size()'                                      OK rows=1 cols=['database_name', 'database_size', 'block_size']
+    0.0s "SELECT * FROM pragma_table_info('data')"                                   OK rows=5 cols=['cid', 'name', 'type']
+    0.0s 'SELECT version()'                                                          OK rows=1 cols=['"version"()']
+    0.0s 'SELECT * FROM information_schema.tables'                                   OK rows=1 cols=['table_catalog', 'table_schema', 'table_name']
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+    0.0s 'SELECT * FROM duckdb_settings()'                                           ValueError: The query uses an operation that isn't allowed.
+     [run_sql raised] CatalogException Catalog Error: Scalar Function with name getenv does not exist! Did you mean "get_current_time"?  LINE 1: SELECT * FROM (SELECT getenv('HOME
+    0.0s "SELECT getenv('HOME')"                                                     CatalogException: Catalog Error: Scalar Function with name getenv does not exist!
+Did you mean "get_current_time"?
+
+LINE 1: SELE
+    0.0s 'SELECT * FROM range(3)'                                                    OK rows=3 cols=['range']
+     [run_sql raised] ValueError Only one query is allowed.
+    0.0s 'SELECT 1; SELECT 2'                                                        ValueError: Only one query is allowed.
+     [run_sql raised] ValueError Only one query is allowed.
+    0.0s 'SELECT 1 /* x */ ; DROP TABLE data'                                        ValueError: Only one query is allowed.
+    0.0s 'WITH x AS (SELECT 1) SELECT * FROM x'                                      OK rows=1 cols=['1']
+     [run_sql raised] ValueError Only SELECT queries are allowed.
+    0.0s '(SELECT 1)'                                                                ValueError: Only SELECT queries are allowed.
+    0.0s '  \n select 1'                                                             OK rows=1 cols=['1']
+    0.9s 'SELECT * FROM data a, data b, data c, data d LIMIT 1'                      OK rows=1 cols=['donor', 'date', 'amount']
+    0.5s "SELECT repeat('x', 100000000) AS big"                                      OK rows=1 cols=['big']
+     [run_sql raised] InterruptException INTERRUPT Error: Interrupted!
+    3.0s 'SELECT count(*) FROM range(100000000000)'                                  InterruptException: INTERRUPT Error: Interrupted!
+    0.1s 'SELECT 1 FROM data WHERE 1=1 -- hi'                                        OK rows=1000 cols=['1']
+     [run_sql raised] ParserException Parser Error: SELECT INTO not supported!
+    0.0s "SELECT 'x' INTO t"                                                         ParserException: Parser Error: SELECT INTO not supported!
+     [run_sql raised] ValueError The query uses an operation that isn't allowed.
+    0.0s "SELECT * FROM data UNION ALL SELECT * FROM read_csv('x')"                  ValueError: The query uses an operation that isn't allowed.
+     [run_sql raised] ValueError Only SELECT queries are allowed.
+    0.0s 'EXPLAIN SELECT 1'                                                          ValueError: Only SELECT queries are allowed.
+     [run_sql raised] ValueError Only SELECT queries are allowed.
+    0.0s 'DESCRIBE data'                                                             ValueError: Only SELECT queries are allowed.
+     [run_sql raised] ValueError Only SELECT queries are allowed.
+    0.0s 'SHOW TABLES'                                                               ValueError: Only SELECT queries are allowed.
+     [run_sql raised] ValueError Only SELECT queries are allowed.
+    0.0s 'SUMMARIZE data'                                                            ValueError: Only SELECT queries are allowed.
+     [run_sql raised] ValueError Only SELECT queries are allowed.
+    0.0s 'PIVOT data ON channel USING sum(amount)'                                   ValueError: Only SELECT queries are allowed.
+     [run_sql raised] ValueError Only SELECT queries are allowed.
+    0.0s 'FROM data SELECT count(*)'                                                 ValueError: Only SELECT queries are allowed.
+    0.0s 'SELECT * FROM data TABLESAMPLE 1%'                                         OK rows=0 cols=['donor', 'date', 'amount']

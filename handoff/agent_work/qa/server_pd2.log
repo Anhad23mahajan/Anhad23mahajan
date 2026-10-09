@@ -1,0 +1,195 @@
+INFO:     Started server process [1880]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18712 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51460 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1340: RuntimeWarning: divide by zero encountered in log
+  aic = self.nobs * np.log(sse / self.nobs) + k * 2
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1347: RuntimeWarning: divide by zero encountered in log
+  bic = self.nobs * np.log(sse / self.nobs) + k * np.log(self.nobs)
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+ERROR:root:Upload processing failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 42, in upload
+    processed_df = A.preprocess_df(raw_df)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 229, in preprocess_df
+    date_series = try_parse_dates(df[c], c)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 121, in try_parse_dates
+    if pd.api.types.is_string_dtype(series) or pd.api.types.is_object_dtype(series) or isinstance(series.dtype, pd.CategoricalDtype):
+                                                                                                  ^^^^^^^^^^^^
+  File "/home/user/work/venv_pd2/lib/python3.13/site-packages/pandas/core/generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'DataFrame' object has no attribute 'dtype'. Did you mean: 'dtypes'?
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:85: RuntimeWarning: overflow encountered in matmul
+  return err.T @ err
+/home/user/work/venv_pd2/lib/python3.13/site-packages/scipy/optimize/_numdiff.py:710: RuntimeWarning: invalid value encountered in subtract
+  df = [f_eval - f0 for f_eval in f_evals]
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1337: RuntimeWarning: overflow encountered in matmul
+  sse = err.T @ err
+/home/user/work/venv_pd2/lib/python3.13/site-packages/pandas/core/nanops.py:1016: RuntimeWarning: overflow encountered in square
+  sqr = _ensure_numeric((avg - values) ** 2)
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+/home/user/work/venv_pd2/lib/python3.13/site-packages/numpy/_core/_methods.py:52: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+/home/user/work/venv_pd2/lib/python3.13/site-packages/numpy/_core/_methods.py:52: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1065: ConvergenceWarning: Optimization failed to converge. Check mle_retvals.
+  res = self._optimize_parameters(res, use_brute, method, minimize_kwargs)
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv_pd2/lib/python3.13/site-packages/statsmodels/tsa/holtwinters/model.py:1299: RuntimeWarning: invalid value encountered in subtract
+  b[i] = (beta * detrend(lvls[i], lvls[i - 1])) + (
+/home/user/work/venv_pd2/lib/python3.13/site-packages/numpy/_core/_methods.py:52: RuntimeWarning: invalid value encountered in reduce
+  return umr_sum(a, axis, dtype, out, keepdims, initial, where)
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+/home/user/Anhad23mahajan/lumen/app/analytics.py:68: ParserWarning: Length of header or names does not match length of data. This leads to a loss of data with index_col=False.
+  try: df = pd.read_csv(io.StringIO(text), sep=None, engine="python", index_col=False)
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+/home/user/Anhad23mahajan/lumen/app/analytics.py:224: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  df[c] = df[c].replace(r"^\s*$", np.nan, regex=True)
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+ERROR:root:Upload processing failed
+Traceback (most recent call last):
+  File "/home/user/Anhad23mahajan/lumen/app/main.py", line 42, in upload
+    processed_df = A.preprocess_df(raw_df)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 229, in preprocess_df
+    date_series = try_parse_dates(df[c], c)
+  File "/home/user/Anhad23mahajan/lumen/app/analytics.py", line 147, in try_parse_dates
+    years = parsed.dropna().dt.year
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/user/work/venv_pd2/lib/python3.13/site-packages/pandas/core/generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/home/user/work/venv_pd2/lib/python3.13/site-packages/pandas/core/accessor.py", line 224, in __get__
+    accessor_obj = self._accessor(obj)
+  File "/home/user/work/venv_pd2/lib/python3.13/site-packages/pandas/core/indexes/accessors.py", line 643, in __new__
+    raise AttributeError("Can only use .dt accessor with datetimelike values")
+AttributeError: Can only use .dt accessor with datetimelike values. Did you mean: 'at'?
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51562 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/forecast HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/upload HTTP/1.1" 413 Content Too Large
+INFO:     127.0.0.1:35784 - "POST /api/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35784 - "POST /api/forecast HTTP/1.1" 200 OK

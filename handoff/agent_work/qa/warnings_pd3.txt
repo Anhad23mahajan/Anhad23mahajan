@@ -1,0 +1,32 @@
+pandas 3.0.6 numpy 2.5.3
+RuntimeWarning         site-packages/statsmodels:1340     x2   divide by zero encountered in log
+      e.g. ['edge_all_zero.csv', 'edge_all_zero.csv']
+RuntimeWarning         site-packages/statsmodels:1347     x2   divide by zero encountered in log
+      e.g. ['edge_all_zero.csv', 'edge_all_zero.csv']
+RuntimeWarning         site-packages/statsmodels:85       x1257 overflow encountered in matmul
+      e.g. ['edge_huge_values.csv', 'edge_huge_values.csv', 'edge_huge_values.csv']
+RuntimeWarning         site-packages/scipy:710            x5   invalid value encountered in subtract
+      e.g. ['edge_huge_values.csv', 'edge_huge_values.csv', 'edge_huge_values.csv']
+ConvergenceWarning     site-packages/statsmodels:1065     x2   Optimization failed to converge. Check mle_retvals.
+      e.g. ['edge_huge_values.csv', 'edge_inf_values.csv']
+RuntimeWarning         site-packages/statsmodels:1337     x2   overflow encountered in matmul
+      e.g. ['edge_huge_values.csv', 'edge_huge_values.csv']
+RuntimeWarning         site-packages/pandas:1028          x1   overflow encountered in square
+      e.g. ['edge_huge_values.csv']
+RuntimeWarning         site-packages/numpy:49             x3   invalid value encountered in reduce
+      e.g. ['edge_inf_values.csv', 'edge_inf_values.csv', 'edge_inf_values.csv']
+RuntimeWarning         site-packages/statsmodels:1299     x2   invalid value encountered in subtract
+      e.g. ['edge_inf_values.csv', 'edge_inf_values.csv']
+ParserWarning          app/analytics.py:68                x1   Length of header or names does not match length of data. This leads to a loss of data with index_col=False.
+      e.g. ['edge_ragged.csv']
+--- exceptions (pipeline level)
+  csv_named_xlsx.xlsx -> ValueError: Could not read Excel file: Excel file format cannot be determined, you must specify an engine manual
+  edge_binary_garbage.csv -> ValueError: Could not parse CSV file: new-line character seen in unquoted field - do you need to open the file w
+  edge_dup_cols.csv -> AttributeError: 'DataFrame' object has no attribute 'dtype'
+  edge_empty.csv -> ValueError: The file has no rows.
+  edge_header_only.csv -> ValueError: The file has no rows.
+  edge_html_page.csv -> ValueError: The file has no rows.
+  edge_newlines_only.csv -> ValueError: The file has no rows.
+  legacy.xls -> ValueError: Could not read Excel file: `Import xlrd` failed. Install xlrd >= 2.0.1 for xls Excel support Use pip
+  tz_mixed_offsets.csv -> ValueError: Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIndex to convert to a 
+  utf16_tab.txt.csv -> ValueError: The file contains only empty cells.

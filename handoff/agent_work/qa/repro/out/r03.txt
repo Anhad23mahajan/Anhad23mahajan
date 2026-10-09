@@ -1,0 +1,55 @@
+pandas 3.0.6 numpy 2.5.3
+
+====================================================================================================
+A) 73 days, ~1000/day, flat, Mon 3 Mar .. Wed 14 May: weekly bins; last bin is only Mon-Wed
+====================================================================================================
+--- daily_70d_midweek.csv   (truth: flat ~7000/week; no trend, no anomaly, last week incomplete)
+   KPI {'label': 'Total sales', 'value': 72487.0, 'kind': 'num'}
+   KPI {'label': 'Latest full week', 'value': 3007.0, 'kind': 'num', 'delta': -58.4, 'vs': 'vs previous week'}
+   KPI {'label': 'Best week', 'value': 7222.0, 'kind': 'num', 'note': '11 May 2025'}
+   chart sales by week last points: [6948.0, 7222.0, 3007.0] | first points: [6833.0, 7118.0]
+   INSIGHT warn | sales is down 18% over the period | The average weekly sales in the most recent 3 weeks is 18% lower than in the first 3.
+   INSIGHT warn | Unusual week: 18 May 2025 | sales was 3,007 that week, far from the typical 6,940.
+
+====================================================================================================
+B) 12 months flat ~500/day starting 28 Mar 2024 (first month has 4 days)
+====================================================================================================
+--- starts_mid_month.csv   (truth: flat; the 4-day March bucket makes 'up 27%' and 'Unusual month')
+   KPI {'label': 'Total revenue', 'value': 183568.0, 'kind': 'num'}
+   KPI {'label': 'Latest full month', 'value': 15439.0, 'kind': 'num', 'delta': 11.6, 'vs': 'vs previous month'}
+   KPI {'label': 'Best month', 'value': 15662.0, 'kind': 'num', 'note': 'Oct 2024'}
+   chart revenue by month last points: [15352.0, 13830.0, 15439.0] | first points: [1987.0, 15108.0]
+   INSIGHT warn | Unusual month: 01 Mar 2024 | revenue was 1,987 that month, far from the typical 15,135.
+   INSIGHT warn | Unusual month: 01 Feb 2025 | revenue was 13,830 that month, far from the typical 15,135.
+   INSIGHT good | revenue is up 27% over the period | The average monthly revenue in the most recent 4 months is 27% higher than in the first 4.
+
+====================================================================================================
+C) daily data 1 Nov 2024 .. 30 Dec 2025 (Dec 31 simply had no sale)
+====================================================================================================
+--- ends_dec30.csv   (truth: December 2025 has 30/31 days and is the latest month; Lumen drops it)
+   KPI {'label': 'Total revenue', 'value': 212138.0, 'kind': 'num'}
+   KPI {'label': 'Latest full month', 'value': 14932.0, 'kind': 'num', 'delta': -3.5, 'vs': 'vs previous month'}
+   KPI {'label': 'Best month', 'value': 15781.0, 'kind': 'num', 'note': 'May 2025'}
+   chart revenue by month last points: [14698.0, 15476.0, 14932.0] | first points: [15032.0, 15510.0]
+
+====================================================================================================
+D) donations.csv: 2 years of donations, last donation on 30 Dec 2024; December is the biggest month
+====================================================================================================
+   last donation date: 2024-12-30
+--- donations.csv   (truth: Dec 2024 should be in the chart; it is dropped as 'incomplete')
+   KPI {'label': 'Total amount', 'value': 177265.2, 'kind': 'num'}
+   KPI {'label': 'Latest full month', 'value': 7547.8, 'kind': 'num', 'delta': 41.2, 'vs': 'vs previous month'}
+   KPI {'label': 'Best month', 'value': 13788.4, 'kind': 'num', 'note': 'Dec 2023'}
+   chart amount by month last points: [7420.88, 5344.17, 7547.8] | first points: [7816.28, 4417.56]
+   INSIGHT warn | Unusual month: 01 Dec 2023 | amount was 13,788 that month, far from the typical 6,770.
+   INSIGHT info | Annual Appeal drives 40% of amount | Across campaign, a single value (Annual Appeal) accounts for 40% of total amount. You depend heavily on it.
+
+====================================================================================================
+E) tz-aware / 120 days of 12-hourly rows ending Wed 30 Apr 12:00 -> weekly bins
+====================================================================================================
+--- tz_utc.csv   (truth: last week is 3.5 days; shown as 'Latest full week -70%' and anomaly)
+   KPI {'label': 'Total amount', 'value': 1236581.6, 'kind': 'num'}
+   KPI {'label': 'Latest full week', 'value': 25963.3, 'kind': 'num', 'delta': -70.4, 'vs': 'vs previous week'}
+   KPI {'label': 'Best week', 'value': 88961.1, 'kind': 'num', 'note': '16 Mar 2025'}
+   chart amount by week last points: [77914.92, 87797.04, 25963.34] | first points: [58299.58, 68423.69]
+   INSIGHT warn | Unusual week: 04 May 2025 | amount was 25,963 that week, far from the typical 69,604.

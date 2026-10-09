@@ -1,0 +1,44 @@
+<!-- 05-trust-panel.html : "How Lumen treats your data" strip + LIVE privacy receipt.   Effort S, risk low.
+     INSTALL: paste just before </body>.  It appends a full-width row to the hero grid (disappears with the hero).
+     The receipt is computed from the browser's own Resource Timing + GET /api/health, so it is only ever as good as reality:
+       - today (Plotly from cdn.plot.ly + Google Fonts) it honestly says "2-3 third-party hosts";
+       - after 01-vendor-assets it says "0 third-party requests" - a claim a judge can verify in DevTools.
+     Wording is deliberately accurate to README "Safety and trust": with a key, Gemini receives the column names, 3 sample values per
+     column, computed findings and query-result rows; without a key nothing leaves the server. -->
+<style>
+  #trust { grid-column: 1 / -1; margin-top: 8px }
+  #trust h2 { font-size: 20px; margin-bottom: 12px }
+  #trust .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 0; margin: 0; list-style: none }
+  #trust .steps li { background: var(--panel, #fff); border: 1px solid var(--rule, #D6DDE1); border-radius: var(--r, 8px); padding: 14px 16px; font-size: 14px; color: var(--muted, #586674) }
+  #trust .steps b { display: block; color: var(--ink, #14202B); font-size: 15px; margin-bottom: 2px }
+  #trust .steps i { font: 800 13px/1 'Bricolage Grotesque', sans-serif; font-style: normal; color: var(--teal, #0E6B6B); display: block; margin-bottom: 6px; letter-spacing: .06em }
+  #trust .receipt { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted, #586674) }
+  #trust .receipt b { color: var(--ink, #14202B) }
+  #trust .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--green, #2E7D4F) }
+  #trust .dot.warn { background: var(--amber, #C77F00) }
+  @media (max-width: 760px) { #trust .steps { grid-template-columns: 1fr } }
+</style>
+<script>
+(function () {
+  const hero = document.querySelector('#hero'); if (!hero || document.getElementById('trust')) return;
+  const t = document.createElement('section'); t.id = 'trust'; t.setAttribute('aria-labelledby', 'trust-h'); t.style.cssText = 'background:none;border:0;padding:0;margin-bottom:0';
+  t.innerHTML = '<h2 id="trust-h">How Lumen treats your data</h2><ol class="steps">'
+    + '<li><i>1 · YOUR FILE</i><b>Stays in memory</b>Parsed on the server, never written to disk. Restart the server and it is gone.</li>'
+    + '<li><i>2 · THE NUMBERS</i><b>Come from code, not guesses</b>Trends, odd spots and forecasts are plain statistics (pandas, statsmodels). Same file, same result.</li>'
+    + '<li><i>3 · THE AI</i><b>Only writes one read-only query</b>Gemini drafts a single SELECT that runs in a locked sandbox, is re-checked against the result, and shows you the SQL.</li></ol>'
+    + '<div class="receipt" id="receipt" aria-live="polite">Checking this page…</div>';
+  hero.appendChild(t);
+  const host = o => { try { return new URL(o).host } catch (e) { return '' } };
+  async function receipt() {
+    const third = [...new Set(performance.getEntriesByType('resource').map(r => host(r.name)).filter(h => h && h !== location.host))];
+    let ai = null; try { ai = (await (await fetch('/api/health')).json()).ai } catch (e) { }
+    document.getElementById('receipt').innerHTML =
+      '<span><span class="dot ' + (third.length ? 'warn' : '') + '"></span><b>' + (third.length ? third.length + ' third-party host' + (third.length > 1 ? 's' : '') : '0 third-party requests') + '</b> made by this page'
+      + (third.length ? ' (' + third.join(', ') + ')' : '') + '</span>'
+      + '<span><span class="dot ' + (ai ? 'warn' : '') + '"></span><b>AI ' + (ai === null ? 'status unknown' : ai ? 'is on' : 'is off') + '</b>: '
+      + (ai === null ? '' : ai ? 'column names, 3 sample values per column, computed findings and query results are sent to Google Gemini' : 'nothing leaves this server') + '</span>'
+      + '<span><b>Open source</b> (MIT): read exactly what runs</span>';
+  }
+  if (document.readyState === 'complete') receipt(); else addEventListener('load', receipt);
+})();
+</script>

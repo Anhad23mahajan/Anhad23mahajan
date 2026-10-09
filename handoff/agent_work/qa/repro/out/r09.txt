@@ -1,0 +1,19 @@
+1) forecast with an unknown/expired session id
+   -> 400 {"detail":"Could not generate forecast: 404: Session expired. Upload your file again."} 
+   expected: 404 'Session expired. Upload your file again.' (the /api/ask route returns exactly that)
+   /api/ask for comparison -> 404 {"detail":"Session expired. Upload your file again."}
+2) HEAD / and HEAD /api/health (uptime monitors, some PaaS health checks)
+   HEAD / -> 405
+   HEAD /api/health -> 405
+3) NUL byte in /assets path
+   -> HTTP/1.1 500 Internal Server Error
+4) validation errors are lists; the UI does `new Error(j.detail)` -> '[object Object]'
+    422 list (front-end shows: [{'type': 'missing', 'loc': ['body', 'date_col'], ...)
+5) a successful upload of garbage
+   binary garbage .csv -> 200 rows = 40 (expected 400 'does not look like CSV/Excel')
+   PDF bytes named .pdf -> 200 ['pdf_1_4']
+6) CSV content named .xlsx / .xls
+   donations.csv renamed .xlsx -> 400 Could not read Excel file: Excel file format cannot be determined, you must specify an engine manually.
+   real-format .xls (OLE2 magic) -> 400 Could not read Excel file: `Import xlrd` failed. Install xlrd >= 2.0.1 for xls Excel support Use pip or conda to install the xlrd package.  [UI file picker advertises .xls]
+7) zero-width forecasts: periods=0 / -5 are silently clamped to 1 and the note says '1 months'
+    Over the next 1 months, amount is expected to be about 2% lower than the last 1.

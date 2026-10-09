@@ -1,0 +1,95 @@
+{
+ "newer_question_supersedes": {
+  "answer_shown": "ANSWER FOR B-fast",
+  "requests": [
+   "A-slow",
+   "B-fast"
+  ]
+ },
+ "triple_enter_same_question_requests": 3,
+ "forecast_periods": {
+  "2.5": {
+   "http": 200,
+   "field_now": "3",
+   "err": "",
+   "note": "Over the next 3 months, amount is expected to be about 10% h"
+  },
+  "0": {
+   "http": 200,
+   "field_now": "6",
+   "err": "",
+   "note": "Over the next 6 months, amount is expected to be about 26% h"
+  },
+  "(empty)": {
+   "http": 200,
+   "field_now": "6",
+   "err": "",
+   "note": "Over the next 6 months, amount is expected to be about 26% h"
+  },
+  "-3": {
+   "http": 200,
+   "field_now": "1",
+   "err": "",
+   "note": "Over the next 1 month, amount is expected to be about 2% low"
+  },
+  "100": {
+   "http": 200,
+   "field_now": "24",
+   "err": "",
+   "note": "Over the next 24 months, amount is expected to be about 36% "
+  },
+  "7": {
+   "http": 200,
+   "field_now": "7",
+   "err": "",
+   "note": "Over the next 7 months, amount is expected to be about 27% h"
+  }
+ },
+ "forecast_band_marker_points": 0,
+ "forecast_3_keypresses_requests": 1,
+ "a11y": {
+  "tabs": [
+   [
+    "tab",
+    "false"
+   ],
+   [
+    "tab",
+    "true"
+   ]
+  ],
+  "tablist": true,
+  "chart_labels": [
+   "amount by month. 24 points from 360k to 622k, peak 622k, low 166k.",
+   "amount by product. Top: Hoodie (6.2M); 5 categories.",
+   "amount by region. Top: Campus (2.9M); 4 categories."
+  ],
+  "fchart_label": "Forecast of amount: Over the next 6 months, amount is expected to be about 26% higher than",
+  "ans_live": "polite",
+  "favicon": true,
+  "h3_focus_after_render": null
+ },
+ "arrow_left_selects_raw": "true",
+ "log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "focus_after_render": "sumh / H3",
+ "expired_ask": "Your session expired (the server restarted or timed out). Choose your file again to continue.",
+ "expired_forecast": "Your session expired (the server restarted or timed out). Choose your file again to continue.",
+ "network_down_message": "Cannot reach the Lumen server. Check your connection and try again.",
+ "http500_message": "The server had a problem. Please try again.",
+ "plotly_missing": {
+  "charts_text": "Charts need the plotting library, which could not load (offline or blocked). The numbers and findings still work.",
+  "ferr": "Charts need the plotting library, which could not load (offline or blocked). The numbers and findings still work.",
+  "pageerrors": []
+ },
+ "dates_no_metric_forecast": {
+  "disabled": true,
+  "ferr": "Forecasting needs a numeric measure, and none was found.",
+  "btn_bg": "rgb(201, 210, 215)"
+ }
+}

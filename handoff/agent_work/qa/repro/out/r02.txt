@@ -1,0 +1,24 @@
+pandas 3.0.6 numpy 2.5.3
+input                  parsed   expected
+'$1,234.50'            1234.5     1234.5 
+'-$1,234.50'              nan    -1234.5   <-- WRONG (silently dropped as NaN)
+'($1,234.50)'             nan    -1234.5   <-- WRONG (silently dropped as NaN)
+'(1,234.50)'          -1234.5    -1234.5 
+'1,234.50-'               nan    -1234.5   <-- WRONG (silently dropped as NaN)
+'−1,234.50'               nan    -1234.5   <-- WRONG (silently dropped as NaN)
+'1,234.50 CR'             nan     1234.5   <-- WRONG (silently dropped as NaN)
+'USD 1,234.50'            nan     1234.5   <-- WRONG (silently dropped as NaN)
+'Rs. 1,234.50'            nan     1234.5   <-- WRONG (silently dropped as NaN)
+'1,234.50 USD'            nan     1234.5   <-- WRONG (silently dropped as NaN)
+'€ 1.234,50'           1.2345     1234.5   <-- WRONG
+'1.234,50'             1.2345     1234.5   <-- WRONG
+'1234,50'            123450.0     1234.5   <-- WRONG
+'1 234,50'           123450.0     1234.5   <-- WRONG
+'1,5'                    15.0        1.5   <-- WRONG
+'0,5'                     5.0        0.5   <-- WRONG
+"1'234.50"                nan     1234.5   <-- WRONG (silently dropped as NaN)
+
+expenses_currency.csv  true total = 414,948.69 | Lumen total = 443,406.96 | sum of positive rows only = 443,406.96  (refund rows written ($x) or -$x are dropped)
+NaN cells created in 'amount': 24 of 400 -> no warning is shown to the user
+european.csv (6.287,82 style)  true total = 1,236,581.65 | Lumen = 942,194.17
+european_nothousands.csv (6287,82 style) true total = 1,236,581.65 | Lumen = 123,658,165.00

@@ -1,0 +1,21 @@
+"""BUG-35..42  small API/HTTP behaviours. usage: python r09_api_checks.py BASE   (e.g. http://127.0.0.1:18711 -- start the server first)"""
+import sys, json, socket, httpx
+BASE = sys.argv[1]; HOST, PORT = BASE.split("//")[1].split(":"); c = httpx.Client(base_url=BASE, timeout=60)
+D = "/home/user/work/qa/fixtures/data/"
+print("1) forecast with an unknown/expired session id")
+r = c.post("/api/forecast", json={"session_id": "nope", "date_col": "d", "value_col": "v", "periods": 6}); print("   ->", r.status_code, r.text, "\n   expected: 404 'Session expired. Upload your file again.' (the /api/ask route returns exactly that)")
+r = c.post("/api/ask", json={"session_id": "nope", "question": "x"}); print("   /api/ask for comparison ->", r.status_code, r.text)
+print("2) HEAD / and HEAD /api/health (uptime monitors, some PaaS health checks)")
+for p in ("/", "/api/health"): print("   HEAD", p, "->", c.head(p).status_code)
+print("3) NUL byte in /assets path")
+s = socket.create_connection((HOST, int(PORT))); s.sendall(b"GET /assets/index.html%00.png HTTP/1.1\r\nHost: x\r\nConnection: close\r\n\r\n"); print("   ->", s.recv(200).split(b"\r\n")[0].decode())
+print("4) validation errors are lists; the UI does `new Error(j.detail)` -> '[object Object]'")
+r = c.post("/api/forecast", json={"session_id": "x"}); print("   ", r.status_code, type(r.json()["detail"]).__name__, "(front-end shows:", str(r.json()["detail"])[:50] + "...)")
+print("5) a successful upload of garbage")
+r = c.post("/api/upload", files={"file": ("g.csv", bytes(range(256)) * 20)}); print("   binary garbage .csv ->", r.status_code, "rows =", r.json().get("profile", {}).get("rows"), "(expected 400 'does not look like CSV/Excel')")
+r = c.post("/api/upload", files={"file": ("x.pdf", b"%PDF-1.4\n%\xe2\xe3\xcf\xd3\n1 0 obj\n<<>>\nendobj\n")}); print("   PDF bytes named .pdf ->", r.status_code, [x["name"] for x in r.json().get("profile", {}).get("columns", [])])
+print("6) CSV content named .xlsx / .xls")
+r = c.post("/api/upload", files={"file": ("donations.xlsx", open(D + "donations.csv", "rb").read())}); print("   donations.csv renamed .xlsx ->", r.status_code, r.json().get("detail"))
+r = c.post("/api/upload", files={"file": ("legacy.xls", open(D + "legacy.xls", "rb").read())}); print("   real-format .xls (OLE2 magic) ->", r.status_code, r.json().get("detail"), " [UI file picker advertises .xls]")
+print("7) zero-width forecasts: periods=0 / -5 are silently clamped to 1 and the note says '1 months'")
+sid = c.post("/api/demo").json()["session_id"]; r = c.post("/api/forecast", json={"session_id": sid, "date_col": "order_date", "value_col": "amount", "periods": 1}); print("   ", r.json()["note"][:80])

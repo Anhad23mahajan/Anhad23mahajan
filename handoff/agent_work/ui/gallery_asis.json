@@ -1,0 +1,163 @@
+{
+ "hero": "/home/user/work/ui/shots/gallery/01-hero-1440x960.png",
+ "top_fold": "/home/user/work/ui/shots/gallery/02-dashboard-top-fold-1440x960.png",
+ "insights": "/home/user/work/ui/shots/gallery/03-insights-panel.png",
+ "kpis": "/home/user/work/ui/shots/gallery/03b-kpi-row.png",
+ "charts": "/home/user/work/ui/shots/gallery/04-at-a-glance-charts.png",
+ "forecast": "/home/user/work/ui/shots/gallery/05-forecast-9-periods.png",
+ "answer_bar_sql": "/home/user/work/ui/shots/gallery/06-answered-question-bar-with-sql.png",
+ "answer_bar": "/home/user/work/ui/shots/gallery/06b-answered-question-bar.png",
+ "answer_line": "/home/user/work/ui/shots/gallery/06c-answered-question-line.png",
+ "answer_pie": "/home/user/work/ui/shots/gallery/06d-answered-question-pie.png",
+ "answer_table": "/home/user/work/ui/shots/gallery/06e-answered-question-table-open.png",
+ "log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "donations_fold": "/home/user/work/ui/shots/gallery/07-donations-dashboard-top-fold-1440x960.png",
+ "donations_insights": "/home/user/work/ui/shots/gallery/07b-donations-insights-panel.png",
+ "donations_charts": "/home/user/work/ui/shots/gallery/07c-donations-charts.png",
+ "log_donations": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "preview_compare": "/home/user/work/ui/shots/gallery/08-data-preview-raw-vs-cleaned.png",
+ "mobile_hero": "/home/user/work/ui/shots/gallery/09-mobile-hero-390x844.png",
+ "mobile_fold": "/home/user/work/ui/shots/gallery/09b-mobile-dashboard-top-fold-390x844.png",
+ "mobile_full": "/home/user/work/ui/shots/gallery/09c-mobile-dashboard-full.png",
+ "mobile_hscroll_px": 286,
+ "verify": [
+  {
+   "file": "01-hero-1440x960.png",
+   "px": "2880x1920",
+   "KB": 175,
+   "stddev": 48.2,
+   "ok": true
+  },
+  {
+   "file": "02-dashboard-top-fold-1440x960.png",
+   "px": "2880x1920",
+   "KB": 406,
+   "stddev": 61.9,
+   "ok": true
+  },
+  {
+   "file": "03-insights-panel.png",
+   "px": "712x1758",
+   "KB": 193,
+   "stddev": 70.4,
+   "ok": true
+  },
+  {
+   "file": "03b-kpi-row.png",
+   "px": "1796x266",
+   "KB": 33,
+   "stddev": 29.5,
+   "ok": true
+  },
+  {
+   "file": "04-at-a-glance-charts.png",
+   "px": "1804x2156",
+   "KB": 125,
+   "stddev": 28.1,
+   "ok": true
+  },
+  {
+   "file": "05-forecast-9-periods.png",
+   "px": "1804x1188",
+   "KB": 137,
+   "stddev": 21.1,
+   "ok": true
+  },
+  {
+   "file": "06-answered-question-bar-with-sql.png",
+   "px": "1804x1970",
+   "KB": 186,
+   "stddev": 32.7,
+   "ok": true
+  },
+  {
+   "file": "06b-answered-question-bar.png",
+   "px": "1804x1422",
+   "KB": 133,
+   "stddev": 38.3,
+   "ok": true
+  },
+  {
+   "file": "06c-answered-question-line.png",
+   "px": "1804x1422",
+   "KB": 173,
+   "stddev": 19.6,
+   "ok": true
+  },
+  {
+   "file": "06d-answered-question-pie.png",
+   "px": "1804x1422",
+   "KB": 158,
+   "stddev": 37.3,
+   "ok": true
+  },
+  {
+   "file": "06e-answered-question-table-open.png",
+   "px": "1804x1704",
+   "KB": 231,
+   "stddev": 17.5,
+   "ok": true
+  },
+  {
+   "file": "07-donations-dashboard-top-fold-1440x960.png",
+   "px": "2880x1920",
+   "KB": 392,
+   "stddev": 61.5,
+   "ok": true
+  },
+  {
+   "file": "07b-donations-insights-panel.png",
+   "px": "712x2416",
+   "KB": 256,
+   "stddev": 59.8,
+   "ok": true
+  },
+  {
+   "file": "07c-donations-charts.png",
+   "px": "1804x2156",
+   "KB": 126,
+   "stddev": 25.2,
+   "ok": true
+  },
+  {
+   "file": "08-data-preview-raw-vs-cleaned.png",
+   "px": "1804x2600",
+   "KB": 342,
+   "stddev": 16.9,
+   "ok": true
+  },
+  {
+   "file": "09-mobile-hero-390x844.png",
+   "px": "780x1688",
+   "KB": 140,
+   "stddev": 60.0,
+   "ok": true
+  },
+  {
+   "file": "09b-mobile-dashboard-top-fold-390x844.png",
+   "px": "780x1688",
+   "KB": 169,
+   "stddev": 83.0,
+   "ok": true
+  },
+  {
+   "file": "09c-mobile-dashboard-full.png",
+   "px": "1352x7598",
+   "KB": 680,
+   "stddev": 46.8,
+   "ok": true
+  }
+ ]
+}

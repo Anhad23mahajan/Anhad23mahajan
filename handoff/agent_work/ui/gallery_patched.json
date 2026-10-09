@@ -1,0 +1,171 @@
+{
+ "hero": "/home/user/work/ui/shots/gallery-patched/01-hero-1440x960.png",
+ "hero_full": "/home/user/work/ui/shots/gallery-patched/01b-hero-sample-picker-and-trust-panel.png",
+ "top_fold": "/home/user/work/ui/shots/gallery-patched/02-dashboard-top-fold-1440x960.png",
+ "insights": "/home/user/work/ui/shots/gallery-patched/03-insights-panel.png",
+ "kpis": "/home/user/work/ui/shots/gallery-patched/03b-kpi-row.png",
+ "charts": "/home/user/work/ui/shots/gallery-patched/04-at-a-glance-charts.png",
+ "forecast": "/home/user/work/ui/shots/gallery-patched/05-forecast-9-periods.png",
+ "answer_bar_sql": "/home/user/work/ui/shots/gallery-patched/06-answered-question-bar-with-sql.png",
+ "answer_bar": "/home/user/work/ui/shots/gallery-patched/06b-answered-question-bar.png",
+ "answer_line": "/home/user/work/ui/shots/gallery-patched/06c-answered-question-line.png",
+ "answer_pie": "/home/user/work/ui/shots/gallery-patched/06d-answered-question-pie.png",
+ "answer_table": "/home/user/work/ui/shots/gallery-patched/06e-answered-question-table-open.png",
+ "log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "donations_fold": "/home/user/work/ui/shots/gallery-patched/07-donations-dashboard-top-fold-1440x960.png",
+ "donations_insights": "/home/user/work/ui/shots/gallery-patched/07b-donations-insights-panel.png",
+ "donations_charts": "/home/user/work/ui/shots/gallery-patched/07c-donations-charts.png",
+ "log_donations": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "preview_compare": "/home/user/work/ui/shots/gallery-patched/08-data-preview-raw-vs-cleaned.png",
+ "mobile_hero": "/home/user/work/ui/shots/gallery-patched/09-mobile-hero-390x844.png",
+ "mobile_fold": "/home/user/work/ui/shots/gallery-patched/09b-mobile-dashboard-top-fold-390x844.png",
+ "mobile_full": "/home/user/work/ui/shots/gallery-patched/09c-mobile-dashboard-full.png",
+ "mobile_hscroll_px": 0,
+ "verify": [
+  {
+   "file": "01-hero-1440x960.png",
+   "px": "2880x1920",
+   "KB": 306,
+   "stddev": 49.1,
+   "ok": true
+  },
+  {
+   "file": "01b-hero-sample-picker-and-trust-panel.png",
+   "px": "2880x1920",
+   "KB": 306,
+   "stddev": 49.1,
+   "ok": true
+  },
+  {
+   "file": "02-dashboard-top-fold-1440x960.png",
+   "px": "2880x1920",
+   "KB": 417,
+   "stddev": 61.4,
+   "ok": true
+  },
+  {
+   "file": "03-insights-panel.png",
+   "px": "712x1758",
+   "KB": 193,
+   "stddev": 70.4,
+   "ok": true
+  },
+  {
+   "file": "03b-kpi-row.png",
+   "px": "1796x266",
+   "KB": 33,
+   "stddev": 29.5,
+   "ok": true
+  },
+  {
+   "file": "04-at-a-glance-charts.png",
+   "px": "1804x1596",
+   "KB": 118,
+   "stddev": 32.5,
+   "ok": true
+  },
+  {
+   "file": "05-forecast-9-periods.png",
+   "px": "1804x1188",
+   "KB": 134,
+   "stddev": 21.3,
+   "ok": true
+  },
+  {
+   "file": "06-answered-question-bar-with-sql.png",
+   "px": "1804x1970",
+   "KB": 188,
+   "stddev": 32.6,
+   "ok": true
+  },
+  {
+   "file": "06b-answered-question-bar.png",
+   "px": "1804x1422",
+   "KB": 136,
+   "stddev": 38.3,
+   "ok": true
+  },
+  {
+   "file": "06c-answered-question-line.png",
+   "px": "1804x1422",
+   "KB": 177,
+   "stddev": 19.8,
+   "ok": true
+  },
+  {
+   "file": "06d-answered-question-pie.png",
+   "px": "1804x1422",
+   "KB": 162,
+   "stddev": 38.0,
+   "ok": true
+  },
+  {
+   "file": "06e-answered-question-table-open.png",
+   "px": "1804x1704",
+   "KB": 225,
+   "stddev": 18.7,
+   "ok": true
+  },
+  {
+   "file": "07-donations-dashboard-top-fold-1440x960.png",
+   "px": "2880x1920",
+   "KB": 404,
+   "stddev": 60.7,
+   "ok": true
+  },
+  {
+   "file": "07b-donations-insights-panel.png",
+   "px": "712x2260",
+   "KB": 237,
+   "stddev": 60.6,
+   "ok": true
+  },
+  {
+   "file": "07c-donations-charts.png",
+   "px": "1804x1596",
+   "KB": 117,
+   "stddev": 29.6,
+   "ok": true
+  },
+  {
+   "file": "08-data-preview-raw-vs-cleaned.png",
+   "px": "1804x2600",
+   "KB": 339,
+   "stddev": 16.9,
+   "ok": true
+  },
+  {
+   "file": "09-mobile-hero-390x844.png",
+   "px": "780x1688",
+   "KB": 160,
+   "stddev": 53.4,
+   "ok": true
+  },
+  {
+   "file": "09b-mobile-dashboard-top-fold-390x844.png",
+   "px": "780x1688",
+   "KB": 198,
+   "stddev": 83.0,
+   "ok": true
+  },
+  {
+   "file": "09c-mobile-dashboard-full.png",
+   "px": "780x8254",
+   "KB": 641,
+   "stddev": 48.8,
+   "ok": true
+  }
+ ]
+}

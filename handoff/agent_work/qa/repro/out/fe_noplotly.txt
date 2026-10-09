@@ -1,0 +1,19 @@
+typeof Plotly = undefined
+Error: Uncaught [ReferenceError: Plotly is not defined]
+    at reportException (/home/user/work/qa/js/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at runAnimationFrameCallbacks (/home/user/work/qa/js/node_modules/jsdom/lib/jsdom/browser/Window.js:666:13)
+    at Timeout.<anonymous> (/home/user/work/qa/js/node_modules/jsdom/lib/jsdom/browser/Window.js:642:11)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7) ReferenceError: Plotly is not defined
+    at lineChart (http://127.0.0.1:18711/:30:7)
+    at http://127.0.0.1:18711/:80:164
+    at Array.forEach (<anonymous>)
+    at http://127.0.0.1:18711/:79:18
+    at invokeTheCallbackFunction (/home/user/work/qa/js/node_modules/jsdom/lib/jsdom/living/generated/Function.js:19:26)
+    at runAnimationFrameCallbacks (/home/user/work/qa/js/node_modules/jsdom/lib/jsdom/browser/Window.js:664:13)
+    at Timeout.<anonymous> (/home/user/work/qa/js/node_modules/jsdom/lib/jsdom/browser/Window.js:642:11)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+KPIs rendered: 4 | insights rendered: 3 | chart containers: 1 | #ferr: "" | visible error banner: ""
+uncaught JS errors: [ 'Plotly is not defined' ]
+new Error([{type:..}]).message = [object Object]

@@ -1,0 +1,394 @@
+{
+ "hero.desktop-1440x900.shot": "/home/user/work/ui/shots/qa/hero-desktop-1440x900.png",
+ "demo.desktop-1440x900.click_to_dashboard_s": 0.66,
+ "demo.desktop-1440x900.shot_full": "/home/user/work/ui/shots/qa/dashboard-demo-desktop-1440x900-full.png",
+ "demo.desktop-1440x900.shot_fold": "/home/user/work/ui/shots/qa/dashboard-demo-desktop-1440x900-fold.png",
+ "demo.desktop-1440x900.scrollWidth": [
+  1440,
+  1440
+ ],
+ "demo.desktop-1440x900.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "hero.desktop-1920x1080.shot": "/home/user/work/ui/shots/qa/hero-desktop-1920x1080.png",
+ "demo.desktop-1920x1080.click_to_dashboard_s": 0.7,
+ "demo.desktop-1920x1080.shot_full": "/home/user/work/ui/shots/qa/dashboard-demo-desktop-1920x1080-full.png",
+ "demo.desktop-1920x1080.shot_fold": "/home/user/work/ui/shots/qa/dashboard-demo-desktop-1920x1080-fold.png",
+ "demo.desktop-1920x1080.scrollWidth": [
+  1920,
+  1920
+ ],
+ "demo.desktop-1920x1080.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "hero.tablet-820x1180.shot": "/home/user/work/ui/shots/qa/hero-tablet-820x1180.png",
+ "demo.tablet-820x1180.click_to_dashboard_s": 0.74,
+ "demo.tablet-820x1180.shot_full": "/home/user/work/ui/shots/qa/dashboard-demo-tablet-820x1180-full.png",
+ "demo.tablet-820x1180.shot_fold": "/home/user/work/ui/shots/qa/dashboard-demo-tablet-820x1180-fold.png",
+ "demo.tablet-820x1180.scrollWidth": [
+  820,
+  820
+ ],
+ "demo.tablet-820x1180.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "hero.mobile-390x844.shot": "/home/user/work/ui/shots/qa/hero-mobile-390x844.png",
+ "demo.mobile-390x844.click_to_dashboard_s": 0.83,
+ "demo.mobile-390x844.shot_full": "/home/user/work/ui/shots/qa/dashboard-demo-mobile-390x844-full.png",
+ "demo.mobile-390x844.shot_fold": "/home/user/work/ui/shots/qa/dashboard-demo-mobile-390x844-fold.png",
+ "demo.mobile-390x844.scrollWidth": [
+  676,
+  390
+ ],
+ "demo.mobile-390x844.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "upload.donations.shot_full": "/home/user/work/ui/shots/qa/dashboard-donations-1440-full.png",
+ "upload.donations.sidebar_overflow": [
+  1239,
+  872
+ ],
+ "upload.donations.preview_cleaned": "/home/user/work/ui/shots/qa/preview-donations-cleaned.png",
+ "upload.donations.preview_raw": "/home/user/work/ui/shots/qa/preview-donations-raw.png",
+ "upload.donations.preview_header_raw": [
+  "Date | str",
+  "Donor Name | str",
+  "Campaign | str",
+  "Channel | str",
+  "Amount (USD) | float64",
+  "Recurring | str",
+  "Notes | str"
+ ],
+ "upload.donations.preview_header_clean": [
+  "date | datetime64[us]",
+  "donor_name | str",
+  "campaign | str",
+  "channel | str",
+  "amount_usd | float64",
+  "recurring | boolean",
+  "notes | str"
+ ],
+ "upload.donations.kpis": [
+  "Rows analysed | 2,742",
+  "Total amount_usd | 143k",
+  "Latest full month | 2.9k | -28% vs previous month",
+  "Best month | 34k | Dec 2024"
+ ],
+ "upload.donations.insights": [
+  "notes is 72.4% empty |  | Over a fifth of rows have no value for notes, so anything based on it may be misleading.",
+  "Unusual month: 01 Dec 2024 |  | amount_usd was 33,598 that month, far from the typical 3,270.",
+  "Unusual month: 01 Dec 2023 |  | amount_usd was 7,970 that month, far from the typical 3,270.",
+  "amount_usd is up 135% over the period |  | The average monthly amount_usd in the most recent 11 months is 135% higher than in the first 11.",
+  "Annual Appeal drives 44% of amount_usd |  | Across campaign, a single value (Annual Appeal) accounts for 44% of total amount_usd. You depend heavily on it.",
+  "Online drives 41% of amount_usd |  | Across channel, a single value (Online) accounts for 41% of total amount_usd. You depend heavily on it."
+ ],
+ "upload.donations.recs": [
+  "Fill in or remove the missing notes values before relying on results that use it.",
+  "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+  "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+  "Find out what changed and repeat it."
+ ],
+ "upload.donations.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "upload.messy-european.shot_full": "/home/user/work/ui/shots/qa/dashboard-messy-european-1440-full.png",
+ "upload.messy-european.sidebar_overflow": [
+  826,
+  826
+ ],
+ "upload.messy-european.preview_cleaned": "/home/user/work/ui/shots/qa/preview-messy-european-cleaned.png",
+ "upload.messy-european.preview_raw": "/home/user/work/ui/shots/qa/preview-messy-european-raw.png",
+ "upload.messy-european.preview_header_raw": [
+  "Datum | str",
+  "Produkt | str",
+  "Filiale | str",
+  "Menge | float64",
+  "Umsatz () | str"
+ ],
+ "upload.messy-european.preview_header_clean": [
+  "datum | datetime64[us]",
+  "produkt | str",
+  "filiale | str",
+  "menge | float64",
+  "umsatz | str"
+ ],
+ "upload.messy-european.kpis": [
+  "Rows analysed | 685",
+  "Total menge | 50k",
+  "Latest full month | 1.8k | +4% vs previous month",
+  "Best month | 5.6k | Aug 2025"
+ ],
+ "upload.messy-european.insights": [
+  "menge is down 49% over the period |  | The average monthly menge in the most recent 3 months is 49% lower than in the first 3.",
+  "Unusual month: 01 Oct 2025 |  | menge was 1,702 that month, far from the typical 4,894.",
+  "Unusual month: 01 Nov 2025 |  | menge was 1,775 that month, far from the typical 4,894."
+ ],
+ "upload.messy-european.recs": [
+  "Look at which produkt or period dropped and act on it first.",
+  "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake.",
+  "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake."
+ ],
+ "upload.messy-european.log": {
+  "console_errors": [],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": []
+ },
+ "preview.demo.cleaned": "/home/user/work/ui/shots/qa/preview-demo-cleaned.png",
+ "preview.demo.raw": "/home/user/work/ui/shots/qa/preview-demo-raw.png",
+ "preview.demo.raw_equals_cleaned": true,
+ "forecast.default": "/home/user/work/ui/shots/qa/forecast-default.png",
+ "forecast.quantity12.shot": "/home/user/work/ui/shots/qa/forecast-quantity-12periods.png",
+ "forecast.quantity12.note": "Over the next 6 months, amount is expected to be about 26% higher than the last 6. The shaded band is a 95% range; forecasts are estimates, not promises.",
+ "forecast.periods[float-2.5]": {
+  "sent": "2.5",
+  "http": 200,
+  "err": "[object Object]",
+  "note": "Over the next 12 months, quantity is expected to be about 24% higher than the last 12. The"
+ },
+ "forecast.periods[zero]": {
+  "sent": "0",
+  "http": 200,
+  "err": "",
+  "note": "Over the next 1 months, quantity is expected to be about 3% higher than the last 1. The sh"
+ },
+ "forecast.periods[empty]": {
+  "sent": "",
+  "http": 200,
+  "err": "",
+  "note": "Over the next 1 months, quantity is expected to be about 3% higher than the last 1. The sh"
+ },
+ "forecast.periods[negative]": {
+  "sent": "-3",
+  "http": 200,
+  "err": "",
+  "note": "Over the next 1 months, quantity is expected to be about 3% higher than the last 1. The sh"
+ },
+ "forecast.periods[huge-100]": {
+  "sent": "100",
+  "http": 200,
+  "err": "",
+  "note": "Over the next 24 months, quantity is expected to be about 48% higher than the last 24. The"
+ },
+ "forecast.periods[sci-1e3]": {
+  "sent": "1e3",
+  "http": 200,
+  "err": "",
+  "note": "Over the next 24 months, quantity is expected to be about 48% higher than the last 24. The"
+ },
+ "forecast.log": {
+  "console_errors": [
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 422 (Unprocessable Content)",
+    "loc": "http://localhost:8112/api/forecast"
+   }
+  ],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [],
+  "http_errors": [
+   {
+    "url": "http://localhost:8112/api/forecast",
+    "status": 422
+   }
+  ]
+ },
+ "forecast.short-history": {
+  "err": "Need at least 8 time periods (days, weeks or months) to forecast.",
+  "btn_disabled": false,
+  "note": ""
+ },
+ "forecast.no-dates": {
+  "err": "Forecasting needs a date column, and none was found.",
+  "btn_disabled": true,
+  "note": ""
+ },
+ "forecast.dates-no-metric": {
+  "err": "Unknown column.",
+  "btn_disabled": false,
+  "note": ""
+ },
+ "err.upload.text-file": {
+  "message": "The file has no rows.",
+  "dashboard_shown": "none"
+ },
+ "err.upload.empty-csv": {
+  "message": "The file has no rows.",
+  "dashboard_shown": "none"
+ },
+ "err.upload.header-only": {
+  "message": "The file has no rows.",
+  "dashboard_shown": "none"
+ },
+ "err.upload.corrupt-xlsx": {
+  "message": "Could not read Excel file: File is not a zip file",
+  "dashboard_shown": "none"
+ },
+ "err.upload.binary-junk-accepted": {
+  "message": "",
+  "dashboard_shown": "grid"
+ },
+ "err.upload.26mb-too-large": {
+  "message": "File is larger than 25 MB.",
+  "dashboard_shown": "none"
+ },
+ "err.upload.26mb.seconds": 0.7,
+ "err.upload.network-down": "Failed to fetch",
+ "err.upload.http500-html": "Something went wrong. Try again.",
+ "err.log": {
+  "console_errors": [
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "loc": "http://localhost:8112/api/upload"
+   },
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "loc": "http://localhost:8112/api/upload"
+   },
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "loc": "http://localhost:8112/api/upload"
+   },
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "loc": "http://localhost:8112/api/upload"
+   },
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 413 (Content Too Large)",
+    "loc": "http://localhost:8112/api/upload"
+   },
+   {
+    "type": "error",
+    "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "loc": "http://localhost:8112/api/upload"
+   },
+   {
+    "type": "error",
+    "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+    "loc": "http://localhost:8112/api/upload"
+   }
+  ],
+  "console_warnings": [],
+  "pageerrors": [],
+  "failed_requests": [
+   {
+    "url": "http://localhost:8112/api/upload",
+    "err": "net::ERR_CONNECTION_REFUSED"
+   }
+  ],
+  "http_errors": [
+   {
+    "url": "http://localhost:8112/api/upload",
+    "status": 400
+   },
+   {
+    "url": "http://localhost:8112/api/upload",
+    "status": 400
+   },
+   {
+    "url": "http://localhost:8112/api/upload",
+    "status": 400
+   },
+   {
+    "url": "http://localhost:8112/api/upload",
+    "status": 400
+   },
+   {
+    "url": "http://localhost:8112/api/upload",
+    "status": 413
+   },
+   {
+    "url": "http://localhost:8112/api/upload",
+    "status": 500
+   }
+  ]
+ },
+ "err.ask-disabled.hint": "Questions are switched off: add a GEMINI_API_KEY on the server. Everything else works without it.",
+ "err.ask-disabled.shot_before_click": "/home/user/work/ui/shots/qa/err-ask-disabled-hint.png",
+ "err.ask-disabled.after_ask": "Plain-English questions need a Gemini API key (set GEMINI_API_KEY).",
+ "err.ask-disabled.shot_after_ask": "/home/user/work/ui/shots/qa/err-ask-disabled-after-ask.png",
+ "err.ask-disabled.after_chip": {
+  "q": "Which product brings in the most amount?",
+  "err": "Plain-English questions need a Gemini API key (set GEMINI_API_KEY)."
+ },
+ "err.expired.ask": "Session expired. Upload your file again.",
+ "err.expired.forecast": "Could not generate forecast: 404: Session expired. Upload your file again.",
+ "err.expired.shot_full": "/home/user/work/ui/shots/qa/err-expired-session-full.png",
+ "empty.no-insights": {
+  "ins": "No strong patterns found. Try asking a question.",
+  "sum": "No strong patterns found yet.",
+  "recs": "",
+  "kpis": "Rows analysed\n40",
+  "charts": 0,
+  "meta": "40 rows, 3 columns. Main measure: none found.",
+  "fnote": "Forecasting needs a date column, and none was found."
+ },
+ "empty.text-only": {
+  "ins": "No strong patterns found. Try asking a question.",
+  "sum": "No strong patterns found yet.",
+  "recs": "",
+  "kpis": "Rows analysed\n30",
+  "charts": 0,
+  "meta": "30 rows, 2 columns. Main measure: none found.",
+  "fnote": "Forecasting needs a date column, and none was found."
+ },
+ "cdn-blocked.typeof_Plotly": "undefined",
+ "cdn-blocked.charts_children": 1,
+ "cdn-blocked.fchart_html_len": 0,
+ "cdn-blocked.shot": "/home/user/work/ui/shots/qa/cdn-blocked-dashboard-full.png",
+ "cdn-blocked.log": {
+  "console_errors": [
+   {
+    "type": "error",
+    "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "loc": "https://cdn.plot.ly/plotly-basic-2.35.2.min.js"
+   }
+  ],
+  "console_warnings": [],
+  "pageerrors": [
+   "Plotly is not defined",
+   "Plotly is not defined"
+  ],
+  "failed_requests": [
+   {
+    "url": "https://cdn.plot.ly/plotly-basic-2.35.2.min.js",
+    "err": "net::ERR_INTERNET_DISCONNECTED"
+   }
+  ],
+  "http_errors": []
+ },
+ "cdn-blocked.ask_log": [
+  "Plotly is not defined",
+  "Plotly is not defined"
+ ],
+ "fonts-fallback.shot": "/home/user/work/ui/shots/qa/dashboard-demo-1440-system-font-fallback-fold.png",
+ "fonts-fallback.hero": null,
+ "fonts-fallback.computed": "\"Bricolage Grotesque\" | loaded=0"
+}

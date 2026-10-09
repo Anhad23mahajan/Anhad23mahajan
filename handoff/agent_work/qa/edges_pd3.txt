@@ -1,0 +1,74 @@
+== forecast edge cases
+wrong session id                                           -> 400 {"detail":"Could not generate forecast: 404: Session expired. Upload your file again."}
+nonexistent value col                                      -> 400 {"detail":"Unknown column."}
+nonexistent date col                                       -> 400 {"detail":"Unknown column."}
+text value col (campaign)                                  -> 400 {"detail":"Pandas data cast to numpy dtype of object. Check input data with np.asarray(data)."}
+text value col (donor)                                     -> 400 {"detail":"Pandas data cast to numpy dtype of object. Check input data with np.asarray(data)."}
+date col that is not a date (amount)                       -> 400 {"detail":"Could not generate forecast: 'Series' object has no attribute 'days'"}
+date col is text (campaign)                                -> 400 {"detail":"Could not generate forecast: unsupported operand type(s) for -: 'str' and 'str'"}
+value col == date col                                      -> 400 {"detail":"Could not generate forecast: 'Series' object has no attribute 'days'"}
+periods=0                                                  -> 200 {"freq":"MS","history":{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-
+periods=-5                                                 -> 200 {"freq":"MS","history":{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-
+periods=10**9                                              -> 200 {"freq":"MS","history":{"x":["2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-
+periods=6.5                                                -> 422 {"detail":[{"type":"int_from_float","loc":["body","periods"],"msg":"Input should be a valid integer, got a number with a fractional part","input":6.5}]}
+periods='abc'                                              -> 422 {"detail":[{"type":"int_parsing","loc":["body","periods"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"abc"}]}
+periods=null                                               -> 422 {"detail":[{"type":"int_type","loc":["body","periods"],"msg":"Input should be a valid integer","input":null}]}
+forecast missing fields {}                                 -> 422 {"detail":[{"type":"missing","loc":["body","session_id"],"msg":"Field required","input":{}},{"type":"missing","loc":["body","date_col"],"msg":"Field required","input":{}},{"type":"missing","loc":["body","value_col"],"msg":"Field r
+forecast body not json                                     -> 422 {"detail":[{"type":"json_invalid","loc":["body",0],"msg":"JSON decode error","input":{},"ctx":{"error":"Expecting value"}}]}
+   422 detail type: list (frontend does new Error(j.detail) -> shows: [{'type': 'missing', 'loc': ['body', 'da...)
+== ask validation (no key => 503 expected)
+ask wrong session                                          -> 404 {"detail":"Session expired. Upload your file again."}
+ask empty question                                         -> 503 {"detail":"Plain-English questions need a Gemini API key (set GEMINI_API_KEY)."}
+ask 10k char question                                      -> 503 {"detail":"Plain-English questions need a Gemini API key (set GEMINI_API_KEY)."}
+ask missing question                                       -> 422 {"detail":[{"type":"missing","loc":["body","question"],"msg":"Field required","input":{"session_id":"3a34941994af4f118f1c1e8bca3126cc"}}]}
+ask question=null                                          -> 422 {"detail":[{"type":"string_type","loc":["body","question"],"msg":"Input should be a valid string","input":null}]}
+== upload shape errors
+upload field is a string, not a file                       -> 422 {"detail":[{"type":"value_error","loc":["body","file"],"msg":"Value error, Expected UploadFile, received: <class 'str'>","input":"hello","ctx":{"error":{}}}]}
+upload with no field                                       -> 422 {"detail":[{"type":"missing","loc":["body","file"],"msg":"Field required","input":null}]}
+upload JSON body                                           -> 422 {"detail":[{"type":"missing","loc":["body","file"],"msg":"Field required","input":null}]}
+upload zero-byte file                                      -> 400 {"detail":"The file has no rows."}
+upload 1 byte                                              -> 400 {"detail":"The file has no rows."}
+upload binary garbage .csv                                 -> 200 {"session_id":"e007b8438480401f967aea674f3770b3","profile":{"rows":40,"columns":[{"name":"unnamed_0","kind":"category","missing_pct":50.0,"unique":1}],"date_cols":[],"metric_cols":[],"cat_cols":[],"metric":null,"date":null,"kpis":
+upload PDF header                                          -> 200 {"session_id":"119a3332f1494396b1b8a879cef94a66","profile":{"rows":4,"columns":[{"name":"pdf_1_4","kind":"category","missing_pct":0.0,"unique":4}],"date_cols":[],"metric_cols":[],"cat_cols":["pdf_1_4"],"metric":null,"date":null,"k
+upload JSON file                                           -> 400 {"detail":"The file has no rows."}
+upload zip containing csv                                  -> 400 {"detail":"Could not read Excel file: No such keys(s): 'io.excel.zip.reader'"}
+upload xlsx-named plain CSV                                -> 400 {"detail":"Could not read Excel file: Excel file format cannot be determined, you must specify an engine manually."}
+upload csv-named xlsx                                      -> 200 {"session_id":"933ad2e3b63b4fbbaca1f642a654cb59","profile":{"rows":80,"columns":[{"name":"order_date","kind":"date","missing_pct":0.0,"unique":80},{"name":"customer","kind":"category","missing_pct":0.0,"unique":19},{"name":"revenu
+upload filename=None-ish ('')                              -> 200 {"session_id":"edb648c27401464a91b6dc631e56b13e","profile":{"rows":3000,"columns":[{"name":"donor","kind":"text","missing_pct":0.0,"unique":399},{"name":"date","kind":"date","missing_pct":0.0,"unique":717},{"name":"amount","kind":
+upload filename with path ../../x.csv                      -> 200 {"session_id":"a5f3db36eb1b41bcaa2f8ca080d6196b","profile":{"rows":3000,"columns":[{"name":"donor","kind":"text","missing_pct":0.0,"unique":399},{"name":"date","kind":"date","missing_pct":0.0,"unique":717},{"name":"amount","kind":
+upload tsv                                                 -> 200 {"session_id":"c97538ec1d884b3aaeaf8bc972da013e","profile":{"rows":2,"columns":[{"name":"date","kind":"date","missing_pct":0.0,"unique":2},{"name":"amount","kind":"numeric","missing_pct":0.0,"unique":2,"outliers":0,"id_like":0}],"
+upload pipe-sep                                            -> 200 {"session_id":"3500cdc13dc0407587fa9e25d1567c37","profile":{"rows":2,"columns":[{"name":"date","kind":"date","missing_pct":0.0,"unique":2},{"name":"amount","kind":"numeric","missing_pct":0.0,"unique":2,"outliers":0,"id_like":0}],"
+upload no trailing newline single line csv                 -> 400 {"detail":"The file has no rows."}
+upload CRLF + quotes                                       -> 200 {"session_id":"e530c8a131d246c3a813a42a7aa27536","profile":{"rows":2,"columns":[{"name":"date","kind":"date","missing_pct":0.0,"unique":2},{"name":"amount","kind":"numeric","missing_pct":0.0,"unique":2,"outliers":0,"id_like":0},{"
+== methods / paths
+HEAD    /                            -> 405 len=0 application/json allow=GET
+OPTIONS /                            -> 405 len=31 application/json allow=GET
+HEAD    /api/health                  -> 405 len=0 application/json allow=GET
+OPTIONS /api/upload                  -> 405 len=31 application/json allow=POST
+GET     /api/upload                  -> 405 len=31 application/json allow=POST
+GET     /api/demo                    -> 405 len=31 application/json allow=POST
+DELETE  /api/upload                  -> 405 len=31 application/json allow=POST
+GET     /nonexistent                 -> 404 len=22 application/json allow=
+GET     /docs                        -> 200 len=929 text/html; charset=utf-8 allow=
+GET     /openapi.json                -> 200 len=3084 application/json allow=
+GET     /assets/                     -> 404 len=22 application/json allow=
+GET     /assets                      -> 307 len=0  allow=
+GET     /assets/index.html           -> 200 len=25167 text/html; charset=utf-8 allow=
+HEAD    /assets/index.html           -> 200 len=0 text/html; charset=utf-8 allow=
+== /assets traversal (raw socket, no client-side path normalisation)
+/assets/../app/main.py                             -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/%2e%2e/app/main.py                         -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/..%2fapp%2fmain.py                         -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/%2e%2e%2fapp%2fmain.py                     -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/..%5capp%5cmain.py                         -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/....//app/main.py                          -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets//etc/passwd                                -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/%2fetc%2fpasswd                            -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/../../../../etc/passwd                     -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/%2e%2e/%2e%2e/%2e%2e/etc/passwd            -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/..;/app/main.py                            -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/index.html%00.png                          -> HTTP/1.1 500 Internal Server Error len=21 b'Internal Server Error'
+/assets/.%2e/app/main.py                           -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/%252e%252e/app/main.py                     -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/..%2fapp%2fmain.py                                -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'
+/assets/\..\app\main.py                            -> HTTP/1.1 404 Not Found len=22 b'{"detail":"Not Found"}'

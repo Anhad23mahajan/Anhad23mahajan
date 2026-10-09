@@ -1,0 +1,1897 @@
+week,product,category,warehouse,units_shipped,cost,unit_price,stock_on_hand
+2024-01-01,Rice 25kg,Pantry,Central,66,2046.0,31.0,124
+2024-01-01,Rice 25kg,Pantry,North depot,32,992.0,31.0,118
+2024-01-01,Rice 25kg,Pantry,Harbour,49,1519.0,31.0,222
+2024-01-01,Canned beans,Pantry,Central,41,49.2,1.2,88
+2024-01-01,Canned beans,Pantry,North depot,42,50.4,1.2,282
+2024-01-01,Canned beans,Pantry,Harbour,22,26.4,1.2,102
+2024-01-01,Olive oil 5L,Pantry,Central,46,1012.0,22.0,305
+2024-01-01,Olive oil 5L,Pantry,North depot,36,792.0,22.0,263
+2024-01-01,Olive oil 5L,Pantry,Harbour,38,836.0,22.0,260
+2024-01-01,Blankets,Winter,Central,84,756.0,9.0,404
+2024-01-01,Blankets,Winter,North depot,67,603.0,9.0,323
+2024-01-01,Blankets,Winter,Harbour,79,711.0,9.0,283
+2024-01-01,Winter coats,Winter,Central,70,1960.0,28.0,250
+2024-01-01,Winter coats,Winter,North depot,74,2072.0,28.0,234
+2024-01-01,Winter coats,Winter,Harbour,72,2016.0,28.0,165
+2024-01-01,Hygiene kits,Health,Central,56,364.0,6.5,173
+2024-01-01,Hygiene kits,Health,North depot,50,325.0,6.5,205
+2024-01-01,Hygiene kits,Health,Harbour,31,201.5,6.5,84
+2024-01-01,First-aid kits,Health,Central,43,602.0,14.0,124
+2024-01-01,First-aid kits,Health,North depot,25,350.0,14.0,288
+2024-01-01,First-aid kits,Health,Harbour,38,532.0,14.0,158
+2024-01-01,School bags,Education,Central,68,544.0,8.0,181
+2024-01-01,School bags,Education,North depot,74,592.0,8.0,201
+2024-01-01,School bags,Education,Harbour,30,240.0,8.0,192
+2024-01-08,Rice 25kg,Pantry,Central,48,1488.0,31.0,202
+2024-01-08,Rice 25kg,Pantry,North depot,32,992.0,31.0,204
+2024-01-08,Rice 25kg,Pantry,Harbour,55,1705.0,31.0,248
+2024-01-08,Canned beans,Pantry,Central,52,62.4,1.2,176
+2024-01-08,Canned beans,Pantry,North depot,66,79.2,1.2,209
+2024-01-08,Canned beans,Pantry,Harbour,42,50.4,1.2,222
+2024-01-08,Olive oil 5L,Pantry,Central,52,1144.0,22.0,165
+2024-01-08,Olive oil 5L,Pantry,North depot,59,1298.0,22.0,153
+2024-01-08,Olive oil 5L,Pantry,Harbour,33,726.0,22.0,99
+2024-01-08,Blankets,Winter,Central,54,486.0,9.0,231
+2024-01-08,Blankets,Winter,North depot,45,405.0,9.0,141
+2024-01-08,Blankets,Winter,Harbour,58,522.0,9.0,218
+2024-01-08,Winter coats,Winter,Central,57,1596.0,28.0,222
+2024-01-08,Winter coats,Winter,North depot,76,2128.0,28.0,165
+2024-01-08,Winter coats,Winter,Harbour,88,2464.0,28.0,266
+2024-01-08,Hygiene kits,Health,Central,51,331.5,6.5,238
+2024-01-08,Hygiene kits,Health,North depot,43,279.5,6.5,215
+2024-01-08,Hygiene kits,Health,Harbour,31,201.5,6.5,113
+2024-01-08,First-aid kits,Health,Central,36,504.0,14.0,154
+2024-01-08,First-aid kits,Health,North depot,53,742.0,14.0,220
+2024-01-08,First-aid kits,Health,Harbour,48,672.0,14.0,218
+2024-01-08,School bags,Education,Central,50,400.0,8.0,203
+2024-01-08,School bags,Education,North depot,37,296.0,8.0,279
+2024-01-08,School bags,Education,Harbour,17,136.0,8.0,138
+2024-01-15,Rice 25kg,Pantry,Central,27,837.0,31.0,261
+2024-01-15,Rice 25kg,Pantry,North depot,12,372.0,31.0,215
+2024-01-15,Rice 25kg,Pantry,Harbour,28,868.0,31.0,82
+2024-01-15,Canned beans,Pantry,Central,48,57.6,1.2,181
+2024-01-15,Canned beans,Pantry,North depot,39,46.8,1.2,242
+2024-01-15,Canned beans,Pantry,Harbour,55,66.0,1.2,127
+2024-01-15,Olive oil 5L,Pantry,Central,38,836.0,22.0,138
+2024-01-15,Olive oil 5L,Pantry,North depot,25,550.0,22.0,211
+2024-01-15,Olive oil 5L,Pantry,Harbour,34,748.0,22.0,191
+2024-01-15,Blankets,Winter,Central,78,702.0,9.0,172
+2024-01-15,Blankets,Winter,North depot,75,675.0,9.0,166
+2024-01-15,Blankets,Winter,Harbour,93,837.0,9.0,257
+2024-01-15,Winter coats,Winter,Central,71,1988.0,28.0,241
+2024-01-15,Winter coats,Winter,North depot,69,1932.0,28.0,167
+2024-01-15,Winter coats,Winter,Harbour,73,2044.0,28.0,115
+2024-01-15,Hygiene kits,Health,Central,23,149.5,6.5,196
+2024-01-15,Hygiene kits,Health,North depot,36,234.0,6.5,154
+2024-01-15,Hygiene kits,Health,Harbour,15,97.5,6.5,274
+2024-01-15,First-aid kits,Health,Central,29,406.0,14.0,148
+2024-01-15,First-aid kits,Health,North depot,42,588.0,14.0,125
+2024-01-15,First-aid kits,Health,Harbour,30,420.0,14.0,72
+2024-01-15,School bags,Education,Central,29,232.0,8.0,304
+2024-01-15,School bags,Education,North depot,37,296.0,8.0,113
+2024-01-15,School bags,Education,Harbour,51,408.0,8.0,160
+2024-01-22,Rice 25kg,Pantry,Central,26,806.0,31.0,226
+2024-01-22,Rice 25kg,Pantry,North depot,40,1240.0,31.0,153
+2024-01-22,Rice 25kg,Pantry,Harbour,43,1333.0,31.0,176
+2024-01-22,Canned beans,Pantry,Central,18,21.6,1.2,187
+2024-01-22,Canned beans,Pantry,North depot,40,48.0,1.2,216
+2024-01-22,Canned beans,Pantry,Harbour,41,49.2,1.2,135
+2024-01-22,Olive oil 5L,Pantry,Central,41,902.0,22.0,303
+2024-01-22,Olive oil 5L,Pantry,North depot,6,132.0,22.0,175
+2024-01-22,Olive oil 5L,Pantry,Harbour,28,616.0,22.0,243
+2024-01-22,Blankets,Winter,Central,50,450.0,9.0,205
+2024-01-22,Blankets,Winter,North depot,80,720.0,9.0,207
+2024-01-22,Blankets,Winter,Harbour,76,684.0,9.0,337
+2024-01-22,Winter coats,Winter,Central,85,2380.0,28.0,235
+2024-01-22,Winter coats,Winter,North depot,73,2044.0,28.0,141
+2024-01-22,Winter coats,Winter,Harbour,61,1708.0,28.0,144
+2024-01-22,Hygiene kits,Health,Central,47,305.5,6.5,260
+2024-01-22,Hygiene kits,Health,North depot,29,188.5,6.5,208
+2024-01-22,Hygiene kits,Health,Harbour,37,240.5,6.5,309
+2024-01-22,First-aid kits,Health,Central,58,812.0,14.0,278
+2024-01-22,First-aid kits,Health,North depot,27,378.0,14.0,206
+2024-01-22,First-aid kits,Health,Harbour,8,112.0,14.0,311
+2024-01-22,School bags,Education,Central,18,144.0,8.0,229
+2024-01-22,School bags,Education,North depot,48,384.0,8.0,160
+2024-01-22,School bags,Education,Harbour,35,280.0,8.0,286
+2024-01-29,Rice 25kg,Pantry,Central,34,1054.0,31.0,240
+2024-01-29,Rice 25kg,Pantry,North depot,35,1085.0,31.0,147
+2024-01-29,Rice 25kg,Pantry,Harbour,42,1302.0,31.0,221
+2024-01-29,Canned beans,Pantry,Central,55,66.0,1.2,203
+2024-01-29,Canned beans,Pantry,North depot,45,54.0,1.2,282
+2024-01-29,Canned beans,Pantry,Harbour,28,33.6,1.2,108
+2024-01-29,Olive oil 5L,Pantry,Central,35,770.0,22.0,137
+2024-01-29,Olive oil 5L,Pantry,North depot,38,836.0,22.0,199
+2024-01-29,Olive oil 5L,Pantry,Harbour,59,1298.0,22.0,175
+2024-01-29,Blankets,Winter,Central,57,513.0,9.0,137
+2024-01-29,Blankets,Winter,North depot,82,738.0,9.0,238
+2024-01-29,Blankets,Winter,Harbour,84,756.0,9.0,195
+2024-01-29,Winter coats,Winter,Central,59,1652.0,28.0,317
+2024-01-29,Winter coats,Winter,North depot,79,2212.0,28.0,228
+2024-01-29,Winter coats,Winter,Harbour,58,1624.0,28.0,83
+2024-01-29,Hygiene kits,Health,Central,61,396.5,6.5,219
+2024-01-29,Hygiene kits,Health,North depot,36,234.0,6.5,56
+2024-01-29,Hygiene kits,Health,Harbour,21,136.5,6.5,156
+2024-01-29,First-aid kits,Health,Central,52,728.0,14.0,173
+2024-01-29,First-aid kits,Health,North depot,57,798.0,14.0,165
+2024-01-29,First-aid kits,Health,Harbour,48,672.0,14.0,171
+2024-01-29,School bags,Education,Central,14,112.0,8.0,266
+2024-01-29,School bags,Education,North depot,66,528.0,8.0,116
+2024-01-29,School bags,Education,Harbour,49,392.0,8.0,207
+2024-02-05,Rice 25kg,Pantry,Central,31,961.0,31.0,261
+2024-02-05,Rice 25kg,Pantry,North depot,34,1054.0,31.0,192
+2024-02-05,Rice 25kg,Pantry,Harbour,33,1023.0,31.0,230
+2024-02-05,Canned beans,Pantry,Central,52,62.4,1.2,252
+2024-02-05,Canned beans,Pantry,North depot,32,38.4,1.2,155
+2024-02-05,Canned beans,Pantry,Harbour,21,25.2,1.2,232
+2024-02-05,Olive oil 5L,Pantry,Central,31,682.0,22.0,196
+2024-02-05,Olive oil 5L,Pantry,North depot,45,990.0,22.0,104
+2024-02-05,Olive oil 5L,Pantry,Harbour,26,572.0,22.0,177
+2024-02-05,Blankets,Winter,Central,52,468.0,9.0,203
+2024-02-05,Blankets,Winter,North depot,47,423.0,9.0,106
+2024-02-05,Blankets,Winter,Harbour,50,450.0,9.0,172
+2024-02-05,Winter coats,Winter,Central,37,1036.0,28.0,136
+2024-02-05,Winter coats,Winter,North depot,47,1316.0,28.0,221
+2024-02-05,Winter coats,Winter,Harbour,26,728.0,28.0,177
+2024-02-05,Hygiene kits,Health,Central,61,396.5,6.5,220
+2024-02-05,Hygiene kits,Health,North depot,38,247.0,6.5,187
+2024-02-05,Hygiene kits,Health,Harbour,47,305.5,6.5,205
+2024-02-05,First-aid kits,Health,Central,37,518.0,14.0,184
+2024-02-05,First-aid kits,Health,North depot,34,476.0,14.0,221
+2024-02-05,First-aid kits,Health,Harbour,54,756.0,14.0,187
+2024-02-05,School bags,Education,Central,34,272.0,8.0,198
+2024-02-05,School bags,Education,North depot,27,216.0,8.0,114
+2024-02-05,School bags,Education,Harbour,41,328.0,8.0,283
+2024-02-12,Rice 25kg,Pantry,Central,38,1178.0,31.0,227
+2024-02-12,Rice 25kg,Pantry,North depot,35,1085.0,31.0,260
+2024-02-12,Rice 25kg,Pantry,Harbour,38,1178.0,31.0,193
+2024-02-12,Canned beans,Pantry,Central,25,30.0,1.2,193
+2024-02-12,Canned beans,Pantry,North depot,51,61.2,1.2,247
+2024-02-12,Canned beans,Pantry,Harbour,42,50.4,1.2,249
+2024-02-12,Olive oil 5L,Pantry,Central,44,968.0,22.0,226
+2024-02-12,Olive oil 5L,Pantry,North depot,53,1166.0,22.0,116
+2024-02-12,Olive oil 5L,Pantry,Harbour,64,1408.0,22.0,241
+2024-02-12,Blankets,Winter,Central,43,387.0,9.0,167
+2024-02-12,Blankets,Winter,North depot,43,387.0,9.0,142
+2024-02-12,Blankets,Winter,Harbour,30,270.0,9.0,112
+2024-02-12,Winter coats,Winter,Central,35,980.0,28.0,204
+2024-02-12,Winter coats,Winter,North depot,26,728.0,28.0,118
+2024-02-12,Winter coats,Winter,Harbour,45,1260.0,28.0,133
+2024-02-12,Hygiene kits,Health,Central,31,201.5,6.5,192
+2024-02-12,Hygiene kits,Health,North depot,43,279.5,6.5,218
+2024-02-12,Hygiene kits,Health,Harbour,40,260.0,6.5,155
+2024-02-12,First-aid kits,Health,Central,29,406.0,14.0,240
+2024-02-12,First-aid kits,Health,North depot,49,686.0,14.0,194
+2024-02-12,First-aid kits,Health,Harbour,34,476.0,14.0,199
+2024-02-12,School bags,Education,Central,39,312.0,8.0,250
+2024-02-12,School bags,Education,North depot,39,312.0,8.0,271
+2024-02-12,School bags,Education,Harbour,47,376.0,8.0,180
+2024-02-19,Rice 25kg,Pantry,Central,42,1302.0,31.0,233
+2024-02-19,Rice 25kg,Pantry,North depot,46,1426.0,31.0,261
+2024-02-19,Rice 25kg,Pantry,Harbour,44,1364.0,31.0,189
+2024-02-19,Canned beans,Pantry,Central,57,68.4,1.2,130
+2024-02-19,Canned beans,Pantry,North depot,49,58.8,1.2,346
+2024-02-19,Canned beans,Pantry,Harbour,57,68.4,1.2,165
+2024-02-19,Olive oil 5L,Pantry,Central,5,110.0,22.0,128
+2024-02-19,Olive oil 5L,Pantry,North depot,51,1122.0,22.0,214
+2024-02-19,Olive oil 5L,Pantry,Harbour,48,1056.0,22.0,216
+2024-02-19,Blankets,Winter,Central,33,297.0,9.0,234
+2024-02-19,Blankets,Winter,North depot,41,369.0,9.0,205
+2024-02-19,Blankets,Winter,Harbour,47,423.0,9.0,135
+2024-02-19,Winter coats,Winter,Central,34,952.0,28.0,89
+2024-02-19,Winter coats,Winter,North depot,41,1148.0,28.0,148
+2024-02-19,Winter coats,Winter,Harbour,44,1232.0,28.0,191
+2024-02-19,Hygiene kits,Health,Central,42,273.0,6.5,181
+2024-02-19,Hygiene kits,Health,North depot,47,305.5,6.5,172
+2024-02-19,Hygiene kits,Health,Harbour,36,234.0,6.5,279
+2024-02-19,First-aid kits,Health,Central,35,490.0,14.0,285
+2024-02-19,First-aid kits,Health,North depot,34,476.0,14.0,218
+2024-02-19,First-aid kits,Health,Harbour,41,574.0,14.0,283
+2024-02-19,School bags,Education,Central,27,216.0,8.0,226
+2024-02-19,School bags,Education,North depot,35,280.0,8.0,182
+2024-02-19,School bags,Education,Harbour,30,240.0,8.0,229
+2024-02-26,Rice 25kg,Pantry,Central,43,1333.0,31.0,287
+2024-02-26,Rice 25kg,Pantry,North depot,22,682.0,31.0,198
+2024-02-26,Rice 25kg,Pantry,Harbour,58,1798.0,31.0,197
+2024-02-26,Canned beans,Pantry,Central,44,52.8,1.2,198
+2024-02-26,Canned beans,Pantry,North depot,48,57.6,1.2,286
+2024-02-26,Canned beans,Pantry,Harbour,35,42.0,1.2,95
+2024-02-26,Olive oil 5L,Pantry,Central,38,836.0,22.0,92
+2024-02-26,Olive oil 5L,Pantry,North depot,51,1122.0,22.0,116
+2024-02-26,Olive oil 5L,Pantry,Harbour,44,968.0,22.0,168
+2024-02-26,Blankets,Winter,Central,40,360.0,9.0,167
+2024-02-26,Blankets,Winter,North depot,47,423.0,9.0,158
+2024-02-26,Blankets,Winter,Harbour,32,288.0,9.0,230
+2024-02-26,Winter coats,Winter,Central,26,728.0,28.0,212
+2024-02-26,Winter coats,Winter,North depot,13,364.0,28.0,262
+2024-02-26,Winter coats,Winter,Harbour,38,1064.0,28.0,212
+2024-02-26,Hygiene kits,Health,Central,30,195.0,6.5,249
+2024-02-26,Hygiene kits,Health,North depot,65,422.5,6.5,179
+2024-02-26,Hygiene kits,Health,Harbour,47,305.5,6.5,170
+2024-02-26,First-aid kits,Health,Central,25,350.0,14.0,164
+2024-02-26,First-aid kits,Health,North depot,47,658.0,14.0,169
+2024-02-26,First-aid kits,Health,Harbour,60,840.0,14.0,215
+2024-02-26,School bags,Education,Central,37,296.0,8.0,221
+2024-02-26,School bags,Education,North depot,44,352.0,8.0,283
+2024-02-26,School bags,Education,Harbour,37,296.0,8.0,193
+2024-03-04,Rice 25kg,Pantry,Central,38,1178.0,31.0,56
+2024-03-04,Rice 25kg,Pantry,North depot,25,775.0,31.0,241
+2024-03-04,Rice 25kg,Pantry,Harbour,44,1364.0,31.0,259
+2024-03-04,Canned beans,Pantry,Central,29,34.8,1.2,303
+2024-03-04,Canned beans,Pantry,North depot,50,60.0,1.2,299
+2024-03-04,Canned beans,Pantry,Harbour,45,54.0,1.2,242
+2024-03-04,Olive oil 5L,Pantry,Central,32,704.0,22.0,235
+2024-03-04,Olive oil 5L,Pantry,North depot,32,704.0,22.0,196
+2024-03-04,Olive oil 5L,Pantry,Harbour,49,1078.0,22.0,272
+2024-03-04,Blankets,Winter,Central,58,522.0,9.0,207
+2024-03-04,Blankets,Winter,North depot,22,198.0,9.0,304
+2024-03-04,Blankets,Winter,Harbour,66,594.0,9.0,233
+2024-03-04,Winter coats,Winter,Central,55,1540.0,28.0,61
+2024-03-04,Winter coats,Winter,North depot,50,1400.0,28.0,181
+2024-03-04,Winter coats,Winter,Harbour,36,1008.0,28.0,96
+2024-03-04,Hygiene kits,Health,Central,48,312.0,6.5,132
+2024-03-04,Hygiene kits,Health,North depot,17,110.5,6.5,211
+2024-03-04,Hygiene kits,Health,Harbour,41,266.5,6.5,222
+2024-03-04,First-aid kits,Health,Central,33,462.0,14.0,192
+2024-03-04,First-aid kits,Health,North depot,32,448.0,14.0,120
+2024-03-04,First-aid kits,Health,Harbour,54,756.0,14.0,276
+2024-03-04,School bags,Education,Central,21,168.0,8.0,275
+2024-03-04,School bags,Education,North depot,46,368.0,8.0,273
+2024-03-04,School bags,Education,Harbour,37,296.0,8.0,245
+2024-03-11,Rice 25kg,Pantry,Central,30,930.0,31.0,201
+2024-03-11,Rice 25kg,Pantry,North depot,60,1860.0,31.0,256
+2024-03-11,Rice 25kg,Pantry,Harbour,41,1271.0,31.0,244
+2024-03-11,Canned beans,Pantry,Central,52,62.4,1.2,108
+2024-03-11,Canned beans,Pantry,North depot,44,52.8,1.2,201
+2024-03-11,Canned beans,Pantry,Harbour,38,45.6,1.2,257
+2024-03-11,Olive oil 5L,Pantry,Central,34,748.0,22.0,222
+2024-03-11,Olive oil 5L,Pantry,North depot,27,594.0,22.0,195
+2024-03-11,Olive oil 5L,Pantry,Harbour,46,1012.0,22.0,213
+2024-03-11,Blankets,Winter,Central,33,297.0,9.0,183
+2024-03-11,Blankets,Winter,North depot,47,423.0,9.0,224
+2024-03-11,Blankets,Winter,Harbour,21,189.0,9.0,192
+2024-03-11,Winter coats,Winter,Central,47,1316.0,28.0,205
+2024-03-11,Winter coats,Winter,North depot,38,1064.0,28.0,161
+2024-03-11,Winter coats,Winter,Harbour,28,784.0,28.0,245
+2024-03-11,Hygiene kits,Health,Central,35,227.5,6.5,205
+2024-03-11,Hygiene kits,Health,North depot,45,292.5,6.5,300
+2024-03-11,Hygiene kits,Health,Harbour,39,253.5,6.5,279
+2024-03-11,First-aid kits,Health,Central,34,476.0,14.0,172
+2024-03-11,First-aid kits,Health,North depot,40,560.0,14.0,187
+2024-03-11,First-aid kits,Health,Harbour,49,686.0,14.0,80
+2024-03-11,School bags,Education,Central,33,264.0,8.0,189
+2024-03-11,School bags,Education,North depot,26,208.0,8.0,196
+2024-03-11,School bags,Education,Harbour,51,408.0,8.0,198
+2024-03-18,Rice 25kg,Pantry,Central,64,1984.0,31.0,134
+2024-03-18,Rice 25kg,Pantry,North depot,45,1395.0,31.0,220
+2024-03-18,Rice 25kg,Pantry,Harbour,34,1054.0,31.0,192
+2024-03-18,Canned beans,Pantry,Central,41,49.2,1.2,189
+2024-03-18,Canned beans,Pantry,North depot,46,55.2,1.2,164
+2024-03-18,Canned beans,Pantry,Harbour,64,76.8,1.2,257
+2024-03-18,Olive oil 5L,Pantry,Central,57,1254.0,22.0,194
+2024-03-18,Olive oil 5L,Pantry,North depot,33,726.0,22.0,303
+2024-03-18,Olive oil 5L,Pantry,Harbour,32,704.0,22.0,121
+2024-03-18,Blankets,Winter,Central,53,477.0,9.0,258
+2024-03-18,Blankets,Winter,North depot,41,369.0,9.0,290
+2024-03-18,Blankets,Winter,Harbour,37,333.0,9.0,305
+2024-03-18,Winter coats,Winter,Central,59,1652.0,28.0,220
+2024-03-18,Winter coats,Winter,North depot,31,868.0,28.0,335
+2024-03-18,Winter coats,Winter,Harbour,51,1428.0,28.0,126
+2024-03-18,Hygiene kits,Health,Central,10,65.0,6.5,141
+2024-03-18,Hygiene kits,Health,North depot,36,234.0,6.5,164
+2024-03-18,Hygiene kits,Health,Harbour,47,305.5,6.5,166
+2024-03-18,First-aid kits,Health,Central,33,462.0,14.0,210
+2024-03-18,First-aid kits,Health,North depot,38,532.0,14.0,132
+2024-03-18,First-aid kits,Health,Harbour,42,588.0,14.0,164
+2024-03-18,School bags,Education,Central,8,64.0,8.0,247
+2024-03-18,School bags,Education,North depot,17,136.0,8.0,163
+2024-03-18,School bags,Education,Harbour,18,144.0,8.0,193
+2024-03-25,Rice 25kg,Pantry,Central,16,496.0,31.0,156
+2024-03-25,Rice 25kg,Pantry,North depot,22,682.0,31.0,177
+2024-03-25,Rice 25kg,Pantry,Harbour,61,1891.0,31.0,171
+2024-03-25,Canned beans,Pantry,Central,47,56.4,1.2,208
+2024-03-25,Canned beans,Pantry,North depot,46,55.2,1.2,140
+2024-03-25,Canned beans,Pantry,Harbour,40,48.0,1.2,166
+2024-03-25,Olive oil 5L,Pantry,Central,39,858.0,22.0,174
+2024-03-25,Olive oil 5L,Pantry,North depot,32,704.0,22.0,179
+2024-03-25,Olive oil 5L,Pantry,Harbour,38,836.0,22.0,135
+2024-03-25,Blankets,Winter,Central,49,441.0,9.0,112
+2024-03-25,Blankets,Winter,North depot,42,378.0,9.0,187
+2024-03-25,Blankets,Winter,Harbour,35,315.0,9.0,226
+2024-03-25,Winter coats,Winter,Central,38,1064.0,28.0,68
+2024-03-25,Winter coats,Winter,North depot,38,1064.0,28.0,257
+2024-03-25,Winter coats,Winter,Harbour,35,980.0,28.0,150
+2024-03-25,Hygiene kits,Health,Central,5,32.5,6.5,245
+2024-03-25,Hygiene kits,Health,North depot,38,247.0,6.5,235
+2024-03-25,Hygiene kits,Health,Harbour,26,169.0,6.5,174
+2024-03-25,First-aid kits,Health,Central,16,224.0,14.0,164
+2024-03-25,First-aid kits,Health,North depot,48,672.0,14.0,150
+2024-03-25,First-aid kits,Health,Harbour,51,714.0,14.0,265
+2024-03-25,School bags,Education,Central,39,312.0,8.0,124
+2024-03-25,School bags,Education,North depot,36,288.0,8.0,195
+2024-03-25,School bags,Education,Harbour,46,368.0,8.0,230
+2024-04-01,Rice 25kg,Pantry,Central,38,1178.0,31.0,100
+2024-04-01,Rice 25kg,Pantry,North depot,44,1364.0,31.0,141
+2024-04-01,Rice 25kg,Pantry,Harbour,27,837.0,31.0,174
+2024-04-01,Canned beans,Pantry,Central,47,56.4,1.2,248
+2024-04-01,Canned beans,Pantry,North depot,64,76.8,1.2,185
+2024-04-01,Canned beans,Pantry,Harbour,54,64.8,1.2,72
+2024-04-01,Olive oil 5L,Pantry,Central,57,1254.0,22.0,281
+2024-04-01,Olive oil 5L,Pantry,North depot,35,770.0,22.0,174
+2024-04-01,Olive oil 5L,Pantry,Harbour,44,968.0,22.0,246
+2024-04-01,Blankets,Winter,Central,34,306.0,9.0,184
+2024-04-01,Blankets,Winter,North depot,59,531.0,9.0,162
+2024-04-01,Blankets,Winter,Harbour,47,423.0,9.0,215
+2024-04-01,Winter coats,Winter,Central,36,1008.0,28.0,243
+2024-04-01,Winter coats,Winter,North depot,40,1120.0,28.0,199
+2024-04-01,Winter coats,Winter,Harbour,24,672.0,28.0,193
+2024-04-01,Hygiene kits,Health,Central,58,377.0,6.5,181
+2024-04-01,Hygiene kits,Health,North depot,35,227.5,6.5,174
+2024-04-01,Hygiene kits,Health,Harbour,47,305.5,6.5,254
+2024-04-01,First-aid kits,Health,Central,38,532.0,14.0,83
+2024-04-01,First-aid kits,Health,North depot,57,798.0,14.0,205
+2024-04-01,First-aid kits,Health,Harbour,49,686.0,14.0,187
+2024-04-01,School bags,Education,Central,52,416.0,8.0,226
+2024-04-01,School bags,Education,North depot,45,360.0,8.0,135
+2024-04-01,School bags,Education,Harbour,37,296.0,8.0,228
+2024-04-08,Rice 25kg,Pantry,Central,57,1767.0,31.0,249
+2024-04-08,Rice 25kg,Pantry,North depot,60,1860.0,31.0,136
+2024-04-08,Rice 25kg,Pantry,Harbour,33,1023.0,31.0,201
+2024-04-08,Canned beans,Pantry,Central,51,61.2,1.2,199
+2024-04-08,Canned beans,Pantry,North depot,35,42.0,1.2,167
+2024-04-08,Canned beans,Pantry,Harbour,35,42.0,1.2,296
+2024-04-08,Olive oil 5L,Pantry,Central,45,990.0,22.0,166
+2024-04-08,Olive oil 5L,Pantry,North depot,42,924.0,22.0,258
+2024-04-08,Olive oil 5L,Pantry,Harbour,38,836.0,22.0,106
+2024-04-08,Blankets,Winter,Central,31,279.0,9.0,206
+2024-04-08,Blankets,Winter,North depot,23,207.0,9.0,152
+2024-04-08,Blankets,Winter,Harbour,44,396.0,9.0,273
+2024-04-08,Winter coats,Winter,Central,39,1092.0,28.0,88
+2024-04-08,Winter coats,Winter,North depot,64,1792.0,28.0,145
+2024-04-08,Winter coats,Winter,Harbour,45,1260.0,28.0,91
+2024-04-08,Hygiene kits,Health,Central,33,214.5,6.5,250
+2024-04-08,Hygiene kits,Health,North depot,33,214.5,6.5,287
+2024-04-08,Hygiene kits,Health,Harbour,34,221.0,6.5,161
+2024-04-08,First-aid kits,Health,Central,45,630.0,14.0,217
+2024-04-08,First-aid kits,Health,North depot,36,504.0,14.0,139
+2024-04-08,First-aid kits,Health,Harbour,42,588.0,14.0,138
+2024-04-08,School bags,Education,Central,27,216.0,8.0,245
+2024-04-08,School bags,Education,North depot,36,288.0,8.0,325
+2024-04-08,School bags,Education,Harbour,57,456.0,8.0,250
+2024-04-15,Rice 25kg,Pantry,Central,42,1302.0,31.0,207
+2024-04-15,Rice 25kg,Pantry,North depot,38,1178.0,31.0,248
+2024-04-15,Rice 25kg,Pantry,Harbour,59,1829.0,31.0,140
+2024-04-15,Canned beans,Pantry,Central,38,45.6,1.2,136
+2024-04-15,Canned beans,Pantry,North depot,43,51.6,1.2,228
+2024-04-15,Canned beans,Pantry,Harbour,53,63.6,1.2,212
+2024-04-15,Olive oil 5L,Pantry,Central,44,968.0,22.0,61
+2024-04-15,Olive oil 5L,Pantry,North depot,39,858.0,22.0,299
+2024-04-15,Olive oil 5L,Pantry,Harbour,44,968.0,22.0,0
+2024-04-15,Blankets,Winter,Central,38,342.0,9.0,52
+2024-04-15,Blankets,Winter,North depot,40,360.0,9.0,238
+2024-04-15,Blankets,Winter,Harbour,27,243.0,9.0,368
+2024-04-15,Winter coats,Winter,Central,59,1652.0,28.0,90
+2024-04-15,Winter coats,Winter,North depot,46,1288.0,28.0,99
+2024-04-15,Winter coats,Winter,Harbour,41,1148.0,28.0,176
+2024-04-15,Hygiene kits,Health,Central,47,305.5,6.5,221
+2024-04-15,Hygiene kits,Health,North depot,43,279.5,6.5,107
+2024-04-15,Hygiene kits,Health,Harbour,21,136.5,6.5,282
+2024-04-15,First-aid kits,Health,Central,28,392.0,14.0,228
+2024-04-15,First-aid kits,Health,North depot,29,406.0,14.0,264
+2024-04-15,First-aid kits,Health,Harbour,48,672.0,14.0,170
+2024-04-15,School bags,Education,Central,39,312.0,8.0,102
+2024-04-15,School bags,Education,North depot,54,432.0,8.0,167
+2024-04-15,School bags,Education,Harbour,49,392.0,8.0,278
+2024-04-22,Rice 25kg,Pantry,Central,50,1550.0,31.0,170
+2024-04-22,Rice 25kg,Pantry,North depot,45,1395.0,31.0,195
+2024-04-22,Rice 25kg,Pantry,Harbour,11,341.0,31.0,184
+2024-04-22,Canned beans,Pantry,Central,45,54.0,1.2,250
+2024-04-22,Canned beans,Pantry,North depot,45,54.0,1.2,205
+2024-04-22,Canned beans,Pantry,Harbour,39,46.8,1.2,160
+2024-04-22,Olive oil 5L,Pantry,Central,21,462.0,22.0,167
+2024-04-22,Olive oil 5L,Pantry,North depot,42,924.0,22.0,209
+2024-04-22,Olive oil 5L,Pantry,Harbour,39,858.0,22.0,227
+2024-04-22,Blankets,Winter,Central,38,342.0,9.0,139
+2024-04-22,Blankets,Winter,North depot,52,468.0,9.0,225
+2024-04-22,Blankets,Winter,Harbour,33,297.0,9.0,148
+2024-04-22,Winter coats,Winter,Central,48,1344.0,28.0,208
+2024-04-22,Winter coats,Winter,North depot,55,1540.0,28.0,209
+2024-04-22,Winter coats,Winter,Harbour,24,672.0,28.0,153
+2024-04-22,Hygiene kits,Health,Central,49,318.5,6.5,114
+2024-04-22,Hygiene kits,Health,North depot,34,221.0,6.5,186
+2024-04-22,Hygiene kits,Health,Harbour,41,266.5,6.5,243
+2024-04-22,First-aid kits,Health,Central,46,644.0,14.0,183
+2024-04-22,First-aid kits,Health,North depot,53,742.0,14.0,178
+2024-04-22,First-aid kits,Health,Harbour,45,630.0,14.0,12
+2024-04-22,School bags,Education,Central,34,272.0,8.0,224
+2024-04-22,School bags,Education,North depot,24,192.0,8.0,183
+2024-04-22,School bags,Education,Harbour,33,264.0,8.0,292
+2024-04-29,Rice 25kg,Pantry,Central,31,961.0,31.0,300
+2024-04-29,Rice 25kg,Pantry,North depot,42,1302.0,31.0,183
+2024-04-29,Rice 25kg,Pantry,Harbour,39,1209.0,31.0,138
+2024-04-29,Canned beans,Pantry,Central,55,66.0,1.2,256
+2024-04-29,Canned beans,Pantry,North depot,40,48.0,1.2,185
+2024-04-29,Canned beans,Pantry,Harbour,16,19.2,1.2,108
+2024-04-29,Olive oil 5L,Pantry,Central,44,968.0,22.0,227
+2024-04-29,Olive oil 5L,Pantry,North depot,49,1078.0,22.0,155
+2024-04-29,Olive oil 5L,Pantry,Harbour,28,616.0,22.0,131
+2024-04-29,Blankets,Winter,Central,33,297.0,9.0,208
+2024-04-29,Blankets,Winter,North depot,33,297.0,9.0,278
+2024-04-29,Blankets,Winter,Harbour,19,171.0,9.0,174
+2024-04-29,Winter coats,Winter,Central,39,1092.0,28.0,271
+2024-04-29,Winter coats,Winter,North depot,38,1064.0,28.0,238
+2024-04-29,Winter coats,Winter,Harbour,47,1316.0,28.0,266
+2024-04-29,Hygiene kits,Health,Central,56,364.0,6.5,196
+2024-04-29,Hygiene kits,Health,North depot,24,156.0,6.5,253
+2024-04-29,Hygiene kits,Health,Harbour,22,143.0,6.5,170
+2024-04-29,First-aid kits,Health,Central,29,406.0,14.0,168
+2024-04-29,First-aid kits,Health,North depot,35,490.0,14.0,107
+2024-04-29,First-aid kits,Health,Harbour,29,406.0,14.0,328
+2024-04-29,School bags,Education,Central,32,256.0,8.0,304
+2024-04-29,School bags,Education,North depot,40,320.0,8.0,197
+2024-04-29,School bags,Education,Harbour,6,48.0,8.0,279
+2024-05-06,Rice 25kg,Pantry,Central,25,775.0,31.0,235
+2024-05-06,Rice 25kg,Pantry,North depot,50,1550.0,31.0,190
+2024-05-06,Rice 25kg,Pantry,Harbour,33,1023.0,31.0,135
+2024-05-06,Canned beans,Pantry,Central,24,28.8,1.2,212
+2024-05-06,Canned beans,Pantry,North depot,39,46.8,1.2,166
+2024-05-06,Canned beans,Pantry,Harbour,53,63.6,1.2,190
+2024-05-06,Olive oil 5L,Pantry,Central,14,308.0,22.0,202
+2024-05-06,Olive oil 5L,Pantry,North depot,40,880.0,22.0,143
+2024-05-06,Olive oil 5L,Pantry,Harbour,38,836.0,22.0,236
+2024-05-06,Blankets,Winter,Central,38,342.0,9.0,182
+2024-05-06,Blankets,Winter,North depot,36,324.0,9.0,170
+2024-05-06,Blankets,Winter,Harbour,29,261.0,9.0,185
+2024-05-06,Winter coats,Winter,Central,21,588.0,28.0,99
+2024-05-06,Winter coats,Winter,North depot,29,812.0,28.0,279
+2024-05-06,Winter coats,Winter,Harbour,36,1008.0,28.0,188
+2024-05-06,Hygiene kits,Health,Central,46,299.0,6.5,171
+2024-05-06,Hygiene kits,Health,North depot,34,221.0,6.5,303
+2024-05-06,Hygiene kits,Health,Harbour,36,234.0,6.5,276
+2024-05-06,First-aid kits,Health,Central,32,448.0,14.0,235
+2024-05-06,First-aid kits,Health,North depot,55,770.0,14.0,166
+2024-05-06,First-aid kits,Health,Harbour,37,518.0,14.0,290
+2024-05-06,School bags,Education,Central,36,288.0,8.0,207
+2024-05-06,School bags,Education,North depot,43,344.0,8.0,148
+2024-05-06,School bags,Education,Harbour,16,128.0,8.0,111
+2024-05-13,Rice 25kg,Pantry,Central,35,1085.0,31.0,215
+2024-05-13,Rice 25kg,Pantry,North depot,31,961.0,31.0,141
+2024-05-13,Rice 25kg,Pantry,Harbour,38,1178.0,31.0,205
+2024-05-13,Canned beans,Pantry,Central,39,46.8,1.2,189
+2024-05-13,Canned beans,Pantry,North depot,50,60.0,1.2,176
+2024-05-13,Canned beans,Pantry,Harbour,42,50.4,1.2,194
+2024-05-13,Olive oil 5L,Pantry,Central,36,792.0,22.0,172
+2024-05-13,Olive oil 5L,Pantry,North depot,5,110.0,22.0,124
+2024-05-13,Olive oil 5L,Pantry,Harbour,46,1012.0,22.0,226
+2024-05-13,Blankets,Winter,Central,47,423.0,9.0,163
+2024-05-13,Blankets,Winter,North depot,46,414.0,9.0,197
+2024-05-13,Blankets,Winter,Harbour,42,378.0,9.0,213
+2024-05-13,Winter coats,Winter,Central,37,1036.0,28.0,131
+2024-05-13,Winter coats,Winter,North depot,47,1316.0,28.0,94
+2024-05-13,Winter coats,Winter,Harbour,44,1232.0,28.0,292
+2024-05-13,Hygiene kits,Health,Central,46,299.0,6.5,194
+2024-05-13,Hygiene kits,Health,North depot,35,227.5,6.5,310
+2024-05-13,Hygiene kits,Health,Harbour,40,260.0,6.5,194
+2024-05-13,First-aid kits,Health,Central,55,770.0,14.0,216
+2024-05-13,First-aid kits,Health,North depot,46,644.0,14.0,323
+2024-05-13,First-aid kits,Health,Harbour,17,238.0,14.0,222
+2024-05-13,School bags,Education,Central,31,248.0,8.0,226
+2024-05-13,School bags,Education,North depot,46,368.0,8.0,204
+2024-05-13,School bags,Education,Harbour,45,360.0,8.0,250
+2024-05-20,Rice 25kg,Pantry,Central,46,1426.0,31.0,160
+2024-05-20,Rice 25kg,Pantry,North depot,41,1271.0,31.0,200
+2024-05-20,Rice 25kg,Pantry,Harbour,34,1054.0,31.0,155
+2024-05-20,Canned beans,Pantry,Central,45,54.0,1.2,167
+2024-05-20,Canned beans,Pantry,North depot,42,50.4,1.2,234
+2024-05-20,Canned beans,Pantry,Harbour,58,69.6,1.2,261
+2024-05-20,Olive oil 5L,Pantry,Central,50,1100.0,22.0,217
+2024-05-20,Olive oil 5L,Pantry,North depot,46,1012.0,22.0,118
+2024-05-20,Olive oil 5L,Pantry,Harbour,46,1012.0,22.0,232
+2024-05-20,Blankets,Winter,Central,47,423.0,9.0,144
+2024-05-20,Blankets,Winter,North depot,28,252.0,9.0,128
+2024-05-20,Blankets,Winter,Harbour,48,432.0,9.0,210
+2024-05-20,Winter coats,Winter,Central,37,1036.0,28.0,214
+2024-05-20,Winter coats,Winter,North depot,39,1092.0,28.0,125
+2024-05-20,Winter coats,Winter,Harbour,44,1232.0,28.0,211
+2024-05-20,Hygiene kits,Health,Central,46,299.0,6.5,243
+2024-05-20,Hygiene kits,Health,North depot,45,292.5,6.5,240
+2024-05-20,Hygiene kits,Health,Harbour,22,143.0,6.5,198
+2024-05-20,First-aid kits,Health,Central,30,420.0,14.0,180
+2024-05-20,First-aid kits,Health,North depot,36,504.0,14.0,90
+2024-05-20,First-aid kits,Health,Harbour,40,560.0,14.0,230
+2024-05-20,School bags,Education,Central,34,272.0,8.0,212
+2024-05-20,School bags,Education,North depot,45,360.0,8.0,188
+2024-05-20,School bags,Education,Harbour,25,200.0,8.0,208
+2024-05-27,Rice 25kg,Pantry,Central,27,837.0,31.0,164
+2024-05-27,Rice 25kg,Pantry,North depot,29,899.0,31.0,144
+2024-05-27,Rice 25kg,Pantry,Harbour,43,1333.0,31.0,193
+2024-05-27,Canned beans,Pantry,Central,49,58.8,1.2,147
+2024-05-27,Canned beans,Pantry,North depot,41,49.2,1.2,146
+2024-05-27,Canned beans,Pantry,Harbour,25,30.0,1.2,169
+2024-05-27,Olive oil 5L,Pantry,Central,48,1056.0,22.0,238
+2024-05-27,Olive oil 5L,Pantry,North depot,35,770.0,22.0,139
+2024-05-27,Olive oil 5L,Pantry,Harbour,37,814.0,22.0,193
+2024-05-27,Blankets,Winter,Central,25,225.0,9.0,177
+2024-05-27,Blankets,Winter,North depot,54,486.0,9.0,114
+2024-05-27,Blankets,Winter,Harbour,36,324.0,9.0,38
+2024-05-27,Winter coats,Winter,Central,26,728.0,28.0,310
+2024-05-27,Winter coats,Winter,North depot,48,1344.0,28.0,148
+2024-05-27,Winter coats,Winter,Harbour,42,1176.0,28.0,187
+2024-05-27,Hygiene kits,Health,Central,18,117.0,6.5,207
+2024-05-27,Hygiene kits,Health,North depot,52,338.0,6.5,334
+2024-05-27,Hygiene kits,Health,Harbour,43,279.5,6.5,253
+2024-05-27,First-aid kits,Health,Central,34,476.0,14.0,273
+2024-05-27,First-aid kits,Health,North depot,39,546.0,14.0,160
+2024-05-27,First-aid kits,Health,Harbour,43,602.0,14.0,230
+2024-05-27,School bags,Education,Central,50,400.0,8.0,259
+2024-05-27,School bags,Education,North depot,33,264.0,8.0,221
+2024-05-27,School bags,Education,Harbour,51,408.0,8.0,264
+2024-06-03,Rice 25kg,Pantry,Central,29,899.0,31.0,245
+2024-06-03,Rice 25kg,Pantry,North depot,29,899.0,31.0,243
+2024-06-03,Rice 25kg,Pantry,Harbour,47,1457.0,31.0,181
+2024-06-03,Canned beans,Pantry,Central,60,72.0,1.2,243
+2024-06-03,Canned beans,Pantry,North depot,18,21.6,1.2,231
+2024-06-03,Canned beans,Pantry,Harbour,38,45.6,1.2,291
+2024-06-03,Olive oil 5L,Pantry,Central,53,1166.0,22.0,184
+2024-06-03,Olive oil 5L,Pantry,North depot,43,946.0,22.0,209
+2024-06-03,Olive oil 5L,Pantry,Harbour,28,616.0,22.0,214
+2024-06-03,Blankets,Winter,Central,41,369.0,9.0,179
+2024-06-03,Blankets,Winter,North depot,42,378.0,9.0,207
+2024-06-03,Blankets,Winter,Harbour,40,360.0,9.0,229
+2024-06-03,Winter coats,Winter,Central,33,924.0,28.0,180
+2024-06-03,Winter coats,Winter,North depot,36,1008.0,28.0,198
+2024-06-03,Winter coats,Winter,Harbour,34,952.0,28.0,164
+2024-06-03,Hygiene kits,Health,Central,42,273.0,6.5,258
+2024-06-03,Hygiene kits,Health,North depot,66,429.0,6.5,135
+2024-06-03,Hygiene kits,Health,Harbour,59,383.5,6.5,172
+2024-06-03,First-aid kits,Health,Central,54,756.0,14.0,213
+2024-06-03,First-aid kits,Health,North depot,60,840.0,14.0,156
+2024-06-03,First-aid kits,Health,Harbour,45,630.0,14.0,376
+2024-06-03,School bags,Education,Central,34,272.0,8.0,166
+2024-06-03,School bags,Education,North depot,30,240.0,8.0,156
+2024-06-03,School bags,Education,Harbour,53,424.0,8.0,238
+2024-06-10,Rice 25kg,Pantry,Central,28,868.0,31.0,215
+2024-06-10,Rice 25kg,Pantry,North depot,49,1519.0,31.0,255
+2024-06-10,Rice 25kg,Pantry,Harbour,35,1085.0,31.0,124
+2024-06-10,Canned beans,Pantry,Central,34,40.8,1.2,73
+2024-06-10,Canned beans,Pantry,North depot,41,49.2,1.2,224
+2024-06-10,Canned beans,Pantry,Harbour,28,33.6,1.2,182
+2024-06-10,Olive oil 5L,Pantry,Central,52,1144.0,22.0,234
+2024-06-10,Olive oil 5L,Pantry,North depot,43,946.0,22.0,240
+2024-06-10,Olive oil 5L,Pantry,Harbour,25,550.0,22.0,244
+2024-06-10,Blankets,Winter,Central,43,387.0,9.0,184
+2024-06-10,Blankets,Winter,North depot,39,351.0,9.0,200
+2024-06-10,Blankets,Winter,Harbour,50,450.0,9.0,158
+2024-06-10,Winter coats,Winter,Central,42,1176.0,28.0,212
+2024-06-10,Winter coats,Winter,North depot,43,1204.0,28.0,194
+2024-06-10,Winter coats,Winter,Harbour,35,980.0,28.0,184
+2024-06-10,Hygiene kits,Health,Central,38,247.0,6.5,158
+2024-06-10,Hygiene kits,Health,North depot,43,279.5,6.5,278
+2024-06-10,Hygiene kits,Health,Harbour,68,442.0,6.5,172
+2024-06-10,First-aid kits,Health,Central,37,518.0,14.0,261
+2024-06-10,First-aid kits,Health,North depot,24,336.0,14.0,232
+2024-06-10,First-aid kits,Health,Harbour,11,154.0,14.0,301
+2024-06-10,School bags,Education,Central,63,504.0,8.0,168
+2024-06-10,School bags,Education,North depot,35,280.0,8.0,247
+2024-06-10,School bags,Education,Harbour,55,440.0,8.0,192
+2024-06-17,Rice 25kg,Pantry,Central,15,465.0,31.0,193
+2024-06-17,Rice 25kg,Pantry,North depot,53,1643.0,31.0,172
+2024-06-17,Rice 25kg,Pantry,Harbour,45,1395.0,31.0,159
+2024-06-17,Canned beans,Pantry,Central,32,38.4,1.2,224
+2024-06-17,Canned beans,Pantry,North depot,29,34.8,1.2,231
+2024-06-17,Canned beans,Pantry,Harbour,47,56.4,1.2,326
+2024-06-17,Olive oil 5L,Pantry,Central,16,352.0,22.0,224
+2024-06-17,Olive oil 5L,Pantry,North depot,19,418.0,22.0,93
+2024-06-17,Olive oil 5L,Pantry,Harbour,20,440.0,22.0,243
+2024-06-17,Blankets,Winter,Central,48,432.0,9.0,165
+2024-06-17,Blankets,Winter,North depot,63,567.0,9.0,230
+2024-06-17,Blankets,Winter,Harbour,21,189.0,9.0,257
+2024-06-17,Winter coats,Winter,Central,52,1456.0,28.0,258
+2024-06-17,Winter coats,Winter,North depot,40,1120.0,28.0,134
+2024-06-17,Winter coats,Winter,Harbour,44,1232.0,28.0,155
+2024-06-17,Hygiene kits,Health,Central,18,117.0,6.5,319
+2024-06-17,Hygiene kits,Health,North depot,15,97.5,6.5,208
+2024-06-17,Hygiene kits,Health,Harbour,53,344.5,6.5,204
+2024-06-17,First-aid kits,Health,Central,23,322.0,14.0,216
+2024-06-17,First-aid kits,Health,North depot,32,448.0,14.0,285
+2024-06-17,First-aid kits,Health,Harbour,51,714.0,14.0,77
+2024-06-17,School bags,Education,Central,11,88.0,8.0,137
+2024-06-17,School bags,Education,North depot,54,432.0,8.0,247
+2024-06-17,School bags,Education,Harbour,42,336.0,8.0,151
+2024-06-24,Rice 25kg,Pantry,Central,24,744.0,31.0,254
+2024-06-24,Rice 25kg,Pantry,North depot,27,837.0,31.0,177
+2024-06-24,Rice 25kg,Pantry,Harbour,36,1116.0,31.0,207
+2024-06-24,Canned beans,Pantry,Central,32,38.4,1.2,277
+2024-06-24,Canned beans,Pantry,North depot,53,63.6,1.2,274
+2024-06-24,Canned beans,Pantry,Harbour,30,36.0,1.2,197
+2024-06-24,Olive oil 5L,Pantry,Central,48,1056.0,22.0,209
+2024-06-24,Olive oil 5L,Pantry,North depot,35,770.0,22.0,109
+2024-06-24,Olive oil 5L,Pantry,Harbour,30,660.0,22.0,130
+2024-06-24,Blankets,Winter,Central,27,243.0,9.0,146
+2024-06-24,Blankets,Winter,North depot,36,324.0,9.0,246
+2024-06-24,Blankets,Winter,Harbour,59,531.0,9.0,198
+2024-06-24,Winter coats,Winter,Central,22,616.0,28.0,217
+2024-06-24,Winter coats,Winter,North depot,51,1428.0,28.0,232
+2024-06-24,Winter coats,Winter,Harbour,36,1008.0,28.0,159
+2024-06-24,Hygiene kits,Health,Central,32,208.0,6.5,237
+2024-06-24,Hygiene kits,Health,North depot,31,201.5,6.5,147
+2024-06-24,Hygiene kits,Health,Harbour,46,299.0,6.5,176
+2024-06-24,First-aid kits,Health,Central,41,574.0,14.0,87
+2024-06-24,First-aid kits,Health,North depot,38,532.0,14.0,186
+2024-06-24,First-aid kits,Health,Harbour,37,518.0,14.0,110
+2024-06-24,School bags,Education,Central,55,440.0,8.0,93
+2024-06-24,School bags,Education,North depot,33,264.0,8.0,199
+2024-06-24,School bags,Education,Harbour,55,440.0,8.0,295
+2024-07-01,Rice 25kg,Pantry,Central,46,1426.0,31.0,215
+2024-07-01,Rice 25kg,Pantry,North depot,50,1550.0,31.0,187
+2024-07-01,Rice 25kg,Pantry,Harbour,2,62.0,31.0,182
+2024-07-01,Canned beans,Pantry,Central,37,44.4,1.2,254
+2024-07-01,Canned beans,Pantry,North depot,42,50.4,1.2,170
+2024-07-01,Canned beans,Pantry,Harbour,31,37.2,1.2,272
+2024-07-01,Olive oil 5L,Pantry,Central,31,682.0,22.0,126
+2024-07-01,Olive oil 5L,Pantry,North depot,49,1078.0,22.0,186
+2024-07-01,Olive oil 5L,Pantry,Harbour,25,550.0,22.0,275
+2024-07-01,Blankets,Winter,Central,45,405.0,9.0,102
+2024-07-01,Blankets,Winter,North depot,33,297.0,9.0,189
+2024-07-01,Blankets,Winter,Harbour,39,351.0,9.0,126
+2024-07-01,Winter coats,Winter,Central,64,1792.0,28.0,232
+2024-07-01,Winter coats,Winter,North depot,65,1820.0,28.0,204
+2024-07-01,Winter coats,Winter,Harbour,36,1008.0,28.0,166
+2024-07-01,Hygiene kits,Health,Central,53,344.5,6.5,192
+2024-07-01,Hygiene kits,Health,North depot,40,260.0,6.5,205
+2024-07-01,Hygiene kits,Health,Harbour,18,117.0,6.5,207
+2024-07-01,First-aid kits,Health,Central,32,448.0,14.0,106
+2024-07-01,First-aid kits,Health,North depot,38,532.0,14.0,259
+2024-07-01,First-aid kits,Health,Harbour,60,840.0,14.0,83
+2024-07-01,School bags,Education,Central,30,240.0,8.0,156
+2024-07-01,School bags,Education,North depot,24,192.0,8.0,192
+2024-07-01,School bags,Education,Harbour,32,256.0,8.0,181
+2024-07-08,Rice 25kg,Pantry,Central,48,1488.0,31.0,190
+2024-07-08,Rice 25kg,Pantry,North depot,18,558.0,31.0,231
+2024-07-08,Rice 25kg,Pantry,Harbour,35,1085.0,31.0,171
+2024-07-08,Canned beans,Pantry,Central,36,43.2,1.2,161
+2024-07-08,Canned beans,Pantry,North depot,78,93.6,1.2,231
+2024-07-08,Canned beans,Pantry,Harbour,40,48.0,1.2,130
+2024-07-08,Olive oil 5L,Pantry,Central,39,858.0,22.0,185
+2024-07-08,Olive oil 5L,Pantry,North depot,18,396.0,22.0,196
+2024-07-08,Olive oil 5L,Pantry,Harbour,57,1254.0,22.0,234
+2024-07-08,Blankets,Winter,Central,44,396.0,9.0,223
+2024-07-08,Blankets,Winter,North depot,50,450.0,9.0,251
+2024-07-08,Blankets,Winter,Harbour,53,477.0,9.0,179
+2024-07-08,Winter coats,Winter,Central,34,952.0,28.0,224
+2024-07-08,Winter coats,Winter,North depot,33,924.0,28.0,121
+2024-07-08,Winter coats,Winter,Harbour,47,1316.0,28.0,198
+2024-07-08,Hygiene kits,Health,Central,43,279.5,6.5,224
+2024-07-08,Hygiene kits,Health,North depot,45,292.5,6.5,149
+2024-07-08,Hygiene kits,Health,Harbour,31,201.5,6.5,203
+2024-07-08,First-aid kits,Health,Central,51,714.0,14.0,78
+2024-07-08,First-aid kits,Health,North depot,46,644.0,14.0,211
+2024-07-08,First-aid kits,Health,Harbour,39,546.0,14.0,243
+2024-07-08,School bags,Education,Central,35,280.0,8.0,347
+2024-07-08,School bags,Education,North depot,37,296.0,8.0,168
+2024-07-08,School bags,Education,Harbour,36,288.0,8.0,129
+2024-07-15,Rice 25kg,Pantry,Central,39,1209.0,31.0,111
+2024-07-15,Rice 25kg,Pantry,North depot,58,1798.0,31.0,221
+2024-07-15,Rice 25kg,Pantry,Harbour,51,1581.0,31.0,204
+2024-07-15,Canned beans,Pantry,Central,54,64.8,1.2,227
+2024-07-15,Canned beans,Pantry,North depot,49,58.8,1.2,280
+2024-07-15,Canned beans,Pantry,Harbour,45,54.0,1.2,183
+2024-07-15,Olive oil 5L,Pantry,Central,66,1452.0,22.0,280
+2024-07-15,Olive oil 5L,Pantry,North depot,34,748.0,22.0,192
+2024-07-15,Olive oil 5L,Pantry,Harbour,48,1056.0,22.0,228
+2024-07-15,Blankets,Winter,Central,43,387.0,9.0,151
+2024-07-15,Blankets,Winter,North depot,44,396.0,9.0,104
+2024-07-15,Blankets,Winter,Harbour,40,360.0,9.0,169
+2024-07-15,Winter coats,Winter,Central,42,1176.0,28.0,111
+2024-07-15,Winter coats,Winter,North depot,31,868.0,28.0,206
+2024-07-15,Winter coats,Winter,Harbour,31,868.0,28.0,199
+2024-07-15,Hygiene kits,Health,Central,40,260.0,6.5,130
+2024-07-15,Hygiene kits,Health,North depot,59,383.5,6.5,166
+2024-07-15,Hygiene kits,Health,Harbour,26,169.0,6.5,237
+2024-07-15,First-aid kits,Health,Central,57,798.0,14.0,250
+2024-07-15,First-aid kits,Health,North depot,37,518.0,14.0,197
+2024-07-15,First-aid kits,Health,Harbour,43,602.0,14.0,185
+2024-07-15,School bags,Education,Central,44,352.0,8.0,248
+2024-07-15,School bags,Education,North depot,34,272.0,8.0,221
+2024-07-15,School bags,Education,Harbour,65,520.0,8.0,117
+2024-07-22,Rice 25kg,Pantry,Central,51,1581.0,31.0,305
+2024-07-22,Rice 25kg,Pantry,North depot,39,1209.0,31.0,246
+2024-07-22,Rice 25kg,Pantry,Harbour,37,1147.0,31.0,256
+2024-07-22,Canned beans,Pantry,Central,47,56.4,1.2,271
+2024-07-22,Canned beans,Pantry,North depot,44,52.8,1.2,270
+2024-07-22,Canned beans,Pantry,Harbour,35,42.0,1.2,177
+2024-07-22,Olive oil 5L,Pantry,Central,29,638.0,22.0,83
+2024-07-22,Olive oil 5L,Pantry,North depot,50,1100.0,22.0,131
+2024-07-22,Olive oil 5L,Pantry,Harbour,30,660.0,22.0,243
+2024-07-22,Blankets,Winter,Central,48,432.0,9.0,151
+2024-07-22,Blankets,Winter,North depot,44,396.0,9.0,111
+2024-07-22,Blankets,Winter,Harbour,34,306.0,9.0,223
+2024-07-22,Winter coats,Winter,Central,57,1596.0,28.0,277
+2024-07-22,Winter coats,Winter,North depot,22,616.0,28.0,250
+2024-07-22,Winter coats,Winter,Harbour,45,1260.0,28.0,286
+2024-07-22,Hygiene kits,Health,Central,46,299.0,6.5,80
+2024-07-22,Hygiene kits,Health,North depot,33,214.5,6.5,187
+2024-07-22,Hygiene kits,Health,Harbour,46,299.0,6.5,213
+2024-07-22,First-aid kits,Health,Central,32,448.0,14.0,20
+2024-07-22,First-aid kits,Health,North depot,37,518.0,14.0,301
+2024-07-22,First-aid kits,Health,Harbour,44,616.0,14.0,307
+2024-07-22,School bags,Education,Central,33,264.0,8.0,107
+2024-07-22,School bags,Education,North depot,27,216.0,8.0,239
+2024-07-22,School bags,Education,Harbour,13,104.0,8.0,171
+2024-07-29,Rice 25kg,Pantry,Central,63,1953.0,31.0,287
+2024-07-29,Rice 25kg,Pantry,North depot,35,1085.0,31.0,218
+2024-07-29,Rice 25kg,Pantry,Harbour,50,1550.0,31.0,160
+2024-07-29,Canned beans,Pantry,Central,20,24.0,1.2,258
+2024-07-29,Canned beans,Pantry,North depot,50,60.0,1.2,210
+2024-07-29,Canned beans,Pantry,Harbour,20,24.0,1.2,201
+2024-07-29,Olive oil 5L,Pantry,Central,32,704.0,22.0,217
+2024-07-29,Olive oil 5L,Pantry,North depot,27,594.0,22.0,150
+2024-07-29,Olive oil 5L,Pantry,Harbour,35,770.0,22.0,156
+2024-07-29,Blankets,Winter,Central,43,387.0,9.0,289
+2024-07-29,Blankets,Winter,North depot,33,297.0,9.0,217
+2024-07-29,Blankets,Winter,Harbour,52,468.0,9.0,190
+2024-07-29,Winter coats,Winter,Central,57,1596.0,28.0,129
+2024-07-29,Winter coats,Winter,North depot,36,1008.0,28.0,173
+2024-07-29,Winter coats,Winter,Harbour,53,1484.0,28.0,209
+2024-07-29,Hygiene kits,Health,Central,30,195.0,6.5,307
+2024-07-29,Hygiene kits,Health,North depot,47,305.5,6.5,97
+2024-07-29,Hygiene kits,Health,Harbour,43,279.5,6.5,150
+2024-07-29,First-aid kits,Health,Central,20,280.0,14.0,197
+2024-07-29,First-aid kits,Health,North depot,20,280.0,14.0,228
+2024-07-29,First-aid kits,Health,Harbour,42,588.0,14.0,238
+2024-07-29,School bags,Education,Central,32,256.0,8.0,148
+2024-07-29,School bags,Education,North depot,59,472.0,8.0,143
+2024-07-29,School bags,Education,Harbour,58,464.0,8.0,227
+2024-08-05,Rice 25kg,Pantry,Central,36,1116.0,31.0,114
+2024-08-05,Rice 25kg,Pantry,North depot,38,1178.0,31.0,190
+2024-08-05,Rice 25kg,Pantry,Harbour,36,1116.0,31.0,250
+2024-08-05,Canned beans,Pantry,Central,36,43.2,1.2,253
+2024-08-05,Canned beans,Pantry,North depot,40,48.0,1.2,104
+2024-08-05,Canned beans,Pantry,Harbour,44,52.8,1.2,188
+2024-08-05,Olive oil 5L,Pantry,Central,58,1276.0,22.0,226
+2024-08-05,Olive oil 5L,Pantry,North depot,22,484.0,22.0,278
+2024-08-05,Olive oil 5L,Pantry,Harbour,53,1166.0,22.0,149
+2024-08-05,Blankets,Winter,Central,58,522.0,9.0,175
+2024-08-05,Blankets,Winter,North depot,34,306.0,9.0,247
+2024-08-05,Blankets,Winter,Harbour,29,261.0,9.0,325
+2024-08-05,Winter coats,Winter,Central,36,1008.0,28.0,222
+2024-08-05,Winter coats,Winter,North depot,31,868.0,28.0,205
+2024-08-05,Winter coats,Winter,Harbour,23,644.0,28.0,263
+2024-08-05,Hygiene kits,Health,Central,37,240.5,6.5,213
+2024-08-05,Hygiene kits,Health,North depot,44,286.0,6.5,172
+2024-08-05,Hygiene kits,Health,Harbour,47,305.5,6.5,205
+2024-08-05,First-aid kits,Health,Central,36,504.0,14.0,174
+2024-08-05,First-aid kits,Health,North depot,63,882.0,14.0,293
+2024-08-05,First-aid kits,Health,Harbour,40,560.0,14.0,184
+2024-08-05,School bags,Education,Central,64,512.0,8.0,171
+2024-08-05,School bags,Education,North depot,59,472.0,8.0,310
+2024-08-05,School bags,Education,Harbour,51,408.0,8.0,229
+2024-08-12,Rice 25kg,Pantry,Central,27,837.0,31.0,133
+2024-08-12,Rice 25kg,Pantry,North depot,34,1054.0,31.0,261
+2024-08-12,Rice 25kg,Pantry,Harbour,21,651.0,31.0,122
+2024-08-12,Canned beans,Pantry,Central,48,57.6,1.2,206
+2024-08-12,Canned beans,Pantry,North depot,25,30.0,1.2,317
+2024-08-12,Canned beans,Pantry,Harbour,36,43.2,1.2,102
+2024-08-12,Olive oil 5L,Pantry,Central,23,506.0,22.0,173
+2024-08-12,Olive oil 5L,Pantry,North depot,35,770.0,22.0,262
+2024-08-12,Olive oil 5L,Pantry,Harbour,28,616.0,22.0,210
+2024-08-12,Blankets,Winter,Central,42,378.0,9.0,177
+2024-08-12,Blankets,Winter,North depot,40,360.0,9.0,184
+2024-08-12,Blankets,Winter,Harbour,56,504.0,9.0,119
+2024-08-12,Winter coats,Winter,Central,18,504.0,28.0,158
+2024-08-12,Winter coats,Winter,North depot,34,952.0,28.0,242
+2024-08-12,Winter coats,Winter,Harbour,52,1456.0,28.0,131
+2024-08-12,Hygiene kits,Health,Central,26,169.0,6.5,130
+2024-08-12,Hygiene kits,Health,North depot,31,201.5,6.5,270
+2024-08-12,Hygiene kits,Health,Harbour,17,110.5,6.5,165
+2024-08-12,First-aid kits,Health,Central,45,630.0,14.0,231
+2024-08-12,First-aid kits,Health,North depot,24,336.0,14.0,153
+2024-08-12,First-aid kits,Health,Harbour,37,518.0,14.0,243
+2024-08-12,School bags,Education,Central,32,256.0,8.0,131
+2024-08-12,School bags,Education,North depot,53,424.0,8.0,311
+2024-08-12,School bags,Education,Harbour,59,472.0,8.0,116
+2024-08-19,Rice 25kg,Pantry,Central,18,558.0,31.0,104
+2024-08-19,Rice 25kg,Pantry,North depot,50,1550.0,31.0,182
+2024-08-19,Rice 25kg,Pantry,Harbour,48,1488.0,31.0,178
+2024-08-19,Canned beans,Pantry,Central,24,28.8,1.2,243
+2024-08-19,Canned beans,Pantry,North depot,20,24.0,1.2,163
+2024-08-19,Canned beans,Pantry,Harbour,38,45.6,1.2,233
+2024-08-19,Olive oil 5L,Pantry,Central,37,814.0,22.0,168
+2024-08-19,Olive oil 5L,Pantry,North depot,51,1122.0,22.0,222
+2024-08-19,Olive oil 5L,Pantry,Harbour,21,462.0,22.0,178
+2024-08-19,Blankets,Winter,Central,68,612.0,9.0,146
+2024-08-19,Blankets,Winter,North depot,50,450.0,9.0,171
+2024-08-19,Blankets,Winter,Harbour,31,279.0,9.0,179
+2024-08-19,Winter coats,Winter,Central,41,1148.0,28.0,71
+2024-08-19,Winter coats,Winter,North depot,28,784.0,28.0,274
+2024-08-19,Winter coats,Winter,Harbour,36,1008.0,28.0,230
+2024-08-19,Hygiene kits,Health,Central,25,162.5,6.5,274
+2024-08-19,Hygiene kits,Health,North depot,38,247.0,6.5,204
+2024-08-19,Hygiene kits,Health,Harbour,39,253.5,6.5,290
+2024-08-19,First-aid kits,Health,Central,26,364.0,14.0,253
+2024-08-19,First-aid kits,Health,North depot,48,672.0,14.0,212
+2024-08-19,First-aid kits,Health,Harbour,69,966.0,14.0,250
+2024-08-19,School bags,Education,Central,45,360.0,8.0,207
+2024-08-19,School bags,Education,North depot,31,248.0,8.0,192
+2024-08-19,School bags,Education,Harbour,38,304.0,8.0,152
+2024-08-26,Rice 25kg,Pantry,Central,28,868.0,31.0,243
+2024-08-26,Rice 25kg,Pantry,North depot,44,1364.0,31.0,235
+2024-08-26,Rice 25kg,Pantry,Harbour,40,1240.0,31.0,241
+2024-08-26,Canned beans,Pantry,Central,21,25.2,1.2,153
+2024-08-26,Canned beans,Pantry,North depot,56,67.2,1.2,188
+2024-08-26,Canned beans,Pantry,Harbour,51,61.2,1.2,270
+2024-08-26,Olive oil 5L,Pantry,Central,52,1144.0,22.0,242
+2024-08-26,Olive oil 5L,Pantry,North depot,60,1320.0,22.0,268
+2024-08-26,Olive oil 5L,Pantry,Harbour,39,858.0,22.0,256
+2024-08-26,Blankets,Winter,Central,21,189.0,9.0,250
+2024-08-26,Blankets,Winter,North depot,39,351.0,9.0,168
+2024-08-26,Blankets,Winter,Harbour,40,360.0,9.0,213
+2024-08-26,Winter coats,Winter,Central,40,1120.0,28.0,141
+2024-08-26,Winter coats,Winter,North depot,48,1344.0,28.0,335
+2024-08-26,Winter coats,Winter,Harbour,33,924.0,28.0,237
+2024-08-26,Hygiene kits,Health,Central,28,182.0,6.5,197
+2024-08-26,Hygiene kits,Health,North depot,29,188.5,6.5,139
+2024-08-26,Hygiene kits,Health,Harbour,24,156.0,6.5,156
+2024-08-26,First-aid kits,Health,Central,34,476.0,14.0,181
+2024-08-26,First-aid kits,Health,North depot,10,140.0,14.0,150
+2024-08-26,First-aid kits,Health,Harbour,49,686.0,14.0,91
+2024-08-26,School bags,Education,Central,46,368.0,8.0,63
+2024-08-26,School bags,Education,North depot,21,168.0,8.0,250
+2024-08-26,School bags,Education,Harbour,38,304.0,8.0,255
+2024-09-02,Rice 25kg,Pantry,Central,49,1519.0,31.0,226
+2024-09-02,Rice 25kg,Pantry,North depot,44,1364.0,31.0,176
+2024-09-02,Rice 25kg,Pantry,Harbour,45,1395.0,31.0,163
+2024-09-02,Canned beans,Pantry,Central,36,43.2,1.2,112
+2024-09-02,Canned beans,Pantry,North depot,41,49.2,1.2,169
+2024-09-02,Canned beans,Pantry,Harbour,35,42.0,1.2,143
+2024-09-02,Olive oil 5L,Pantry,Central,36,792.0,22.0,247
+2024-09-02,Olive oil 5L,Pantry,North depot,46,1012.0,22.0,95
+2024-09-02,Olive oil 5L,Pantry,Harbour,51,1122.0,22.0,218
+2024-09-02,Blankets,Winter,Central,30,270.0,9.0,218
+2024-09-02,Blankets,Winter,North depot,41,369.0,9.0,236
+2024-09-02,Blankets,Winter,Harbour,29,261.0,9.0,222
+2024-09-02,Winter coats,Winter,Central,46,1288.0,28.0,306
+2024-09-02,Winter coats,Winter,North depot,12,336.0,28.0,273
+2024-09-02,Winter coats,Winter,Harbour,52,1456.0,28.0,148
+2024-09-02,Hygiene kits,Health,Central,39,253.5,6.5,254
+2024-09-02,Hygiene kits,Health,North depot,32,208.0,6.5,248
+2024-09-02,Hygiene kits,Health,Harbour,35,227.5,6.5,224
+2024-09-02,First-aid kits,Health,Central,31,434.0,14.0,206
+2024-09-02,First-aid kits,Health,North depot,29,406.0,14.0,211
+2024-09-02,First-aid kits,Health,Harbour,29,406.0,14.0,197
+2024-09-02,School bags,Education,Central,48,384.0,8.0,177
+2024-09-02,School bags,Education,North depot,47,376.0,8.0,130
+2024-09-02,School bags,Education,Harbour,9,72.0,8.0,234
+2024-09-09,Rice 25kg,Pantry,Central,37,1147.0,31.0,203
+2024-09-09,Rice 25kg,Pantry,North depot,40,1240.0,31.0,178
+2024-09-09,Rice 25kg,Pantry,Harbour,11,341.0,31.0,152
+2024-09-09,Canned beans,Pantry,Central,26,31.2,1.2,288
+2024-09-09,Canned beans,Pantry,North depot,18,21.6,1.2,202
+2024-09-09,Canned beans,Pantry,Harbour,17,20.4,1.2,76
+2024-09-09,Olive oil 5L,Pantry,Central,45,990.0,22.0,268
+2024-09-09,Olive oil 5L,Pantry,North depot,35,770.0,22.0,143
+2024-09-09,Olive oil 5L,Pantry,Harbour,63,1386.0,22.0,230
+2024-09-09,Blankets,Winter,Central,42,378.0,9.0,129
+2024-09-09,Blankets,Winter,North depot,45,405.0,9.0,233
+2024-09-09,Blankets,Winter,Harbour,10,90.0,9.0,240
+2024-09-09,Winter coats,Winter,Central,17,476.0,28.0,167
+2024-09-09,Winter coats,Winter,North depot,21,588.0,28.0,205
+2024-09-09,Winter coats,Winter,Harbour,57,1596.0,28.0,261
+2024-09-09,Hygiene kits,Health,Central,41,266.5,6.5,176
+2024-09-09,Hygiene kits,Health,North depot,45,292.5,6.5,103
+2024-09-09,Hygiene kits,Health,Harbour,52,338.0,6.5,194
+2024-09-09,First-aid kits,Health,Central,43,602.0,14.0,208
+2024-09-09,First-aid kits,Health,North depot,15,210.0,14.0,159
+2024-09-09,First-aid kits,Health,Harbour,31,434.0,14.0,215
+2024-09-09,School bags,Education,Central,16,128.0,8.0,333
+2024-09-09,School bags,Education,North depot,58,464.0,8.0,265
+2024-09-09,School bags,Education,Harbour,58,464.0,8.0,318
+2024-09-16,Rice 25kg,Pantry,Central,40,1240.0,31.0,197
+2024-09-16,Rice 25kg,Pantry,North depot,45,1395.0,31.0,245
+2024-09-16,Rice 25kg,Pantry,Harbour,57,1767.0,31.0,43
+2024-09-16,Canned beans,Pantry,Central,40,48.0,1.2,156
+2024-09-16,Canned beans,Pantry,North depot,49,58.8,1.2,194
+2024-09-16,Canned beans,Pantry,Harbour,22,26.4,1.2,219
+2024-09-16,Olive oil 5L,Pantry,Central,31,682.0,22.0,181
+2024-09-16,Olive oil 5L,Pantry,North depot,37,814.0,22.0,145
+2024-09-16,Olive oil 5L,Pantry,Harbour,38,836.0,22.0,181
+2024-09-16,Blankets,Winter,Central,54,486.0,9.0,139
+2024-09-16,Blankets,Winter,North depot,29,261.0,9.0,171
+2024-09-16,Blankets,Winter,Harbour,40,360.0,9.0,267
+2024-09-16,Winter coats,Winter,Central,37,1036.0,28.0,228
+2024-09-16,Winter coats,Winter,North depot,50,1400.0,28.0,215
+2024-09-16,Winter coats,Winter,Harbour,36,1008.0,28.0,167
+2024-09-16,Hygiene kits,Health,Central,56,364.0,6.5,251
+2024-09-16,Hygiene kits,Health,North depot,46,299.0,6.5,296
+2024-09-16,Hygiene kits,Health,Harbour,29,188.5,6.5,269
+2024-09-16,First-aid kits,Health,Central,38,532.0,14.0,101
+2024-09-16,First-aid kits,Health,North depot,28,392.0,14.0,211
+2024-09-16,First-aid kits,Health,Harbour,55,770.0,14.0,74
+2024-09-16,School bags,Education,Central,53,424.0,8.0,185
+2024-09-16,School bags,Education,North depot,41,328.0,8.0,231
+2024-09-16,School bags,Education,Harbour,21,168.0,8.0,214
+2024-09-23,Rice 25kg,Pantry,Central,36,1116.0,31.0,199
+2024-09-23,Rice 25kg,Pantry,North depot,66,2046.0,31.0,217
+2024-09-23,Rice 25kg,Pantry,Harbour,38,1178.0,31.0,206
+2024-09-23,Canned beans,Pantry,Central,67,80.4,1.2,293
+2024-09-23,Canned beans,Pantry,North depot,51,61.2,1.2,207
+2024-09-23,Canned beans,Pantry,Harbour,40,48.0,1.2,130
+2024-09-23,Olive oil 5L,Pantry,Central,23,506.0,22.0,278
+2024-09-23,Olive oil 5L,Pantry,North depot,49,1078.0,22.0,208
+2024-09-23,Olive oil 5L,Pantry,Harbour,39,858.0,22.0,136
+2024-09-23,Blankets,Winter,Central,52,468.0,9.0,221
+2024-09-23,Blankets,Winter,North depot,44,396.0,9.0,126
+2024-09-23,Blankets,Winter,Harbour,62,558.0,9.0,182
+2024-09-23,Winter coats,Winter,Central,30,840.0,28.0,192
+2024-09-23,Winter coats,Winter,North depot,36,1008.0,28.0,260
+2024-09-23,Winter coats,Winter,Harbour,42,1176.0,28.0,141
+2024-09-23,Hygiene kits,Health,Central,21,136.5,6.5,86
+2024-09-23,Hygiene kits,Health,North depot,29,188.5,6.5,216
+2024-09-23,Hygiene kits,Health,Harbour,25,162.5,6.5,202
+2024-09-23,First-aid kits,Health,Central,20,280.0,14.0,196
+2024-09-23,First-aid kits,Health,North depot,35,490.0,14.0,131
+2024-09-23,First-aid kits,Health,Harbour,46,644.0,14.0,271
+2024-09-23,School bags,Education,Central,36,288.0,8.0,187
+2024-09-23,School bags,Education,North depot,33,264.0,8.0,206
+2024-09-23,School bags,Education,Harbour,46,368.0,8.0,256
+2024-09-30,Rice 25kg,Pantry,Central,38,1178.0,31.0,330
+2024-09-30,Rice 25kg,Pantry,North depot,76,2356.0,31.0,353
+2024-09-30,Rice 25kg,Pantry,Harbour,15,465.0,31.0,118
+2024-09-30,Canned beans,Pantry,Central,32,38.4,1.2,207
+2024-09-30,Canned beans,Pantry,North depot,52,62.4,1.2,173
+2024-09-30,Canned beans,Pantry,Harbour,30,36.0,1.2,172
+2024-09-30,Olive oil 5L,Pantry,Central,27,594.0,22.0,143
+2024-09-30,Olive oil 5L,Pantry,North depot,40,880.0,22.0,8
+2024-09-30,Olive oil 5L,Pantry,Harbour,64,1408.0,22.0,228
+2024-09-30,Blankets,Winter,Central,46,414.0,9.0,284
+2024-09-30,Blankets,Winter,North depot,32,288.0,9.0,185
+2024-09-30,Blankets,Winter,Harbour,42,378.0,9.0,149
+2024-09-30,Winter coats,Winter,Central,40,1120.0,28.0,207
+2024-09-30,Winter coats,Winter,North depot,45,1260.0,28.0,268
+2024-09-30,Winter coats,Winter,Harbour,47,1316.0,28.0,168
+2024-09-30,Hygiene kits,Health,Central,27,175.5,6.5,163
+2024-09-30,Hygiene kits,Health,North depot,48,312.0,6.5,67
+2024-09-30,Hygiene kits,Health,Harbour,43,279.5,6.5,131
+2024-09-30,First-aid kits,Health,Central,31,434.0,14.0,190
+2024-09-30,First-aid kits,Health,North depot,21,294.0,14.0,207
+2024-09-30,First-aid kits,Health,Harbour,39,546.0,14.0,199
+2024-09-30,School bags,Education,Central,28,224.0,8.0,337
+2024-09-30,School bags,Education,North depot,40,320.0,8.0,269
+2024-09-30,School bags,Education,Harbour,48,384.0,8.0,121
+2024-10-07,Rice 25kg,Pantry,Central,44,1364.0,31.0,266
+2024-10-07,Rice 25kg,Pantry,North depot,28,868.0,31.0,249
+2024-10-07,Rice 25kg,Pantry,Harbour,58,1798.0,31.0,165
+2024-10-07,Canned beans,Pantry,Central,37,44.4,1.2,160
+2024-10-07,Canned beans,Pantry,North depot,33,39.6,1.2,273
+2024-10-07,Canned beans,Pantry,Harbour,28,33.6,1.2,98
+2024-10-07,Olive oil 5L,Pantry,Central,32,704.0,22.0,316
+2024-10-07,Olive oil 5L,Pantry,North depot,38,836.0,22.0,216
+2024-10-07,Olive oil 5L,Pantry,Harbour,48,1056.0,22.0,232
+2024-10-07,Blankets,Winter,Central,83,747.0,9.0,308
+2024-10-07,Blankets,Winter,North depot,71,639.0,9.0,228
+2024-10-07,Blankets,Winter,Harbour,85,765.0,9.0,129
+2024-10-07,Winter coats,Winter,Central,92,2576.0,28.0,145
+2024-10-07,Winter coats,Winter,North depot,95,2660.0,28.0,156
+2024-10-07,Winter coats,Winter,Harbour,80,2240.0,28.0,140
+2024-10-07,Hygiene kits,Health,Central,37,240.5,6.5,178
+2024-10-07,Hygiene kits,Health,North depot,36,234.0,6.5,212
+2024-10-07,Hygiene kits,Health,Harbour,33,214.5,6.5,156
+2024-10-07,First-aid kits,Health,Central,56,784.0,14.0,140
+2024-10-07,First-aid kits,Health,North depot,20,280.0,14.0,304
+2024-10-07,First-aid kits,Health,Harbour,66,924.0,14.0,170
+2024-10-07,School bags,Education,Central,50,400.0,8.0,196
+2024-10-07,School bags,Education,North depot,50,400.0,8.0,211
+2024-10-07,School bags,Education,Harbour,30,240.0,8.0,242
+2024-10-14,Rice 25kg,Pantry,Central,69,2139.0,31.0,153
+2024-10-14,Rice 25kg,Pantry,North depot,57,1767.0,31.0,77
+2024-10-14,Rice 25kg,Pantry,Harbour,35,1085.0,31.0,266
+2024-10-14,Canned beans,Pantry,Central,56,67.2,1.2,166
+2024-10-14,Canned beans,Pantry,North depot,52,62.4,1.2,214
+2024-10-14,Canned beans,Pantry,Harbour,49,58.8,1.2,276
+2024-10-14,Olive oil 5L,Pantry,Central,27,594.0,22.0,185
+2024-10-14,Olive oil 5L,Pantry,North depot,20,440.0,22.0,301
+2024-10-14,Olive oil 5L,Pantry,Harbour,36,792.0,22.0,143
+2024-10-14,Blankets,Winter,Central,47,423.0,9.0,199
+2024-10-14,Blankets,Winter,North depot,56,504.0,9.0,169
+2024-10-14,Blankets,Winter,Harbour,88,792.0,9.0,218
+2024-10-14,Winter coats,Winter,Central,72,2016.0,28.0,282
+2024-10-14,Winter coats,Winter,North depot,93,2604.0,28.0,202
+2024-10-14,Winter coats,Winter,Harbour,62,1736.0,28.0,152
+2024-10-14,Hygiene kits,Health,Central,38,247.0,6.5,251
+2024-10-14,Hygiene kits,Health,North depot,54,351.0,6.5,95
+2024-10-14,Hygiene kits,Health,Harbour,41,266.5,6.5,228
+2024-10-14,First-aid kits,Health,Central,50,700.0,14.0,325
+2024-10-14,First-aid kits,Health,North depot,47,658.0,14.0,191
+2024-10-14,First-aid kits,Health,Harbour,28,392.0,14.0,106
+2024-10-14,School bags,Education,Central,54,432.0,8.0,152
+2024-10-14,School bags,Education,North depot,33,264.0,8.0,252
+2024-10-14,School bags,Education,Harbour,47,376.0,8.0,217
+2024-10-21,Rice 25kg,Pantry,Central,52,1612.0,31.0,127
+2024-10-21,Rice 25kg,Pantry,North depot,40,1240.0,31.0,239
+2024-10-21,Rice 25kg,Pantry,Harbour,40,1240.0,31.0,130
+2024-10-21,Canned beans,Pantry,Central,19,22.8,1.2,237
+2024-10-21,Canned beans,Pantry,North depot,45,54.0,1.2,149
+2024-10-21,Canned beans,Pantry,Harbour,28,33.6,1.2,234
+2024-10-21,Olive oil 5L,Pantry,Central,46,1012.0,22.0,151
+2024-10-21,Olive oil 5L,Pantry,North depot,31,682.0,22.0,199
+2024-10-21,Olive oil 5L,Pantry,Harbour,27,594.0,22.0,229
+2024-10-21,Blankets,Winter,Central,55,495.0,9.0,97
+2024-10-21,Blankets,Winter,North depot,88,792.0,9.0,93
+2024-10-21,Blankets,Winter,Harbour,64,576.0,9.0,228
+2024-10-21,Winter coats,Winter,Central,58,1624.0,28.0,331
+2024-10-21,Winter coats,Winter,North depot,67,1876.0,28.0,224
+2024-10-21,Winter coats,Winter,Harbour,55,1540.0,28.0,172
+2024-10-21,Hygiene kits,Health,Central,23,149.5,6.5,285
+2024-10-21,Hygiene kits,Health,North depot,30,195.0,6.5,218
+2024-10-21,Hygiene kits,Health,Harbour,32,208.0,6.5,233
+2024-10-21,First-aid kits,Health,Central,42,588.0,14.0,220
+2024-10-21,First-aid kits,Health,North depot,68,952.0,14.0,154
+2024-10-21,First-aid kits,Health,Harbour,42,588.0,14.0,210
+2024-10-21,School bags,Education,Central,61,488.0,8.0,153
+2024-10-21,School bags,Education,North depot,54,432.0,8.0,237
+2024-10-21,School bags,Education,Harbour,38,304.0,8.0,290
+2024-10-28,Rice 25kg,Pantry,Central,39,1209.0,31.0,209
+2024-10-28,Rice 25kg,Pantry,North depot,44,1364.0,31.0,144
+2024-10-28,Rice 25kg,Pantry,Harbour,37,1147.0,31.0,188
+2024-10-28,Canned beans,Pantry,Central,35,42.0,1.2,199
+2024-10-28,Canned beans,Pantry,North depot,47,56.4,1.2,237
+2024-10-28,Canned beans,Pantry,Harbour,37,44.4,1.2,211
+2024-10-28,Olive oil 5L,Pantry,Central,36,792.0,22.0,135
+2024-10-28,Olive oil 5L,Pantry,North depot,38,836.0,22.0,205
+2024-10-28,Olive oil 5L,Pantry,Harbour,34,748.0,22.0,56
+2024-10-28,Blankets,Winter,Central,92,828.0,9.0,169
+2024-10-28,Blankets,Winter,North depot,62,558.0,9.0,134
+2024-10-28,Blankets,Winter,Harbour,77,693.0,9.0,166
+2024-10-28,Winter coats,Winter,Central,60,1680.0,28.0,148
+2024-10-28,Winter coats,Winter,North depot,77,2156.0,28.0,131
+2024-10-28,Winter coats,Winter,Harbour,64,1792.0,28.0,197
+2024-10-28,Hygiene kits,Health,Central,41,266.5,6.5,172
+2024-10-28,Hygiene kits,Health,North depot,33,214.5,6.5,171
+2024-10-28,Hygiene kits,Health,Harbour,46,299.0,6.5,273
+2024-10-28,First-aid kits,Health,Central,32,448.0,14.0,221
+2024-10-28,First-aid kits,Health,North depot,47,658.0,14.0,199
+2024-10-28,First-aid kits,Health,Harbour,44,616.0,14.0,119
+2024-10-28,School bags,Education,Central,51,408.0,8.0,133
+2024-10-28,School bags,Education,North depot,23,184.0,8.0,207
+2024-10-28,School bags,Education,Harbour,36,288.0,8.0,317
+2024-11-04,Rice 25kg,Pantry,Central,40,1240.0,31.0,314
+2024-11-04,Rice 25kg,Pantry,North depot,28,868.0,31.0,393
+2024-11-04,Rice 25kg,Pantry,Harbour,36,1116.0,31.0,264
+2024-11-04,Canned beans,Pantry,Central,18,21.6,1.2,213
+2024-11-04,Canned beans,Pantry,North depot,27,32.4,1.2,199
+2024-11-04,Canned beans,Pantry,Harbour,22,26.4,1.2,310
+2024-11-04,Olive oil 5L,Pantry,Central,50,1100.0,22.0,285
+2024-11-04,Olive oil 5L,Pantry,North depot,54,1188.0,22.0,157
+2024-11-04,Olive oil 5L,Pantry,Harbour,36,792.0,22.0,228
+2024-11-04,Blankets,Winter,Central,103,927.0,9.0,221
+2024-11-04,Blankets,Winter,North depot,78,702.0,9.0,142
+2024-11-04,Blankets,Winter,Harbour,73,657.0,9.0,148
+2024-11-04,Winter coats,Winter,Central,82,2296.0,28.0,262
+2024-11-04,Winter coats,Winter,North depot,80,2240.0,28.0,174
+2024-11-04,Winter coats,Winter,Harbour,76,2128.0,28.0,217
+2024-11-04,Hygiene kits,Health,Central,24,156.0,6.5,295
+2024-11-04,Hygiene kits,Health,North depot,29,188.5,6.5,170
+2024-11-04,Hygiene kits,Health,Harbour,16,104.0,6.5,217
+2024-11-04,First-aid kits,Health,Central,30,420.0,14.0,233
+2024-11-04,First-aid kits,Health,North depot,57,798.0,14.0,314
+2024-11-04,First-aid kits,Health,Harbour,39,546.0,14.0,216
+2024-11-04,School bags,Education,Central,61,488.0,8.0,151
+2024-11-04,School bags,Education,North depot,23,184.0,8.0,74
+2024-11-04,School bags,Education,Harbour,26,208.0,8.0,202
+2024-11-11,Rice 25kg,Pantry,Central,49,1519.0,31.0,174
+2024-11-11,Rice 25kg,Pantry,North depot,38,1178.0,31.0,255
+2024-11-11,Rice 25kg,Pantry,Harbour,53,1643.0,31.0,175
+2024-11-11,Canned beans,Pantry,Central,22,26.4,1.2,214
+2024-11-11,Canned beans,Pantry,North depot,63,75.6,1.2,205
+2024-11-11,Canned beans,Pantry,Harbour,30,36.0,1.2,122
+2024-11-11,Olive oil 5L,Pantry,Central,27,594.0,22.0,198
+2024-11-11,Olive oil 5L,Pantry,North depot,43,946.0,22.0,152
+2024-11-11,Olive oil 5L,Pantry,Harbour,19,418.0,22.0,238
+2024-11-11,Blankets,Winter,Central,75,675.0,9.0,236
+2024-11-11,Blankets,Winter,North depot,49,441.0,9.0,161
+2024-11-11,Blankets,Winter,Harbour,77,693.0,9.0,173
+2024-11-11,Winter coats,Winter,Central,59,1652.0,28.0,315
+2024-11-11,Winter coats,Winter,North depot,70,1960.0,28.0,216
+2024-11-11,Winter coats,Winter,Harbour,65,1820.0,28.0,194
+2024-11-11,Hygiene kits,Health,Central,24,156.0,6.5,219
+2024-11-11,Hygiene kits,Health,North depot,36,234.0,6.5,287
+2024-11-11,Hygiene kits,Health,Harbour,34,221.0,6.5,171
+2024-11-11,First-aid kits,Health,Central,31,434.0,14.0,266
+2024-11-11,First-aid kits,Health,North depot,50,700.0,14.0,200
+2024-11-11,First-aid kits,Health,Harbour,33,462.0,14.0,82
+2024-11-11,School bags,Education,Central,44,352.0,8.0,214
+2024-11-11,School bags,Education,North depot,44,352.0,8.0,34
+2024-11-11,School bags,Education,Harbour,41,328.0,8.0,184
+2024-11-18,Rice 25kg,Pantry,Central,26,806.0,31.0,228
+2024-11-18,Rice 25kg,Pantry,North depot,58,1798.0,31.0,293
+2024-11-18,Rice 25kg,Pantry,Harbour,15,465.0,31.0,216
+2024-11-18,Canned beans,Pantry,Central,56,67.2,1.2,228
+2024-11-18,Canned beans,Pantry,North depot,32,38.4,1.2,182
+2024-11-18,Canned beans,Pantry,Harbour,37,44.4,1.2,210
+2024-11-18,Olive oil 5L,Pantry,Central,25,550.0,22.0,94
+2024-11-18,Olive oil 5L,Pantry,North depot,49,1078.0,22.0,223
+2024-11-18,Olive oil 5L,Pantry,Harbour,37,814.0,22.0,263
+2024-11-18,Blankets,Winter,Central,62,558.0,9.0,161
+2024-11-18,Blankets,Winter,North depot,73,657.0,9.0,163
+2024-11-18,Blankets,Winter,Harbour,80,720.0,9.0,286
+2024-11-18,Winter coats,Winter,Central,62,1736.0,28.0,210
+2024-11-18,Winter coats,Winter,North depot,73,2044.0,28.0,223
+2024-11-18,Winter coats,Winter,Harbour,57,1596.0,28.0,124
+2024-11-18,Hygiene kits,Health,Central,25,162.5,6.5,218
+2024-11-18,Hygiene kits,Health,North depot,34,221.0,6.5,195
+2024-11-18,Hygiene kits,Health,Harbour,33,214.5,6.5,172
+2024-11-18,First-aid kits,Health,Central,38,532.0,14.0,287
+2024-11-18,First-aid kits,Health,North depot,41,574.0,14.0,188
+2024-11-18,First-aid kits,Health,Harbour,40,560.0,14.0,258
+2024-11-18,School bags,Education,Central,24,192.0,8.0,139
+2024-11-18,School bags,Education,North depot,23,184.0,8.0,283
+2024-11-18,School bags,Education,Harbour,42,336.0,8.0,214
+2024-11-25,Rice 25kg,Pantry,Central,56,1736.0,31.0,193
+2024-11-25,Rice 25kg,Pantry,North depot,48,1488.0,31.0,215
+2024-11-25,Rice 25kg,Pantry,Harbour,32,992.0,31.0,298
+2024-11-25,Canned beans,Pantry,Central,63,75.6,1.2,140
+2024-11-25,Canned beans,Pantry,North depot,40,48.0,1.2,115
+2024-11-25,Canned beans,Pantry,Harbour,63,75.6,1.2,192
+2024-11-25,Olive oil 5L,Pantry,Central,25,550.0,22.0,200
+2024-11-25,Olive oil 5L,Pantry,North depot,51,1122.0,22.0,214
+2024-11-25,Olive oil 5L,Pantry,Harbour,47,1034.0,22.0,201
+2024-11-25,Blankets,Winter,Central,79,711.0,9.0,183
+2024-11-25,Blankets,Winter,North depot,67,603.0,9.0,131
+2024-11-25,Blankets,Winter,Harbour,54,486.0,9.0,235
+2024-11-25,Winter coats,Winter,Central,67,1876.0,28.0,235
+2024-11-25,Winter coats,Winter,North depot,73,2044.0,28.0,201
+2024-11-25,Winter coats,Winter,Harbour,74,2072.0,28.0,111
+2024-11-25,Hygiene kits,Health,Central,42,273.0,6.5,194
+2024-11-25,Hygiene kits,Health,North depot,11,71.5,6.5,137
+2024-11-25,Hygiene kits,Health,Harbour,41,266.5,6.5,253
+2024-11-25,First-aid kits,Health,Central,31,434.0,14.0,242
+2024-11-25,First-aid kits,Health,North depot,52,728.0,14.0,254
+2024-11-25,First-aid kits,Health,Harbour,46,644.0,14.0,170
+2024-11-25,School bags,Education,Central,26,208.0,8.0,157
+2024-11-25,School bags,Education,North depot,43,344.0,8.0,26
+2024-11-25,School bags,Education,Harbour,38,304.0,8.0,188
+2024-12-02,Rice 25kg,Pantry,Central,50,1550.0,31.0,156
+2024-12-02,Rice 25kg,Pantry,North depot,54,1674.0,31.0,174
+2024-12-02,Rice 25kg,Pantry,Harbour,40,1240.0,31.0,150
+2024-12-02,Canned beans,Pantry,Central,31,37.2,1.2,141
+2024-12-02,Canned beans,Pantry,North depot,30,36.0,1.2,194
+2024-12-02,Canned beans,Pantry,Harbour,22,26.4,1.2,249
+2024-12-02,Olive oil 5L,Pantry,Central,49,1078.0,22.0,160
+2024-12-02,Olive oil 5L,Pantry,North depot,37,814.0,22.0,101
+2024-12-02,Olive oil 5L,Pantry,Harbour,40,880.0,22.0,304
+2024-12-02,Blankets,Winter,Central,67,603.0,9.0,237
+2024-12-02,Blankets,Winter,North depot,59,531.0,9.0,399
+2024-12-02,Blankets,Winter,Harbour,73,657.0,9.0,298
+2024-12-02,Winter coats,Winter,Central,64,1792.0,28.0,179
+2024-12-02,Winter coats,Winter,North depot,90,2520.0,28.0,201
+2024-12-02,Winter coats,Winter,Harbour,69,1932.0,28.0,216
+2024-12-02,Hygiene kits,Health,Central,19,123.5,6.5,199
+2024-12-02,Hygiene kits,Health,North depot,33,214.5,6.5,123
+2024-12-02,Hygiene kits,Health,Harbour,43,279.5,6.5,187
+2024-12-02,First-aid kits,Health,Central,40,560.0,14.0,146
+2024-12-02,First-aid kits,Health,North depot,47,658.0,14.0,236
+2024-12-02,First-aid kits,Health,Harbour,41,574.0,14.0,175
+2024-12-02,School bags,Education,Central,10,80.0,8.0,160
+2024-12-02,School bags,Education,North depot,34,272.0,8.0,105
+2024-12-02,School bags,Education,Harbour,62,496.0,8.0,148
+2024-12-09,Rice 25kg,Pantry,Central,32,992.0,31.0,116
+2024-12-09,Rice 25kg,Pantry,North depot,16,496.0,31.0,185
+2024-12-09,Rice 25kg,Pantry,Harbour,37,1147.0,31.0,227
+2024-12-09,Canned beans,Pantry,Central,47,56.4,1.2,221
+2024-12-09,Canned beans,Pantry,North depot,30,36.0,1.2,241
+2024-12-09,Canned beans,Pantry,Harbour,24,28.8,1.2,310
+2024-12-09,Olive oil 5L,Pantry,Central,42,924.0,22.0,291
+2024-12-09,Olive oil 5L,Pantry,North depot,65,1430.0,22.0,23
+2024-12-09,Olive oil 5L,Pantry,Harbour,34,748.0,22.0,230
+2024-12-09,Blankets,Winter,Central,67,603.0,9.0,187
+2024-12-09,Blankets,Winter,North depot,80,720.0,9.0,243
+2024-12-09,Blankets,Winter,Harbour,84,756.0,9.0,176
+2024-12-09,Winter coats,Winter,Central,76,2128.0,28.0,200
+2024-12-09,Winter coats,Winter,North depot,72,2016.0,28.0,209
+2024-12-09,Winter coats,Winter,Harbour,62,1736.0,28.0,220
+2024-12-09,Hygiene kits,Health,Central,31,201.5,6.5,260
+2024-12-09,Hygiene kits,Health,North depot,38,247.0,6.5,225
+2024-12-09,Hygiene kits,Health,Harbour,26,169.0,6.5,178
+2024-12-09,First-aid kits,Health,Central,18,252.0,14.0,91
+2024-12-09,First-aid kits,Health,North depot,44,616.0,14.0,154
+2024-12-09,First-aid kits,Health,Harbour,30,420.0,14.0,284
+2024-12-09,School bags,Education,Central,25,200.0,8.0,192
+2024-12-09,School bags,Education,North depot,31,248.0,8.0,212
+2024-12-09,School bags,Education,Harbour,29,232.0,8.0,82
+2024-12-16,Rice 25kg,Pantry,Central,22,682.0,31.0,199
+2024-12-16,Rice 25kg,Pantry,North depot,52,1612.0,31.0,139
+2024-12-16,Rice 25kg,Pantry,Harbour,39,1209.0,31.0,201
+2024-12-16,Canned beans,Pantry,Central,36,43.2,1.2,265
+2024-12-16,Canned beans,Pantry,North depot,37,44.4,1.2,269
+2024-12-16,Canned beans,Pantry,Harbour,56,67.2,1.2,156
+2024-12-16,Olive oil 5L,Pantry,Central,28,616.0,22.0,134
+2024-12-16,Olive oil 5L,Pantry,North depot,46,1012.0,22.0,163
+2024-12-16,Olive oil 5L,Pantry,Harbour,30,660.0,22.0,247
+2024-12-16,Blankets,Winter,Central,68,612.0,9.0,370
+2024-12-16,Blankets,Winter,North depot,79,711.0,9.0,273
+2024-12-16,Blankets,Winter,Harbour,73,657.0,9.0,248
+2024-12-16,Winter coats,Winter,Central,73,2044.0,28.0,229
+2024-12-16,Winter coats,Winter,North depot,70,1960.0,28.0,284
+2024-12-16,Winter coats,Winter,Harbour,75,2100.0,28.0,201
+2024-12-16,Hygiene kits,Health,Central,31,201.5,6.5,270
+2024-12-16,Hygiene kits,Health,North depot,46,299.0,6.5,127
+2024-12-16,Hygiene kits,Health,Harbour,42,273.0,6.5,349
+2024-12-16,First-aid kits,Health,Central,37,518.0,14.0,219
+2024-12-16,First-aid kits,Health,North depot,53,742.0,14.0,181
+2024-12-16,First-aid kits,Health,Harbour,50,700.0,14.0,251
+2024-12-16,School bags,Education,Central,41,328.0,8.0,126
+2024-12-16,School bags,Education,North depot,56,448.0,8.0,158
+2024-12-16,School bags,Education,Harbour,24,192.0,8.0,155
+2024-12-23,Rice 25kg,Pantry,Central,62,1922.0,31.0,157
+2024-12-23,Rice 25kg,Pantry,North depot,29,899.0,31.0,200
+2024-12-23,Rice 25kg,Pantry,Harbour,35,1085.0,31.0,147
+2024-12-23,Canned beans,Pantry,Central,27,32.4,1.2,201
+2024-12-23,Canned beans,Pantry,North depot,33,39.6,1.2,125
+2024-12-23,Canned beans,Pantry,Harbour,64,76.8,1.2,254
+2024-12-23,Olive oil 5L,Pantry,Central,30,660.0,22.0,228
+2024-12-23,Olive oil 5L,Pantry,North depot,56,1232.0,22.0,221
+2024-12-23,Olive oil 5L,Pantry,Harbour,35,770.0,22.0,278
+2024-12-23,Blankets,Winter,Central,73,657.0,9.0,240
+2024-12-23,Blankets,Winter,North depot,67,603.0,9.0,203
+2024-12-23,Blankets,Winter,Harbour,96,864.0,9.0,258
+2024-12-23,Winter coats,Winter,Central,70,1960.0,28.0,250
+2024-12-23,Winter coats,Winter,North depot,75,2100.0,28.0,186
+2024-12-23,Winter coats,Winter,Harbour,71,1988.0,28.0,191
+2024-12-23,Hygiene kits,Health,Central,40,260.0,6.5,188
+2024-12-23,Hygiene kits,Health,North depot,48,312.0,6.5,197
+2024-12-23,Hygiene kits,Health,Harbour,31,201.5,6.5,237
+2024-12-23,First-aid kits,Health,Central,42,588.0,14.0,93
+2024-12-23,First-aid kits,Health,North depot,28,392.0,14.0,229
+2024-12-23,First-aid kits,Health,Harbour,49,686.0,14.0,271
+2024-12-23,School bags,Education,Central,27,216.0,8.0,275
+2024-12-23,School bags,Education,North depot,44,352.0,8.0,217
+2024-12-23,School bags,Education,Harbour,33,264.0,8.0,238
+2024-12-30,Rice 25kg,Pantry,Central,37,1147.0,31.0,199
+2024-12-30,Rice 25kg,Pantry,North depot,67,2077.0,31.0,174
+2024-12-30,Rice 25kg,Pantry,Harbour,38,1178.0,31.0,187
+2024-12-30,Canned beans,Pantry,Central,24,28.8,1.2,173
+2024-12-30,Canned beans,Pantry,North depot,33,39.6,1.2,146
+2024-12-30,Canned beans,Pantry,Harbour,50,60.0,1.2,307
+2024-12-30,Olive oil 5L,Pantry,Central,40,880.0,22.0,184
+2024-12-30,Olive oil 5L,Pantry,North depot,46,1012.0,22.0,202
+2024-12-30,Olive oil 5L,Pantry,Harbour,52,1144.0,22.0,144
+2024-12-30,Blankets,Winter,Central,68,612.0,9.0,325
+2024-12-30,Blankets,Winter,North depot,74,666.0,9.0,281
+2024-12-30,Blankets,Winter,Harbour,92,828.0,9.0,218
+2024-12-30,Winter coats,Winter,Central,67,1876.0,28.0,165
+2024-12-30,Winter coats,Winter,North depot,36,1008.0,28.0,241
+2024-12-30,Winter coats,Winter,Harbour,58,1624.0,28.0,323
+2024-12-30,Hygiene kits,Health,Central,39,253.5,6.5,0
+2024-12-30,Hygiene kits,Health,North depot,39,253.5,6.5,134
+2024-12-30,Hygiene kits,Health,Harbour,46,299.0,6.5,187
+2024-12-30,First-aid kits,Health,Central,42,588.0,14.0,168
+2024-12-30,First-aid kits,Health,North depot,32,448.0,14.0,95
+2024-12-30,First-aid kits,Health,Harbour,22,308.0,14.0,91
+2024-12-30,School bags,Education,Central,45,360.0,8.0,258
+2024-12-30,School bags,Education,North depot,43,344.0,8.0,180
+2024-12-30,School bags,Education,Harbour,33,264.0,8.0,133
+2025-01-06,Rice 25kg,Pantry,Central,52,1612.0,31.0,29
+2025-01-06,Rice 25kg,Pantry,North depot,38,1178.0,31.0,100
+2025-01-06,Rice 25kg,Pantry,Harbour,57,1767.0,31.0,117
+2025-01-06,Canned beans,Pantry,Central,24,28.8,1.2,200
+2025-01-06,Canned beans,Pantry,North depot,51,61.2,1.2,202
+2025-01-06,Canned beans,Pantry,Harbour,32,38.4,1.2,139
+2025-01-06,Olive oil 5L,Pantry,Central,26,572.0,22.0,136
+2025-01-06,Olive oil 5L,Pantry,North depot,39,858.0,22.0,237
+2025-01-06,Olive oil 5L,Pantry,Harbour,32,704.0,22.0,156
+2025-01-06,Blankets,Winter,Central,70,630.0,9.0,132
+2025-01-06,Blankets,Winter,North depot,58,522.0,9.0,285
+2025-01-06,Blankets,Winter,Harbour,65,585.0,9.0,267
+2025-01-06,Winter coats,Winter,Central,80,2240.0,28.0,123
+2025-01-06,Winter coats,Winter,North depot,89,2492.0,28.0,213
+2025-01-06,Winter coats,Winter,Harbour,79,2212.0,28.0,268
+2025-01-06,Hygiene kits,Health,Central,32,208.0,6.5,161
+2025-01-06,Hygiene kits,Health,North depot,25,162.5,6.5,230
+2025-01-06,Hygiene kits,Health,Harbour,7,45.5,6.5,201
+2025-01-06,First-aid kits,Health,Central,39,546.0,14.0,179
+2025-01-06,First-aid kits,Health,North depot,31,434.0,14.0,122
+2025-01-06,First-aid kits,Health,Harbour,40,560.0,14.0,239
+2025-01-06,School bags,Education,Central,36,288.0,8.0,321
+2025-01-06,School bags,Education,North depot,45,360.0,8.0,201
+2025-01-06,School bags,Education,Harbour,44,352.0,8.0,175
+2025-01-13,Rice 25kg,Pantry,Central,31,961.0,31.0,164
+2025-01-13,Rice 25kg,Pantry,North depot,45,1395.0,31.0,260
+2025-01-13,Rice 25kg,Pantry,Harbour,43,1333.0,31.0,266
+2025-01-13,Canned beans,Pantry,Central,34,40.8,1.2,170
+2025-01-13,Canned beans,Pantry,North depot,30,36.0,1.2,227
+2025-01-13,Canned beans,Pantry,Harbour,23,27.6,1.2,213
+2025-01-13,Olive oil 5L,Pantry,Central,41,902.0,22.0,176
+2025-01-13,Olive oil 5L,Pantry,North depot,42,924.0,22.0,234
+2025-01-13,Olive oil 5L,Pantry,Harbour,51,1122.0,22.0,113
+2025-01-13,Blankets,Winter,Central,76,684.0,9.0,182
+2025-01-13,Blankets,Winter,North depot,55,495.0,9.0,161
+2025-01-13,Blankets,Winter,Harbour,68,612.0,9.0,169
+2025-01-13,Winter coats,Winter,Central,46,1288.0,28.0,122
+2025-01-13,Winter coats,Winter,North depot,67,1876.0,28.0,211
+2025-01-13,Winter coats,Winter,Harbour,83,2324.0,28.0,122
+2025-01-13,Hygiene kits,Health,Central,54,351.0,6.5,184
+2025-01-13,Hygiene kits,Health,North depot,45,292.5,6.5,224
+2025-01-13,Hygiene kits,Health,Harbour,45,292.5,6.5,103
+2025-01-13,First-aid kits,Health,Central,36,504.0,14.0,219
+2025-01-13,First-aid kits,Health,North depot,39,546.0,14.0,275
+2025-01-13,First-aid kits,Health,Harbour,55,770.0,14.0,186
+2025-01-13,School bags,Education,Central,51,408.0,8.0,148
+2025-01-13,School bags,Education,North depot,15,120.0,8.0,242
+2025-01-13,School bags,Education,Harbour,52,416.0,8.0,278
+2025-01-20,Rice 25kg,Pantry,Central,47,1457.0,31.0,149
+2025-01-20,Rice 25kg,Pantry,North depot,47,1457.0,31.0,149
+2025-01-20,Rice 25kg,Pantry,Harbour,53,1643.0,31.0,234
+2025-01-20,Canned beans,Pantry,Central,35,42.0,1.2,289
+2025-01-20,Canned beans,Pantry,North depot,43,51.6,1.2,249
+2025-01-20,Canned beans,Pantry,Harbour,21,25.2,1.2,197
+2025-01-20,Olive oil 5L,Pantry,Central,45,990.0,22.0,277
+2025-01-20,Olive oil 5L,Pantry,North depot,48,1056.0,22.0,196
+2025-01-20,Olive oil 5L,Pantry,Harbour,35,770.0,22.0,143
+2025-01-20,Blankets,Winter,Central,76,684.0,9.0,320
+2025-01-20,Blankets,Winter,North depot,66,594.0,9.0,202
+2025-01-20,Blankets,Winter,Harbour,51,459.0,9.0,215
+2025-01-20,Winter coats,Winter,Central,56,1568.0,28.0,139
+2025-01-20,Winter coats,Winter,North depot,67,1876.0,28.0,92
+2025-01-20,Winter coats,Winter,Harbour,85,2380.0,28.0,303
+2025-01-20,Hygiene kits,Health,Central,42,273.0,6.5,228
+2025-01-20,Hygiene kits,Health,North depot,32,208.0,6.5,294
+2025-01-20,Hygiene kits,Health,Harbour,50,325.0,6.5,107
+2025-01-20,First-aid kits,Health,Central,28,392.0,14.0,208
+2025-01-20,First-aid kits,Health,North depot,65,910.0,14.0,226
+2025-01-20,First-aid kits,Health,Harbour,24,336.0,14.0,148
+2025-01-20,School bags,Education,Central,58,464.0,8.0,287
+2025-01-20,School bags,Education,North depot,51,408.0,8.0,188
+2025-01-20,School bags,Education,Harbour,42,336.0,8.0,197
+2025-01-27,Rice 25kg,Pantry,Central,34,1054.0,31.0,97
+2025-01-27,Rice 25kg,Pantry,North depot,12,372.0,31.0,251
+2025-01-27,Rice 25kg,Pantry,Harbour,44,1364.0,31.0,268
+2025-01-27,Canned beans,Pantry,Central,40,48.0,1.2,274
+2025-01-27,Canned beans,Pantry,North depot,27,32.4,1.2,263
+2025-01-27,Canned beans,Pantry,Harbour,31,37.2,1.2,216
+2025-01-27,Olive oil 5L,Pantry,Central,48,1056.0,22.0,199
+2025-01-27,Olive oil 5L,Pantry,North depot,50,1100.0,22.0,182
+2025-01-27,Olive oil 5L,Pantry,Harbour,60,1320.0,22.0,236
+2025-01-27,Blankets,Winter,Central,69,621.0,9.0,341
+2025-01-27,Blankets,Winter,North depot,65,585.0,9.0,218
+2025-01-27,Blankets,Winter,Harbour,86,774.0,9.0,227
+2025-01-27,Winter coats,Winter,Central,63,1764.0,28.0,255
+2025-01-27,Winter coats,Winter,North depot,46,1288.0,28.0,170
+2025-01-27,Winter coats,Winter,Harbour,78,2184.0,28.0,210
+2025-01-27,Hygiene kits,Health,Central,33,214.5,6.5,188
+2025-01-27,Hygiene kits,Health,North depot,41,266.5,6.5,212
+2025-01-27,Hygiene kits,Health,Harbour,46,299.0,6.5,145
+2025-01-27,First-aid kits,Health,Central,26,364.0,14.0,289
+2025-01-27,First-aid kits,Health,North depot,30,420.0,14.0,136
+2025-01-27,First-aid kits,Health,Harbour,44,616.0,14.0,278
+2025-01-27,School bags,Education,Central,35,280.0,8.0,272
+2025-01-27,School bags,Education,North depot,46,368.0,8.0,260
+2025-01-27,School bags,Education,Harbour,48,384.0,8.0,140
+2025-02-03,Rice 25kg,Pantry,Central,37,1147.0,31.0,193
+2025-02-03,Rice 25kg,Pantry,North depot,60,1860.0,31.0,278
+2025-02-03,Rice 25kg,Pantry,Harbour,51,1581.0,31.0,195
+2025-02-03,Canned beans,Pantry,Central,38,45.6,1.2,97
+2025-02-03,Canned beans,Pantry,North depot,56,67.2,1.2,183
+2025-02-03,Canned beans,Pantry,Harbour,39,46.8,1.2,124
+2025-02-03,Olive oil 5L,Pantry,Central,36,792.0,22.0,372
+2025-02-03,Olive oil 5L,Pantry,North depot,53,1166.0,22.0,283
+2025-02-03,Olive oil 5L,Pantry,Harbour,45,990.0,22.0,191
+2025-02-03,Blankets,Winter,Central,13,117.0,9.0,163
+2025-02-03,Blankets,Winter,North depot,28,252.0,9.0,194
+2025-02-03,Blankets,Winter,Harbour,45,405.0,9.0,261
+2025-02-03,Winter coats,Winter,Central,46,1288.0,28.0,217
+2025-02-03,Winter coats,Winter,North depot,48,1344.0,28.0,231
+2025-02-03,Winter coats,Winter,Harbour,40,1120.0,28.0,261
+2025-02-03,Hygiene kits,Health,Central,21,136.5,6.5,390
+2025-02-03,Hygiene kits,Health,North depot,25,162.5,6.5,231
+2025-02-03,Hygiene kits,Health,Harbour,56,364.0,6.5,195
+2025-02-03,First-aid kits,Health,Central,50,700.0,14.0,170
+2025-02-03,First-aid kits,Health,North depot,40,560.0,14.0,330
+2025-02-03,First-aid kits,Health,Harbour,27,378.0,14.0,172
+2025-02-03,School bags,Education,Central,50,400.0,8.0,320
+2025-02-03,School bags,Education,North depot,45,360.0,8.0,139
+2025-02-03,School bags,Education,Harbour,29,232.0,8.0,270
+2025-02-10,Rice 25kg,Pantry,Central,26,806.0,31.0,192
+2025-02-10,Rice 25kg,Pantry,North depot,42,1302.0,31.0,271
+2025-02-10,Rice 25kg,Pantry,Harbour,57,1767.0,31.0,165
+2025-02-10,Canned beans,Pantry,Central,31,37.2,1.2,359
+2025-02-10,Canned beans,Pantry,North depot,46,55.2,1.2,169
+2025-02-10,Canned beans,Pantry,Harbour,59,70.8,1.2,261
+2025-02-10,Olive oil 5L,Pantry,Central,42,924.0,22.0,147
+2025-02-10,Olive oil 5L,Pantry,North depot,11,242.0,22.0,247
+2025-02-10,Olive oil 5L,Pantry,Harbour,48,1056.0,22.0,244
+2025-02-10,Blankets,Winter,Central,31,279.0,9.0,218
+2025-02-10,Blankets,Winter,North depot,47,423.0,9.0,215
+2025-02-10,Blankets,Winter,Harbour,19,171.0,9.0,129
+2025-02-10,Winter coats,Winter,Central,39,1092.0,28.0,212
+2025-02-10,Winter coats,Winter,North depot,57,1596.0,28.0,184
+2025-02-10,Winter coats,Winter,Harbour,25,700.0,28.0,129
+2025-02-10,Hygiene kits,Health,Central,52,338.0,6.5,133
+2025-02-10,Hygiene kits,Health,North depot,37,240.5,6.5,124
+2025-02-10,Hygiene kits,Health,Harbour,45,292.5,6.5,259
+2025-02-10,First-aid kits,Health,Central,21,294.0,14.0,130
+2025-02-10,First-aid kits,Health,North depot,66,924.0,14.0,249
+2025-02-10,First-aid kits,Health,Harbour,26,364.0,14.0,177
+2025-02-10,School bags,Education,Central,55,440.0,8.0,222
+2025-02-10,School bags,Education,North depot,55,440.0,8.0,228
+2025-02-10,School bags,Education,Harbour,55,440.0,8.0,225
+2025-02-17,Rice 25kg,Pantry,Central,36,1116.0,31.0,219
+2025-02-17,Rice 25kg,Pantry,North depot,40,1240.0,31.0,188
+2025-02-17,Rice 25kg,Pantry,Harbour,39,1209.0,31.0,179
+2025-02-17,Canned beans,Pantry,Central,53,63.6,1.2,173
+2025-02-17,Canned beans,Pantry,North depot,37,44.4,1.2,191
+2025-02-17,Canned beans,Pantry,Harbour,40,48.0,1.2,158
+2025-02-17,Olive oil 5L,Pantry,Central,50,1100.0,22.0,210
+2025-02-17,Olive oil 5L,Pantry,North depot,45,990.0,22.0,89
+2025-02-17,Olive oil 5L,Pantry,Harbour,39,858.0,22.0,195
+2025-02-17,Blankets,Winter,Central,31,279.0,9.0,244
+2025-02-17,Blankets,Winter,North depot,36,324.0,9.0,211
+2025-02-17,Blankets,Winter,Harbour,35,315.0,9.0,228
+2025-02-17,Winter coats,Winter,Central,47,1316.0,28.0,278
+2025-02-17,Winter coats,Winter,North depot,54,1512.0,28.0,261
+2025-02-17,Winter coats,Winter,Harbour,33,924.0,28.0,174
+2025-02-17,Hygiene kits,Health,Central,50,325.0,6.5,202
+2025-02-17,Hygiene kits,Health,North depot,31,201.5,6.5,225
+2025-02-17,Hygiene kits,Health,Harbour,46,299.0,6.5,293
+2025-02-17,First-aid kits,Health,Central,36,504.0,14.0,170
+2025-02-17,First-aid kits,Health,North depot,24,336.0,14.0,194
+2025-02-17,First-aid kits,Health,Harbour,29,406.0,14.0,154
+2025-02-17,School bags,Education,Central,48,384.0,8.0,268
+2025-02-17,School bags,Education,North depot,44,352.0,8.0,225
+2025-02-17,School bags,Education,Harbour,28,224.0,8.0,261
+2025-02-24,Rice 25kg,Pantry,Central,25,775.0,31.0,235
+2025-02-24,Rice 25kg,Pantry,North depot,37,1147.0,31.0,151
+2025-02-24,Rice 25kg,Pantry,Harbour,20,620.0,31.0,266
+2025-02-24,Canned beans,Pantry,Central,63,75.6,1.2,276
+2025-02-24,Canned beans,Pantry,North depot,22,26.4,1.2,214
+2025-02-24,Canned beans,Pantry,Harbour,28,33.6,1.2,328
+2025-02-24,Olive oil 5L,Pantry,Central,27,594.0,22.0,163
+2025-02-24,Olive oil 5L,Pantry,North depot,21,462.0,22.0,164
+2025-02-24,Olive oil 5L,Pantry,Harbour,30,660.0,22.0,265
+2025-02-24,Blankets,Winter,Central,41,369.0,9.0,226
+2025-02-24,Blankets,Winter,North depot,34,306.0,9.0,217
+2025-02-24,Blankets,Winter,Harbour,42,378.0,9.0,253
+2025-02-24,Winter coats,Winter,Central,52,1456.0,28.0,229
+2025-02-24,Winter coats,Winter,North depot,53,1484.0,28.0,250
+2025-02-24,Winter coats,Winter,Harbour,62,1736.0,28.0,241
+2025-02-24,Hygiene kits,Health,Central,17,110.5,6.5,188
+2025-02-24,Hygiene kits,Health,North depot,30,195.0,6.5,212
+2025-02-24,Hygiene kits,Health,Harbour,49,318.5,6.5,170
+2025-02-24,First-aid kits,Health,Central,63,882.0,14.0,155
+2025-02-24,First-aid kits,Health,North depot,52,728.0,14.0,168
+2025-02-24,First-aid kits,Health,Harbour,32,448.0,14.0,194
+2025-02-24,School bags,Education,Central,52,416.0,8.0,187
+2025-02-24,School bags,Education,North depot,28,224.0,8.0,62
+2025-02-24,School bags,Education,Harbour,41,328.0,8.0,319
+2025-03-03,Rice 25kg,Pantry,Central,34,1054.0,31.0,194
+2025-03-03,Rice 25kg,Pantry,North depot,39,1209.0,31.0,156
+2025-03-03,Rice 25kg,Pantry,Harbour,56,1736.0,31.0,253
+2025-03-03,Canned beans,Pantry,Central,51,61.2,1.2,75
+2025-03-03,Canned beans,Pantry,North depot,49,58.8,1.2,243
+2025-03-03,Canned beans,Pantry,Harbour,53,63.6,1.2,331
+2025-03-03,Olive oil 5L,Pantry,Central,25,550.0,22.0,198
+2025-03-03,Olive oil 5L,Pantry,North depot,33,726.0,22.0,228
+2025-03-03,Olive oil 5L,Pantry,Harbour,32,704.0,22.0,296
+2025-03-03,Blankets,Winter,Central,35,315.0,9.0,147
+2025-03-03,Blankets,Winter,North depot,22,198.0,9.0,214
+2025-03-03,Blankets,Winter,Harbour,42,378.0,9.0,259
+2025-03-03,Winter coats,Winter,Central,30,840.0,28.0,224
+2025-03-03,Winter coats,Winter,North depot,57,1596.0,28.0,129
+2025-03-03,Winter coats,Winter,Harbour,41,1148.0,28.0,236
+2025-03-03,Hygiene kits,Health,Central,37,240.5,6.5,259
+2025-03-03,Hygiene kits,Health,North depot,48,312.0,6.5,185
+2025-03-03,Hygiene kits,Health,Harbour,49,318.5,6.5,160
+2025-03-03,First-aid kits,Health,Central,39,546.0,14.0,272
+2025-03-03,First-aid kits,Health,North depot,40,560.0,14.0,226
+2025-03-03,First-aid kits,Health,Harbour,51,714.0,14.0,211
+2025-03-03,School bags,Education,Central,36,288.0,8.0,221
+2025-03-03,School bags,Education,North depot,47,376.0,8.0,47
+2025-03-03,School bags,Education,Harbour,39,312.0,8.0,225
+2025-03-10,Rice 25kg,Pantry,Central,53,1643.0,31.0,166
+2025-03-10,Rice 25kg,Pantry,North depot,33,1023.0,31.0,244
+2025-03-10,Rice 25kg,Pantry,Harbour,26,806.0,31.0,209
+2025-03-10,Canned beans,Pantry,Central,30,36.0,1.2,136
+2025-03-10,Canned beans,Pantry,North depot,21,25.2,1.2,202
+2025-03-10,Canned beans,Pantry,Harbour,44,52.8,1.2,178
+2025-03-10,Olive oil 5L,Pantry,Central,32,704.0,22.0,162
+2025-03-10,Olive oil 5L,Pantry,North depot,39,858.0,22.0,129
+2025-03-10,Olive oil 5L,Pantry,Harbour,38,836.0,22.0,254
+2025-03-10,Blankets,Winter,Central,52,468.0,9.0,146
+2025-03-10,Blankets,Winter,North depot,44,396.0,9.0,211
+2025-03-10,Blankets,Winter,Harbour,57,513.0,9.0,247
+2025-03-10,Winter coats,Winter,Central,38,1064.0,28.0,204
+2025-03-10,Winter coats,Winter,North depot,55,1540.0,28.0,142
+2025-03-10,Winter coats,Winter,Harbour,35,980.0,28.0,271
+2025-03-10,Hygiene kits,Health,Central,52,338.0,6.5,234
+2025-03-10,Hygiene kits,Health,North depot,30,195.0,6.5,193
+2025-03-10,Hygiene kits,Health,Harbour,18,117.0,6.5,142
+2025-03-10,First-aid kits,Health,Central,36,504.0,14.0,297
+2025-03-10,First-aid kits,Health,North depot,62,868.0,14.0,235
+2025-03-10,First-aid kits,Health,Harbour,38,532.0,14.0,200
+2025-03-10,School bags,Education,Central,25,200.0,8.0,230
+2025-03-10,School bags,Education,North depot,28,224.0,8.0,155
+2025-03-10,School bags,Education,Harbour,32,256.0,8.0,184
+2025-03-17,Rice 25kg,Pantry,Central,32,992.0,31.0,140
+2025-03-17,Rice 25kg,Pantry,North depot,23,713.0,31.0,227
+2025-03-17,Rice 25kg,Pantry,Harbour,29,899.0,31.0,261
+2025-03-17,Canned beans,Pantry,Central,59,70.8,1.2,167
+2025-03-17,Canned beans,Pantry,North depot,38,45.6,1.2,102
+2025-03-17,Canned beans,Pantry,Harbour,56,67.2,1.2,116
+2025-03-17,Olive oil 5L,Pantry,Central,41,902.0,22.0,228
+2025-03-17,Olive oil 5L,Pantry,North depot,35,770.0,22.0,153
+2025-03-17,Olive oil 5L,Pantry,Harbour,29,638.0,22.0,150
+2025-03-17,Blankets,Winter,Central,22,198.0,9.0,146
+2025-03-17,Blankets,Winter,North depot,39,351.0,9.0,215
+2025-03-17,Blankets,Winter,Harbour,48,432.0,9.0,226
+2025-03-17,Winter coats,Winter,Central,20,560.0,28.0,158
+2025-03-17,Winter coats,Winter,North depot,60,1680.0,28.0,160
+2025-03-17,Winter coats,Winter,Harbour,41,1148.0,28.0,330
+2025-03-17,Hygiene kits,Health,Central,45,292.5,6.5,159
+2025-03-17,Hygiene kits,Health,North depot,37,240.5,6.5,99
+2025-03-17,Hygiene kits,Health,Harbour,24,156.0,6.5,159
+2025-03-17,First-aid kits,Health,Central,16,224.0,14.0,334
+2025-03-17,First-aid kits,Health,North depot,49,686.0,14.0,200
+2025-03-17,First-aid kits,Health,Harbour,50,700.0,14.0,192
+2025-03-17,School bags,Education,Central,22,176.0,8.0,154
+2025-03-17,School bags,Education,North depot,25,200.0,8.0,241
+2025-03-17,School bags,Education,Harbour,41,328.0,8.0,150
+2025-03-24,Rice 25kg,Pantry,Central,24,744.0,31.0,196
+2025-03-24,Rice 25kg,Pantry,North depot,38,1178.0,31.0,172
+2025-03-24,Rice 25kg,Pantry,Harbour,32,992.0,31.0,127
+2025-03-24,Canned beans,Pantry,Central,47,56.4,1.2,104
+2025-03-24,Canned beans,Pantry,North depot,46,55.2,1.2,203
+2025-03-24,Canned beans,Pantry,Harbour,39,46.8,1.2,179
+2025-03-24,Olive oil 5L,Pantry,Central,43,946.0,22.0,301
+2025-03-24,Olive oil 5L,Pantry,North depot,55,1210.0,22.0,234
+2025-03-24,Olive oil 5L,Pantry,Harbour,44,968.0,22.0,206
+2025-03-24,Blankets,Winter,Central,44,396.0,9.0,83
+2025-03-24,Blankets,Winter,North depot,48,432.0,9.0,118
+2025-03-24,Blankets,Winter,Harbour,45,405.0,9.0,88
+2025-03-24,Winter coats,Winter,Central,43,1204.0,28.0,169
+2025-03-24,Winter coats,Winter,North depot,35,980.0,28.0,191
+2025-03-24,Winter coats,Winter,Harbour,52,1456.0,28.0,127
+2025-03-24,Hygiene kits,Health,Central,29,188.5,6.5,245
+2025-03-24,Hygiene kits,Health,North depot,61,396.5,6.5,118
+2025-03-24,Hygiene kits,Health,Harbour,57,370.5,6.5,158
+2025-03-24,First-aid kits,Health,Central,39,546.0,14.0,128
+2025-03-24,First-aid kits,Health,North depot,28,392.0,14.0,204
+2025-03-24,First-aid kits,Health,Harbour,41,574.0,14.0,143
+2025-03-24,School bags,Education,Central,50,400.0,8.0,335
+2025-03-24,School bags,Education,North depot,52,416.0,8.0,92
+2025-03-24,School bags,Education,Harbour,27,216.0,8.0,189
+2025-03-31,Rice 25kg,Pantry,Central,37,1147.0,31.0,160
+2025-03-31,Rice 25kg,Pantry,North depot,29,899.0,31.0,241
+2025-03-31,Rice 25kg,Pantry,Harbour,20,620.0,31.0,192
+2025-03-31,Canned beans,Pantry,Central,46,55.2,1.2,104
+2025-03-31,Canned beans,Pantry,North depot,40,48.0,1.2,251
+2025-03-31,Canned beans,Pantry,Harbour,30,36.0,1.2,262
+2025-03-31,Olive oil 5L,Pantry,Central,44,968.0,22.0,192
+2025-03-31,Olive oil 5L,Pantry,North depot,39,858.0,22.0,185
+2025-03-31,Olive oil 5L,Pantry,Harbour,37,814.0,22.0,243
+2025-03-31,Blankets,Winter,Central,58,522.0,9.0,101
+2025-03-31,Blankets,Winter,North depot,40,360.0,9.0,278
+2025-03-31,Blankets,Winter,Harbour,25,225.0,9.0,193
+2025-03-31,Winter coats,Winter,Central,42,1176.0,28.0,149
+2025-03-31,Winter coats,Winter,North depot,40,1120.0,28.0,119
+2025-03-31,Winter coats,Winter,Harbour,53,1484.0,28.0,225
+2025-03-31,Hygiene kits,Health,Central,18,117.0,6.5,92
+2025-03-31,Hygiene kits,Health,North depot,40,260.0,6.5,309
+2025-03-31,Hygiene kits,Health,Harbour,31,201.5,6.5,328
+2025-03-31,First-aid kits,Health,Central,49,686.0,14.0,261
+2025-03-31,First-aid kits,Health,North depot,60,840.0,14.0,320
+2025-03-31,First-aid kits,Health,Harbour,35,490.0,14.0,243
+2025-03-31,School bags,Education,Central,53,424.0,8.0,180
+2025-03-31,School bags,Education,North depot,22,176.0,8.0,205
+2025-03-31,School bags,Education,Harbour,22,176.0,8.0,174
+2025-04-07,Rice 25kg,Pantry,Central,26,806.0,31.0,264
+2025-04-07,Rice 25kg,Pantry,North depot,30,930.0,31.0,205
+2025-04-07,Rice 25kg,Pantry,Harbour,32,992.0,31.0,145
+2025-04-07,Canned beans,Pantry,Central,21,25.2,1.2,285
+2025-04-07,Canned beans,Pantry,North depot,51,61.2,1.2,309
+2025-04-07,Canned beans,Pantry,Harbour,37,44.4,1.2,231
+2025-04-07,Olive oil 5L,Pantry,Central,20,440.0,22.0,293
+2025-04-07,Olive oil 5L,Pantry,North depot,54,1188.0,22.0,104
+2025-04-07,Olive oil 5L,Pantry,Harbour,30,660.0,22.0,224
+2025-04-07,Blankets,Winter,Central,43,387.0,9.0,51
+2025-04-07,Blankets,Winter,North depot,38,342.0,9.0,186
+2025-04-07,Blankets,Winter,Harbour,45,405.0,9.0,231
+2025-04-07,Winter coats,Winter,Central,14,392.0,28.0,257
+2025-04-07,Winter coats,Winter,North depot,62,1736.0,28.0,171
+2025-04-07,Winter coats,Winter,Harbour,35,980.0,28.0,175
+2025-04-07,Hygiene kits,Health,Central,19,123.5,6.5,235
+2025-04-07,Hygiene kits,Health,North depot,32,208.0,6.5,157
+2025-04-07,Hygiene kits,Health,Harbour,24,156.0,6.5,209
+2025-04-07,First-aid kits,Health,Central,34,476.0,14.0,199
+2025-04-07,First-aid kits,Health,North depot,44,616.0,14.0,174
+2025-04-07,First-aid kits,Health,Harbour,36,504.0,14.0,234
+2025-04-07,School bags,Education,Central,31,248.0,8.0,132
+2025-04-07,School bags,Education,North depot,34,272.0,8.0,211
+2025-04-07,School bags,Education,Harbour,35,280.0,8.0,265
+2025-04-14,Rice 25kg,Pantry,Central,44,1364.0,31.0,191
+2025-04-14,Rice 25kg,Pantry,North depot,42,1302.0,31.0,172
+2025-04-14,Rice 25kg,Pantry,Harbour,42,1302.0,31.0,152
+2025-04-14,Canned beans,Pantry,Central,54,64.8,1.2,243
+2025-04-14,Canned beans,Pantry,North depot,11,13.2,1.2,223
+2025-04-14,Canned beans,Pantry,Harbour,21,25.2,1.2,169
+2025-04-14,Olive oil 5L,Pantry,Central,33,726.0,22.0,217
+2025-04-14,Olive oil 5L,Pantry,North depot,43,946.0,22.0,127
+2025-04-14,Olive oil 5L,Pantry,Harbour,36,792.0,22.0,244
+2025-04-14,Blankets,Winter,Central,35,315.0,9.0,181
+2025-04-14,Blankets,Winter,North depot,37,333.0,9.0,252
+2025-04-14,Blankets,Winter,Harbour,37,333.0,9.0,217
+2025-04-14,Winter coats,Winter,Central,46,1288.0,28.0,319
+2025-04-14,Winter coats,Winter,North depot,45,1260.0,28.0,213
+2025-04-14,Winter coats,Winter,Harbour,46,1288.0,28.0,198
+2025-04-14,Hygiene kits,Health,Central,28,182.0,6.5,168
+2025-04-14,Hygiene kits,Health,North depot,36,234.0,6.5,247
+2025-04-14,Hygiene kits,Health,Harbour,33,214.5,6.5,172
+2025-04-14,First-aid kits,Health,Central,45,630.0,14.0,229
+2025-04-14,First-aid kits,Health,North depot,42,588.0,14.0,243
+2025-04-14,First-aid kits,Health,Harbour,41,574.0,14.0,170
+2025-04-14,School bags,Education,Central,61,488.0,8.0,139
+2025-04-14,School bags,Education,North depot,43,344.0,8.0,231
+2025-04-14,School bags,Education,Harbour,47,376.0,8.0,186
+2025-04-21,Rice 25kg,Pantry,Central,38,1178.0,31.0,179
+2025-04-21,Rice 25kg,Pantry,North depot,11,341.0,31.0,269
+2025-04-21,Rice 25kg,Pantry,Harbour,37,1147.0,31.0,292
+2025-04-21,Canned beans,Pantry,Central,55,66.0,1.2,218
+2025-04-21,Canned beans,Pantry,North depot,29,34.8,1.2,184
+2025-04-21,Canned beans,Pantry,Harbour,59,70.8,1.2,268
+2025-04-21,Olive oil 5L,Pantry,Central,56,1232.0,22.0,275
+2025-04-21,Olive oil 5L,Pantry,North depot,21,462.0,22.0,284
+2025-04-21,Olive oil 5L,Pantry,Harbour,21,462.0,22.0,271
+2025-04-21,Blankets,Winter,Central,38,342.0,9.0,117
+2025-04-21,Blankets,Winter,North depot,27,243.0,9.0,117
+2025-04-21,Blankets,Winter,Harbour,67,603.0,9.0,198
+2025-04-21,Winter coats,Winter,Central,37,1036.0,28.0,206
+2025-04-21,Winter coats,Winter,North depot,54,1512.0,28.0,192
+2025-04-21,Winter coats,Winter,Harbour,52,1456.0,28.0,260
+2025-04-21,Hygiene kits,Health,Central,53,344.5,6.5,180
+2025-04-21,Hygiene kits,Health,North depot,38,247.0,6.5,138
+2025-04-21,Hygiene kits,Health,Harbour,38,247.0,6.5,233
+2025-04-21,First-aid kits,Health,Central,32,448.0,14.0,198
+2025-04-21,First-aid kits,Health,North depot,51,714.0,14.0,211
+2025-04-21,First-aid kits,Health,Harbour,28,392.0,14.0,150
+2025-04-21,School bags,Education,Central,54,432.0,8.0,213
+2025-04-21,School bags,Education,North depot,56,448.0,8.0,274
+2025-04-21,School bags,Education,Harbour,50,400.0,8.0,179
+2025-04-28,Rice 25kg,Pantry,Central,30,930.0,31.0,242
+2025-04-28,Rice 25kg,Pantry,North depot,39,1209.0,31.0,237
+2025-04-28,Rice 25kg,Pantry,Harbour,57,1767.0,31.0,180
+2025-04-28,Canned beans,Pantry,Central,12,14.4,1.2,232
+2025-04-28,Canned beans,Pantry,North depot,37,44.4,1.2,232
+2025-04-28,Canned beans,Pantry,Harbour,38,45.6,1.2,153
+2025-04-28,Olive oil 5L,Pantry,Central,48,1056.0,22.0,198
+2025-04-28,Olive oil 5L,Pantry,North depot,38,836.0,22.0,181
+2025-04-28,Olive oil 5L,Pantry,Harbour,50,1100.0,22.0,277
+2025-04-28,Blankets,Winter,Central,36,324.0,9.0,169
+2025-04-28,Blankets,Winter,North depot,41,369.0,9.0,125
+2025-04-28,Blankets,Winter,Harbour,25,225.0,9.0,145
+2025-04-28,Winter coats,Winter,Central,41,1148.0,28.0,192
+2025-04-28,Winter coats,Winter,North depot,33,924.0,28.0,241
+2025-04-28,Winter coats,Winter,Harbour,32,896.0,28.0,157
+2025-04-28,Hygiene kits,Health,Central,24,156.0,6.5,204
+2025-04-28,Hygiene kits,Health,North depot,47,305.5,6.5,93
+2025-04-28,Hygiene kits,Health,Harbour,36,234.0,6.5,211
+2025-04-28,First-aid kits,Health,Central,50,700.0,14.0,212
+2025-04-28,First-aid kits,Health,North depot,29,406.0,14.0,252
+2025-04-28,First-aid kits,Health,Harbour,37,518.0,14.0,312
+2025-04-28,School bags,Education,Central,35,280.0,8.0,280
+2025-04-28,School bags,Education,North depot,33,264.0,8.0,269
+2025-04-28,School bags,Education,Harbour,26,208.0,8.0,223
+2025-05-05,Rice 25kg,Pantry,Central,42,1302.0,31.0,279
+2025-05-05,Rice 25kg,Pantry,North depot,38,1178.0,31.0,247
+2025-05-05,Rice 25kg,Pantry,Harbour,36,1116.0,31.0,243
+2025-05-05,Canned beans,Pantry,Central,38,45.6,1.2,178
+2025-05-05,Canned beans,Pantry,North depot,44,52.8,1.2,197
+2025-05-05,Canned beans,Pantry,Harbour,27,32.4,1.2,199
+2025-05-05,Olive oil 5L,Pantry,Central,29,638.0,22.0,188
+2025-05-05,Olive oil 5L,Pantry,North depot,35,770.0,22.0,302
+2025-05-05,Olive oil 5L,Pantry,Harbour,46,1012.0,22.0,103
+2025-05-05,Blankets,Winter,Central,52,468.0,9.0,255
+2025-05-05,Blankets,Winter,North depot,54,486.0,9.0,264
+2025-05-05,Blankets,Winter,Harbour,41,369.0,9.0,244
+2025-05-05,Winter coats,Winter,Central,28,784.0,28.0,290
+2025-05-05,Winter coats,Winter,North depot,53,1484.0,28.0,268
+2025-05-05,Winter coats,Winter,Harbour,38,1064.0,28.0,191
+2025-05-05,Hygiene kits,Health,Central,35,227.5,6.5,252
+2025-05-05,Hygiene kits,Health,North depot,14,91.0,6.5,128
+2025-05-05,Hygiene kits,Health,Harbour,47,305.5,6.5,280
+2025-05-05,First-aid kits,Health,Central,41,574.0,14.0,243
+2025-05-05,First-aid kits,Health,North depot,33,462.0,14.0,186
+2025-05-05,First-aid kits,Health,Harbour,25,350.0,14.0,211
+2025-05-05,School bags,Education,Central,40,320.0,8.0,17
+2025-05-05,School bags,Education,North depot,28,224.0,8.0,168
+2025-05-05,School bags,Education,Harbour,38,304.0,8.0,261
+2025-05-12,Rice 25kg,Pantry,Central,47,1457.0,31.0,181
+2025-05-12,Rice 25kg,Pantry,North depot,39,1209.0,31.0,220
+2025-05-12,Rice 25kg,Pantry,Harbour,49,1519.0,31.0,160
+2025-05-12,Canned beans,Pantry,Central,51,61.2,1.2,139
+2025-05-12,Canned beans,Pantry,North depot,40,48.0,1.2,218
+2025-05-12,Canned beans,Pantry,Harbour,41,49.2,1.2,171
+2025-05-12,Olive oil 5L,Pantry,Central,24,528.0,22.0,111
+2025-05-12,Olive oil 5L,Pantry,North depot,31,682.0,22.0,57
+2025-05-12,Olive oil 5L,Pantry,Harbour,32,704.0,22.0,244
+2025-05-12,Blankets,Winter,Central,45,405.0,9.0,212
+2025-05-12,Blankets,Winter,North depot,33,297.0,9.0,330
+2025-05-12,Blankets,Winter,Harbour,51,459.0,9.0,205
+2025-05-12,Winter coats,Winter,Central,39,1092.0,28.0,265
+2025-05-12,Winter coats,Winter,North depot,32,896.0,28.0,154
+2025-05-12,Winter coats,Winter,Harbour,41,1148.0,28.0,170
+2025-05-12,Hygiene kits,Health,Central,24,156.0,6.5,187
+2025-05-12,Hygiene kits,Health,North depot,17,110.5,6.5,102
+2025-05-12,Hygiene kits,Health,Harbour,40,260.0,6.5,208
+2025-05-12,First-aid kits,Health,Central,29,406.0,14.0,203
+2025-05-12,First-aid kits,Health,North depot,33,462.0,14.0,187
+2025-05-12,First-aid kits,Health,Harbour,47,658.0,14.0,197
+2025-05-12,School bags,Education,Central,36,288.0,8.0,214
+2025-05-12,School bags,Education,North depot,54,432.0,8.0,240
+2025-05-12,School bags,Education,Harbour,23,184.0,8.0,224
+2025-05-19,Rice 25kg,Pantry,Central,59,1829.0,31.0,192
+2025-05-19,Rice 25kg,Pantry,North depot,39,1209.0,31.0,195
+2025-05-19,Rice 25kg,Pantry,Harbour,34,1054.0,31.0,239
+2025-05-19,Canned beans,Pantry,Central,40,48.0,1.2,120
+2025-05-19,Canned beans,Pantry,North depot,47,56.4,1.2,223
+2025-05-19,Canned beans,Pantry,Harbour,41,49.2,1.2,119
+2025-05-19,Olive oil 5L,Pantry,Central,40,880.0,22.0,183
+2025-05-19,Olive oil 5L,Pantry,North depot,35,770.0,22.0,256
+2025-05-19,Olive oil 5L,Pantry,Harbour,31,682.0,22.0,71
+2025-05-19,Blankets,Winter,Central,42,378.0,9.0,248
+2025-05-19,Blankets,Winter,North depot,34,306.0,9.0,82
+2025-05-19,Blankets,Winter,Harbour,20,180.0,9.0,153
+2025-05-19,Winter coats,Winter,Central,43,1204.0,28.0,166
+2025-05-19,Winter coats,Winter,North depot,19,532.0,28.0,37
+2025-05-19,Winter coats,Winter,Harbour,59,1652.0,28.0,197
+2025-05-19,Hygiene kits,Health,Central,52,338.0,6.5,158
+2025-05-19,Hygiene kits,Health,North depot,28,182.0,6.5,219
+2025-05-19,Hygiene kits,Health,Harbour,55,357.5,6.5,187
+2025-05-19,First-aid kits,Health,Central,41,574.0,14.0,146
+2025-05-19,First-aid kits,Health,North depot,47,658.0,14.0,286
+2025-05-19,First-aid kits,Health,Harbour,44,616.0,14.0,218
+2025-05-19,School bags,Education,Central,67,536.0,8.0,275
+2025-05-19,School bags,Education,North depot,18,144.0,8.0,191
+2025-05-19,School bags,Education,Harbour,30,240.0,8.0,232
+2025-05-26,Rice 25kg,Pantry,Central,32,992.0,31.0,134
+2025-05-26,Rice 25kg,Pantry,North depot,25,775.0,31.0,134
+2025-05-26,Rice 25kg,Pantry,Harbour,37,1147.0,31.0,219
+2025-05-26,Canned beans,Pantry,Central,43,51.6,1.2,79
+2025-05-26,Canned beans,Pantry,North depot,49,58.8,1.2,168
+2025-05-26,Canned beans,Pantry,Harbour,41,49.2,1.2,94
+2025-05-26,Olive oil 5L,Pantry,Central,47,1034.0,22.0,203
+2025-05-26,Olive oil 5L,Pantry,North depot,52,1144.0,22.0,236
+2025-05-26,Olive oil 5L,Pantry,Harbour,22,484.0,22.0,258
+2025-05-26,Blankets,Winter,Central,63,567.0,9.0,142
+2025-05-26,Blankets,Winter,North depot,16,144.0,9.0,104
+2025-05-26,Blankets,Winter,Harbour,41,369.0,9.0,167
+2025-05-26,Winter coats,Winter,Central,57,1596.0,28.0,88
+2025-05-26,Winter coats,Winter,North depot,28,784.0,28.0,173
+2025-05-26,Winter coats,Winter,Harbour,32,896.0,28.0,130
+2025-05-26,Hygiene kits,Health,Central,54,351.0,6.5,216
+2025-05-26,Hygiene kits,Health,North depot,49,318.5,6.5,161
+2025-05-26,Hygiene kits,Health,Harbour,35,227.5,6.5,258
+2025-05-26,First-aid kits,Health,Central,45,630.0,14.0,254
+2025-05-26,First-aid kits,Health,North depot,41,574.0,14.0,150
+2025-05-26,First-aid kits,Health,Harbour,45,630.0,14.0,250
+2025-05-26,School bags,Education,Central,45,360.0,8.0,261
+2025-05-26,School bags,Education,North depot,42,336.0,8.0,254
+2025-05-26,School bags,Education,Harbour,35,280.0,8.0,182
+2025-06-02,Rice 25kg,Pantry,Central,34,1054.0,31.0,211
+2025-06-02,Rice 25kg,Pantry,North depot,33,1023.0,31.0,253
+2025-06-02,Rice 25kg,Pantry,Harbour,33,1023.0,31.0,99
+2025-06-02,Canned beans,Pantry,Central,30,36.0,1.2,239
+2025-06-02,Canned beans,Pantry,North depot,53,63.6,1.2,263
+2025-06-02,Canned beans,Pantry,Harbour,46,55.2,1.2,252
+2025-06-02,Olive oil 5L,Pantry,Central,18,396.0,22.0,64
+2025-06-02,Olive oil 5L,Pantry,North depot,20,440.0,22.0,186
+2025-06-02,Olive oil 5L,Pantry,Harbour,50,1100.0,22.0,173
+2025-06-02,Blankets,Winter,Central,50,450.0,9.0,193
+2025-06-02,Blankets,Winter,North depot,44,396.0,9.0,145
+2025-06-02,Blankets,Winter,Harbour,17,153.0,9.0,230
+2025-06-02,Winter coats,Winter,Central,44,1232.0,28.0,235
+2025-06-02,Winter coats,Winter,North depot,34,952.0,28.0,182
+2025-06-02,Winter coats,Winter,Harbour,50,1400.0,28.0,277
+2025-06-02,Hygiene kits,Health,Central,40,260.0,6.5,115
+2025-06-02,Hygiene kits,Health,North depot,33,214.5,6.5,225
+2025-06-02,Hygiene kits,Health,Harbour,48,312.0,6.5,236
+2025-06-02,First-aid kits,Health,Central,30,420.0,14.0,189
+2025-06-02,First-aid kits,Health,North depot,35,490.0,14.0,163
+2025-06-02,First-aid kits,Health,Harbour,57,798.0,14.0,179
+2025-06-02,School bags,Education,Central,36,288.0,8.0,209
+2025-06-02,School bags,Education,North depot,43,344.0,8.0,178
+2025-06-02,School bags,Education,Harbour,41,328.0,8.0,172
+2025-06-09,Rice 25kg,Pantry,Central,41,1271.0,31.0,133
+2025-06-09,Rice 25kg,Pantry,North depot,56,1736.0,31.0,132
+2025-06-09,Rice 25kg,Pantry,Harbour,24,744.0,31.0,261
+2025-06-09,Canned beans,Pantry,Central,29,34.8,1.2,74
+2025-06-09,Canned beans,Pantry,North depot,56,67.2,1.2,152
+2025-06-09,Canned beans,Pantry,Harbour,35,42.0,1.2,282
+2025-06-09,Olive oil 5L,Pantry,Central,27,594.0,22.0,130
+2025-06-09,Olive oil 5L,Pantry,North depot,22,484.0,22.0,177
+2025-06-09,Olive oil 5L,Pantry,Harbour,32,704.0,22.0,184
+2025-06-09,Blankets,Winter,Central,23,207.0,9.0,195
+2025-06-09,Blankets,Winter,North depot,64,576.0,9.0,148
+2025-06-09,Blankets,Winter,Harbour,46,414.0,9.0,178
+2025-06-09,Winter coats,Winter,Central,35,980.0,28.0,111
+2025-06-09,Winter coats,Winter,North depot,53,1484.0,28.0,270
+2025-06-09,Winter coats,Winter,Harbour,41,1148.0,28.0,235
+2025-06-09,Hygiene kits,Health,Central,32,208.0,6.5,237
+2025-06-09,Hygiene kits,Health,North depot,26,169.0,6.5,257
+2025-06-09,Hygiene kits,Health,Harbour,40,260.0,6.5,160
+2025-06-09,First-aid kits,Health,Central,34,476.0,14.0,195
+2025-06-09,First-aid kits,Health,North depot,51,714.0,14.0,168
+2025-06-09,First-aid kits,Health,Harbour,25,350.0,14.0,250
+2025-06-09,School bags,Education,Central,32,256.0,8.0,308
+2025-06-09,School bags,Education,North depot,30,240.0,8.0,225
+2025-06-09,School bags,Education,Harbour,45,360.0,8.0,212
+2025-06-16,Rice 25kg,Pantry,Central,27,837.0,31.0,126
+2025-06-16,Rice 25kg,Pantry,North depot,28,868.0,31.0,109
+2025-06-16,Rice 25kg,Pantry,Harbour,60,1860.0,31.0,89
+2025-06-16,Canned beans,Pantry,Central,30,36.0,1.2,138
+2025-06-16,Canned beans,Pantry,North depot,46,55.2,1.2,212
+2025-06-16,Canned beans,Pantry,Harbour,29,34.8,1.2,113
+2025-06-16,Olive oil 5L,Pantry,Central,39,858.0,22.0,138
+2025-06-16,Olive oil 5L,Pantry,North depot,24,528.0,22.0,227
+2025-06-16,Olive oil 5L,Pantry,Harbour,37,814.0,22.0,238
+2025-06-16,Blankets,Winter,Central,44,396.0,9.0,244
+2025-06-16,Blankets,Winter,North depot,55,495.0,9.0,179
+2025-06-16,Blankets,Winter,Harbour,21,189.0,9.0,230
+2025-06-16,Winter coats,Winter,Central,27,756.0,28.0,120
+2025-06-16,Winter coats,Winter,North depot,43,1204.0,28.0,172
+2025-06-16,Winter coats,Winter,Harbour,40,1120.0,28.0,178
+2025-06-16,Hygiene kits,Health,Central,45,292.5,6.5,133
+2025-06-16,Hygiene kits,Health,North depot,52,338.0,6.5,346
+2025-06-16,Hygiene kits,Health,Harbour,35,227.5,6.5,159
+2025-06-16,First-aid kits,Health,Central,48,672.0,14.0,353
+2025-06-16,First-aid kits,Health,North depot,32,448.0,14.0,219
+2025-06-16,First-aid kits,Health,Harbour,40,560.0,14.0,155
+2025-06-16,School bags,Education,Central,18,144.0,8.0,113
+2025-06-16,School bags,Education,North depot,36,288.0,8.0,286
+2025-06-16,School bags,Education,Harbour,31,248.0,8.0,162
+2025-06-23,Rice 25kg,Pantry,Central,38,1178.0,31.0,318
+2025-06-23,Rice 25kg,Pantry,North depot,43,1333.0,31.0,247
+2025-06-23,Rice 25kg,Pantry,Harbour,46,1426.0,31.0,215
+2025-06-23,Canned beans,Pantry,Central,31,37.2,1.2,212
+2025-06-23,Canned beans,Pantry,North depot,51,61.2,1.2,210
+2025-06-23,Canned beans,Pantry,Harbour,51,61.2,1.2,158
+2025-06-23,Olive oil 5L,Pantry,Central,48,1056.0,22.0,269
+2025-06-23,Olive oil 5L,Pantry,North depot,36,792.0,22.0,182
+2025-06-23,Olive oil 5L,Pantry,Harbour,33,726.0,22.0,57
+2025-06-23,Blankets,Winter,Central,36,324.0,9.0,293
+2025-06-23,Blankets,Winter,North depot,35,315.0,9.0,201
+2025-06-23,Blankets,Winter,Harbour,35,315.0,9.0,108
+2025-06-23,Winter coats,Winter,Central,43,1204.0,28.0,192
+2025-06-23,Winter coats,Winter,North depot,44,1232.0,28.0,135
+2025-06-23,Winter coats,Winter,Harbour,50,1400.0,28.0,361
+2025-06-23,Hygiene kits,Health,Central,36,234.0,6.5,375
+2025-06-23,Hygiene kits,Health,North depot,43,279.5,6.5,213
+2025-06-23,Hygiene kits,Health,Harbour,39,253.5,6.5,228
+2025-06-23,First-aid kits,Health,Central,39,546.0,14.0,169
+2025-06-23,First-aid kits,Health,North depot,43,602.0,14.0,124
+2025-06-23,First-aid kits,Health,Harbour,38,532.0,14.0,242
+2025-06-23,School bags,Education,Central,50,400.0,8.0,307
+2025-06-23,School bags,Education,North depot,46,368.0,8.0,210
+2025-06-23,School bags,Education,Harbour,42,336.0,8.0,152
+2025-06-30,Rice 25kg,Pantry,Central,28,868.0,31.0,140
+2025-06-30,Rice 25kg,Pantry,North depot,31,961.0,31.0,165
+2025-06-30,Rice 25kg,Pantry,Harbour,42,1302.0,31.0,218
+2025-06-30,Canned beans,Pantry,Central,38,45.6,1.2,323
+2025-06-30,Canned beans,Pantry,North depot,38,45.6,1.2,218
+2025-06-30,Canned beans,Pantry,Harbour,40,48.0,1.2,284
+2025-06-30,Olive oil 5L,Pantry,Central,30,660.0,22.0,179
+2025-06-30,Olive oil 5L,Pantry,North depot,73,1606.0,22.0,200
+2025-06-30,Olive oil 5L,Pantry,Harbour,49,1078.0,22.0,283
+2025-06-30,Blankets,Winter,Central,38,342.0,9.0,106
+2025-06-30,Blankets,Winter,North depot,29,261.0,9.0,259
+2025-06-30,Blankets,Winter,Harbour,29,261.0,9.0,280
+2025-06-30,Winter coats,Winter,Central,35,980.0,28.0,282
+2025-06-30,Winter coats,Winter,North depot,33,924.0,28.0,179
+2025-06-30,Winter coats,Winter,Harbour,60,1680.0,28.0,135
+2025-06-30,Hygiene kits,Health,Central,30,195.0,6.5,269
+2025-06-30,Hygiene kits,Health,North depot,46,299.0,6.5,303
+2025-06-30,Hygiene kits,Health,Harbour,44,286.0,6.5,261
+2025-06-30,First-aid kits,Health,Central,38,532.0,14.0,185
+2025-06-30,First-aid kits,Health,North depot,54,756.0,14.0,199
+2025-06-30,First-aid kits,Health,Harbour,19,266.0,14.0,281
+2025-06-30,School bags,Education,Central,33,264.0,8.0,152
+2025-06-30,School bags,Education,North depot,57,456.0,8.0,89
+2025-06-30,School bags,Education,Harbour,53,424.0,8.0,171

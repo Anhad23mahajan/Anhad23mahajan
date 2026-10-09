@@ -1,0 +1,25 @@
+<!-- 09-ask-disabled-state.html : when the server has no GEMINI_API_KEY the Ask card shows a RED developer instruction
+     ("add a GEMINI_API_KEY on the server") on the very first screen of the demo. Make it a calm, informative state instead.
+     Effort S, risk low.  Paste before </body>.  Depends on #qerr, #chips/.chip, #go, #q.
+     RECOMMENDATION for the video: record WITH a key; this state is the fallback for judges who run the repo without one. -->
+<style>
+  .ask-off #qerr { color: var(--muted, #586674); background: var(--mist, #E3EEED); border-radius: 8px; padding: 10px 14px; font-size: 14px }
+  .ask-off #qerr:empty { display: none }
+  .ask-off #q, .ask-off #go, .ask-off .chip { opacity: .55; cursor: not-allowed }
+  .ask-off .chips { margin-top: 10px }
+</style>
+<script>
+(function () {
+  const qerr = document.querySelector('#qerr'); if (!qerr) return;
+  const sec = qerr.closest('section'), OFF = /switched off/i;
+  new MutationObserver(() => {
+    if (OFF.test(qerr.textContent) && !sec.classList.contains('ask-off')) {
+      sec.classList.add('ask-off');
+      qerr.removeAttribute('role'); qerr.setAttribute('role', 'status');
+      qerr.textContent = 'Questions are off in this copy of Lumen because no Gemini API key is configured. Charts, findings, data preview and forecast all work. Set GEMINI_API_KEY and restart to ask in plain English.';
+      document.querySelector('#q').placeholder = 'Questions need a Gemini API key';
+      document.querySelectorAll('.chip').forEach(c => { c.title = 'Needs a Gemini API key'; c.setAttribute('aria-disabled', 'true') });
+    }
+  }).observe(qerr, { childList: true, characterData: true, subtree: true });
+})();
+</script>

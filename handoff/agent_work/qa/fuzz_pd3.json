@@ -1,0 +1,9675 @@
+{
+"0": {
+"ok": true,
+"hash": "fb3dba449e068e119fec5fe0b57e47c5",
+"metric": "date",
+"date": "date_created",
+"kinds": {
+"date": "numeric",
+"x": "numeric",
+"\u0935\u0930_\u0937": "numeric",
+"date_created": "date"
+},
+"rows": 701,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 701,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 801416.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 17779.0,
+"kind": "num",
+"delta": -24.079767700059783,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 43639.0,
+"kind": "num",
+"note": "Feb 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"1": {
+"ok": true,
+"hash": "aa980b56d80214455d1303ea1b2e71f8",
+"metric": "amount",
+"date": "price3",
+"kinds": {
+"notes": "numeric",
+"price": "numeric",
+"amount": "numeric",
+"price3": "date",
+"amount_1": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 4272.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 4272.0,
+"kind": "num",
+"note": "03 Jul 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"2": {
+"ok": true,
+"hash": "27f8dbd5fae541d9f15bcb0271501b94",
+"metric": "date_created",
+"date": "category",
+"kinds": {
+"date_created": "numeric",
+"donor": "numeric",
+"region": "numeric",
+"date": "numeric",
+"category": "date",
+"x": "text",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 2983840.04,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 109241.23,
+"kind": "num",
+"delta": -15.614332177304933,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 151458.45,
+"kind": "num",
+"note": "Dec 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"3": {
+"ok": true,
+"hash": "5777cc914ea281433b0657ac9143cdb2",
+"metric": "notes",
+"date": "total",
+"kinds": {
+"total": "date",
+"donor": "date",
+"set": "date",
+"notes": "numeric",
+"qty": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 3447.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 3447.0,
+"kind": "num",
+"note": "12 May 2025"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"4": {
+"ok": true,
+"hash": "905740e952edca084afe0f7b059cf4b4",
+"metric": "x",
+"date": null,
+"kinds": {
+"x": "numeric",
+"id": "numeric",
+"notes": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 82.0,
+"kind": "num"
+}
+]
+},
+"5": {
+"ok": true,
+"hash": "d1ab1dc219727b0474148c7ad1dfd802",
+"metric": null,
+"date": "revenue",
+"kinds": {
+"set": "category",
+"date": "date",
+"revenue": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"6": {
+"ok": true,
+"hash": "458f1aa01416772d7dd738ebee1763b6",
+"metric": "category",
+"date": null,
+"kinds": {
+"category": "numeric",
+"region": "numeric",
+"donor": "category",
+"order": "text",
+"date_created": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 27715551.28,
+"kind": "num"
+}
+]
+},
+"7": {
+"ok": true,
+"hash": "7700fda4245c6b84ccbedb493164a847",
+"metric": "\u0935\u0930_\u0937",
+"date": null,
+"kinds": {
+"date": "category",
+"\u0935\u0930_\u0937": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 16718.899999999998,
+"kind": "num"
+}
+]
+},
+"8": {
+"ok": true,
+"hash": "42aaeb571ffd1d8769498dbbf7e0415c",
+"metric": "price",
+"date": null,
+"kinds": {
+"region": "category",
+"price": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 4645.0,
+"kind": "num"
+}
+]
+},
+"9": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"10": {
+"ok": true,
+"hash": "541444255813940746267a6b494f652b",
+"metric": "category",
+"date": null,
+"kinds": {
+"category": "numeric"
+},
+"rows": 36,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 36,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 36696.0,
+"kind": "num"
+}
+]
+},
+"11": {
+"ok": true,
+"hash": "3350acdfba9a4a2cf22fd09cfa9392e8",
+"metric": "amount",
+"date": "region",
+"kinds": {
+"price": "category",
+"x": "category",
+"amount": "numeric",
+"category": "category",
+"region": "date",
+"donor": "category",
+"set": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 11058.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 3016.0,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"12": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"13": {
+"ok": true,
+"hash": "44e2f3056ce27f03c0c599071c2fe8d4",
+"metric": null,
+"date": "id",
+"kinds": {
+"id": "date",
+"amount": "category",
+"flag": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"14": {
+"ok": true,
+"hash": "ccf3c474c499f3e9afb9aecaf832d1bc",
+"metric": "flag",
+"date": "id",
+"kinds": {
+"id": "date",
+"flag": "numeric",
+"id2": "date",
+"region": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 51.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 51.0,
+"kind": "num",
+"note": "01 Aug 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"15": {
+"ok": true,
+"hash": "a11f7cbbe56bb6fdc60d505ebf6452c1",
+"metric": null,
+"date": "date",
+"kinds": {
+"date": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"16": {
+"ok": true,
+"hash": "cd0ed95419dfee96fa6e5b9e5d4fe1a8",
+"metric": null,
+"date": null,
+"kinds": {
+"flag": "category",
+"id": "numeric",
+"month": "category"
+},
+"rows": 6,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 6,
+"kind": "int"
+}
+]
+},
+"17": {
+"ok": true,
+"hash": "2f506875c571717dd09f499798ee0e75",
+"metric": "month",
+"date": "order",
+"kinds": {
+"total": "text",
+"month": "numeric",
+"x": "date",
+"order": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 37762.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 2044.0,
+"kind": "num",
+"delta": 102.37623762376238,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 4057.0,
+"kind": "num",
+"note": "Jun 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"18": {
+"ok": false,
+"err": "ValueError:The file contains only empty cells."
+},
+"19": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"20": {
+"ok": true,
+"hash": "820e0e3c9e519d88f82ea4acad7a7f34",
+"metric": "amount",
+"date": "notes",
+"kinds": {
+"notes": "date",
+"amount": "numeric",
+"x": "date",
+"amount3": "numeric",
+"notes4": "numeric",
+"total": "numeric"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 196957.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 11966.0,
+"kind": "num",
+"delta": 87.20275344180224,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 11966.0,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"21": {
+"ok": true,
+"hash": "eb1c955453552f27e934a12a05372c7a",
+"metric": "total",
+"date": null,
+"kinds": {
+"flag": "numeric",
+"total": "numeric",
+"price": "numeric",
+"qty": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 5380.0,
+"kind": "num"
+}
+]
+},
+"22": {
+"ok": true,
+"hash": "3ebdd032afe396c4186f106c1fffb1f0",
+"metric": "price",
+"date": "order",
+"kinds": {
+"price": "numeric",
+"order": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 1584.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 2566.0,
+"kind": "num",
+"delta": 0.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 2566.0,
+"kind": "num",
+"note": "Jun 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"23": {
+"ok": true,
+"hash": "a4b8139bb0fa2ff3785fba0f10e7f58d",
+"metric": "amount",
+"date": null,
+"kinds": {
+"amount": "numeric",
+"flag": "numeric",
+"x": "numeric"
+},
+"rows": 699,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 699,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 27930014.68,
+"kind": "num"
+}
+]
+},
+"24": {
+"ok": true,
+"hash": "86ec97b0df7d67170c9fd3b981beb5d7",
+"metric": "price",
+"date": "donor",
+"kinds": {
+"donor": "date",
+"price": "numeric",
+"qty": "numeric",
+"date_created": "numeric"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 1089.2874251497005,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 1128.0,
+"kind": "num",
+"delta": -0.79155672823219,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 1168.0,
+"kind": "num",
+"note": "Feb 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"25": {
+"ok": true,
+"hash": "e087d02d28206e2b9c6d047bc7c11706",
+"metric": "amount_1",
+"date": "amount",
+"kinds": {
+"donor": "numeric",
+"amount": "date",
+"total": "category",
+"amount_1": "numeric",
+"revenue": "numeric",
+"\u0935\u0930_\u0937": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total amount_1",
+"value": 65320.79,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 9914.82,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"26": {
+"ok": true,
+"hash": "128809293ea1c5651c2ca35bc849483b",
+"metric": null,
+"date": "amount",
+"kinds": {
+"amount": "date",
+"category": "category"
+},
+"rows": 183,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 183,
+"kind": "int"
+}
+]
+},
+"27": {
+"ok": true,
+"hash": "34dc30bd94b03118246c5fd1e5de6e65",
+"metric": "month",
+"date": "flag",
+"kinds": {
+"flag": "date",
+"notes": "text",
+"month": "numeric",
+"price": "category"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 8494733.69,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 120688.84,
+"kind": "num",
+"delta": -46.46959624363669,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 734509.53,
+"kind": "num",
+"note": "Oct 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"28": {
+"ok": true,
+"hash": "76ab8de67d6cf1e633e45e78b4cfef51",
+"metric": "month",
+"date": "donor",
+"kinds": {
+"donor": "date",
+"donor2": "date",
+"month": "numeric",
+"region": "category",
+"set": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 1000.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "24 Nov 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"29": {
+"ok": true,
+"hash": "c421752bb2f11310621f921bd48564c7",
+"metric": null,
+"date": null,
+"kinds": {
+"flag": "category"
+},
+"rows": 36,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 36,
+"kind": "int"
+}
+]
+},
+"30": {
+"ok": true,
+"hash": "03d5ce54c9865376ed7a3cc266dcf6b0",
+"metric": "amount5",
+"date": "date",
+"kinds": {
+"amount": "text",
+"order": "numeric",
+"donor": "category",
+"date": "date",
+"date4": "text",
+"amount5": "numeric",
+"qty": "numeric"
+},
+"rows": 41,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 41,
+"kind": "int"
+},
+{
+"label": "Total amount5",
+"value": 36686.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 0.0,
+"kind": "num",
+"delta": -100.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 4106.0,
+"kind": "num",
+"note": "Aug 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"31": {
+"ok": true,
+"hash": "7c816770b69cb66f1a713076eda7c8c4",
+"metric": "x",
+"date": "region",
+"kinds": {
+"x": "numeric",
+"region": "date",
+"region2": "numeric",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 95.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 95.0,
+"kind": "num",
+"note": "23 Jan 2025"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"32": {
+"ok": true,
+"hash": "59b3651f9ad42e32cae846c8bdf3deca",
+"metric": null,
+"date": "flag",
+"kinds": {
+"flag": "date",
+"set": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"33": {
+"ok": true,
+"hash": "36ca8a4967788d5ed4cfdc7b44e43eae",
+"metric": null,
+"date": "notes",
+"kinds": {
+"notes": "date",
+"donor": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"34": {
+"ok": true,
+"hash": "50fe69bb9a24f13bf2c6aa0fe6b8a909",
+"metric": "total",
+"date": null,
+"kinds": {
+"id": "text",
+"revenue": "category",
+"total": "numeric"
+},
+"rows": 41,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 41,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 1964684.82,
+"kind": "num"
+}
+]
+},
+"35": {
+"ok": true,
+"hash": "0e31383f72430fbb197f27c9e5e045da",
+"metric": null,
+"date": "order",
+"kinds": {
+"month": "date",
+"order": "date",
+"region": "text"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"36": {
+"ok": true,
+"hash": "c370eb28122f353776fea36be5462920",
+"metric": "flag",
+"date": null,
+"kinds": {
+"flag": "numeric"
+},
+"rows": 4,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 4,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 9791.0,
+"kind": "num"
+}
+]
+},
+"37": {
+"ok": true,
+"hash": "30e2e64c4cd27bada7dbf1466ebf3634",
+"metric": "set",
+"date": "id",
+"kinds": {
+"set": "numeric",
+"date_created": "numeric",
+"donor": "numeric",
+"id": "date",
+"x": "text"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 7772282.09,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 264094.56,
+"kind": "num",
+"delta": -21.419811684546385,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 532583.01,
+"kind": "num",
+"note": "Mar 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"38": {
+"ok": true,
+"hash": "7ae7bb3afdf72db8dc031affb8b89da7",
+"metric": "qty",
+"date": "donor",
+"kinds": {
+"qty": "numeric",
+"qty1": "numeric",
+"amount": "category",
+"donor": "date"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 190844.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 13161.0,
+"kind": "num",
+"delta": 72.49017038007864,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 13161.0,
+"kind": "num",
+"note": "Feb 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"39": {
+"ok": true,
+"hash": "b7f9a3c3eff5a24e65265d9cfd15ea63",
+"metric": null,
+"date": "date_created2",
+"kinds": {
+"amount": "category",
+"date_created": "category",
+"date_created2": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"40": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"41": {
+"ok": true,
+"hash": "51268b9500db6f5c2a9cf715c15457e1",
+"metric": "flag",
+"date": "revenue",
+"kinds": {
+"revenue": "date",
+"flag": "numeric",
+"date_created": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 60181.24999999999,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 25173.01,
+"kind": "num",
+"note": "Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"42": {
+"ok": true,
+"hash": "2adbd6059718340793a2e25d7decc584",
+"metric": "notes",
+"date": null,
+"kinds": {
+"notes": "numeric"
+},
+"rows": 181,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 181,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 413233.0,
+"kind": "num"
+}
+]
+},
+"43": {
+"ok": true,
+"hash": "78ed35a9b068902a7d74d8a098d65e61",
+"metric": "x",
+"date": "price",
+"kinds": {
+"price": "date",
+"x": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 1000.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "15 Oct 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"44": {
+"ok": true,
+"hash": "3364e3a3dd2369ca5c2119abc564a2d2",
+"metric": "revenue",
+"date": "id",
+"kinds": {
+"revenue": "numeric",
+"total": "category",
+"category": "numeric",
+"id": "date",
+"flag": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 430.6,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 99.9,
+"kind": "num",
+"note": "Jul 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"45": {
+"ok": true,
+"hash": "ac60d7c34346bd03bb8e7397caa53623",
+"metric": null,
+"date": "notes1",
+"kinds": {
+"notes1": "date",
+"x": "category",
+"\u0935\u0930_\u0937": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"46": {
+"ok": true,
+"hash": "5cee29fe11fd430cdb5ba4116e20a724",
+"metric": "\u0935\u0930_\u0937",
+"date": "\u0935\u0930_\u09371",
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"\u0935\u0930_\u09371": "date",
+"month": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 6308.08,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 6308.08,
+"kind": "num",
+"note": "03 Nov 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"47": {
+"ok": true,
+"hash": "67d63b6a4113b442291f15526881eb78",
+"metric": "order",
+"date": null,
+"kinds": {
+"order": "numeric"
+},
+"rows": 4,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 4,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 3009.0,
+"kind": "num"
+}
+]
+},
+"48": {
+"ok": true,
+"hash": "1db188cae0e8394c689537c4ba65a129",
+"metric": "date_created",
+"date": "order",
+"kinds": {
+"order": "date",
+"date_created": "numeric",
+"date": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 32645.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 2054.0,
+"kind": "num",
+"delta": 97.88053949903662,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 4073.0,
+"kind": "num",
+"note": "Jan 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"49": {
+"ok": true,
+"hash": "cef84a2bc9351b37cbf14747bd25e8c4",
+"metric": "qty",
+"date": "region",
+"kinds": {
+"qty": "numeric",
+"region": "date",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 1000.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "29 Apr 2025"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"50": {
+"ok": true,
+"hash": "59576be931efb84c2bda73b258c631b1",
+"metric": "total5",
+"date": "order",
+"kinds": {
+"total": "date",
+"order": "date",
+"\u0935\u0930_\u0937": "date",
+"\u0935\u0930_\u09374": "date",
+"total5": "numeric",
+"set": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total total5",
+"value": 40196.740000000005,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 8919.01,
+"kind": "num",
+"note": "Oct 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"51": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"52": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"53": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"54": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"55": {
+"ok": true,
+"hash": "927a619b2de3d543610760117532d3ac",
+"metric": null,
+"date": "flag",
+"kinds": {
+"flag": "date",
+"category": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"56": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"57": {
+"ok": true,
+"hash": "c4226dcc776f15a1e0181194f581d0b7",
+"metric": "x",
+"date": null,
+"kinds": {
+"id": "category",
+"x": "numeric",
+"x2": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 1000.0,
+"kind": "num"
+}
+]
+},
+"58": {
+"ok": true,
+"hash": "12f33abc3cc9c2e821d4b3c83a261120",
+"metric": "date_created",
+"date": "donor",
+"kinds": {
+"donor": "date",
+"date_created": "numeric"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 35683.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 1005.0,
+"kind": "num",
+"delta": -51.11867704280155,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 4068.0,
+"kind": "num",
+"note": "Feb 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"59": {
+"ok": true,
+"hash": "949141b9771d787dcabeff0d2f03690a",
+"metric": "amount",
+"date": null,
+"kinds": {
+"amount": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 100.5,
+"kind": "num"
+}
+]
+},
+"60": {
+"ok": true,
+"hash": "98c53d1a419eace655f22cc867750517",
+"metric": null,
+"date": "notes",
+"kinds": {
+"notes": "date",
+"region": "date",
+"region2": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"61": {
+"ok": true,
+"hash": "e121f910ac134f4678eea2dd22228d42",
+"metric": null,
+"date": "month",
+"kinds": {
+"month": "date",
+"date_created": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+}
+]
+},
+"62": {
+"ok": true,
+"hash": "5d780cb195dcd451a2e1c92a2186531d",
+"metric": null,
+"date": null,
+"kinds": {
+"id": "text",
+"total": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"63": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"64": {
+"ok": true,
+"hash": "6b7805966a27e3169bfec0d7d37e0e03",
+"metric": null,
+"date": null,
+"kinds": {
+"order": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+}
+]
+},
+"65": {
+"ok": true,
+"hash": "0a06d1ac2e4f64af0eff612ae501bb99",
+"metric": null,
+"date": "qty",
+"kinds": {
+"set": "category",
+"order": "category",
+"qty": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+}
+]
+},
+"66": {
+"ok": true,
+"hash": "4ad3ca7b8646328159ff7da627687c22",
+"metric": null,
+"date": null,
+"kinds": {
+"id": "numeric",
+"revenue_2": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"67": {
+"ok": false,
+"err": "ValueError:The file contains only empty cells."
+},
+"68": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"69": {
+"ok": true,
+"hash": "825e27417424a56accf77327bd4f6403",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"revenue": "numeric"
+},
+"rows": 184,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 184,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 8223.5,
+"kind": "num"
+}
+]
+},
+"70": {
+"ok": true,
+"hash": "5b130d4318fe84006fa15de8bce0b8ad",
+"metric": "x",
+"date": "x2",
+"kinds": {
+"price": "category",
+"x": "numeric",
+"x2": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 1000.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "18 Sep 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"71": {
+"ok": true,
+"hash": "b82a49526ec90569f8426ffe1ce4df23",
+"metric": "notes",
+"date": "revenue",
+"kinds": {
+"notes": "numeric",
+"amount": "category",
+"notes2": "numeric",
+"revenue": "date",
+"order": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 11442.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 4819.0,
+"kind": "num",
+"note": "Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"72": {
+"ok": true,
+"hash": "de8a6dae851ea9298a64e0ba3060a163",
+"metric": "amount",
+"date": "month",
+"kinds": {
+"total": "date",
+"month": "date",
+"amount": "numeric",
+"date": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 1757.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1757.0,
+"kind": "num",
+"note": "13 Dec 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"73": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"74": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"75": {
+"ok": true,
+"hash": "8a7ed94de5345dade69c702227525bde",
+"metric": "price",
+"date": "category",
+"kinds": {
+"price": "numeric",
+"flag": "numeric",
+"set": "category",
+"category": "date",
+"donor": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 1005.5,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 1011.0,
+"kind": "num",
+"delta": 0.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 1011.0,
+"kind": "num",
+"note": "Aug 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"76": {
+"ok": true,
+"hash": "4a0a904d11773413764ddf5851b920af",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"donor": "category",
+"order": "category",
+"revenue": "numeric",
+"set": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 4009.0,
+"kind": "num"
+}
+]
+},
+"77": {
+"ok": true,
+"hash": "a15aff5942eff4f88241f20c3516d8c6",
+"metric": "total",
+"date": null,
+"kinds": {
+"donor": "category",
+"x": "category",
+"total": "numeric"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 30467.9,
+"kind": "num"
+}
+]
+},
+"78": {
+"ok": true,
+"hash": "e5b93c840a7fcc0a9f66f7bb3743c63d",
+"metric": "flag",
+"date": null,
+"kinds": {
+"flag": "numeric",
+"revenue": "category"
+},
+"rows": 698,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 698,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 31587.9,
+"kind": "num"
+}
+]
+},
+"79": {
+"ok": true,
+"hash": "74d863b5b747e6097c20003ee86e2e25",
+"metric": "qty",
+"date": null,
+"kinds": {
+"revenue": "category",
+"category": "numeric",
+"category2": "numeric",
+"qty": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 81.2,
+"kind": "num"
+}
+]
+},
+"80": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"81": {
+"ok": true,
+"hash": "6ef2390791d6ae0153f0fcb62ae96f8c",
+"metric": "price",
+"date": "amount",
+"kinds": {
+"month": "category",
+"price": "numeric",
+"notes": "category",
+"donor": "category",
+"amount": "date",
+"donor5": "category",
+"amount_1": "text"
+},
+"rows": 41,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 41,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 47.221621621621615,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 2.2,
+"kind": "num",
+"delta": 0.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 88.35,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"82": {
+"ok": true,
+"hash": "871da3b92b2114ab93b8a19afe76e20a",
+"metric": "date6",
+"date": "date",
+"kinds": {
+"date": "date",
+"id": "numeric",
+"flag": "category",
+"date5": "category",
+"date6": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total date6",
+"value": 136273.75,
+"kind": "num"
+},
+{
+"label": "Best week",
+"value": 68228.47,
+"kind": "num",
+"note": "17 Dec 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"83": {
+"ok": true,
+"hash": "c7764f4252ef56f43134224f6c71db9e",
+"metric": "price",
+"date": null,
+"kinds": {
+"date_created": "category",
+"month": "numeric",
+"x": "category",
+"category": "numeric",
+"price": "numeric",
+"donor": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 4980.478999999999,
+"kind": "num"
+}
+]
+},
+"84": {
+"ok": true,
+"hash": "ac45364ebe755f85312ada171537539c",
+"metric": "category",
+"date": "date",
+"kinds": {
+"category": "numeric",
+"date": "date",
+"total": "date"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 835962.29,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 13688.0,
+"kind": "num",
+"delta": -46.00072824850711,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 84843.76,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"85": {
+"ok": true,
+"hash": "373582ec9bee843c2e94f89f2294dbc9",
+"metric": "month",
+"date": "region",
+"kinds": {
+"month": "numeric",
+"amount": "category",
+"region": "date",
+"set": "date",
+"qty": "date",
+"total": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 135.9,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 77.7,
+"kind": "num",
+"note": "27 Aug 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"86": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"87": {
+"ok": true,
+"hash": "34b9c4aa61f6286e1c4a185389ee42df",
+"metric": "month",
+"date": "order",
+"kinds": {
+"order": "date",
+"amount": "category",
+"revenue": "date",
+"month": "numeric",
+"date": "category",
+"order5": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 2001.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 1001.0,
+"kind": "num",
+"note": "Jun 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"88": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"89": {
+"ok": true,
+"hash": "dc79b1579bdc235a68c0dd27e3b7abcd",
+"metric": null,
+"date": "date_created5",
+"kinds": {
+"region": "date",
+"donor": "category",
+"date_created": "category",
+"month": "date",
+"date_created5": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"90": {
+"ok": true,
+"hash": "5bd54c55b900f45aac4d810adde8b4e1",
+"metric": "category",
+"date": "total4",
+"kinds": {
+"category": "numeric",
+"total": "category",
+"set": "numeric",
+"id": "category",
+"total4": "date",
+"category5": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 30576.78,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 4104.32,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"91": {
+"ok": true,
+"hash": "b17c6505797a9c2526dd87165bca5408",
+"metric": "order",
+"date": "revenue",
+"kinds": {
+"revenue": "date",
+"notes": "category",
+"x": "date",
+"order": "numeric",
+"month": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 12.5,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 12.5,
+"kind": "num",
+"note": "11 Dec 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"92": {
+"ok": true,
+"hash": "fc0b89f6324c5bab6ab0741373e7d377",
+"metric": "qty4",
+"date": "qty",
+"kinds": {
+"qty": "date",
+"flag": "category",
+"date_created": "numeric",
+"\u0935\u0930_\u0937": "date",
+"qty4": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total qty4",
+"value": 648.4999999999999,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 138.39999999999998,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"93": {
+"ok": true,
+"hash": "cf03102ed36a9d3e5fde9511af869c37",
+"metric": "revenue",
+"date": "set",
+"kinds": {
+"qty": "category",
+"set": "date",
+"\u0935\u0930_\u0937": "category",
+"revenue": "numeric"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 1599103.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 61996.0,
+"kind": "num",
+"delta": 17.715414119166066,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 88677.0,
+"kind": "num",
+"note": "Dec 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"94": {
+"ok": true,
+"hash": "22711e7a5b97f12dedca4f1ecac744be",
+"metric": "notes",
+"date": null,
+"kinds": {
+"notes": "numeric",
+"month": "numeric"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 1896.1000000000001,
+"kind": "num"
+}
+]
+},
+"95": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"96": {
+"ok": true,
+"hash": "1e8dee0e25f3dcc438c2e2c4e8d81271",
+"metric": null,
+"date": "donor2",
+"kinds": {
+"donor": "category",
+"id": "category",
+"donor2": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"97": {
+"ok": true,
+"hash": "8150e34540e73dc17d9a1fff80b63c1a",
+"metric": "date_created",
+"date": "amount",
+"kinds": {
+"date": "category",
+"date_created": "numeric",
+"amount": "date",
+"qty": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 3979.0,
+"kind": "num"
+},
+{
+"label": "Best week",
+"value": 2532.0,
+"kind": "num",
+"note": "02 Jun 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"98": {
+"ok": true,
+"hash": "de79371c9d2da575eea68c0a02962fe1",
+"metric": "total",
+"date": "qty",
+"kinds": {
+"total": "numeric",
+"month": "category",
+"category": "category",
+"qty": "date",
+"set": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 15552.09,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 7859.59,
+"kind": "num",
+"note": "Aug 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"99": {
+"ok": true,
+"hash": "3076a44db67d8b349b34bf50171b380a",
+"metric": "qty",
+"date": "revenue",
+"kinds": {
+"revenue": "date",
+"donor": "date",
+"qty": "numeric",
+"qty3": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 11059.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 0.0,
+"kind": "num",
+"delta": -100.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 2015.0,
+"kind": "num",
+"note": "Aug 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"100": {
+"ok": true,
+"hash": "3402319e792feefd8a4338eaafe479b6",
+"metric": "revenue",
+"date": "date",
+"kinds": {
+"revenue": "numeric",
+"date": "date",
+"total": "category",
+"qty": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 77.5,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 65.0,
+"kind": "num",
+"note": "09 Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"101": {
+"ok": true,
+"hash": "ccf71a3826c219231970e4b35ac37e2e",
+"metric": "qty",
+"date": "order",
+"kinds": {
+"order": "date",
+"order1": "date",
+"order2": "category",
+"category": "numeric",
+"date_created": "text",
+"qty": "numeric",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 31594.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 3071.0,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"102": {
+"ok": true,
+"hash": "8c65df25ad749f395c7f02876849365f",
+"metric": "set",
+"date": "date_created",
+"kinds": {
+"revenue": "category",
+"set": "numeric",
+"date": "numeric",
+"date_created": "date",
+"revenue_4": "date",
+"notes": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 12377.380000000001,
+"kind": "num"
+},
+{
+"label": "Best week",
+"value": 7325.91,
+"kind": "num",
+"note": "24 Nov 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"103": {
+"ok": true,
+"hash": "f235c9dc1bef74b8789ae734bc8e4310",
+"metric": "amount",
+"date": "date_created",
+"kinds": {
+"date_created": "date",
+"amount": "numeric",
+"category": "date",
+"amount_1": "date"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 958672.75,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 30740.64,
+"kind": "num",
+"delta": -28.19405980558141,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 84101.04000000001,
+"kind": "num",
+"note": "Jul 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"104": {
+"ok": true,
+"hash": "625cc1288283fd14aa2a31b15984aa4d",
+"metric": "total",
+"date": "id",
+"kinds": {
+"id": "date",
+"qty": "date",
+"donor": "numeric",
+"flag": "category",
+"notes": "date",
+"qty5": "category",
+"total": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": -333.79,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": -333.79,
+"kind": "num",
+"note": "06 Aug 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"105": {
+"ok": true,
+"hash": "e5fde98f0f454fb9ec13f7bbfcec6360",
+"metric": "amount",
+"date": null,
+"kinds": {
+"amount": "numeric",
+"date": "numeric",
+"order": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 2407.0,
+"kind": "num"
+}
+]
+},
+"106": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"107": {
+"ok": true,
+"hash": "0cce59fa79bf009c30452f422eb12c63",
+"metric": "category",
+"date": null,
+"kinds": {
+"category": "numeric",
+"notes": "numeric",
+"date_created": "numeric",
+"id": "numeric",
+"revenue": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 2001.0,
+"kind": "num"
+}
+]
+},
+"108": {
+"ok": true,
+"hash": "16aa72ba3b977e74b64fc1d294581e0a",
+"metric": "amount",
+"date": null,
+"kinds": {
+"x": "numeric",
+"qty": "numeric",
+"date": "category",
+"date_created": "numeric",
+"amount": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 12.5,
+"kind": "num"
+}
+]
+},
+"109": {
+"ok": true,
+"hash": "383c124d5962538ddaad1df1aa9b6f2c",
+"metric": null,
+"date": null,
+"kinds": {
+"price": "category",
+"donor": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"110": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"111": {
+"ok": true,
+"hash": "5d84734e25f081b037df0600bab804db",
+"metric": null,
+"date": null,
+"kinds": {
+"category": "category",
+"order": "category"
+},
+"rows": 656,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 656,
+"kind": "int"
+}
+]
+},
+"112": {
+"ok": true,
+"hash": "8574ff9b23ebca46f2ad0cdca8522d5f",
+"metric": "amount",
+"date": null,
+"kinds": {
+"price": "category",
+"amount": "numeric",
+"amount_1": "category",
+"month": "category",
+"id": "category",
+"order": "category",
+"x": "numeric"
+},
+"rows": 13,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 13,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 444853.72000000003,
+"kind": "num"
+}
+]
+},
+"113": {
+"ok": true,
+"hash": "41059af99a5683018e4e5b1454c917ed",
+"metric": "date_created",
+"date": "region",
+"kinds": {
+"amount": "category",
+"date_created": "numeric",
+"flag": "category",
+"price": "category",
+"region": "date",
+"set": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 4004.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 4004.0,
+"kind": "num",
+"note": "12 May 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"114": {
+"ok": true,
+"hash": "69bd43b63a135559a442521d44a9c768",
+"metric": "month",
+"date": "amount",
+"kinds": {
+"month": "numeric",
+"month1": "category",
+"amount": "date",
+"total": "date",
+"month4": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 73.60000000000001,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 58.2,
+"kind": "num",
+"note": "Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"115": {
+"ok": true,
+"hash": "06d2edb1b4647662ebb5cf32029eeebc",
+"metric": "order",
+"date": "set",
+"kinds": {
+"order": "numeric",
+"set": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 244.5,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 96.5,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"116": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"117": {
+"ok": true,
+"hash": "40deb344956256fb608fa88dac40fcd4",
+"metric": null,
+"date": "donor",
+"kinds": {
+"donor": "date",
+"date": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"118": {
+"ok": true,
+"hash": "c19115559072c97c366267ce698fe08b",
+"metric": null,
+"date": "flag",
+"kinds": {
+"flag": "date",
+"category": "date",
+"id": "date",
+"date_created": "text",
+"x": "category",
+"total": "category"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+}
+]
+},
+"119": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"120": {
+"ok": true,
+"hash": "fe72fda6cf1c9cdb93c0f8b3eeebb94f",
+"metric": "set",
+"date": "\u0935\u0930_\u0937",
+"kinds": {
+"\u0935\u0930_\u0937": "date",
+"set": "numeric"
+},
+"rows": 41,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 41,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 87454.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 3737.0,
+"kind": "num",
+"delta": 171.97962154294032,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 11871.0,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"121": {
+"ok": true,
+"hash": "d88b5fe1e8149fba9d2a7e03b46ff3ab",
+"metric": null,
+"date": "amount",
+"kinds": {
+"revenue": "category",
+"amount": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"122": {
+"ok": true,
+"hash": "d358b7f3372689b16db183efe5eba656",
+"metric": null,
+"date": null,
+"kinds": {
+"date_created": "text",
+"id": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"123": {
+"ok": true,
+"hash": "b3b4d94a361a00676e60b4b7b73511a5",
+"metric": "amount",
+"date": "amount_1",
+"kinds": {
+"amount": "numeric",
+"revenue": "numeric",
+"amount_1": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 34079.48,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 34079.48,
+"kind": "num",
+"note": "22 Oct 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"124": {
+"ok": true,
+"hash": "df8361d0d84cf7c9ac8ba8407164a115",
+"metric": "revenue",
+"date": "order",
+"kinds": {
+"revenue": "numeric",
+"donor": "category",
+"order": "date",
+"order3": "date",
+"category": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 7954.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 3252.0,
+"kind": "num",
+"note": "Sep 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"125": {
+"ok": true,
+"hash": "c74fbc8a19a0e63f70d41fd2398ca90f",
+"metric": null,
+"date": "x",
+"kinds": {
+"\u0935\u0930_\u0937": "category",
+"x": "date"
+},
+"rows": 3,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 3,
+"kind": "int"
+}
+]
+},
+"126": {
+"ok": true,
+"hash": "a7047fcb2383c0c689a272d676fd8a13",
+"metric": null,
+"date": null,
+"kinds": {
+"id": "category"
+},
+"rows": 28,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 28,
+"kind": "int"
+}
+]
+},
+"127": {
+"ok": true,
+"hash": "530493f537fb80181747691ffeeb3e57",
+"metric": "amount",
+"date": "\u0935\u0930_\u0937",
+"kinds": {
+"amount": "numeric",
+"flag": "category",
+"qty": "category",
+"\u0935\u0930_\u0937": "date",
+"region": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 40.8,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 40.8,
+"kind": "num",
+"note": "21 Nov 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"128": {
+"ok": true,
+"hash": "4a3f33162edfc7d4ddf80e8c41a51f18",
+"metric": null,
+"date": "month",
+"kinds": {
+"set": "category",
+"month": "date"
+},
+"rows": 693,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 693,
+"kind": "int"
+}
+]
+},
+"129": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"130": {
+"ok": true,
+"hash": "4dd7e0bb2cbe06ca086d24ca3564a85c",
+"metric": null,
+"date": "revenue",
+"kinds": {
+"price": "date",
+"x": "date",
+"x2": "date",
+"revenue": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"131": {
+"ok": true,
+"hash": "da73e0a452dd34c37739f3921aec5620",
+"metric": null,
+"date": "date_created",
+"kinds": {
+"date_created": "date",
+"amount": "date",
+"category": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"132": {
+"ok": true,
+"hash": "89355f5af138b58ab7c15aa14db8b629",
+"metric": "date",
+"date": null,
+"kinds": {
+"date": "numeric",
+"region": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 11063.0,
+"kind": "num"
+}
+]
+},
+"133": {
+"ok": true,
+"hash": "7eeb18500508e6d59ef9fe8bcef726e0",
+"metric": "set",
+"date": null,
+"kinds": {
+"set": "numeric",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 11,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 11,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 455095.38,
+"kind": "num"
+}
+]
+},
+"134": {
+"ok": true,
+"hash": "8f1cdd72cf3c45e6ce35500b35f4f985",
+"metric": "revenue",
+"date": "order",
+"kinds": {
+"order": "date",
+"id": "category",
+"revenue": "numeric",
+"x": "numeric",
+"month": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 11057.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 1011.0,
+"kind": "num",
+"note": "Jun 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"135": {
+"ok": true,
+"hash": "65a27ddf5de94756d01bd316289ececc",
+"metric": "set",
+"date": "category",
+"kinds": {
+"category": "date",
+"set": "numeric",
+"set2": "category"
+},
+"rows": 201,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 201,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 904857.3,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 77687.47,
+"kind": "num",
+"delta": 306.83631911376017,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 77687.47,
+"kind": "num",
+"note": "Mar 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"136": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"137": {
+"ok": true,
+"hash": "35d43063145740ee3e00659c7bc0f796",
+"metric": "month",
+"date": null,
+"kinds": {
+"month": "numeric",
+"set": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 5.0,
+"kind": "num"
+}
+]
+},
+"138": {
+"ok": true,
+"hash": "d27f2a153f795db54ec4309b82c01949",
+"metric": null,
+"date": null,
+"kinds": {
+"flag": "category",
+"donor": "category",
+"amount": "category",
+"x": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"139": {
+"ok": true,
+"hash": "6ab3436dca828cadc205d5be95e94eb5",
+"metric": "x",
+"date": "set",
+"kinds": {
+"order": "category",
+"id": "numeric",
+"x": "numeric",
+"set": "date",
+"flag": "category",
+"x5": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 1000.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "16 Aug 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"140": {
+"ok": true,
+"hash": "0f3e3920957b6cbb2fed232a1dc103eb",
+"metric": "amount",
+"date": "revenue",
+"kinds": {
+"amount": "numeric",
+"region": "category",
+"price": "date",
+"revenue": "date",
+"total": "date",
+"total5": "date",
+"qty": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 31736.799999999996,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 1218.2,
+"kind": "num",
+"delta": 46.224942984035536,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 1742.9,
+"kind": "num",
+"note": "Jul 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"141": {
+"ok": true,
+"hash": "8d1c21365fa1f2a3f6ed462e3472fd7d",
+"metric": "revenue",
+"date": "amount",
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"revenue": "numeric",
+"amount": "date",
+"total": "category",
+"date_created": "text",
+"set": "numeric",
+"flag": "numeric"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 84176.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 9973.0,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"142": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"143": {
+"ok": true,
+"hash": "6786a370bcd51e9c781c1001d98ce82d",
+"metric": "amount",
+"date": "order",
+"kinds": {
+"amount": "numeric",
+"amount_1": "category",
+"region": "category",
+"revenue": "numeric",
+"order": "date",
+"region6": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 14898.49,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 7303.5,
+"kind": "num",
+"note": "Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"144": {
+"ok": true,
+"hash": "8bb431a66af8805035e812308108665a",
+"metric": null,
+"date": null,
+"kinds": {
+"date_created": "category"
+},
+"rows": 7,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 7,
+"kind": "int"
+}
+]
+},
+"145": {
+"ok": true,
+"hash": "53cd0456ef22ae70a2c2c91186486ca5",
+"metric": "price",
+"date": "month",
+"kinds": {
+"set": "numeric",
+"month": "date",
+"notes": "date",
+"set3": "category",
+"price": "numeric",
+"notes5": "date",
+"month6": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 1321.210355987055,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 1334.7241379310344,
+"kind": "num",
+"delta": -3.713451310703046,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 1453.6363636363637,
+"kind": "num",
+"note": "Jul 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"146": {
+"ok": true,
+"hash": "eceb52affd218d9cc6bd7a6a5cbf4f8d",
+"metric": null,
+"date": null,
+"kinds": {
+"date_created": "category",
+"order": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"147": {
+"ok": true,
+"hash": "094a4aee52e2d696e86a6020d7dfdaea",
+"metric": "category",
+"date": "month",
+"kinds": {
+"x": "date",
+"month": "date",
+"region": "category",
+"category": "numeric",
+"id": "text",
+"qty": "date"
+},
+"rows": 41,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 41,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 1200361.24,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 1139.92,
+"kind": "num",
+"delta": -97.23337377583367,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 139240.2,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"148": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"149": {
+"ok": true,
+"hash": "380df476189ebf53f7bd1af4a80554da",
+"metric": null,
+"date": "x",
+"kinds": {
+"x": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"150": {
+"ok": true,
+"hash": "827273ffa494c7a74af0110186024e11",
+"metric": null,
+"date": "order",
+"kinds": {
+"donor": "category",
+"order": "date",
+"id": "date"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+}
+]
+},
+"151": {
+"ok": true,
+"hash": "4f6c1203cdd21e881db8914c93308ba2",
+"metric": "notes",
+"date": "total",
+"kinds": {
+"total": "date",
+"notes": "numeric",
+"notes2": "date",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 194484.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 5447.0,
+"kind": "num",
+"delta": -3.67816091954023,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 18601.0,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"152": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"153": {
+"ok": true,
+"hash": "e49231b1c681db87b0457c56c4d574c8",
+"metric": "notes",
+"date": null,
+"kinds": {
+"notes": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 66809.45,
+"kind": "num"
+}
+]
+},
+"154": {
+"ok": true,
+"hash": "1f6671ffbce359e8d4d9d2da84a13e1e",
+"metric": "total",
+"date": "date",
+"kinds": {
+"category": "category",
+"price": "numeric",
+"date_created": "numeric",
+"date": "date",
+"x": "numeric",
+"total": "numeric",
+"donor": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 1047.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1047.0,
+"kind": "num",
+"note": "04 Oct 2025"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"155": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"156": {
+"ok": true,
+"hash": "443ddbcf9abc6806bc2c0ad40111b43b",
+"metric": "revenue",
+"date": "total",
+"kinds": {
+"total": "date",
+"region": "category",
+"revenue": "numeric",
+"amount": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 66905.93,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 19606.94,
+"kind": "num",
+"note": "Jun 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"157": {
+"ok": true,
+"hash": "d23573e701960ec5a09202e27a77213e",
+"metric": null,
+"date": "revenue",
+"kinds": {
+"revenue": "date",
+"\u0935\u0930_\u0937": "category",
+"qty": "category",
+"region": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"158": {
+"ok": true,
+"hash": "d8dca873bbb3833150ecd6afca1db007",
+"metric": "date",
+"date": "date_created",
+"kinds": {
+"date": "numeric",
+"date_created": "date"
+},
+"rows": 199,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 199,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 9233.8,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 568.7,
+"kind": "num",
+"delta": 69.91335524350163,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 742.7,
+"kind": "num",
+"note": "Oct 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"159": {
+"ok": true,
+"hash": "26544ace9492efccd60e9d962ba4117e",
+"metric": null,
+"date": null,
+"kinds": {
+"id": "category",
+"price": "category"
+},
+"rows": 13,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 13,
+"kind": "int"
+}
+]
+},
+"160": {
+"ok": true,
+"hash": "68f5c624d318b32d7cb9b65c9e96c790",
+"metric": null,
+"date": "amount",
+"kinds": {
+"x": "category",
+"amount": "date",
+"id": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"161": {
+"ok": true,
+"hash": "806315961971102eca9e0561176641a5",
+"metric": "flag",
+"date": "id",
+"kinds": {
+"id": "date",
+"flag": "numeric"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 184499.89,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 20375.99,
+"kind": "num",
+"note": "Mar 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"162": {
+"ok": true,
+"hash": "782b17ba417db38f48b367461b4a4835",
+"metric": "amount",
+"date": "set",
+"kinds": {
+"set": "date",
+"amount": "numeric",
+"\u0935\u0930_\u0937": "category",
+"price": "numeric",
+"set4": "date",
+"id": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 83.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 83.0,
+"kind": "num",
+"note": "17 Jul 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"163": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"164": {
+"ok": true,
+"hash": "380fa1f3ba240617d3d9df40985d8a4d",
+"metric": null,
+"date": "x",
+"kinds": {
+"notes": "category",
+"month": "category",
+"x": "date",
+"month3": "category",
+"month4": "category",
+"notes5": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"165": {
+"ok": true,
+"hash": "933d8297becf6d138429dbd5a0f9d7e0",
+"metric": "date_created",
+"date": null,
+"kinds": {
+"date_created": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 1000.0,
+"kind": "num"
+}
+]
+},
+"166": {
+"ok": true,
+"hash": "c43459dbeb37be7d2e10a640f774c936",
+"metric": "amount",
+"date": "revenue",
+"kinds": {
+"amount": "numeric",
+"revenue": "date",
+"revenue_2": "numeric",
+"notes": "numeric",
+"revenue_4": "date",
+"month": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 2001.0,
+"kind": "num"
+},
+{
+"label": "Best week",
+"value": 1001.0,
+"kind": "num",
+"note": "14 May 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"167": {
+"ok": true,
+"hash": "8ccb089dc40ad1cf1801dbf87844e495",
+"metric": "amount",
+"date": "price5",
+"kinds": {
+"month": "numeric",
+"date_created": "numeric",
+"amount": "numeric",
+"price": "numeric",
+"date_created4": "category",
+"price5": "date",
+"amount6": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 66074.72,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 0.0,
+"kind": "num",
+"note": "Aug 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"168": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"169": {
+"ok": true,
+"hash": "46f00b173cf692e1e88a966c5ee07b22",
+"metric": "flag",
+"date": "order",
+"kinds": {
+"order": "date",
+"order1": "category",
+"flag": "numeric",
+"category": "category",
+"revenue": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 28808.09,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 0.0,
+"kind": "num",
+"delta": -100.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 8187.25,
+"kind": "num",
+"note": "Jan 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"170": {
+"ok": true,
+"hash": "f0804aab4a6bfda872420a2bda0a87a5",
+"metric": null,
+"date": null,
+"kinds": {
+"month": "category",
+"amount": "text",
+"date": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+}
+]
+},
+"171": {
+"ok": true,
+"hash": "2d50470e81efb723a810f2251013cb05",
+"metric": "revenue",
+"date": "date_created",
+"kinds": {
+"amount": "category",
+"date_created": "date",
+"notes": "date",
+"region": "category",
+"qty": "numeric",
+"order": "category",
+"revenue": "numeric"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 1564940.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 72166.0,
+"kind": "num",
+"delta": 7.251029173540208,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 81293.0,
+"kind": "num",
+"note": "Oct 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"172": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"173": {
+"ok": true,
+"hash": "15a5d09de9d6487d390c973b32fb6055",
+"metric": null,
+"date": "total",
+"kinds": {
+"total": "date",
+"qty": "category",
+"qty2": "category",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"174": {
+"ok": true,
+"hash": "73c64ecfa92e92adc990e47f531b4e5a",
+"metric": null,
+"date": null,
+"kinds": {
+"amount": "text"
+},
+"rows": 464,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 464,
+"kind": "int"
+}
+]
+},
+"175": {
+"ok": true,
+"hash": "5b10ee134a486cf167c4a3415dc558f6",
+"metric": "\u0935\u0930_\u0937",
+"date": null,
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"notes": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 53447.13,
+"kind": "num"
+}
+]
+},
+"176": {
+"ok": true,
+"hash": "b25e93b27eb0019f176614e5ed1e22ac",
+"metric": null,
+"date": "qty",
+"kinds": {
+"qty": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"177": {
+"ok": true,
+"hash": "233fc1dcee4045892a66ecb03014755d",
+"metric": "total",
+"date": "date_created",
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"date_created": "date",
+"qty": "numeric",
+"total": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 1000.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "25 Apr 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"178": {
+"ok": true,
+"hash": "4c48d9df29d1a53742d46096f5a0fd97",
+"metric": "price",
+"date": "notes",
+"kinds": {
+"id": "category",
+"price": "numeric",
+"price2": "category",
+"notes": "date",
+"set": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 52307.97,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 52307.97,
+"kind": "num",
+"note": "13 Mar 2025"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"179": {
+"ok": true,
+"hash": "65e1bfae017ca95fcf98b27d74b45771",
+"metric": "date_created",
+"date": null,
+"kinds": {
+"date_created": "numeric",
+"flag": "text"
+},
+"rows": 688,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 688,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 30869.600000000002,
+"kind": "num"
+}
+]
+},
+"180": {
+"ok": true,
+"hash": "e6d2b75718cce296e2840ff277f42409",
+"metric": "notes",
+"date": null,
+"kinds": {
+"notes": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 2902.0,
+"kind": "num"
+}
+]
+},
+"181": {
+"ok": true,
+"hash": "38f6054f0e1a2887b50bc09421c9438e",
+"metric": "date",
+"date": null,
+"kinds": {
+"date": "numeric",
+"region": "category",
+"region2": "numeric",
+"x": "numeric",
+"price": "category",
+"price5": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 1909.9,
+"kind": "num"
+}
+]
+},
+"182": {
+"ok": true,
+"hash": "67354060c542ecd1ff5af3939b95cf9b",
+"metric": "notes",
+"date": "id",
+"kinds": {
+"id": "date",
+"amount": "date",
+"notes": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 41459.450000000004,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 14949.79,
+"kind": "num",
+"note": "Jun 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"183": {
+"ok": true,
+"hash": "3822b15be28d9d5aa1e573f26d634d3e",
+"metric": null,
+"date": null,
+"kinds": {
+"unnamed_0": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"184": {
+"ok": true,
+"hash": "12ad14465837ffb33e093a54078c688c",
+"metric": null,
+"date": "month",
+"kinds": {
+"month": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"185": {
+"ok": true,
+"hash": "bee527b69e7d0d08aaaa889f3761a17c",
+"metric": "amount",
+"date": "date_created",
+"kinds": {
+"region": "numeric",
+"date_created": "date",
+"notes": "date",
+"month": "category",
+"set": "numeric",
+"amount": "numeric",
+"date": "date"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 810249.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 43149.0,
+"kind": "num",
+"delta": 77.81669826094124,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 43149.0,
+"kind": "num",
+"note": "Jul 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"186": {
+"ok": true,
+"hash": "133f044b4b53445f023f657334ea8570",
+"metric": "order",
+"date": "date_created5",
+"kinds": {
+"order": "numeric",
+"date_created": "category",
+"x": "numeric",
+"date_created3": "category",
+"date": "date",
+"date_created5": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 5010.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 1004.0,
+"kind": "num",
+"note": "Mar 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"187": {
+"ok": true,
+"hash": "fcae3c1cbc851d141ce6054a98550405",
+"metric": null,
+"date": "month",
+"kinds": {
+"month": "date",
+"total": "date",
+"notes": "category",
+"qty": "category",
+"donor": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"188": {
+"ok": true,
+"hash": "cae2d0e5b264490cda219918f34e3132",
+"metric": null,
+"date": "notes",
+"kinds": {
+"notes": "date",
+"date_created": "category",
+"qty": "category",
+"month": "category",
+"date": "category",
+"date_created5": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+}
+]
+},
+"189": {
+"ok": true,
+"hash": "9357e6b074e4e0e42eb4eaf53732f789",
+"metric": "region",
+"date": "notes",
+"kinds": {
+"region": "numeric",
+"set": "category",
+"notes": "date",
+"order": "numeric",
+"\u0935\u0930_\u0937": "category",
+"total": "category",
+"set6": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 222658082.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 40491532.0,
+"kind": "num",
+"delta": 100.0519354502431,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 40491532.0,
+"kind": "num",
+"note": "Sep 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"190": {
+"ok": true,
+"hash": "6d5bc9847238e440d7c28a78535a5316",
+"metric": null,
+"date": "date_created",
+"kinds": {
+"date_created": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"191": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"192": {
+"ok": true,
+"hash": "50b1dedf9a9810302351b62a57470bcb",
+"metric": "amount",
+"date": null,
+"kinds": {
+"date_created": "category",
+"notes": "numeric",
+"set": "category",
+"date_created3": "category",
+"donor": "category",
+"total": "category",
+"amount": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 4008.0,
+"kind": "num"
+}
+]
+},
+"193": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"194": {
+"ok": true,
+"hash": "8d1c6b0e8df3a2ea904b2b61eb8520de",
+"metric": "amount",
+"date": "date",
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"amount": "numeric",
+"total": "numeric",
+"date": "date",
+"donor": "date"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 1465808.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 51167.0,
+"kind": "num",
+"delta": -36.981796684484074,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 86119.0,
+"kind": "num",
+"note": "Jan 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"195": {
+"ok": true,
+"hash": "5bc8ce81e6c3801afdfa9731074da228",
+"metric": "donor",
+"date": "price",
+"kinds": {
+"donor": "numeric",
+"qty": "category",
+"price": "date",
+"set": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total donor",
+"value": 171965.33,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 15134.14,
+"kind": "num",
+"delta": 110.89409685933182,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 17920.71,
+"kind": "num",
+"note": "Jul 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"196": {
+"ok": true,
+"hash": "70ea7b3bb787476c2754f58e363f2d0d",
+"metric": "donor",
+"date": "price",
+"kinds": {
+"donor": "numeric",
+"set": "numeric",
+"category": "text",
+"flag": "category",
+"price": "date"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total donor",
+"value": 450760.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 12670.0,
+"kind": "num",
+"delta": -22.725054891436937,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 29791.0,
+"kind": "num",
+"note": "Feb 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"197": {
+"ok": true,
+"hash": "1e53489495bb3c4f56ce2674b1a5fa49",
+"metric": null,
+"date": "revenue",
+"kinds": {
+"revenue": "date"
+},
+"rows": 35,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 35,
+"kind": "int"
+}
+]
+},
+"198": {
+"ok": true,
+"hash": "a57809a3ff79f60e02901e4e2ad61b75",
+"metric": null,
+"date": "month",
+"kinds": {
+"amount": "date",
+"month": "date",
+"id": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"199": {
+"ok": true,
+"hash": "88830e07184d82e69377a948fcb8e18c",
+"metric": "donor",
+"date": "x",
+"kinds": {
+"notes": "category",
+"amount": "category",
+"x": "date",
+"\u0935\u0930_\u09374": "category",
+"donor": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total donor",
+"value": 17195.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 4250.0,
+"kind": "num",
+"note": "Aug 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"200": {
+"ok": true,
+"hash": "09a7de89c0f1dbf700b14c2d944765a6",
+"metric": "price",
+"date": null,
+"kinds": {
+"region": "numeric",
+"price": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 1529.0,
+"kind": "num"
+}
+]
+},
+"201": {
+"ok": true,
+"hash": "e8f12f8c41bd5afce16bcaa248c768d8",
+"metric": "flag",
+"date": "order",
+"kinds": {
+"amount": "category",
+"price": "date",
+"flag": "numeric",
+"order": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 1430.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1430.0,
+"kind": "num",
+"note": "20 Feb 2025"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"202": {
+"ok": true,
+"hash": "287a2df22eb473294a7493d0b99091fa",
+"metric": "qty",
+"date": null,
+"kinds": {
+"amount": "category",
+"\u0935\u0930_\u0937": "numeric",
+"qty": "numeric",
+"revenue": "category"
+},
+"rows": 698,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 698,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 32090.3,
+"kind": "num"
+}
+]
+},
+"203": {
+"ok": false,
+"err": "ValueError:The file contains only empty cells."
+},
+"204": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"205": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"206": {
+"ok": true,
+"hash": "642a97e0d69d5402b0ff3e9352cb9509",
+"metric": null,
+"date": null,
+"kinds": {
+"id": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"207": {
+"ok": true,
+"hash": "8a0df51b254c40b7550cc216ab82e73f",
+"metric": "qty",
+"date": "revenue",
+"kinds": {
+"revenue": "date",
+"qty": "numeric",
+"price": "category",
+"price3": "numeric",
+"date_created": "numeric",
+"order": "numeric"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 188690.38,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 10670.1,
+"kind": "num",
+"delta": 233.73890414558014,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 32531.2,
+"kind": "num",
+"note": "Aug 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"208": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"209": {
+"ok": true,
+"hash": "a0b270426b998e7fbeb468dcae5fc39a",
+"metric": "revenue",
+"date": "order",
+"kinds": {
+"revenue": "numeric",
+"region": "category",
+"amount": "numeric",
+"order": "date",
+"region4": "date",
+"flag": "numeric"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 82688.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 2485.0,
+"kind": "num",
+"delta": -36.05249613998971,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 16990.0,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"210": {
+"ok": true,
+"hash": "d9f173cd74a4452980c4b2dc011c1c88",
+"metric": null,
+"date": null,
+"kinds": {
+"revenue": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+}
+]
+},
+"211": {
+"ok": true,
+"hash": "94ffdf5af1a966119381ed177f5f4226",
+"metric": "revenue",
+"date": "amount",
+"kinds": {
+"amount": "date",
+"revenue": "numeric",
+"x": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 1827.7000000000003,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 96.4,
+"kind": "num",
+"delta": -62.34375,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 256.0,
+"kind": "num",
+"note": "Jan 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"212": {
+"ok": true,
+"hash": "8cf4e82d32150ee9049f9c8cedad3427",
+"metric": "\u0935\u0930_\u0937",
+"date": "flag",
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"flag": "date",
+"x": "category",
+"price": "category",
+"donor": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 56952.31,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 9359.97,
+"kind": "num",
+"note": "Jun 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"213": {
+"ok": true,
+"hash": "df0952909f109f99a607c270efa973fd",
+"metric": "set",
+"date": "flag",
+"kinds": {
+"flag": "date",
+"order": "category",
+"donor": "category",
+"set": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 3410.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 1222.0,
+"kind": "num",
+"note": "Jun 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"214": {
+"ok": true,
+"hash": "56a7ea94cc19129ee8f565fb9db8c903",
+"metric": null,
+"date": "set",
+"kinds": {
+"amount": "category",
+"order": "category",
+"set": "date",
+"id": "text",
+"region": "category",
+"revenue": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"215": {
+"ok": true,
+"hash": "c49ae49636ef750972fd4e96ede9c0eb",
+"metric": null,
+"date": "\u0935\u0930_\u0937",
+"kinds": {
+"qty": "category",
+"amount": "category",
+"\u0935\u0930_\u0937": "date",
+"\u0935\u0930_\u09373": "date",
+"amount5": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"216": {
+"ok": true,
+"hash": "2c3ed9f93b5bcc1d0106e663d944ff7c",
+"metric": "donor",
+"date": "category",
+"kinds": {
+"category": "date",
+"donor": "numeric"
+},
+"rows": 699,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 699,
+"kind": "int"
+},
+{
+"label": "Total donor",
+"value": 809390.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 5274.0,
+"kind": "num",
+"delta": -18.05469235550031,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 44319.0,
+"kind": "num",
+"note": "Mar 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"217": {
+"ok": true,
+"hash": "a09d7a37b58cf574dab7df92f733bd80",
+"metric": "month",
+"date": "notes",
+"kinds": {
+"notes": "date",
+"month": "numeric"
+},
+"rows": 6,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 6,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 101203266.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 20250417.0,
+"kind": "num",
+"note": "Jul 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"218": {
+"ok": true,
+"hash": "570b23a4850deb94393bffea4d256628",
+"metric": "total",
+"date": "region",
+"kinds": {
+"total": "numeric",
+"region": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 189.5,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 73.6,
+"kind": "num",
+"note": "Sep 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"219": {
+"ok": true,
+"hash": "cbb616097ac07ebaa5ca4e5290927ef5",
+"metric": "qty",
+"date": null,
+"kinds": {
+"set": "category",
+"price": "category",
+"qty": "numeric",
+"date_created": "numeric",
+"amount": "text",
+"date_created5": "numeric"
+},
+"rows": 201,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 201,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 8251.6,
+"kind": "num"
+}
+]
+},
+"220": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"221": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"222": {
+"ok": true,
+"hash": "93f8158d0da2393a45d3f3dfd906321f",
+"metric": "ag",
+"date": "f",
+"kinds": {
+"f": "date",
+"ag": "numeric"
+},
+"rows": 641,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 641,
+"kind": "int"
+},
+{
+"label": "Total ag",
+"value": 119389.0,
+"kind": "num"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"223": {
+"ok": true,
+"hash": "c4e5d09a060ed3b773137de01268cb31",
+"metric": "amount",
+"date": null,
+"kinds": {
+"donor": "numeric",
+"amount": "numeric",
+"flag": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 4006.0,
+"kind": "num"
+}
+]
+},
+"224": {
+"ok": true,
+"hash": "4bb7e44fc2873baa2e08c7789d2ad172",
+"metric": "date",
+"date": "price",
+"kinds": {
+"price": "date",
+"set": "category",
+"qty": "date",
+"amount": "date",
+"amount4": "date",
+"date": "numeric",
+"price6": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 8670.04,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 8670.04,
+"kind": "num",
+"note": "22 May 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"225": {
+"ok": true,
+"hash": "5f9fac11b457e285a12cc1a373f0b4d6",
+"metric": null,
+"date": "revenue",
+"kinds": {
+"region": "date",
+"revenue": "date"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+}
+]
+},
+"226": {
+"ok": true,
+"hash": "c6c40aa8a49797817e202647b0baa17f",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"revenue": "numeric"
+},
+"rows": 9,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 9,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 35959.229999999996,
+"kind": "num"
+}
+]
+},
+"227": {
+"ok": true,
+"hash": "aee453b2ccd66e316a292e5cfb064927",
+"metric": "order",
+"date": "month",
+"kinds": {
+"date_created": "category",
+"order": "numeric",
+"month": "date",
+"flag": "numeric",
+"x": "numeric",
+"date": "date",
+"donor": "category"
+},
+"rows": 13,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 13,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 9044.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 0.0,
+"kind": "num",
+"delta": -100.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 3014.0,
+"kind": "num",
+"note": "Aug 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"228": {
+"ok": true,
+"hash": "848a83567167e0d7a4154a1b5497527a",
+"metric": "total",
+"date": "\u0935\u0930_\u0937",
+"kinds": {
+"\u0935\u0930_\u0937": "date",
+"total": "numeric",
+"amount": "numeric",
+"amount3": "date",
+"date": "category",
+"notes": "date"
+},
+"rows": 701,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 701,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 2926628.98,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 134731.43,
+"kind": "num",
+"delta": 3.5964255806409136,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 153706.48,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"229": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"230": {
+"ok": true,
+"hash": "b9272d8d42f11faae1f62f32d2800415",
+"metric": null,
+"date": null,
+"kinds": {
+"order": "text",
+"flag": "category"
+},
+"rows": 187,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 187,
+"kind": "int"
+}
+]
+},
+"231": {
+"ok": true,
+"hash": "b910c34bf660e81fcc32a804e72fca84",
+"metric": null,
+"date": "x",
+"kinds": {
+"x": "date"
+},
+"rows": 633,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 633,
+"kind": "int"
+}
+]
+},
+"232": {
+"ok": true,
+"hash": "5be3152c46cfb478bbe3c2869a1cadec",
+"metric": null,
+"date": "date_created",
+"kinds": {
+"date_created": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"233": {
+"ok": true,
+"hash": "2db5c659a852b41f4cc4366e028f0300",
+"metric": "\u0935\u0930_\u0937",
+"date": "set",
+"kinds": {
+"set": "date",
+"\u0935\u0930_\u0937": "numeric",
+"category": "date",
+"notes": "numeric",
+"region": "numeric",
+"category5": "date",
+"order": "numeric"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 8282.399999999998,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 562.9,
+"kind": "num",
+"note": "Jun 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"234": {
+"ok": true,
+"hash": "fe06a2834bd3f1b444a60f44cedbe729",
+"metric": "\u0935\u0930_\u0937",
+"date": null,
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"notes": "category",
+"donor": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 26379.16,
+"kind": "num"
+}
+]
+},
+"235": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"236": {
+"ok": true,
+"hash": "63dada835a87b803b5432929189776c2",
+"metric": "\u0935\u0930_\u0937",
+"date": "price",
+"kinds": {
+"total": "category",
+"price": "date",
+"\u0935\u0930_\u0937": "numeric"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 8671984.12,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 74971.4,
+"kind": "num",
+"delta": -88.54670533348141,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 736623.23,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"237": {
+"ok": true,
+"hash": "e96b42cc84776675f4a771479a89f37a",
+"metric": "region",
+"date": "id",
+"kinds": {
+"id": "date",
+"set": "category",
+"region": "numeric",
+"\u0935\u0930_\u0937": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 1685413.4199999997,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 0.0,
+"kind": "num",
+"delta": -100.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 298039.35,
+"kind": "num",
+"note": "Feb 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"238": {
+"ok": true,
+"hash": "d084373b15d44b5e85be212f43d3518d",
+"metric": "amount",
+"date": null,
+"kinds": {
+"amount": "numeric",
+"amount_1": "category",
+"order": "numeric"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 27662633.490000002,
+"kind": "num"
+}
+]
+},
+"239": {
+"ok": true,
+"hash": "d59032d90eca19ede21fb641506f3d24",
+"metric": "flag",
+"date": "amount",
+"kinds": {
+"amount": "date",
+"flag": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 4549.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 4549.0,
+"kind": "num",
+"note": "15 Apr 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"240": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"241": {
+"ok": true,
+"hash": "560edf8804d3d7e84fd4a7cc0eaad740",
+"metric": "total",
+"date": "amount",
+"kinds": {
+"total": "numeric",
+"id": "category",
+"amount": "date",
+"amount3": "date",
+"region": "category"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 8634.2,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 262.4,
+"kind": "num",
+"delta": -29.970643181211642,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 775.2,
+"kind": "num",
+"note": "May 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"242": {
+"ok": true,
+"hash": "5488457aeb6561f3c5d40efe3323af40",
+"metric": null,
+"date": null,
+"kinds": {
+"se": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"243": {
+"ok": true,
+"hash": "74723d2d342aba21e3743d729270ccd3",
+"metric": "date",
+"date": null,
+"kinds": {
+"date": "numeric",
+"month": "numeric",
+"x": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 32603.0,
+"kind": "num"
+}
+]
+},
+"244": {
+"ok": true,
+"hash": "a0f5ce1638025eea08d2af951fdbeca0",
+"metric": "total",
+"date": "price",
+"kinds": {
+"x": "numeric",
+"\u0935\u0930_\u0937": "numeric",
+"price": "date",
+"notes": "date",
+"total": "numeric",
+"set": "numeric",
+"price6": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 806560.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 31976.0,
+"kind": "num",
+"delta": 7.910367170626349,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 43153.0,
+"kind": "num",
+"note": "Apr 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"245": {
+"ok": true,
+"hash": "3ba269c2dade74f4212801b6d72ba782",
+"metric": null,
+"date": "category",
+"kinds": {
+"category": "date",
+"\u0935\u0930_\u0937": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"246": {
+"ok": true,
+"hash": "aa5f6dc1ca59c01305195764f770042a",
+"metric": null,
+"date": "flag",
+"kinds": {
+"total": "category",
+"order": "category",
+"flag": "date",
+"qty": "date",
+"category": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"247": {
+"ok": true,
+"hash": "0463e3239697d8589d7146a30436ede8",
+"metric": "total",
+"date": null,
+"kinds": {
+"total": "numeric",
+"donor": "numeric",
+"amount": "numeric"
+},
+"rows": 13,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 13,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 26811.0,
+"kind": "num"
+}
+]
+},
+"248": {
+"ok": true,
+"hash": "7f3db232cd8c99ae3ab37f3483f21ff9",
+"metric": null,
+"date": "qty",
+"kinds": {
+"donor": "category",
+"amount": "category",
+"qty": "date",
+"id": "date"
+},
+"rows": 696,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 696,
+"kind": "int"
+}
+]
+},
+"249": {
+"ok": true,
+"hash": "12c371e08fe7326b62da0eb6e31785c9",
+"metric": null,
+"date": "category",
+"kinds": {
+"category": "date",
+"revenue": "category",
+"total": "date",
+"donor": "category",
+"price": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"250": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"251": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"252": {
+"ok": true,
+"hash": "99ce6be4a628276906d1466296b66619",
+"metric": "flag",
+"date": "notes4",
+"kinds": {
+"flag": "numeric",
+"notes": "text",
+"category": "numeric",
+"notes3": "numeric",
+"notes4": "date"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 1525893.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 49719.0,
+"kind": "num",
+"delta": 10.056224544005667,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 81241.0,
+"kind": "num",
+"note": "Aug 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"253": {
+"ok": true,
+"hash": "b29d615bba32b96ba3211bf260e24a46",
+"metric": "amount4",
+"date": "qty",
+"kinds": {
+"amount": "category",
+"order": "numeric",
+"qty": "date",
+"price": "category",
+"amount4": "numeric"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total amount4",
+"value": 1557741.6500000001,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 232834.77000000002,
+"kind": "num",
+"note": "Oct 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"254": {
+"ok": true,
+"hash": "c1b02e651f1e133ac788bc002ddd1732",
+"metric": null,
+"date": "amount",
+"kinds": {
+"amount": "date",
+"qty": "category",
+"donor": "category",
+"amount_1": "category",
+"revenue": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"255": {
+"ok": true,
+"hash": "dd73bb708c3e6c306c1a6f94cae51683",
+"metric": "total",
+"date": "donor",
+"kinds": {
+"total": "numeric",
+"\u0935\u0930_\u0937": "category",
+"donor": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 3780.22,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 3780.22,
+"kind": "num",
+"note": "11 Dec 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"256": {
+"ok": true,
+"hash": "5ce3672f7890300aaadddbee7eaa4f19",
+"metric": "total",
+"date": "x",
+"kinds": {
+"total": "numeric",
+"x": "date",
+"amount": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 11057.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 2012.0,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"257": {
+"ok": true,
+"hash": "74e84108c49a5416d6397a89deaedabd",
+"metric": "notes",
+"date": "set",
+"kinds": {
+"notes": "numeric",
+"date_created": "category",
+"set": "date",
+"region": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 201.70000000000002,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 76.3,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"258": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"259": {
+"ok": true,
+"hash": "cf5d96f0832e802b61ac162e335ae559",
+"metric": "amount",
+"date": "category",
+"kinds": {
+"amount": "numeric",
+"donor": "numeric",
+"category": "date",
+"amount3": "numeric",
+"x": "date",
+"total": "category",
+"order": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 51605.21,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 51605.21,
+"kind": "num",
+"note": "15 Jun 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"260": {
+"ok": true,
+"hash": "2431103a2a1db4c8481be072ef5f4995",
+"metric": "\u0935\u0930_\u0937",
+"date": null,
+"kinds": {
+"\u0935\u0930_\u0937": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 1000.0,
+"kind": "num"
+}
+]
+},
+"261": {
+"ok": true,
+"hash": "0644b0bf84a06e96585ffe8de5cd86b1",
+"metric": null,
+"date": "date",
+"kinds": {
+"date": "date"
+},
+"rows": 11,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 11,
+"kind": "int"
+}
+]
+},
+"262": {
+"ok": true,
+"hash": "92b5a9dd6c425d62f387c3be990eb424",
+"metric": "price",
+"date": "donor",
+"kinds": {
+"price": "numeric",
+"flag": "numeric",
+"category": "numeric",
+"qty": "category",
+"donor": "date",
+"x": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 1002.0,
+"kind": "num"
+},
+{
+"label": "Latest full week",
+"value": 1000.0,
+"kind": "num",
+"delta": -0.19960079840319359,
+"vs": "vs previous week"
+},
+{
+"label": "Best week",
+"value": 1002.0,
+"kind": "num",
+"note": "10 Dec 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"263": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"264": {
+"ok": true,
+"hash": "f9cd46b16b19d033988d507d482df7f1",
+"metric": null,
+"date": "x",
+"kinds": {
+"order": "text",
+"flag": "category",
+"id": "category",
+"x": "date",
+"x4": "category",
+"qty": "category",
+"id6": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"265": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"266": {
+"ok": true,
+"hash": "72732e6a4cb3f53a74036051bff52889",
+"metric": "price",
+"date": "notes",
+"kinds": {
+"price": "numeric",
+"qty": "numeric",
+"donor": "category",
+"notes": "date",
+"order": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 59.3,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 59.3,
+"kind": "num",
+"note": "07 Oct 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"267": {
+"ok": true,
+"hash": "a84b9a3ef37025d84227a13b6eebf209",
+"metric": "month",
+"date": null,
+"kinds": {
+"month": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 79.0,
+"kind": "num"
+}
+]
+},
+"268": {
+"ok": true,
+"hash": "e16c79fbae4486040195ff055924ff1a",
+"metric": "region",
+"date": null,
+"kinds": {
+"date": "category",
+"amount": "category",
+"region": "numeric",
+"notes": "numeric",
+"notes4": "numeric"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 3167981.7199999997,
+"kind": "num"
+}
+]
+},
+"269": {
+"ok": true,
+"hash": "0a9a9692443af6de2f1fbf09a1eb0ad1",
+"metric": null,
+"date": null,
+"kinds": {
+"f": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"270": {
+"ok": true,
+"hash": "48798370635c70a84111ba40f22d2c3e",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"date_created": "category",
+"revenue": "numeric"
+},
+"rows": 699,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 699,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 855984.0,
+"kind": "num"
+}
+]
+},
+"271": {
+"ok": true,
+"hash": "23f869de8394a917665dfd793e286793",
+"metric": null,
+"date": "order",
+"kinds": {
+"month": "category",
+"amount": "date",
+"region": "date",
+"order": "date",
+"order4": "date",
+"order5": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+}
+]
+},
+"272": {
+"ok": true,
+"hash": "9526fd68206bf2bd03cbba7e9c46ab29",
+"metric": "amount",
+"date": "category2",
+"kinds": {
+"category": "numeric",
+"amount": "numeric",
+"category2": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 11056.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 2014.0,
+"kind": "num",
+"note": "Aug 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"273": {
+"ok": true,
+"hash": "20c217956a3c77cbfc68081faee6f45b",
+"metric": "total",
+"date": "flag",
+"kinds": {
+"flag": "date",
+"flag1": "category",
+"set": "date",
+"amount": "date",
+"id": "numeric",
+"total": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 40472154.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 20231029.0,
+"kind": "num",
+"note": "Jan 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"274": {
+"ok": true,
+"hash": "9fff0a9009ce1e4b4a8c2319654f2ffa",
+"metric": "date_created",
+"date": null,
+"kinds": {
+"amount": "category",
+"x": "category",
+"id": "category",
+"date_created": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 94462.29000000001,
+"kind": "num"
+}
+]
+},
+"275": {
+"ok": true,
+"hash": "ebac13a6b4dc4e42b46dba06d9802260",
+"metric": "price",
+"date": null,
+"kinds": {
+"\u0935\u0930_\u0937": "numeric",
+"amount": "category",
+"price": "numeric",
+"donor": "category",
+"total": "text",
+"\u0935\u0930_\u09375": "text",
+"amount_1": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 1315.2733118971062,
+"kind": "num"
+}
+]
+},
+"276": {
+"ok": true,
+"hash": "edc852dfb783b549f147cc8f1a5058b9",
+"metric": null,
+"date": "month",
+"kinds": {
+"month": "date"
+},
+"rows": 3,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 3,
+"kind": "int"
+}
+]
+},
+"277": {
+"ok": true,
+"hash": "db59a018bb465b109c18f80e1a1cce4e",
+"metric": null,
+"date": "date",
+"kinds": {
+"date": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"278": {
+"ok": true,
+"hash": "e525ef7605e58657030699610b088a12",
+"metric": null,
+"date": "date_created",
+"kinds": {
+"date": "date",
+"set": "category",
+"id": "numeric",
+"date_created": "date"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+}
+]
+},
+"279": {
+"ok": true,
+"hash": "49e6b271b17a97ad27deaafcc7af135b",
+"metric": "category",
+"date": "order",
+"kinds": {
+"category": "numeric",
+"id": "date",
+"order": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 38275.880000000005,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 875.49,
+"kind": "num",
+"delta": -69.06439484954277,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 7128.85,
+"kind": "num",
+"note": "Dec 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"280": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"281": {
+"ok": true,
+"hash": "1c7c92898d4308a10a2669f16521411f",
+"metric": null,
+"date": "qty",
+"kinds": {
+"qty": "date",
+"set": "date",
+"region": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"282": {
+"ok": true,
+"hash": "c6cdef78e8db4af53a8110826cf9d74d",
+"metric": null,
+"date": null,
+"kinds": {
+"x": "category"
+},
+"rows": 3,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 3,
+"kind": "int"
+}
+]
+},
+"283": {
+"ok": true,
+"hash": "30aa75c687b068b27e6ad3b565043d88",
+"metric": null,
+"date": "set",
+"kinds": {
+"set": "date"
+},
+"rows": 175,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 175,
+"kind": "int"
+}
+]
+},
+"284": {
+"ok": true,
+"hash": "9fb831041df53526ae1d98892fa09408",
+"metric": null,
+"date": "date",
+"kinds": {
+"total": "date",
+"category": "date",
+"date": "date",
+"region": "category",
+"id": "date",
+"donor": "date",
+"price": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"285": {
+"ok": true,
+"hash": "0edcb997d6215bfbe77e64a311341769",
+"metric": null,
+"date": "id",
+"kinds": {
+"\u0935\u0930_\u0937": "category",
+"id": "date",
+"notes": "category"
+},
+"rows": 41,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 41,
+"kind": "int"
+}
+]
+},
+"286": {
+"ok": true,
+"hash": "4e5cb69ad2d9de52702605ba552ba117",
+"metric": null,
+"date": null,
+"kinds": {
+"date_created": "category"
+},
+"rows": 10,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 10,
+"kind": "int"
+}
+]
+},
+"287": {
+"ok": true,
+"hash": "c93402c37c3aaa8f7b25f1358418ed4c",
+"metric": null,
+"date": null,
+"kinds": {
+"no": "category",
+"es": "category"
+},
+"rows": 37,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 37,
+"kind": "int"
+}
+]
+},
+"288": {
+"ok": true,
+"hash": "5aefbfa1615786f5f41c7dc9fbcd1eda",
+"metric": "flag",
+"date": "x",
+"kinds": {
+"category": "category",
+"flag": "numeric",
+"x": "date"
+},
+"rows": 695,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 695,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 2969383.03,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 107272.81,
+"kind": "num",
+"delta": 28.917984975865917,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 184272.15,
+"kind": "num",
+"note": "Apr 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"289": {
+"ok": true,
+"hash": "05c03de1f7372bc2e120937061b885f4",
+"metric": "month",
+"date": "date_created",
+"kinds": {
+"revenue": "date",
+"date_created": "date",
+"month": "numeric",
+"flag": "category",
+"\u0935\u0930_\u0937": "numeric",
+"month5": "text",
+"\u0935\u0930_\u09376": "numeric"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 27447220.43,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 81547.17,
+"kind": "num",
+"delta": -69.65579095697794,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 1347634.88,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"290": {
+"ok": true,
+"hash": "17da3021a2732113fc49c2455d84d282",
+"metric": null,
+"date": null,
+"kinds": {
+"\u0935\u0930_\u0937": "category",
+"notes": "category",
+"order": "category"
+},
+"rows": 35,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 35,
+"kind": "int"
+}
+]
+},
+"291": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"292": {
+"ok": true,
+"hash": "240cb252f7e56335f6664741c5770899",
+"metric": null,
+"date": "set",
+"kinds": {
+"region": "text",
+"set": "date"
+},
+"rows": 698,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 698,
+"kind": "int"
+}
+]
+},
+"293": {
+"ok": true,
+"hash": "dee022415185b12ff1ecae8a89424646",
+"metric": "amount",
+"date": null,
+"kinds": {
+"id": "category",
+"amount": "numeric",
+"\u0935\u0930_\u0937": "numeric",
+"order": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 302298.49,
+"kind": "num"
+}
+]
+},
+"294": {
+"ok": true,
+"hash": "f097f4eab8c930cdfb27074030e92081",
+"metric": null,
+"date": null,
+"kinds": {
+"donor": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"295": {
+"ok": true,
+"hash": "f0e671371b8170b967cd134e4e201efe",
+"metric": "amount",
+"date": "date",
+"kinds": {
+"category": "text",
+"date": "date",
+"amount": "numeric",
+"amount3": "category",
+"qty": "numeric",
+"price": "numeric",
+"total": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 1540392.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 32756.0,
+"kind": "num",
+"delta": -19.54017341750387,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 122874.0,
+"kind": "num",
+"note": "Sep 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"296": {
+"ok": true,
+"hash": "1b07add0e81ad6722c4324f0f5fbe300",
+"metric": "date",
+"date": "amount",
+"kinds": {
+"set": "category",
+"date": "numeric",
+"amount": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 74.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 74.0,
+"kind": "num",
+"note": "28 Dec 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"297": {
+"ok": true,
+"hash": "41e9166bb65eb1ff301a875f55848abe",
+"metric": "\u0935\u0930_\u0937",
+"date": "notes",
+"kinds": {
+"date": "category",
+"\u0935\u0930_\u0937": "numeric",
+"notes": "date"
+},
+"rows": 41,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 41,
+"kind": "int"
+},
+{
+"label": "Total \u0935\u0930_\u0937",
+"value": 2204.6000000000004,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 270.9,
+"kind": "num",
+"delta": 6507.3170731707305,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 270.9,
+"kind": "num",
+"note": "Jun 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"298": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"299": {
+"ok": true,
+"hash": "0d2229d0d22cd318f42ddef10dfa91ad",
+"metric": "total",
+"date": "revenue",
+"kinds": {
+"amount": "date",
+"x": "category",
+"revenue": "date",
+"revenue_3": "category",
+"total": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 5010.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 0.0,
+"kind": "num",
+"delta": -100.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 1004.0,
+"kind": "num",
+"note": "Oct 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"300": {
+"ok": true,
+"hash": "4c55f743b6cf975fbafab80a76dc3aee",
+"metric": "flag",
+"date": "region",
+"kinds": {
+"amount": "category",
+"flag": "numeric",
+"region": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 34684.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 4106.0,
+"kind": "num",
+"note": "Mar 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"301": {
+"ok": true,
+"hash": "998ceea13546409a3608fee2f6cd65e8",
+"metric": "set",
+"date": null,
+"kinds": {
+"order": "category",
+"flag": "category",
+"x": "category",
+"region": "category",
+"set": "numeric",
+"notes": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 56970.63,
+"kind": "num"
+}
+]
+},
+"302": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"303": {
+"ok": true,
+"hash": "7933482ba4c3ca6676fe61120aa18274",
+"metric": null,
+"date": "date_created",
+"kinds": {
+"date_created": "date",
+"x": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"304": {
+"ok": true,
+"hash": "b837153185aa4361010c5c55bc6f6fde",
+"metric": "set",
+"date": "date_created",
+"kinds": {
+"set": "numeric",
+"date_created": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 2001.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 1000.0,
+"kind": "num",
+"note": "Jun 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"305": {
+"ok": true,
+"hash": "592a1206dd70959fa0d44d73fe38df1b",
+"metric": "region",
+"date": "date",
+"kinds": {
+"flag": "category",
+"date": "date",
+"region": "numeric",
+"category": "category",
+"qty": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 4838.0,
+"kind": "num"
+},
+{
+"label": "Best week",
+"value": 2844.0,
+"kind": "num",
+"note": "10 Mar 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"306": {
+"ok": true,
+"hash": "74e25cd5a25ce6a2773eda4aef042ccf",
+"metric": null,
+"date": "date",
+"kinds": {
+"notes": "date",
+"date": "date",
+"qty": "category",
+"order": "category",
+"x": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+}
+]
+},
+"307": {
+"ok": true,
+"hash": "725eb006d3c2f526566626c135173758",
+"metric": "total",
+"date": "qty",
+"kinds": {
+"flag": "text",
+"qty": "date",
+"total": "numeric",
+"date": "category",
+"notes": "category"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total total",
+"value": 190005.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 5761.0,
+"kind": "num",
+"delta": 73.68103708170032,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 12420.0,
+"kind": "num",
+"note": "Mar 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"308": {
+"ok": true,
+"hash": "69f1fc7f310a051c1abf0faa3fa2ab41",
+"metric": null,
+"date": null,
+"kinds": {
+"total": "category",
+"revenue": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"309": {
+"ok": true,
+"hash": "704571a87d249a9b9de3fbb0bc498cc5",
+"metric": "region",
+"date": "category",
+"kinds": {
+"region": "numeric",
+"category": "date",
+"order": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 1617.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1617.0,
+"kind": "num",
+"note": "23 Mar 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"310": {
+"ok": true,
+"hash": "583f0c9aca5975ef4a4aaa90ed31899a",
+"metric": null,
+"date": "notes",
+"kinds": {
+"notes": "date"
+},
+"rows": 37,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 37,
+"kind": "int"
+}
+]
+},
+"311": {
+"ok": true,
+"hash": "35c074560399eb2078c9e24eef8a4add",
+"metric": "region",
+"date": "date_created",
+"kinds": {
+"date_created": "date",
+"region": "numeric",
+"flag": "text"
+},
+"rows": 698,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 698,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 810602.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 16193.0,
+"kind": "num",
+"delta": -52.85880640465793,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 42378.0,
+"kind": "num",
+"note": "Feb 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"312": {
+"ok": true,
+"hash": "f280b168188a2794fc050bcff1997853",
+"metric": "x",
+"date": null,
+"kinds": {
+"date": "category",
+"x": "numeric"
+},
+"rows": 199,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 199,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 9383.300000000001,
+"kind": "num"
+}
+]
+},
+"313": {
+"ok": true,
+"hash": "3d053a727ee5f06ff883a875cb7ddb19",
+"metric": "category",
+"date": "month",
+"kinds": {
+"category": "numeric",
+"month": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 32590.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 3042.0,
+"kind": "num",
+"delta": 203.89610389610388,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 3080.0,
+"kind": "num",
+"note": "Jan 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"314": {
+"ok": true,
+"hash": "3988d4937216ca8ae0e3a6979889b1d9",
+"metric": "revenue",
+"date": "region",
+"kinds": {
+"revenue": "numeric",
+"region": "date",
+"total": "date",
+"region3": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 23.4,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 23.4,
+"kind": "num",
+"note": "26 Oct 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"315": {
+"ok": true,
+"hash": "5383079c050c4db09efe5aab51670a45",
+"metric": "month",
+"date": "month2",
+"kinds": {
+"month": "numeric",
+"set": "category",
+"month2": "date",
+"donor": "date",
+"flag": "category",
+"flag5": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 10054.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 2014.0,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"316": {
+"ok": true,
+"hash": "866727c70f5b89bbf9362395f3107ba6",
+"metric": "month",
+"date": "id",
+"kinds": {
+"month": "numeric",
+"id": "date",
+"region": "date",
+"set5": "category",
+"region6": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 1997.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1997.0,
+"kind": "num",
+"note": "29 Mar 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"317": {
+"ok": true,
+"hash": "bfa5c4c01a993e54a45209559bae8d8c",
+"metric": null,
+"date": null,
+"kinds": {
+"amount": "category"
+},
+"rows": 10,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 10,
+"kind": "int"
+}
+]
+},
+"318": {
+"ok": true,
+"hash": "a08eef0cfaf2d8f4c19f551af6b6d239",
+"metric": "price",
+"date": "date_created",
+"kinds": {
+"price": "numeric",
+"revenue": "date",
+"month": "numeric",
+"date_created": "date",
+"amount": "date",
+"x": "category"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 4827.788474576271,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 2871.7585714285715,
+"kind": "num",
+"delta": -53.12482608432955,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 7335.365,
+"kind": "num",
+"note": "Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"319": {
+"ok": true,
+"hash": "7e147b8f02f744333b0fa46b76299668",
+"metric": null,
+"date": null,
+"kinds": {
+"date_created": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"320": {
+"ok": true,
+"hash": "e034ec7f0f1faa22ab57f6b415844934",
+"metric": "amount",
+"date": null,
+"kinds": {
+"price": "numeric",
+"amount": "numeric",
+"donor": "category",
+"x": "numeric",
+"month": "numeric"
+},
+"rows": 13,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 13,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 671.4,
+"kind": "num"
+}
+]
+},
+"321": {
+"ok": true,
+"hash": "8bb4c71ad03013f8e810ad5438d9087a",
+"metric": "date_created",
+"date": "order",
+"kinds": {
+"total": "date",
+"donor": "category",
+"order": "date",
+"date_created": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 4008.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 1003.0,
+"kind": "num",
+"note": "Jul 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"322": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"323": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"324": {
+"ok": true,
+"hash": "3491ee55b3017154ea56f0216a185af6",
+"metric": "qty",
+"date": null,
+"kinds": {
+"date_created": "category",
+"qty": "numeric"
+},
+"rows": 37,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 37,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 1626491.3300000003,
+"kind": "num"
+}
+]
+},
+"325": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"326": {
+"ok": true,
+"hash": "e7a79d9704c94208f433f2562fe9c946",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"date": "category",
+"revenue": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 1000.0,
+"kind": "num"
+}
+]
+},
+"327": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"328": {
+"ok": true,
+"hash": "1ed14636cf81385f7247386f80f9a7f1",
+"metric": null,
+"date": "date",
+"kinds": {
+"price": "category",
+"date": "date",
+"flag": "text",
+"order": "text",
+"notes": "category"
+},
+"rows": 201,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 201,
+"kind": "int"
+}
+]
+},
+"329": {
+"ok": true,
+"hash": "cdd4a6ef7701b77b8e4388acb0c23802",
+"metric": "region",
+"date": "\u0935\u0930_\u0937",
+"kinds": {
+"set": "text",
+"region": "numeric",
+"\u0935\u0930_\u0937": "date",
+"total": "text"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 816703.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 9667.0,
+"kind": "num",
+"delta": 2.895156998403406,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 41248.0,
+"kind": "num",
+"note": "Apr 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"330": {
+"ok": true,
+"hash": "a41902497d6ad463a9f5aa423c2d203a",
+"metric": "x",
+"date": null,
+"kinds": {
+"x": "numeric"
+},
+"rows": 35,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 35,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 181169.90000000002,
+"kind": "num"
+}
+]
+},
+"331": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"332": {
+"ok": true,
+"hash": "deb83cf32a4fc57ee4535e4850343e6f",
+"metric": "revenue",
+"date": "\u0935\u0930_\u0937",
+"kinds": {
+"\u0935\u0930_\u0937": "date",
+"revenue": "numeric",
+"category": "numeric",
+"price": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 41177.6,
+"kind": "num"
+},
+{
+"label": "Best week",
+"value": 37073.88,
+"kind": "num",
+"note": "06 Aug 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"333": {
+"ok": true,
+"hash": "47dfa08e59027ba9ad2d83a5bc14eece",
+"metric": null,
+"date": null,
+"kinds": {
+"donor": "category",
+"notes": "category",
+"id": "category"
+},
+"rows": 39,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 39,
+"kind": "int"
+}
+]
+},
+"334": {
+"ok": true,
+"hash": "bf4ee9caf21bfb7c856522dc3ca6aeff",
+"metric": null,
+"date": "amount1",
+"kinds": {
+"amount": "category",
+"amount1": "date",
+"notes": "date",
+"donor": "category",
+"x": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"335": {
+"ok": true,
+"hash": "7a172413bceb8ec86bd7d152e42fe257",
+"metric": "order",
+"date": null,
+"kinds": {
+"order": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 25.0,
+"kind": "num"
+}
+]
+},
+"336": {
+"ok": true,
+"hash": "8e65c05d654c8a69ca731478dee38b9f",
+"metric": null,
+"date": "region",
+"kinds": {
+"region": "date",
+"month": "category",
+"x": "date",
+"amount": "category",
+"price": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"337": {
+"ok": true,
+"hash": "1f20a761326e2d8224060ce82bf87ac7",
+"metric": null,
+"date": "order3",
+"kinds": {
+"total": "date",
+"flag": "date",
+"order": "category",
+"order3": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"338": {
+"ok": true,
+"hash": "d6948aa9d08dd4a0d85121fc9d94d299",
+"metric": "x",
+"date": "revenue",
+"kinds": {
+"price": "date",
+"x": "numeric",
+"donor": "numeric",
+"revenue": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 15.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 15.0,
+"kind": "num",
+"note": "05 Apr 2025"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"339": {
+"ok": true,
+"hash": "b2bed9492c54a9fbe2293fdc5d97ce77",
+"metric": "date_created2",
+"date": "price",
+"kinds": {
+"price": "date",
+"date_created2": "numeric",
+"id": "category",
+"region": "date",
+"x": "numeric",
+"qty": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total date_created2",
+"value": 40491009.0,
+"kind": "num"
+},
+{
+"label": "Best week",
+"value": 20250703.0,
+"kind": "num",
+"note": "30 Jun 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"340": {
+"ok": true,
+"hash": "5a83bd707bb932550fb4986ff95ab7aa",
+"metric": "set",
+"date": "revenue",
+"kinds": {
+"set": "numeric",
+"month": "numeric",
+"id": "category",
+"x": "date",
+"revenue": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 363.30000000000007,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 33.6,
+"kind": "num",
+"delta": -30.145530145530135,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 95.7,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"341": {
+"ok": true,
+"hash": "d30ffc7c6e95fd248a267b588f28782e",
+"metric": null,
+"date": "date_created",
+"kinds": {
+"date": "date",
+"set": "date",
+"date_created": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"342": {
+"ok": true,
+"hash": "7d6782bb1d175ea44617637e759ec11f",
+"metric": "date_created",
+"date": null,
+"kinds": {
+"date_created": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total date_created",
+"value": 99738.29,
+"kind": "num"
+}
+]
+},
+"343": {
+"ok": true,
+"hash": "af8bb2c12b1a4c2835140326b250a3e5",
+"metric": "category",
+"date": "price",
+"kinds": {
+"price": "date",
+"region": "date",
+"category": "numeric",
+"region3": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 2001.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "14 Dec 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"344": {
+"ok": true,
+"hash": "2d182a70a57d474c6093bf1dd2872a51",
+"metric": "flag",
+"date": "date",
+"kinds": {
+"flag": "numeric",
+"date": "date",
+"month": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total flag",
+"value": 476.4,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 70.7,
+"kind": "num",
+"delta": -6.728232189973607,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 97.0,
+"kind": "num",
+"note": "Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"345": {
+"ok": true,
+"hash": "9395ffd68fd2d189d78cf6d66a8c69b4",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"revenue": "numeric",
+"order": "numeric",
+"date_created": "category"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 1547681.0,
+"kind": "num"
+}
+]
+},
+"346": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"347": {
+"ok": true,
+"hash": "135cbc62da4b03ff6aeda9c874060542",
+"metric": "price",
+"date": "amount",
+"kinds": {
+"category": "category",
+"amount": "date",
+"flag": "category",
+"price": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 34.5,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 48.0,
+"kind": "num",
+"note": "14 Mar 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"348": {
+"ok": true,
+"hash": "2fbd921483d045fecbe4395491bb4810",
+"metric": null,
+"date": "order",
+"kinds": {
+"donor": "date",
+"order": "date",
+"flag": "text"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+}
+]
+},
+"349": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"350": {
+"ok": true,
+"hash": "3a7051e9bf97f4ba63e5b03cd2b445c8",
+"metric": "amount",
+"date": "x",
+"kinds": {
+"x": "date",
+"category": "date",
+"donor": "category",
+"set": "numeric",
+"donor4": "category",
+"amount": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 186607.58,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 114202.63,
+"kind": "num",
+"note": "Dec 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"351": {
+"ok": true,
+"hash": "f295773031f7b206dc57605216bb9b17",
+"metric": null,
+"date": "total",
+"kinds": {
+"month": "category",
+"total": "date",
+"donor": "category",
+"date": "category",
+"qty": "date"
+},
+"rows": 700,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 700,
+"kind": "int"
+}
+]
+},
+"352": {
+"ok": true,
+"hash": "140536eff4a37e15df3e704fc8bd97c3",
+"metric": "notes",
+"date": null,
+"kinds": {
+"notes": "numeric",
+"date_created": "category"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total notes",
+"value": 150211.48,
+"kind": "num"
+}
+]
+},
+"353": {
+"ok": true,
+"hash": "564beda3ab7a0072b072efa2d8cb9c84",
+"metric": null,
+"date": null,
+"kinds": {
+"date_created": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"354": {
+"ok": true,
+"hash": "87bd52886915fc3afc83e67f71e3cc14",
+"metric": "qty",
+"date": null,
+"kinds": {
+"qty": "numeric",
+"amount": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 83822.99,
+"kind": "num"
+}
+]
+},
+"355": {
+"ok": true,
+"hash": "c0be144bd20455a013b9e1d82438be12",
+"metric": null,
+"date": null,
+"kinds": {
+"mon": "category"
+},
+"rows": 3,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 3,
+"kind": "int"
+}
+]
+},
+"356": {
+"ok": true,
+"hash": "5b5f0c2de72ec50633e8c115e0622f47",
+"metric": null,
+"date": null,
+"kinds": {
+"notes": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"357": {
+"ok": true,
+"hash": "e5e1e11f01d44106c953fcb61420ff76",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"revenue": "numeric",
+"price": "category",
+"date": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 147002.91999999998,
+"kind": "num"
+}
+]
+},
+"358": {
+"ok": true,
+"hash": "801a7047b4a2cb30eb8c2b84782c9ba0",
+"metric": null,
+"date": "x",
+"kinds": {
+"x": "date",
+"id": "date"
+},
+"rows": 696,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 696,
+"kind": "int"
+}
+]
+},
+"359": {
+"ok": true,
+"hash": "80cea53d4ad75e3ca131d9dd32126a0b",
+"metric": "set",
+"date": "order",
+"kinds": {
+"\u0935\u0930_\u0937": "category",
+"set": "numeric",
+"date": "numeric",
+"order": "date",
+"set4": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 1554.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1554.0,
+"kind": "num",
+"note": "28 Aug 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"360": {
+"ok": true,
+"hash": "1a276ff39976ea5be2053db5da6291b4",
+"metric": "month",
+"date": "date_created",
+"kinds": {
+"date_created": "date",
+"month": "numeric",
+"donor": "category"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total month",
+"value": 27.6,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 27.6,
+"kind": "num",
+"note": "23 Jun 2023"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"361": {
+"ok": true,
+"hash": "ac54889f1349018dfab3b389b8976b78",
+"metric": null,
+"date": null,
+"kinds": {
+"x": "category",
+"month": "category"
+},
+"rows": 38,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 38,
+"kind": "int"
+}
+]
+},
+"362": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"363": {
+"ok": true,
+"hash": "d4e195df5f89e4f0a404d4bbb7c9e67f",
+"metric": "order",
+"date": "id",
+"kinds": {
+"order": "numeric",
+"id": "date"
+},
+"rows": 696,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 696,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 3139077.98,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 131902.49,
+"kind": "num",
+"delta": 34.448048684972036,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 147050.16,
+"kind": "num",
+"note": "Mar 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"364": {
+"ok": true,
+"hash": "dfb7df52ef21811f3f524fcb9dc4f46f",
+"metric": "category",
+"date": null,
+"kinds": {
+"category": "numeric"
+},
+"rows": 640,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 640,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 28707378.21,
+"kind": "num"
+}
+]
+},
+"365": {
+"ok": true,
+"hash": "dc0f9ecdac469946cbc7a0349c3e66f1",
+"metric": "qty",
+"date": "flag",
+"kinds": {
+"flag": "date",
+"set": "numeric",
+"qty": "numeric"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total qty",
+"value": 186467.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 7511.0,
+"kind": "num",
+"delta": -44.114583333333336,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 13440.0,
+"kind": "num",
+"note": "Jan 2025"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"366": {
+"ok": true,
+"hash": "afc67c57a37337ff79a77fe362850cf3",
+"metric": null,
+"date": "date_created",
+"kinds": {
+"region": "category",
+"qty": "date",
+"notes": "date",
+"date_created": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"367": {
+"ok": true,
+"hash": "1eb3c45fb2c85ed892f6676d19ba1503",
+"metric": null,
+"date": null,
+"kinds": {
+"x": "category",
+"notes": "category",
+"x3": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"368": {
+"ok": true,
+"hash": "7bc5ef54fd67ae08dbe4e706240d89fe",
+"metric": "date",
+"date": "category",
+"kinds": {
+"date": "numeric",
+"id": "category",
+"category": "date",
+"notes": "numeric",
+"notes4": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 53144.479999999996,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 8534.95,
+"kind": "num",
+"note": "May 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"369": {
+"ok": true,
+"hash": "41998e4c935df8c6c7fb0841940e6ffe",
+"metric": "set",
+"date": null,
+"kinds": {
+"id": "text",
+"set": "numeric",
+"notes": "category"
+},
+"rows": 698,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 698,
+"kind": "int"
+},
+{
+"label": "Total set",
+"value": 2976145.79,
+"kind": "num"
+}
+]
+},
+"370": {
+"ok": true,
+"hash": "1379e5c0530b4599d09b8b545e0e3f89",
+"metric": "category",
+"date": "region",
+"kinds": {
+"\u0935\u0930_\u0937": "category",
+"flag": "category",
+"region": "date",
+"\u0935\u0930_\u09373": "date",
+"qty": "category",
+"category": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total category",
+"value": 4540.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 4540.0,
+"kind": "num",
+"note": "30 Dec 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"371": {
+"ok": true,
+"hash": "c49cfd735ad5a6118d9438997d368f5e",
+"metric": "amount",
+"date": null,
+"kinds": {
+"amount": "numeric",
+"region": "numeric",
+"date_created": "numeric",
+"order": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 5010.0,
+"kind": "num"
+}
+]
+},
+"372": {
+"ok": true,
+"hash": "ef1a09b2eccdfa97b3d5b9b7f8c62aad",
+"metric": "region",
+"date": "donor",
+"kinds": {
+"id": "category",
+"donor": "date",
+"region": "numeric",
+"flag": "category",
+"notes": "numeric",
+"\u0935\u0930_\u0937": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 4165.5,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 4165.5,
+"kind": "num",
+"note": "14 Apr 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"373": {
+"ok": true,
+"hash": "e700d635fb26f775db3577a51e2f83bf",
+"metric": "donor",
+"date": null,
+"kinds": {
+"donor": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total donor",
+"value": 96.0,
+"kind": "num"
+}
+]
+},
+"374": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"375": {
+"ok": true,
+"hash": "7c7f24d0d986aae9dcf46370d1b0d81e",
+"metric": "x",
+"date": null,
+"kinds": {
+"amount": "category",
+"x": "numeric"
+},
+"rows": 3,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 3,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 1005.0,
+"kind": "num"
+}
+]
+},
+"376": {
+"ok": true,
+"hash": "b9aab5d427ceb21022bf5737bf4f9d8e",
+"metric": "revenue",
+"date": "set",
+"kinds": {
+"category": "category",
+"revenue": "numeric",
+"revenue_2": "numeric",
+"donor": "category",
+"set": "date",
+"x": "numeric"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 8001300.27,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 163973.11,
+"kind": "num",
+"delta": 2688.440190053159,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 518786.09,
+"kind": "num",
+"note": "May 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"377": {
+"ok": true,
+"hash": "8f045f68c78eadf84adc8434f1582c73",
+"metric": "amount",
+"date": "month",
+"kinds": {
+"id": "category",
+"date": "category",
+"region": "date",
+"month": "date",
+"amount": "numeric"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 64.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 52.9,
+"kind": "num",
+"note": "Nov 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"378": {
+"ok": true,
+"hash": "03a25e168c5394f2736e115b522a39e4",
+"metric": "region",
+"date": null,
+"kinds": {
+"price": "category",
+"region": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total region",
+"value": 4871.0,
+"kind": "num"
+}
+]
+},
+"379": {
+"ok": true,
+"hash": "1aca528dc8ecaf8dfa6855228593c676",
+"metric": null,
+"date": "month",
+"kinds": {
+"month": "date",
+"category": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"380": {
+"ok": true,
+"hash": "3dc3bc1d42cd59ca17b973736fd9eda5",
+"metric": "order",
+"date": "x",
+"kinds": {
+"order": "numeric",
+"x": "date",
+"x2": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 1000.0,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 1000.0,
+"kind": "num",
+"note": "29 Nov 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"381": {
+"ok": true,
+"hash": "20a927bd1b4ae99c6dca04ae0fbd7e7b",
+"metric": "amount",
+"date": "price",
+"kinds": {
+"donor": "numeric",
+"order": "numeric",
+"amount": "numeric",
+"price": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total amount",
+"value": 51990.149999999994,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 7893.46,
+"kind": "num",
+"note": "Feb 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"382": {
+"ok": true,
+"hash": "67c70ff14a11b7d55dc409d39e4d7bcc",
+"metric": "price",
+"date": "month",
+"kinds": {
+"month": "date",
+"price": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Average price",
+"value": 4259.31,
+"kind": "num"
+},
+{
+"label": "Best day",
+"value": 4259.31,
+"kind": "num",
+"note": "04 Apr 2024"
+}
+],
+"fc": "ValueError:Need at least 8 time periods (days, weeks or months) to fore"
+},
+"383": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"384": {
+"ok": true,
+"hash": "90758ad79566a4b1e937dfb64be57a2c",
+"metric": "order",
+"date": "date_created",
+"kinds": {
+"date": "category",
+"qty": "date",
+"order": "numeric",
+"date_created": "date",
+"month": "numeric",
+"category": "text",
+"total": "date"
+},
+"rows": 200,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 200,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 195032.0,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 0.0,
+"kind": "num",
+"delta": -100.0,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 12083.0,
+"kind": "num",
+"note": "Feb 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"385": {
+"ok": true,
+"hash": "823884b199dec5490cc3844187407c10",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"total": "category",
+"revenue": "numeric",
+"notes": "numeric",
+"order": "numeric",
+"flag": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 118.15,
+"kind": "num"
+}
+]
+},
+"386": {
+"ok": true,
+"hash": "da090c29725467488b400538ecea837e",
+"metric": null,
+"date": "total",
+"kinds": {
+"order": "category",
+"total": "date",
+"\u0935\u0930_\u0937": "date"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"387": {
+"ok": true,
+"hash": "ee66f0462c63fb7b4250009e4fd267e5",
+"metric": "revenue",
+"date": null,
+"kinds": {
+"revenue": "numeric",
+"region": "category"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total revenue",
+"value": 53723.48,
+"kind": "num"
+}
+]
+},
+"388": {
+"ok": true,
+"hash": "651eedc2576652941d898fc67eeac04c",
+"metric": "date",
+"date": "set",
+"kinds": {
+"total": "category",
+"set": "date",
+"date": "numeric"
+},
+"rows": 698,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 698,
+"kind": "int"
+},
+{
+"label": "Total date",
+"value": 25297700.740000002,
+"kind": "num"
+},
+{
+"label": "Latest full month",
+"value": 1294708.99,
+"kind": "num",
+"delta": 86.61557343495959,
+"vs": "vs previous month"
+},
+{
+"label": "Best month",
+"value": 1716893.98,
+"kind": "num",
+"note": "Feb 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"389": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"390": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"391": {
+"ok": true,
+"hash": "896d7f429cbe5db2b749d632aea44219",
+"metric": "order",
+"date": "region",
+"kinds": {
+"region": "date",
+"order": "numeric"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+},
+{
+"label": "Total order",
+"value": 9046.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 1010.0,
+"kind": "num",
+"note": "Jul 2024"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": false
+},
+"392": {
+"ok": true,
+"hash": "6639f3caf5a71ad38bc0292248eb9a94",
+"metric": null,
+"date": "qty",
+"kinds": {
+"donor": "category",
+"qty": "date",
+"date": "category",
+"amount": "category"
+},
+"rows": 40,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 40,
+"kind": "int"
+}
+]
+},
+"393": {
+"ok": true,
+"hash": "6636a6a56ffc5ed635f51fe0ec1970c9",
+"metric": "x",
+"date": "amount",
+"kinds": {
+"amount": "date",
+"x": "numeric",
+"order": "numeric"
+},
+"rows": 5,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 5,
+"kind": "int"
+},
+{
+"label": "Total x",
+"value": 9933.0,
+"kind": "num"
+},
+{
+"label": "Best month",
+"value": 2478.0,
+"kind": "num",
+"note": "Aug 2023"
+}
+],
+"fc": "ok",
+"fc_null": false,
+"fc_neg": true
+},
+"394": {
+"ok": true,
+"hash": "945ab8453ff8ed3928729c28a619d05c",
+"metric": null,
+"date": "price",
+"kinds": {
+"donor": "category",
+"price": "date"
+},
+"rows": 2,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 2,
+"kind": "int"
+}
+]
+},
+"395": {
+"ok": false,
+"err": "ValueError:Mixed timezones detected. Pass utc=True in to_datetime or tz='UTC' in DatetimeIn"
+},
+"396": {
+"ok": true,
+"hash": "ff59cad0b17d56469a808975f5c69d4d",
+"metric": null,
+"date": "order",
+"kinds": {
+"order": "date",
+"notes": "date",
+"category": "date"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"397": {
+"ok": true,
+"hash": "d75e2c29f01237dfcff3321d621d98bb",
+"metric": null,
+"date": null,
+"kinds": {
+"price": "category"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+},
+"398": {
+"ok": true,
+"hash": "b85b4aba9fe4d9e391c6ecfd42802472",
+"metric": null,
+"date": "price",
+"kinds": {
+"price": "date",
+"amount": "category",
+"\u0935\u0930_\u0937": "date",
+"amount_1": "date"
+},
+"rows": 12,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 12,
+"kind": "int"
+}
+]
+},
+"399": {
+"ok": true,
+"hash": "51bd9f91efb9be24477910bb0ca82ae3",
+"metric": null,
+"date": null,
+"kinds": {
+"id": "numeric"
+},
+"rows": 1,
+"kpis": [
+{
+"label": "Rows analysed",
+"value": 1,
+"kind": "int"
+}
+]
+}
+}

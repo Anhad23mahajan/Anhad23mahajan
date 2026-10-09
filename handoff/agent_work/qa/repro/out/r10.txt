@@ -1,0 +1,21 @@
+pandas 3.0.6 numpy 2.5.3
+clean(True) = 1 | clean(np.bool_(True)) = True | clean({'ai': True}) = {'ai': 1}
+clean(pd.Timedelta('1D')) = Timedelta('1 days 00:00:00') (left as-is; only FastAPI's encoder turns it into seconds) | clean(Decimal('1.5')) = Decimal('1.5')
+
+====================================================================================================
+Preview of boolean columns (Raw Input / Cleaned Output tab)
+====================================================================================================
+columns: ['date', 'revenue', 'conversion_pct', 'repeat_customer', 'paid'] 
+dtypes : ['datetime64[us]', 'int64', 'float64', 'boolean', 'bool'] 
+rows   : [['2024-01-07T00:00:00', 13143, 8.8, 0, 0], ['2024-01-14T00:00:00', 43429, 8.6, 0, 0], ['2024-01-21T00:00:00', 18688, 6.0, 1, 1]] <- 'paid' and 'repeat_customer' show 0/1, dtype labels say 'str'/'datetime64[us]' on pandas 3
+
+====================================================================================================
+what the live server returns for the 'ai' flag (see t_api_edges / curl):
+====================================================================================================
+/api/demo -> "ai": 0   (health endpoint returns: {'ok': True, 'ai': False} )
+
+====================================================================================================
+inf in the data: KPI total is null, insight text says 'inf'
+====================================================================================================
+KPIs: [('Rows analysed', 28), ('Total amount', nan), ('Latest full day', 270.0), ('Best day', inf)]
+insights: ['amount was inf that day, far from the typical 145.', 'amount was -inf that day, far from the typical 145.']

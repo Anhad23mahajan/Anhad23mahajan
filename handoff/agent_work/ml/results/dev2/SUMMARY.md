@@ -1,0 +1,163 @@
+# Forecast benchmark - dev2 - H=6
+
+Series: 120 ({'synthetic': 120}); origins per series <= 6; horizon 1..6; seed 1; forecast points scored: 4212 per method.
+
+## Overall (lower MASE/sMAPE is better; coverage should be near 0.80 / 0.95)
+
+| method | series | MASE_median | MASE_mean | sMAPE_median | relMAE_vs_snaive_gmean | cov80_pooled | cov95_pooled | cov95_median_series | scaled_IS95_median | ms_per_call_mean | fallback_rate |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| ensemble | 120 | 0.962 | 1.083 | 23.250 | 0.876 | 0.863 | 0.959 | 0.972 | 6.396 | 807.159 | 0.000 |
+| ets_auto | 120 | 0.993 | 1.119 | 25.127 | 0.909 | 0.733 | 0.881 | 0.889 | 6.815 | 724.738 | 0.000 |
+| hw_current | 120 | 1.028 | 1.175 | 24.461 | 0.935 | 0.824 | 0.921 | 0.944 | 6.949 | 96.494 | 0.000 |
+| naive | 120 | 1.178 | 1.325 | 28.850 | 1.077 | 0.892 | 0.965 | 1.000 | 8.619 | 0.275 | 0.000 |
+| new | 120 | 0.968 | 1.065 | 22.944 | 0.862 | 0.807 | 0.947 | 0.972 | 6.308 | 426.719 | 0.000 |
+| snaive | 120 | 1.070 | 1.261 | 25.538 | 1.000 | 0.772 | 0.897 | 0.944 | 7.761 | 0.100 | 0.000 |
+| theta | 120 | 0.989 | 1.134 | 25.009 | 0.914 | 0.898 | 0.960 | 0.972 | 8.020 | 82.137 | 0.000 |
+
+## Paired per-series MASE ratio, new / other (<1 means new is better; geometric mean, 95% bootstrap CI over series)
+
+| b | n | gmean_ratio | ci_lo | ci_hi | median_ratio | win_rate_a | wilcoxon_p |
+|---|---|---|---|---|---|---|---|
+| hw_current | 120 | 0.924 | 0.888 | 0.956 | 0.960 | 0.725 | 0.000 |
+| snaive | 120 | 0.864 | 0.820 | 0.904 | 0.893 | 0.700 | 0.000 |
+| naive | 120 | 0.798 | 0.735 | 0.864 | 0.869 | 0.758 | 0.000 |
+| ets_auto | 120 | 0.949 | 0.914 | 0.983 | 0.995 | 0.525 | 0.050 |
+| theta | 120 | 0.946 | 0.915 | 0.975 | 0.976 | 0.633 | 0.003 |
+| ensemble | 120 | 0.985 | 0.955 | 1.012 | 0.991 | 0.542 | 0.421 |
+
+## Interval coverage with 95% cluster-bootstrap CI (resampling series)
+
+| method | nominal | coverage | ci_lo | ci_hi |
+|---|---|---|---|---|
+| hw_current | 0.800 | 0.824 | 0.799 | 0.847 |
+| hw_current | 0.950 | 0.921 | 0.904 | 0.937 |
+| new | 0.800 | 0.807 | 0.789 | 0.825 |
+| new | 0.950 | 0.947 | 0.934 | 0.959 |
+
+### By history: median MASE
+
+| segment | ensemble | ets_auto | hw_current | naive | new | snaive | theta |
+|---|---|---|---|---|---|---|---|
+| long (>=48) | 0.936 | 0.978 | 0.937 | 1.182 | 0.885 | 1.088 | 0.931 |
+| medium (19-47) | 0.965 | 0.945 | 0.971 | 1.200 | 0.982 | 1.071 | 0.967 |
+| short (<=18) | 0.954 | 0.963 | 1.101 | 1.078 | 0.972 | 1.071 | 1.003 |
+
+### By history: pooled interval coverage
+
+| segment | hw_current_cov80 | new_cov80 | hw_current_cov95 | new_cov95 |
+|---|---|---|---|---|
+| long (>=48) | 0.883 | 0.770 | 0.964 | 0.964 |
+| medium (19-47) | 0.825 | 0.816 | 0.919 | 0.950 |
+| short (<=18) | 0.774 | 0.824 | 0.891 | 0.929 |
+
+### By seasonal: median MASE
+
+| segment | ensemble | ets_auto | hw_current | naive | new | snaive | theta |
+|---|---|---|---|---|---|---|---|
+| non-seasonal | 1.030 | 0.993 | 1.052 | 1.176 | 0.972 | 1.184 | 0.985 |
+| seasonal | 0.905 | 0.997 | 1.021 | 1.229 | 0.941 | 0.977 | 1.003 |
+
+### By seasonal: pooled interval coverage
+
+| segment | hw_current_cov80 | new_cov80 | hw_current_cov95 | new_cov95 |
+|---|---|---|---|---|
+| False | 0.850 | 0.800 | 0.935 | 0.938 |
+| True | 0.797 | 0.815 | 0.907 | 0.956 |
+
+### By freq: median MASE
+
+| segment | ensemble | ets_auto | hw_current | naive | new | snaive | theta |
+|---|---|---|---|---|---|---|---|
+| D | 0.796 | 0.799 | 0.867 | 1.062 | 0.810 | 0.931 | 0.857 |
+| MS | 1.048 | 1.146 | 1.079 | 1.322 | 1.041 | 1.115 | 1.069 |
+| W | 1.040 | 1.017 | 1.040 | 1.158 | 1.034 | 1.192 | 1.014 |
+
+### By freq: pooled interval coverage
+
+| segment | hw_current_cov80 | new_cov80 | hw_current_cov95 | new_cov95 |
+|---|---|---|---|---|
+| D | 0.835 | 0.825 | 0.926 | 0.950 |
+| MS | 0.788 | 0.804 | 0.898 | 0.938 |
+| W | 0.848 | 0.796 | 0.939 | 0.953 |
+
+### By intermittent: median MASE
+
+| segment | ensemble | ets_auto | hw_current | naive | new | snaive | theta |
+|---|---|---|---|---|---|---|---|
+| continuous | 0.975 | 1.014 | 1.032 | 1.178 | 0.964 | 1.080 | 0.984 |
+| intermittent | 0.919 | 0.902 | 1.021 | 1.152 | 0.971 | 1.050 | 0.997 |
+
+### By intermittent: pooled interval coverage
+
+| segment | hw_current_cov80 | new_cov80 | hw_current_cov95 | new_cov95 |
+|---|---|---|---|---|
+| False | 0.817 | 0.807 | 0.917 | 0.947 |
+| True | 0.884 | 0.813 | 0.960 | 0.944 |
+
+### By noise: median MASE
+
+| segment | ensemble | ets_auto | hw_current | naive | new | snaive | theta |
+|---|---|---|---|---|---|---|---|
+| high | 0.880 | 0.885 | 0.983 | 1.080 | 0.829 | 1.033 | 0.931 |
+| low | 0.993 | 1.001 | 1.033 | 1.281 | 1.008 | 1.061 | 0.995 |
+| med | 0.980 | 1.020 | 1.048 | 1.191 | 1.020 | 1.123 | 1.031 |
+
+### By noise: pooled interval coverage
+
+| segment | hw_current_cov80 | new_cov80 | hw_current_cov95 | new_cov95 |
+|---|---|---|---|---|
+| high | 0.838 | 0.818 | 0.936 | 0.963 |
+| low | 0.792 | 0.800 | 0.897 | 0.936 |
+| med | 0.836 | 0.805 | 0.928 | 0.944 |
+
+### By events: median MASE
+
+| segment | ensemble | ets_auto | hw_current | naive | new | snaive | theta |
+|---|---|---|---|---|---|---|---|
+| clean | 0.891 | 0.884 | 0.938 | 1.177 | 0.927 | 1.026 | 0.912 |
+| has spike/shift | 1.088 | 1.147 | 1.143 | 1.191 | 1.053 | 1.248 | 1.052 |
+
+### By kind: median MASE
+
+| segment | ensemble | ets_auto | hw_current | naive | new | snaive | theta |
+|---|---|---|---|---|---|---|---|
+| synthetic | 0.962 | 0.993 | 1.028 | 1.178 | 0.968 | 1.070 | 0.989 |
+
+### By kind: pooled interval coverage
+
+| segment | hw_current_cov80 | new_cov80 | hw_current_cov95 | new_cov95 |
+|---|---|---|---|---|
+| synthetic | 0.824 | 0.807 | 0.921 | 0.947 |
+
+### By horizon step
+
+| h | hw_current_cov80 | new_cov80 | hw_current_cov95 | new_cov95 | hw_current_MASE | new_MASE |
+|---|---|---|---|---|---|---|
+| 1.000 | 0.681 | 0.789 | 0.819 | 0.933 | 1.008 | 0.970 |
+| 2.000 | 0.779 | 0.798 | 0.906 | 0.956 | 1.040 | 0.979 |
+| 3.000 | 0.832 | 0.805 | 0.933 | 0.946 | 1.211 | 1.096 |
+| 4.000 | 0.866 | 0.818 | 0.954 | 0.953 | 1.195 | 1.064 |
+| 5.000 | 0.896 | 0.812 | 0.957 | 0.944 | 1.269 | 1.140 |
+| 6.000 | 0.887 | 0.822 | 0.957 | 0.950 | 1.327 | 1.147 |
+
+### New method: chosen model frequency
+
+| cfg | count |
+|---|---|
+| combo_all | 405 |
+| ses | 72 |
+| snaive | 71 |
+| naive | 53 |
+| damped | 38 |
+| ets_s_log | 28 |
+| theta | 17 |
+| ets_s | 15 |
+| combo_trend | 3 |
+
+### New method: confidence label vs realised error
+
+| conf | forecasts | MASE_median | WAPE_median | cov80 | cov95 |
+|---|---|---|---|---|---|
+| high | 322 | 0.811 | 0.131 | 0.782 | 0.944 |
+| low | 139 | 0.940 | 0.517 | 0.839 | 0.956 |
+| medium | 241 | 0.865 | 0.242 | 0.823 | 0.947 |
