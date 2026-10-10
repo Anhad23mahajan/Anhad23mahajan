@@ -16,7 +16,8 @@ MAX_UPLOAD_BYTES = int(_env("LUMEN_MAX_UPLOAD_MB", 5) * 1024 * 1024)   # Render'
 MAX_ROWS = int(_env("LUMEN_MAX_ROWS", 200_000))
 MAX_COLS = int(_env("LUMEN_MAX_COLS", 200))
 MAX_UNZIPPED_BYTES = int(_env("LUMEN_MAX_UNZIPPED_MB", 60) * 1024 * 1024)  # .xlsx is a zip: stop decompression bombs
-MAX_SESSIONS = int(_env("LUMEN_MAX_SESSIONS", 6))
+MAX_SESSIONS = int(_env("LUMEN_MAX_SESSIONS", 40))
+MAX_CELLS = int(_env("LUMEN_MAX_CELLS", 3_000_000))     # rows x columns held across all sessions: the real memory limit
 SESSION_TTL = _env("LUMEN_SESSION_TTL_S", 1800)
 
 
@@ -49,27 +50,28 @@ def check_xlsx_bomb(raw: bytes) -> None:
 
 
 class SessionStore:
-    """LRU + TTL store. Using a session refreshes it, so an active user is never evicted by newcomers
-    (the old FIFO dict dropped whoever uploaded first, even if they were mid-question)."""
-    def __init__(self, max_sessions: int = MAX_SESSIONS, ttl: float = SESSION_TTL, clock=time.monotonic):
-        self.max, self.ttl, self.clock = max_sessions, ttl, clock
-        self._d: OrderedDict = OrderedDict()   # sid -> (last_used, value)
+    """LRU + TTL store, bounded by count AND by total size (rows x columns), so many small sessions fit but a few huge uploads cannot
+    exhaust memory. Using a session refreshes it, so an active user is never evicted by newcomers."""
+    def __init__(self, max_sessions: int = MAX_SESSIONS, ttl: float = SESSION_TTL, clock=time.monotonic, max_weight: int | None = None):
+        self.max, self.ttl, self.clock, self.max_weight = max_sessions, ttl, clock, max_weight
+        self._d: OrderedDict = OrderedDict()   # sid -> (last_used, value, weight)
         self._lock = threading.Lock()
 
     def _purge(self, now: float):
-        for sid in [s for s, (t, _) in self._d.items() if now - t > self.ttl]: del self._d[sid]
+        for sid in [s for s, (t, _, _) in self._d.items() if now - t > self.ttl]: del self._d[sid]
 
-    def put(self, sid: str, value) -> None:
+    def put(self, sid: str, value, weight: int = 1) -> None:
         with self._lock:
             now = self.clock(); self._purge(now)
-            self._d[sid] = (now, value); self._d.move_to_end(sid)
-            while len(self._d) > self.max: self._d.popitem(last=False)
+            self._d[sid] = (now, value, weight); self._d.move_to_end(sid)
+            while len(self._d) > self.max or (self.max_weight and len(self._d) > 1 and sum(w for _, _, w in self._d.values()) > self.max_weight):
+                self._d.popitem(last=False)
 
     def get(self, sid: str):
         with self._lock:
             now = self.clock(); self._purge(now)
             if sid not in self._d: raise KeyError(sid)
-            _, value = self._d[sid]; self._d[sid] = (now, value); self._d.move_to_end(sid)
+            _, value, weight = self._d[sid]; self._d[sid] = (now, value, weight); self._d.move_to_end(sid)
             return value
 
     def __len__(self): return len(self._d)

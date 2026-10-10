@@ -20,7 +20,7 @@ EXPECT = {
     "excel_serial.csv": ("amount", "date"), "thousands_text.csv": ("revenue", "date"), "edge_dup_cols.csv": ("amount", "date"),
     "edge_single_row.csv": ("amount", "date"), "edge_no_date.csv": ("qty", None), "edge_no_numeric.csv": (None, None),
     "edge_constant.csv": ("amount", "date"), "edge_ragged.csv": ("amount", "date"), "edge_trailing_blank.csv": ("sales", "date"),
-    "edge_wide_300.csv": ("metric_0", "date"), "us_mdy_halfyear.csv": ("sales", "date"), "edge_reserved_cols.csv": ("set", "date"),
+    "edge_wide_300.csv": ("metric_0", "date"), "us_mdy_halfyear.csv": ("sales", "date"), "edge_reserved_cols.csv": ("order", "date"),
 }
 NOT_DATA = ["edge_empty.csv", "edge_header_only.csv", "edge_binary_garbage.csv", "edge_html_page.csv", "edge_newlines_only.csv"]
 

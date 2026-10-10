@@ -64,3 +64,11 @@ def test_zip_bomb_rejected(monkeypatch):
     assert len(buf.getvalue()) < 50_000                     # tiny on the wire
     with pytest.raises(limits.UploadRejected): limits.check_xlsx_bomb(buf.getvalue())
     limits.check_xlsx_bomb(b"a,b\n1,2\n")                   # CSV passes untouched
+
+
+def test_session_store_is_bounded_by_size_not_just_count():
+    c = Clock(); s = limits.SessionStore(max_sessions=100, ttl=1000, clock=c, max_weight=1000)
+    for i in range(20): s.put(f"small{i}", i, weight=10); c.t += 1             # twenty small sessions fit
+    assert len(s) == 20 and s.get("small0") == 0
+    s.put("huge", "x", weight=900); c.t += 1                                   # a huge one evicts the oldest, never the newest
+    assert s.get("huge") == "x" and len(s) < 20

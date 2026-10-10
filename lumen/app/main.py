@@ -11,7 +11,7 @@ from . import analytics as A, llm, limits, samples
 
 app = FastAPI(title="Lumen")
 app.add_middleware(GZipMiddleware, minimum_size=1024)
-SESSIONS = limits.SessionStore()   # in memory only: LRU + time-to-live, never written to disk by Lumen
+SESSIONS = limits.SessionStore(max_weight=limits.MAX_CELLS)   # in memory only: LRU + time-to-live, bounded by count and size; never written to disk by Lumen
 ASK = limits.RateLimiter(per_window=int(os.getenv("LUMEN_ASK_PER_10MIN", 8)), per_day=int(os.getenv("LUMEN_ASK_PER_DAY", 60)),
                          global_per_day=int(os.getenv("LUMEN_ASK_GLOBAL_PER_DAY", 400)))
 NARRATE = limits.RateLimiter(per_window=6, per_day=40, global_per_day=int(os.getenv("LUMEN_NARRATE_GLOBAL_PER_DAY", 200)))
@@ -34,13 +34,18 @@ async def security_and_cache_headers(request, call_next):
 
 def start_session(df, raw_preview=None, sample=None, ai_narrative=True):
     sid = uuid.uuid4().hex
-    SESSIONS.put(sid, {"df": df, "sample": sample})
     p = A.profile(df); facts = A.insights(df, p)
+    SESSIONS.put(sid, {"df": df, "sample": sample}, weight=int(df.size))
     meta = {"rows": p["rows"], "metric": p["metric"], "date_column": p["date"], "columns": [c["name"] for c in p["columns"]]}
     processed_preview = A.df_to_preview(df)
     stored = [q["q"] for q in samples.SAMPLES[sample]["questions"]] if sample else []
     notices = []
     if df.attrs.get("truncated_from"): notices.append(f"Only the first {len(df):,} of {df.attrs['truncated_from']:,} rows were analysed.")
+    if df.attrs.get("removed_total_rows"):
+        n = df.attrs["removed_total_rows"]; notices.append(f"Removed {n} 'total' row{'s' if n != 1 else ''} from your file so totals are not counted twice.")
+    if df.attrs.get("merged_labels"):
+        m0, cols = df.attrs["merged_labels"][0], sorted({m["column"] for m in df.attrs["merged_labels"]})
+        notices.append(f"Merged different spellings of the same label in {', '.join(cols[:3])} (for example '{m0['from']}' became '{m0['to']}').")
     return A.clean({"session_id": sid, "profile": p, "charts": A.starter_charts(df, p), "insights": facts,
                     "narrative": llm.narrate(facts, meta, ai=ai_narrative), "suggested_questions": stored + [q for q in A.suggested_questions(p) if q not in stored][:3 if not stored else 0],
                     "ai": llm.available(), "sample": sample, "notices": notices,

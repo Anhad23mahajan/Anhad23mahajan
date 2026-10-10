@@ -6,7 +6,21 @@ Everything here is arithmetic that can be checked by hand:
   * daily_anomalies(): days far outside what the recent level and day-of-week pattern predict, with the segment that
     contributed most. The threshold is deliberately high; the false-positive rate on pure noise is measured in tests.
 """
+import re
 import numpy as np, pandas as pd
+
+BAD_SEGMENT = re.compile(r"overdue|unpaid|pending|cancel|expired|refund|return|fail|late|outstanding|absent|dropout|churn|no[ _-]?show|reject|defect|lost|inactive|unresolved|open", re.I)   # labels where MORE of this is bad
+
+
+def _lab(v) -> str:
+    if isinstance(v, (bool, np.bool_)): return "Yes" if bool(v) else "No"
+    return str(v)
+
+
+def seg_label(df: pd.DataFrame, dim: str, v) -> str:
+    """A readable name for one value of a column: 'Hoodie', or 'promo = Yes' for a Yes/No column."""
+    return f"{dim} = {_lab(v)}" if dim in df.columns and pd.api.types.is_bool_dtype(df[dim]) else _lab(v)
+
 
 QTY_HINT = ("qty", "quantity", "units", "unit_count", "count", "pieces", "items")
 WINDOW = {"D": 7, "W": 4, "MS": 1, "YS": 1}
@@ -37,7 +51,7 @@ def _span(idx, freq):
     return idx[0], idx[-1] + off
 
 
-def bridge(df: pd.DataFrame, date: str, metric: str, dims: list, freq: str, series: pd.Series, qty: str | None = None, min_change: float = 0.03):
+def bridge(df: pd.DataFrame, date: str, metric: str, dims: list, freq: str, series: pd.Series, qty: str | None = None, min_change: float = 0.03, cost_metric: bool = False):
     """Explain the change in `metric` (a summable measure) between the last two equal windows. Returns a finding dict or None."""
     win = _windows(series, freq)
     if win is None or not dims: return None
@@ -58,20 +72,26 @@ def bridge(df: pd.DataFrame, date: str, metric: str, dims: list, freq: str, seri
         if best is None or focus > best[0]: best = (focus, dim, a, b, top)
     if best is None: return None
     _, dim, a, b, top = best
-    rows = [{"segment": str(k), "previous": float(a.get(k, 0.0)), "current": float(b.get(k, 0.0)), "change": float(v),
+    rows = [{"segment": seg_label(df, dim, k), "previous": float(a.get(k, 0.0)), "current": float(b.get(k, 0.0)), "change": float(v),
              "share_of_change": float(v / delta)} for k, v in top.head(4).items()]
     unit = UNIT[freq]; w = WINDOW[freq]
     span = f"the last {w} {unit}s" if w > 1 else f"the latest {unit}"
     prior = f"the {w} {unit}s before" if w > 1 else f"the previous {unit}"
     up = delta > 0
     lead = rows[0]
-    lead_txt = (f"{lead['segment']} ({'+' if lead['change'] >= 0 else '-'}{_fmt(abs(lead['change']))}, {abs(lead['share_of_change']) * 100:.0f}% of the change)"
-                if abs(lead["share_of_change"]) >= 0.25 else "no single value dominates")
-    out = {"kind": "change", "severity": "info",
+    sign = "+" if lead["change"] >= 0 else "-"
+    big = abs(lead["share_of_change"]) >= 0.25
+    if abs(lead["share_of_change"]) > 1: lead_txt = f"{lead['segment']} ({sign}{_fmt(abs(lead['change']))}, more than the net change because other values moved the other way)"
+    elif big: lead_txt = f"{lead['segment']} ({sign}{_fmt(abs(lead['change']))}, {abs(lead['share_of_change']) * 100:.0f}% of the change)"
+    else: lead_txt = "no single value dominates"
+    # is the lead segment's own movement good news? (a rising cost is bad; a rising 'overdue' or 'cancelled' segment is bad)
+    desirable = ((lead["change"] > 0) != cost_metric) != bool(BAD_SEGMENT.search(lead["segment"]))
+    overall_good = (delta > 0) != cost_metric
+    out = {"kind": "change", "severity": "good" if (overall_good and (not big or desirable)) else "warn",
            "title": f"{metric} {'rose' if up else 'fell'} {abs(delta / pt) * 100:.0f}% in {span}",
            "detail": f"{span.capitalize()} totalled {_fmt(ct)} against {_fmt(pt)} in {prior}, a change of {'+' if up else '-'}{_fmt(abs(delta))}. "
                      f"Split by {dim}, the biggest mover is {lead_txt}.",
-           "action": f"Look at {lead['segment']} first: " + ("find out what worked and repeat it." if up else "find out what went wrong and fix it.") if abs(lead["share_of_change"]) >= 0.25
+           "action": (f"Look at {lead['segment']} first: " + ("find out what worked and repeat it." if desirable else "find out what went wrong and fix it.")) if big
                      else f"Check several {dim} values, since the change is spread out.",
            "evidence": {"dimension": dim, "window": f"{span} vs {prior}", "previous_total": pt, "current_total": ct, "change": delta,
                         "contributions": rows, "contributions_sum_to_change": True, "rows_current": int(len(cur)), "rows_previous": int(len(prev))}}
@@ -110,12 +130,15 @@ def daily_anomalies(df: pd.DataFrame, date: str, metric: str, dims: list, mean_m
     y = (day.mean() if mean_metric else day.sum()).astype(float)
     if mean_metric: y = y.dropna()
     if len(y.dropna()) < 28 or (y.index.max() - y.index.min()).days < 27: return []
+    nz = y[y > 0]
+    if not mean_metric and (len(nz) < 20 or (y == 0).mean() > 0.5): return []      # intermittent data (most days empty): a 'spike' is not meaningful at day level
     base = y.rolling(29, center=True, min_periods=15).median()
     ratio = (y + 1e-9) / (base + 1e-9)
     ok = np.isfinite(ratio) & (base > 0)
     if ok.sum() < 28: return []
     dow = ratio[ok].groupby(ratio[ok].index.dayofweek).median(); dow = dow / dow.mean()
     exp = base * y.index.dayofweek.map(dow).values
+    if not mean_metric: exp = exp.clip(lower=0.1 * float(nz.median()))              # never compare with a near-zero expectation (that produced 'a trillion times')
     # Revenue/count style totals have variance that grows with the level (more orders -> bigger swings), so residuals are
     # scaled by sqrt(expected) (Pearson); averages have roughly constant variance, so they are left unscaled.
     scale = np.ones(len(y)) if mean_metric else np.sqrt(np.clip(exp.values, 1e-9, None))
@@ -129,6 +152,7 @@ def daily_anomalies(df: pd.DataFrame, date: str, metric: str, dims: list, mean_m
     for t in flag.index:
         obs, e = float(y[t]), float(exp[t]); up = obs > e
         who = _attribute(d, date, metric, dims, t)
+        if who and dims: who = (seg_label(df, who[2], who[0]), who[1], who[2])
         out.append({"kind": "anomaly", "severity": "warn", "title": f"{'Spike' if up else 'Drop'} on {t.strftime('%d %b %Y')}",
                     "detail": f"{metric} was {_fmt(obs)} that day, {_how_far(obs, e)} the {_fmt(e)} expected for a {t.strftime('%A')} at that time of year."
                               + (f" Most of the difference came from {who[0]} ({'+' if who[1] >= 0 else '-'}{_fmt(abs(who[1]))})." if who else ""),
@@ -140,6 +164,7 @@ def daily_anomalies(df: pd.DataFrame, date: str, metric: str, dims: list, mean_m
 
 def _how_far(obs: float, exp: float) -> str:
     """'about 8 times' for big spikes (a '718% above' figure is hard to read), else 'about 40% above/below'."""
+    if exp > 0 and obs / exp >= 100: return "more than 100 times"
     if exp > 0 and obs / exp >= 3: return f"about {obs / exp:.0f} times"
     return f"about {abs(obs - exp) / abs(exp) * 100:.0f}% {'above' if obs > exp else 'below'}"
 

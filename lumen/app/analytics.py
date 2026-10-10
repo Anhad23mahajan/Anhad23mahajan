@@ -9,7 +9,8 @@ MEAN_HINT = re.compile(r"price|rate|score|age|temp|ratio|avg|average|pct|percent
 ID_HINT = re.compile(r"(^|_)(id|uuid|guid|zip|zipcode|postal|pin|pincode|phone|mobile|contact|ssn|ein|code|index|num|number|no|invoice|ticket|ref|reference|account|acct|roll|aadhaar|pan|gst)(_|$)", re.I)
 CALENDAR_PART = re.compile(r"^(year|yr|month|mon|day|dow|weekday|week|quarter|qtr|hour|minute|fy|period)$", re.I)   # integer calendar columns are not measures
 MEAN_TOKENS = {"price", "rate", "score", "age", "temp", "temperature", "ratio", "avg", "average", "pct", "percent", "percentage", "unit"}
-COST_HINT = re.compile(r"cost|expens|spend|refund|loss|churn|debt|complaint|defect|return|waste|cancel|overdue", re.I)   # metrics where UP is bad
+COST_HINT = re.compile(r"cost|expens|spend|refund|loss|churn|debt|complaint|defect|return|waste|cancel|overdue|debit|payable|outstanding|unpaid|pending|absent|dropout|no_?show|late", re.I)   # metrics where UP is bad
+BAD_SEGMENT = D.BAD_SEGMENT
 UNIT = {"MS": "month", "W": "week", "D": "day", "YS": "year"}; ADJ = {"day": "daily", "week": "weekly", "month": "monthly", "year": "yearly"}
 MAX_ROWS = 200_000
 STRONG_DATE_HINT = re.compile(r"order|trans|invoice|sale|event|created|purchase|bill|payment|record|activity|checkout|revenue|entry", re.I)
@@ -318,6 +319,15 @@ def preprocess_df(df: pd.DataFrame) -> pd.DataFrame:
             df[c] = df[c].replace(r"^\s*$", np.nan, regex=True)
             df[c] = df[c].replace(to_replace=NA_RE, value=np.nan)
 
+    # A 'Total' / 'Grand total' line is a summary of the other rows, not a record: counting it doubles every total.
+    removed_totals = 0
+    lab_mask = pd.Series(False, index=df.index)
+    for c in df.columns:
+        if pd.api.types.is_string_dtype(df[c]) or pd.api.types.is_object_dtype(df[c]):
+            lab_mask |= df[c].astype(str).str.match(TOTAL_RE.pattern, flags=re.I)
+    if lab_mask.any() and lab_mask.mean() <= 0.05:        # a few summary lines, not a category column that happens to contain 'Total'
+        removed_totals += int(lab_mask.sum()); df = df[~lab_mask]
+
     # Type detection: Dates FIRST, then formatted numerics, then booleans
     for c in list(df.columns):
         date_series = try_parse_dates(df[c], c)
@@ -335,7 +345,50 @@ def preprocess_df(df: pd.DataFrame) -> pd.DataFrame:
 
     num = df.select_dtypes('number').columns
     if len(num): df[num] = df[num].replace([np.inf, -np.inf], np.nan)   # 'inf' in a CSV is a division error, not a value
+    df, extra = _drop_unlabelled_total(df); removed_totals += extra
+    df, merged = _merge_label_variants(df)
+    df.attrs.update(meta)
+    if removed_totals: df.attrs["removed_total_rows"] = removed_totals
+    if merged: df.attrs["merged_labels"] = merged
     return df
+
+
+def _drop_unlabelled_total(df: pd.DataFrame):
+    """Drop the last row when every number in it equals the sum of the rows above and it has no real record fields (an unlabelled total line)."""
+    if len(df) < 6: return df, 0
+    last, rest, numeric = df.iloc[-1], df.iloc[:-1], df.select_dtypes("number").columns
+    checked = 0
+    for c in numeric:
+        v = last[c]
+        if pd.isna(v): continue
+        tot = rest[c].sum()
+        if tot == 0 or not np.isclose(float(v), float(tot), rtol=1e-6, atol=1e-6): return df, 0
+        checked += 1
+    others = [c for c in df.columns if c not in numeric]
+    if checked < 1 or (others and sum(pd.notna(last[c]) for c in others) > max(1, len(others) // 2)): return df, 0
+    return df.iloc[:-1], 1
+
+
+def _merge_label_variants(df: pd.DataFrame):
+    """'Dessert' / 'dessert' / ' DESSERT' are one label: use the most common spelling so totals and rankings are not split."""
+    merged = []
+    for c in df.columns:
+        s = df[c]
+        if not (pd.api.types.is_string_dtype(s) or pd.api.types.is_object_dtype(s)) or pd.api.types.is_bool_dtype(s): continue
+        nn = s.dropna()
+        if nn.empty or not nn.map(lambda x: isinstance(x, str)).all(): continue
+        norm = nn.str.strip().str.lower()
+        spellings = nn.groupby(norm).nunique()
+        bad = spellings[spellings > 1].index
+        if not len(bad): continue
+        mapping = {}
+        for g in bad:
+            counts = nn[norm == g].value_counts(); keep = counts.index[0]
+            for alt, n in counts.items():
+                if alt != keep: mapping[alt] = keep; merged.append({"column": c, "from": alt, "to": keep, "rows": int(n)})
+        df = df.copy(); df[c] = s.replace(mapping)
+    merged.sort(key=lambda m: -m["rows"])
+    return df, merged[:12]
 
 
 def load_df(raw: bytes, filename: str) -> pd.DataFrame:
@@ -397,8 +450,10 @@ def profile(df: pd.DataFrame) -> dict:
         if k == "numeric":
             valid = nn
             if len(valid) > 0:
-                q1, q3 = valid.quantile([.25, .75]); iqr = q3 - q1
-                out_v = valid[(valid < q1 - 3 * iqr) | (valid > q3 + 3 * iqr)] if iqr > 0 else valid.iloc[0:0]
+                heavy = bool(valid.min() > 0 and valid.quantile(.99) / max(float(valid.median()), 1e-12) > 8)    # money-like data: judge on a log scale
+                basis = np.log10(valid) if heavy else valid
+                q1, q3 = basis.quantile([.25, .75]); iqr = q3 - q1
+                out_v = valid[(basis < q1 - 3 * iqr) | (basis > q3 + 3 * iqr)] if iqr > 0 else valid.iloc[0:0]
                 info["outliers"] = int(len(out_v))
                 info["min"], info["median"], info["max"] = float(valid.min()), float(valid.median()), float(valid.max())
                 if len(out_v):
@@ -429,10 +484,22 @@ def profile(df: pd.DataFrame) -> dict:
     dates = [c["name"] for c in cols if c["kind"] == "date"]
     metrics = [c["name"] for c in cols if c["kind"] == "numeric" and not c.get("id_like") and not CALENDAR_PART.match(c["name"])]
     cats = [c["name"] for c in cols if c["kind"] == "category" and 2 <= c["unique"] <= 30]
+    df.attrs["mean_cols"] = {m for m in metrics if _is_rating_like(df[m], m) or (df[m].dropna().between(0, 1).all() and df[m].nunique() > 2)}
 
-    hinted_metrics = [m for m in metrics if STRONG_HINT.search(m)] or [m for m in metrics if METRIC_HINT.search(m)]
-    summable = [m for m in hinted_metrics if agg_for(m) == "sum"] or [m for m in metrics if METRIC_HINT.search(m) and agg_for(m) == "sum"]
-    selected_metric = (summable or hinted_metrics or metrics or [None])[0]
+    def metric_rank(name):                     # lower is better: a volume or money column beats a price, rate or score
+        r = 0
+        if STRONG_HINT.search(name): r -= 10
+        if VOLUME_HINT.search(name): r -= 6
+        if METRIC_HINT.search(name): r -= 2
+        if re.search(r"paid|collected|received|actual|net", name, re.I): r -= 3      # what happened beats what was planned or owed
+        if re.search(r"(^|_)(due|target|budget|budgeted|planned|expected|quota|goal)(_|$)", name, re.I): r += 3
+        if agg_for(name, df) == "mean": r += 20
+        return r
+    selected_metric = min(metrics, key=metric_rank) if metrics else None
+    if dates and (selected_metric is None or agg_for(selected_metric, df) == "mean") and "records" not in df.columns:
+        df["records"] = 1                       # no countable measure: count the records per period (registrations, visits, cases)
+        cols.append({"name": "records", "kind": "numeric", "missing_pct": 0.0, "unique": 1, "type": "Number", "outliers": 0, "id_like": False,
+                     "min": 1.0, "median": 1.0, "max": 1.0}); metrics.insert(0, "records"); selected_metric = "records"
 
     def date_rank(col_name):
         score = 0
@@ -457,8 +524,8 @@ def kpis(df, p):
     if not m: return out
     val_series = df[m].dropna()
     if val_series.empty: return out
-    tot = val_series.sum() if agg_for(m) == "sum" else val_series.mean()
-    out.append({"label": f"{'Total' if agg_for(m) == 'sum' else 'Average'} {m}", "value": float(tot), "kind": "num"})
+    tot = val_series.sum() if agg_for(m, df) == "sum" else val_series.mean()
+    out.append({"label": f"{'Total' if agg_for(m, df) == 'sum' else 'Average'} {m}", "value": float(tot), "kind": "num"})
     if d:
         s, freq = period_series(df, d, m); unit = UNIT[freq]
         if len(s) >= 2 and s.iloc[-2]:
@@ -469,7 +536,22 @@ def kpis(df, p):
     return out
 
 
-def agg_for(metric): return "mean" if MEAN_TOKENS & set(re.split(r"[^a-z0-9]+", str(metric).lower())) else "sum"
+def agg_for(metric, df=None):
+    """'mean' for rates, prices, scores and ratings (summing them is meaningless), else 'sum'. profile() records the data-driven cases on df.attrs."""
+    if df is not None and metric in df.attrs.get("mean_cols", ()): return "mean"
+    return "mean" if MEAN_TOKENS & set(re.split(r"[^a-z0-9]+", str(metric).lower())) else "sum"
+
+
+VOLUME_HINT = re.compile(r"visit|view|session|signup|sign_up|registration|appointment|attendance|booking|order|download|ticket|hours|yield|units|quantity|qty|count|volume|weight|kg|tonne|sold|shipped|donation|amount|revenue|sales|total|income|profit|spend|expens|cost|fee|paid|collected|balance", re.I)
+
+
+def _is_rating_like(s: pd.Series, name: str) -> bool:
+    """Small whole-number scale (1-5, 0-10): a survey answer or rating, to be averaged. A few stray codes such as 99 ('no answer') are tolerated."""
+    v = s.dropna()
+    if len(v) < 10: return False
+    if VOLUME_HINT.search(name) and not re.search(r"score|rating|satisf|quality|q\d", name, re.I): return False
+    inside = v[(v >= 0) & (v <= 11)]
+    return bool(len(inside) >= 0.95 * len(v) and (inside == inside.round()).all() and 3 <= inside.nunique() <= 11)
 
 
 def period_series(df, date, metric):
@@ -479,8 +561,8 @@ def period_series(df, date, metric):
     lo, hi = d[date].min(), d[date].max()
     span = (hi - lo).days
     freq = "YS" if (span > 365 * 2 and (d[date].dt.month == 1).all() and (d[date].dt.day == 1).all()) else "MS" if span > 180 else "W" if span > 45 else "D"
-    s = getattr(d.set_index(date)[metric].resample(freq), agg_for(metric))()
-    if agg_for(metric) == "sum":
+    s = getattr(d.set_index(date)[metric].resample(freq), agg_for(metric, df))()
+    if agg_for(metric, df) == "sum":
         s = s.fillna(0.0)
     else:
         s = s.ffill().bfill().fillna(0.0)
@@ -503,12 +585,12 @@ def starter_charts(df, p):
             out.append({"title": f"{m} by {label}", "type": "line", "freq": freq,
                         "x": [t.strftime("%Y-%m-%d") for t in s.index], "y": s.round(2).tolist()})
     for c in p["cat_cols"][:2]:
-        g = getattr(df.groupby(c)[m], agg_for(m))().sort_values(ascending=False).head(8)
+        g = getattr(df.groupby(c)[m], agg_for(m, df))().sort_values(ascending=False).head(8)
         if not g.empty:
-            out.append({"title": f"{m} by {c}", "type": "bar", "x": [str(i) for i in g.index], "y": g.round(2).tolist()})
+            out.append({"title": f"{m} by {c}", "type": "bar", "x": [D.seg_label(df, c, i) for i in g.index], "y": g.round(2).tolist()})
     ent = p.get("entity_col")
     if ent:                                                       # who matters most: top donors / customers / members
-        g = getattr(df.groupby(ent)[m], agg_for(m))().sort_values(ascending=False).head(8)
+        g = getattr(df.groupby(ent)[m], agg_for(m, df))().sort_values(ascending=False).head(8)
         if not g.empty: out.append({"title": f"Top {ent} by {m}", "type": "bar", "x": [str(i) for i in g.index], "y": g.round(2).tolist()})
     h = histogram(df[m])
     if h: out.append({"title": h["title"].format(m=m), "type": "hist", "x": h["x"], "y": h["y"]})
@@ -552,8 +634,9 @@ def insights(df, p):
                   "detail": "Totals and trends exclude the remaining rows.", "action": "Split the file by year or filter it, then upload again."})
     if df.attrs.get("sheets", 1) > 1:
         f.append({"kind": "quality", "severity": "info", "title": f"Read sheet '{df.attrs['sheet']}' of {df.attrs['sheets']}", "detail": "Other sheets in the workbook were not analysed.", "action": "Upload other sheets separately if you need them."})
+    key_cols = {m, d, p.get("entity_col")}
     for c in p["columns"]:
-        if 20 < c["missing_pct"] < 100:
+        if 20 < c["missing_pct"] < 100 and c["name"] in key_cols:          # optional columns (comments, discount code) are legitimately blank: shown in Data health only
             f.append({"kind": "quality", "severity": "warn", "title": f"{c['name']} is {c['missing_pct']}% empty",
                       "detail": f"Over a fifth of rows have no value for {c['name']}, so anything based on it may be misleading.",
                       "action": f"Fill in or remove the missing {c['name']} values before relying on results that use it."})
@@ -573,13 +656,25 @@ def insights(df, p):
     mc = next((c for c in p["columns"] if c["name"] == m), {})
     if mc.get("outliers"):
         share, ex = mc.get("outlier_share"), mc.get("outlier_examples", [])
+        big = df.loc[df[m].nlargest(min(3, mc["outliers"])).index]
+        who = []
+        for _, r in big.iterrows():
+            parts = [pd.Timestamp(r[d]).strftime("%d %b %Y")] if d and pd.notna(r[d]) else []
+            parts += [str(r[c]) for c in ([p["entity_col"]] if p.get("entity_col") else []) + p["cat_cols"][:1] if pd.notna(r[c])]
+            who.append(f"{_n(r[m])} ({', '.join(parts)})" if parts else _n(r[m]))
         f.append({"kind": "quality", "severity": "warn" if (share or 0) >= 0.2 else "info", "title": f"{mc['outliers']:,} unusual {m} values",
-                  "detail": f"These records are far outside the normal range (largest: {', '.join(_n(x) for x in ex)})."
+                  "detail": f"These records are far outside the normal range (largest: {'; '.join(who)})."
                             + (f" Together they make up {share * 100:.0f}% of total {m}." if share and share >= 0.05 else ""),
                   "action": "Check the largest records to confirm they are genuine (for example a big donor or bulk order) and not typing mistakes.",
                   "evidence": {"column": m, "count": mc["outliers"], "examples": ex, "share_of_total": share}})
+    if agg_for(m, df) == "sum":
+        neg = df[m][df[m] < 0]
+        if len(neg) >= 3:
+            f.append({"kind": "quality", "severity": "info", "title": f"{len(neg):,} entries are negative ({_n(neg.sum())} in total)",
+                      "detail": f"These look like refunds, reversals or corrections. They are included in every total of {m}, so totals are net figures.",
+                      "action": "Check that these entries are real refunds or corrections, and decide whether you want totals before or after them."})
     ent = p.get("entity_col")
-    if ent and agg_for(m) == "sum":
+    if ent and agg_for(m, df) == "sum":
         g = df.groupby(ent)[m].sum().sort_values(ascending=False)
         if len(g) >= 15 and (g >= 0).all() and g.sum() > 0:
             k = 5; share = float(g.head(k).sum() / g.sum())
@@ -591,13 +686,11 @@ def insights(df, p):
     if d:
         s, freq = period_series(df, d, m)
         n = len(s); unit = UNIT[freq]
-        if agg_for(m) == "sum" and p["cat_cols"]:       # what changed between the last two equal windows, and which segment drove it
-            try: chg = D.bridge(df, d, m, p["cat_cols"][:3], freq, s, D.find_quantity_column(df, m, p["metric_cols"]))
+        if agg_for(m, df) == "sum" and p["cat_cols"]:       # what changed between the last two equal windows, and which segment drove it
+            try: chg = D.bridge(df, d, m, p["cat_cols"][:3], freq, s, D.find_quantity_column(df, m, p["metric_cols"]), cost_metric=bool(COST_HINT.search(m)))
             except Exception: chg = None
-            if chg:
-                chg["severity"] = "good" if (chg["evidence"]["change"] > 0) != bool(COST_HINT.search(m)) else "warn"
-                f.append(chg)
-        try: daily = D.daily_anomalies(df, d, m, p["cat_cols"][:3], mean_metric=agg_for(m) == "mean")
+            if chg: f.append(chg)
+        try: daily = D.daily_anomalies(df, d, m, p["cat_cols"][:3], mean_metric=agg_for(m, df) == "mean")
         except Exception: daily = []
         f += daily
         if n >= 6:
@@ -619,9 +712,9 @@ def insights(df, p):
                               "detail": f"{m} was {_n(val)} that {unit}, far from the typical {_n(med)}.",
                               "action": "Check whether this was a real event (a campaign, a big donor) or a data-entry mistake."})
     for c in p["cat_cols"]:
-        g = getattr(df.groupby(c)[m], agg_for(m))()
-        if agg_for(m) == "sum" and len(g) >= 3 and (g >= 0).all() and g.sum() > 0:
-            top = g.idxmax(); share = g.max() / g.sum()
+        g = getattr(df.groupby(c)[m], agg_for(m, df))()
+        if agg_for(m, df) == "sum" and len(g) >= 3 and (g >= 0).all() and g.sum() > 0:
+            top = D.seg_label(df, c, g.idxmax()); share = g.max() / g.sum()
             if share > max(0.35, 1.5 / len(g)):
                 f.append({"kind": "driver", "severity": "info", "title": f"{top} drives {share*100:.0f}% of {m}",
                           "detail": f"Across {c}, a single value ({top}) accounts for {share*100:.0f}% of total {m}. You depend heavily on it.",
@@ -630,7 +723,8 @@ def insights(df, p):
     best = None
     for o in others:
         r = df[m].corr(df[o])
-        if pd.notna(r) and abs(r) > 0.5 and (best is None or abs(r) > abs(best[1])): best = (o, r)
+        if pd.isna(r) or not (0.5 < abs(r) < 0.97) or re.search(r"budget|target|planned|expected|quota|cogs|(^|_)cost|(^|_)total", o, re.I): continue   # near-1.0 = a component or copy of the measure, not a driver
+        if best is None or abs(r) > abs(best[1]): best = (o, r)
     if best:
         f.append({"kind": "driver", "severity": "info", "title": f"{m} moves with {best[0]}",
                   "detail": f"{m} and {best[0]} are strongly {'positively' if best[1] > 0 else 'negatively'} related (correlation {best[1]:.2f}). This shows they move together, not that one causes the other.",
@@ -648,7 +742,7 @@ def forecast(df, date, value, periods=6):
     s, freq = period_series(df, date, value)
     observed = int((df[[date, value]].dropna().set_index(date)[value].resample(freq).count() > 0).sum())
     if len(s) < 8 or observed < 8: raise ValueError("Need at least 8 time periods with data (days, weeks or months) to forecast.")
-    mean_metric = agg_for(value) == "mean"
+    mean_metric = agg_for(value, df) == "mean"
     r = forecast_series(s, horizon=periods, freq=freq, agg="mean" if mean_metric else "sum")
     if r.get("status") == "refused": raise ValueError(r.get("reason") or "This series cannot be forecast.")
     if mean_metric and r.get("note"): r["note"] = r["note"].replace("the total is expected", "the average is expected")
