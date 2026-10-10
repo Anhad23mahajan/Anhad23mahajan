@@ -30,6 +30,17 @@ Set-Location "$Work\team" -ErrorAction Stop
 Run "git checkout main"
 Run "git pull --ff-only"
 
+# safety: this code was built on top of Eshaan's commit 66c6405. If he has pushed newer work, copying over it would overwrite his changes.
+$base = "66c6405ad4a7c7284ef6af42e26ea3d5a7557567"
+$head = (git rev-parse HEAD)
+if ($head -ne $base) {
+    Write-Host "Eshaan's main has moved since the code was built on it:" -ForegroundColor Yellow
+    git log --oneline "$base..HEAD"
+    Write-Host "Copying now would overwrite those changes in any file we both edited (static/index.html, app/*.py, README.md, requirements.txt)." -ForegroundColor Yellow
+    $go = Read-Host "Type overwrite to continue anyway, or anything else to stop and tell your assistant"
+    if ($go -ne "overwrite") { throw "Stopped: main has newer commits." }
+}
+
 # 3. copy the code over (everything under lumen/, no git metadata, no caches)
 robocopy "$Work\code\lumen" "$Work\team" /E /XD .git __pycache__ .pytest_cache .venv /XF *.pyc /NFL /NDL /NJH /NJS /NP | Out-Null
 if ($LASTEXITCODE -ge 8) { throw "robocopy failed ($LASTEXITCODE)" }
