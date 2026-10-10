@@ -46,6 +46,8 @@ robocopy "$Work\code\lumen" "$Work\team" /E /XD .git __pycache__ .pytest_cache .
 if ($LASTEXITCODE -ge 8) { throw "robocopy failed ($LASTEXITCODE)" }
 $global:LASTEXITCODE = 0
 git config core.autocrlf false
+# information only: files that were already in Eshaan's repo but are not in the new code stay untouched
+foreach ($f in (git ls-files)) { if (-not (Test-Path (Join-Path "$Work\code\lumen" $f))) { Write-Host "  kept from Eshaan's repo (not in the new code): $f" -ForegroundColor DarkYellow } }
 
 # 4. commit in logical steps (order keeps each step importable)
 function Step($message, $paths) {
@@ -60,11 +62,12 @@ function Step($message, $paths) {
 Step "Pin dependencies, Python 3.13 Dockerfile, Render config, license" @("requirements.txt","requirements-dev.txt","Dockerfile",".dockerignore","render.yaml",".env.example",".gitignore",".gitattributes","LICENSE","pytest.ini")
 Step "Replace regex SQL guard with a parser-based guard and hardened DuckDB sandbox" @("app/sqlguard.py","tests/__init__.py","tests/test_sqlguard.py")
 Step "Add backtest-selected forecaster with ranges from past errors" @("app/forecasting.py","tests/test_forecasting.py")
-Step "Add what-changed analysis and daily spike detection" @("app/drivers.py","tests/test_drivers.py")
-Step "Make ingestion robust: header rows, Excel sheets, encodings, number and date formats; fix insight bugs" @("app/analytics.py","tests/fixtures","tests/test_fixtures.py")
+Step "Add what-changed analysis, segment findings and daily spike detection" @("app/drivers.py","app/segments.py","tests/test_drivers.py")
+Step "Make ingestion robust: header rows, Excel sheets, encodings, number and date formats; fix insight bugs" @("app/analytics.py","tests/fixtures","tests/test_fixtures.py","tests/test_quality.py")
 Step "Add session store, rate limiter and upload size checks" @("app/limits.py","tests/test_limits.py")
 Step "Rebuild question answering: second-query cross-check, number grounding, model fail-over, demo mode, samples" @("app/llm.py","app/samples.py","tests/test_llm.py")
-Step "Wire API: limits, samples, demo fallback, security headers; test the API end to end" @("app/main.py","tests/test_api.py")
+Step "Add rule-based recommendations that quote their evidence" @("app/recommend.py","tests/test_recommend.py")
+Step "Wire API: limits, samples, demo fallback, measure picker, security headers; test the API end to end" @("app/main.py","tests/test_api.py")
 Step "UI: bundled Plotly and fonts, sample picker, answer checks, forecast panel, accessibility" @("static")
 Step "Add evaluation harness and benchmarks" @("evals","tests/test_evals.py")
 Step "Documentation: README, architecture diagram, screenshots" @("README.md","docs")
