@@ -75,6 +75,21 @@ def test_made_up_number_replaced_by_plain_summary():
     assert any(c["id"] == "numbers" and c["ok"] is False for c in r["checks"]) and r["status"] != "checked"
 
 
+def test_wrong_product_name_replaced_by_plain_summary():
+    top2 = "select product, sum(amount) as total from data where product <> 'Tote' group by product order by total desc"
+    use([plan(top2, top2), expl("Mug brings in 600 and Hoodie 900; Tote is the best seller.")])    # Tote exists in the data but is not in the result
+    r = llm.answer(DF, "Which products sold the most?")
+    assert "best seller" not in r["answer"] and any(c["id"] == "numbers" and c["ok"] is False and "Tote" in c["label"] for c in r["checks"])
+
+
+def test_names_helper_is_quiet_for_honest_text():
+    cols, rows = ["product", "total"], [["Hoodie", 900.0], ["Mug", 600.0]]
+    assert llm.wrong_names("Hoodie leads, then Mug.", DF, "q", cols, rows) == []
+    assert llm.wrong_names("Hoodie leads, then Tote.", DF, "q", cols, rows) == ["Tote"]
+    assert llm.wrong_names("Tote was asked about", DF, "How is Tote doing?", cols, rows) == []     # named in the question: allowed
+    assert llm.wrong_names("Total sales rose.", DF, "q", [["total"]], [[5.0]]) == []                  # no text cells in the result: nothing to compare
+
+
 def test_derived_numbers_are_allowed():
     use([plan(SQL, CHECK), expl("Hoodie (900) is 150% of Mug (600), and the total is 1,750.")])   # 900/600 -> 150%, sum -> 1750
     assert llm.answer(DF, "q")["status"] == "checked"

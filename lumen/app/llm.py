@@ -195,6 +195,35 @@ def ungrounded(text: str, allowed: set) -> list:
     return bad
 
 
+_GENERIC_LABELS = {"all", "none", "other", "others", "total", "unknown", "yes", "no", "true", "false", "nan", "null", "average", "overall", "high", "medium", "low", "new", "old", "open", "closed"}
+
+
+def _words(s: str) -> str:
+    return " " + re.sub(r"[^a-z0-9]+", " ", str(s).lower()).strip() + " "
+
+
+def wrong_names(text: str, df: pd.DataFrame, question: str, cols, rows, max_unique: int = 5000) -> list:
+    """Labels from the data (products, regions, donors...) that the explanation names although they are not in the result or the question.
+    Only columns the result is about are used: a column counts when one of its values appears among the result's text cells.
+    A false alarm only means the plain code-built summary is shown, so unusual labels are skipped rather than guessed at."""
+    cells = {str(v) for r in rows for v in r if isinstance(v, str)}
+    if not cells: return []
+    result_text = _words(question) + " ".join(_words(c) for c in cells)
+    seen, flagged, tw = set(), [], _words(text)
+    for c in df.columns:
+        s = df[c]
+        if not (pd.api.types.is_object_dtype(s) or pd.api.types.is_string_dtype(s) or isinstance(s.dtype, pd.CategoricalDtype)): continue
+        if s.nunique(dropna=True) > max_unique: continue
+        labels = {str(x) for x in s.dropna().unique()}
+        if not (labels & cells): continue
+        for lab in labels:
+            w = _words(lab)
+            if len(w.strip()) < 3 or w.strip() in _GENERIC_LABELS or w.strip().isdigit() or w in seen: continue
+            seen.add(w)
+            if w in tw and w not in result_text: flagged.append(lab)
+    return flagged[:5]
+
+
 def _fmt(v) -> str:
     if isinstance(v, bool) or v is None: return str(v)
     if isinstance(v, (int, float)):
@@ -280,11 +309,14 @@ percentages and differences computed from them). Put assumptions or limits in ca
     except AIUnavailable: pass                                       # the numbers and SQL are still valid; fall back to a built-in summary
     text, caveats = (expl.answer.strip(), expl.caveats.strip()) if expl else ("", "")
     bad = ungrounded(text, allowed_numbers(question, cols, rows)) if text else []
-    if not text or bad:
-        checks.append({"id": "numbers", "ok": False if bad else None,
-                       "label": "The AI's wording quoted numbers that are not in the result, so a plain summary is shown instead" if bad else "No AI wording was available, so a plain summary is shown"})
-        text, caveats = describe(cols, rows), caveats if not bad else ""
-    else: checks.append({"id": "numbers", "ok": True, "label": "Every number in the explanation appears in the result (or is computed from it)"})
+    bad_names = wrong_names(text, df, question, cols, rows) if text and not bad else []
+    if not text or bad or bad_names:
+        flagged = bool(bad or bad_names)
+        why = ("quoted numbers that are not in the result" if bad else f"named {', '.join(repr(n) for n in bad_names[:3])}, which is not in the result")
+        checks.append({"id": "numbers", "ok": False if flagged else None,
+                       "label": f"The AI's wording {why}, so a plain summary is shown instead" if flagged else "No AI wording was available, so a plain summary is shown"})
+        text, caveats = describe(cols, rows), caveats if not flagged else ""
+    else: checks.append({"id": "numbers", "ok": True, "label": "Every number and name in the explanation appears in the result (or is computed from it)"})
 
     status = ("disagree" if any(c["id"] == "second_query" and c["ok"] is False for c in checks) else
               "checked" if all(c["ok"] is True for c in checks) else "partly")

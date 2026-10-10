@@ -32,7 +32,7 @@ The model is never trusted with a number.
 1. **SQL is parsed, not pattern-matched.** DuckDB's own parser must see exactly one `SELECT` over the table `data` (and its own CTEs). Any table function, file read, `PRAGMA`, `SET`, `COPY` and so on is rejected wherever it appears. An earlier keyword blocklist was bypassed by building a blocked word at run time (`query(replace(...))`); the structural check is not affected by that trick (`tests/test_sqlguard.py`, 75 cases).
 2. **It runs in a sandbox.** In-memory DuckDB, file and network access off, configuration locked, 2 threads, 512 MB memory limit, 10 second interrupt, 1,000-row cap.
 3. **A second, differently written query must agree.** The model writes the query two ways. If the values differ, the answer is flagged "check this one".
-4. **Every number in the explanation must trace to the result**: a cell, or a sum, share, difference or percentage change computed from cells, to the precision shown. If not, the AI's wording is thrown away and a plain summary built in code is shown instead.
+4. **Every number in the explanation must trace to the result**: a cell, or a sum, share, difference or percentage change computed from cells, to the precision shown. The same goes for names: if the explanation names a product, donor or region from your data that is not in the result, the wording is thrown away too. In both cases a plain summary built in code is shown instead.
 5. **Everything is visible**: the checks that passed or failed, the SQL, the second query and the result rows.
 
 These checks catch many mistakes but not all. Two queries can share the same misunderstanding of the question, so read the SQL if the decision matters.
@@ -92,7 +92,7 @@ Everything below is reproducible from this repository.
 - The hosted demo accepts files up to 5 MB and rate-limits questions so a free AI quota lasts. When the AI is unavailable, stored sample questions still answer.
 - Forecasts are estimates. With short history Lumen says so, and uses simple methods that backtest better than complex ones.
 - The AI can still misread a question. The checks reduce that risk; they do not remove it.
-- The number-grounding check covers digits, not names: an explanation could attach a correct number to the wrong product name. The result table is always shown next to the explanation for that reason.
+- The name check only knows labels that exist in your data and only compares them with the result: it cannot catch a wrong claim that uses no label ("sales are healthy"). The result table is always shown beside the explanation for that reason.
 - Wide pivot-style files (one column per month), files that record debits and credits in separate columns, and periods written as text ("Q1 FY25") are read as ordinary columns, not as time series. Reshape them to one row per record for the best results.
 - Lumen picks a main measure and date column automatically; when it guesses wrong, use the picker above the dashboard.
 - Dates like `03/04/2025` are read day-first unless the file shows otherwise (set `AMBIGUOUS_DAYFIRST = False` in `app/analytics.py` for US-only data).
