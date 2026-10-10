@@ -185,3 +185,11 @@ details > summary:hover { text-decoration: underline; }
 .fcbar select, .fcbar input { min-height: 40px; }
 
 .acc-fixed { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+
+/* ---- data health panel ---- */
+.hchips{list-style:none;margin:6px 0 14px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.hchip{display:inline-flex;align-items:flex-start;gap:8px;padding:6px 12px;border-radius:99px;font-size:14px;line-height:1.35;max-width:100%}
+.hchip.ok{background:#E2F1E8;color:#1b5a37}.hchip.warn{background:#FBEFD3;color:#6b4300}
+.hchip>span:first-child{font-weight:800}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#health table td:last-child{white-space:normal;min-width:220px}

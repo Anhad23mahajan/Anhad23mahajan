@@ -300,6 +300,37 @@
   })();
   LX.reportHtml = reportHtml;
 
+
+  /* ---------- data health: what was detected on upload (types, empty cells, unusual values, labels, duplicates) ---------- */
+  function healthHtml(p) {
+    if (!p || !arr(p.columns).length) return '';
+    const cols = arr(p.columns), plural = (n, w) => n + ' ' + w + (n === 1 ? '' : 's');
+    const pc = v => isNum(v) ? (v > 0 && v < 1 ? '<1%' : Math.round(v) + '%') : '–';
+    const gaps = cols.filter(c => (c.missing_pct || 0) > 0), outs = cols.filter(c => (c.outliers || 0) > 0), labs = cols.filter(c => c.label_variant_groups);
+    const dups = isNum(p.duplicates) ? p.duplicates : 0;
+    const chip = (ok, t) => `<li class="hchip ${ok ? 'ok' : 'warn'}"><span aria-hidden="true">${ok ? '✓' : '!'}</span><span>${ok ? '' : '<b class="sr">Check: </b>'}${esc(t)}</span></li>`;
+    const names = l => l.slice(0, 3).map(c => c.name).join(', ') + (l.length > 3 ? ' and more' : '');
+    let h = '<h2 id="health-h">Data health</h2><p class="sub">What Lumen found when it read your file, column by column. Nothing is deleted: the Cleaned Output preview shows every change.</p><ul class="hchips">';
+    h += chip(true, `${(+p.rows || 0).toLocaleString()} rows, ${cols.length} columns`);
+    h += gaps.length ? chip(false, `${plural(gaps.length, 'column')} with empty cells: ${names(gaps)}`) : chip(true, 'No empty cells');
+    h += outs.length ? chip(false, `Unusual values in ${names(outs)}`) : chip(true, 'No far-out values');
+    if (labs.length) h += chip(false, `Inconsistent spelling in ${names(labs)}`);
+    h += dups ? chip(false, `${dups.toLocaleString()} rows are identical to another row (normal if repeat sales have no order number)`) : chip(true, 'No repeated rows');
+    h += '</ul><div class="preview-table"><table aria-label="Columns and what was detected in each"><thead><tr><th>Column</th><th>Type</th><th>Empty</th><th>Unusual values</th><th>What is in it</th></tr></thead><tbody>';
+    h += cols.map(c => {
+      const ex = arr(c.examples).slice(0, 3).map(String);
+      let what = '';
+      if (c.type === 'Number' || c.kind === 'numeric') what = isNum(c.min) && isNum(c.max) ? `${tnum(c.min)} to ${tnum(c.max)}, typical ${tnum(c.median)}` : '';
+      else if (c.kind === 'date') what = arr(c.range).length === 2 ? `${c.range[0]} to ${c.range[1]}` : '';
+      else what = ex.length ? `${ex.join(', ')} · ${(+c.unique || 0).toLocaleString()} different` : '';
+      if (c.label_variant_groups && arr(c.label_variants)[0]) what += ` · spelled differently: ${arr(c.label_variants)[0].join(' / ')}`;
+      const out = (c.outliers || 0) > 0 ? `${(+c.outliers).toLocaleString()} (largest ${arr(c.outlier_examples).map(x => tnum(x)).join(', ')})` : '–';
+      return `<tr><td>${esc(c.name)}</td><td>${esc(c.type || cap(c.kind))}</td><td>${(c.missing_pct || 0) > 0 ? esc(pc(c.missing_pct)) : '–'}</td><td>${esc(out)}</td><td>${esc(what)}</td></tr>`;
+    }).join('') + '</tbody></table></div><p class="note">Unusual means more than three times the typical spread away from the middle. It is not a verdict that a value is wrong.</p>';
+    return h;
+  }
+  LX.healthHtml = healthHtml;
+
   LX.reset = () => { LX.fcClear(); LX.state.session = null; const r = q('#report'); if (r) r.innerHTML = '' };
   LX.tnum = tnum; LX.pct = pct;
 })();

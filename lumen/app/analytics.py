@@ -371,18 +371,40 @@ def kind(s: pd.Series) -> str:
     return "category" if s.nunique() <= max(30, 0.05 * len(s)) else "text"
 
 
+ID_RECORD_HINT = re.compile(r"(^|_)(id|invoice|order|receipt|ref|reference|transaction|txn|ticket|booking)(_|$)", re.I)
+ENTITY_HINT = re.compile(r"(^|_)(name|customer|client|donor|member|student|supplier|vendor|patient|employee|account|payer|contact)(_|$)", re.I)
+
+
+def entity_column(df, cols):
+    """A text column that names who the money comes from or goes to (donor, customer, ...): many distinct values, repeated across rows."""
+    best = None
+    for c in cols:
+        if c["kind"] not in ("text", "category") or not ENTITY_HINT.search(c["name"]): continue
+        u = c["unique"]
+        if 15 <= u <= 0.8 * len(df) and (best is None or u < best[1]): best = (c["name"], u)
+    return best[0] if best else None
+
+
 def profile(df: pd.DataFrame) -> dict:
     cols = []
     for c in df.columns:
         s = df[c]; k = kind(s)
         missing = round(float(s.isna().mean()) * 100, 1)
         uniq = int(s.nunique())
-        info = {"name": c, "kind": k, "missing_pct": missing, "unique": uniq}
+        info = {"name": c, "kind": k, "missing_pct": missing, "unique": uniq,
+                "type": "Yes/No" if (pd.api.types.is_bool_dtype(s) or str(s.dtype) == "boolean") else {"date": "Date", "numeric": "Number", "category": "Category"}.get(k, "Text")}
+        nn = s.dropna()
         if k == "numeric":
-            valid = s.dropna()
+            valid = nn
             if len(valid) > 0:
                 q1, q3 = valid.quantile([.25, .75]); iqr = q3 - q1
-                info["outliers"] = int(((valid < q1 - 3 * iqr) | (valid > q3 + 3 * iqr)).sum()) if iqr > 0 else 0
+                out_v = valid[(valid < q1 - 3 * iqr) | (valid > q3 + 3 * iqr)] if iqr > 0 else valid.iloc[0:0]
+                info["outliers"] = int(len(out_v))
+                info["min"], info["median"], info["max"] = float(valid.min()), float(valid.median()), float(valid.max())
+                if len(out_v):
+                    info["outlier_examples"] = [float(x) for x in out_v.reindex(out_v.abs().sort_values(ascending=False).index).head(3)]
+                    tot = float(valid.sum())
+                    info["outlier_share"] = float(out_v.sum() / tot) if tot > 0 and (valid >= 0).all() else None
             else: info["outliers"] = 0
             is_id = False
             if ID_HINT.search(c):
@@ -391,6 +413,17 @@ def profile(df: pd.DataFrame) -> dict:
                 diffs = s.diff().dropna()
                 if (diffs == 1).all(): is_id = True
             info["id_like"] = is_id
+        elif k in ("category", "text") and len(nn):
+            txt = nn.astype(str)
+            info["examples"] = [str(v) for v in txt.value_counts().head(3).index]
+            norm = txt.str.strip().str.lower()
+            spellings = txt.groupby(norm).nunique()              # distinct spellings that mean the same label ("Hoodie" / "hoodie")
+            bad = spellings[spellings > 1]
+            if len(bad):
+                info["label_variant_groups"] = int(len(bad))
+                info["label_variants"] = [sorted(txt[norm == g].unique().tolist())[:3] for g in bad.index[:3]]
+        elif k == "date" and len(nn):
+            info["range"] = [pd.Timestamp(nn.min()).strftime("%Y-%m-%d"), pd.Timestamp(nn.max()).strftime("%Y-%m-%d")]
         cols.append(info)
 
     dates = [c["name"] for c in cols if c["kind"] == "date"]
@@ -412,7 +445,8 @@ def profile(df: pd.DataFrame) -> dict:
     selected_date = (sorted_dates or [None])[0]
 
     out = {"rows": len(df), "columns": cols, "date_cols": sorted_dates, "metric_cols": metrics, "cat_cols": cats,
-           "metric": selected_metric, "date": selected_date}
+           "metric": selected_metric, "date": selected_date, "duplicates": int(df.duplicated().sum()),
+           "entity_col": entity_column(df, cols)}
     out["kpis"] = kpis(df, out)
     return out
 
@@ -472,7 +506,29 @@ def starter_charts(df, p):
         g = getattr(df.groupby(c)[m], agg_for(m))().sort_values(ascending=False).head(8)
         if not g.empty:
             out.append({"title": f"{m} by {c}", "type": "bar", "x": [str(i) for i in g.index], "y": g.round(2).tolist()})
+    ent = p.get("entity_col")
+    if ent:                                                       # who matters most: top donors / customers / members
+        g = getattr(df.groupby(ent)[m], agg_for(m))().sort_values(ascending=False).head(8)
+        if not g.empty: out.append({"title": f"Top {ent} by {m}", "type": "bar", "x": [str(i) for i in g.index], "y": g.round(2).tolist()})
+    h = histogram(df[m])
+    if h: out.append({"title": h["title"].format(m=m), "type": "hist", "x": h["x"], "y": h["y"]})
     return out
+
+
+def histogram(s: pd.Series, bins: int = 12):
+    """Counts per value range. Heavy-tailed money data gets log-spaced ranges so one huge value does not flatten the picture."""
+    v = pd.to_numeric(s, errors="coerce").dropna()
+    v = v[np.isfinite(v)]
+    if len(v) < 20 or v.nunique() < 5: return None
+    lo, hi = float(v.min()), float(v.max())
+    if lo <= 0 and v.min() < 0: v = v; edges = np.linspace(v.quantile(.01), v.quantile(.99), bins + 1); logged = False
+    elif lo > 0 and hi / max(float(v.median()), 1e-9) > 20: edges = np.geomspace(lo, hi, bins + 1); logged = True
+    else: edges = np.linspace(lo, hi, bins + 1); logged = False
+    if not np.all(np.diff(edges) > 0): return None
+    counts, _ = np.histogram(v.clip(edges[0], edges[-1]), bins=edges)
+    f = lambda x: f"{x:,.0f}" if abs(x) >= 100 else f"{x:,.1f}" if abs(x) >= 1 else f"{x:.2g}"
+    return {"title": "How {m} values are spread out" + (" (ranges grow by multiples because a few values are far larger)" if logged else ""),
+            "x": [f"{f(a)} to {f(b)}" for a, b in zip(edges[:-1], edges[1:])], "y": [int(c) for c in counts]}
 
 
 def suggested_questions(p):
@@ -501,7 +557,37 @@ def insights(df, p):
             f.append({"kind": "quality", "severity": "warn", "title": f"{c['name']} is {c['missing_pct']}% empty",
                       "detail": f"Over a fifth of rows have no value for {c['name']}, so anything based on it may be misleading.",
                       "action": f"Fill in or remove the missing {c['name']} values before relying on results that use it."})
+    dups = p.get("duplicates", 0)
+    has_id = any(ID_RECORD_HINT.search(c["name"]) and c["kind"] != "date" and c["unique"] >= 0.9 * max(len(df) - dups, 1) for c in p["columns"])   # a real record number: almost every value distinct
+    if has_id and dups >= 2 and dups / max(len(df), 1) >= 0.005:     # identical rows INCLUDING an order/invoice number are double entries; without one they can be genuine repeat sales
+        f.append({"kind": "quality", "severity": "warn", "title": f"{dups:,} rows are exact duplicates",
+                  "detail": "Each of these rows repeats every value of another row, including its order or invoice number, so totals may be counted twice.",
+                  "action": "Check whether they are double entries and remove the extras before trusting totals."})
+    for c in p["columns"]:
+        if c.get("label_variant_groups"):
+            ex = c["label_variants"][0]
+            f.append({"kind": "quality", "severity": "warn", "title": f"{c['name']} has inconsistent labels",
+                      "detail": f"Spellings such as {' and '.join(repr(x) for x in ex[:2])} are counted as different values, which splits totals and rankings.",
+                      "action": f"Standardise the spelling in {c['name']} so each group is counted once."})
     if not m: return f
+    mc = next((c for c in p["columns"] if c["name"] == m), {})
+    if mc.get("outliers"):
+        share, ex = mc.get("outlier_share"), mc.get("outlier_examples", [])
+        f.append({"kind": "quality", "severity": "warn" if (share or 0) >= 0.2 else "info", "title": f"{mc['outliers']:,} unusual {m} values",
+                  "detail": f"These records are far outside the normal range (largest: {', '.join(_n(x) for x in ex)})."
+                            + (f" Together they make up {share * 100:.0f}% of total {m}." if share and share >= 0.05 else ""),
+                  "action": "Check the largest records to confirm they are genuine (for example a big donor or bulk order) and not typing mistakes.",
+                  "evidence": {"column": m, "count": mc["outliers"], "examples": ex, "share_of_total": share}})
+    ent = p.get("entity_col")
+    if ent and agg_for(m) == "sum":
+        g = df.groupby(ent)[m].sum().sort_values(ascending=False)
+        if len(g) >= 15 and (g >= 0).all() and g.sum() > 0:
+            k = 5; share = float(g.head(k).sum() / g.sum())
+            if share >= 0.25:
+                f.append({"kind": "driver", "severity": "info", "title": f"Top {k} {ent} give {share * 100:.0f}% of {m}",
+                          "detail": f"{', '.join(str(x) for x in g.index[:3])} lead the list. Losing one of them would be felt.",
+                          "action": f"Look after your top {ent} personally and watch for any that stop appearing.",
+                          "evidence": {"entity": ent, "top": [{"name": str(i), "value": float(v)} for i, v in g.head(k).items()], "share": share}})
     if d:
         s, freq = period_series(df, d, m)
         n = len(s); unit = UNIT[freq]

@@ -57,3 +57,26 @@ def test_total_row_is_not_double_counted():
     plain, with_total = load("title_rows_total.xlsx"), load("total_row_literal.xlsx")
     assert not plain.astype(str).apply(lambda c: c.str.fullmatch(r"(?i)\s*total\s*")).any().any()
     assert not with_total.astype(str).apply(lambda c: c.str.fullmatch(r"(?i)\s*(grand\s+)?total\s*")).any().any()
+
+
+def test_data_health_fields_and_quality_findings():
+    import pandas as pd, numpy as np
+    rng = np.random.default_rng(3); n = 400
+    df = pd.DataFrame({"invoice_no": [f"INV{i}" for i in range(n)], "date": pd.date_range("2025-01-01", periods=n, freq="D"),
+                       "customer_name": rng.choice([f"Client {i}" for i in range(40)], n), "item": rng.choice(["Hoodie", "hoodie", "Mug"], n),
+                       "amount": rng.integers(10, 100, n).astype(float)})
+    df.loc[5, "amount"] = 50_000.0                                                     # one huge record
+    df = pd.concat([df, df.iloc[10:16]], ignore_index=True)                            # six double entries (same invoice numbers)
+    p = A.profile(df); ins = {i["title"]: i for i in A.insights(df, p)}
+    amount = next(c for c in p["columns"] if c["name"] == "amount")
+    assert amount["outliers"] >= 1 and amount["outlier_examples"][0] == 50_000.0 and amount["outlier_share"] > 0.3
+    assert next(c for c in p["columns"] if c["name"] == "item")["label_variant_groups"] == 1
+    assert p["duplicates"] == 6 and p["entity_col"] == "customer_name"
+    assert any("exact duplicates" in t for t in ins) and any("inconsistent labels" in t for t in ins) and any("unusual amount" in t for t in ins)
+    assert any(c["type"] == "hist" for c in A.starter_charts(df, p)) and any(c["title"].startswith("Top customer_name") for c in A.starter_charts(df, p))
+
+
+def test_identical_rows_without_a_record_number_are_not_called_duplicates():
+    from app import samples
+    df = A.preprocess_df(samples.raw_sample("shop")); p = A.profile(df)
+    assert p["duplicates"] > 0 and not any("duplicates" in i["title"] for i in A.insights(df, p))

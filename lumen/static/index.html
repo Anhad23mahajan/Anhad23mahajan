@@ -596,6 +596,7 @@
           <p class="sub">Charts picked automatically from your columns.</p>
           <div class="charts" id="charts"></div>
         </section>
+        <section id="health" aria-labelledby="health-h"></section>
         <section>
           <h2>Data Preview</h2>
           <p class="sub">View your data before and after automatic cleaning.</p>
@@ -685,6 +686,11 @@
       { x: mi >= 0 ? [x[mi]] : [], y: mi >= 0 ? [y[mi]] : [], mode: 'markers+text', text: mi >= 0 ? ['Peak ' + fmt(y[mi])] : [], textposition: 'top center', marker: { color: C.amber, size: 9 }, hoverinfo: 'skip', cliponaxis: false }],
         lay({ xaxis: { tickformat: tf }, rest: { showlegend: false, margin: { l: 56, r: 16, t: 26, b: 36 } } }), cfg)
     }
+    function histChart(el, c) {
+      if (!hasPlotly || !c.x || !c.x.length) { el.innerHTML = '<p class="note">No values to chart.</p>'; return }
+      Plotly.newPlot(el, [{ type: 'bar', x: c.x, y: c.y, marker: { color: C.teal }, hovertemplate: '%{x}: %{y:,} records<extra></extra>' }],
+        lay({ xaxis: { tickangle: -40, automargin: true, showgrid: false, tickfont: { size: 10 } }, yaxis: { title: { text: 'Records', standoff: 6 }, tickformat: ',d' }, rest: { showlegend: false, bargap: .08, margin: { l: 56, r: 12, t: 8, b: 78 } } }), cfg)
+    }
     function barH(el, x, y) {
       // handles: negatives (axis now spans below zero), long labels (truncated, full label on hover; ticks are index-based so
       // truncated duplicates cannot merge), nulls, empty input
@@ -700,7 +706,7 @@
 
     function render(d) {
       sid = d.session_id; askSeq++; asking = false; busy($('#go'), false); $('#q').value = ''; document.querySelectorAll('#charts .js-plotly-plot, #fchart.js-plotly-plot, #rc').forEach(g => { try { hasPlotly() && Plotly.purge(g) } catch (e) { } }); $('#hero').style.display = 'none'; $('#app').style.display = 'grid'; $('#again').style.display = 'block';
-      LX.state.session = d; LX.state.fc = null;
+      LX.state.session = d; LX.state.fc = null; { const hs = $('#health'); if (hs) hs.innerHTML = LX.healthHtml(d.profile) }
       const nar = d.narrative || {}, insights = d.insights || [];
       $('#sum').textContent = nar.summary || '';
       $('#sumsrc').textContent = LX.sourceLabel(nar.source); LX.fcClear();
@@ -754,7 +760,7 @@
           const el = document.createElement('div'); el.className = 'chart'; el.setAttribute('role', 'img');
           const lo = Math.min(...c.y), hi = Math.max(...c.y);
           el.setAttribute('aria-label', `${c.title}. ${c.type === 'line' ? `${c.y.length} points from ${fmt(c.y[0])} to ${fmt(c.y[c.y.length - 1])}, peak ${fmt(hi)}, low ${fmt(lo)}.` : `Top: ${c.x[0]} (${fmt(c.y[0])}); ${c.x.length} categories.`}`);
-          cell.appendChild(el); $('#charts').appendChild(cell); c.type === 'line' ? lineChart(el, c) : barH(el, c.x, c.y);
+          cell.appendChild(el); $('#charts').appendChild(cell); c.type === 'line' ? lineChart(el, c) : c.type === 'hist' ? histChart(el, c) : barH(el, c.x, c.y);
         });
         if (p.date_cols.length && p.metric_cols.length) runForecast();
         const h3 = $('#sumh'); if (h3) h3.focus({ preventScroll: true });
