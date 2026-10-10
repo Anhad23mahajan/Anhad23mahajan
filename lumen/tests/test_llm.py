@@ -183,3 +183,24 @@ def test_describe_handles_real_timestamps_from_duckdb():
     res = pd.DataFrame({"month": pd.to_datetime(["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01"]), "revenue": [100.0, 250.0, 80.0, 120.0]})
     rows = res.astype(object).where(res.notna(), None).values.tolist()
     assert "from Jan 2025 to Apr 2025" in llm.describe(["month", "revenue"], rows)
+
+
+def test_call_budget_stops_a_slow_failing_call(monkeypatch):
+    monkeypatch.setattr(llm, "CALL_BUDGET_S", -1)
+    c = use([plan(SQL, CHECK)])
+    with pytest.raises(llm.AIUnavailable): llm.answer(DF, "q")
+    assert not c.models.calls                                                  # budget already spent: no request is even sent
+
+
+def test_response_whose_text_property_raises_is_treated_as_blocked():
+    class Weird:
+        @property
+        def text(self): raise RuntimeError("no text part")
+    class M:
+        calls = 0
+        def generate_content(self, model, contents, config):
+            M.calls += 1
+            return Weird() if M.calls == 1 else Resp(plan(SQL, CHECK) if M.calls == 2 else expl("Hoodie 900."))
+    class C: models = M()
+    llm._client = C()
+    assert llm.answer(DF, "q")["status"] == "checked"

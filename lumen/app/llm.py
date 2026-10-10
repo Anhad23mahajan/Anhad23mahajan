@@ -11,6 +11,8 @@ from . import sqlguard
 from .analytics import clean
 
 DEFAULT_MODELS = ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
+CALL_BUDGET_S = 45                  # one generate() call never keeps a worker thread longer than this, across all models
+REQUEST_TIMEOUT_MS = 20000          # a single HTTP request to Gemini
 _client = None                      # tests replace this with a stub
 _cool: dict[str, tuple] = {}        # model -> (time before which we do not try it again, "quota" | "gone")
 _lock = threading.Lock()
@@ -67,7 +69,8 @@ def _get_client():
     global _client
     if _client is None:
         from google import genai
-        _client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+        from google.genai import types
+        _client = genai.Client(api_key=os.environ["GEMINI_API_KEY"], http_options=types.HttpOptions(timeout=REQUEST_TIMEOUT_MS))
     return _client
 
 
@@ -75,7 +78,9 @@ def generate(prompt: str, schema):
     """Call Gemini, fail over across models, return a validated `schema` instance or raise AIUnavailable."""
     from google.genai import errors
     client, last, now, tried = _get_client(), "busy", time.monotonic(), 0
+    deadline = now + CALL_BUDGET_S
     for model in model_order():
+        if time.monotonic() > deadline: break
         until, why = _cool.get(model, (0, ""))
         if until > now:
             if why == "quota": last = "quota"                                         # every model cooling down for quota => report quota, not "busy"
@@ -83,9 +88,11 @@ def generate(prompt: str, schema):
         tried += 1
         plain = False
         for attempt in range(2):
+            if time.monotonic() > deadline: break
             try:
                 resp = client.models.generate_content(model=model, contents=prompt, config=_config(schema, plain))
-                text = (resp.text or "").strip()
+                try: text = (resp.text or "").strip()
+                except Exception: text = ""                                            # accessing .text can raise when the reply has no text part
                 if not text: last = "blocked"; break                                 # blocked or empty: try the next model
                 text = re.sub(r"^```(?:json)?|```$", "", text, flags=re.M).strip()
                 return schema.model_validate_json(text)
