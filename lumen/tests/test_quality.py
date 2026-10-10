@@ -195,3 +195,13 @@ def test_weekly_rows_are_compared_per_reporting_date_and_direction_agrees_with_t
     k = next(k for k in p["kpis"] if "delta" in k); f = [i for i in A.insights(df, p) if i["kind"] == "change"]
     assert "reporting date" in k["vs"] and k["delta"] < 0                      # per week of data, June is slightly LOWER
     assert not f or "fell" in f[0]["title"]                                    # and the finding must agree with the KPI, never say 'rose'
+
+
+def test_unusual_values_finding_lists_the_largest_records():
+    from app import samples
+    df = A.preprocess_df(samples.raw_sample("donations")); p = A.profile(df)
+    f = next(x for x in A.insights(df, p) if x["title"].endswith("unusual amount_usd values"))
+    ev = f["evidence"]
+    assert 1 <= len(ev["records"]) <= 10 and ev["column"] in ev["record_columns"] and "records" not in ev["record_columns"]
+    top = ev["records"][0][ev["record_columns"].index(ev["column"])]
+    assert top == df["amount_usd"].max()                                   # the biggest gift leads the table

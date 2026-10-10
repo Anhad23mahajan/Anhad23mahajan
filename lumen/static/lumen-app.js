@@ -124,9 +124,16 @@
     if (isNum(e.robust_score)) h += `<dt>Outlier score</dt><dd>${trim(e.robust_score, 1)} <span class="muted">(higher means more unusual)</span></dd>`;
     return h + '</dl>';
   }
+  function recordsEvidence(e) {
+    if (!Array.isArray(e.records) || !e.records.length || !Array.isArray(e.record_columns)) return '';
+    const cell = (v, c) => isNum(v) && c === e.column ? tnum(v) : esc(v ?? '');
+    return '<p class="ev-pv"><b>The largest records behind this:</b> check each one against your source.</p><div class="ev-scroll" tabindex="0" role="region" aria-label="Largest records"><table class="evt"><thead><tr>'
+      + e.record_columns.map(c => `<th scope="col"${c === e.column ? ' class="r"' : ''}>${esc(c)}</th>`).join('') + '</tr></thead><tbody>'
+      + e.records.map(r => '<tr>' + r.map((v, k) => `<td${e.record_columns[k] === e.column ? ' class="r"' : ''}>${cell(v, e.record_columns[k])}</td>`).join('') + '</tr>').join('') + '</tbody></table></div>';
+  }
   function evidenceHtml(i) {
     const e = i && i.evidence; if (!e || typeof e !== 'object') return '';
-    const inner = i.kind === 'change' ? changeEvidence(e) : i.kind === 'anomaly' ? anomalyEvidence(e) : '';
+    const inner = i.kind === 'change' ? changeEvidence(e) : i.kind === 'anomaly' ? anomalyEvidence(e) : i.kind === 'quality' ? recordsEvidence(e) : '';
     return inner ? `<details class="nums"><summary>Show the numbers</summary><div class="ev">${inner}</div></details>` : '';
   }
   LX.insightHtml = i => {

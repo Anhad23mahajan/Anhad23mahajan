@@ -646,6 +646,15 @@ def _n(x):
     x = float(x); return f"{x:,.0f}" if abs(x) >= 1000 else f"{x:,.1f}" if abs(x) >= 1 else f"{x:.3g}"
 
 
+def _record_table(df, p, m, d, n_out):
+    """The largest records behind an 'unusual values' finding, as a small table: the user can open the rows instead of taking the count on trust."""
+    cols = [c for c in ([d] if d else []) + ([p["entity_col"]] if p.get("entity_col") else []) + p["cat_cols"][:2] + [m] if c in df.columns]
+    cols = list(dict.fromkeys(cols))[:6]
+    top = df.loc[df[m].nlargest(min(10, n_out)).index, cols]
+    rows = [[(v.strftime("%d %b %Y") if isinstance(v, pd.Timestamp) else v) if pd.notna(v) else "" for v in r] for r in top.itertuples(index=False)]
+    return {"record_columns": cols, "records": rows}
+
+
 def insights(df, p):
     """Statistical findings, each with plain-English detail and a suggested action."""
     f, m, d = [], p["metric"], p["date"]
@@ -687,7 +696,7 @@ def insights(df, p):
                   "detail": f"These records are far outside the normal range (largest: {'; '.join(who)})."
                             + (f" Together they make up {share * 100:.0f}% of total {m}." if share and share >= 0.05 else ""),
                   "action": "Check the largest records to confirm they are genuine (for example a big donor or bulk order) and not typing mistakes.",
-                  "evidence": {"column": m, "count": mc["outliers"], "examples": ex, "share_of_total": share}})
+                  "evidence": {"column": m, "count": mc["outliers"], "examples": ex, "share_of_total": share, **_record_table(df, p, m, d, mc["outliers"])}})
     if agg_for(m, df) == "sum":
         neg = df[m][df[m] < 0]
         if len(neg) >= 3:
