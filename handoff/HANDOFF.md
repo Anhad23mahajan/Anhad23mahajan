@@ -120,3 +120,17 @@ The QA, ML and UI agents were terminated by the session rate limit before sendin
 (handoff/agent_work/{qa,ml,ui}); newer UI files (extra screenshots incl. sample-dataset picker, trust panel, report/PDF export, verify jsons, lumen-patched,
 snippets) were added in a second save. Treat all of it as UNREVIEWED candidate work: read the scripts, re-run them, and verify numbers before using anything.
 The security and both research agents DID finish; their conclusions are in section 4. `qa/patched/qa_fixes.patch` is an unreviewed candidate patch set.
+
+## 11. STATE AT ~06:00 IST OCT 10 (supersedes sections 3, 5, 8 where they conflict)
+DONE and pushed on branch claude/confident-brown-ayxkb3 (HEAD f4e9953 or later), all under lumen/, 219 tests pass (python -m pytest -q in lumen/, venv at /home/user/work/venv_clean from `pip install -r requirements-dev.txt`, Python 3.13):
+- Backend rewritten: app/sqlguard.py (parser guard + sandbox), app/limits.py, app/llm.py (fail-over, 2nd-query cross-check at 8 sig digits, number grounding, narrative, demo mode, describe()), app/samples.py (shop/donations/inventory + stored questions), app/main.py, app/forecasting.py (from ML agent, tested), app/drivers.py (bridge + daily anomalies, own tests), analytics.py (QA patch + wiring).
+- UI: static/index.html + lumen-app.js + lumen-extra.css + lumen-fixes.css + vendor/ (local Plotly/fonts); forecast panel has NO confidence badge by design.
+- Evidence: tests/ (sqlguard 75, llm, api, drivers, forecasting, fixtures 44 files, evals), evals/ (cases, scoring, run_eval needs key, bench_anomaly, bench_forecast).
+- Measured: spike FP 2.7% (4/150), 5x spike 60/60, 3x 27%, 2x ~2%; forecaster median MASE 0.820 vs old HW 0.812 (NO accuracy gain: do not claim), beats naive 73%, 95% range covers 93.7% (old 95.2%); confidence labels did not predict accuracy; memory 147 MB idle / 314 MB peak.
+- Docs: README (placeholders LIVE_URL_PLACEHOLDER / VIDEO_URL_PLACEHOLDER only), docs/architecture.png + .mmd, docs/screenshots/*.png (real build, demo mode).
+- delivery/: START_HERE.md, deliver.ps1 (clones this branch + Eshaan's repo, copies lumen/, 11 logical commits under the user's git identity, aborts if Eshaan's main moved past 66c6405), set-links.ps1, DEPLOY_RENDER.md, VIDEO_SCRIPT.md, DEVPOST_TEXT.md. These were also sent to the user as files.
+NOT DONE / depends on the user:
+- User runs deliver.ps1 (push to Eshaan1e24/Lumen main), deploys on Render (needs Gemini key as env secret), cron-job.org keepalive, records + uploads video (YouTube Public), runs set-links.ps1, fills Devpost, submits by ~17:30 IST (deadline 21:30 IST).
+- No live Gemini test has ever run (no key in sandbox). First real-AI run happens on the deployed site; if answers misbehave, check llm.generate() error handling and prompts. `GEMINI_API_KEY=... python -m evals.run_eval` measures accuracy (writes evals/results/latest.md) - optional.
+- PowerShell scripts were never executed (no PowerShell here); if the user reports an error, fix the script.
+Useful: if asked to change anything after delivery, remember the user commits as himself; give patches as file edits + a short PowerShell snippet, never push to Eshaan's repo from here (no access).
