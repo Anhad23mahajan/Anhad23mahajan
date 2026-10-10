@@ -130,12 +130,18 @@ def daily_anomalies(df: pd.DataFrame, date: str, metric: str, dims: list, mean_m
         obs, e = float(y[t]), float(exp[t]); up = obs > e
         who = _attribute(d, date, metric, dims, t)
         out.append({"kind": "anomaly", "severity": "warn", "title": f"{'Spike' if up else 'Drop'} on {t.strftime('%d %b %Y')}",
-                    "detail": f"{metric} was {_fmt(obs)} that day, about {abs(obs - e) / abs(e) * 100:.0f}% {'above' if up else 'below'} the {_fmt(e)} expected for a {t.strftime('%A')} at that time of year."
+                    "detail": f"{metric} was {_fmt(obs)} that day, {_how_far(obs, e)} the {_fmt(e)} expected for a {t.strftime('%A')} at that time of year."
                               + (f" Most of the difference came from {who[0]} ({'+' if who[1] >= 0 else '-'}{_fmt(abs(who[1]))})." if who else ""),
                     "action": "Check whether this was a real event (a campaign, a big order or donor) or a data-entry mistake.",
                     "evidence": {"date": t.strftime("%Y-%m-%d"), "observed": obs, "expected": e, "robust_score": float(score[t]),
                                  "segment": None if not who else {"dimension": who[2], "value": who[0], "change": who[1]}}})
     return out
+
+
+def _how_far(obs: float, exp: float) -> str:
+    """'about 8 times' for big spikes (a '718% above' figure is hard to read), else 'about 40% above/below'."""
+    if exp > 0 and obs / exp >= 3: return f"about {obs / exp:.0f} times"
+    return f"about {abs(obs - exp) / abs(exp) * 100:.0f}% {'above' if obs > exp else 'below'}"
 
 
 def _attribute(d, date, metric, dims, t):

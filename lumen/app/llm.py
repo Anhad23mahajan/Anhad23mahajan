@@ -130,7 +130,7 @@ text matching with ILIKE; at most 30 rows unless the user asks for more."""
 
 def _norm_cell(v):
     if v is None or (isinstance(v, float) and v != v): return None
-    if isinstance(v, (int, float)): return float(f"{float(v):.6g}")
+    if isinstance(v, (int, float)): return float(f"{float(v):.8g}")      # tight enough that +1 on a 2.9M total is caught; loose enough for float summation order
     return str(v)
 
 
@@ -282,7 +282,7 @@ def _facts_text(facts) -> str: return json.dumps(clean([{k: f[k] for k in ("titl
 
 def narrate(facts: list, meta: dict, ai: bool = True) -> dict:
     """Plain-language summary + next steps. Built in code unless the AI is available AND quotes only numbers found in the findings."""
-    fallback = {"summary": " ".join(f["detail"] for f in facts[:2]) or "No strong patterns found yet.",
+    fallback = {"summary": ("Key points: " + "; ".join(f["title"] for f in facts[:3]) + ".") if facts else "No strong patterns found yet.",
                 "recommendations": [f["action"] for f in facts if f.get("action")][:4], "source": "template"}
     if not ai or not available() or not facts: return fallback
     key = _facts_text(facts)

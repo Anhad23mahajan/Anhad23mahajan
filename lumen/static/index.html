@@ -548,7 +548,7 @@
       <div class="hero-actions">
         <div id="drop">
           <h2>Add your spreadsheet</h2>
-          <p>CSV or Excel, up to 25 MB. Your file is held in memory, not stored by Lumen.</p>
+          <p>CSV or Excel, up to 5 MB on this demo. Your file is held in memory, not stored by Lumen.</p>
           <div class="row"><button class="btn" id="pick">Choose a file</button></div>
           <input type="file" id="file" accept=".csv,.xlsx,.xls" hidden>
         </div>
@@ -655,27 +655,27 @@
         let d = j.detail; if (Array.isArray(d)) d = d.map(x => x.msg || '').filter(Boolean).join('; ');   // FastAPI 422 returns a list: was shown as "[object Object]"
         d = String(d || ''); const expired = /session expired/i.test(d);
         const err = new Error(expired ? 'Your session expired (the server restarted or timed out). Choose your file again to continue.' : (d || (r.status >= 500 ? 'The server had a problem. Please try again.' : 'Something went wrong. Try again.')));
-        err.expired = expired; throw err
+        err.expired = expired; err.status = r.status; throw err
       }
       return j
     }
-    const busy = (el, on) => { el.classList.toggle('busy', on); el.setAttribute('aria-busy', on); if ('disabled' in el) el.disabled = on; if (el.id === 'drop') el.querySelectorAll('button').forEach(b => b.disabled = on) };
+    const busy = (el, on) => { el.classList.toggle('busy', on); el.setAttribute('aria-busy', on); if ('disabled' in el) el.disabled = on; if (el.id === 'drop' || el.id === 'samples') el.querySelectorAll('button').forEach(b => b.disabled = on) };
 
     let loadSeq = 0;
     async function load(p) {
       const my = ++loadSeq;
-      $('#uerr').textContent = ''; busy($('#drop'), true); $('#uerr').style.color = '#586674'; $('#uerr').innerHTML = '<span class="spin"></span>Reading your data…';
-      try { const d = await p; if (my !== loadSeq) return; $('#uerr').textContent = ''; render(d) } catch (e) { if (my !== loadSeq) return; $('#uerr').style.color = ''; $('#uerr').textContent = e.message; $('#file').value = '' } finally { if (my === loadSeq) busy($('#drop'), false) }
+      $('#uerr').textContent = ''; busy($('#drop'), true); busy($('#samples'), true); $('#uerr').style.color = '#586674'; $('#uerr').innerHTML = '<span class="spin"></span>Reading your data…';
+      try { const d = await p; if (my !== loadSeq) return; $('#uerr').textContent = ''; render(d) } catch (e) { if (my !== loadSeq) return; $('#uerr').style.color = ''; $('#uerr').textContent = e.message; $('#file').value = '' } finally { if (my === loadSeq) { busy($('#drop'), false); busy($('#samples'), false) } }
     }
     const send = f => { if (!f) return; const fd = new FormData(); fd.append('file', f); load(api('/api/upload', { method: 'POST', body: fd })) };
     $('#pick').onclick = () => $('#file').click(); $('#file').onchange = e => { send(e.target.files[0]); };
-    $('#demo').onclick = () => load(api('/api/demo', { method: 'POST' }));
+    window.loadSample = name => load(api('/api/sample', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) }));
     const drop = $('#drop');['dragover', 'dragenter'].forEach(t => drop.addEventListener(t, e => { e.preventDefault(); drop.classList.add('over') }));
     ['dragleave', 'drop'].forEach(t => drop.addEventListener(t, e => { e.preventDefault(); drop.classList.remove('over') }));
     drop.addEventListener('drop', e => send(e.dataTransfer.files[0]));
     // dropping a file anywhere else would make the browser navigate away to the file and lose the session
     ['dragover', 'drop'].forEach(t => window.addEventListener(t, e => { if (!e.target.closest || !e.target.closest('#drop')) e.preventDefault() }));
-    $('#again').onclick = () => { $('#app').style.display = 'none'; $('#hero').style.display = 'grid'; $('#again').style.display = 'none'; $('#file').value = ''; $('#q').value = ''; $('#ans').innerHTML = ''; $('#uerr').textContent = ''; askSeq++; asking = false; busy($('#go'), false); window.scrollTo(0, 0); $('#demo').focus() };
+    $('#again').onclick = () => { $('#app').style.display = 'none'; $('#hero').style.display = 'grid'; $('#again').style.display = 'none'; $('#file').value = ''; $('#q').value = ''; $('#ans').innerHTML = ''; $('#uerr').textContent = ''; askSeq++; asking = false; busy($('#go'), false); $('#notices').innerHTML = ''; $('#qinfo').textContent = ''; $('#qerr').textContent = ''; LX.reset(); window.scrollTo(0, 0); $('#pick').focus() };
 
     function lineChart(el, c) {
       const x = c.x, y = c.y; let mi = y.length ? y.indexOf(Math.max(...y)) : -1;
@@ -700,14 +700,22 @@
 
     function render(d) {
       sid = d.session_id; askSeq++; asking = false; busy($('#go'), false); $('#q').value = ''; document.querySelectorAll('#charts .js-plotly-plot, #fchart.js-plotly-plot, #rc').forEach(g => { try { hasPlotly() && Plotly.purge(g) } catch (e) { } }); $('#hero').style.display = 'none'; $('#app').style.display = 'grid'; $('#again').style.display = 'block';
-      $('#sum').textContent = d.narrative.summary;
-      $('#ins').innerHTML = d.insights.length ? d.insights.map(i => `<div class="ins ${i.severity}"><b>${esc(i.title)}</b><p>${esc(i.detail)}</p></div>`).join('') : '<p class="note">No strong patterns found. Try asking a question.</p>';
-      $('#recs').innerHTML = [...new Set(d.narrative.recommendations)].map(r => `<li>${esc(r)}</li>`).join('');
+      LX.state.session = d; LX.state.fc = null;
+      const nar = d.narrative || {}, insights = d.insights || [];
+      $('#sum').textContent = nar.summary || '';
+      $('#sumsrc').textContent = LX.sourceLabel(nar.source); LX.fcClear();
+      $('#notices').innerHTML = LX.noticesHtml(d.notices);
+      $('#ins').innerHTML = insights.length ? insights.map(LX.insightHtml).join('') : '<p class="note">No strong patterns found. Try asking a question.</p>';
+      $('#recs').innerHTML = [...new Set(nar.recommendations || [])].map(r => `<li>${esc(r)}</li>`).join('');
       const p = d.profile; $('#meta').textContent = `${p.rows.toLocaleString()} rows, ${p.columns.length} columns. Main measure: ${p.metric || 'none found'}.`;
-      $('#kpis').innerHTML = (p.kpis || []).map(k => `<div class="kpi"><small>${esc(k.label)}</small><strong title="${esc(k.kind === 'int' ? k.value.toLocaleString() : full(k.value))}">${k.kind === 'int' ? k.value.toLocaleString() : fmt(k.value)}</strong>${k.delta != null ? `<em class="${Math.round(k.delta) > 0 ? 'up' : Math.round(k.delta) < 0 ? 'down' : ''}">${Math.round(k.delta) > 0 ? '+' : ''}${Math.round(k.delta)}% <span style="font-weight:400;color:var(--muted)">${esc(k.vs)}</span></em>` : `<em>${esc(k.note || '')}</em>`}</div>`).join('');
-      $('#chips').innerHTML = d.suggested_questions.map(q => `<button class="chip">${esc(q)}</button>`).join('');
+      $('#kpis').innerHTML = (p.kpis || []).map(k => `<div class="kpi"><small>${esc(k.label)}</small><strong title="${esc(k.kind === 'int' ? (+k.value).toLocaleString() : full(k.value))}">${k.kind === 'int' ? (+k.value).toLocaleString() : fmt(k.value)}</strong>${k.delta != null ? `<em class="${Math.round(k.delta) > 0 ? 'up' : Math.round(k.delta) < 0 ? 'down' : ''}">${Math.round(k.delta) > 0 ? '+' : ''}${Math.round(k.delta)}% <span style="font-weight:400;color:var(--muted)">${esc(k.vs)}</span></em>` : `<em>${esc(k.note || '')}</em>`}</div>`).join('');
+      const sq = d.suggested_questions || [], chipsOn = sq.length && (d.ai || d.sample);   // an upload with no AI key cannot answer any question, so its chips would only lead to a refusal
+      $('#chips').innerHTML = sq.map(q => `<button class="chip" type="button">${esc(q)}</button>`).join('');
+      $('#chips-wrap').hidden = !chipsOn;
       document.querySelectorAll('.chip').forEach(b => b.onclick = () => { $('#q').value = b.textContent; ask() });
-      $('#qerr').classList.toggle('info', !d.ai); $('#qerr').textContent = d.ai ? '' : 'Questions are switched off on this server (no Gemini API key). Everything else works without it.'; $('#ans').innerHTML = '';
+      $('#q').placeholder = d.ai ? 'e.g. Which product sold the most last quarter?' : d.sample ? 'Pick a suggested question below (demo mode)' : 'Questions need an API key on this server';
+      $('#qmode').textContent = d.ai ? '' : d.sample ? 'Demo mode: no AI key is set on this server. The suggested questions below run stored queries on the data right now; typing your own question needs an AI key.' : 'Questions are switched off on this server (no Gemini API key). Everything else works without it.';
+      $('#qerr').textContent = ''; $('#qinfo').textContent = ''; $('#ans').innerHTML = '';
       $('#charts').innerHTML = '';
       $('#fv').innerHTML = p.metric_cols.map(c => `<option ${c === p.metric ? 'selected' : ''}>${esc(c)}</option>`).join('');
       $('#fd').innerHTML = p.date_cols.map(c => `<option ${c === p.date ? 'selected' : ''}>${esc(c)}</option>`).join('');
@@ -757,13 +765,13 @@
     async function ask() {
       const q = $('#q').value.trim(); if (!q || (asking && q === askingQ)) return;   // ignore key-repeat / double submit of the SAME question; a different question supersedes the one in flight
       const my = ++askSeq; asking = true; askingQ = q;
-      $('#qerr').textContent = ''; busy($('#go'), true); $('#ans').innerHTML = '<p class="note"><span class="spin"></span>Working it out…</p>';
+      $('#qerr').textContent = ''; $('#qinfo').textContent = ''; busy($('#go'), true); $('#ans').innerHTML = '<p class="note"><span class="spin"></span>Working it out…</p>';
       try {
         const r = await api('/api/ask', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ session_id: sid, question: q }) });
         if (my !== askSeq) return;                                   // a newer question / dataset replaced this one: drop the stale answer
         const cols = r.columns || [], rows = r.rows || [], ch = r.chart || {}, first = rows[0] || [];
         const single = rows.length === 1 && (ch.type === 'number' || cols.length === 1);
-        let html = `<span class="badge ${r.verified ? 'ok' : 'chk'}">${r.verified ? 'Answer checked against the data' : 'Please double-check this one'}</span>`;
+        let html = LX.noteHtml(r) + LX.statusBadge(r);
         if (single) {
           let bi = cols.indexOf(ch.y); if (bi < 0 || typeof first[bi] !== 'number') bi = first.findIndex(v => typeof v === 'number');
           const li = first.findIndex((v, i) => i !== bi && typeof v === 'string');
@@ -771,11 +779,11 @@
           html += `<div class="big">${bi >= 0 ? (v == null ? '–' : Math.abs(v) >= 1e9 ? fmt(v) : full(v)) : (esc(day(v)) || '–')}</div>`;   // exact value; was fmt() => "9.0k" for 9,046
           if (li >= 0) html += `<div class="biglabel">${esc(cols[li])}: ${esc(day(first[li]))}</div>`;
         }
-        html += `<p class="a">${esc(r.answer)}</p>`; if (r.caveats) html += `<p class="note">${esc(r.caveats)}</p>`;
+        html += `<p class="a">${esc(r.answer)}</p>`; html += LX.caveatsHtml(r.caveats);
         const plottable = ['bar', 'line', 'pie'].includes(ch.type) && cols.indexOf(ch.x) >= 0 && cols.indexOf(ch.y) >= 0 && rows.length > 0;
         if (!single && plottable) html += '<div id="rc" class="chart" role="img" style="height:300px"></div>';
         const showAll = ch.type === 'table' || (!single && !plottable);                       // table answers: show the table, do not hide it in a collapsed <details>
-        html += `<details${showAll ? ' open' : ''}><summary>${showAll ? 'Result table and how this was worked out' : 'How this was worked out'}</summary><pre>${esc(r.sql)}</pre><div style="overflow:auto"><table><tr>${cols.map(c => `<th>${esc(c)}</th>`).join('')}</tr>${rows.slice(0, 50).map(x => `<tr>${x.map(v => `<td>${esc(cellv(v))}</td>`).join('')}</tr>`).join('')}</table></div>${rows.length > 50 ? `<p class="note">Showing the first 50 of ${rows.length.toLocaleString()} rows.</p>` : ''}</details>`;
+        html += LX.detailsHtml(r, cols, rows, showAll);
         $('#ans').innerHTML = html; if (single || !plottable) return;
         const xi = cols.indexOf(ch.x), yi = cols.indexOf(ch.y);
         const x = rows.map(r => r[xi]), y = rows.map(r => r[yi]); const isDate = /^\d{4}-\d{2}-\d{2}/.test(String(x[0]));
@@ -790,7 +798,11 @@
           else if (ch.type === 'line' || (isDate && ch.type !== 'pie')) Plotly.newPlot(rc, [{ x: x.map(day), y, text: y.map(full), mode: 'lines+markers', line: { color: C.teal, width: 2.5 }, marker: { size: 6 }, hovertemplate: '%{text}<extra></extra>' }], lay({ rest: { showlegend: false } }), cfg)
           else barH(rc, x.map(v => String(day(v))), y)
         })
-      } catch (e) { if (my !== askSeq) return; $('#ans').innerHTML = ''; $('#qerr').classList.remove('info'); $('#qerr').textContent = e.message }
+      } catch (e) {
+        if (my !== askSeq) return; $('#ans').innerHTML = '';
+        if ([400, 429, 503].includes(e.status)) $('#qinfo').textContent = e.message;       // rate limit / AI off / unanswerable: a calm note, the suggested questions still work
+        else $('#qerr').textContent = e.message
+      }
       finally { if (my === askSeq) { asking = false; busy($('#go'), false) } }
     }
     $('#go').onclick = ask; $('#q').onkeydown = e => { if (e.key === 'Enter' && !e.isComposing) ask() };
@@ -803,22 +815,8 @@
       try {
         const r = await api('/api/forecast', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ session_id: sid, date_col: $('#fd').value, value_col: $('#fv').value, periods: per }) });
         if (my !== fcSeq) return;
-        const f = r.forecast, h = r.history, last = h.x.length - 1;
-        const tf = r.freq === 'D' ? '%d %b %Y' : (r.freq === 'W' ? '%d %b' : '%b %Y');
-        const ht = r.freq === 'D' ? '%{x|%d %b %Y}: %{text}' : '%{x|%b %Y}: %{text}';
-        Plotly.newPlot('fchart', [
-          { x: h.x, y: h.y, text: h.y.map(full), mode: 'lines', name: 'Actual', line: { color: C.teal, width: 2.5 }, hovertemplate: ht + '<extra>Actual</extra>' },
-          { x: [...f.x, ...f.x.slice().reverse()], y: [...f.upper, ...f.lower.slice().reverse()], mode: 'lines', fill: 'toself', fillcolor: 'rgba(199,127,0,.16)', line: { width: 0 }, name: 'Likely range', hoverinfo: 'skip' },
-          { x: [h.x[last], ...f.x], y: [h.y[last], ...f.y], text: [h.y[last], ...f.y].map(full), mode: 'lines', name: 'Forecast', line: { color: C.amber, width: 2.5, dash: 'dot' }, hovertemplate: ht + '<extra>Forecast</extra>' }],
-          lay({
-            xaxis: { tickformat: tf }, rest: {
-              legend: { orientation: 'h', y: 1.12, x: 0 }, margin: { l: 56, r: 16, t: 30, b: 36 },
-              shapes: [{ type: 'line', x0: h.x[last], x1: h.x[last], yref: 'paper', y0: 0, y1: 1, line: { color: '#9AA7B1', width: 1, dash: 'dash' } }]
-            }
-          }), cfg);
-        $('#fchart').setAttribute('role', 'img'); $('#fchart').setAttribute('aria-label', `Forecast of ${$('#fv').value}: ${r.note}`);
-        $('#fnote').textContent = r.note.replace(/\b1 (month|week|day)s\b/g, '1 $1')
-      } catch (e) { if (my !== fcSeq) return; $('#ferr').textContent = e.message } finally { if (my === fcSeq) busy($('#fgo'), false) }
+        LX.drawForecast(r, $('#fv').value);
+      } catch (e) { if (my !== fcSeq) return; LX.fcClear(); $('#ferr').textContent = e.message } finally { if (my === fcSeq) busy($('#fgo'), false) }
     }
     $('#fgo').onclick = runForecast;
   </script>

@@ -160,3 +160,11 @@ def test_narrate_uses_ai_when_grounded_else_template():
 def test_stored_answer_runs_live_sql():
     r = llm.stored_answer(DF, {"sql": SQL, "chart": {"type": "bar", "x": "product", "y": "total"}})
     assert r["mode"] == "demo" and r["rows"][0] == ["Hoodie", 900.0] and not r["verified"]
+
+
+def test_off_by_one_on_a_large_total_is_caught():
+    big = pd.DataFrame({"product": ["A", "B"], "amount": [2_000_000.0, 870_000.0]})
+    use([plan("select sum(amount) as total from data", "select sum(amount) + 1 as total from data"), expl("The total is 2,870,000.")])
+    assert llm.answer(big, "q")["status"] == "disagree"
+    use([plan("select sum(amount) as total from data", "select sum(amount * 1.0) as total from data"), expl("The total is 2,870,000.")])
+    assert llm.answer(big, "q")["status"] == "checked"             # float summation noise is not a disagreement

@@ -20,7 +20,7 @@ Small shops, NGOs and student organisations collect sales, donations, stock and 
 | **Insights before you ask** | Computed in code, not by the AI: trend, spikes and drops (with the segment that caused them), data-quality warnings, concentration risk. |
 | **"What changed and why"** | The change between two equal periods is split into exact per-segment contributions that add up to the total change (checked in code), and into volume versus price when units are present. |
 | **Plain-English questions** | Gemini writes a read-only SQL query. Lumen runs it in a sandbox and checks the result (see below). You can always open the SQL and the rows. |
-| **Forecasts that are tested first** | The model is chosen by backtesting on your own history. The range comes from the model's own past errors. Lumen tells you whether it beat a simple guess and how confident to be. |
+| **Forecasts that are tested first** | The method is chosen by backtesting on your own history (naive, seasonal, smoothing and Theta models and their averages). The range comes from that model's own past errors. Lumen reports how it did against a simple repeat-the-last-value guess in those tests, uses simple methods on short histories, and declines when there is too little history. |
 | **Recommended next steps** | Phrased by the AI from the computed findings only; a template version is used when the AI is off or quotes a number that is not in the findings. |
 | **Works without AI** | Everything except free-text questions runs with no API key. Sample questions on the built-in datasets still work, using stored queries run live on the data. |
 
@@ -38,39 +38,50 @@ These checks catch many mistakes but not all. Two queries can share the same mis
 
 ## Architecture
 
+(Also as an image: [`docs/architecture.png`](docs/architecture.png).)
+
 ```mermaid
-flowchart LR
-  U["CSV / Excel upload or sample"] --> UP["FastAPI<br/>size, column and zip-bomb limits"]
-  UP --> P["pandas<br/>header finding, type detection, cleaning"]
-  P --> S[("In-memory session<br/>LRU + time limit")]
-  P --> F["Findings engine (code)<br/>trend, what-changed bridge,<br/>daily spikes, concentration"]
-  F --> N{"AI available<br/>and within limits?"}
-  N -- yes --> G1["Gemini: summary and next steps<br/>numbers must match the findings"]
-  N -- no --> T["Template summary"]
-  Q["Question"] --> RL["Rate limiter"]
-  RL --> G2["Gemini: SQL + second SQL"]
-  G2 --> V["Parser guard<br/>one read-only SELECT over data"]
-  V --> D["DuckDB sandbox<br/>no file or network, limits"]
-  S --> D
-  D --> X{"Two queries agree?"}
-  X --> E["Gemini: explanation"]
-  E --> NG{"Every number<br/>traces to the result?"}
-  NG -- no --> PL["Plain summary built in code"]
-  NG --> UI["Dashboard<br/>answer + checks + SQL"]
+flowchart TB
+  U["CSV / Excel upload or sample dataset"] --> UP["FastAPI: size, column and zip-bomb limits"]
+  UP --> P["pandas: header finding, type detection, cleaning"]
+  P --> S[("In-memory session: LRU + time limit")]
+  subgraph CODE["Computed in code, no AI needed"]
+    direction LR
+    F["Findings: trend, what-changed bridge, daily spikes, concentration"]
+    FC["Forecaster: backtest-selected model, range from past errors"]
+  end
+  S --> F
+  S --> FC
+  subgraph ASK["Plain-English questions, every answer checked"]
+    direction TB
+    Q["Question"] --> G2["Rate limit, then Gemini writes SQL + a second SQL"]
+    G2 --> V["Parser guard: one read-only SELECT over data"]
+    V --> D["DuckDB sandbox: no file or network access, time and memory limits"]
+    D --> X{"Do the two queries agree?"}
+    X --> E["Gemini writes the explanation"]
+    E --> NG{"Does every number trace to the result?"}
+    NG -- no --> PL["Plain summary built in code"]
+  end
+  S -.-> D
+  F --> N{"AI available and within limits?"}
+  N -- yes --> G1["Gemini: summary and next steps, numbers must match the findings"]
+  N -- no --> T["Template summary built from the findings"]
+  NG -- yes --> UI
   PL --> UI
-  F --> UI
-  S --> FC["Forecaster<br/>backtest-selected model,<br/>range from past errors"]
+  G1 --> UI
+  T --> UI
   FC --> UI
+  UI["Dashboard: findings, answer + checks + SQL, forecast with its own backtest"]
 ```
 
 ## Evidence
 
 Everything below is reproducible from this repository.
 
-- **Tests:** `python -m pytest -q` runs TESTCOUNT_PLACEHOLDER tests: the SQL attack suite, the fake-Gemini failure paths (quota, retired model, blocked reply, bad JSON, bad key, disagreeing queries, made-up numbers), the HTTP API end to end, the analytics and an ingestion regression suite of 25+ messy real-world-style files.
+- **Tests:** `python -m pytest -q` runs 217 tests: the SQL attack suite, the fake-Gemini failure paths (quota, retired model, blocked reply, bad JSON, bad key, disagreeing queries, made-up numbers), the HTTP API end to end, the analytics and an ingestion regression suite of 25+ messy real-world-style files.
 - **Spike detector** (`python -m evals.bench_anomaly`): on pure-noise series, false alarms in 4 of 150 (2.7%). A planted spike of 5 times a normal day or more is found 60 of 60 times; 3 times, 27%; 2 times, about 2%. Daily revenue from a handful of orders is noisy, so small spikes are not flagged. That is by design.
-- **Forecaster** (`python -m evals.bench_forecast`): FORECAST_BENCH_PLACEHOLDER
-- **Plain-English question accuracy** (`GEMINI_API_KEY=... python -m evals.run_eval`): 20 questions on the sample shop data, each scored against an answer computed independently in pandas; the harness also reports how many wrong answers Lumen's checks flagged. The benchmark itself is tested: every reference query reproduces the pandas answer (`tests/test_evals.py`). Live results are written to `evals/results/latest.md`. EVAL_PLACEHOLDER
+- **Forecaster** (`python -m evals.bench_forecast`): on 90 synthetic monthly, weekly and daily series with the last 6 periods held out, the forecaster is about as accurate as plain Holt-Winters (median MASE 0.820 against 0.812, where 1.0 is a seasonal-naive forecast and lower is better), and beats a repeat-the-last-value guess on 73% of series. Its 95% range contained the true value 93.7% of the time (Holt-Winters: 95.2%). The point is not extra accuracy: it chooses its method by testing, reports that test, and declines when history is too thin. We also tried a high/medium/low self-rating; it did not predict accuracy in this test, so Lumen does not show one.
+- **Plain-English question accuracy** (`GEMINI_API_KEY=... python -m evals.run_eval`): 20 questions on the sample shop data, each scored against an answer computed independently in pandas; the harness also reports how many wrong answers Lumen's checks flagged. The benchmark itself is tested: every reference query reproduces the pandas answer (`tests/test_evals.py`). Live results are written to `evals/results/latest.md`. No live accuracy figure is quoted here because it needs a Gemini key to measure; run the command to get yours.
 - **Memory:** measured on the real server with the pinned dependencies: 147 MB idle, 314 MB peak after loading all three samples, forecasting each and uploading a 4.9 MB, 185,000-row file. That fits a 512 MB free host.
 
 ## Privacy and honest limits
