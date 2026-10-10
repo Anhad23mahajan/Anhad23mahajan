@@ -28,7 +28,7 @@ def test_bridge_adds_up_and_finds_planted_segment():
     ev = f["evidence"]; top = ev["contributions"][0]
     assert top["segment"] == "B" and top["change"] > 0
     assert ev["contributions_sum_to_change"]
-    assert abs(ev["current_total"] - ev["previous_total"] - ev["change"]) < 1e-6
+    assert abs(ev["current_total"] - ev["previous_total"] * ev["like_for_like_scale"] - ev["change"]) < 1e-6      # change is like for like (July has 31 days, June 30)
 
 
 def test_price_volume_split_is_exact_and_attributes_price_rise():

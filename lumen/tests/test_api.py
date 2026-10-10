@@ -117,3 +117,20 @@ def test_security_headers_and_static_assets():
     assert "cdn.plot.ly" not in r.text and "fonts.googleapis.com" not in r.text
     assert client.get("/assets/vendor/plotly-basic-2.35.2.min.js").status_code == 200
     assert client.get("/assets/../app/main.py").status_code in (404, 400)
+
+
+def test_user_can_correct_the_main_measure_and_date():
+    d = open_sample("inventory"); sid = d["session_id"]; assert d["profile"]["metric"] == "cost"
+    r = client.post("/api/reanalyze", json={"session_id": sid, "metric": "units_shipped"})
+    assert r.status_code == 200 and r.json()["profile"]["metric"] == "units_shipped" and r.json()["session_id"] == sid
+    assert any("units_shipped" in i["title"] or "units_shipped" in i["detail"] for i in r.json()["insights"]) or r.json()["profile"]["kpis"][1]["label"].endswith("units_shipped")
+    assert client.post("/api/reanalyze", json={"session_id": sid, "metric": "product"}).status_code == 400
+    assert client.post("/api/reanalyze", json={"session_id": sid, "date": "cost"}).status_code == 400
+    assert client.post("/api/reanalyze", json={"session_id": "nope", "metric": "cost"}).status_code == 404
+    recs = client.post("/api/reanalyze", json={"session_id": sid, "metric": "records"}).json()
+    assert recs["profile"]["metric"] == "records" and "records" not in recs["processed_preview"]["columns"]
+    assert client.post("/api/forecast", json={"session_id": sid, "date_col": "week", "value_col": "records", "periods": 3}).status_code == 200
+
+
+def test_cleaned_preview_never_shows_the_synthetic_records_column():
+    d = open_sample("shop"); assert "records" not in d["processed_preview"]["columns"] and "records" not in d["raw_preview"]["columns"]

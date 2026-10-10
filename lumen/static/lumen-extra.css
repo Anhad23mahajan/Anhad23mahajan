@@ -199,3 +199,10 @@ details > summary:hover { text-decoration: underline; }
 .recs li>b{display:block;font-weight:700}
 .recs li p{margin:4px 0;font-size:14px;color:var(--muted)}
 .recs .why summary{font-size:13px}
+
+/* ---- measure / date picker ---- */
+.pickbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 14px;padding:10px 14px;background:#fff;border:1px solid var(--rule);border-radius:var(--r);font-size:14px}
+.pickbar .pk-t{font-weight:700}
+.pickbar label{display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+.pickbar select{padding:6px 10px;border:1px solid var(--rule);border-radius:var(--r);background:#fff;color:var(--ink);max-width:100%}
+.pickbar .pk-n{flex:1 1 240px;color:var(--muted);font-size:13px}

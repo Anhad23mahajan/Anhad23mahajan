@@ -34,10 +34,18 @@ async def security_and_cache_headers(request, call_next):
 
 def start_session(df, raw_preview=None, sample=None, ai_narrative=True):
     sid = uuid.uuid4().hex
-    p = A.profile(df); facts = A.insights(df, p)
-    SESSIONS.put(sid, {"df": df, "sample": sample}, weight=int(df.size))
+    processed = A.df_to_preview(df)           # captured before profiling adds the synthetic 'records' column
+    sess = {"df": df, "sample": sample, "raw_preview": raw_preview or processed, "processed_preview": processed}
+    payload = build_payload(sid, sess, ai_narrative)
+    SESSIONS.put(sid, sess, weight=int(df.size))
+    return payload
+
+
+def build_payload(sid, sess, ai_narrative=True, metric=None, date=None):
+    """Everything the dashboard shows, for the chosen main measure and date column (Lumen's guess unless the user overrides it)."""
+    df, sample = sess["df"], sess["sample"]
+    p = A.profile(df, metric=metric, date=date); facts = A.insights(df, p)
     meta = {"rows": p["rows"], "metric": p["metric"], "date_column": p["date"], "columns": [c["name"] for c in p["columns"]]}
-    processed_preview = A.df_to_preview(df)
     stored = [q["q"] for q in samples.SAMPLES[sample]["questions"]] if sample else []
     notices = []
     if df.attrs.get("truncated_from"): notices.append(f"Only the first {len(df):,} of {df.attrs['truncated_from']:,} rows were analysed.")
@@ -63,7 +71,7 @@ def start_session(df, raw_preview=None, sample=None, ai_narrative=True):
     return A.clean({"session_id": sid, "profile": p, "charts": A.starter_charts(df, p), "insights": facts,
                     "narrative": narr, "suggested_questions": stored + [q for q in A.suggested_questions(p) if q not in stored][:3 if not stored else 0],
                     "ai": llm.available(), "sample": sample, "notices": notices,
-                    "raw_preview": raw_preview or processed_preview, "processed_preview": processed_preview})
+                    "raw_preview": sess["raw_preview"], "processed_preview": sess["processed_preview"]})
 
 
 def get_session(sid):
@@ -118,6 +126,23 @@ async def sample(request: Request, body: SampleReq):
 
 @app.post("/api/demo")
 async def demo(request: Request): return await sample(request, SampleReq(name="shop"))
+
+
+class Reanalyze(BaseModel):
+    session_id: str
+    metric: str | None = None
+    date: str | None = None
+
+
+@app.post("/api/reanalyze")
+async def reanalyze(request: Request, body: Reanalyze):
+    """The user corrects the main measure and/or date column: recompute the dashboard on the same session."""
+    sess = get_session(body.session_id)
+    ai = llm.available() and NARRATE.check(limits.client_key(request))[0]
+    def run():
+        try: return build_payload(body.session_id, sess, ai, metric=body.metric, date=body.date)
+        except ValueError as e: raise HTTPException(400, str(e))
+    return await run_in_threadpool(run)
 
 
 class Ask(BaseModel):

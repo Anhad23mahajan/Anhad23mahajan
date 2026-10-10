@@ -51,19 +51,45 @@ def _span(idx, freq):
     return idx[0], idx[-1] + off
 
 
+def daily_grain(df: pd.DataFrame, date: str) -> bool:
+    """True when the file has a row for (almost) every day; False for weekly or sparse reporting dates."""
+    d = df[date].dropna().dt.normalize()
+    return bool(len(d) and d.nunique() / max(d.dt.to_period("M").nunique(), 1) >= 20)
+
+
+def period_units(df: pd.DataFrame, date: str, start, end, daily: bool) -> tuple[int, str]:
+    """(how many comparable units a window holds, what to call one): calendar days for daily files, distinct reporting dates otherwise."""
+    if daily: return max((end - start).days, 1), "day"
+    n = df[(df[date] >= start) & (df[date] < end)][date].dt.normalize().nunique()
+    return max(int(n), 1), "reporting date"
+
+
+def w_is_month(win) -> bool: return len(win[0]) == 1 and len(win[1]) == 1
+
+
 def bridge(df: pd.DataFrame, date: str, metric: str, dims: list, freq: str, series: pd.Series, qty: str | None = None, min_change: float = 0.03, cost_metric: bool = False):
-    """Explain the change in `metric` (a summable measure) between the last two equal windows. Returns a finding dict or None."""
+    """Explain the change in `metric` (a summable measure) between the last two equal windows. Returns a finding dict or None.
+    When the two windows hold different amounts of data (31 days against 28, or 5 weekly rows against 4) the earlier window is scaled
+    to the later one's size first, so every number below (the change, each group's share of it, volume vs price) is like for like."""
     win = _windows(series, freq)
     if win is None or not dims: return None
     (p0, p1), (c0, c1) = _span(win[0], freq), _span(win[1], freq)
     d = df[[date, metric, *dims] + ([qty] if qty else [])].dropna(subset=[date, metric])
     prev, cur = d[(d[date] >= p0) & (d[date] < p1)], d[(d[date] >= c0) & (d[date] < c1)]
     pt, ct = float(prev[metric].sum()), float(cur[metric].sum())
-    if pt == 0 or abs(ct - pt) / abs(pt) < min_change: return None
-    delta = ct - pt
+    if pt == 0: return None
+    scale, unit_name, dp, dc = 1.0, None, 0, 0
+    if freq == "MS" and w_is_month(win):
+        daily = daily_grain(df, date)
+        dp, unit_name = period_units(df, date, p0, p1, daily); dc, _ = period_units(df, date, c0, c1, daily)
+        if dp != dc and abs(dc / dp - 1) >= 0.03: scale = dc / dp
+        else: unit_name = None
+    pt_cmp = pt * scale
+    if abs(ct - pt_cmp) / abs(pt_cmp) < min_change: return None
+    delta = ct - pt_cmp
     best = None
     for dim in dims:
-        a, b = prev.groupby(dim, observed=True)[metric].sum(), cur.groupby(dim, observed=True)[metric].sum()
+        a, b = prev.groupby(dim, observed=True)[metric].sum() * scale, cur.groupby(dim, observed=True)[metric].sum()
         contrib = b.sub(a, fill_value=0.0)
         if len(contrib) < 2: continue
         assert abs(contrib.sum() - delta) <= 1e-6 * max(1.0, abs(delta)), "contributions must add up to the change"
@@ -86,17 +112,23 @@ def bridge(df: pd.DataFrame, date: str, metric: str, dims: list, freq: str, seri
     else: lead_txt = "no single value dominates"
     # is the lead segment's own movement good news? (a rising cost is bad; a rising 'overdue' or 'cancelled' segment is bad)
     desirable = ((lead["change"] > 0) != cost_metric) != bool(BAD_SEGMENT.search(lead["segment"]))
-    overall_good = (delta > 0) != cost_metric
+    overall_good = up != cost_metric
+    pct = abs(delta / pt_cmp) * 100
+    if unit_name:
+        head = (f"{span.capitalize()} totalled {_fmt(ct)} over {dc} {unit_name}s against {_fmt(pt)} over {dp} {unit_name}s in {prior}. "
+                f"Per {unit_name} that is {_fmt(ct / dc)} against {_fmt(pt / dp)}, a change of {'+' if up else '-'}{pct:.0f}%. Compared like for like, ")
+    else:
+        head = f"{span.capitalize()} totalled {_fmt(ct)} against {_fmt(pt)} in {prior}, a change of {'+' if up else '-'}{_fmt(abs(delta))}. "
     out = {"kind": "change", "severity": "good" if (overall_good and (not big or desirable)) else "warn",
-           "title": f"{metric} {'rose' if up else 'fell'} {abs(delta / pt) * 100:.0f}% in {span}",
-           "detail": f"{span.capitalize()} totalled {_fmt(ct)} against {_fmt(pt)} in {prior}, a change of {'+' if up else '-'}{_fmt(abs(delta))}. "
-                     f"Split by {dim}, the biggest mover is {lead_txt}.",
+           "title": f"{metric} {'rose' if up else 'fell'} {pct:.0f}% in {span}" + (f" (per {unit_name})" if unit_name else ""),
+           "detail": head + (f"split by {dim}, the biggest mover is {lead_txt}." if unit_name else f"Split by {dim}, the biggest mover is {lead_txt}."),
            "action": (f"Look at {lead['segment']} first: " + ("find out what worked and repeat it." if desirable else "find out what went wrong and fix it.")) if big
                      else f"Check several {dim} values, since the change is spread out.",
            "evidence": {"dimension": dim, "window": f"{span} vs {prior}", "previous_total": pt, "current_total": ct, "change": delta,
+                        "like_for_like_scale": scale, "unit": unit_name,
                         "contributions": rows, "contributions_sum_to_change": True, "rows_current": int(len(cur)), "rows_previous": int(len(prev))}}
     if qty and qty in d.columns:
-        pv = _price_volume(prev, cur, dim, metric, qty)
+        pv = _price_volume(prev, cur, dim, metric, qty, scale)
         if pv:
             out["evidence"]["price_volume"] = pv
             v, pr, tot = pv["volume_effect"], pv["price_effect"], abs(delta)
@@ -107,10 +139,10 @@ def bridge(df: pd.DataFrame, date: str, metric: str, dims: list, freq: str, seri
     return out
 
 
-def _price_volume(prev, cur, dim, metric, qty):
+def _price_volume(prev, cur, dim, metric, qty, scale=1.0):
     """Volume/price split per segment; adds up exactly: sum(Q1*P1 - Q0*P0) = sum((Q1-Q0)*P0) + sum(Q1*(P1-P0))."""
-    q0, q1 = prev.groupby(dim, observed=True)[qty].sum(), cur.groupby(dim, observed=True)[qty].sum()
-    r0, r1 = prev.groupby(dim, observed=True)[metric].sum(), cur.groupby(dim, observed=True)[metric].sum()
+    q0, q1 = prev.groupby(dim, observed=True)[qty].sum() * scale, cur.groupby(dim, observed=True)[qty].sum()
+    r0, r1 = prev.groupby(dim, observed=True)[metric].sum() * scale, cur.groupby(dim, observed=True)[metric].sum()
     segs = q0.index.union(q1.index)
     q0, q1, r0, r1 = (x.reindex(segs, fill_value=0.0) for x in (q0, q1, r0, r1))
     if (q1 <= 0).all() or (q0 <= 0).all(): return None

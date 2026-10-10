@@ -424,6 +424,7 @@ def kind(s: pd.Series) -> str:
     return "category" if s.nunique() <= max(30, 0.05 * len(s)) else "text"
 
 
+STATUS_LIKE = re.compile(r"status|state|stage|paid|flag|active|promo|received|sent", re.I)
 ID_RECORD_HINT = re.compile(r"(^|_)(id|invoice|order|receipt|ref|reference|transaction|txn|ticket|booking)(_|$)", re.I)
 ENTITY_HINT = re.compile(r"(^|_)(name|customer|client|donor|member|student|supplier|vendor|patient|employee|account|payer|contact)(_|$)", re.I)
 
@@ -438,13 +439,16 @@ def entity_column(df, cols):
     return best[0] if best else None
 
 
-def profile(df: pd.DataFrame) -> dict:
+def profile(df: pd.DataFrame, metric: str | None = None, date: str | None = None) -> dict:
+    """Describe the table. `metric` / `date` override Lumen's choice of main measure and date column (the user's correction)."""
+    if "records" not in df.columns and any(kind(df[c]) == "date" for c in df.columns):
+        df["records"] = 1; df.attrs["synthetic_records"] = True        # 'how many records per period' is always available as a measure
     cols = []
     for c in df.columns:
         s = df[c]; k = kind(s)
         missing = round(float(s.isna().mean()) * 100, 1)
         uniq = int(s.nunique())
-        info = {"name": c, "kind": k, "missing_pct": missing, "unique": uniq,
+        info = {"name": c, "kind": k, "missing_pct": missing, "unique": uniq, "synthetic": bool(c == "records" and df.attrs.get("synthetic_records")),
                 "type": "Yes/No" if (pd.api.types.is_bool_dtype(s) or str(s.dtype) == "boolean") else {"date": "Date", "numeric": "Number", "category": "Category"}.get(k, "Text")}
         nn = s.dropna()
         if k == "numeric":
@@ -483,12 +487,16 @@ def profile(df: pd.DataFrame) -> dict:
 
     dates = [c["name"] for c in cols if c["kind"] == "date"]
     metrics = [c["name"] for c in cols if c["kind"] == "numeric" and not c.get("id_like") and not CALENDAR_PART.match(c["name"])]
-    cats = [c["name"] for c in cols if c["kind"] == "category" and 2 <= c["unique"] <= 30]
+    cats = [c for c in cols if c["kind"] == "category" and 2 <= c["unique"] <= 50]
+    cats.sort(key=lambda c: (bool(STATUS_LIKE.search(c["name"])), c["unique"] < 3, abs(np.log(max(c["unique"], 1) / 8))))   # product / region before status flags; 3-15 values before 40
+    cats = [c["name"] for c in cats]
     df.attrs["mean_cols"] = {m for m in metrics if _is_rating_like(df[m], m) or (df[m].dropna().between(0, 1).all() and df[m].nunique() > 2)}
     for m_ in [c for c in metrics if _is_rating_like(df[c], c)]:                    # codes like 99 ('no answer') are not scores: leave them out of every average
         stray = (df[m_] > 11) | (df[m_] < 0)
         if stray.any():
             df.attrs.setdefault("cleared_scores", {})[m_] = int(stray.sum()); df.loc[stray, m_] = np.nan
+
+    df.attrs["rating_cols"] = {m for m in metrics if _is_rating_like(df[m], m)}
 
     def metric_rank(name):                     # lower is better: a volume or money column beats a price, rate or score
         r = 0
@@ -497,13 +505,13 @@ def profile(df: pd.DataFrame) -> dict:
         if METRIC_HINT.search(name): r -= 2
         if re.search(r"paid|collected|received|actual|net", name, re.I): r -= 3      # what happened beats what was planned or owed
         if re.search(r"(^|_)(due|target|budget|budgeted|planned|expected|quota|goal)(_|$)", name, re.I): r += 3
-        if agg_for(name, df) == "mean": r += 20
+        if name == "records": r += 5            # counting rows is the fallback measure
+        elif agg_for(name, df) == "mean": r += 4 if name in df.attrs["rating_cols"] else 20     # a survey score still beats a bare count
         return r
     selected_metric = min(metrics, key=metric_rank) if metrics else None
-    if dates and (selected_metric is None or agg_for(selected_metric, df) == "mean") and "records" not in df.columns:
-        df["records"] = 1                       # no countable measure: count the records per period (registrations, visits, cases)
-        cols.append({"name": "records", "kind": "numeric", "missing_pct": 0.0, "unique": 1, "type": "Number", "outliers": 0, "id_like": False,
-                     "min": 1.0, "median": 1.0, "max": 1.0}); metrics.insert(0, "records"); selected_metric = "records"
+    if metric is not None:
+        if metric not in metrics: raise ValueError("That column can't be used as the main measure.")
+        selected_metric = metric
 
     def date_rank(col_name):
         score = 0
@@ -514,6 +522,9 @@ def profile(df: pd.DataFrame) -> dict:
 
     sorted_dates = sorted(dates, key=date_rank, reverse=True)
     selected_date = (sorted_dates or [None])[0]
+    if date is not None:
+        if date not in dates: raise ValueError("That column can't be used as the date.")
+        selected_date = date
 
     out = {"rows": len(df), "columns": cols, "date_cols": sorted_dates, "metric_cols": metrics, "cat_cols": cats,
            "metric": selected_metric, "date": selected_date, "duplicates": int(df.duplicated().sum()),
@@ -533,8 +544,12 @@ def kpis(df, p):
     if d:
         s, freq = period_series(df, d, m); unit = UNIT[freq]
         if len(s) >= 2 and s.iloc[-2]:
-            out.append({"label": f"Latest full {unit}", "value": float(s.iloc[-1]), "kind": "num",
-                        "delta": float((s.iloc[-1] - s.iloc[-2]) / abs(s.iloc[-2]) * 100), "vs": f"vs previous {unit}"})
+            last, prev, vs = float(s.iloc[-1]), float(s.iloc[-2]), f"vs previous {unit}"
+            if freq == "MS" and agg_for(m, df) == "sum":        # 31 days against 28 (or 5 weekly rows against 4) is not growth
+                daily = D.daily_grain(df, d); one = pd.offsets.MonthBegin(1)
+                nl, unit_ = D.period_units(df, d, s.index[-1], s.index[-1] + one, daily); np_, _ = D.period_units(df, d, s.index[-2], s.index[-2] + one, daily)
+                if nl != np_: last, prev, vs = last / nl, prev / np_, f"vs previous month (per {unit_})"
+            out.append({"label": f"Latest full {unit}", "value": float(s.iloc[-1]), "kind": "num", "delta": float((last - prev) / abs(prev) * 100), "vs": vs})
         if len(s) >= 1 and not s.empty and s.notna().any():
             out.append({"label": f"Best {unit}", "value": float(s.max()), "kind": "num", "note": s.idxmax().strftime("%Y" if freq == "YS" else "%b %Y" if freq == "MS" else "week ending %d %b %Y" if freq == "W" else "%d %b %Y")})
     return out
@@ -570,7 +585,8 @@ def period_series(df, date, metric):
         s = s.fillna(0.0)
     else:
         s = s.ffill().bfill().fillna(0.0)
-    if freq == "MS" and len(s) > 3:       # drop a first month that starts after the 3rd and a last month that stops >2 days before month end
+    monthly_grain = freq == "MS" and d[date].dt.normalize().nunique() <= 4 * max(d[date].dt.to_period("M").nunique(), 1)   # one row per month (e.g. the 15th): nothing is partial
+    if freq == "MS" and len(s) > 3 and not monthly_grain:       # drop a first month that starts after the 3rd and a last month that stops >2 days before month end
         if lo > s.index[0] + pd.Timedelta(days=2): s = s.iloc[1:]
         if len(s) > 3 and hi < s.index[-1] + pd.offsets.MonthEnd(0) - pd.Timedelta(days=2): s = s.iloc[:-1]
     if freq == "W" and len(s) > 3:        # bins are labelled by the week-ENDING Sunday: partial if data starts after Tue / ends before Sat
@@ -699,15 +715,26 @@ def insights(df, p):
         except Exception: daily = []
         f += daily
         if n >= 6:
-            k = max(2, n // 3); first, last = s.iloc[:k].mean(), s.iloc[-k:].mean()
-            if first:
-                ch = (last - first) / abs(first) * 100
-                if abs(ch) >= 5:
-                    up = ch > 0; good = up != bool(COST_HINT.search(m))
-                    f.append({"kind": "trend", "severity": "good" if good else "warn",
-                              "title": f"{m} is {'up' if up else 'down'} {abs(ch):.0f}% over the period",
-                              "detail": f"The average {ADJ[unit]} {m} in the most recent {k} {unit}s is {abs(ch):.0f}% {'higher' if up else 'lower'} than in the first {k}.",
-                              "action": "Find out what changed and repeat it." if good else f"Look at which {(p['cat_cols'] or ['product'])[0]} or period {'rose' if up else 'dropped'} and act on it first."})
+            k = max(2, n // 3)
+            def trend_pct(series):
+                first, last = series.iloc[:k].mean(), series.iloc[-k:].mean()
+                return (last - first) / abs(first) * 100 if first else None
+            ch = trend_pct(s); counted = None
+            if ch is not None and agg_for(m, df) == "sum":
+                top = df[m].nlargest(2)             # one huge record (a single big gift) should not define the headline trend
+                if len(top) == 2 and df[m].sum() > 0 and top.iloc[0] >= 0.1 * df[m].sum() and top.iloc[0] >= 5 * max(top.iloc[1], 1e-9):
+                    s2, _ = period_series(df.drop(index=top.index[0]), d, m)
+                    ch2 = trend_pct(s2) if len(s2) == n else None
+                    if ch2 is not None and abs(ch2 - ch) >= 15:
+                        row = df.loc[top.index[0]]
+                        counted = f"One record ({_n(top.iloc[0])}{', ' + pd.Timestamp(row[d]).strftime('%d %b %Y') if pd.notna(row[d]) else ''}) is left out of this figure; counting it the change would be {ch:+.0f}%."
+                        ch = ch2
+            if ch is not None and abs(ch) >= 5:
+                up = ch > 0; good = up != bool(COST_HINT.search(m))
+                f.append({"kind": "trend", "severity": "good" if good else "warn",
+                          "title": f"{m} is {'up' if up else 'down'} {abs(ch):.0f}% over the period",
+                          "detail": f"The average {ADJ[unit]} {m} in the most recent {k} {unit}s is {abs(ch):.0f}% {'higher' if up else 'lower'} than in the first {k}." + (" " + counted if counted else ""),
+                          "action": "Find out what changed and repeat it." if good else f"Look at which {(p['cat_cols'] or ['product'])[0]} or period {'rose' if up else 'dropped'} and act on it first."})
             med = s.median(); mad = (s - med).abs().median()
             if mad > 0 and not daily:                 # the daily check above is finer; only fall back to period-level when it found nothing
                 z = 0.6745 * (s - med) / mad
@@ -724,7 +751,7 @@ def insights(df, p):
                 f.append({"kind": "driver", "severity": "info", "title": f"{top} drives {share*100:.0f}% of {m}",
                           "detail": f"Across {c}, a single value ({top}) accounts for {share*100:.0f}% of total {m}. You depend heavily on it.",
                           "action": f"Protect what makes {top} work, and test whether other {c} values can grow."})
-    others = [x for x in p["metric_cols"] if x != m]
+    others = [x for x in p["metric_cols"] if x not in (m, "records")]
     best = None
     for o in others:
         r = df[m].corr(df[o])

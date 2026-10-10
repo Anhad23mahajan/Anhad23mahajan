@@ -143,3 +143,55 @@ def test_wide_files_do_not_slow_the_part_of_whole_search():
     import time
     rng = np.random.default_rng(10); df = pd.DataFrame(rng.random((300, 250)) * 100, columns=[f"m{i}" for i in range(250)]); df["g"] = rng.choice(list("abc"), 300)
     t = time.time(); SEG.ratio_gaps(df, A.profile(df)); assert time.time() - t < 6
+
+
+# ---- calendar artefacts, monthly-grain files, one-record trends, dimension order ------------------------------------
+def _flat(end, rise_from=None):
+    rng = np.random.default_rng(1); df = pd.DataFrame({"date": pd.date_range("2025-07-01", end)})
+    df["region"] = rng.choice(["N", "S"], len(df)); df["amount"] = 1000.0
+    if rise_from: df.loc[df["date"] >= rise_from, "amount"] = 1200.0
+    return df
+
+
+def test_a_longer_month_is_not_reported_as_growth():
+    df = _flat("2026-02-28"); p = A.profile(df)                                    # Jan 31 days -> Feb 28 days, flat per day
+    assert not [i for i in A.insights(df, p) if i["kind"] == "change"]
+    k = next(k for k in p["kpis"] if "delta" in k); assert k["delta"] == pytest.approx(0, abs=1e-9) and "per day" in k["vs"]
+
+
+def test_real_growth_is_reported_per_day_when_months_differ():
+    df = _flat("2026-02-28", rise_from="2026-02-01"); p = A.profile(df)
+    f = [i for i in A.insights(df, p) if i["kind"] == "change"]
+    assert f and "20%" in f[0]["title"] and "per day" in f[0]["title"]
+
+
+def test_one_row_per_month_files_keep_every_month():
+    m = pd.DataFrame({"date": [pd.Timestamp(2025, k, 15) for k in range(1, 10)], "amount": np.arange(9) * 100 + 1000.0})
+    assert len(A.period_series(m, "date", "amount")[0]) == 9
+
+
+def test_one_huge_record_does_not_define_the_headline_trend():
+    rng = np.random.default_rng(2); rows = []
+    for t in pd.date_range("2024-01-01", "2025-12-31"):
+        for _ in range(rng.poisson(1.5)): rows.append((t, rng.choice(["Online", "Event"]), float(np.round(rng.lognormal(3.4, .6), 2)) * (1 + 0.25 * (t.year == 2025))))
+    df = pd.DataFrame(rows, columns=["date", "channel", "amount"])
+    big = df.index[(df["date"] >= "2025-12-10")][0]; df.loc[big, "amount"] = 60_000.0
+    trend = next(i for i in A.insights(df, A.profile(df)) if i["kind"] == "trend")
+    assert "One record" in trend["detail"] and "left out" in trend["detail"] and float(trend["title"].split("%")[0].split()[-1]) < 60
+
+
+def test_business_dimensions_come_before_status_flags():
+    rng = np.random.default_rng(3); n = 300
+    df = pd.DataFrame({"date": pd.date_range("2025-01-01", periods=n), "promo": rng.choice(["Yes", "No"], n), "status": rng.choice(["Paid", "Open"], n),
+                       "product": rng.choice([f"P{i}" for i in range(9)], n), "amount": rng.integers(10, 99, n).astype(float)})
+    cats = A.profile(df)["cat_cols"]; assert cats[0] == "product" and cats.index("status") > cats.index("product")
+
+
+def test_weekly_rows_are_compared_per_reporting_date_and_direction_agrees_with_the_kpi():
+    rng = np.random.default_rng(5); rows = []
+    for t in pd.date_range("2024-10-07", "2025-06-30", freq="W-MON"):         # one row per Monday; June has 5 Mondays (the latest full month), May has 4
+        for wh in ("A", "B"): rows.append((t, wh, 100.0 + (0 if t.month != 6 else -3.0) + rng.normal(0, .01)))
+    df = pd.DataFrame(rows, columns=["week", "warehouse", "cost"]); p = A.profile(df)
+    k = next(k for k in p["kpis"] if "delta" in k); f = [i for i in A.insights(df, p) if i["kind"] == "change"]
+    assert "reporting date" in k["vs"] and k["delta"] < 0                      # per week of data, June is slightly LOWER
+    assert not f or "fell" in f[0]["title"]                                    # and the finding must agree with the KPI, never say 'rose'

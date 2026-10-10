@@ -303,8 +303,8 @@
 
   /* ---------- data health: what was detected on upload (types, empty cells, unusual values, labels, duplicates) ---------- */
   function healthHtml(p) {
-    if (!p || !arr(p.columns).length) return '';
-    const cols = arr(p.columns), plural = (n, w) => n + ' ' + w + (n === 1 ? '' : 's');
+    if (!p || !arr(p.columns).filter(c => !c.synthetic).length) return '';
+    const cols = arr(p.columns).filter(c => !c.synthetic), plural = (n, w) => n + ' ' + w + (n === 1 ? '' : 's');
     const pc = v => isNum(v) ? (v > 0 && v < 1 ? '<1%' : Math.round(v) + '%') : '–';
     const gaps = cols.filter(c => (c.missing_pct || 0) > 0), outs = cols.filter(c => (c.outliers || 0) > 0), labs = cols.filter(c => c.label_variant_groups);
     const dups = isNum(p.duplicates) ? p.duplicates : 0;
@@ -336,6 +336,17 @@
   LX.recsHtml = list => arr(list).map(recObj).filter(r => r.title).map(r =>
     `<li><b>${esc(r.title)}</b>${r.detail ? `<p>${esc(r.detail)}</p>` : ''}${r.because ? `<details class="why"><summary>Why we say this</summary><p>${esc(r.because)}</p></details>` : ''}</li>`).join('');
   LX.recsPlain = list => arr(list).map(recObj).filter(r => r.title);
+
+  /* ---------- "what is Lumen analysing?": let the user correct the main measure and date column ---------- */
+  LX.pickerHtml = p => {
+    const ms = arr(p && p.metric_cols), ds = arr(p && p.date_cols);
+    if (ms.length < 2 && ds.length < 2) return '';
+    const opt = (v, sel, label) => `<option value="${esc(v)}"${v === sel ? ' selected' : ''}>${esc(label || v)}</option>`;
+    return `<div class="pickbar" role="group" aria-label="What Lumen is analysing"><span class="pk-t">Analysing</span>`
+      + (ms.length > 1 ? `<label>Main measure <select id="pm">${ms.map(m => opt(m, p.metric, m === 'records' ? 'Number of records' : m)).join('')}</select></label>` : '')
+      + (ds.length > 1 ? `<label>over time by <select id="pdate">${ds.map(x => opt(x, p.date)).join('')}</select></label>` : '')
+      + `<span class="pk-n">Not what you expected? Change it and everything below updates.</span></div>`;
+  };
 
   LX.reset = () => { LX.fcClear(); LX.state.session = null; const r = q('#report'); if (r) r.innerHTML = '' };
   LX.tnum = tnum; LX.pct = pct;

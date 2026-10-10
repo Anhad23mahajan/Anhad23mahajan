@@ -577,6 +577,7 @@
       </aside>
       <div>
         <div id="notices"></div>
+        <div id="measurepick"></div>
         <div class="kpis" id="kpis"></div>
         <section>
           <h2>Ask a question</h2>
@@ -707,6 +708,12 @@
     function render(d) {
       sid = d.session_id; askSeq++; asking = false; busy($('#go'), false); $('#q').value = ''; document.querySelectorAll('#charts .js-plotly-plot, #fchart.js-plotly-plot, #rc').forEach(g => { try { hasPlotly() && Plotly.purge(g) } catch (e) { } }); $('#hero').style.display = 'none'; $('#app').style.display = 'grid'; $('#again').style.display = 'block';
       LX.state.session = d; LX.state.fc = null; { const hs = $('#health'); if (hs) hs.innerHTML = LX.healthHtml(d.profile) }
+      { const pk = $('#measurepick'); if (pk) { pk.innerHTML = LX.pickerHtml(d.profile);
+        pk.querySelectorAll('select').forEach(sel => sel.onchange = async () => {
+          const pm = $('#pm'), pd = $('#pdate'); pk.classList.add('busy');
+          try { const d2 = await api('/api/reanalyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ session_id: d.session_id, metric: pm ? pm.value : null, date: pd ? pd.value : null }) }); render(d2) }
+          catch (e) { pk.classList.remove('busy'); const n = pk.querySelector('.pk-n'); if (n) n.textContent = e.message }
+        }) } }
       const nar = d.narrative || {}, insights = d.insights || [];
       $('#sum').textContent = nar.summary || '';
       $('#sumsrc').textContent = LX.sourceLabel(nar.source); LX.fcClear();
@@ -723,7 +730,7 @@
       $('#qmode').textContent = d.ai ? '' : d.sample ? 'Demo mode: no AI key is set on this server. The suggested questions below run stored queries on the data right now; typing your own question needs an AI key.' : 'Questions are switched off on this server (no Gemini API key). Everything else works without it.';
       $('#qerr').textContent = ''; $('#qinfo').textContent = ''; $('#ans').innerHTML = '';
       $('#charts').innerHTML = '';
-      $('#fv').innerHTML = p.metric_cols.map(c => `<option ${c === p.metric ? 'selected' : ''}>${esc(c)}</option>`).join('');
+      $('#fv').innerHTML = p.metric_cols.map(c => `<option value="${esc(c)}" ${c === p.metric ? 'selected' : ''}>${esc(c === 'records' ? 'number of records' : c)}</option>`).join('');
       $('#fd').innerHTML = p.date_cols.map(c => `<option ${c === p.date ? 'selected' : ''}>${esc(c)}</option>`).join('');
       const canFc = p.date_cols.length && p.metric_cols.length; $('#fgo').disabled = !canFc; $('#ferr').textContent = canFc ? '' : (p.date_cols.length ? 'Forecasting needs a numeric measure, and none was found.' : 'Forecasting needs a date column, and none was found.');
       
