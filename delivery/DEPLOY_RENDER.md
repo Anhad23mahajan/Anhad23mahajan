@@ -27,7 +27,7 @@ Render's screens change over time, so a label may differ slightly from what is w
    |---|---|
    | `GEMINI_API_KEY` | your key |
    | `LUMEN_MAX_UPLOAD_MB` | `5` |
-   | `LUMEN_MAX_SESSIONS` | `4` |
+   | `LUMEN_MAX_CELLS` | `3000000` |
    | `LUMEN_TRUST_PROXY` | `1` |
 
 5. Under **Advanced**: set **Health Check Path** to `/api/health`. Set **Auto-Deploy** to **No** (so a later push cannot break the live demo).
@@ -69,5 +69,5 @@ With the key set, take three screenshots of the live site for Devpost: (a) an AI
 
 ## Know the limits
 
-- The free instance has 512 MB of memory: the 5 MB upload limit and the small session limit are deliberate.
+- The free instance has 512 MB of memory: the 5 MB upload limit and the cap on total data held in memory are deliberate.
 - The Gemini free tier has a daily limit that Google does not publish clearly. Lumen limits questions per visitor and in total per day, and falls back to stored sample questions when the AI is unavailable, so the demo keeps working.

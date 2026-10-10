@@ -17,11 +17,12 @@ Small shops, NGOs and student organisations collect sales, donations, stock and 
 | You get | How it is produced |
 |---|---|
 | **Automatic cleaning and a starter dashboard** | pandas: finds the real header row (title rows, TOTAL rows, several sheets), detects dates, numbers, currencies, European formats and encodings, removes empty rows and columns and makes column names unique. A raw-vs-cleaned preview shows exactly what changed. |
-| **Insights before you ask** | Computed in code, not by the AI: trend, spikes and drops (with the segment that caused them), data-quality warnings, concentration risk. |
+| **Insights before you ask** | Computed in code, not by the AI: trend, spikes and drops (with the segment that caused them), data-quality warnings, concentration risk, and which group is different (a segment moving against the total, a group with an unusual paid-of-due or no-show ratio, the lowest-scoring group in a survey). Months with different amounts of data are compared per day or per reporting date, so a longer month is not mistaken for growth. |
 | **"What changed and why"** | The change between two equal periods is split into exact per-segment contributions that add up to the total change (checked in code), and into volume versus price when units are present. |
 | **Plain-English questions** | Gemini writes a read-only SQL query. Lumen runs it in a sandbox and checks the result (see below). You can always open the SQL and the rows. |
 | **Forecasts that are tested first** | The method is chosen by backtesting on your own history (naive, seasonal, smoothing and Theta models and their averages). The range comes from that model's own past errors. Lumen reports how it did against a simple repeat-the-last-value guess in those tests, uses simple methods on short histories, and declines when there is too little history. |
-| **Recommended next steps** | Phrased by the AI from the computed findings only; a template version is used when the AI is off or quotes a number that is not in the findings. |
+| **Recommended next steps** | Built by rules in code from the findings, each with a "because" line quoting the evidence (for example the donors who gave before and went quiet, or the status that is owed money). Same output with or without an AI key. |
+| **Data health and a measure picker** | Lumen tells you what it cleaned (total rows removed, spellings merged, out-of-range scores ignored). If it guessed the wrong measure or date column, you can pick another and everything recomputes. |
 | **Works without AI** | Everything except free-text questions runs with no API key. Sample questions on the built-in datasets still work, using stored queries run live on the data. |
 
 ## How answers are checked
@@ -78,7 +79,7 @@ flowchart TB
 
 Everything below is reproducible from this repository.
 
-- **Tests:** `python -m pytest -q` runs 219 tests: the SQL attack suite, the fake-Gemini failure paths (quota, retired model, blocked reply, bad JSON, bad key, disagreeing queries, made-up numbers), the HTTP API end to end, the analytics and an ingestion regression suite of 25+ messy real-world-style files.
+- **Tests:** `python -m pytest -q` runs 257 tests: the SQL attack suite, the fake-Gemini failure paths (quota, retired model, blocked reply, bad JSON, bad key, disagreeing queries, made-up numbers), the HTTP API end to end, the analytics and an ingestion regression suite of 40+ messy real-world-style files, and regression tests from a black-box review (17 unseen datasets with planted facts) covering total rows, spelling variants, measure choice, rating codes and like-for-like month comparisons.
 - **Spike detector** (`python -m evals.bench_anomaly`): on pure-noise series, false alarms in 4 of 150 (2.7%). A planted spike of 5 times a normal day or more is found 60 of 60 times; 3 times, 27%; 2 times, about 2%. Daily revenue from a handful of orders is noisy, so small spikes are not flagged. That is by design.
 - **Forecaster** (`python -m evals.bench_forecast`): on 90 synthetic monthly, weekly and daily series with the last 6 periods held out, the forecaster is about as accurate as plain Holt-Winters (median MASE 0.820 against 0.812, where 1.0 is a seasonal-naive forecast and lower is better), and beats a repeat-the-last-value guess on 73% of series. Its 95% range contained the true value 93.7% of the time (Holt-Winters: 95.2%). The point is not extra accuracy: it chooses its method by testing, reports that test, and declines when history is too thin. We also tried a high/medium/low self-rating; it did not predict accuracy in this test, so Lumen does not show one.
 - **Plain-English question accuracy** (`GEMINI_API_KEY=... python -m evals.run_eval`): 20 questions on the sample shop data, each scored against an answer computed independently in pandas; the harness also reports how many wrong answers Lumen's checks flagged. The benchmark itself is tested: every reference query reproduces the pandas answer (`tests/test_evals.py`). Live results are written to `evals/results/latest.md`. No live accuracy figure is quoted here because it needs a Gemini key to measure; run the command to get yours.
@@ -91,6 +92,9 @@ Everything below is reproducible from this repository.
 - The hosted demo accepts files up to 5 MB and rate-limits questions so a free AI quota lasts. When the AI is unavailable, stored sample questions still answer.
 - Forecasts are estimates. With short history Lumen says so, and uses simple methods that backtest better than complex ones.
 - The AI can still misread a question. The checks reduce that risk; they do not remove it.
+- The number-grounding check covers digits, not names: an explanation could attach a correct number to the wrong product name. The result table is always shown next to the explanation for that reason.
+- Wide pivot-style files (one column per month), files that record debits and credits in separate columns, and periods written as text ("Q1 FY25") are read as ordinary columns, not as time series. Reshape them to one row per record for the best results.
+- Lumen picks a main measure and date column automatically; when it guesses wrong, use the picker above the dashboard.
 - Dates like `03/04/2025` are read day-first unless the file shows otherwise (set `AMBIGUOUS_DAYFIRST = False` in `app/analytics.py` for US-only data).
 
 ## How it compares
@@ -115,9 +119,9 @@ docker build -t lumen . && docker run -p 8000:8000 -e GEMINI_API_KEY=... lumen
 
 ### Deploy on Render (free)
 
-New, Web Service, pick this repo, Runtime Docker, Instance Type Free. Add the environment variables `GEMINI_API_KEY` (secret), `LUMEN_MAX_UPLOAD_MB=5`, `LUMEN_MAX_SESSIONS=4`, `LUMEN_TRUST_PROXY=1`; set the health check path to `/api/health`. (`render.yaml` describes the same setup.) Free instances sleep when idle, so the first visit after a pause takes about a minute.
+New, Web Service, pick this repo, Runtime Docker, Instance Type Free. Add the environment variables `GEMINI_API_KEY` (secret), `LUMEN_MAX_UPLOAD_MB=5`, `LUMEN_MAX_CELLS=3000000`, `LUMEN_TRUST_PROXY=1`; set the health check path to `/api/health`. (`render.yaml` describes the same setup.) Free instances sleep when idle, so the first visit after a pause takes about a minute.
 
-Limits are environment variables: `LUMEN_MAX_UPLOAD_MB`, `LUMEN_MAX_ROWS`, `LUMEN_MAX_COLS`, `LUMEN_MAX_SESSIONS`, `LUMEN_SESSION_TTL_S`, `LUMEN_ASK_PER_10MIN`, `LUMEN_ASK_PER_DAY`, `LUMEN_ASK_GLOBAL_PER_DAY`, `GEMINI_MODEL`.
+Limits are environment variables: `LUMEN_MAX_UPLOAD_MB`, `LUMEN_MAX_ROWS`, `LUMEN_MAX_COLS`, `LUMEN_MAX_SESSIONS`, `LUMEN_MAX_CELLS`, `LUMEN_SESSION_TTL_S`, `LUMEN_ASK_PER_10MIN`, `LUMEN_ASK_PER_DAY`, `LUMEN_ASK_GLOBAL_PER_DAY`, `GEMINI_MODEL`.
 
 ## Project layout
 

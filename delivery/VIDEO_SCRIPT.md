@@ -16,7 +16,7 @@
 
 Click **Choose a file**, pick `title_rows_total.xlsx`. When the dashboard loads, scroll to **Data Preview** and click between **Raw Input** and **Cleaned Output**.
 
-> "Real spreadsheets are messy. This one has title rows above the header and a TOTAL row at the bottom that would double-count everything. Lumen finds the real header, drops the total, fixes number and date formats, and shows raw next to cleaned, so you can see exactly what it changed."
+> "Real spreadsheets are messy. This one has title rows above the header and a TOTAL row at the bottom that would double-count everything. Lumen finds the real header, drops the total, fixes number and date formats, tells me what it changed in a data-health strip, and shows raw next to cleaned. If it guessed the wrong measure, I can pick another and everything recomputes."
 
 ## 0:55 to 1:40. Insights before you ask (click **Use another file**, then the NGO donations sample)
 
@@ -26,7 +26,7 @@ Point at the summary and findings. Open **Show the numbers** on the first spike.
 
 Then scroll to **What changed** or the trend finding if present:
 
-> "It also tells me what is growing, and where I depend too heavily on one campaign or channel."
+> "It also tells me what is growing, where I depend too heavily on one campaign, and gives me recommended next steps, each with a because line quoting the evidence, for example the donors who gave before and have gone quiet."
 
 ## 1:40 to 2:30. Ask in plain English, and see it checked (type a question)
 
@@ -42,7 +42,7 @@ If the AI is busy and you get an error: click one of the suggested questions ins
 
 ## 2:55 to 3:15. Close (click **How answers are checked**, then show the README or GitHub page)
 
-> "It's free and open source under the MIT licence. It runs without any AI key, it can be self-hosted so your data stays on your machine, and it has more than two hundred automated tests, including attacks against the query sandbox. Lumen turns business data into clear insights, forecasts and next steps, so people without an analyst can make better decisions. Thank you."
+> "It's free and open source under the MIT licence. It runs without any AI key, it can be self-hosted so your data stays on your machine, and it has more than two hundred and fifty automated tests, including attacks against the query sandbox. Lumen turns business data into clear insights, forecasts and next steps, so people without an analyst can make better decisions. Thank you."
 
 ---
 

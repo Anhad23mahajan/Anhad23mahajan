@@ -134,3 +134,12 @@ NOT DONE / depends on the user:
 - No live Gemini test has ever run (no key in sandbox). First real-AI run happens on the deployed site; if answers misbehave, check llm.generate() error handling and prompts. `GEMINI_API_KEY=... python -m evals.run_eval` measures accuracy (writes evals/results/latest.md) - optional.
 - PowerShell scripts were never executed (no PowerShell here); if the user reports an error, fix the script.
 Useful: if asked to change anything after delivery, remember the user commits as himself; give patches as file edits + a short PowerShell snippet, never push to Eshaan's repo from here (no access).
+
+## 12. State at 07:00 IST on Oct 10 (end of Phase 4)
+
+- Code: all work is on `claude/confident-brown-ayxkb3` under `lumen/`. 257 tests pass (pinned venv, Python 3.13).
+- Phase 4 came from a black-box review: 17 unseen datasets with 27 planted facts. First build: 0 crashes, but 23 of 27 facts missed. Fixed: TOTAL rows doubling totals, label spelling variants, wrong main measure, rating codes (99), trillion-times spikes, unfair month comparisons (now per day / per reporting date, whole breakdown like for like), mega-record defining the trend, status flags ranking before business dimensions, false duplicate warnings, 300-column slowdown.
+- New: rule-based recommender with "because" evidence (`app/recommend.py`), segment findings (`app/segments.py`), data-health notices, measure/date picker + `POST /api/reanalyze`, cell-bounded session store (`LUMEN_MAX_CELLS`).
+- Docs updated to match: README, delivery/DEVPOST_TEXT.md, VIDEO_SCRIPT.md, DEPLOY_RENDER.md, docs/screenshots (retaken from the final build).
+- Known limits (also in the README): live Gemini path never run (no key in the build sandbox, test it first on the deployed site); number check covers digits not names; wide pivot files, debit/credit columns and text periods are not understood; uploaded files cannot answer questions without a key.
+- Remaining for the user: run deliver.ps1, Gemini key, Render deploy (DEPLOY_RENDER.md), record video, set-links.ps1, submit on Devpost before 12:00 PM EDT (21:30 IST).
