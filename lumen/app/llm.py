@@ -195,6 +195,24 @@ def _fmt(v) -> str:
     return str(v)
 
 
+_ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}")
+
+
+def _date_labels(vals):
+    """(readable labels, strictly ascending?) if every value is a date/timestamp (month names when all are the 1st of a month), else (None, False)."""
+    import datetime
+    if not vals: return None, False
+    ts = []
+    for v in vals:
+        if isinstance(v, (pd.Timestamp, datetime.datetime, datetime.date)): ts.append(pd.Timestamp(v))
+        elif isinstance(v, str) and _ISO_DATE.match(v):
+            try: ts.append(pd.Timestamp(v))
+            except Exception: return None, False
+        else: return None, False
+    monthly = all(t.day == 1 for t in ts)
+    return [t.strftime("%b %Y") if monthly else t.strftime("%d %b %Y") for t in ts], all(a < b for a, b in zip(ts, ts[1:]))
+
+
 def describe(cols, rows) -> str:
     """Plain summary built in code, used whenever the model's explanation cannot be verified."""
     if len(rows) == 1 and len(cols) == 1: return f"The answer is {_fmt(rows[0][0])}."
@@ -202,7 +220,14 @@ def describe(cols, rows) -> str:
     num = next((j for j in range(len(cols) - 1, -1, -1) if all(isinstance(r[j], (int, float)) and not isinstance(r[j], bool) for r in rows if r[j] is not None)), None)
     lab = next((j for j in range(len(cols)) if j != num), 0)
     if num is None: return f"The query returned {len(rows)} rows; the first is {', '.join(_fmt(v) for v in rows[0])}."
-    top = ", ".join(f"{r[lab]} ({_fmt(r[num])})" for r in rows[:3])
+    dates, ascending = _date_labels([r[lab] for r in rows])
+    if dates and ascending and len(rows) >= 4:         # a chronological series: describe its shape, not a ranking
+        vals = [r[num] if isinstance(r[num], (int, float)) else 0 for r in rows]
+        hi, lo = vals.index(max(vals)), vals.index(min(vals))
+        return (f"{len(rows)} points from {dates[0]} to {dates[-1]} for {cols[num]}: it starts at {_fmt(vals[0])} and ends at {_fmt(vals[-1])}; "
+                f"the highest is {_fmt(vals[hi])} ({dates[hi]}) and the lowest is {_fmt(vals[lo])} ({dates[lo]}).")
+    names = dates or [r[lab] for r in rows]
+    top = ", ".join(f"{names[i]} ({_fmt(r[num])})" for i, r in enumerate(rows[:3]))
     return f"{len(rows)} rows. {'Top' if len(rows) > 3 else 'Values'} by {cols[num]}: {top}."
 
 

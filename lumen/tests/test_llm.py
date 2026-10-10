@@ -168,3 +168,18 @@ def test_off_by_one_on_a_large_total_is_caught():
     assert llm.answer(big, "q")["status"] == "disagree"
     use([plan("select sum(amount) as total from data", "select sum(amount * 1.0) as total from data"), expl("The total is 2,870,000.")])
     assert llm.answer(big, "q")["status"] == "checked"             # float summation noise is not a disagreement
+
+
+def test_describe_time_series_and_ranking():
+    cols = ["month", "revenue"]
+    rows = [["2025-01-01 00:00:00", 100.0], ["2025-02-01 00:00:00", 250.0], ["2025-03-01 00:00:00", 80.0], ["2025-04-01 00:00:00", 120.0]]
+    d = llm.describe(cols, rows)
+    assert "from Jan 2025 to Apr 2025" in d and "highest is 250 (Feb 2025)" in d and "lowest is 80 (Mar 2025)" in d and "00:00:00" not in d
+    assert llm.describe(["p", "t"], [["A", 5.0], ["B", 9.0], ["C", 1.0], ["D", 2.0]]).startswith("4 rows. Top by t: A (5)")
+    assert "28 Jan 2025" in llm.describe(cols, [["2025-01-28", 1.0], ["2025-01-29", 2.0], ["2025-01-30", 3.0], ["2025-01-31", 4.0]])
+
+
+def test_describe_handles_real_timestamps_from_duckdb():
+    res = pd.DataFrame({"month": pd.to_datetime(["2025-01-01", "2025-02-01", "2025-03-01", "2025-04-01"]), "revenue": [100.0, 250.0, 80.0, 120.0]})
+    rows = res.astype(object).where(res.notna(), None).values.tolist()
+    assert "from Jan 2025 to Apr 2025" in llm.describe(["month", "revenue"], rows)
