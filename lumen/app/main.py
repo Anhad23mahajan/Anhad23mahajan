@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel
 from starlette.concurrency import run_in_threadpool
-from . import analytics as A, llm, limits, samples
+from . import analytics as A, llm, limits, samples, recommend as R
 
 app = FastAPI(title="Lumen")
 app.add_middleware(GZipMiddleware, minimum_size=1024)
@@ -43,11 +43,25 @@ def start_session(df, raw_preview=None, sample=None, ai_narrative=True):
     if df.attrs.get("truncated_from"): notices.append(f"Only the first {len(df):,} of {df.attrs['truncated_from']:,} rows were analysed.")
     if df.attrs.get("removed_total_rows"):
         n = df.attrs["removed_total_rows"]; notices.append(f"Removed {n} 'total' row{'s' if n != 1 else ''} from your file so totals are not counted twice.")
+    if df.attrs.get("cleared_scores"):
+        cs = df.attrs["cleared_scores"]; notices.append(f"Ignored {sum(cs.values()):,} out-of-range answers (such as 99) in {', '.join(list(cs)[:3])}: they look like 'no answer' codes, not scores.")
     if df.attrs.get("merged_labels"):
         m0, cols = df.attrs["merged_labels"][0], sorted({m["column"] for m in df.attrs["merged_labels"]})
         notices.append(f"Merged different spellings of the same label in {', '.join(cols[:3])} (for example '{m0['from']}' became '{m0['to']}').")
+    try: recs = R.recommend(facts, p, df)
+    except Exception:
+        logging.exception("Recommendations failed"); recs = []
+    narr = llm.narrate(facts, meta, ai=ai_narrative)
+    if not recs:                    # nothing rule-based to say: fall back to each finding's own suggested action, without repeats
+        seen, recs = set(), []
+        for f in facts:
+            a = f.get("action")
+            if a and a not in seen: seen.add(a); recs.append({"priority": len(recs) + 1, "title": a, "detail": "", "because": f["title"]})
+        recs = recs[:4]
+    narr = {**narr, "recommendations": recs}
+    if narr.get("source") == "template": narr["summary"] = llm.template_summary(facts, recs)
     return A.clean({"session_id": sid, "profile": p, "charts": A.starter_charts(df, p), "insights": facts,
-                    "narrative": llm.narrate(facts, meta, ai=ai_narrative), "suggested_questions": stored + [q for q in A.suggested_questions(p) if q not in stored][:3 if not stored else 0],
+                    "narrative": narr, "suggested_questions": stored + [q for q in A.suggested_questions(p) if q not in stored][:3 if not stored else 0],
                     "ai": llm.available(), "sample": sample, "notices": notices,
                     "raw_preview": raw_preview or processed_preview, "processed_preview": processed_preview})
 

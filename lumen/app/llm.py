@@ -306,6 +306,14 @@ def stored_answer(df: pd.DataFrame, item: dict) -> dict:
 
 
 # ---------- narrative (summary + next steps) ----------
+def template_summary(facts: list, recs: list) -> str:
+    """A real summary sentence built in code (used when the AI is off): the top findings and the single most important action."""
+    if not facts: return "No strong patterns found yet. Try asking a question, or check the Data health section below."
+    out = "Key points: " + "; ".join(f["title"] for f in facts[:3]) + "."
+    if recs: out += f" Most important next step: {recs[0]['title']}."
+    return out
+
+
 _NARR_CACHE: dict[str, dict] = {}
 
 

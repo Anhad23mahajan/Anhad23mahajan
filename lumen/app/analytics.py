@@ -1,7 +1,7 @@
 """Profiling, starter charts, statistical insights and forecasting. No LLM needed here."""
 import io, re, warnings, datetime, unicodedata
 import numpy as np, pandas as pd
-from . import drivers as D
+from . import drivers as D, segments as SEG
 
 METRIC_HINT = re.compile(r"amount|sales|revenue|total|donat|expens|cost|profit|qty|quantity|units|price|balance|spend|value|volume|score|rate", re.I)
 STRONG_HINT = re.compile(r"amount|revenue|sales|total|donat|expens|cost|profit|spend|volume", re.I)
@@ -485,6 +485,10 @@ def profile(df: pd.DataFrame) -> dict:
     metrics = [c["name"] for c in cols if c["kind"] == "numeric" and not c.get("id_like") and not CALENDAR_PART.match(c["name"])]
     cats = [c["name"] for c in cols if c["kind"] == "category" and 2 <= c["unique"] <= 30]
     df.attrs["mean_cols"] = {m for m in metrics if _is_rating_like(df[m], m) or (df[m].dropna().between(0, 1).all() and df[m].nunique() > 2)}
+    for m_ in [c for c in metrics if _is_rating_like(df[c], c)]:                    # codes like 99 ('no answer') are not scores: leave them out of every average
+        stray = (df[m_] > 11) | (df[m_] < 0)
+        if stray.any():
+            df.attrs.setdefault("cleared_scores", {})[m_] = int(stray.sum()); df.loc[stray, m_] = np.nan
 
     def metric_rank(name):                     # lower is better: a volume or money column beats a price, rate or score
         r = 0
@@ -629,6 +633,7 @@ def _n(x):
 def insights(df, p):
     """Statistical findings, each with plain-English detail and a suggested action."""
     f, m, d = [], p["metric"], p["date"]
+    freq = None
     if df.attrs.get("truncated_from"):
         f.append({"kind": "quality", "severity": "warn", "title": f"Only the first {len(df):,} of {df.attrs['truncated_from']:,} rows were analysed",
                   "detail": "Totals and trends exclude the remaining rows.", "action": "Split the file by year or filter it, then upload again."})
@@ -723,12 +728,13 @@ def insights(df, p):
     best = None
     for o in others:
         r = df[m].corr(df[o])
-        if pd.isna(r) or not (0.5 < abs(r) < 0.97) or re.search(r"budget|target|planned|expected|quota|cogs|(^|_)cost|(^|_)total", o, re.I): continue   # near-1.0 = a component or copy of the measure, not a driver
+        if pd.isna(r) or len(df) < 50 or not (0.5 < abs(r) < 0.95) or re.search(r"budget|target|planned|expected|quota|cogs|(^|_)cost|(^|_)total|pending|remaining|balance|(^|_)due|transactions?|orders?|count", o, re.I): continue   # near-1.0 = a component or copy of the measure, not a driver
         if best is None or abs(r) > abs(best[1]): best = (o, r)
     if best:
         f.append({"kind": "driver", "severity": "info", "title": f"{m} moves with {best[0]}",
                   "detail": f"{m} and {best[0]} are strongly {'positively' if best[1] > 0 else 'negatively'} related (correlation {best[1]:.2f}). This shows they move together, not that one causes the other.",
-                  "action": f"Track {best[0]} alongside {m} and test changing it."})
+                  "action": f"Watch {best[0]} alongside {m}; if you can change {best[0]}, try it on a small scale first and see whether {m} follows."})
+    f += SEG.segment_findings(df, p, m, d, freq, bool(COST_HINT.search(m)), agg_for(m, df) == "mean")      # which group is different?
     order = {"warn": 0, "good": 1, "info": 2}
     return sorted(f, key=lambda x: (x["kind"] == "quality", order[x["severity"]], x["kind"] != "change"))[:8]   # data-quality notes never crowd out findings
 

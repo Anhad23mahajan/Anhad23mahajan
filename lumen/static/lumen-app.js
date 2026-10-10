@@ -270,8 +270,8 @@
         return `<li><b>${esc(i.title)}</b>${KIND[i.kind] ? ` <small>(${esc(KIND[i.kind])})</small>` : ''}<br>${esc(i.detail)}${line ? `<br><i>${esc(line)}</i>` : ''}</li>`;
       }).join('') + '</ol>';
     }
-    const recs = [...new Set(arr(nar.recommendations))];
-    if (recs.length) h += '<h2>What to do next</h2><ol>' + recs.map(x => `<li>${esc(x)}</li>`).join('') + '</ol>';
+    const recs = LX.recsPlain(nar.recommendations);
+    if (recs.length) h += '<h2>What to do next</h2><ol>' + recs.map(x => `<li><b>${esc(x.title)}</b>${x.detail ? `<br>${esc(x.detail)}` : ''}</li>`).join('') + '</ol>';
     if (fc && arr(fc.forecast && fc.forecast.x).length) {
       const f = fc.forecast, n = Math.min(6, f.x.length);
       h += '<h2>Forecast</h2>' + (fc.note ? `<p>${esc(fc.note)}</p>` : '');
@@ -330,6 +330,12 @@
     return h;
   }
   LX.healthHtml = healthHtml;
+
+  /* ---------- recommendations: structured {title, detail, because}; plain strings from older payloads still work ---------- */
+  const recObj = r => typeof r === 'string' ? { title: r, detail: '', because: '' } : (r && typeof r === 'object' ? { title: String(r.title || ''), detail: String(r.detail || ''), because: String(r.because || '') } : { title: '', detail: '', because: '' });
+  LX.recsHtml = list => arr(list).map(recObj).filter(r => r.title).map(r =>
+    `<li><b>${esc(r.title)}</b>${r.detail ? `<p>${esc(r.detail)}</p>` : ''}${r.because ? `<details class="why"><summary>Why we say this</summary><p>${esc(r.because)}</p></details>` : ''}</li>`).join('');
+  LX.recsPlain = list => arr(list).map(recObj).filter(r => r.title);
 
   LX.reset = () => { LX.fcClear(); LX.state.session = null; const r = q('#report'); if (r) r.innerHTML = '' };
   LX.tnum = tnum; LX.pct = pct;

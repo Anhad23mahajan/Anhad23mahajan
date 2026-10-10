@@ -712,7 +712,7 @@
       $('#sumsrc').textContent = LX.sourceLabel(nar.source); LX.fcClear();
       $('#notices').innerHTML = LX.noticesHtml(d.notices);
       $('#ins').innerHTML = insights.length ? insights.map(LX.insightHtml).join('') : '<p class="note">No strong patterns found. Try asking a question.</p>';
-      $('#recs').innerHTML = [...new Set(nar.recommendations || [])].map(r => `<li>${esc(r)}</li>`).join('');
+      $('#recs').innerHTML = LX.recsHtml(nar.recommendations);
       const p = d.profile; $('#meta').textContent = `${p.rows.toLocaleString()} rows, ${p.columns.length} columns. Main measure: ${p.metric || 'none found'}.`;
       $('#kpis').innerHTML = (p.kpis || []).map(k => `<div class="kpi"><small>${esc(k.label)}</small><strong title="${esc(k.kind === 'int' ? (+k.value).toLocaleString() : full(k.value))}">${k.kind === 'int' ? (+k.value).toLocaleString() : fmt(k.value)}</strong>${k.delta != null ? `<em class="${Math.round(k.delta) > 0 ? 'up' : Math.round(k.delta) < 0 ? 'down' : ''}">${Math.round(k.delta) > 0 ? '+' : ''}${Math.round(k.delta)}% <span style="font-weight:400;color:var(--muted)">${esc(k.vs)}</span></em>` : `<em>${esc(k.note || '')}</em>`}</div>`).join('');
       const sq = d.suggested_questions || [], chipsOn = sq.length && (d.ai || d.sample);   // an upload with no AI key cannot answer any question, so its chips would only lead to a refusal

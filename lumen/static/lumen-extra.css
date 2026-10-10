@@ -193,3 +193,9 @@ details > summary:hover { text-decoration: underline; }
 .hchip>span:first-child{font-weight:800}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 #health table td:last-child{white-space:normal;min-width:220px}
+
+/* ---- recommendations ---- */
+.recs li{margin-bottom:14px}
+.recs li>b{display:block;font-weight:700}
+.recs li p{margin:4px 0;font-size:14px;color:var(--muted)}
+.recs .why summary{font-size:13px}
